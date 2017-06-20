@@ -1,0 +1,19 @@
+tile.cold_sand_default.name=Cold Sand
+tile.cold_sand_red.name=Cold Red Sand
+
+tile.ore_copper_red_rock.name=Copper Ore
+tile.ore_copper_deep_red_rock.name=Copper Ore
+tile.ore_copper_deepstone.name=Copper Ore
+tile.ore_copper_coldstone.name=Copper Ore
+tile.ore_copper_deep_coldstone.name=Copper Ore
+tile.ore_copper_icestone.name=Copper Ore
+tile.ore_copper_glacierrock.name=Copper Ore
+tile.ore_copper_oceanstone.name=Copper Ore
+tile.ore_copper_deep_oceanstone.name=Copper Ore
+tile.ore_copper_stone.name=Copper Ore
+
+tile.block_copper.name=Block of Copper
+
+itemGroup.EnvironmentalBlocks=Environmental Blocks
+itemGroup.Ores=Ores
+itemGroup.ResourceBlocks=Resource Blocks

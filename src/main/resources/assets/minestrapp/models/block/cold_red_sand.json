@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minestrapp:blocks/soil/cold_red_sand"
+    }
+}

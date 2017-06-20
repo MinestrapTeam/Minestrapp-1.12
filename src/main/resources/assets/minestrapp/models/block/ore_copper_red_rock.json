@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minestrapp:blocks/ore/ore_copper_red_rock"
+    }
+}

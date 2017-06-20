@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "variant=default": [
+            { "model": "minestrapp:cold_sand" }
+        ],
+        "variant=red": [
+            { "model": "minestrapp:cold_red_sand" }
+        ]
+    }
+}
