@@ -1,6 +1,7 @@
 package minestrapp.proxy;
 
 import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.worldgen.MOreGen;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -12,6 +13,7 @@ public class CommonProxy
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		MBlocks.init();
+		MItems.init();
 	}
 	
 	public void init(FMLInitializationEvent event)

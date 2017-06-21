@@ -52,4 +52,19 @@ public class MTabs
 			return new ItemStack(Item.getItemFromBlock(MBlocks.block_copper), 1, 0);
 		}
 	};
+	
+	public static CreativeTabs minerals = new CreativeTabs("Minerals")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Minerals";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.ingots, 1, 0);
+		}
+	};
 }

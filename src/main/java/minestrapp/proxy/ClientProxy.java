@@ -1,6 +1,7 @@
 package minestrapp.proxy;
 
 import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
@@ -14,6 +15,7 @@ public class ClientProxy extends CommonProxy
 	{
 		super.preInit(event);
 		MBlocks.registerRenders();
+		MItems.registerRenders();
 	}
 	
 	public void init(FMLInitializationEvent event)
