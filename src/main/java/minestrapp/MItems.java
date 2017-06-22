@@ -3,11 +3,18 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import minestrapp.item.tools.MAxe;
+import minestrapp.item.tools.MHoe;
+import minestrapp.item.tools.MPickaxe;
+import minestrapp.item.tools.MShovel;
+import minestrapp.item.tools.MSword;
 import minestrapp.item.util.IItemVariants;
 import minestrapp.item.util.ItemMetaBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MItems
@@ -16,9 +23,23 @@ public class MItems
 	
 	public static Item ingots;
 	
+	public static MPickaxe copper_pickaxe;
+	public static MAxe copper_axe;
+	public static MShovel copper_shovel;
+	public static MHoe copper_hoe;
+	public static MSword copper_sword;
+	
+	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
+	
 	public static void init()
 	{
 		register(ingots = new ItemMetaBase("m_ingot", 9).setCreativeTab(MTabs.minerals));
+		
+		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
+		register(copper_axe = new MAxe(COPPER, "copper_axe"));
+		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));
+		register(copper_hoe = new MHoe(COPPER, "copper_hoe"));
+		register(copper_sword = new MSword(COPPER, "copper_sword"));
 	}
 	
 	public static void registerRenders()

@@ -67,4 +67,34 @@ public class MTabs
 			return new ItemStack(MItems.ingots, 1, 0);
 		}
 	};
+	
+	public static CreativeTabs tools = new CreativeTabs("Tools")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Tools";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.copper_pickaxe);
+		}
+	};
+	
+	public static CreativeTabs combat = new CreativeTabs("Combat")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Combat";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.copper_sword);
+		}
+	};
 }

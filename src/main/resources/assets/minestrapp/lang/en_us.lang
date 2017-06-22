@@ -42,12 +42,25 @@ item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
 
 
+## Tools ##
+item.copper_pickaxe.name=Copper Pickaxe
+item.copper_axe.name=Copper Axe
+item.copper_shovel.name=Copper Shovel
+item.copper_hoe.name=Copper Hoe
+
+
+## Swords ##
+item.copper_sword.name=Copper Sword
+
+
 
 
 
 ##### Creative Tabs #####
 
-itemGroup.EnvironmentalBlocks=Environmental Blocks
-itemGroup.Ores=Ores
-itemGroup.ResourceBlocks=Resource Blocks
-itemGroup.Minerals=Minerals
+itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
+itemGroup.Ores=Minestrapp Ores
+itemGroup.ResourceBlocks=Minestrapp Resource Blocks
+itemGroup.Minerals=Minestrapp Minerals
+itemGroup.Tools=Minestrapp Tools
+itemGroup.Combat=Minestrapp Combat
