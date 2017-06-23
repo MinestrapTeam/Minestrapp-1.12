@@ -45,6 +45,12 @@ item.m_ingot_8.name=Dimensium Ingot
 item.health_crystal.name='Health Crystal'
 item.fire_sword.name=Fire Sword
 
+## Armor ##
+item.tin_helm.name=Tin Helmet
+item.tin_chest.name=Tin Chestplate
+item.tin_legs.name=Tin Leggings
+item.tin_feet.name=Tin Boots
+
 ## Tools ##
 item.copper_pickaxe.name=Copper Pickaxe
 item.copper_axe.name=Copper Axe

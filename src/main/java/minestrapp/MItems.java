@@ -7,6 +7,7 @@ import minestrapp.item.tools.MAxe;
 import minestrapp.item.util.MItemDagger;
 import minestrapp.item.tools.MFireSword;
 import minestrapp.item.util.MItemHealthCrystal;
+import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MHoe;
 import minestrapp.item.tools.MPickaxe;
 import minestrapp.item.tools.MShovel;
@@ -14,8 +15,11 @@ import minestrapp.item.tools.MSword;
 import minestrapp.item.util.IItemVariants;
 import minestrapp.item.util.ItemMetaBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -35,7 +39,14 @@ public class MItems
 	public static MItemHealthCrystal health_crystal;
 	public static MFireSword fire_sword;
 	
+	public static MArmor tin_helm;
+	public static MArmor tin_chest;
+	public static MArmor tin_legs;
+	public static MArmor tin_feet;
+	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
+	
+	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 4, 3, 1}, 12, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F);
 	
 	public static void init()
 	{
@@ -49,6 +60,11 @@ public class MItems
 		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));
 		register(copper_hoe = new MHoe(COPPER, "copper_hoe"));
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
+		
+		register(tin_helm = new MArmor(TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
+		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
+		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
+		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
 	}
 	
 	public static void registerRenders()
