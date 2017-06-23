@@ -19,6 +19,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -46,7 +47,7 @@ public class MItems
 	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
 	
-	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 4, 3, 1}, 12, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F);
+	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 12, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F);
 	
 	public static void init()
 	{
@@ -65,7 +66,12 @@ public class MItems
 		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
 		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
 		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
+	
+		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1,0), 0F);
+		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1,1), 0F);
 	}
+
+	
 	
 	public static void registerRenders()
 	{
