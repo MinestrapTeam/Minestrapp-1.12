@@ -19,11 +19,21 @@ tile.ore_copper_oceanstone.name=Copper Ore
 tile.ore_copper_deep_oceanstone.name=Copper Ore
 tile.ore_copper_stone.name=Copper Ore
 
+tile.ore_tin_red_rock.name=Tin Ore
+tile.ore_tin_deep_red_rock.name=Tin Ore
+tile.ore_tin_deepstone.name=Tin Ore
+tile.ore_tin_coldstone.name=Tin Ore
+tile.ore_tin_deep_coldstone.name=Tin Ore
+tile.ore_tin_icestone.name=Tin Ore
+tile.ore_tin_glacierrock.name=Tin Ore
+tile.ore_tin_oceanstone.name=Tin Ore
+tile.ore_tin_deep_oceanstone.name=Tin Ore
+tile.ore_tin_stone.name=Tin Ore
 
 ## Resource ##
 
 tile.block_copper.name=Block of Copper
-
+tile.block_tin.name=Block of Tin
 
 
 

@@ -29,9 +29,11 @@ public class MBlocks
 	
 	//Ore
 	public static Block ore_copper;
+	public static Block ore_tin;
 	
 	//Resource
 	public static Block block_copper;
+	public static Block block_tin;
 	
 	public static void init()
 	{
@@ -40,9 +42,13 @@ public class MBlocks
 		
 		//Ore
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
+		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
+
 		
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
+
 	}
 	
 	public static void register(Block block)
@@ -71,6 +77,8 @@ public class MBlocks
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{
 			initModel(ore_copper, i, "ore_copper_" + EnumStoneType.values()[i].getName());
+			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
+
 		}
 	}
 	
