@@ -29,7 +29,6 @@ public class MItemDagger extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.setCreativeTab(CreativeTabs.COMBAT);
         this.attackDamage = 1.5F + material.getDamageVsEntity();
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
