@@ -1,0 +1,21 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "i"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:blaze_rod"
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 7
+        }
+     },
+     "result": {
+        "item": "minestrapp:fire_sword",
+        "data": 0
+     }  
+}

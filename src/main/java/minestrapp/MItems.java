@@ -5,6 +5,7 @@ import java.util.List;
 
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.util.MItemDagger;
+import minestrapp.item.tools.MFireSword;
 import minestrapp.item.util.MItemHealthCrystal;
 import minestrapp.item.tools.MHoe;
 import minestrapp.item.tools.MPickaxe;
@@ -32,6 +33,7 @@ public class MItems
 	public static MSword copper_sword;
 	public static MItemDagger wooden_dagger;
 	public static MItemHealthCrystal health_crystal;
+	public static MFireSword fire_sword;
 	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
 	
@@ -40,7 +42,7 @@ public class MItems
 		register(ingots = new ItemMetaBase("m_ingot", 9).setCreativeTab(MTabs.minerals));
 		
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
-		
+		register(fire_sword = new MFireSword("fire_sword"));
 		register(wooden_dagger = new MItemDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
 		register(copper_axe = new MAxe(COPPER, "copper_axe"));
