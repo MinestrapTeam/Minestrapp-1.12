@@ -52,7 +52,8 @@ item.copper_hoe.name=Copper Hoe
 ## Swords ##
 item.copper_sword.name=Copper Sword
 
-
+## Dagger ##
+item.wooden_dagger.name=Wooden Dagger
 
 
 
