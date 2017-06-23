@@ -56,7 +56,7 @@ public class MItems
 		register(fire_sword = new MFireSword("fire_sword"));
 		register(wooden_dagger = new MItemDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
-		register(copper_axe = new MAxe(COPPER, "copper_axe"));
+		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));
 		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));
 		register(copper_hoe = new MHoe(COPPER, "copper_hoe"));
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
