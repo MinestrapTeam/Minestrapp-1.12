@@ -5,7 +5,6 @@
 tile.cold_sand_default.name=Cold Sand
 tile.cold_sand_red.name=Cold Red Sand
 
-
 ## Ores ##
 
 tile.ore_copper_red_rock.name=Copper Ore
@@ -34,6 +33,11 @@ tile.ore_tin_stone.name=Tin Ore
 
 tile.block_copper.name=Block of Copper
 tile.block_tin.name=Block of Tin
+
+## Utility ##
+
+tile.soulsteel_vessel.name=Soulsteel Vessel
+
 
 
 
@@ -67,12 +71,13 @@ item.copper_axe.name=Copper Axe
 item.copper_shovel.name=Copper Shovel
 item.copper_hoe.name=Copper Hoe
 
-
 ## Swords ##
 item.copper_sword.name=Copper Sword
 
 ## Dagger ##
 item.wooden_dagger.name=Wooden Dagger
+
+
 
 
 
@@ -82,5 +87,6 @@ itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
 itemGroup.Ores=Minestrapp Ores
 itemGroup.ResourceBlocks=Minestrapp Resource Blocks
 itemGroup.Minerals=Minestrapp Minerals
+itemGroup.UtilityBlocks=Minestrapp Utility Blocks
 itemGroup.Tools=Minestrapp Tools
 itemGroup.Combat=Minestrapp Combat

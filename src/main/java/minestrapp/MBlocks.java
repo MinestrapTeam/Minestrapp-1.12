@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
@@ -35,6 +36,9 @@ public class MBlocks
 	public static Block block_copper;
 	public static Block block_tin;
 	
+	//Utility
+	public static Block soulsteel_vessel;
+	
 	public static void init()
 	{
 		//Soil
@@ -49,6 +53,8 @@ public class MBlocks
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 
+		//Utility
+		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 	}
 	
 	public static void register(Block block)

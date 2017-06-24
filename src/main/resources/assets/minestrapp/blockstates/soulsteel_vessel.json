@@ -1,0 +1,136 @@
+{
+    "variants": {
+        "facing=north,level=0": [
+            { "model": "minestrapp:soulsteel_vessel_empty" }
+        ],
+        "facing=north,level=1": [
+            { "model": "minestrapp:soulsteel_vessel_1" }
+        ],
+        "facing=north,level=2": [
+            { "model": "minestrapp:soulsteel_vessel_2" }
+        ],
+        "facing=north,level=3": [
+            { "model": "minestrapp:soulsteel_vessel_3" }
+        ],
+        "facing=north,level=4": [
+            { "model": "minestrapp:soulsteel_vessel_4" }
+        ],
+        "facing=north,level=5": [
+            { "model": "minestrapp:soulsteel_vessel_5" }
+        ],
+        "facing=north,level=6": [
+            { "model": "minestrapp:soulsteel_vessel_6" }
+        ],
+        "facing=north,level=7": [
+            { "model": "minestrapp:soulsteel_vessel_7" }
+        ],
+        "facing=north,level=8": [
+            { "model": "minestrapp:soulsteel_vessel_8" }
+        ],
+        "facing=north,level=9": [
+            { "model": "minestrapp:soulsteel_vessel_9" }
+        ],
+        "facing=north,level=10": [
+            { "model": "minestrapp:soulsteel_vessel_10" }
+        ],
+        "facing=east,level=0": [
+            { "model": "minestrapp:soulsteel_vessel_empty", "y": 90 }
+        ],
+        "facing=east,level=1": [
+            { "model": "minestrapp:soulsteel_vessel_1", "y": 90 }
+        ],
+        "facing=east,level=2": [
+            { "model": "minestrapp:soulsteel_vessel_2", "y": 90 }
+        ],
+        "facing=east,level=3": [
+            { "model": "minestrapp:soulsteel_vessel_3", "y": 90 }
+        ],
+        "facing=east,level=4": [
+            { "model": "minestrapp:soulsteel_vessel_4", "y": 90 }
+        ],
+        "facing=east,level=5": [
+            { "model": "minestrapp:soulsteel_vessel_5", "y": 90 }
+        ],
+        "facing=east,level=6": [
+            { "model": "minestrapp:soulsteel_vessel_6", "y": 90 }
+        ],
+        "facing=east,level=7": [
+            { "model": "minestrapp:soulsteel_vessel_7", "y": 90 }
+        ],
+        "facing=east,level=8": [
+            { "model": "minestrapp:soulsteel_vessel_8", "y": 90 }
+        ],
+        "facing=east,level=9": [
+            { "model": "minestrapp:soulsteel_vessel_9", "y": 90 }
+        ],
+        "facing=east,level=10": [
+            { "model": "minestrapp:soulsteel_vessel_10", "y": 90 }
+        ],
+        "facing=south,level=0": [
+            { "model": "minestrapp:soulsteel_vessel_empty", "y": 180 }
+        ],
+        "facing=south,level=1": [
+            { "model": "minestrapp:soulsteel_vessel_1", "y": 180 }
+        ],
+        "facing=south,level=2": [
+            { "model": "minestrapp:soulsteel_vessel_2", "y": 180 }
+        ],
+        "facing=south,level=3": [
+            { "model": "minestrapp:soulsteel_vessel_3", "y": 180 }
+        ],
+        "facing=south,level=4": [
+            { "model": "minestrapp:soulsteel_vessel_4", "y": 180 }
+        ],
+        "facing=south,level=5": [
+            { "model": "minestrapp:soulsteel_vessel_5", "y": 180 }
+        ],
+        "facing=south,level=6": [
+            { "model": "minestrapp:soulsteel_vessel_6", "y": 180 }
+        ],
+        "facing=south,level=7": [
+            { "model": "minestrapp:soulsteel_vessel_7", "y": 180 }
+        ],
+        "facing=south,level=8": [
+            { "model": "minestrapp:soulsteel_vessel_8", "y": 180 }
+        ],
+        "facing=south,level=9": [
+            { "model": "minestrapp:soulsteel_vessel_9", "y": 180 }
+        ],
+        "facing=south,level=10": [
+            { "model": "minestrapp:soulsteel_vessel_10", "y": 180 }
+        ],
+        "facing=west,level=0": [
+            { "model": "minestrapp:soulsteel_vessel_empty", "y": 270 }
+        ],
+        "facing=west,level=1": [
+            { "model": "minestrapp:soulsteel_vessel_1", "y": 270 }
+        ],
+        "facing=west,level=2": [
+            { "model": "minestrapp:soulsteel_vessel_2", "y": 270 }
+        ],
+        "facing=west,level=3": [
+            { "model": "minestrapp:soulsteel_vessel_3", "y": 270 }
+        ],
+        "facing=west,level=4": [
+            { "model": "minestrapp:soulsteel_vessel_4", "y": 270 }
+        ],
+        "facing=west,level=5": [
+            { "model": "minestrapp:soulsteel_vessel_5", "y": 270 }
+        ],
+        "facing=west,level=6": [
+            { "model": "minestrapp:soulsteel_vessel_6", "y": 270 }
+        ],
+        "facing=west,level=7": [
+            { "model": "minestrapp:soulsteel_vessel_7", "y": 270 }
+        ],
+        "facing=west,level=8": [
+            { "model": "minestrapp:soulsteel_vessel_8", "y": 270 }
+        ],
+        "facing=west,level=9": [
+            { "model": "minestrapp:soulsteel_vessel_9", "y": 270 }
+        ],
+        "facing=west,level=10": [
+            { "model": "minestrapp:soulsteel_vessel_10", "y": 270 }
+        ]
+    }
+}

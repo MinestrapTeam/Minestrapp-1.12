@@ -53,6 +53,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs utility = new CreativeTabs("UtilityBlocks")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "UtilityBlocks";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(Item.getItemFromBlock(MBlocks.soulsteel_vessel), 1, 0);
+		}
+	};
+	
 	public static CreativeTabs minerals = new CreativeTabs("Minerals")
 	{
 		@Override
