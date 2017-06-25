@@ -6,7 +6,11 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import minestrapp.MItems;
+import minestrapp.item.tools.MDagger;
+import minestrapp.tileentity.TileEntityVessel;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockFlowerPot;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -19,22 +23,31 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFlowerPot;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.ChunkCache;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockSoulsteelVessel extends BlockHorizontal
+public class BlockSoulsteelVessel extends BlockContainer
 {
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 10);
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
@@ -102,12 +115,14 @@ public class BlockSoulsteelVessel extends BlockHorizontal
     
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(LEVEL, Integer.valueOf(meta));
+    	return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
     }
     
     public int getMetaFromState(IBlockState state)
     {
-        return ((Integer)state.getValue(LEVEL)).intValue();
+    	int i = 0;
+        i = i | ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+        return i;
     }
     
     protected BlockStateContainer createBlockState()
@@ -130,13 +145,6 @@ public class BlockSoulsteelVessel extends BlockHorizontal
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
     
-//    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-//    {
-//        EnumFacing enumfacing = facing.getOpposite();
-//
-//        return this.getDefaultState().withProperty(FACING, enumfacing).withProperty(LEVEL, 0);
-//    }
-    
     public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
     {
         return true;
@@ -151,6 +159,77 @@ public class BlockSoulsteelVessel extends BlockHorizontal
         else
         {
             return p_193383_4_ == EnumFacing.DOWN ? BlockFaceShape.UNDEFINED : BlockFaceShape.SOLID;
+        }
+    }
+    
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        super.breakBlock(worldIn, pos, state);
+    }
+    
+    public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player)
+    {
+        super.onBlockHarvested(worldIn, pos, state, player);
+    }
+    
+    @Nullable
+    private TileEntityVessel getTileEntity(World worldIn, BlockPos pos)
+    {
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        return tileentity instanceof TileEntityVessel ? (TileEntityVessel)tileentity : null;
+    }
+    
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+    {
+        TileEntity tileentity = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
+        int level = 0;
+        
+        if (tileentity instanceof TileEntityVessel)
+        {
+            TileEntityVessel tileentityvessel = (TileEntityVessel)tileentity;
+            level = tileentityvessel.getLevel();
+        }
+        
+        return state.withProperty(LEVEL, level);
+    }
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta)
+	{
+		return new TileEntityVessel();
+	}
+	
+	public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
+	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+        ItemStack itemstack = playerIn.getHeldItem(EnumHand.OFF_HAND);
+        TileEntityVessel tileentityvessel = this.getTileEntity(worldIn, pos);
+
+        if (tileentityvessel == null)
+        {
+            return false;
+        }
+        else if(itemstack.getItem() instanceof MDagger && tileentityvessel.getLevel() < 10)
+        {
+        	float daggerDamage = 1.5F + ((MDagger)itemstack.getItem()).getDamageVsEntity();
+        	playerIn.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), daggerDamage);
+        	itemstack.damageItem(1, playerIn);
+        	int levels = Math.round(daggerDamage);
+        	if(10 - tileentityvessel.getLevel() > levels)
+        		tileentityvessel.setLevel(this.getActualState(state, worldIn, pos).getValue(LEVEL) + 1);
+        	else
+        		tileentityvessel.setLevel(10);
+        	tileentityvessel.markDirty();
+            worldIn.notifyBlockUpdate(pos, state, state, 3);
+        	return true;
+        }
+        else
+        {
+        	return false;
         }
     }
 }

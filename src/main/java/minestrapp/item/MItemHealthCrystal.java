@@ -1,4 +1,4 @@
-package minestrapp.item.util;
+package minestrapp.item;
 
 import minestrapp.MTabs;
 import net.minecraft.block.Block;
@@ -29,9 +29,9 @@ public class MItemHealthCrystal extends Item{
         this.setCreativeTab(MTabs.minerals);
 	}
 
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-    	 ItemStack itemstack = playerIn.getHeldItem(handIn);
- 		
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
+    {
+    	ItemStack itemstack = playerIn.getHeldItem(handIn);	
  		playerIn.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("instant_health"), 1));
  		//It won't break unless they are spaced out, I'm sure there is a better way
  		itemstack.damageItem(1, playerIn);
@@ -39,9 +39,4 @@ public class MItemHealthCrystal extends Item{
 
     	return super.onItemRightClick(worldIn, playerIn, handIn);
     }
-
-    
-    
-
-	
 }

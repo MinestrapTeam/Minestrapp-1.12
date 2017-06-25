@@ -1,4 +1,4 @@
-package minestrapp.item.util;
+package minestrapp.item.tools;
 
 import com.google.common.collect.Multimap;
 
@@ -19,12 +19,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MItemDagger extends Item
+public class MDagger extends Item
 {
     private final float attackDamage;
     private final Item.ToolMaterial material;
 
-    public MItemDagger(Item.ToolMaterial material, String unlocalizedName)
+    public MDagger(Item.ToolMaterial material, String unlocalizedName)
     {
         this.material = material;
         this.maxStackSize = 1;

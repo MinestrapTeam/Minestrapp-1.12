@@ -2,6 +2,7 @@ package minestrapp.proxy;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import minestrapp.tileentity.TileEntityVessel;
 import minestrapp.worldgen.MOreGen;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -19,6 +20,8 @@ public class CommonProxy
 	public void init(FMLInitializationEvent event)
 	{
 		GameRegistry.registerWorldGenerator(new MOreGen(), 0);
+		
+		GameRegistry.registerTileEntity(TileEntityVessel.class, "TileEntityVessel");
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

@@ -29,6 +29,8 @@ tile.ore_tin_oceanstone.name=Tin Ore
 tile.ore_tin_deep_oceanstone.name=Tin Ore
 tile.ore_tin_stone.name=Tin Ore
 
+tile.ore_soul.name=Soul Ore
+
 ## Resource ##
 
 tile.block_copper.name=Block of Copper
@@ -71,11 +73,14 @@ item.copper_axe.name=Copper Axe
 item.copper_shovel.name=Copper Shovel
 item.copper_hoe.name=Copper Hoe
 
-## Swords ##
-item.copper_sword.name=Copper Sword
-
-## Dagger ##
+## Weapons ##
+item.gold_dagger.name=Gold Dagger
 item.wooden_dagger.name=Wooden Dagger
+item.stone_dagger.name=Stone Dagger
+item.copper_sword.name=Copper Sword
+item.copper_dagger.name=Copper Dagger
+item.iron_dagger.name=Iron Dagger
+item.diamond_dagger.name=Diamond Dagger
 
 
 

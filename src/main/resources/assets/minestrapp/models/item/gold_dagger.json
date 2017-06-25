@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "minestrapp:items/weapon/wooden_dagger"
+        "layer0": "minestrapp:items/weapon/gold_dagger"
     }
 }

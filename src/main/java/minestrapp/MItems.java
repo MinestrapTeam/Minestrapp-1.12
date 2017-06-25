@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.item.tools.MAxe;
-import minestrapp.item.util.MItemDagger;
+import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MFireSword;
-import minestrapp.item.util.MItemHealthCrystal;
+import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MHoe;
 import minestrapp.item.tools.MPickaxe;
@@ -31,19 +31,26 @@ public class MItems
 	
 	public static Item ingots;
 	
-	public static MPickaxe copper_pickaxe;
-	public static MAxe copper_axe;
-	public static MShovel copper_shovel;
-	public static MHoe copper_hoe;
-	public static MSword copper_sword;
-	public static MItemDagger wooden_dagger;
-	public static MItemHealthCrystal health_crystal;
-	public static MFireSword fire_sword;
+	public static Item copper_pickaxe;
+	public static Item copper_axe;
+	public static Item copper_shovel;
+	public static Item copper_hoe;
 	
-	public static MArmor tin_helm;
-	public static MArmor tin_chest;
-	public static MArmor tin_legs;
-	public static MArmor tin_feet;
+	public static Item gold_dagger;
+	public static Item wooden_dagger;
+	public static Item stone_dagger;
+	public static Item copper_sword;
+	public static Item copper_dagger;
+	public static Item iron_dagger;
+	public static Item fire_sword;
+	public static Item diamond_dagger;
+	
+	public static Item health_crystal;
+	
+	public static Item tin_helm;
+	public static Item tin_chest;
+	public static Item tin_legs;
+	public static Item tin_feet;
 	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
 	
@@ -54,13 +61,20 @@ public class MItems
 		register(ingots = new ItemMetaBase("m_ingot", 9).setCreativeTab(MTabs.minerals));
 		
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
-		register(fire_sword = new MFireSword("fire_sword"));
-		register(wooden_dagger = new MItemDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
+
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
 		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));
 		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));
 		register(copper_hoe = new MHoe(COPPER, "copper_hoe"));
+		
+		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
+		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
+		register(stone_dagger = new MDagger(Item.ToolMaterial.STONE, "stone_dagger"));
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
+		register(copper_dagger = new MDagger(COPPER, "copper_dagger"));
+		register(iron_dagger = new MDagger(Item.ToolMaterial.IRON, "iron_dagger"));
+		register(fire_sword = new MFireSword("fire_sword"));
+		register(diamond_dagger = new MDagger(Item.ToolMaterial.DIAMOND, "diamond_dagger"));
 		
 		register(tin_helm = new MArmor(TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));

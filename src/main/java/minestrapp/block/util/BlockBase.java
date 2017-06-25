@@ -6,12 +6,15 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 public class BlockBase extends Block
 {
 	public MapColor mapColor;
+	public static boolean overrideToolReqs = false;
 	public static boolean canDragonDestroy = true;
 	public static boolean canWitherDestroy = true;
 
@@ -62,5 +65,34 @@ public class BlockBase extends Block
             return this.canWitherDestroy;
         }
         return true;
+    }
+	
+	public BlockBase setToolOverride()
+	{
+		this.overrideToolReqs = true;
+		return this;
+	}
+	
+	public boolean canHarvestBlock(IBlockAccess world, BlockPos pos, EntityPlayer player)
+    {
+		if(this.overrideToolReqs == false)
+			return net.minecraftforge.common.ForgeHooks.canHarvestBlock(this, player, world, pos);
+		else
+		{
+			IBlockState state = world.getBlockState(pos);
+	        state = state.getBlock().getActualState(state, world, pos);
+	        ItemStack stack = player.getHeldItemMainhand();
+	        String tool = this.getHarvestTool(state);
+	        if (stack.isEmpty() || tool == null)
+	        {
+	            return player.canHarvestBlock(state);
+	        }
+	        int toolLevel = stack.getItem().getHarvestLevel(stack, tool, player, state);
+	        if (toolLevel < 0)
+	        {
+	            return player.canHarvestBlock(state);
+	        }
+	        return toolLevel >= this.getHarvestLevel(state);
+		}
     }
 }

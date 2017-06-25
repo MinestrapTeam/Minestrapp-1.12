@@ -8,6 +8,7 @@ import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStoneBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -16,8 +17,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -31,6 +34,7 @@ public class MBlocks
 	//Ore
 	public static Block ore_copper;
 	public static Block ore_tin;
+	public static Block ore_soul;
 	
 	//Resource
 	public static Block block_copper;
@@ -47,7 +51,7 @@ public class MBlocks
 		//Ore
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
 		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
-
+		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(Items.DIAMOND, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
 		
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
