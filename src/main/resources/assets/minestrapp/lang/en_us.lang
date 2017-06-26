@@ -56,6 +56,15 @@ item.m_ingot_5.name=Titanium Ingot
 item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
+item.gem_soul.name=Soul Gem
+
+## Tech Components ##
+item.m_tech_component_0.name=Reinforced Stick
+item.m_tech_component_1.name=Wing Segment
+item.m_tech_component_2.name=Propeller
+item.m_tech_component_3.name=Inert Chip
+item.m_tech_component_4.name=Technological Doodad
+item.m_tech_component_5.name=Advanced Tech Doodad
 
 ## S H I T T Y  M E M E S ##
 item.health_crystal.name='Health Crystal'
@@ -92,6 +101,7 @@ itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
 itemGroup.Ores=Minestrapp Ores
 itemGroup.ResourceBlocks=Minestrapp Resource Blocks
 itemGroup.Minerals=Minestrapp Minerals
+itemGroup.Ingredients=Minestrapp Crafting Ingredients
 itemGroup.UtilityBlocks=Minestrapp Utility Blocks
 itemGroup.Tools=Minestrapp Tools
 itemGroup.Combat=Minestrapp Combat

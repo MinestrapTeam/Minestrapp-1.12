@@ -1,0 +1,30 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "b b",
+        "igi",
+        "isi"
+    ],
+    "key": {        
+        "b": {
+            "item": "minecraft:bone_block",
+            "data": 0
+        },
+        "i": {
+            "item": "minestrapp:m_ingot",
+            "data": 3
+        },
+        "g": {
+            "item": "minestrapp:gem_soul",
+            "data": 0
+        },
+        "s": {
+            "item": "minecraft:skull",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:soulsteel_vessel",
+        "data": 0
+     }  
+}

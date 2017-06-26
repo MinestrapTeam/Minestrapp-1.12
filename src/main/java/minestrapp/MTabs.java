@@ -83,6 +83,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs ingredients = new CreativeTabs("Ingredients")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Ingredients";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.tech_components, 1, 4);
+		}
+	};
+	
 	public static CreativeTabs tools = new CreativeTabs("Tools")
 	{
 		@Override

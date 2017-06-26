@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "c c",
+        " b ",
+        " c "
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:m_ingot",
+            "data": 0
+        },
+        "b": {
+            "item": "minestrapp:m_ingot",
+            "data": 2
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 2
+     }  
+}

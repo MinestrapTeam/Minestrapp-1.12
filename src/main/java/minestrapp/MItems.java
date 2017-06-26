@@ -6,6 +6,7 @@ import java.util.List;
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MFireSword;
+import minestrapp.item.ItemSoulGem;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MHoe;
@@ -30,6 +31,9 @@ public class MItems
 	static List<Item> itemList = new ArrayList<Item>();
 	
 	public static Item ingots;
+	public static Item gem_soul;
+	
+	public static Item tech_components;
 	
 	public static Item copper_pickaxe;
 	public static Item copper_axe;
@@ -58,7 +62,11 @@ public class MItems
 	
 	public static void init()
 	{
+		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setCreativeTab(MTabs.minerals));
+		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad
+		register(tech_components = new ItemMetaBase("m_tech_component", 6).setCreativeTab(MTabs.ingredients));
+		register(gem_soul = new ItemSoulGem("gem_soul"));
 		
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
 

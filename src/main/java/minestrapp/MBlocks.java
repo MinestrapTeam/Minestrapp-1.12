@@ -51,7 +51,7 @@ public class MBlocks
 		//Ore
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
 		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
-		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(Items.DIAMOND, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
+		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(MItems.gem_soul, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
 		
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
