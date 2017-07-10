@@ -23,7 +23,6 @@ public class MOreGen implements IWorldGenerator
 	{
 		copper = new WorldGenMinable(MBlocks.ore_copper.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		tin = new WorldGenMinable(MBlocks.ore_tin.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
-
 	}
 	
 	private void runGenerator(WorldGenerator generator, World world, Random rand, int chunkX, int chunkZ, int spawnChance, int minHeight, int maxHeight)
@@ -46,7 +45,10 @@ public class MOreGen implements IWorldGenerator
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
 	{
 		if(world.provider.getDimension() == 0)
+		{
 			this.runGenerator(tin, world, random, chunkX, chunkZ, 16, 30, 110);
 			this.runGenerator(copper, world, random, chunkX, chunkZ, 16, 30, 110);
+			MStoneGen.generate(world, chunkX, chunkZ, random);
+		}
 	}
 }

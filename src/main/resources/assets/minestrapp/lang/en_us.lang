@@ -5,6 +5,17 @@
 tile.cold_sand_default.name=Cold Sand
 tile.cold_sand_red.name=Cold Red Sand
 
+## Stone ##
+tile.m_stone_red_rock.name=Red Rock
+tile.m_stone_deep_red_rock.name=Deep Red Rock
+tile.m_stone_deepstone.name=Deepstone
+tile.m_stone_coldstone.name=Coldstone
+tile.m_stone_deep_coldstone.name=Deep Coldstone
+tile.m_stone_icestone.name=Icestone
+tile.m_stone_glacierrock.name=Glacierrock
+tile.m_stone_oceanstone.name=Oceanstone
+tile.m_stone_deep_oceanstone.name=Reefstone
+
 ## Ores ##
 
 tile.ore_copper_red_rock.name=Copper Ore
@@ -98,6 +109,7 @@ item.diamond_dagger.name=Diamond Dagger
 ##### Creative Tabs #####
 
 itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
+itemGroup.Stone=Minestrapp Stone Blocks
 itemGroup.Ores=Minestrapp Ores
 itemGroup.ResourceBlocks=Minestrapp Resource Blocks
 itemGroup.Minerals=Minestrapp Minerals

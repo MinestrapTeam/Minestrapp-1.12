@@ -23,6 +23,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs stone = new CreativeTabs("Stone")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Stone";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(Item.getItemFromBlock(MBlocks.stone), 1, 2);
+		}
+	};
+	
 	public static CreativeTabs ore = new CreativeTabs("Ores")
 	{
 		@Override

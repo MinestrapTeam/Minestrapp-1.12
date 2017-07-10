@@ -6,10 +6,12 @@ import java.util.List;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
+import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStoneBase;
+import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -31,6 +33,9 @@ public class MBlocks
 	//Soil
 	public static Block cold_sand;
 	
+	//Stone
+	public static Block stone;
+	
 	//Ore
 	public static Block ore_copper;
 	public static Block ore_tin;
@@ -47,6 +52,9 @@ public class MBlocks
 	{
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.5F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
+		
+		//Stone
+		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
 		
 		//Ore
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
@@ -83,6 +91,10 @@ public class MBlocks
 		for(int i = 0 ; i < BlockColdSand.EnumType.values().length ; i++)
 		{
 			initModel(cold_sand, i, "cold_sand_" + BlockColdSand.EnumType.values()[i].getName());
+		}
+		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
+		{
+			initModel(stone, i, "m_stone_" + EnumStoneType.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{

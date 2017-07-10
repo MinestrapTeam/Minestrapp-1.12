@@ -1,0 +1,58 @@
+{
+    "variants": {
+        "variant=red_rock":[
+            { "model": "minestrapp:red_rock" },
+            { "model": "minestrapp:red_rock_mirrored" },
+            { "model": "minestrapp:red_rock", "y": 180 },
+            { "model": "minestrapp:red_rock_mirrored", "y": 180 }
+        ],
+        "variant=deep_red_rock":[
+            { "model": "minestrapp:deep_red_rock" },
+            { "model": "minestrapp:deep_red_rock_mirrored" },
+            { "model": "minestrapp:deep_red_rock", "y": 180 },
+            { "model": "minestrapp:deep_red_rock_mirrored", "y": 180 }
+        ],
+        "variant=deepstone":[
+            { "model": "minestrapp:deepstone" },
+            { "model": "minestrapp:deepstone_mirrored" },
+            { "model": "minestrapp:deepstone", "y": 180 },
+            { "model": "minestrapp:deepstone_mirrored", "y": 180 }
+        ],
+        "variant=coldstone":[
+            { "model": "minestrapp:coldstone" },
+            { "model": "minestrapp:coldstone_mirrored" },
+            { "model": "minestrapp:coldstone", "y": 180 },
+            { "model": "minestrapp:coldstone_mirrored", "y": 180 }
+        ],
+        "variant=deep_coldstone":[
+            { "model": "minestrapp:deep_coldstone" },
+            { "model": "minestrapp:deep_coldstone_mirrored" },
+            { "model": "minestrapp:deep_coldstone", "y": 180 },
+            { "model": "minestrapp:deep_coldstone_mirrored", "y": 180 }
+        ],
+        "variant=icestone":[
+            { "model": "minestrapp:icestone" },
+            { "model": "minestrapp:icestone_mirrored" },
+            { "model": "minestrapp:icestone", "y": 180 },
+            { "model": "minestrapp:icestone_mirrored", "y": 180 }
+        ],
+        "variant=glacierrock":[
+            { "model": "minestrapp:glacierrock" },
+            { "model": "minestrapp:glacierrock_mirrored" },
+            { "model": "minestrapp:glacierrock", "y": 180 },
+            { "model": "minestrapp:glacierrock_mirrored", "y": 180 }
+        ],
+        "variant=oceanstone":[
+            { "model": "minestrapp:oceanstone" },
+            { "model": "minestrapp:oceanstone_mirrored" },
+            { "model": "minestrapp:oceanstone", "y": 180 },
+            { "model": "minestrapp:oceanstone_mirrored", "y": 180 }
+        ],
+        "variant=deep_oceanstone":[
+            { "model": "minestrapp:deep_oceanstone" },
+            { "model": "minestrapp:deep_oceanstone_mirrored" },
+            { "model": "minestrapp:deep_oceanstone", "y": 180 },
+            { "model": "minestrapp:deep_oceanstone_mirrored", "y": 180 }
+        ]
+    }
+}
