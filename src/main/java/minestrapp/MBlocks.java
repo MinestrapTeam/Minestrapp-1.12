@@ -37,6 +37,7 @@ public class MBlocks
 	public static Block stone;
 	
 	//Ore
+	public static Block ore_coal;
 	public static Block ore_copper;
 	public static Block ore_tin;
 	public static Block ore_soul;
@@ -57,8 +58,9 @@ public class MBlocks
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
 		
 		//Ore
-		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
-		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
+		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
+		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
+		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
 		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(MItems.gem_soul, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
 		
 		//Resource
@@ -94,7 +96,8 @@ public class MBlocks
 		}
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{
-			initModel(stone, i, "m_stone_" + EnumStoneType.values()[i].getName());
+			initModel(ore_coal, i, "ore_coal_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(stone, i, "m_stone_" + EnumStoneTypeMOnly.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{

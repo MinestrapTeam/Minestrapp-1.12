@@ -2,8 +2,8 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "b b",
-        "igi",
-        "isi"
+        "gsg",
+        "iii"
     ],
     "key": {        
         "b": {

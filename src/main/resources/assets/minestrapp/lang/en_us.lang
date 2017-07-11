@@ -18,6 +18,16 @@ tile.m_stone_deep_oceanstone.name=Reefstone
 
 ## Ores ##
 
+tile.ore_coal_red_rock.name=Coal Ore
+tile.ore_coal_deep_red_rock.name=Coal Ore
+tile.ore_coal_deepstone.name=Coal Ore
+tile.ore_coal_coldstone.name=Coal Ore
+tile.ore_coal_deep_coldstone.name=Coal Ore
+tile.ore_coal_icestone.name=Coal Ore
+tile.ore_coal_glacierrock.name=Coal Ore
+tile.ore_coal_oceanstone.name=Coal Ore
+tile.ore_coal_deep_oceanstone.name=Coal Ore
+
 tile.ore_copper_red_rock.name=Copper Ore
 tile.ore_copper_deep_red_rock.name=Copper Ore
 tile.ore_copper_deepstone.name=Copper Ore

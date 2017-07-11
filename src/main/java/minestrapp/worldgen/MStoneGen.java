@@ -51,36 +51,9 @@ public class MStoneGen
 
 		        biome = Biome.getBiome(k);
 
-				if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
-				{
-					sType = EnumStoneTypeMOnly.OCEANSTONE;
-					dType = EnumStoneTypeMOnly.DEEP_OCEANSTONE;
-					deepStoneDepth = random.nextInt(5) + 20;
-				}
-				else if (biome.getTemperature() < 0.2F)
-				{
-					sType = EnumStoneTypeMOnly.ICESTONE;
-					dType = EnumStoneTypeMOnly.ICESTONE;
-					deepStoneDepth = random.nextInt(5) + 30;
-				}
-				else if (biome.getTemperature() < 0.4F)
-				{
-					sType = EnumStoneTypeMOnly.COLDSTONE;
-					dType = EnumStoneTypeMOnly.DEEP_COLDSTONE;
-					deepStoneDepth = random.nextInt(5) + 40;
-				}
-				else if (biome.getTemperature() >= 1.0F)
-				{
-					sType = EnumStoneTypeMOnly.RED_ROCK;
-					dType = EnumStoneTypeMOnly.DEEP_RED_ROCK;
-					deepStoneDepth = random.nextInt(5) + 25;
-				}
-				else
-				{
-					sType = null;
-					dType = EnumStoneTypeMOnly.DEEPSTONE;
-					deepStoneDepth = random.nextInt(5) + 35;
-				}
+				sType = MStoneGen.getStoneForBiome(biome);
+				dType = MStoneGen.getDeepStoneForBiome(biome);
+				deepStoneDepth = MStoneGen.getDeepstoneDepthForBiome(biome, random);
 
 				for (int y = 256; y >= 0; y--)
 				{
@@ -210,6 +183,78 @@ public class MStoneGen
 					}
 				}
 			}
+		}
+	}
+	
+	public static EnumStoneTypeMOnly getStoneForBiome(Biome biome)
+	{
+		if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+		{
+			return EnumStoneTypeMOnly.OCEANSTONE;
+		}
+		else if (biome.getTemperature() < 0.2F)
+		{
+			return EnumStoneTypeMOnly.ICESTONE;
+		}
+		else if (biome.getTemperature() < 0.4F)
+		{
+			return EnumStoneTypeMOnly.COLDSTONE;
+		}
+		else if (biome.getTemperature() >= 1.0F)
+		{
+			return EnumStoneTypeMOnly.RED_ROCK;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public static EnumStoneTypeMOnly getDeepStoneForBiome(Biome biome)
+	{
+		if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+		{
+			return EnumStoneTypeMOnly.DEEP_OCEANSTONE;
+		}
+		else if (biome.getTemperature() < 0.2F)
+		{
+			return EnumStoneTypeMOnly.GLACIERROCK;
+		}
+		else if (biome.getTemperature() < 0.4F)
+		{
+			return EnumStoneTypeMOnly.DEEP_COLDSTONE;
+		}
+		else if (biome.getTemperature() >= 1.0F)
+		{
+			return EnumStoneTypeMOnly.DEEP_RED_ROCK;
+		}
+		else
+		{
+			return EnumStoneTypeMOnly.DEEPSTONE;
+		}
+	}
+	
+	public static int getDeepstoneDepthForBiome(Biome biome, Random random)
+	{
+		if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+		{
+			return random.nextInt(5) + 20;
+		}
+		else if (biome.getTemperature() < 0.2F)
+		{
+			return random.nextInt(5) + 30;
+		}
+		else if (biome.getTemperature() < 0.4F)
+		{
+			return random.nextInt(5) + 40;
+		}
+		else if (biome.getTemperature() >= 1.0F)
+		{
+			return random.nextInt(5) + 25;
+		}
+		else
+		{
+			return random.nextInt(5) + 35;
 		}
 	}
 }
