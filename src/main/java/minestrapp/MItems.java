@@ -16,6 +16,7 @@ import minestrapp.item.tools.MSword;
 import minestrapp.item.util.IItemVariants;
 import minestrapp.item.util.ItemMetaBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -89,8 +90,11 @@ public class MItems
 		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
 		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
 	
-		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1,0), 0F);
-		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1,1), 0F);
+		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1, 0), 0.5F);
+		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
+		GameRegistry.addSmelting(MBlocks.ore_iron, new ItemStack(Items.IRON_INGOT), 0.7F);
+		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
 	}
 
 	

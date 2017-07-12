@@ -50,6 +50,26 @@ tile.ore_tin_oceanstone.name=Tin Ore
 tile.ore_tin_deep_oceanstone.name=Tin Ore
 tile.ore_tin_stone.name=Tin Ore
 
+tile.ore_iron_red_rock.name=Iron Ore
+tile.ore_iron_deep_red_rock.name=Iron Ore
+tile.ore_iron_deepstone.name=Iron Ore
+tile.ore_iron_coldstone.name=Iron Ore
+tile.ore_iron_deep_coldstone.name=Iron Ore
+tile.ore_iron_icestone.name=Iron Ore
+tile.ore_iron_glacierrock.name=Iron Ore
+tile.ore_iron_oceanstone.name=Iron Ore
+tile.ore_iron_deep_oceanstone.name=Iron Ore
+
+tile.ore_gold_red_rock.name=Gold Ore
+tile.ore_gold_deep_red_rock.name=Gold Ore
+tile.ore_gold_deepstone.name=Gold Ore
+tile.ore_gold_coldstone.name=Gold Ore
+tile.ore_gold_deep_coldstone.name=Gold Ore
+tile.ore_gold_icestone.name=Gold Ore
+tile.ore_gold_glacierrock.name=Gold Ore
+tile.ore_gold_oceanstone.name=Gold Ore
+tile.ore_gold_deep_oceanstone.name=Gold Ore
+
 tile.ore_soul.name=Soul Ore
 
 ## Resource ##

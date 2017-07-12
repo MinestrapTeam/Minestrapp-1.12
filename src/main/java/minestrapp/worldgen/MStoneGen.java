@@ -7,6 +7,7 @@ import minestrapp.block.BlockColdSand;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -72,6 +73,42 @@ public class MStoneGen
 							else if (sType != null)
 							{
 								chunk.setBlockState(subpos2, stone.withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+							}
+						}
+						else if(state.getBlock() instanceof BlockOre)
+						{
+							if(state == Blocks.COAL_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
+							else if(state == Blocks.IRON_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
+							else if(state == Blocks.GOLD_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
 							}
 						}
 						else if (biome.getTemperature() < 0.2F)
