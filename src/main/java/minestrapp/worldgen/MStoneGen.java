@@ -110,6 +110,39 @@ public class MStoneGen
 									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 								}
 							}
+							else if(state == Blocks.LAPIS_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
+							else if(state == Blocks.DIAMOND_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
+							else if(state == Blocks.EMERALD_ORE.getDefaultState())
+							{
+								if (y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
 						}
 						else if (biome.getTemperature() < 0.2F)
 						{

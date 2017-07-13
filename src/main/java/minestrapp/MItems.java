@@ -18,6 +18,7 @@ import minestrapp.item.util.ItemMetaBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -95,6 +96,9 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
 		GameRegistry.addSmelting(MBlocks.ore_iron, new ItemStack(Items.IRON_INGOT), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
+		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
+		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
+		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
 	}
 
 	

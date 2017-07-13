@@ -70,6 +70,36 @@ tile.ore_gold_glacierrock.name=Gold Ore
 tile.ore_gold_oceanstone.name=Gold Ore
 tile.ore_gold_deep_oceanstone.name=Gold Ore
 
+tile.ore_lapis_red_rock.name=Lapis Lazuli Ore
+tile.ore_lapis_deep_red_rock.name=Lapis Lazuli Ore
+tile.ore_lapis_deepstone.name=Lapis Lazuli Ore
+tile.ore_lapis_coldstone.name=Lapis Lazuli Ore
+tile.ore_lapis_deep_coldstone.name=Lapis Lazuli Ore
+tile.ore_lapis_icestone.name=Lapis Lazuli Ore
+tile.ore_lapis_glacierrock.name=Lapis Lazuli Ore
+tile.ore_lapis_oceanstone.name=Lapis Lazuli Ore
+tile.ore_lapis_deep_oceanstone.name=Lapis Lazuli Ore
+
+tile.ore_diamond_red_rock.name=Diamond Ore
+tile.ore_diamond_deep_red_rock.name=Diamond Ore
+tile.ore_diamond_deepstone.name=Diamond Ore
+tile.ore_diamond_coldstone.name=Diamond Ore
+tile.ore_diamond_deep_coldstone.name=Diamond Ore
+tile.ore_diamond_icestone.name=Diamond Ore
+tile.ore_diamond_glacierrock.name=Diamond Ore
+tile.ore_diamond_oceanstone.name=Diamond Ore
+tile.ore_diamond_deep_oceanstone.name=Diamond Ore
+
+tile.ore_emerald_red_rock.name=Emerald Ore
+tile.ore_emerald_deep_red_rock.name=Emerald Ore
+tile.ore_emerald_deepstone.name=Emerald Ore
+tile.ore_emerald_coldstone.name=Emerald Ore
+tile.ore_emerald_deep_coldstone.name=Emerald Ore
+tile.ore_emerald_icestone.name=Emerald Ore
+tile.ore_emerald_glacierrock.name=Emerald Ore
+tile.ore_emerald_oceanstone.name=Emerald Ore
+tile.ore_emerald_deep_oceanstone.name=Emerald Ore
+
 tile.ore_soul.name=Soul Ore
 
 ## Resource ##
