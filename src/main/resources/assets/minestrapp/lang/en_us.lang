@@ -16,6 +16,16 @@ tile.m_stone_glacierrock.name=Glacierrock
 tile.m_stone_oceanstone.name=Oceanstone
 tile.m_stone_deep_oceanstone.name=Reefstone
 
+tile.m_cobblestone_red_rock.name=Red Cobblestone
+tile.m_cobblestone_deep_red_rock.name=Deep Red Cobblestone
+tile.m_cobblestone_deepstone.name=Deep Cobblestone
+tile.m_cobblestone_coldstone.name=Cold Cobblestone
+tile.m_cobblestone_deep_coldstone.name=Deep Cold Cobblestone
+tile.m_cobblestone_icestone.name=Cracked Icestone
+tile.m_cobblestone_glacierrock.name=Cracked Glacierrock
+tile.m_cobblestone_oceanstone.name=Cobbled Oceanstone
+tile.m_cobblestone_deep_oceanstone.name=Cobbled Reefstone
+
 ## Ores ##
 
 tile.ore_coal_red_rock.name=Coal Ore
@@ -79,6 +89,16 @@ tile.ore_lapis_icestone.name=Lapis Lazuli Ore
 tile.ore_lapis_glacierrock.name=Lapis Lazuli Ore
 tile.ore_lapis_oceanstone.name=Lapis Lazuli Ore
 tile.ore_lapis_deep_oceanstone.name=Lapis Lazuli Ore
+
+tile.ore_redstone_red_rock.name=Redstone Ore
+tile.ore_redstone_deep_red_rock.name=Redstone Ore
+tile.ore_redstone_deepstone.name=Redstone Ore
+tile.ore_redstone_coldstone.name=Redstone Ore
+tile.ore_redstone_deep_coldstone.name=Redstone Ore
+tile.ore_redstone_icestone.name=Redstone Ore
+tile.ore_redstone_glacierrock.name=Redstone Ore
+tile.ore_redstone_oceanstone.name=Redstone Ore
+tile.ore_redstone_deep_oceanstone.name=Redstone Ore
 
 tile.ore_diamond_red_rock.name=Diamond Ore
 tile.ore_diamond_deep_red_rock.name=Diamond Ore

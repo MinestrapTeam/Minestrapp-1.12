@@ -6,6 +6,7 @@ import java.util.List;
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MFireSword;
+import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.item.ItemSoulGem;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
@@ -97,8 +98,14 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_iron, new ItemStack(Items.IRON_INGOT), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
+		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
+		
+		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
+		{
+			GameRegistry.addSmelting(new ItemStack(MBlocks.cobblestone, 1, i), new ItemStack(MBlocks.stone, 1, i), 0.1F);
+		}
 	}
 
 	

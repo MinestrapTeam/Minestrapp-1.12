@@ -19,13 +19,13 @@ import net.minecraft.world.World;
 
 public class BlockItemDropBase extends BlockBase
 {
-	public static Item dropItem;
-	public static int baseQuantity;
-	public static int quantityVariance;
-	public static int dropMeta;
-	public static int xpMin;
-	public static int xpMax;
-	public static boolean silkHarvest;
+	public Item dropItem;
+	public int baseQuantity;
+	public int quantityVariance;
+	public int dropMeta;
+	public int xpMin;
+	public int xpMax;
+	public boolean silkHarvest;
 	
 	public BlockItemDropBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel, ItemStack itemDrop, int variance, int xpMin, int xpMax, boolean silkHarvest)
 	{

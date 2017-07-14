@@ -39,29 +39,36 @@ public class BlockStoneBaseMOnly extends Block implements IMetaBlockName
 {
 public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<EnumStoneTypeMOnly>create("variant", EnumStoneTypeMOnly.class);
 	
-	public static boolean doesDropItem;
-	public static Item dropItem;
-	public static int baseQuantity;
-	public static int quantityVariance;
-	public static int dropMeta;
-	public static int xpMin;
-	public static int xpMax;
-	public static boolean silkHarvest;
+	public boolean doesDropItem;
+	public Item dropItem;
+	public int baseQuantity;
+	public int quantityVariance;
+	public int dropMeta;
+	public int xpMin;
+	public int xpMax;
+	public boolean silkHarvest;
+	public boolean fortune;
+	public boolean matchMeta;
 
 	public BlockStoneBaseMOnly(String name, Material material, SoundType soundType, float hardness, String tool, int harvestLevel)
 	{
 		super(material);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumStoneTypeMOnly.DEEPSTONE));
-		this.setUnlocalizedName(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+		if(name != null)
+		{
+			this.setUnlocalizedName(name);
+			this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+		}
 		this.setSoundType(soundType);
 		this.setHardness(hardness);
 		this.setHarvestLevel(tool, harvestLevel);
 		this.doesDropItem = false;
 		this.silkHarvest = true;
+		this.fortune = false;
+		this.matchMeta = false;
 	}
 	
-	public Block setDropsItem(ItemStack itemDrop, int variance, int xpMin, int xpMax, boolean silkHarvest)
+	public Block setDropsItem(ItemStack itemDrop, int variance, int xpMin, int xpMax, boolean silkHarvest, boolean fortune, boolean matchMeta)
 	{
 		this.doesDropItem = true;
 		this.dropItem = itemDrop.getItem();
@@ -71,6 +78,8 @@ public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<Enu
 		this.xpMin = xpMin;
 		this.xpMax = xpMax;
 		this.silkHarvest = silkHarvest;
+		this.fortune = fortune;
+		this.matchMeta = matchMeta;
 		return this;
 	}
 
@@ -92,7 +101,7 @@ public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<Enu
 	
 	public int quantityDroppedWithBonus(int fortune, Random random)
     {
-        if(this.doesDropItem == true)
+        if(this.doesDropItem == true && this.fortune == true)
         	return this.quantityDropped(random) + random.nextInt(fortune + 1);
         else
         	return super.quantityDroppedWithBonus(fortune, random);
@@ -218,9 +227,20 @@ public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<Enu
             if (item != Items.AIR)
             {
             	if(this.doesDropItem == true)
-            		ret.add(new ItemStack(item, 1, this.dropMeta));
+            	{
+            		if(this.matchMeta == true)
+            		{
+            			ret.add(new ItemStack(item, 1, this.damageDropped(state)));
+            		}
+            		else
+            		{
+            			ret.add(new ItemStack(item, 1, this.dropMeta));
+            		}
+            	}
             	else
+            	{
             		ret.add(new ItemStack(item, 1, this.damageDropped(state)));
+            	}
             }
         }
         return ret;

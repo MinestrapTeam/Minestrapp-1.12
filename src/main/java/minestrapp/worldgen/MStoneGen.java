@@ -8,6 +8,7 @@ import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
+import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -144,6 +145,28 @@ public class MStoneGen
 								}
 							}
 						}
+						else if(state.getBlock() instanceof BlockRedstoneOre)
+						{
+							if (y < deepStoneDepth)
+							{
+								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+							}
+							else if (sType != null)
+							{
+								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+							}
+						}
+//						else if (state == Blocks.COBBLESTONE.getDefaultState())
+//						{
+//							if (y < deepStoneDepth)
+//							{
+//								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//							}
+//							else if (sType != null)
+//							{
+//								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//							}
+//						}
 						else if (biome.getTemperature() < 0.2F)
 						{
 							if (state == Blocks.SAND.getDefaultState())
@@ -151,30 +174,6 @@ public class MStoneGen
 							else if (state == Blocks.SAND.getStateFromMeta(1))
 								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.RED_SAND));
 						}
-//						else if (block instanceof BlockOre || block instanceof MBlockOre && block != MBlocks.desert_quartz
-//							         || block instanceof BlockPlutoniumOre || block instanceof BlockUraniumOre
-//							         || block instanceof BlockRedstoneOre)
-//						{
-//							Block oreToReplace = this.getOreToReplace(block);
-//							if (!oreReplacements.containsKey(block))
-//							{
-//								oreMeta = 0;
-//								deepOreMeta = 0;
-//							}
-//	
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, oreToReplace.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, oreToReplace.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
 //						else if (block == Blocks.cobblestone)
 //						{
 //							if (y < deepStoneDepth)
