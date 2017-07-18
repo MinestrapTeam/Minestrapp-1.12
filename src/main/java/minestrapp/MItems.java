@@ -42,15 +42,39 @@ public class MItems
 	public static Item copper_axe;
 	public static Item copper_shovel;
 	public static Item copper_hoe;
+	public static Item bronze_pickaxe;
+	public static Item bronze_axe;
+	public static Item bronze_shovel;
+	public static Item bronze_hoe;
+	public static Item steel_pickaxe;
+	public static Item steel_axe;
+	public static Item steel_shovel;
+	public static Item steel_hoe;
+	public static Item torite_pickaxe;
+	public static Item torite_axe;
+	public static Item torite_shovel;
+	public static Item torite_hoe;
+	public static Item titanium_pickaxe;
+	public static Item titanium_axe;
+	public static Item titanium_shovel;
+	public static Item titanium_hoe;
 	
 	public static Item gold_dagger;
 	public static Item wooden_dagger;
 	public static Item stone_dagger;
 	public static Item copper_sword;
 	public static Item copper_dagger;
+	public static Item bronze_sword;
+	public static Item bronze_dagger;
+	public static Item steel_sword;
+	public static Item steel_dagger;
+	public static Item torite_sword;
+	public static Item torite_dagger;
 	public static Item iron_dagger;
 	public static Item fire_sword;
 	public static Item diamond_dagger;
+	public static Item titanium_sword;
+	public static Item titanium_dagger;
 	
 	public static Item health_crystal;
 	
@@ -59,9 +83,13 @@ public class MItems
 	public static Item tin_legs;
 	public static Item tin_feet;
 	
-	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 2, 200, 5F, 1.5F, 17);
+	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17).setRepairItem(new ItemStack(ingots, 1, 0));
+	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13).setRepairItem(new ItemStack(ingots, 1, 2));
+	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":steel", 2, 500, 7.5F, 2.5F, 19).setRepairItem(new ItemStack(ingots, 1, 3));
+	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":torite", 2, 1200, 7F, 3.5F, 30).setRepairItem(new ItemStack(ingots, 1, 4));
+	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5).setRepairItem(new ItemStack(ingots, 1, 5));
 	
-	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 12, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F);
+	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F).setRepairItem(new ItemStack(ingots, 1, 1));
 	
 	public static void init()
 	{
@@ -77,6 +105,22 @@ public class MItems
 		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));
 		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));
 		register(copper_hoe = new MHoe(COPPER, "copper_hoe"));
+		register(bronze_pickaxe = new MPickaxe(BRONZE, "bronze_pickaxe"));
+		register(bronze_axe = new MAxe(BRONZE, "bronze_axe", 8.0F, -3.15F));
+		register(bronze_shovel = new MShovel(BRONZE, "bronze_shovel"));
+		register(bronze_hoe = new MHoe(BRONZE, "bronze_hoe"));
+		register(steel_pickaxe = new MPickaxe(STEEL, "steel_pickaxe"));
+		register(steel_axe = new MAxe(STEEL, "steel_axe", 8.0F, -3.05F));
+		register(steel_shovel = new MShovel(STEEL, "steel_shovel"));
+		register(steel_hoe = new MHoe(STEEL, "steel_hoe"));
+		register(torite_pickaxe = new MPickaxe(TORITE, "torite_pickaxe"));
+		register(torite_axe = new MAxe(TORITE, "torite_axe", 9.0F, -3.2F));
+		register(torite_shovel = new MShovel(TORITE, "torite_shovel"));
+		register(torite_hoe = new MHoe(TORITE, "torite_hoe"));
+		register(titanium_pickaxe = new MPickaxe(TITANIUM, "titanium_pickaxe"));
+		register(titanium_axe = new MAxe(TITANIUM, "titanium_axe", 16.0F, -3.9F));
+		register(titanium_shovel = new MShovel(TITANIUM, "titanium_shovel"));
+		register(titanium_hoe = new MHoe(TITANIUM, "titanium_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
 		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
@@ -84,8 +128,16 @@ public class MItems
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
 		register(copper_dagger = new MDagger(COPPER, "copper_dagger"));
 		register(iron_dagger = new MDagger(Item.ToolMaterial.IRON, "iron_dagger"));
+		register(bronze_sword = new MSword(BRONZE, "bronze_sword"));
+		register(bronze_dagger = new MDagger(BRONZE, "bronze_dagger"));
+		register(steel_sword = new MSword(STEEL, "steel_sword"));
+		register(steel_dagger = new MDagger(STEEL, "steel_dagger"));
+		register(torite_sword = new MSword(TORITE, "torite_sword"));
+		register(torite_dagger = new MDagger(TORITE, "torite_dagger"));
 		register(fire_sword = new MFireSword("fire_sword"));
 		register(diamond_dagger = new MDagger(Item.ToolMaterial.DIAMOND, "diamond_dagger"));
+		register(titanium_sword = new MSword(TITANIUM, "titanium_sword"));
+		register(titanium_dagger = new MDagger(TITANIUM, "titanium_dagger"));
 		
 		register(tin_helm = new MArmor(TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));

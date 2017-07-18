@@ -126,6 +126,10 @@ tile.ore_soul.name=Soul Ore
 
 tile.block_copper.name=Block of Copper
 tile.block_tin.name=Block of Tin
+tile.block_bronze.name=Block of Bronze
+tile.block_steel.name=Block of Steel
+tile.block_torite.name=Block of Torite
+tile.block_titanium.name=Block of Titanium
 
 ## Utility ##
 
@@ -172,6 +176,22 @@ item.copper_pickaxe.name=Copper Pickaxe
 item.copper_axe.name=Copper Axe
 item.copper_shovel.name=Copper Shovel
 item.copper_hoe.name=Copper Hoe
+item.bronze_pickaxe.name=Bronze Pickaxe
+item.bronze_axe.name=Bronze Axe
+item.bronze_shovel.name=Bronze Shovel
+item.bronze_hoe.name=Bronze Hoe
+item.steel_pickaxe.name=Steel Pickaxe
+item.steel_axe.name=Steel Axe
+item.steel_shovel.name=Steel Shovel
+item.steel_hoe.name=Steel Hoe
+item.torite_pickaxe.name=Torite Pickaxe
+item.torite_axe.name=Torite Axe
+item.torite_shovel.name=Torite Shovel
+item.torite_hoe.name=Torite Hoe
+item.titanium_pickaxe.name=Titanium Pickaxe
+item.titanium_axe.name=Titanium Axe
+item.titanium_shovel.name=Titanium Shovel
+item.titanium_hoe.name=Titanium Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
@@ -179,8 +199,16 @@ item.wooden_dagger.name=Wooden Dagger
 item.stone_dagger.name=Stone Dagger
 item.copper_sword.name=Copper Sword
 item.copper_dagger.name=Copper Dagger
+item.bronze_sword.name=Bronze Sword
+item.bronze_dagger.name=Bronze Dagger
+item.steel_sword.name=Steel Sword
+item.steel_dagger.name=Steel Dagger
+item.torite_sword.name=Torite Sword
+item.torite_dagger.name=Torite Dagger
 item.iron_dagger.name=Iron Dagger
 item.diamond_dagger.name=Diamond Dagger
+item.titanium_sword.name=Titanium Sword
+item.titanium_dagger.name=Titanium Dagger
 
 
 

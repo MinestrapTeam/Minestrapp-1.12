@@ -55,6 +55,13 @@ public class MBlocks
 	//Resource
 	public static Block block_copper;
 	public static Block block_tin;
+	public static Block block_bronze;
+	public static Block block_steel;
+	public static Block block_torite;
+	public static Block block_titanium;
+	public static Block block_glacierite;
+	public static Block block_blazium;
+	public static Block block_dimensium;
 	
 	//Utility
 	public static Block soulsteel_vessel;
@@ -83,7 +90,11 @@ public class MBlocks
 		
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
+		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.field_193565_Q, SoundType.METAL, 6F, "pickaxe", 1).setResistance(15F).setCreativeTab(MTabs.resource));
+		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.field_193564_P, SoundType.METAL, 5F, "pickaxe", 1).setResistance(12F).setCreativeTab(MTabs.resource));
+		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));

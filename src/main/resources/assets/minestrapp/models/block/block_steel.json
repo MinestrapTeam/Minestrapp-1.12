@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/resource/block_steel_bottom",
+        "top": "minestrapp:blocks/resource/block_steel_top",
+        "side": "minestrapp:blocks/resource/block_steel_side"
+    }
+}

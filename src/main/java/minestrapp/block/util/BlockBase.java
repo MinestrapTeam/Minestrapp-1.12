@@ -49,7 +49,7 @@ public class BlockBase extends Block
 		return this;
 	}
 	
-	public MapColor getMapColor(IBlockState state)
+	public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos)
     {
         return mapColor;
     }
