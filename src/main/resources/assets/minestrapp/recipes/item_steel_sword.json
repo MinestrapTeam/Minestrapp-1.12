@@ -1,0 +1,21 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "i"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:stick"
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minestrapp:steel_sword",
+        "data": 0
+     }  
+}

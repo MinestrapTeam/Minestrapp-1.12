@@ -17,6 +17,7 @@ import minestrapp.item.tools.MSword;
 import minestrapp.item.util.IItemVariants;
 import minestrapp.item.util.ItemMetaBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumDyeColor;
@@ -144,6 +145,11 @@ public class MItems
 		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
 		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
 	
+		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 1), new ItemStack(Blocks.DIRT, 1, 1), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 2), new ItemStack(Blocks.DIRT, 1, 2), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1, 0), 0.5F);
 		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
@@ -151,8 +157,11 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
 		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
+		GameRegistry.addSmelting(MBlocks.ore_torite, new ItemStack(ingots, 1, 4), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
+		GameRegistry.addSmelting(MBlocks.ore_titanium, new ItemStack(ingots, 1, 5), 4F);
+		GameRegistry.addSmelting(MBlocks.ore_soul, new ItemStack(gem_soul), 3F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{

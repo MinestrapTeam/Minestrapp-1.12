@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "i ",
+        "i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 5
+        }
+     },
+     "result": {
+        "item": "minestrapp:titanium_hoe",
+        "data": 0
+     }  
+}

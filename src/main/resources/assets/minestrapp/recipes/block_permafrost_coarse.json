@@ -1,0 +1,21 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "pg",
+        "gp"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:permafrost",
+            "data": 0
+        },
+        "g": {
+            "item": "minecraft:gravel"
+        }
+     },
+     "result": {
+        "item": "minestrapp:permafrost",
+        "count": 4,
+        "data": 1
+     }  
+}

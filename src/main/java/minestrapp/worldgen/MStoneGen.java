@@ -4,11 +4,15 @@ import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockMDirt;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirt;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockRedstoneOre;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -169,86 +173,24 @@ public class MStoneGen
 //						}
 						else if (biome.getTemperature() < 0.2F)
 						{
-							if (state == Blocks.SAND.getDefaultState())
-								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.SAND));
-							else if (state == Blocks.SAND.getStateFromMeta(1))
-								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.RED_SAND));
+							if (state.getBlock() == Blocks.DIRT)
+								chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
+							else if (state.getBlock() == Blocks.SAND)
+								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.byMetadata(((BlockSand.EnumType)state.getValue(BlockSand.VARIANT)).getMetadata())));
+							else if (state.getBlock() == Blocks.GRASS)
+							{
+								boolean leaves = false;
+								for (i = subpos2.getY() ; i < (subpos2.getY() + 5) ; i++)
+								{
+									if(world.getBlockState(new BlockPos(subpos2.getX(), i, subpos2.getZ())).getBlock() instanceof BlockLeaves)
+										leaves = true;
+								}
+								if (leaves)
+									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
+								else
+									chunk.setBlockState(subpos2, MBlocks.lichen.getDefaultState());
+							}
 						}
-//						else if (block == Blocks.cobblestone)
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.biome_cobble.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, MBlocks.biome_cobble.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
-//						else if (block == Blocks.mossy_cobblestone)
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.mossy.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, MBlocks.mossy.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
-//						else if (block == Blocks.stonebrick.getStateFromMeta(0))
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.biome_bricks.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, MBlocks.biome_bricks.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
-//						else if (block == Blocks.stonebrick.getStateFromMeta(1))
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.cracked_bricks.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, MBlocks.cracked_bricks.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
-//						else if (block == Blocks.stonebrick.getStateFromMeta(2))
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.mossy_bricks.getStateFromMeta(deepOreMeta));
-//							}
-//							else
-//							{
-//								if (biome.temperature >= 1.0F || biome.temperature < 0.4F
-//									    || biome.getTempCategory() == TempCategory.OCEAN)
-//								{
-//									chunk.setBlockState(subpos2, MBlocks.mossy_bricks.getStateFromMeta(oreMeta));
-//								}
-//							}
-//						}
 					}
 				}
 			}

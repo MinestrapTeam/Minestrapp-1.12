@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/soil/permafrost",
+        "top": "minestrapp:blocks/soil/podzol_permafrost_top",
+        "side": "minestrapp:blocks/soil/podzol_permafrost_side"
+    }
+}

@@ -1,0 +1,21 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "i",
+        "i"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:stick"
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 2
+        }
+     },
+     "result": {
+        "item": "minestrapp:bronze_shovel",
+        "data": 0
+     }  
+}

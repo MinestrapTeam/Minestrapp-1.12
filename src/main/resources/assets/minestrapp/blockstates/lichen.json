@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "minestrapp:lichen_permafrost" },
+            { "model": "minestrapp:lichen_permafrost", "y": 90 },
+            { "model": "minestrapp:lichen_permafrost", "y": 180 },
+            { "model": "minestrapp:lichen_permafrost", "y": 270 }
+        ],
+        "snowy=true": [
+            { "model": "minestrapp:snowy_permafrost" }
+        ]
+    }
+}

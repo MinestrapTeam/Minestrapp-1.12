@@ -14,7 +14,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeJungle;
 import net.minecraft.world.biome.BiomeProvider;
+import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -26,11 +28,17 @@ public class MOreGen implements IWorldGenerator
 {
 	private WorldGenerator copper;
 	private WorldGenerator tin;
+	private WorldGenerator torite;
+	private WorldGenerator titanium;
+	private WorldGenerator soul;
 	
 	public MOreGen()
 	{
 		copper = new MGenMinable(MBlocks.ore_copper.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		tin = new MGenMinable(MBlocks.ore_tin.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
+		torite = new MGenMinable(MBlocks.ore_torite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 4);
+		titanium = new MGenMinable(MBlocks.ore_titanium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 3);
+		soul = new MGenMinable(MBlocks.ore_soul.getDefaultState(), 3, new MMinablePredicate(Blocks.SOUL_SAND.getDefaultState()));
 	}
 	
 	private void runGenerator(WorldGenerator generator, World world, Random rand, int chunkX, int chunkZ, int spawnChance, int minHeight, int maxHeight, boolean biomeSpecific)
@@ -40,7 +48,7 @@ public class MOreGen implements IWorldGenerator
 			throw new IllegalArgumentException("The Ore Height Params are Fucked, God I'm Bad at Math.");
 		}
 		int heightDiff = maxHeight - minHeight + 1;
-		if(biomeSpecific = true && generator instanceof MGenMinable)
+		if(biomeSpecific == true && generator instanceof MGenMinable)
 		{
 			Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
 			BiomeProvider chunkManager = world.getBiomeProvider();
@@ -102,9 +110,20 @@ public class MOreGen implements IWorldGenerator
 	{
 		if(world.provider.getDimension() == 0)
 		{
-			this.runGenerator(tin, world, random, chunkX, chunkZ, 16, 30, 110, true);
 			this.runGenerator(copper, world, random, chunkX, chunkZ, 16, 30, 110, true);
+			this.runGenerator(tin, world, random, chunkX, chunkZ, 16, 30, 110, true);
+			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
+			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
+			if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
+			{
+				this.runGenerator(torite, world, random, chunkX, chunkZ, 6, 0, 36, true);
+			}
 			MStoneGen.generate(world, chunkX, chunkZ, random);
+		}
+		
+		else if(world.provider.getDimension() == -1)
+		{
+			this.runGenerator(soul, world, random, chunkX, chunkZ, 24, 20, 100, false);
 		}
 	}
 }

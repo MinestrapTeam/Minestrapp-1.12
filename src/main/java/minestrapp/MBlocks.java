@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockMDirt;
+import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
@@ -34,6 +36,8 @@ public class MBlocks
 	
 	//Soil
 	public static Block cold_sand;
+	public static BlockMDirt permafrost;
+	public static Block lichen;
 	
 	//Stone
 	public static Block stone;
@@ -48,8 +52,10 @@ public class MBlocks
 	public static Block ore_redstone;
 	public static Block ore_redstone_lit;
 	public static Block ore_lapis;
+	public static Block ore_torite;
 	public static Block ore_diamond;
 	public static Block ore_emerald;
+	public static Block ore_titanium;
 	public static Block ore_soul;
 	
 	//Resource
@@ -70,6 +76,8 @@ public class MBlocks
 	{
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.5F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
+		register(permafrost = new BlockMDirt("permafrost", MapColor.LIGHT_BLUE, SoundType.GROUND, 0.7F, 0), new ItemBlockMultistate(permafrost));
+		register(lichen = new BlockMGrass("lichen", MapColor.SAND, SoundType.PLANT, 0.8F, 0, permafrost));
 		
 		//Stone
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
@@ -84,8 +92,10 @@ public class MBlocks
 		register(ore_lapis = new BlockStoneBaseMOnly("ore_lapis", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setDropsItem(new ItemStack(Items.DYE, 4, EnumDyeColor.BLUE.getDyeDamage()), 4, 2, 5, true, true,false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_lapis));
 		register(ore_redstone = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_redstone));
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
+		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
+		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
 		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(MItems.gem_soul, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
 		
 		//Resource
@@ -123,6 +133,10 @@ public class MBlocks
 		{
 			initModel(cold_sand, i, "cold_sand_" + BlockColdSand.EnumType.values()[i].getName());
 		}
+		for(int i = 0 ; i < BlockMDirt.DirtType.values().length ; i++)
+		{
+			initModel(permafrost, i, "permafrost_" + BlockMDirt.DirtType.values()[i].getName());
+		}
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{
 			initModel(ore_coal, i, "ore_coal_" + EnumStoneTypeMOnly.values()[i].getName());
@@ -141,6 +155,8 @@ public class MBlocks
 		{
 			initModel(ore_copper, i, "ore_copper_" + EnumStoneType.values()[i].getName());
 			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
+			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
+			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
 		}
 	}
 	

@@ -4,6 +4,10 @@
 
 tile.cold_sand_default.name=Cold Sand
 tile.cold_sand_red.name=Cold Red Sand
+tile.permafrost_default.name=Permafrost
+tile.permafrost_coarse.name=Coarse Permafrost
+tile.permafrost_podzol.name=Frozen Podzol
+tile.lichen.name=Lichen
 
 ## Stone ##
 tile.m_stone_red_rock.name=Red Rock
@@ -100,6 +104,17 @@ tile.ore_redstone_glacierrock.name=Redstone Ore
 tile.ore_redstone_oceanstone.name=Redstone Ore
 tile.ore_redstone_deep_oceanstone.name=Redstone Ore
 
+tile.ore_torite_red_rock.name=Torite Ore
+tile.ore_torite_deep_red_rock.name=Torite Ore
+tile.ore_torite_deepstone.name=Torite Ore
+tile.ore_torite_coldstone.name=Torite Ore
+tile.ore_torite_deep_coldstone.name=Torite Ore
+tile.ore_torite_icestone.name=Torite Ore
+tile.ore_torite_glacierrock.name=Torite Ore
+tile.ore_torite_oceanstone.name=Torite Ore
+tile.ore_torite_deep_oceanstone.name=Torite Ore
+tile.ore_torite_stone.name=Torite Ore
+
 tile.ore_diamond_red_rock.name=Diamond Ore
 tile.ore_diamond_deep_red_rock.name=Diamond Ore
 tile.ore_diamond_deepstone.name=Diamond Ore
@@ -119,6 +134,17 @@ tile.ore_emerald_icestone.name=Emerald Ore
 tile.ore_emerald_glacierrock.name=Emerald Ore
 tile.ore_emerald_oceanstone.name=Emerald Ore
 tile.ore_emerald_deep_oceanstone.name=Emerald Ore
+
+tile.ore_titanium_red_rock.name=Titanium Ore
+tile.ore_titanium_deep_red_rock.name=Titanium Ore
+tile.ore_titanium_deepstone.name=Titanium Ore
+tile.ore_titanium_coldstone.name=Titanium Ore
+tile.ore_titanium_deep_coldstone.name=Titanium Ore
+tile.ore_titanium_icestone.name=Titanium Ore
+tile.ore_titanium_glacierrock.name=Titanium Ore
+tile.ore_titanium_oceanstone.name=Titanium Ore
+tile.ore_titanium_deep_oceanstone.name=Titanium Ore
+tile.ore_titanium_stone.name=Titanium Ore
 
 tile.ore_soul.name=Soul Ore
 

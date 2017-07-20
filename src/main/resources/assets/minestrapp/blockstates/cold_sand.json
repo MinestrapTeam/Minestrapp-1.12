@@ -1,10 +1,16 @@
 {
     "variants": {
         "variant=default": [
-            { "model": "minestrapp:cold_sand" }
+            { "model": "minestrapp:cold_sand" },
+            { "model": "minestrapp:cold_sand", "y": 90 },
+            { "model": "minestrapp:cold_sand", "y": 180 },
+            { "model": "minestrapp:cold_sand", "y": 270 }
         ],
         "variant=red": [
-            { "model": "minestrapp:cold_red_sand" }
+            { "model": "minestrapp:cold_red_sand" },
+            { "model": "minestrapp:cold_red_sand", "y": 90 },
+            { "model": "minestrapp:cold_red_sand", "y": 180 },
+            { "model": "minestrapp:cold_red_sand", "y": 270 }
         ]
     }
 }

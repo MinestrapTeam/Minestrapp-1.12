@@ -19,12 +19,12 @@ public class MGenMinable extends WorldGenMinable
         this.predicate = new MMinablePredicate(state);
     }
 
-    public MGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> p_i45631_3_)
+    public MGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> predicate)
     {
-        super(state, blockCount, p_i45631_3_);
+        super(state, blockCount, predicate);
         this.oreBlock = state;
         this.blockCount = blockCount;
-        this.predicate = p_i45631_3_;
+        this.predicate = predicate;
     }
     
     public IBlockState getOreState()

@@ -1,0 +1,52 @@
+{
+"__comment": "Designed by Delocuro with BDcraft Cubik PRO 0.95 Beta - http://bdcraft.net",
+"textures": {
+    "particle": "blocks/door_jungle_lower",
+    "bottom": "blocks/door_jungle_lower"
+},
+"elements": [ 
+{
+    "from": [ 0, 0, 0 ],
+    "to": [ 3, 3, 16 ],
+    "faces": {
+        "down":  { "uv": [ 16, 16, 13, 0 ], "texture": "#bottom" },
+        "up":    { "uv": [ 9, 0, 12, 16 ], "texture": "#bottom" },
+        "north": { "uv": [ 0, 13, 3, 16 ], "texture": "#bottom" },
+        "south": { "uv": [ 13, 13, 16, 16 ], "texture": "#bottom" },
+        "west":  { "uv": [ 0, 13, 16, 16 ], "texture": "#bottom" },
+        "east":  { "uv": [ 16, 13, 0, 16 ], "texture": "#bottom" }
+    }
+},
+{
+    "from": [ 0, 3, 0 ],
+    "to": [ 3, 14, 7 ],
+    "faces": {
+        "north": { "uv": [ 0, 2, 3, 13 ], "texture": "#bottom" },
+        "south": { "uv": [ 13, 2, 16, 13 ], "texture": "#bottom" },
+        "west":  { "uv": [ 0, 2, 7, 13 ], "texture": "#bottom" },
+        "east":  { "uv": [ 7, 2, 0, 13 ], "texture": "#bottom" }
+    }
+},
+{
+    "from": [ 0, 3, 9 ],
+    "to": [ 3, 14, 16 ],
+    "faces": {
+        "north": { "uv": [ 0, 2, 3, 13 ], "texture": "#bottom" },
+        "south": { "uv": [ 13, 2, 16, 13 ], "texture": "#bottom" },
+        "west":  { "uv": [ 9, 2, 16, 13 ], "texture": "#bottom" },
+        "east":  { "uv": [ 16, 2, 9, 13 ], "texture": "#bottom" }
+    }
+},
+{
+    "from": [ 0, 14, 0 ],
+    "to": [ 3, 16, 16 ],
+    "faces": {
+        "down":  { "uv": [ 16, 16, 13, 0 ], "texture": "#bottom" },
+        "north": { "uv": [ 0, 0, 3, 2 ], "texture": "#bottom" },
+        "south": { "uv": [ 13, 0, 16, 2 ], "texture": "#bottom" },
+        "west":  { "uv": [ 0, 0, 16, 2 ], "texture": "#bottom" },
+        "east":  { "uv": [ 16, 0, 0, 2 ], "texture": "#bottom" }
+    }
+}
+]
+}

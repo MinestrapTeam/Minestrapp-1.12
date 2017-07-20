@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+			{ "model": "spruce_leaves" },
+            { "model": "spruce_leaves", "x": 180 },
+            { "model": "spruce_leaves", "y": 180 },
+            { "model": "spruce_leaves", "y": 180, "x": 180 }
+		]
+    }
+}
