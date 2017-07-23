@@ -21,7 +21,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.biome.BiomeProviderSingle;
+import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.biome.Biome.TempCategory;
+import net.minecraft.world.biome.BiomeJungle;
 import net.minecraft.world.biome.BiomeMushroomIsland;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -160,17 +162,18 @@ public class MStoneGen
 								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 							}
 						}
-//						else if (state == Blocks.COBBLESTONE.getDefaultState())
-//						{
-//							if (y < deepStoneDepth)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-//							}
-//							else if (sType != null)
-//							{
-//								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-//							}
-//						}
+						else if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+						{
+							if (state.getBlock() == Blocks.DIRT)
+								chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
+							else if (state.getBlock() == Blocks.GRASS)
+							{
+								if(world.getBlockState(subpos2.up()).getBlock() instanceof BlockLeaves)
+									chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
+								else
+									chunk.setBlockState(subpos2, MBlocks.clay_grass.getDefaultState());
+							}
+						}
 						else if (biome.getTemperature() < 0.2F)
 						{
 							if (state.getBlock() == Blocks.DIRT)
@@ -180,9 +183,9 @@ public class MStoneGen
 							else if (state.getBlock() == Blocks.GRASS)
 							{
 								boolean leaves = false;
-								for (i = subpos2.getY() ; i < (subpos2.getY() + 5) ; i++)
+								for (int n = subpos2.getY() ; n < (subpos2.getY() + 5) ; n++)
 								{
-									if(world.getBlockState(new BlockPos(subpos2.getX(), i, subpos2.getZ())).getBlock() instanceof BlockLeaves)
+									if(world.getBlockState(new BlockPos(subpos2.getX(), n + 1, subpos2.getZ())).getBlock() instanceof BlockLeaves)
 										leaves = true;
 								}
 								if (leaves)

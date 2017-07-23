@@ -8,6 +8,10 @@ tile.permafrost_default.name=Permafrost
 tile.permafrost_coarse.name=Coarse Permafrost
 tile.permafrost_podzol.name=Frozen Podzol
 tile.lichen.name=Lichen
+tile.clay_soil_default.name=Clay Soil
+tile.clay_soil_coarse.name=Coarse Clay Soil
+tile.clay_soil_podzol.name=Clay Podzol
+tile.clay_grass.name=Clay Grass
 
 ## Stone ##
 tile.m_stone_red_rock.name=Red Rock

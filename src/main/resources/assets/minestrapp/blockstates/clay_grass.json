@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "minestrapp:clay_grass" },
+            { "model": "minestrapp:clay_grass", "y": 90 },
+            { "model": "minestrapp:clay_grass", "y": 180 },
+            { "model": "minestrapp:clay_grass", "y": 270 }
+        ],
+        "snowy=true": [
+            { "model": "minestrapp:snowy_clay_soil" }
+        ]
+    }
+}

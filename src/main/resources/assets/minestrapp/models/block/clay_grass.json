@@ -1,0 +1,10 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "particle": "minestrapp:blocks/soil/clay_soil",
+        "bottom": "minestrapp:blocks/soil/clay_soil",
+        "top": "minestrapp:blocks/soil/clay_grass_top",
+        "side": "minestrapp:blocks/soil/clay_grass_side",
+        "overlay": "minestrapp:blocks/soil/clay_grass_overlay"
+    }
+}

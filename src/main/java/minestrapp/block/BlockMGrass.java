@@ -15,22 +15,27 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockMGrass extends BlockBase
 {
 	private BlockMDirt dirt;
+	private boolean biomecolored;
 	public static final PropertyBool SNOWY = PropertyBool.create("snowy");
 	
-	public BlockMGrass(String name, MapColor mapColor, SoundType soundType, float hardness, int harvestLevel, BlockMDirt dirt)
+	public BlockMGrass(String name, MapColor mapColor, SoundType soundType, float hardness, int harvestLevel, BlockMDirt dirt, boolean biome)
 	{
 		super(name, Material.GRASS, mapColor, soundType, hardness, "shovel", harvestLevel);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(SNOWY, Boolean.valueOf(false)));
 		this.setTickRandomly(true);
         this.setCreativeTab(MTabs.environment);
         this.dirt = dirt;
+        this.biomecolored = biome;
 	}
 	
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
@@ -76,6 +81,15 @@ public class BlockMGrass extends BlockBase
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return this.dirt.getItemDropped(this.dirt.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.DEFAULT), rand, fortune);
+    }
+	
+	@SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+		if(this.biomecolored)
+			return BlockRenderLayer.CUTOUT_MIPPED;
+		else
+			return super.getBlockLayer();
     }
 	
 	public int getMetaFromState(IBlockState state)

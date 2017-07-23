@@ -1,0 +1,37 @@
+{
+    "variants": {
+        "snowy=false,variant=default": [
+            { "model": "minestrapp:clay_soil" },
+            { "model": "minestrapp:clay_soil", "y": 90 },
+            { "model": "minestrapp:clay_soil", "y": 180 },
+            { "model": "minestrapp:clay_soil", "y": 270 }
+        ],
+        "snowy=false,variant=coarse": [
+            { "model": "minestrapp:coarse_clay_soil" },
+            { "model": "minestrapp:coarse_clay_soil", "y": 90 },
+            { "model": "minestrapp:coarse_clay_soil", "y": 180 },
+            { "model": "minestrapp:coarse_clay_soil", "y": 270 }
+        ],
+        "snowy=false,variant=podzol": [
+            { "model": "minestrapp:podzol_clay_soil" },
+            { "model": "minestrapp:podzol_clay_soil", "y": 90 },
+            { "model": "minestrapp:podzol_clay_soil", "y": 180 },
+            { "model": "minestrapp:podzol_clay_soil", "y": 270 }
+        ],
+        "snowy=true,variant=default": [
+            { "model": "minestrapp:clay_soil" },
+            { "model": "minestrapp:clay_soil", "y": 90 },
+            { "model": "minestrapp:clay_soil", "y": 180 },
+            { "model": "minestrapp:clay_soil", "y": 270 }
+        ],
+        "snowy=true,variant=coarse": [
+            { "model": "minestrapp:coarse_clay_soil" },
+            { "model": "minestrapp:coarse_clay_soil", "y": 90 },
+            { "model": "minestrapp:coarse_clay_soil", "y": 180 },
+            { "model": "minestrapp:coarse_clay_soil", "y": 270 }
+        ],
+        "snowy=true,variant=podzol": [
+            { "model": "minestrapp:snowy_clay_soil" }
+        ]
+    }
+}

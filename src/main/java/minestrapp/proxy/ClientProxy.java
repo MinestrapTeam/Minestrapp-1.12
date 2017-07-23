@@ -1,16 +1,30 @@
 package minestrapp.proxy;
 
+import javax.annotation.Nullable;
+
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
+import minestrapp.block.BlockMGrass;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ColorizerGrass;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ClientProxy extends CommonProxy
 {
+	private static final Minecraft minecraft = Minecraft.getMinecraft();
+	
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		super.preInit(event);
@@ -22,6 +36,7 @@ public class ClientProxy extends CommonProxy
 	{
 		super.init(event);
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.cold_sand), new ResourceLocation(Minestrapp5.MODID, "cold_sand_default"), new ResourceLocation(Minestrapp5.MODID, "cold_sand_red"));
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.clay_soil), new ResourceLocation(Minestrapp5.MODID, "clay_soil_default"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_course"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_podzol"));	
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.permafrost), new ResourceLocation(Minestrapp5.MODID, "permafrost_default"), new ResourceLocation(Minestrapp5.MODID, "permafrost_course"), new ResourceLocation(Minestrapp5.MODID, "permafrost_podzol"));	
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.stone), new ResourceLocation(Minestrapp5.MODID, "m_stone_red_rock"), new ResourceLocation(Minestrapp5.MODID, "m_stone_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "m_stone_deepstone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_coldstone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_icestone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "m_stone_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_deep_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "m_stone_stone"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.cobblestone), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_red_rock"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_deepstone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_coldstone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_icestone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_deep_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "m_cobblestone_stone"));
@@ -36,5 +51,26 @@ public class ClientProxy extends CommonProxy
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_diamond), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_oceanstone"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_emerald), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_oceanstone"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_titanium), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_stone"));
+
+		registerColorHandlers();
+	}
+	
+	public static void registerColorHandlers()
+	{
+		final BlockColors blockcolors = minecraft.getBlockColors();
+		
+		final IBlockColor mGrassColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
+		};
+		
+		blockcolors.registerBlockColorHandler(mGrassColorHandler, MBlocks.clay_grass);
+//		blockcolors.registerBlockColorHandler(new IBlockColor()
+//        {
+//            public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+//            {
+//                return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
+//            }
+//        }, MBlocks.clay_grass);
 	}
 }

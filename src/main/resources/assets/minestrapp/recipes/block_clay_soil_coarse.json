@@ -1,0 +1,21 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "pg",
+        "gp"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:clay_soil",
+            "data": 0
+        },
+        "g": {
+            "item": "minecraft:gravel"
+        }
+     },
+     "result": {
+        "item": "minestrapp:clay_soil",
+        "count": 4,
+        "data": 1
+     }  
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/soil/clay_soil",
+        "top": "blocks/snow",
+        "side": "minestrapp:blocks/soil/clay_snow_side"
+    }
+}

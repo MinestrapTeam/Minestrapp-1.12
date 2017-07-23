@@ -36,6 +36,8 @@ public class MBlocks
 	
 	//Soil
 	public static Block cold_sand;
+	public static BlockMDirt clay_soil;
+	public static Block clay_grass;
 	public static BlockMDirt permafrost;
 	public static Block lichen;
 	
@@ -75,9 +77,11 @@ public class MBlocks
 	public static void init()
 	{
 		//Soil
-		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.5F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
+		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
+		register(clay_soil = new BlockMDirt("clay_soil", MapColor.ADOBE, SoundType.GROUND, 0.5F, 0), new ItemBlockMultistate(clay_soil));
+		register(clay_grass = new BlockMGrass("clay_grass", MapColor.GRASS, SoundType.PLANT, 0.6F, 0, clay_soil, true));
 		register(permafrost = new BlockMDirt("permafrost", MapColor.LIGHT_BLUE, SoundType.GROUND, 0.7F, 0), new ItemBlockMultistate(permafrost));
-		register(lichen = new BlockMGrass("lichen", MapColor.SAND, SoundType.PLANT, 0.8F, 0, permafrost));
+		register(lichen = new BlockMGrass("lichen", MapColor.SAND, SoundType.PLANT, 0.8F, 0, permafrost, false));
 		
 		//Stone
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
@@ -135,6 +139,7 @@ public class MBlocks
 		}
 		for(int i = 0 ; i < BlockMDirt.DirtType.values().length ; i++)
 		{
+			initModel(clay_soil, i, "clay_soil_" + BlockMDirt.DirtType.values()[i].getName());
 			initModel(permafrost, i, "permafrost_" + BlockMDirt.DirtType.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
