@@ -241,6 +241,10 @@ item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
 
 
+##Mobs##
+entity.SheetGhost.name=Sheet Ghost
+entity.LumpGoat.name=Lump Goat
+
 
 ##### Creative Tabs #####
 

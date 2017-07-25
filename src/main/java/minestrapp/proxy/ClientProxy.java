@@ -21,6 +21,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -31,6 +32,7 @@ public class ClientProxy extends CommonProxy
 		super.preInit(event);
 		MBlocks.registerRenders();
 		MItems.registerRenders();
+
 	}
 	
 	public void init(FMLInitializationEvent event)
