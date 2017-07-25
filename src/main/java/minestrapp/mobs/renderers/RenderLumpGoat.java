@@ -19,7 +19,7 @@ public class RenderLumpGoat extends RenderLiving {
 
 	public static final ResourceLocation LumpGoat_texture = new ResourceLocation(Minestrapp5.MODID, "textures/entity/lumpgoat.png");
 	public static ModelLumpGoat modelLumpGoat = new ModelLumpGoat();	
-	public static float modelHeight = 1F;
+	public static float modelHeight = 0.5F;
 	
 	public RenderLumpGoat(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn)
     {

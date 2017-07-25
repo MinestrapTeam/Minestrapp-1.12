@@ -27,7 +27,7 @@ public class MobRegistry
 	
 	public static void registerRender()
 	{
-		RenderingRegistry.registerEntityRenderingHandler(EntitySheetGhost.class, new RenderSheetGhost(Minecraft.getMinecraft().getRenderManager(), new ModelSheetGhost(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySheetGhost.class, new RenderSheetGhost(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLumpGoat.class, new RenderLumpGoat(Minecraft.getMinecraft().getRenderManager(), new ModelLumpGoat(), 0.5F));
 
 	}

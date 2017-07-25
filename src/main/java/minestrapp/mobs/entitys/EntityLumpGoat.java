@@ -43,16 +43,17 @@ public class EntityLumpGoat extends EntityAnimal {
     public EntityLumpGoat(World worldIn)
     {
         super(worldIn);
-        this.setSize(9F, 9F);
+        //Hitbox size
+        this.setSize(1F, 1F);
     }
 
     protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 1.25D));
-        this.tasks.addTask(6, new EntityAIWander(this, 1.0D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.tasks.addTask(4, new EntityAILookIdle(this));
     }
 
     protected void applyEntityAttributes()
