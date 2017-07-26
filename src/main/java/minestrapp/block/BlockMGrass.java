@@ -2,9 +2,13 @@ package minestrapp.block;
 
 import java.util.Random;
 
+import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockFlower;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -16,6 +20,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -100,5 +105,31 @@ public class BlockMGrass extends BlockBase
 	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {SNOWY});
+    }
+	
+	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, net.minecraftforge.common.IPlantable plantable)
+    {
+        IBlockState plant = plantable.getPlant(world, pos.offset(direction));
+        net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
+
+        switch (plantType)
+        {
+            case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
+            case Plains:
+            	if(plantable instanceof BlockFlower)
+            		return true;
+            	else
+            		return this == MBlocks.clay_grass;
+            case Beach:
+                boolean isBeach = this == MBlocks.clay_grass;
+                boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
+                                    world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
+                                    world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
+                                    world.getBlockState(pos.south()).getMaterial() == Material.WATER);
+                return isBeach && hasWater;
+            default: break;
+        }
+
+        return false;
     }
 }

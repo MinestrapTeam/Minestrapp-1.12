@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "pepper_stage0" },
+        "age=1": { "model": "pepper_stage1" },
+        "age=2": { "model": "pepper_stage2" },
+        "age=3": { "model": "pepper_stage3" },
+        "age=4": { "model": "pepper_stage4" },
+        "age=5": { "model": "pepper_stage5" },
+        "age=6": { "model": "pepper_stage6" },
+        "age=7": { "model": "pepper_stage7" }
+    }
+}
