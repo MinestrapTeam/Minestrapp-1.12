@@ -7,6 +7,7 @@ import minestrapp.MTabs;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
@@ -17,10 +18,18 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -130,6 +139,45 @@ public class BlockMGrass extends BlockBase
             default: break;
         }
 
+        return false;
+    }
+	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+		ItemStack itemstack = playerIn.getHeldItem(hand);
+		
+		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))
+        {
+            return false;
+        }	
+		else if(itemstack.getItem() instanceof ItemSpade && facing != EnumFacing.DOWN && worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR)
+		{
+			worldIn.playSound(playerIn, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			if(!worldIn.isRemote)
+			{
+				itemstack.damageItem(1, playerIn);
+				if(this == MBlocks.clay_grass)
+					worldIn.setBlockState(pos, MBlocks.clay_grass_path.getDefaultState());
+				else if(this == MBlocks.lichen)
+					worldIn.setBlockState(pos, MBlocks.lichen_path.getDefaultState());
+			}
+			return true;
+		}
+		else if (itemstack.getItem() instanceof ItemHoe && facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+        {
+			worldIn.playSound(playerIn, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            if (!worldIn.isRemote)
+            {
+            	itemstack.damageItem(1, playerIn);
+				if(this == MBlocks.clay_grass)
+					worldIn.setBlockState(pos, MBlocks.clay_farmland.getDefaultState(), 11);
+				else if(this == MBlocks.lichen)
+					worldIn.setBlockState(pos, MBlocks.permafrost_farmland.getDefaultState(), 11);
+            }
+
+            return true;
+        }
+		
         return false;
     }
 }

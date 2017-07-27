@@ -5,6 +5,7 @@ import minestrapp.MTabs;
 import minestrapp.Minestrapp5;
 import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -17,12 +18,18 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -136,6 +143,45 @@ public class BlockMDirt extends Block implements IMetaBlockName
             default: break;
         }
 
+        return false;
+    }
+	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+		ItemStack itemstack = playerIn.getHeldItem(hand);
+		
+		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))
+        {
+            return false;
+        }
+		else if (itemstack.getItem() instanceof ItemHoe && facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+        {
+			worldIn.playSound(playerIn, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            if (!worldIn.isRemote)
+            {
+            	itemstack.damageItem(1, playerIn);
+            	switch ((BlockMDirt.DirtType)state.getValue(BlockMDirt.VARIANT))
+                {
+                    case DEFAULT:
+                    	if(this == MBlocks.clay_soil)
+        					worldIn.setBlockState(pos, MBlocks.clay_farmland.getDefaultState(), 11);
+        				else if(this == MBlocks.permafrost)
+        					worldIn.setBlockState(pos, MBlocks.permafrost_farmland.getDefaultState(), 11);
+                        return true;
+                    case COARSE:
+                    	if(this == MBlocks.clay_soil)
+        					worldIn.setBlockState(pos, MBlocks.clay_soil.getDefaultState().withProperty(VARIANT, BlockMDirt.DirtType.DEFAULT), 11);
+        				else if(this == MBlocks.permafrost)
+        					worldIn.setBlockState(pos, MBlocks.permafrost.getDefaultState().withProperty(VARIANT, BlockMDirt.DirtType.DEFAULT), 11);
+                        return true;
+                    default:
+                    	break;
+                }
+            }
+
+            return true;
+        }
+		
         return false;
     }
 	
