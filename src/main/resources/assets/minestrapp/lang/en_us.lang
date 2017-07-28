@@ -244,6 +244,9 @@ item.diamond_dagger.name=Diamond Dagger
 item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
 
+##Crops##
+item.pepper.name=Pepper
+item.pepper_seeds.name=Pepper Seeds
 
 ##Mobs##
 entity.SheetGhost.name=Sheet Ghost

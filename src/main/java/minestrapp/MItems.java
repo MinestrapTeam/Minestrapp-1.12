@@ -22,6 +22,8 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -78,6 +80,10 @@ public class MItems
 	public static Item titanium_dagger;
 	
 	public static Item health_crystal;
+
+	public static ItemFood pepper;
+	public static MItemsSeeds pepper_seeds;
+
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -144,7 +150,10 @@ public class MItems
 		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
 		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
 		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
-	
+		
+		registerFood(pepper = new MItemsFood(2, 1.0F, false, "pepper"));	
+		registerSeeds(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
+		
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
@@ -191,13 +200,36 @@ public class MItems
 		GameRegistry.register(item);
 		itemList.add(item);
 	}
+
+	public static void registerFood(ItemFood mItemsFood)
+	{
+		GameRegistry.register(mItemsFood);
+		itemList.add(mItemsFood);
+	}
+	public static void registerSeeds(ItemSeeds mItemsSeeds)
+	{
+		GameRegistry.register(mItemsSeeds);
+		itemList.add(mItemsSeeds);
+	}
 	
 	private static void initModel(Item item)
 	{
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
+	private static void initModel(MItemsSeeds item)
+	{
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+	}
+	
 	private static void initModelWithVariants(Item item)
+	{
+		for(int i = 0 ; i < ((IItemVariants)item).getMaxVariants() ; i++)
+		{
+			ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(item.getRegistryName() + "_" + i, "inventory"));
+		}
+	}
+	private static void initModelWithVariants(MItemsSeeds item)
 	{
 		for(int i = 0 ; i < ((IItemVariants)item).getMaxVariants() ; i++)
 		{

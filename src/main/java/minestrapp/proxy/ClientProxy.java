@@ -33,6 +33,7 @@ public class ClientProxy extends CommonProxy
 		MBlocks.registerRenders();
 		MItems.registerRenders();
 
+
 	}
 	
 	public void init(FMLInitializationEvent event)
@@ -54,6 +55,9 @@ public class ClientProxy extends CommonProxy
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_diamond), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_diamond_deep_oceanstone"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_emerald), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_emerald_deep_oceanstone"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.ore_titanium), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_red_rock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deepstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_coldstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_icestone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_glacierrock"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_deep_oceanstone"), new ResourceLocation(Minestrapp5.MODID, "ore_titanium_stone"));
+		
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.crop_pepper), new ResourceLocation(Minestrapp5.MODID, "pepper_stage0"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage1"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage2"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage3"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage4"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage5"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage6"), new ResourceLocation(Minestrapp5.MODID, "pepper_stage7"));
+
 		
 		MobRegistry.register();
 		

@@ -12,6 +12,7 @@ import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockItemDropBase;
@@ -80,6 +81,9 @@ public class MBlocks
 	//Utility
 	public static Block soulsteel_vessel;
 	
+	//Crops
+	public static Block crop_pepper;
+	
 	public static void init()
 	{
 		//Soil
@@ -122,6 +126,10 @@ public class MBlocks
 
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		
+		//Crops
+		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
+
 	}
 	
 	public static void register(Block block)
@@ -173,6 +181,7 @@ public class MBlocks
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
 		}
+
 	}
 	
 	private static void initModel(Block block)

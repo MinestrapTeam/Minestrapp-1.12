@@ -141,5 +141,20 @@ public class MTabs
 		{
 			return new ItemStack(MItems.copper_sword);
 		}
+	};	
+	
+	public static CreativeTabs food = new CreativeTabs("Food")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Food";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.pepper);
+		}
 	};
 }
