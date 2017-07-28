@@ -1,10 +1,14 @@
 package minestrapp.block;
 
+import java.util.List;
 import java.util.Random;
 
 import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBeetroot;
+import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -15,8 +19,11 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -30,13 +37,15 @@ public class BlockMFarmland extends BlockBase
 	public static final PropertyInteger MOISTURE = PropertyInteger.create("moisture", 0, 7);
     protected static final AxisAlignedBB FARMLAND_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.9375D, 1.0D);
     private BlockMDirt dirt;
+    private int waterDist;
 	
-	public BlockMFarmland(String name, MapColor mapColor, SoundType soundType, float hardness, int harvestLevel, BlockMDirt dirt)
+	public BlockMFarmland(String name, MapColor mapColor, SoundType soundType, float hardness, int harvestLevel, BlockMDirt dirt, int water)
 	{
 		super(name, Material.GROUND, mapColor, soundType, hardness, "shovel", harvestLevel);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(MOISTURE, Integer.valueOf(0)));
         this.setTickRandomly(true);
         this.setLightOpacity(255);
+        this.waterDist = water;
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -75,6 +84,103 @@ public class BlockMFarmland extends BlockBase
 	        {
 	            worldIn.setBlockState(pos, state.withProperty(MOISTURE, Integer.valueOf(7)), 2);
 	        }
+	        
+	        IBlockState crop = worldIn.getBlockState(pos.up());
+	        if(crop.getBlock() == Blocks.AIR)
+	        {
+	        	List<EntityItem> items = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 2, pos.getZ() + 1));
+	        	if(!items.isEmpty())
+	        	{
+	        		for(int l = 0 ; l < items.size() ; l++)
+	        		{
+	        			EntityItem item = items.get(l);
+	        			ItemStack stack = item.getEntityItem();
+			        	if(stack.getItem() == Items.WHEAT_SEEDS)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.WHEAT.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == Items.CARROT)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.CARROTS.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == Items.POTATO || stack.getItem() == Items.POISONOUS_POTATO)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.POTATOES.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == Items.BEETROOT_SEEDS)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.BEETROOTS.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == Items.MELON_SEEDS)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.MELON_STEM.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == Items.PUMPKIN_SEEDS)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), Blocks.PUMPKIN_STEM.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.pepper_seeds)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_pepper.getDefaultState());
+			        		break;
+			        	}
+	        		}
+	        	}
+	        }
+    	}
+    	else if(this == MBlocks.permafrost_farmland)
+    	{
+    		IBlockState crop = worldIn.getBlockState(pos.up());
+    		if(crop.getBlock() != Blocks.AIR && crop.getBlock() instanceof BlockCrops)
+    		{
+    			int k = worldIn.getLight(pos.up());
+    			int i = rand.nextInt(10 + (2 * k));
+    			if(i == 0)
+    			{
+    				if(crop.getBlock() instanceof BlockBeetroot)
+    				{
+    					int j = crop.getValue(BlockBeetroot.BEETROOT_AGE).intValue();
+    					if(j < 3)
+    					{
+	    					if(j > 0)
+	    						worldIn.setBlockState(pos.up(), Blocks.BEETROOTS.getDefaultState().withProperty(BlockBeetroot.BEETROOT_AGE, j - 1));
+	    					else
+	    						worldIn.setBlockState(pos.up(), MBlocks.crop_withered.getDefaultState());
+    					}
+    				}
+    				else
+    				{
+    					int j = crop.getValue(BlockCrops.AGE).intValue();
+    					if(j < 7)
+    					{
+	    					if(j > 0)
+	    						worldIn.setBlockState(pos.up(), crop.withProperty(BlockCrops.AGE, j - 1));
+	    					else
+	    						worldIn.setBlockState(pos.up(), MBlocks.crop_withered.getDefaultState());
+    					}
+    				}
+    			}
+    		}
     	}
     }
     
@@ -115,7 +221,7 @@ public class BlockMFarmland extends BlockBase
     
     private boolean hasWater(World worldIn, BlockPos pos)
     {
-        for (BlockPos.MutableBlockPos blockpos$mutableblockpos : BlockPos.getAllInBoxMutable(pos.add(-4, 0, -4), pos.add(4, 1, 4)))
+        for (BlockPos.MutableBlockPos blockpos$mutableblockpos : BlockPos.getAllInBoxMutable(pos.add(-waterDist, 0, -waterDist), pos.add(waterDist, 1, waterDist)))
         {
             if (worldIn.getBlockState(blockpos$mutableblockpos).getMaterial() == Material.WATER)
             {
@@ -195,6 +301,9 @@ public class BlockMFarmland extends BlockBase
         IBlockState plant = plantable.getPlant(world, pos.offset(direction));
         net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
 
+        if(plant.getBlock() == Blocks.BEETROOTS)
+        	return true;
+        
         switch (plantType)
         {
         	case Crop: return true;

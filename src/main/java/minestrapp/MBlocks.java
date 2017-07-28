@@ -12,6 +12,7 @@ import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.crops.CropWithered;
 import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
@@ -82,6 +83,7 @@ public class MBlocks
 	public static Block soulsteel_vessel;
 	
 	//Crops
+	public static Block crop_withered;
 	public static Block crop_pepper;
 	
 	public static void init()
@@ -91,11 +93,11 @@ public class MBlocks
 		register(clay_soil = new BlockMDirt("clay_soil", MapColor.ADOBE, SoundType.GROUND, 0.5F, 0), new ItemBlockMultistate(clay_soil));
 		register(clay_grass = new BlockMGrass("clay_grass", MapColor.GRASS, SoundType.PLANT, 0.6F, 0, clay_soil, true));
 		register(clay_grass_path = new BlockMPath("clay_grass_path", MapColor.DIRT, SoundType.PLANT, 0.65F, 0, clay_soil));
-		register(clay_farmland = new BlockMFarmland("clay_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, clay_soil));
+		register(clay_farmland = new BlockMFarmland("clay_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, clay_soil, 2));
 		register(permafrost = new BlockMDirt("permafrost", MapColor.LIGHT_BLUE, SoundType.GROUND, 0.7F, 0), new ItemBlockMultistate(permafrost));
 		register(lichen = new BlockMGrass("lichen", MapColor.SAND, SoundType.PLANT, 0.8F, 0, permafrost, false));
 		register(lichen_path = new BlockMPath("lichen_path", MapColor.DIRT, SoundType.PLANT, 0.75F, 0, permafrost));
-		register(permafrost_farmland = new BlockMFarmland("permafrost_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, permafrost));
+		register(permafrost_farmland = new BlockMFarmland("permafrost_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, permafrost, 6));
 		
 		//Stone
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
@@ -128,6 +130,7 @@ public class MBlocks
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
 		//Crops
+		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
 
 	}
