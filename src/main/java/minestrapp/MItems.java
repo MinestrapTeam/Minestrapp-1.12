@@ -23,6 +23,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSeedFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -82,8 +83,16 @@ public class MItems
 	public static Item health_crystal;
 
 	public static ItemFood pepper;
-	public static MItemsSeeds pepper_seeds;
-
+	public static MItemsSeeds pepper_seeds;	
+	public static ItemFood cabbage;
+	public static MItemsSeeds cabbage_seeds;	
+	public static ItemFood celery;
+	public static MItemsSeeds celery_seeds;	
+	public static MItemsSeedFood lettuce;
+	public static MItemsSeedFood onion;
+	public static MItemsSeedFood peanuts;
+	public static ItemFood tomato;
+	public static MItemsSeeds tomato_seeds;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -153,6 +162,15 @@ public class MItems
 		
 		registerFood(pepper = new MItemsFood(2, 1.0F, false, "pepper"));	
 		registerSeeds(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
+		registerFood(cabbage = new MItemsFood(2, 1.0F, false, "cabbage"));	
+		registerSeeds(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));
+		registerFood(celery = new MItemsFood(2, 1.0F, false, "celery"));	
+		registerSeeds(celery_seeds = new MItemsSeeds(MBlocks.crop_celery, Blocks.FARMLAND, "celery_seeds"));
+		registerSeedFood(onion = new MItemsSeedFood(2, 1.0F, MBlocks.crop_onion, Blocks.FARMLAND, "onion"));	
+		registerSeedFood(peanuts = new MItemsSeedFood(2, 1.0F, MBlocks.crop_peanuts, Blocks.FARMLAND, "peanuts"));
+		registerSeedFood(lettuce = new MItemsSeedFood(2, 1.0F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
+		registerFood(tomato = new MItemsFood(2, 1.0F, false, "tomato"));	
+		registerSeeds(tomato_seeds = new MItemsSeeds(MBlocks.crop_tomato, Blocks.FARMLAND, "tomato_seeds"));
 		
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
@@ -210,6 +228,11 @@ public class MItems
 	{
 		GameRegistry.register(mItemsSeeds);
 		itemList.add(mItemsSeeds);
+	}
+	public static void registerSeedFood(MItemsSeedFood mItemsSeedFood)
+	{
+		GameRegistry.register(mItemsSeedFood);
+		itemList.add(mItemsSeedFood);
 	}
 	
 	private static void initModel(Item item)

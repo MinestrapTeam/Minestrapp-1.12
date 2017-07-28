@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "minestrapp:lettuce_stage0" },
+        "age=1": { "model": "minestrapp:lettuce_stage0" },
+        "age=2": { "model": "minestrapp:lettuce_stage1" },
+        "age=3": { "model": "minestrapp:lettuce_stage1" },       
+        "age=4": { "model": "minestrapp:lettuce_stage2" },
+        "age=5": { "model": "minestrapp:lettuce_stage2" },
+        "age=6": { "model": "minestrapp:lettuce_stage2" },
+        "age=7": { "model": "minestrapp:lettuce_stage3" }
+    }
+}

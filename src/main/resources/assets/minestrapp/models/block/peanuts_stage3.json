@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "minestrapp:blocks/crop/peanuts_3"
+    }
+}

@@ -247,6 +247,15 @@ item.titanium_dagger.name=Titanium Dagger
 ##Crops##
 item.pepper.name=Pepper
 item.pepper_seeds.name=Pepper Seeds
+item.cabbage.name=Cabbage
+item.cabbage_seeds.name=Cabbage Seeds
+item.celery.name=Celery
+item.celery_seeds.name=Celery Seeds
+item.lettuce.name=Lettuce
+item.onion.name=Onion
+item.peanuts.name=Peanuts
+item.tomato.name=Tomato
+item.tomato_seeds.name=Tomato Seeds
 
 ##Mobs##
 entity.SheetGhost.name=Sheet Ghost

@@ -12,7 +12,13 @@ import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.crops.CabbagePlant;
+import minestrapp.block.crops.CeleryPlant;
+import minestrapp.block.crops.LettucePlant;
+import minestrapp.block.crops.OnionPlant;
+import minestrapp.block.crops.PeanutsPlant;
 import minestrapp.block.crops.PepperPlant;
+import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockItemDropBase;
@@ -83,6 +89,12 @@ public class MBlocks
 	
 	//Crops
 	public static Block crop_pepper;
+	public static Block crop_cabbage;
+	public static Block crop_celery;
+	public static Block crop_lettuce;
+	public static Block crop_onion;
+	public static Block crop_peanuts;
+	public static Block crop_tomato;
 	
 	public static void init()
 	{
@@ -129,6 +141,13 @@ public class MBlocks
 		
 		//Crops
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
+		GameRegistry.register(crop_cabbage = new CabbagePlant("crop_cabbage"));
+		GameRegistry.register(crop_celery = new CeleryPlant("crop_celery"));
+		GameRegistry.register(crop_lettuce = new LettucePlant("crop_lettuce"));
+		GameRegistry.register(crop_onion = new OnionPlant("crop_onion"));
+		GameRegistry.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
+		GameRegistry.register(crop_tomato = new TomatoPlant("crop_tomato"));
+
 
 	}
 	
