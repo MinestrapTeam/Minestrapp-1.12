@@ -186,7 +186,10 @@ public class MStoneGen
 								for (int n = subpos2.getY() ; n < (subpos2.getY() + 5) ; n++)
 								{
 									if(world.getBlockState(new BlockPos(subpos2.getX(), n + 1, subpos2.getZ())).getBlock() instanceof BlockLeaves)
+									{
 										leaves = true;
+										break;
+									}
 								}
 								if (leaves)
 									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
@@ -194,6 +197,10 @@ public class MStoneGen
 									chunk.setBlockState(subpos2, MBlocks.lichen.getDefaultState());
 							}
 						}
+					}
+					else if (state.getBlock() == Blocks.TALLGRASS && biome.getTemperature() < 0.2F)
+					{
+						chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
 					}
 				}
 			}

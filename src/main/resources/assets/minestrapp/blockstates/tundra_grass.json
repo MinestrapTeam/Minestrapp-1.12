@@ -1,0 +1,8 @@
+{
+    "multipart": [
+        {   "when": { "snowy": "true" },
+            "apply": { "model": "snow_height2" }
+        },
+        {   "apply": { "model": "minestrapp:tundra_grass" }}    
+    ]
+}

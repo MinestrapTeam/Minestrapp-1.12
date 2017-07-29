@@ -1,5 +1,6 @@
-package minestrapp;
+package minestrapp.item.util;
 
+import minestrapp.MTabs;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;

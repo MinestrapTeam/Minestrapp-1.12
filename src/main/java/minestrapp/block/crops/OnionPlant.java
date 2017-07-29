@@ -5,6 +5,9 @@ import net.minecraft.block.BlockCrops;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
@@ -30,6 +33,9 @@ public class OnionPlant extends BlockCrops {
 		return MItems.onion;
 	}
 	
-	
-	
+	@Override
+    public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
+    {
+		return EnumPlantType.Crop;
+    }
 }

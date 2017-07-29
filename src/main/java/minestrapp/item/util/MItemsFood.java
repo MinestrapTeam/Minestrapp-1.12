@@ -1,5 +1,6 @@
-package minestrapp;
+package minestrapp.item.util;
 
+import minestrapp.MTabs;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,12 +21,10 @@ import net.minecraft.world.World;
 
 public class MItemsFood extends ItemFood
 {
-
 	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string) {
 		super(amount, saturation, isWolfFood);
         this.setUnlocalizedName(string);
         this.setRegistryName(string);
         this.setCreativeTab(MTabs.food);
 	}
-	
 }

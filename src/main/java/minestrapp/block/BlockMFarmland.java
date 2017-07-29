@@ -144,6 +144,48 @@ public class BlockMFarmland extends BlockBase
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_pepper.getDefaultState());
 			        		break;
 			        	}
+			        	else if(stack.getItem() == MItems.cabbage_seeds)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_cabbage.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.celery_seeds)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_celery.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.lettuce)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_lettuce.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.onion)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_onion.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.peanuts)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_peanuts.getDefaultState());
+			        		break;
+			        	}
+			        	else if(stack.getItem() == MItems.tomato_seeds)
+			        	{
+			        		stack.shrink(1);
+			        		item.setEntityItemStack(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_tomato.getDefaultState());
+			        		break;
+			        	}
 	        		}
 	        	}
 	        }

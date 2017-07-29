@@ -1,5 +1,8 @@
 ##### Blocks #####
 
+## Plant ##
+tile.tundra_grass.name=Tundra Grass
+
 ## Soil ##
 
 tile.cold_sand_default.name=Cold Sand
@@ -264,12 +267,14 @@ entity.LumpGoat.name=Lump Goat
 
 ##### Creative Tabs #####
 
+itemGroup.Plants=Minestrapp Plants
 itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
 itemGroup.Stone=Minestrapp Stone Blocks
 itemGroup.Ores=Minestrapp Ores
 itemGroup.ResourceBlocks=Minestrapp Resource Blocks
 itemGroup.Minerals=Minestrapp Minerals
 itemGroup.Ingredients=Minestrapp Crafting Ingredients
+itemGroup.Food=Minestrapp Food
 itemGroup.UtilityBlocks=Minestrapp Utility Blocks
 itemGroup.Tools=Minestrapp Tools
 itemGroup.Combat=Minestrapp Combat

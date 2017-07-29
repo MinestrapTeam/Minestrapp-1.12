@@ -1,5 +1,6 @@
-package minestrapp;
+package minestrapp.item.util;
 
+import minestrapp.MTabs;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -10,7 +11,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class MItemsSeedFood extends ItemFood implements net.minecraftforge.common.IPlantable
+public class MItemsSeedFood extends MItemsFood implements net.minecraftforge.common.IPlantable
 {
     private final Block crops;
     /** Block ID of the soil this seed food should be planted on. */
@@ -18,12 +19,9 @@ public class MItemsSeedFood extends ItemFood implements net.minecraftforge.commo
 
     public MItemsSeedFood(int healAmount, float saturation, Block crops, Block soil, String string)
     {
-        super(healAmount, saturation, false);
+        super(healAmount, saturation, false, string);
         this.crops = crops;
         this.soilId = soil;
-        this.setUnlocalizedName(string);
-        this.setRegistryName(string);
-        this.setCreativeTab(MTabs.food);
     }
 
     /**

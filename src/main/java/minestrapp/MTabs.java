@@ -8,6 +8,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MTabs
 {
+	public static CreativeTabs plant = new CreativeTabs("Plants")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Plants";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MBlocks.tundra_grass);
+		}
+	};
+	
 	public static CreativeTabs environment = new CreativeTabs("EnvironmentalBlocks")
 	{
 		@Override
@@ -98,6 +113,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs food = new CreativeTabs("Food")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Food";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.pepper);
+		}
+	};
+	
 	public static CreativeTabs ingredients = new CreativeTabs("Ingredients")
 	{
 		@Override
@@ -142,19 +172,4 @@ public class MTabs
 			return new ItemStack(MItems.copper_sword);
 		}
 	};	
-	
-	public static CreativeTabs food = new CreativeTabs("Food")
-	{
-		@Override
-		public String getTabLabel()
-		{
-			return "Food";
-		}
-		@Override
-		@SideOnly(Side.CLIENT)
-		public ItemStack getTabIconItem()
-		{
-			return new ItemStack(MItems.pepper);
-		}
-	};
 }

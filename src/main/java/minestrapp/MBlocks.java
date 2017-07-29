@@ -10,17 +10,15 @@ import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
+import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
-<<<<<<< HEAD
 import minestrapp.block.crops.CropWithered;
-=======
 import minestrapp.block.crops.CabbagePlant;
 import minestrapp.block.crops.CeleryPlant;
 import minestrapp.block.crops.LettucePlant;
 import minestrapp.block.crops.OnionPlant;
 import minestrapp.block.crops.PeanutsPlant;
->>>>>>> origin/master
 import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockMultistate;
@@ -46,6 +44,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class MBlocks
 {
 	public static List<Block> blockList = new ArrayList<Block>();
+	
+	//Plant
+	public static Block tundra_grass;
 	
 	//Soil
 	public static Block cold_sand;
@@ -103,6 +104,9 @@ public class MBlocks
 	
 	public static void init()
 	{
+		//Plant
+		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
+		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
 		register(clay_soil = new BlockMDirt("clay_soil", MapColor.ADOBE, SoundType.GROUND, 0.5F, 0), new ItemBlockMultistate(clay_soil));

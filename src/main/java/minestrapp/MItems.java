@@ -16,9 +16,13 @@ import minestrapp.item.tools.MShovel;
 import minestrapp.item.tools.MSword;
 import minestrapp.item.util.IItemVariants;
 import minestrapp.item.util.ItemMetaBase;
+import minestrapp.item.util.MItemsFood;
+import minestrapp.item.util.MItemsSeedFood;
+import minestrapp.item.util.MItemsSeeds;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
@@ -28,7 +32,9 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -82,17 +88,17 @@ public class MItems
 	
 	public static Item health_crystal;
 
-	public static ItemFood pepper;
-	public static MItemsSeeds pepper_seeds;	
-	public static ItemFood cabbage;
-	public static MItemsSeeds cabbage_seeds;	
-	public static ItemFood celery;
-	public static MItemsSeeds celery_seeds;	
-	public static MItemsSeedFood lettuce;
-	public static MItemsSeedFood onion;
-	public static MItemsSeedFood peanuts;
-	public static ItemFood tomato;
-	public static MItemsSeeds tomato_seeds;
+	public static Item pepper;
+	public static Item pepper_seeds;	
+	public static Item cabbage;
+	public static Item cabbage_seeds;	
+	public static Item celery;
+	public static Item celery_seeds;	
+	public static Item lettuce;
+	public static Item onion;
+	public static Item peanuts;
+	public static Item tomato;
+	public static Item tomato_seeds;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -160,17 +166,20 @@ public class MItems
 		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
 		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
 		
-		registerFood(pepper = new MItemsFood(2, 1.0F, false, "pepper"));	
-		registerSeeds(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
-		registerFood(cabbage = new MItemsFood(2, 1.0F, false, "cabbage"));	
-		registerSeeds(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));
-		registerFood(celery = new MItemsFood(2, 1.0F, false, "celery"));	
-		registerSeeds(celery_seeds = new MItemsSeeds(MBlocks.crop_celery, Blocks.FARMLAND, "celery_seeds"));
-		registerSeedFood(onion = new MItemsSeedFood(2, 1.0F, MBlocks.crop_onion, Blocks.FARMLAND, "onion"));	
-		registerSeedFood(peanuts = new MItemsSeedFood(2, 1.0F, MBlocks.crop_peanuts, Blocks.FARMLAND, "peanuts"));
-		registerSeedFood(lettuce = new MItemsSeedFood(2, 1.0F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
-		registerFood(tomato = new MItemsFood(2, 1.0F, false, "tomato"));	
-		registerSeeds(tomato_seeds = new MItemsSeeds(MBlocks.crop_tomato, Blocks.FARMLAND, "tomato_seeds"));
+		//Total Saturation Restored = Sat Val * 2 * Hunger Val
+		//I.E.; Peppers would restore 1.8 points of Saturation, half as much as Carrots, but at the same food value.
+		//For balance reference, a list of all Vanilla Hunger & Sat Vals can be found at minecraft.gamepedia.com/Food
+		register(pepper = new MItemsFood(3, 0.3F, false, "pepper").setPotionEffect(new PotionEffect(MobEffects.SPEED, 400, 0), 0.25F));	
+		register(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
+		register(cabbage = new MItemsFood(5, 0.3F, false, "cabbage"));	
+		register(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));
+		register(celery = new MItemsFood(2, 1.5F, false, "celery"));	
+		register(celery_seeds = new MItemsSeeds(MBlocks.crop_celery, Blocks.FARMLAND, "celery_seeds"));
+		register(onion = new MItemsSeedFood(3, 0.8F, MBlocks.crop_onion, Blocks.FARMLAND, "onion").setPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 100), 0.7F));	
+		register(peanuts = new MItemsSeedFood(2, 2.4F, MBlocks.crop_peanuts, Blocks.FARMLAND, "peanuts"));
+		register(lettuce = new MItemsSeedFood(4, 0.375F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
+		register(tomato = new MItemsFood(4, 0.625F, false, "tomato"));	
+		register(tomato_seeds = new MItemsSeeds(MBlocks.crop_tomato, Blocks.FARMLAND, "tomato_seeds"));
 		
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
@@ -219,21 +228,21 @@ public class MItems
 		itemList.add(item);
 	}
 
-	public static void registerFood(ItemFood mItemsFood)
-	{
-		GameRegistry.register(mItemsFood);
-		itemList.add(mItemsFood);
-	}
-	public static void registerSeeds(ItemSeeds mItemsSeeds)
-	{
-		GameRegistry.register(mItemsSeeds);
-		itemList.add(mItemsSeeds);
-	}
-	public static void registerSeedFood(MItemsSeedFood mItemsSeedFood)
-	{
-		GameRegistry.register(mItemsSeedFood);
-		itemList.add(mItemsSeedFood);
-	}
+//	public static void registerFood(ItemFood mItemsFood)
+//	{
+//		GameRegistry.register(mItemsFood);
+//		itemList.add(mItemsFood);
+//	}
+//	public static void registerSeeds(ItemSeeds mItemsSeeds)
+//	{
+//		GameRegistry.register(mItemsSeeds);
+//		itemList.add(mItemsSeeds);
+//	}
+//	public static void registerSeedFood(MItemsSeedFood mItemsSeedFood)
+//	{
+//		GameRegistry.register(mItemsSeedFood);
+//		itemList.add(mItemsSeedFood);
+//	}
 	
 	private static void initModel(Item item)
 	{
