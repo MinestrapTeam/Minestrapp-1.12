@@ -41,6 +41,36 @@ tile.m_cobblestone_glacierrock.name=Cracked Glacierrock
 tile.m_cobblestone_oceanstone.name=Cobbled Oceanstone
 tile.m_cobblestone_deep_oceanstone.name=Cobbled Reefstone
 
+tile.m_stone_bricks_red_rock.name=Red Rock Bricks
+tile.m_stone_bricks_deep_red_rock.name=Deep Red Rock Bricks
+tile.m_stone_bricks_deepstone.name=Deepstone Bricks
+tile.m_stone_bricks_coldstone.name=Coldstone Bricks
+tile.m_stone_bricks_deep_coldstone.name=Deep Coldstone Bricks
+tile.m_stone_bricks_icestone.name=Icestone Bricks
+tile.m_stone_bricks_glacierrock.name=Glacierrock Bricks
+tile.m_stone_bricks_oceanstone.name=Oceanstone Bricks
+tile.m_stone_bricks_deep_oceanstone.name=Reefstone Bricks
+
+tile.m_stone_bricks_cracked_red_rock.name=Cracked Red Rock Bricks
+tile.m_stone_bricks_cracked_deep_red_rock.name=Cracked Deep Red Rock Bricks
+tile.m_stone_bricks_cracked_deepstone.name=Cracked Deepstone Bricks
+tile.m_stone_bricks_cracked_coldstone.name=Cracked Coldstone Bricks
+tile.m_stone_bricks_cracked_deep_coldstone.name=Cracked Deep Coldstone Bricks
+tile.m_stone_bricks_cracked_icestone.name=Cracked Icestone Bricks
+tile.m_stone_bricks_cracked_glacierrock.name=Cracked Glacierrock Bricks
+tile.m_stone_bricks_cracked_oceanstone.name=Cracked Oceanstone Bricks
+tile.m_stone_bricks_cracked_deep_oceanstone.name=Cracked Reefstone Bricks
+
+tile.m_stone_bricks_mossy_red_rock.name=Mossy Red Rock Bricks
+tile.m_stone_bricks_mossy_deep_red_rock.name=Mossy Deep Red Rock Bricks
+tile.m_stone_bricks_mossy_deepstone.name=Mossy Deepstone Bricks
+tile.m_stone_bricks_mossy_coldstone.name=Mossy Coldstone Bricks
+tile.m_stone_bricks_mossy_deep_coldstone.name=Mossy Deep Coldstone Bricks
+tile.m_stone_bricks_mossy_icestone.name=Wet Icestone Bricks
+tile.m_stone_bricks_mossy_glacierrock.name=Wet Glacierrock Bricks
+tile.m_stone_bricks_mossy_oceanstone.name=Mossy Oceanstone Bricks
+tile.m_stone_bricks_mossy_deep_oceanstone.name=Mossy Reefstone Bricks
+
 ## Ores ##
 
 tile.ore_coal_red_rock.name=Coal Ore

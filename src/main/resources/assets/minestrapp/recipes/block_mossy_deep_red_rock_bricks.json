@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:vine"
+        },
+        {
+            "item": "minestrapp:m_stone_bricks",
+            "data": 1
+        }              
+    ],
+    "result": {
+        "item": "minestrapp:m_stone_bricks_mossy",
+        "data": 1
+    }   
+}

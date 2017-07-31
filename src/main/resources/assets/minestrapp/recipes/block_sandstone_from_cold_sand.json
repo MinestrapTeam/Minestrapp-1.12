@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:cold_sand",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minecraft:sandstone",
+        "data": 0
+     }  
+}

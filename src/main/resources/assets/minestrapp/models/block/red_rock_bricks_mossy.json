@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minestrapp:blocks/stone/red_rock_bricks_mossy"
+    }
+}

@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_stone",
+            "data": 7
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_stone_bricks",
+        "data": 7
+     }  
+}

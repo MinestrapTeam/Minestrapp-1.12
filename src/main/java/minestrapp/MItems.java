@@ -185,7 +185,8 @@ public class MItems
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 1), new ItemStack(Blocks.DIRT, 1, 1), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 2), new ItemStack(Blocks.DIRT, 1, 2), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 2), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.lichen, 1), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1, 0), 0.5F);
 		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
@@ -202,6 +203,7 @@ public class MItems
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{
 			GameRegistry.addSmelting(new ItemStack(MBlocks.cobblestone, 1, i), new ItemStack(MBlocks.stone, 1, i), 0.1F);
+			GameRegistry.addSmelting(new ItemStack(MBlocks.cracked_stone_bricks, 1, i), new ItemStack(MBlocks.stone_bricks, 1, i), 0.1F);
 		}
 	}
 

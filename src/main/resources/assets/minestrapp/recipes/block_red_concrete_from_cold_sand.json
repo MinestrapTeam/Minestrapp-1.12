@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:dye",
+            "data": 1
+        },
+        {
+            "item": "minestrapp:cold_sand",
+            "count": 4,
+            "data": 0
+        }              
+    ],
+    "result": {
+        "item": "minecraft:concrete_powder",
+        "data": 14
+    }   
+}
