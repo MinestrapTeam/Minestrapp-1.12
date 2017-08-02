@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "seamless=false,variant=deep_oceanstone_smooth": [
+            { "model": "minestrapp:double_slab_deep_oceanstone" }
+        ],
+        "seamless=true,variant=deep_oceanstone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_deep_oceanstone" }
+        ],
+        "seamless=false,variant=red_rock_cobbled": [
+            { "model": "minestrapp:cobbled_red_rock" }
+        ],
+        "seamless=true,variant=red_rock_cobbled": [
+            { "model": "minestrapp:cobbled_red_rock" }
+        ],
+        "seamless=false,variant=deep_red_rock_cobbled": [
+            { "model": "minestrapp:cobbled_deep_red_rock" }
+        ],
+        "seamless=true,variant=deep_red_rock_cobbled": [
+            { "model": "minestrapp:cobbled_deep_red_rock" }
+        ],
+        "seamless=false,variant=deepstone_cobbled": [
+            { "model": "minestrapp:cobbled_deepstone" }
+        ],
+        "seamless=true,variant=deepstone_cobbled": [
+            { "model": "minestrapp:cobbled_deepstone" }
+        ],
+        "seamless=false,variant=coldstone_cobbled": [
+            { "model": "minestrapp:cobbled_coldstone" }
+        ],
+        "seamless=true,variant=coldstone_cobbled": [
+            { "model": "minestrapp:cobbled_coldstone" }
+        ],
+        "seamless=false,variant=deep_coldstone_cobbled": [
+            { "model": "minestrapp:cobbled_deep_coldstone" }
+        ],
+        "seamless=true,variant=deep_coldstone_cobbled": [
+            { "model": "minestrapp:cobbled_deep_coldstone" }
+        ],
+        "seamless=false,variant=icestone_cobbled": [
+            { "model": "minestrapp:cobbled_icestone" }
+        ],
+        "seamless=true,variant=icestone_cobbled": [
+            { "model": "minestrapp:cobbled_icestone" }
+        ],
+        "seamless=false,variant=glacierrock_cobbled": [
+            { "model": "minestrapp:cobbled_glacierrock" }
+        ],
+        "seamless=true,variant=glacierrock_cobbled": [
+            { "model": "minestrapp:cobbled_glacierrock" }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "seamless=false,variant=red_rock_smooth": [
+            { "model": "minestrapp:double_slab_red_rock" }
+        ],
+        "seamless=true,variant=red_rock_smooth": [
+            { "model": "minestrapp:smooth_double_slab_red_rock" }
+        ],
+        "seamless=false,variant=deep_red_rock_smooth": [
+            { "model": "minestrapp:double_slab_deep_red_rock" }
+        ],
+        "seamless=true,variant=deep_red_rock_smooth": [
+            { "model": "minestrapp:smooth_double_slab_deep_red_rock" }
+        ],
+        "seamless=false,variant=deepstone_smooth": [
+            { "model": "minestrapp:double_slab_deepstone" }
+        ],
+        "seamless=true,variant=deepstone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_deepstone" }
+        ],
+        "seamless=false,variant=coldstone_smooth": [
+            { "model": "minestrapp:double_slab_coldstone" }
+        ],
+        "seamless=true,variant=coldstone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_coldstone" }
+        ],
+        "seamless=false,variant=deep_coldstone_smooth": [
+            { "model": "minestrapp:double_slab_deep_coldstone" }
+        ],
+        "seamless=true,variant=deep_coldstone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_deep_coldstone" }
+        ],
+        "seamless=false,variant=icestone_smooth": [
+            { "model": "minestrapp:double_slab_icestone" }
+        ],
+        "seamless=true,variant=icestone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_icestone" }
+        ],
+        "seamless=false,variant=glacierrock_smooth": [
+            { "model": "minestrapp:double_slab_glacierrock" }
+        ],
+        "seamless=true,variant=glacierrock_smooth": [
+            { "model": "minestrapp:smooth_double_slab_glacierrock" }
+        ],
+        "seamless=false,variant=oceanstone_smooth": [
+            { "model": "minestrapp:double_slab_oceanstone" }
+        ],
+        "seamless=true,variant=oceanstone_smooth": [
+            { "model": "minestrapp:smooth_double_slab_oceanstone" }
+        ]
+    }
+}

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockDoubleStoneSlab1;
+import minestrapp.block.BlockDoubleStoneSlab2;
+import minestrapp.block.BlockHalfStoneSlab1;
+import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
@@ -11,6 +15,7 @@ import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneSlab1;
+import minestrapp.block.BlockStoneSlab2;
 import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
@@ -22,12 +27,14 @@ import minestrapp.block.crops.OnionPlant;
 import minestrapp.block.crops.PeanutsPlant;
 import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.crops.TomatoPlant;
+import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -66,7 +73,10 @@ public class MBlocks
 	public static Block stone_bricks;
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
-	public static Block stone_slab_1;
+	public static BlockSlab stone_slab_1;
+	public static BlockDoubleStoneSlab1 double_stone_slab_1;
+	public static BlockSlab stone_slab_2;
+	public static BlockDoubleStoneSlab2 double_stone_slab_2;
 	
 	//Ore
 	public static Block ore_coal;
@@ -129,7 +139,10 @@ public class MBlocks
 		register(stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone_bricks));
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
-		//register(stone_slab_1 = new BlockStoneSlab1("m_stone_slab_1"));
+		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
+		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
+		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
+		register(stone_slab_2 = new BlockHalfStoneSlab2("m_stone_slab_2"), new ItemBlockMSlab(stone_slab_2, stone_slab_2, double_stone_slab_2));
 		
 		//Ore
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
@@ -221,6 +234,11 @@ public class MBlocks
 			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
+		}
+		for(int i = 0 ; i < 8 ; i++)
+		{
+			initModel(stone_slab_1, i, "m_stone_slab_1_" + BlockStoneSlab1.EnumType.values()[i].getName());
+			initModel(stone_slab_2, i, "m_stone_slab_2_" + BlockStoneSlab2.EnumType.values()[i].getName());
 		}
 
 	}

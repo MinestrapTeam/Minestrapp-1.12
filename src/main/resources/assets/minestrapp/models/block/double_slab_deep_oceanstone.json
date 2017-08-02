@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestrapp:blocks/stone/deep_oceanstone_slab_top",
+        "side": "minestrapp:blocks/stone/deep_oceanstone_slab_side"
+    }
+}

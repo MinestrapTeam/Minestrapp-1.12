@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "half=bottom,variant=deep_oceanstone_smooth": [
+            { "model": "minestrapp:half_slab_deep_oceanstone" }
+        ],
+        "half=top,variant=deep_oceanstone_smooth": [
+            { "model": "minestrapp:upper_slab_deep_oceanstone" }
+        ],
+        "half=bottom,variant=red_rock_cobbled": [
+            { "model": "minestrapp:half_slab_red_rock_cobbled" }
+        ],
+        "half=top,variant=red_rock_cobbled": [
+            { "model": "minestrapp:upper_slab_red_rock_cobbled" }
+        ],
+        "half=bottom,variant=deep_red_rock_cobbled": [
+            { "model": "minestrapp:half_slab_deep_red_rock_cobbled" }
+        ],
+        "half=top,variant=deep_red_rock_cobbled": [
+            { "model": "minestrapp:upper_slab_deep_red_rock_cobbled" }
+        ],
+        "half=bottom,variant=deepstone_cobbled": [
+            { "model": "minestrapp:half_slab_deepstone_cobbled" }
+        ],
+        "half=top,variant=deepstone_cobbled": [
+            { "model": "minestrapp:upper_slab_deepstone_cobbled" }
+        ],
+        "half=bottom,variant=coldstone_cobbled": [
+            { "model": "minestrapp:half_slab_coldstone_cobbled" }
+        ],
+        "half=top,variant=coldstone_cobbled": [
+            { "model": "minestrapp:upper_slab_coldstone_cobbled" }
+        ],
+        "half=bottom,variant=deep_coldstone_cobbled": [
+            { "model": "minestrapp:half_slab_deep_coldstone_cobbled" }
+        ],
+        "half=top,variant=deep_coldstone_cobbled": [
+            { "model": "minestrapp:upper_slab_deep_coldstone_cobbled" }
+        ],
+        "half=bottom,variant=icestone_cobbled": [
+            { "model": "minestrapp:half_slab_icestone_cobbled" }
+        ],
+        "half=top,variant=icestone_cobbled": [
+            { "model": "minestrapp:upper_slab_icestone_cobbled" }
+        ],
+        "half=bottom,variant=glacierrock_cobbled": [
+            { "model": "minestrapp:half_slab_glacierrock_cobbled" }
+        ],
+        "half=top,variant=glacierrock_cobbled": [
+            { "model": "minestrapp:upper_slab_glacierrock_cobbled" }
+        ]
+    }
+}

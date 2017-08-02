@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "half=bottom,variant=red_rock_smooth": [
+            { "model": "minestrapp:half_slab_red_rock" }
+        ],
+        "half=top,variant=red_rock_smooth": [
+            { "model": "minestrapp:upper_slab_red_rock" }
+        ],
+        "half=bottom,variant=deep_red_rock_smooth": [
+            { "model": "minestrapp:half_slab_deep_red_rock" }
+        ],
+        "half=top,variant=deep_red_rock_smooth": [
+            { "model": "minestrapp:upper_slab_deep_red_rock" }
+        ],
+        "half=bottom,variant=deepstone_smooth": [
+            { "model": "minestrapp:half_slab_deepstone" }
+        ],
+        "half=top,variant=deepstone_smooth": [
+            { "model": "minestrapp:upper_slab_deepstone" }
+        ],
+        "half=bottom,variant=coldstone_smooth": [
+            { "model": "minestrapp:half_slab_coldstone" }
+        ],
+        "half=top,variant=coldstone_smooth": [
+            { "model": "minestrapp:upper_slab_coldstone" }
+        ],
+        "half=bottom,variant=deep_coldstone_smooth": [
+            { "model": "minestrapp:half_slab_deep_coldstone" }
+        ],
+        "half=top,variant=deep_coldstone_smooth": [
+            { "model": "minestrapp:upper_slab_deep_coldstone" }
+        ],
+        "half=bottom,variant=icestone_smooth": [
+            { "model": "minestrapp:half_slab_icestone" }
+        ],
+        "half=top,variant=icestone_smooth": [
+            { "model": "minestrapp:upper_slab_icestone" }
+        ],
+        "half=bottom,variant=glacierrock_smooth": [
+            { "model": "minestrapp:half_slab_glacierrock" }
+        ],
+        "half=top,variant=glacierrock_smooth": [
+            { "model": "minestrapp:upper_slab_glacierrock" }
+        ],
+        "half=bottom,variant=oceanstone_smooth": [
+            { "model": "minestrapp:half_slab_oceanstone" }
+        ],
+        "half=top,variant=oceanstone_smooth": [
+            { "model": "minestrapp:upper_slab_oceanstone" }
+        ]
+    }
+}

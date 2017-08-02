@@ -71,6 +71,24 @@ tile.m_stone_bricks_mossy_glacierrock.name=Wet Glacierrock Bricks
 tile.m_stone_bricks_mossy_oceanstone.name=Mossy Oceanstone Bricks
 tile.m_stone_bricks_mossy_deep_oceanstone.name=Mossy Reefstone Bricks
 
+tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
+tile.m_stone_slab_1_deep_red_rock_smooth.name=Deep Red Rock Slab
+tile.m_stone_slab_1_deepstone_smooth.name=Deepstone Slab
+tile.m_stone_slab_1_coldstone_smooth.name=Coldstone Slab
+tile.m_stone_slab_1_deep_coldstone_smooth.name=Deep Coldstone Slab
+tile.m_stone_slab_1_icestone_smooth.name=Icestone Slab
+tile.m_stone_slab_1_glacierrock_smooth.name=Glacierrock Slab
+tile.m_stone_slab_1_oceanstone_smooth.name=Oceanstone Slab
+
+tile.m_stone_slab_2_deep_oceanstone_smooth.name=Reefstone Slab
+tile.m_stone_slab_2_red_rock_cobbled.name=Red Cobblestone Slab
+tile.m_stone_slab_2_deep_red_rock_cobbled.name=Deep Red Cobblestone Slab
+tile.m_stone_slab_2_deepstone_cobbled.name=Deep Cobblestone Slab
+tile.m_stone_slab_2_coldstone_cobbled.name=Cold Cobblestone Slab
+tile.m_stone_slab_2_deep_coldstone_cobbled.name=Deep Cold Cobblestone Slab
+tile.m_stone_slab_2_icestone_cobbled.name=Cracked Icestone Slab
+tile.m_stone_slab_2_glacierrock_cobbled.name=Cracked Glacierrock Slab
+
 ## Ores ##
 
 tile.ore_coal_red_rock.name=Coal Ore
