@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:block_dimensium_destabilized_1" },
+            { "model": "minestrapp:block_dimensium_destabilized_2" },
+            { "model": "minestrapp:block_dimensium_destabilized_3" },
+            { "model": "minestrapp:block_dimensium_destabilized_4" },
+            { "model": "minestrapp:block_dimensium_destabilized_5" },
+            { "model": "minestrapp:block_dimensium_destabilized_6" },
+            { "model": "minestrapp:block_dimensium_destabilized_7" },
+            { "model": "minestrapp:block_dimensium_destabilized_8" },
+            { "model": "minestrapp:block_dimensium_destabilized_9" },
+            { "model": "minestrapp:block_dimensium_destabilized_10" }
+        ]
+    }
+}

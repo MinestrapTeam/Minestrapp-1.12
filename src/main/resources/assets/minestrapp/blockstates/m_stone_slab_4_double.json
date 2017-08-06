@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "seamless=false,variant=glacierrock_bricks": [
+            { "model": "minestrapp:glacierrock_bricks" }
+        ],
+        "seamless=true,variant=glacierrock_bricks": [
+            { "model": "minestrapp:glacierrock_bricks" }
+        ],
+        "seamless=false,variant=oceanstone_bricks": [
+            { "model": "minestrapp:oceanstone_bricks" }
+        ],
+        "seamless=true,variant=oceanstone_bricks": [
+            { "model": "minestrapp:oceanstone_bricks" }
+        ],
+        "seamless=false,variant=deep_oceanstone_bricks": [
+            { "model": "minestrapp:deep_oceanstone_bricks" }
+        ],
+        "seamless=true,variant=deep_oceanstone_bricks": [
+            { "model": "minestrapp:deep_oceanstone_bricks" }
+        ]
+    }
+}

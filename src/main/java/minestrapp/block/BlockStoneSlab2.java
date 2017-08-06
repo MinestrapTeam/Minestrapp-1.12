@@ -51,6 +51,9 @@ public abstract class BlockStoneSlab2 extends BlockSlab implements IMetaBlockNam
         this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
+        this.setHardness(2F);
+        this.setResistance(10F);
+        this.setHarvestLevel("pickaxe", 0);
     }
     
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
@@ -141,6 +144,30 @@ public abstract class BlockStoneSlab2 extends BlockSlab implements IMetaBlockNam
     {
         return ((BlockStoneSlab2.EnumType)state.getValue(VARIANT)).getMapColor();
     }
+    
+    public float getBlockHardness(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+		if(((BlockStoneSlab2.EnumType)blockState.getValue(VARIANT)).isDeep())
+		{
+			return this.blockHardness * 1.5F;
+		}
+        return this.blockHardness;
+    }
+    
+    public void setHarvestLevel(String toolClass, int level)
+    {
+		for(int i = 0 ; i < BlockStoneSlab2.EnumType.values().length ; i++)
+		{
+        	if(BlockStoneSlab2.EnumType.byMetadata(i).isDeep())
+        	{
+        		setHarvestLevel(toolClass, 2, this.getDefaultState().withProperty(VARIANT, BlockStoneSlab2.EnumType.byMetadata(i)));
+        	}
+        	else
+        	{
+        		setHarvestLevel(toolClass, level, this.getDefaultState().withProperty(VARIANT, BlockStoneSlab2.EnumType.byMetadata(i)));
+        	}
+        }
+    }
 
 	@Override
 	public String getUnlocalizedName(int meta)
@@ -150,27 +177,29 @@ public abstract class BlockStoneSlab2 extends BlockSlab implements IMetaBlockNam
     
     public static enum EnumType implements IStringSerializable
     {
-    	DEEP_OCEANSTONE_SMOOTH(0, EnumStoneType.DEEP_OCEANSTONE.getMapColor(), "deep_oceanstone_smooth"),
-        RED_ROCK_COBBLED(1, EnumStoneType.RED_ROCK.getMapColor(), "red_rock_cobbled"),
-        DEEP_RED_ROCK_COBBLED(2, EnumStoneType.DEEP_RED_ROCK.getMapColor(), "deep_red_rock_cobbled"),
-        DEEPSTONE_COBBLED(3, EnumStoneType.DEEPSTONE.getMapColor(), "deepstone_cobbled"),
-        COLDSTONE_COBBLED(4, EnumStoneType.COLDSTONE.getMapColor(), "coldstone_cobbled"),
-        DEEP_COLDSTONE_COBBLED(5, EnumStoneType.DEEP_COLDSTONE.getMapColor(), "deep_coldstone_cobbled"),
-        ICESTONE_COBBLED(6, EnumStoneType.ICESTONE.getMapColor(), "icestone_cobbled"),
-        GLACIERROCK_COBBLED(7, EnumStoneType.GLACIERROCK.getMapColor(), "glacierrock_cobbled");
+    	DEEP_OCEANSTONE_SMOOTH(0, EnumStoneType.DEEP_OCEANSTONE.getMapColor(), "deep_oceanstone_smooth", true),
+        RED_ROCK_COBBLED(1, EnumStoneType.RED_ROCK.getMapColor(), "red_rock_cobbled", false),
+        DEEP_RED_ROCK_COBBLED(2, EnumStoneType.DEEP_RED_ROCK.getMapColor(), "deep_red_rock_cobbled", true),
+        DEEPSTONE_COBBLED(3, EnumStoneType.DEEPSTONE.getMapColor(), "deepstone_cobbled", true),
+        COLDSTONE_COBBLED(4, EnumStoneType.COLDSTONE.getMapColor(), "coldstone_cobbled", false),
+        DEEP_COLDSTONE_COBBLED(5, EnumStoneType.DEEP_COLDSTONE.getMapColor(), "deep_coldstone_cobbled", true),
+        ICESTONE_COBBLED(6, EnumStoneType.ICESTONE.getMapColor(), "icestone_cobbled", false),
+        GLACIERROCK_COBBLED(7, EnumStoneType.GLACIERROCK.getMapColor(), "glacierrock_cobbled", true);
 
         private static final BlockStoneSlab2.EnumType[] META_LOOKUP = new BlockStoneSlab2.EnumType[values().length];
         private final int meta;
         private final MapColor mapColor;
         private final String name;
         private final String unlocalizedName;
+        private final boolean isDeep;
 
-        private EnumType(int meta, MapColor color, String name)
+        private EnumType(int meta, MapColor color, String name, boolean isDeep)
         {
             this.meta = meta;
             this.mapColor = color;
             this.name = name;
             this.unlocalizedName = name;
+            this.isDeep = isDeep;
         }
 
         public int getMetadata()
@@ -206,6 +235,11 @@ public abstract class BlockStoneSlab2 extends BlockSlab implements IMetaBlockNam
         public String getUnlocalizedName()
         {
             return this.unlocalizedName;
+        }
+        
+        public boolean isDeep()
+        {
+        	return this.isDeep;
         }
 
         static

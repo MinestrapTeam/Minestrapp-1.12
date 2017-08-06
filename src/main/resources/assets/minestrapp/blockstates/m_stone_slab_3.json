@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "half=bottom,variant=oceanstone_cobbled": [
+            { "model": "minestrapp:half_slab_oceanstone_cobbled" }
+        ],
+        "half=top,variant=oceanstone_cobbled": [
+            { "model": "minestrapp:upper_slab_oceanstone_cobbled" }
+        ],
+        "half=bottom,variant=deep_oceanstone_cobbled": [
+            { "model": "minestrapp:half_slab_deep_oceanstone_cobbled" }
+        ],
+        "half=top,variant=deep_oceanstone_cobbled": [
+            { "model": "minestrapp:upper_slab_deep_oceanstone_cobbled" }
+        ],
+        "half=bottom,variant=red_rock_bricks": [
+            { "model": "minestrapp:half_slab_red_rock_bricks" }
+        ],
+        "half=top,variant=red_rock_bricks": [
+            { "model": "minestrapp:upper_slab_red_rock_bricks" }
+        ],
+        "half=bottom,variant=deep_red_rock_bricks": [
+            { "model": "minestrapp:half_slab_deep_red_rock_bricks" }
+        ],
+        "half=top,variant=deep_red_rock_bricks": [
+            { "model": "minestrapp:upper_slab_deep_red_rock_bricks" }
+        ],
+        "half=bottom,variant=deepstone_bricks": [
+            { "model": "minestrapp:half_slab_deepstone_bricks" }
+        ],
+        "half=top,variant=deepstone_bricks": [
+            { "model": "minestrapp:upper_slab_deepstone_bricks" }
+        ],
+        "half=bottom,variant=coldstone_bricks": [
+            { "model": "minestrapp:half_slab_coldstone_bricks" }
+        ],
+        "half=top,variant=coldstone_bricks": [
+            { "model": "minestrapp:upper_slab_coldstone_bricks" }
+        ],
+        "half=bottom,variant=deep_coldstone_bricks": [
+            { "model": "minestrapp:half_slab_deep_coldstone_bricks" }
+        ],
+        "half=top,variant=deep_coldstone_bricks": [
+            { "model": "minestrapp:upper_slab_deep_coldstone_bricks" }
+        ],
+        "half=bottom,variant=icestone_bricks": [
+            { "model": "minestrapp:half_slab_icestone_bricks" }
+        ],
+        "half=top,variant=icestone_bricks": [
+            { "model": "minestrapp:upper_slab_icestone_bricks" }
+        ]
+    }
+}

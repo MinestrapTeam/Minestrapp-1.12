@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "seamless=false,variant=oceanstone_cobbled": [
+            { "model": "minestrapp:cobbled_oceanstone" }
+        ],
+        "seamless=true,variant=oceanstone_cobbled": [
+            { "model": "minestrapp:cobbled_oceanstone" }
+        ],
+        "seamless=false,variant=deep_oceanstone_cobbled": [
+            { "model": "minestrapp:cobbled_deep_oceanstone" }
+        ],
+        "seamless=true,variant=deep_oceanstone_cobbled": [
+            { "model": "minestrapp:cobbled_deep_oceanstone" }
+        ],
+        "seamless=false,variant=red_rock_bricks": [
+            { "model": "minestrapp:red_rock_bricks" }
+        ],
+        "seamless=true,variant=red_rock_bricks": [
+            { "model": "minestrapp:red_rock_bricks" }
+        ],
+        "seamless=false,variant=deep_red_rock_bricks": [
+            { "model": "minestrapp:deep_red_rock_bricks" }
+        ],
+        "seamless=true,variant=deep_red_rock_bricks": [
+            { "model": "minestrapp:deep_red_rock_bricks" }
+        ],
+        "seamless=false,variant=deepstone_bricks": [
+            { "model": "minestrapp:deepstone_bricks" }
+        ],
+        "seamless=true,variant=deepstone_bricks": [
+            { "model": "minestrapp:deepstone_bricks" }
+        ],
+        "seamless=false,variant=coldstone_bricks": [
+            { "model": "minestrapp:coldstone_bricks" }
+        ],
+        "seamless=true,variant=coldstone_bricks": [
+            { "model": "minestrapp:coldstone_bricks" }
+        ],
+        "seamless=false,variant=deep_coldstone_bricks": [
+            { "model": "minestrapp:deep_coldstone_bricks" }
+        ],
+        "seamless=true,variant=deep_coldstone_bricks": [
+            { "model": "minestrapp:deep_coldstone_bricks" }
+        ],
+        "seamless=false,variant=icestone_bricks": [
+            { "model": "minestrapp:icestone_bricks" }
+        ],
+        "seamless=true,variant=icestone_bricks": [
+            { "model": "minestrapp:icestone_bricks" }
+        ]
+    }
+}

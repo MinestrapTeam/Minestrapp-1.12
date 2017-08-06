@@ -3,11 +3,17 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockDimensium;
 import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
+import minestrapp.block.BlockDoubleStoneSlab3;
+import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
+import minestrapp.block.BlockHalfStoneSlab3;
+import minestrapp.block.BlockHalfStoneSlab4;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
@@ -16,6 +22,8 @@ import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneSlab1;
 import minestrapp.block.BlockStoneSlab2;
+import minestrapp.block.BlockStoneSlab3;
+import minestrapp.block.BlockStoneSlab4;
 import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
@@ -77,6 +85,10 @@ public class MBlocks
 	public static BlockDoubleStoneSlab1 double_stone_slab_1;
 	public static BlockSlab stone_slab_2;
 	public static BlockDoubleStoneSlab2 double_stone_slab_2;
+	public static BlockSlab stone_slab_3;
+	public static BlockDoubleStoneSlab3 double_stone_slab_3;
+	public static BlockSlab stone_slab_4;
+	public static BlockDoubleStoneSlab4 double_stone_slab_4;
 	
 	//Ore
 	public static Block ore_coal;
@@ -103,6 +115,7 @@ public class MBlocks
 	public static Block block_glacierite;
 	public static Block block_blazium;
 	public static Block block_dimensium;
+	public static Block block_dimensium_destabilized;
 	
 	//Utility
 	public static Block soulsteel_vessel;
@@ -143,6 +156,10 @@ public class MBlocks
 		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
 		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
 		register(stone_slab_2 = new BlockHalfStoneSlab2("m_stone_slab_2"), new ItemBlockMSlab(stone_slab_2, stone_slab_2, double_stone_slab_2));
+		register(double_stone_slab_3 = new BlockDoubleStoneSlab3("m_stone_slab_3"));
+		register(stone_slab_3 = new BlockHalfStoneSlab3("m_stone_slab_3"), new ItemBlockMSlab(stone_slab_3, stone_slab_3, double_stone_slab_3));
+		register(double_stone_slab_4 = new BlockDoubleStoneSlab4("m_stone_slab_4"));
+		register(stone_slab_4 = new BlockHalfStoneSlab4("m_stone_slab_4"), new ItemBlockMSlab(stone_slab_4, stone_slab_4, double_stone_slab_4));
 		
 		//Ore
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
@@ -162,11 +179,14 @@ public class MBlocks
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
-		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.field_193565_Q, SoundType.METAL, 6F, "pickaxe", 1).setResistance(15F).setCreativeTab(MTabs.resource));
-		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.field_193564_P, SoundType.METAL, 5F, "pickaxe", 1).setResistance(12F).setCreativeTab(MTabs.resource));
-		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setResistance(6000000.0F).setCreativeTab(MTabs.resource));
-
+		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.field_193565_Q, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
+		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.field_193564_P, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
+		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
+		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
+		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setBlockUnbreakable().setResistance(6000000.0F));
+		
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
@@ -239,6 +259,11 @@ public class MBlocks
 		{
 			initModel(stone_slab_1, i, "m_stone_slab_1_" + BlockStoneSlab1.EnumType.values()[i].getName());
 			initModel(stone_slab_2, i, "m_stone_slab_2_" + BlockStoneSlab2.EnumType.values()[i].getName());
+			initModel(stone_slab_3, i, "m_stone_slab_3_" + BlockStoneSlab3.EnumType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockStoneSlab4.EnumType.values().length ; i++)
+		{
+			initModel(stone_slab_4, i, "m_stone_slab_4_" + BlockStoneSlab4.EnumType.values()[i].getName());
 		}
 
 	}

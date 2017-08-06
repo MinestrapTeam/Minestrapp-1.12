@@ -89,6 +89,19 @@ tile.m_stone_slab_2_deep_coldstone_cobbled.name=Deep Cold Cobblestone Slab
 tile.m_stone_slab_2_icestone_cobbled.name=Cracked Icestone Slab
 tile.m_stone_slab_2_glacierrock_cobbled.name=Cracked Glacierrock Slab
 
+tile.m_stone_slab_3_oceanstone_cobbled.name=Cobbled Oceanstone Slab
+tile.m_stone_slab_3_deep_oceanstone_cobbled.name=Cobbled Reefstone Slab
+tile.m_stone_slab_3_red_rock_bricks.name=Red Rock Bricks Slab
+tile.m_stone_slab_3_deep_red_rock_bricks.name=Deep Red Rock Bricks Slab
+tile.m_stone_slab_3_deepstone_bricks.name=Deepstone Bricks Slab
+tile.m_stone_slab_3_coldstone_bricks.name=Coldstone Bricks Slab
+tile.m_stone_slab_3_deep_coldstone_bricks.name=Deep Coldstone Bricks Slab
+tile.m_stone_slab_3_icestone_bricks.name=Icestone Bricks Slab
+
+tile.m_stone_slab_4_glacierrock_bricks.name=Glacierrock Bricks Slab
+tile.m_stone_slab_4_oceanstone_bricks.name=Oceanstone Bricks Slab
+tile.m_stone_slab_4_deep_oceanstone_bricks.name=Reefstone Bricks Slab
+
 ## Ores ##
 
 tile.ore_coal_red_rock.name=Coal Ore
@@ -215,6 +228,9 @@ tile.block_bronze.name=Block of Bronze
 tile.block_steel.name=Block of Steel
 tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Titanium
+tile.block_blazium.name=Block of Blazium
+tile.block_dimensium.name=Block of Dimensium
+tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Utility ##
 

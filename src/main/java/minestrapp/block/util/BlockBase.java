@@ -13,10 +13,11 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockBase extends Block
 {
-	public MapColor mapColor;
-	public static boolean overrideToolReqs = false;
-	public static boolean canDragonDestroy = true;
-	public static boolean canWitherDestroy = true;
+	private MapColor mapColor;
+	private boolean overrideToolReqs = false;
+	private boolean isBeaconBase = false;
+	private boolean canDragonDestroy = true;
+	private boolean canWitherDestroy = true;
 
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel)
 	{
@@ -72,6 +73,17 @@ public class BlockBase extends Block
 		this.overrideToolReqs = true;
 		return this;
 	}
+	
+	public BlockBase setBeaconBase()
+	{
+		this.isBeaconBase = true;
+		return this;
+	}
+	
+	public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
+    {
+        return this.isBeaconBase;
+    }
 	
 	public boolean canHarvestBlock(IBlockAccess world, BlockPos pos, EntityPlayer player)
     {
