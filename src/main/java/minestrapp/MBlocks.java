@@ -19,6 +19,7 @@ import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockRedstoneOre;
+import minestrapp.block.BlockSavannaGrass;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneSlab1;
 import minestrapp.block.BlockStoneSlab2;
@@ -63,6 +64,7 @@ public class MBlocks
 	
 	//Plant
 	public static Block tundra_grass;
+	public static Block savanna_grass;
 	
 	//Soil
 	public static Block cold_sand;
@@ -104,6 +106,7 @@ public class MBlocks
 	public static Block ore_emerald;
 	public static Block ore_titanium;
 	public static Block ore_soul;
+	public static Block ore_dimensium;
 	
 	//Resource
 	public static Block block_copper;
@@ -134,6 +137,7 @@ public class MBlocks
 	{
 		//Plant
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
+		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -175,6 +179,7 @@ public class MBlocks
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
 		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(MItems.gem_soul, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
+		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
@@ -184,8 +189,8 @@ public class MBlocks
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
-		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setBlockUnbreakable().setResistance(6000000.0F));
+		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));

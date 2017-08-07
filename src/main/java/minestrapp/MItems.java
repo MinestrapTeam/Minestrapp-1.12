@@ -199,6 +199,7 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_titanium, new ItemStack(ingots, 1, 5), 4F);
 		GameRegistry.addSmelting(MBlocks.ore_soul, new ItemStack(gem_soul), 3F);
+		GameRegistry.addSmelting(MBlocks.ore_dimensium, new ItemStack(ingots, 1, 8), 3F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{

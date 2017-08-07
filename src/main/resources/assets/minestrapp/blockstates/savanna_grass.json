@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "section=short": [
+            { "model": "minestrapp:savanna_grass_short" }
+        ],
+        "section=top": [
+            { "model": "minestrapp:savanna_grass_top" }
+        ],
+        "section=middle": [
+            { "model": "minestrapp:savanna_grass_middle" }
+        ],
+        "section=bottom": [
+            { "model": "minestrapp:savanna_grass_bottom" }
+        ]
+    }
+}

@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.biome.BiomeProviderSingle;
+import net.minecraft.world.biome.BiomeSavanna;
 import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.biome.BiomeJungle;
@@ -198,9 +199,21 @@ public class MStoneGen
 							}
 						}
 					}
-					else if (state.getBlock() == Blocks.TALLGRASS && biome.getTemperature() < 0.2F)
+					else if (state.getBlock() == Blocks.TALLGRASS)
 					{
-						chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
+						if(biome.getTemperature() < 0.2F)
+							chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
+						else if (biome instanceof BiomeSavanna)
+						{
+							int o = random.nextInt(3) + 1;
+							
+							for (int p = 0 ; p < o ; p++)
+							{
+								BlockPos grassPos = new BlockPos(subpos2.getX(), subpos2.getY() + p, subpos2.getZ());
+								if(world.getBlockState(grassPos).getBlock().isReplaceable(world, grassPos))
+									chunk.setBlockState(grassPos, MBlocks.savanna_grass.getDefaultState());
+							}
+						}
 					}
 				}
 			}

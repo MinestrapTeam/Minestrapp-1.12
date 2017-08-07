@@ -31,6 +31,7 @@ public class MOreGen implements IWorldGenerator
 	private WorldGenerator torite;
 	private WorldGenerator titanium;
 	private WorldGenerator soul;
+	private WorldGenerator dimensium;
 	
 	public MOreGen()
 	{
@@ -39,6 +40,7 @@ public class MOreGen implements IWorldGenerator
 		torite = new MGenMinable(MBlocks.ore_torite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 4);
 		titanium = new MGenMinable(MBlocks.ore_titanium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 3);
 		soul = new MGenMinable(MBlocks.ore_soul.getDefaultState(), 3, new MMinablePredicate(Blocks.SOUL_SAND.getDefaultState()));
+		dimensium = new MGenMinable(MBlocks.ore_dimensium.getDefaultState(), 4, new MMinablePredicate(Blocks.END_STONE.getDefaultState()));
 	}
 	
 	private void runGenerator(WorldGenerator generator, World world, Random rand, int chunkX, int chunkZ, int spawnChance, int minHeight, int maxHeight, boolean biomeSpecific)
@@ -124,6 +126,11 @@ public class MOreGen implements IWorldGenerator
 		else if(world.provider.getDimension() == -1)
 		{
 			this.runGenerator(soul, world, random, chunkX, chunkZ, 24, 20, 100, false);
+		}
+		
+		else if(world.provider.getDimension() == 1)
+		{
+			this.runGenerator(dimensium, world, random, chunkX, chunkZ, 8, 20, 128, false);
 		}
 	}
 }

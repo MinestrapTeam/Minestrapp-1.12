@@ -2,6 +2,7 @@
 
 ## Plant ##
 tile.tundra_grass.name=Tundra Grass
+tile.savanna_grass.name=Savanna Grass
 
 ## Soil ##
 
@@ -219,6 +220,7 @@ tile.ore_titanium_deep_oceanstone.name=Titanium Ore
 tile.ore_titanium_stone.name=Titanium Ore
 
 tile.ore_soul.name=Soul Ore
+tile.ore_dimensium.name=Dimensium Ore
 
 ## Resource ##
 

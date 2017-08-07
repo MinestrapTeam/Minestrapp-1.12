@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "minestrapp:blocks/plant/savanna_grass_middle"
+    }
+}
