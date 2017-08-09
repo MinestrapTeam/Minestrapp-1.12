@@ -6,6 +6,7 @@ import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.BlockMGrass;
+import minestrapp.gui.MGuiHandler;
 import minestrapp.mobs.registry.MobRegistry;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -21,7 +22,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -32,7 +35,6 @@ public class ClientProxy extends CommonProxy
 		super.preInit(event);
 		MBlocks.registerRenders();
 		MItems.registerRenders();
-
 
 	}
 	

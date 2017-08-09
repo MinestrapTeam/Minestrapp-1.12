@@ -3,6 +3,7 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockDimensium;
@@ -43,6 +44,7 @@ import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -122,6 +124,7 @@ public class MBlocks
 	
 	//Utility
 	public static Block soulsteel_vessel;
+	public static Block barrel;
 	
 	//Crops
 	public static Block crop_withered;
@@ -194,6 +197,7 @@ public class MBlocks
 		
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
 		
 		//Crops
 		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
