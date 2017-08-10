@@ -4,6 +4,7 @@ import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityBarrel;
+import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.gui.MGuiHandler;
 import minestrapp.tileentity.TileEntityVessel;
 import minestrapp.worldgen.MOreGen;
@@ -28,6 +29,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityVessel.class, "TileEntityVessel");
 		
 		GameRegistry.registerTileEntity(TileEntityBarrel.class, "TileEntityBarrel");
+		
+		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, "TileEntityStoneCutter");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 

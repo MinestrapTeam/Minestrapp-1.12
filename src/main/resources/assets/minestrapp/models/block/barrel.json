@@ -1,6 +1,5 @@
 {
   "__comment": "Designed by Delocuro with BDcraft Cubik PRO 0.93 Beta - http://bdcraft.net",
-  "parent": "block/cube_all",
   "textures": {
     "particle": "minestrapp:blocks/utility/barrel/barrel_side",
     "texture": "minestrapp:blocks/utility/barrel/barrel_top",

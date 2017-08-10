@@ -22,6 +22,7 @@ import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSavannaGrass;
 import minestrapp.block.BlockSoulsteelVessel;
+import minestrapp.block.BlockStoneCutter;
 import minestrapp.block.BlockStoneSlab1;
 import minestrapp.block.BlockStoneSlab2;
 import minestrapp.block.BlockStoneSlab3;
@@ -125,6 +126,7 @@ public class MBlocks
 	//Utility
 	public static Block soulsteel_vessel;
 	public static Block barrel;
+	public static Block stonecutter;
 	
 	//Crops
 	public static Block crop_withered;
@@ -198,7 +200,8 @@ public class MBlocks
 		//Utility
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
-		
+		register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
+
 		//Crops
 		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));

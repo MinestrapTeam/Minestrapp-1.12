@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minestrapp:stonecutter"
+    },
+    "facing=south": {
+      "model": "minestrapp:stonecutter",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "minestrapp:stonecutter",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "minestrapp:stonecutter",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "minestrapp:stonecutter",
+      "y": 90
+    }
+  }
+}  
