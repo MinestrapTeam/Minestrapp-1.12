@@ -25,6 +25,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -132,5 +133,15 @@ public class BlockTundraGrass extends BlockBush
     public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
     {
 		return EnumPlantType.Plains;
+    }
+	
+	public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 80;
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 20;
     }
 }

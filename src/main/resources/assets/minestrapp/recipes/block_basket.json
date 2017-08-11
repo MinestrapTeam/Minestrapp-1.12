@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x x",
+        "x x",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_natural_item",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:basket"
+     }  
+}

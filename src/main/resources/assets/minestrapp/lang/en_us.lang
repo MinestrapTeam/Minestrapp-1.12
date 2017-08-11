@@ -236,6 +236,7 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Utility ##
 
+tile.basket.name=Basket
 tile.soulsteel_vessel.name=Soulsteel Vessel
 
 
@@ -255,6 +256,9 @@ item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
 item.gem_soul.name=Soul Gem
+
+## Natural Ingredients ##
+item.m_natural_item_0.name=Grass Fibers
 
 ## Tech Components ##
 item.m_tech_component_0.name=Reinforced Stick

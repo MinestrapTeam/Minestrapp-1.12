@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:tallgrass",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_natural_item",
+        "count": 1,
+        "data": 0
+     }
+}

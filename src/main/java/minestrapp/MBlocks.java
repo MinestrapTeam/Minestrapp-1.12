@@ -3,6 +3,7 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import minestrapp.block.BlockBasket;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockDimensium;
@@ -121,6 +122,7 @@ public class MBlocks
 	public static Block block_dimensium_destabilized;
 	
 	//Utility
+	public static Block basket;
 	public static Block soulsteel_vessel;
 	
 	//Crops
@@ -193,6 +195,7 @@ public class MBlocks
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Utility
+		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
 		//Crops

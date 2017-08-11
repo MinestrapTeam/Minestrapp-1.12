@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:savanna_grass"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_natural_item",
+        "count": 2,
+        "data": 0
+     }
+}

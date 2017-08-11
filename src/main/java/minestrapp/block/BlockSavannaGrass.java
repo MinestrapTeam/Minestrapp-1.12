@@ -24,6 +24,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -210,5 +211,15 @@ public class BlockSavannaGrass extends BlockBush implements IGrowable
         {
             return this.name;
         }
+    }
+	
+	public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 180;
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 120;
     }
 }

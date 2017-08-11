@@ -19,7 +19,7 @@ public class BlockBase extends Block
 	private boolean canDragonDestroy = true;
 	private boolean canWitherDestroy = true;
 
-	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel)
+	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(material);
 		this.setUnlocalizedName(name);
@@ -27,6 +27,11 @@ public class BlockBase extends Block
 		this.mapColor = mapColor;
 		this.setSoundType(soundType);
 		this.setHardness(hardness);
+	}
+	
+	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel)
+	{
+		this(name, material, mapColor, soundType, hardness);
 		this.setHarvestLevel(tool, harvestLevel);
 	}
 

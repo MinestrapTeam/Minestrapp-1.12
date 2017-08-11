@@ -43,6 +43,8 @@ public class MItems
 {
 	static List<Item> itemList = new ArrayList<Item>();
 	
+	public static Item natural_ingredients;
+	
 	public static Item ingots;
 	public static Item gem_soul;
 	
@@ -115,6 +117,8 @@ public class MItems
 	
 	public static void init()
 	{
+		//0=Grass Fibers
+		register(natural_ingredients = new ItemMetaBase("m_natural_item", 1).setCreativeTab(MTabs.ingredients));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setCreativeTab(MTabs.minerals));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad
