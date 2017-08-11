@@ -3,7 +3,11 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import minestrapp.block.BlockBasket;
+=======
+import minestrapp.block.BlockBarrel;
+>>>>>>> origin/master
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockDimensium;
@@ -22,6 +26,7 @@ import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSavannaGrass;
 import minestrapp.block.BlockSoulsteelVessel;
+import minestrapp.block.BlockStoneCutter;
 import minestrapp.block.BlockStoneSlab1;
 import minestrapp.block.BlockStoneSlab2;
 import minestrapp.block.BlockStoneSlab3;
@@ -44,6 +49,7 @@ import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -124,6 +130,8 @@ public class MBlocks
 	//Utility
 	public static Block basket;
 	public static Block soulsteel_vessel;
+	public static Block barrel;
+	public static Block stonecutter;
 	
 	//Crops
 	public static Block crop_withered;
@@ -197,7 +205,9 @@ public class MBlocks
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
-		
+		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
+		register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
+
 		//Crops
 		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
