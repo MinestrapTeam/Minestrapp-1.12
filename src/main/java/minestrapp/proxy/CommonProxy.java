@@ -3,6 +3,7 @@ package minestrapp.proxy;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
+import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.gui.MGuiHandler;
@@ -31,6 +32,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityBarrel.class, "TileEntityBarrel");
 		
 		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, "TileEntityStoneCutter");
+		
+		GameRegistry.registerTileEntity(TileEntityAlloy.class, "TileEntityAlloy");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 

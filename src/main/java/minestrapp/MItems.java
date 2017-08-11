@@ -101,6 +101,7 @@ public class MItems
 	public static Item peanuts;
 	public static Item tomato;
 	public static Item tomato_seeds;
+	public static Item fried_egg;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -184,6 +185,8 @@ public class MItems
 		register(lettuce = new MItemsSeedFood(4, 0.375F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
 		register(tomato = new MItemsFood(4, 0.625F, false, "tomato"));	
 		register(tomato_seeds = new MItemsSeeds(MBlocks.crop_tomato, Blocks.FARMLAND, "tomato_seeds"));
+		register(fried_egg = new MItemsFood(4, 0.625F, false, "fried_egg"));
+		
 		
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
@@ -234,22 +237,6 @@ public class MItems
 		GameRegistry.register(item);
 		itemList.add(item);
 	}
-
-//	public static void registerFood(ItemFood mItemsFood)
-//	{
-//		GameRegistry.register(mItemsFood);
-//		itemList.add(mItemsFood);
-//	}
-//	public static void registerSeeds(ItemSeeds mItemsSeeds)
-//	{
-//		GameRegistry.register(mItemsSeeds);
-//		itemList.add(mItemsSeeds);
-//	}
-//	public static void registerSeedFood(MItemsSeedFood mItemsSeedFood)
-//	{
-//		GameRegistry.register(mItemsSeedFood);
-//		itemList.add(mItemsSeedFood);
-//	}
 	
 	private static void initModel(Item item)
 	{

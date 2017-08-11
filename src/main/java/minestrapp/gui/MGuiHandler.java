@@ -1,7 +1,9 @@
 package minestrapp.gui;
 
+import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.gui.GuiBarrel;
+import minestrapp.container.ContainerAlloy;
 import minestrapp.container.ContainerBarrel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -11,12 +13,15 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class MGuiHandler implements IGuiHandler {
 	public static final int BARREL = 0;
+	public static final int ALLOY = 1;
 	
 	@Override
 	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		switch (ID) {
 			case BARREL:
 				return new ContainerBarrel(player.inventory, (TileEntityBarrel)world.getTileEntity(new BlockPos(x, y, z)));
+			case ALLOY:
+				return new ContainerAlloy(player.inventory, (TileEntityAlloy)world.getTileEntity(new BlockPos(x, y, z)));
 			default:
 				return null;
 		}
@@ -27,6 +32,9 @@ public class MGuiHandler implements IGuiHandler {
 		switch (ID) {
 			case BARREL:
 				return new GuiBarrel(getServerGuiElement(ID, player, world, x, y, z), player.inventory);
+			case ALLOY:
+				return new GuiAlloy((ContainerAlloy) getServerGuiElement(ID, player, world, x, y, z), ((ContainerAlloy) getServerGuiElement(ID, player, world, x, y, z)).getTE(), player.inventory);
+				
 			default:
 				return null;
 		}

@@ -239,8 +239,8 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 tile.basket.name=Basket
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
-
-
+tile.stonecutter.name=Stone Cutter
+tile.alloy.name=Alloy Furnace
 
 
 ##### Items #####
@@ -317,7 +317,7 @@ item.diamond_dagger.name=Diamond Dagger
 item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
 
-##Crops##
+##Crops&Food##
 item.pepper.name=Pepper
 item.pepper_seeds.name=Pepper Seeds
 item.cabbage.name=Cabbage
@@ -329,6 +329,7 @@ item.onion.name=Onion
 item.peanuts.name=Peanuts
 item.tomato.name=Tomato
 item.tomato_seeds.name=Tomato Seeds
+item.fried_egg.name=Fried Egg
 
 ##Mobs##
 entity.SheetGhost.name=Sheet Ghost

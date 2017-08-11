@@ -3,11 +3,10 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
+
 import minestrapp.block.BlockBasket;
-=======
+import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
->>>>>>> origin/master
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockDimensium;
@@ -132,6 +131,7 @@ public class MBlocks
 	public static Block soulsteel_vessel;
 	public static Block barrel;
 	public static Block stonecutter;
+	public static Block alloy;
 	
 	//Crops
 	public static Block crop_withered;
@@ -207,7 +207,7 @@ public class MBlocks
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
 		register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
-
+		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		//Crops
 		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));

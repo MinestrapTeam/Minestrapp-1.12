@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minestrapp:alloy_active"
+    },
+    "facing=south": {
+      "model": "minestrapp:alloy_active",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "minestrapp:alloy_active",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "minestrapp:alloy_active",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "minestrapp:alloy_active",
+      "y": 90
+    }
+  }
+}  
