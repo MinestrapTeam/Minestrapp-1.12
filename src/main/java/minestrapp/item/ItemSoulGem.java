@@ -4,6 +4,7 @@ import java.util.Random;
 
 import minestrapp.MItems;
 import minestrapp.MTabs;
+import minestrapp.item.util.ItemBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -16,12 +17,11 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemSoulGem extends Item
+public class ItemSoulGem extends ItemBase
 {
 	public ItemSoulGem(String name)
 	{
-		this.setUnlocalizedName(name);
-		this.setRegistryName(name);
+		super(name);
 		this.setCreativeTab(MTabs.minerals);
 	}
 	

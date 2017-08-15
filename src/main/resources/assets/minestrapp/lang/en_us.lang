@@ -318,6 +318,11 @@ item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
 
 ##Crops&Food##
+item.blueberry.name=Blueberry
+item.raspberry.name=Raspberry
+item.blackberry.name=Blackberry
+item.strawberry.name=Strawberry
+item.voidberry.name=Voidberry
 item.pepper.name=Pepper
 item.pepper_seeds.name=Pepper Seeds
 item.cabbage.name=Cabbage
@@ -329,7 +334,80 @@ item.onion.name=Onion
 item.peanuts.name=Peanuts
 item.tomato.name=Tomato
 item.tomato_seeds.name=Tomato Seeds
+item.corn_on_the_cob.name=Corn on the Cob
+item.grilled_corn.name=Grilled Corn
+
+item.corn_meal.name=Corn Meal
+item.corn_bread.name=Corn Bread
+item.dough.name=Dough
+item.sugar_cookie.name=Sugar Cookie
+item.bun.name=Bun
+item.pbj.name=PB&J Sandwich
+item.salmon_burger.name=Salmon Burger
+item.hamburger.name=Hamburger
+item.dry_spaghetti.name=Dry Spaghetti
+item.pie_crust.name=Pie Crust
+item.apple_pie.name=Apple Pie
+item.blueberry_pie.name=Blueberry Pie
+item.blackberry_pie.name=Blackberry Pie
+item.raspberry_pie.name=Raspberry Pie
+item.strawberry_pie.name=Strawberry Pie
+item.voidberry_pie.name=Voidberry Pie
+
+item.bread_bowl.name=Bread Bowl
+item.bread_mushroom_stew.name=Mushroom Stew
+item.bread_beetroot_soup.name=Beetroot Soup
+item.bread_rabbit_stew.name=Rabbit Stew
 item.fried_egg.name=Fried Egg
+item.bread_fried_egg.name=Fried Egg
+item.rice_bowl.name=Rice Bowl
+item.bread_rice_bowl.name=Rice Bowl
+item.stir_fry.name=Stir Fry
+item.bread_stir_fry.name=Stir Fry
+item.tomato_sauce.name=Tomato Sauce
+item.bread_tomato_sauce.name=Tomato Sauce
+item.tomato_soup.name=Tomato Soup
+item.bread_tomato_soup.name=Tomato Soup
+item.spaghetti.name=Spaghetti
+item.bread_spaghetti.name=Spaghetti
+item.popcorn.name=Popcorn
+item.bread_popcorn.name=Popcorn
+item.ice_cream.name=Ice Cream
+item.bread_ice_cream.name=Ice Cream
+item.glowshroom_stew.name=Glowshroom Stew
+item.bread_glowshroom_stew.name=Glowshroom Stew
+
+item.salad.name=Green Salad
+item.bread_salad.name=Green Salad
+item.blueberry_salad.name=Hearty Salad
+item.bread_blueberry_salad.name=Hearty Salad
+item.blackberry_salad.name=Hasty Salad
+item.bread_blackberry_salad.name=Hasty Salad
+item.raspberry_salad.name=Healthy Salad
+item.bread_raspberry_salad.name=Healthy Salad
+item.strawberry_salad.name=Fitness Salad
+item.bread_strawberry_salad.name=Fitness Salad
+item.voidberry_salad.name=Mystic Salad
+item.bread_voidberry_salad.name=Mystic Salad
+
+item.jam.name=Jam
+item.void_jam.name=Void Jam
+item.peanut_butter.name=Peanut Butter
+item.hot_sauce.name=Hot Sauce
+
+item.fat.name=Fat
+item.grease.name=Grease
+item.squid_tentacle.name=Squid Tentacle
+item.calamari.name=Calamari
+item.sushi.name=Sushi
+item.lucky_sushi.name=Lucky Sushi
+item.onigiri.name=Onigiri
+item.flesh.name=Flesh
+
+item.fries.name=Fries
+item.fried_fish.name=Fried Fish
+item.fried_salmon.name=Fried Salmon
+item.fish_and_chips.name=Fish & Chips
 
 ##Mobs##
 entity.SheetGhost.name=Sheet Ghost

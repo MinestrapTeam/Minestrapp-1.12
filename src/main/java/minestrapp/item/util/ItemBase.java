@@ -8,19 +8,27 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemBase extends Item
 {
-	public boolean foiled;
+	private boolean foiled;
+	private boolean beaconFuel;
 	
 	public ItemBase(String name)
 	{
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
-		this.setCreativeTab(MTabs.minerals);
 		this.foiled = false;
+		this.beaconFuel = false;
 	}
 	
-	public void setFoiled()
+	public ItemBase setFoiled()
 	{
 		this.foiled = true;
+		return this;
+	}
+	
+	public ItemBase setBeaconPayment()
+	{
+		this.beaconFuel = true;
+		return this;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -28,4 +36,9 @@ public class ItemBase extends Item
 	{
 		return this.foiled;
 	}
+	
+	public boolean isBeaconPayment(ItemStack stack)
+    {
+		return this.beaconFuel;
+    }
 }
