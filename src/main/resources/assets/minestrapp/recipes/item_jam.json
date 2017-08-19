@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:blueberry"
+        },
+        {
+            "item": "minestrapp:blackberry"
+        },
+        {
+            "item": "minestrapp:raspberry"
+        },
+        {
+            "item": "minestrapp:strawberry"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:jam"
+    }   
+}

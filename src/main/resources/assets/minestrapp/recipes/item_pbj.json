@@ -1,0 +1,20 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:peanut_butter"
+        },
+        {
+            "item": "minestrapp:jam"
+        }                
+    ],
+    "result": {
+        "item": "minestrapp:pbj"
+    }   
+}

@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "rrr",
+        "rrr",
+        " b "
+    ],
+    "key": {
+        "r": {
+            "item": "minecraft:beetroot"
+        },
+        "b": {
+            "item": "minestrapp:bread_bowl"
+        }
+     },
+     "result": {
+        "item": "minestrapp:bread_beetroot_soup"
+     }  
+}

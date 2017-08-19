@@ -1,0 +1,14 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:dough"
+        },
+        {
+            "item": "minecraft:bowl"
+        }               
+    ],
+    "result": {
+        "item": "minestrapp:bread_bowl"
+    }   
+}

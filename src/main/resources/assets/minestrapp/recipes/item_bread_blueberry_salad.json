@@ -1,0 +1,20 @@
+-{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:blueberry"
+        },
+        {
+            "item": "minestrapp:lettuce"
+        },
+        {
+            "item": "minestrapp:cabbage"
+        },
+        {
+            "item": "minestrapp:bread_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:bread_blueberry_salad"
+    }   
+}

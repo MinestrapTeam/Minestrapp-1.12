@@ -51,9 +51,11 @@ public class MItems
 	
 	public static Item natural_ingredients;
 	
+	public static Item mud_ball;
 	public static Item ingots;
 	public static Item gem_soul;
 	
+	public static Item bricks;
 	public static Item tech_components;
 	
 	public static Item copper_pickaxe;
@@ -150,7 +152,6 @@ public class MItems
 	public static Item spaghetti;
 	public static Item bread_spaghetti;
 	public static Item ice_cream;
-	public static Item bread_ice_cream;
 	public static Item popcorn;
 	public static Item bread_popcorn;
 	public static Item glowshroom_stew;
@@ -203,13 +204,19 @@ public class MItems
 	
 	public static void init()
 	{
-		//0=Grass Fibers
-		register(natural_ingredients = new ItemMetaBase("m_natural_item", 1).setCreativeTab(MTabs.ingredients));
+		//0=Grass Fibers, 1=Mana Leaf
+		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setCreativeTab(MTabs.ingredients));
+		
+		//TODO: Add projectile effect.
+		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBeaconPayment().setCreativeTab(MTabs.minerals));
+		register(gem_soul = new ItemSoulGem("gem_soul").setBeaconPayment());
+		
+		//0=Mud Brick
+		register(bricks = new ItemMetaBase("m_bricks", 1).setCreativeTab(MTabs.ingredients));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad
 		register(tech_components = new ItemMetaBase("m_tech_component", 6).setCreativeTab(MTabs.ingredients));
-		register(gem_soul = new ItemSoulGem("gem_soul").setBeaconPayment());
 		
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
 
@@ -314,8 +321,7 @@ public class MItems
 		register(bread_spaghetti = new MItemsFood(14, 0.5357F, false, "bread_spaghetti"));
 		register(popcorn= new MItemBowlFood(6, 0.0333F, false, "popcorn"));
 		register(bread_popcorn = new MItemsFood(8, 0.0875F, false, "bread_popcorn"));
-		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream").setIgnitesPlayer(-1));
-		register(bread_ice_cream = new MItemsFood(12, 0.1667F, false, "bread_ice_cream").setIgnitesPlayer(-1));
+		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream", new ItemStack(Items.BUCKET), false).setIgnitesPlayer(-1).setCuresEffects());
 		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false));
 		register(bread_glowshroom_stew = new ItemGlowshroomStew(8, 0.5125F, false, "bread_glowshroom_stew", true));
 		
@@ -335,7 +341,7 @@ public class MItems
 		register(jam = new ItemJamBottle(7, 0.2714F, false, "jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible());
 		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.6F));
 		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
-		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 0.85F));
+		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F));
 		
 		register(fat = new MItemsFood(1, 2.5F, true, "fat").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
 		register(grease = new ItemBase("grease").setCreativeTab(MTabs.food));
@@ -357,7 +363,9 @@ public class MItems
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 1), new ItemStack(Blocks.DIRT, 1, 1), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 2), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.lichen, 1), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MBlocks.lichen, new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MBlocks.mud, new ItemStack(MBlocks.dried_mud), 0.1F);
+		GameRegistry.addSmelting(mud_ball, new ItemStack(bricks, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1, 0), 0.5F);
 		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
@@ -371,6 +379,10 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_titanium, new ItemStack(ingots, 1, 5), 4F);
 		GameRegistry.addSmelting(MBlocks.ore_soul, new ItemStack(gem_soul), 3F);
 		GameRegistry.addSmelting(MBlocks.ore_dimensium, new ItemStack(ingots, 1, 8), 3F);
+		GameRegistry.addSmelting(corn_meal, new ItemStack(corn_bread), 0.35F);
+		GameRegistry.addSmelting(dough, new ItemStack(Items.BREAD), 0.35F);
+		GameRegistry.addSmelting(fat, new ItemStack(grease), 0.35F);
+		GameRegistry.addSmelting(squid_tentacle, new ItemStack(calamari), 0.35F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{

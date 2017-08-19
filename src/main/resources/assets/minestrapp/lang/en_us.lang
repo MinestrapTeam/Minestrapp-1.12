@@ -20,8 +20,13 @@ tile.clay_soil_podzol.name=Clay Podzol
 tile.clay_grass.name=Clay Grass
 tile.clay_grass_path.name=Clay Grass Path
 tile.clay_farmland.name=Clay Farmland
+tile.mud.name=Mud
+tile.dried_mud.name=Dried Mud
 
-## Stone ##
+## Misc. Stone##
+tile.mud_bricks.name=Mud Bricks
+
+## Biome Stone ##
 tile.m_stone_red_rock.name=Red Rock
 tile.m_stone_deep_red_rock.name=Deep Red Rock
 tile.m_stone_deepstone.name=Deepstone
@@ -246,6 +251,7 @@ tile.alloy.name=Alloy Furnace
 ##### Items #####
 
 ## Minerals ##
+item.mud_ball.name=Mud Ball
 item.m_ingot_0.name=Copper Ingot
 item.m_ingot_1.name=Tin Ingot
 item.m_ingot_2.name=Bronze Ingot
@@ -259,6 +265,10 @@ item.gem_soul.name=Soul Gem
 
 ## Natural Ingredients ##
 item.m_natural_item_0.name=Grass Fibers
+item.m_natural_item_1.name=Mana Leaf
+
+##Bricks
+item.m_bricks_0.name=Mud Brick
 
 ## Tech Components ##
 item.m_tech_component_0.name=Reinforced Stick

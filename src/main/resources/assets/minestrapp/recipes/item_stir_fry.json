@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:carrot"
+        },
+        {
+            "item": "minestrapp:celery"
+        },
+        {
+            "item": "minestrapp:hot_sauce"
+        },
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "item": "minestrapp:rice_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:stir_fry"
+    }   
+}

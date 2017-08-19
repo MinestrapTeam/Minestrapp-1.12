@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:peanut"
+        },
+        {
+            "item": "minestrapp:peanut"
+        },
+        {
+            "item": "minestrapp:peanut"
+        },
+        {
+            "item": "minestrapp:peanut"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:peanut_butter"
+    }   
+}

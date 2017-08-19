@@ -3,6 +3,7 @@ package minestrapp.item.util;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -34,5 +35,13 @@ public class MItemBowlFood extends MItemsFood
         }
 		
 		super.onFoodEaten(stack, worldIn, player);
+    }
+	
+	public EnumAction getItemUseAction(ItemStack stack)
+    {
+		if(this.container.getItem() == Items.GLASS_BOTTLE || this.container.getItem() == Items.BUCKET)
+			return EnumAction.DRINK;
+		else
+			return super.getItemUseAction(stack);
     }
 }

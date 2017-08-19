@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ww",
+        "ww"
+    ],
+    "key": {
+        "w": {
+            "item": "minecraft:wheat"
+        }
+     },
+     "result": {
+        "item": "minestrapp:dough",
+        "count": 2
+     }  
+}

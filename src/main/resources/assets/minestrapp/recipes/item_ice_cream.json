@@ -1,0 +1,29 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " t ",
+        "csu",
+        " b "
+    ],
+    "key": {
+        "c": {
+            "item": "minecraft:dye",
+            "data": 3
+        },
+        "t": {
+            "item": "minestrapp:strawberry"
+        },
+        "s": {
+            "item": "minecraft:snowball"
+        },
+        "u": {
+            "item": "minecraft:sugar"
+        },
+        "b": {
+            "item": "minecraft:milk_bucket"
+        }
+     },
+     "result": {
+        "item": "minestrapp:ice_cream"
+     }
+}

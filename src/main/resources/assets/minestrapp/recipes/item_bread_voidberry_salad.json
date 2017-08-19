@@ -1,0 +1,21 @@
+-{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:voidberry"
+        },
+        {
+            "item": "minestrapp:m_natural_item",
+            "data": 1
+        },
+        {
+            "item": "minecraft:chorus_fruit"
+        },
+        {
+            "item": "minestrapp:bread_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:bread_voidberry_salad"
+    }   
+}

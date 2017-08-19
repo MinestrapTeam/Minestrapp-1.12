@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:fried_salmon"
+        },
+        {
+            "item": "minestrapp:lettuce"
+        },
+        {
+            "item": "minestrapp:onion"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:salmon_burger"
+    }   
+}

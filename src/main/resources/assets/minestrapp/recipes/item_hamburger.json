@@ -1,0 +1,26 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minecraft:beefCooked"
+        },
+        {
+            "item": "minestrapp:lettuce"
+        },
+        {
+            "item": "minestrapp:onion"
+        },
+        {
+            "item": "minestrapp:tomato"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:hamburger"
+    }   
+}

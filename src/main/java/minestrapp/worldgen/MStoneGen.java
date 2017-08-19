@@ -83,137 +83,137 @@ public class MStoneGen
 								chunk.setBlockState(subpos2, stone.withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 							}
 						}
-						else if(state.getBlock() instanceof BlockOre)
-						{
-							if(state == Blocks.COAL_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-							else if(state == Blocks.IRON_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-							else if(state == Blocks.GOLD_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-							else if(state == Blocks.LAPIS_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-							else if(state == Blocks.DIAMOND_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-							else if(state == Blocks.EMERALD_ORE.getDefaultState())
-							{
-								if (y < deepStoneDepth)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-								}
-								else if (sType != null)
-								{
-									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-								}
-							}
-						}
-						else if(state.getBlock() instanceof BlockRedstoneOre)
-						{
-							if (y < deepStoneDepth)
-							{
-								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
-							}
-							else if (sType != null)
-							{
-								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
-							}
-						}
-						else if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
-						{
-							if (state.getBlock() == Blocks.DIRT)
-								chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
-							else if (state.getBlock() == Blocks.GRASS)
-							{
-								if(world.getBlockState(subpos2.up()).getBlock() instanceof BlockLeaves)
-									chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
-								else
-									chunk.setBlockState(subpos2, MBlocks.clay_grass.getDefaultState());
-							}
-						}
-						else if (biome.getTemperature() < 0.2F)
-						{
-							if (state.getBlock() == Blocks.DIRT)
-								chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
-							else if (state.getBlock() == Blocks.SAND)
-								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.byMetadata(((BlockSand.EnumType)state.getValue(BlockSand.VARIANT)).getMetadata())));
-							else if (state.getBlock() == Blocks.GRASS)
-							{
-								boolean leaves = false;
-								for (int n = subpos2.getY() ; n < (subpos2.getY() + 5) ; n++)
-								{
-									if(world.getBlockState(new BlockPos(subpos2.getX(), n + 1, subpos2.getZ())).getBlock() instanceof BlockLeaves)
-									{
-										leaves = true;
-										break;
-									}
-								}
-								if (leaves)
-									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
-								else
-									chunk.setBlockState(subpos2, MBlocks.lichen.getDefaultState());
-							}
-						}
-					}
-					else if (state.getBlock() == Blocks.TALLGRASS)
-					{
-						if(biome.getTemperature() < 0.2F)
-							chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
-						else if (biome instanceof BiomeSavanna)
-						{
-							int o = random.nextInt(3) + 1;
-							
-							for (int p = 0 ; p < o ; p++)
-							{
-								BlockPos grassPos = new BlockPos(subpos2.getX(), subpos2.getY() + p, subpos2.getZ());
-								if(world.getBlockState(grassPos).getBlock().isReplaceable(world, grassPos))
-									chunk.setBlockState(grassPos, MBlocks.savanna_grass.getDefaultState());
-							}
-						}
+//						else if(state.getBlock() instanceof BlockOre)
+//						{
+//							if(state == Blocks.COAL_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//							else if(state == Blocks.IRON_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//							else if(state == Blocks.GOLD_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//							else if(state == Blocks.LAPIS_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//							else if(state == Blocks.DIAMOND_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//							else if(state == Blocks.EMERALD_ORE.getDefaultState())
+//							{
+//								if (y < deepStoneDepth)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//								}
+//								else if (sType != null)
+//								{
+//									chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//								}
+//							}
+//						}
+//						else if(state.getBlock() instanceof BlockRedstoneOre)
+//						{
+//							if (y < deepStoneDepth)
+//							{
+//								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+//							}
+//							else if (sType != null)
+//							{
+//								chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+//							}
+//						}
+//						else if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+//						{
+//							if (state.getBlock() == Blocks.DIRT)
+//								chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
+//							else if (state.getBlock() == Blocks.GRASS)
+//							{
+//								if(world.getBlockState(subpos2.up()).getBlock() instanceof BlockLeaves)
+//									chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
+//								else
+//									chunk.setBlockState(subpos2, MBlocks.clay_grass.getDefaultState());
+//							}
+//						}
+//						else if (biome.getTemperature() < 0.2F)
+//						{
+//							if (state.getBlock() == Blocks.DIRT)
+//								chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
+//							else if (state.getBlock() == Blocks.SAND)
+//								chunk.setBlockState(subpos2, MBlocks.cold_sand.getDefaultState().withProperty(BlockColdSand.VARIANT, BlockColdSand.EnumType.byMetadata(((BlockSand.EnumType)state.getValue(BlockSand.VARIANT)).getMetadata())));
+//							else if (state.getBlock() == Blocks.GRASS)
+//							{
+//								boolean leaves = false;
+//								for (int n = subpos2.getY() ; n < (subpos2.getY() + 5) ; n++)
+//								{
+//									if(world.getBlockState(new BlockPos(subpos2.getX(), n + 1, subpos2.getZ())).getBlock() instanceof BlockLeaves)
+//									{
+//										leaves = true;
+//										break;
+//									}
+//								}
+//								if (leaves)
+//									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL));
+//								else
+//									chunk.setBlockState(subpos2, MBlocks.lichen.getDefaultState());
+//							}
+//						}
+//					}
+//					else if (state.getBlock() == Blocks.TALLGRASS)
+//					{
+//						if(biome.getTemperature() < 0.2F)
+//							chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
+//						else if (biome instanceof BiomeSavanna)
+//						{
+//							int o = random.nextInt(3) + 1;
+//							
+//							for (int p = 0 ; p < o ; p++)
+//							{
+//								BlockPos grassPos = new BlockPos(subpos2.getX(), subpos2.getY() + p, subpos2.getZ());
+//								if(world.getBlockState(grassPos).getBlock().isReplaceable(world, grassPos))
+//									chunk.setBlockState(grassPos, MBlocks.savanna_grass.getDefaultState());
+//							}
+//						}
 					}
 				}
 			}

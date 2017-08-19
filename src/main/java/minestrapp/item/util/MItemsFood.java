@@ -24,6 +24,7 @@ public class MItemsFood extends ItemFood
 {
 	private ItemStack droppedItem;
 	private int igniteTime;
+	private boolean curesEffects;
 	
 	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string) {
 		super(amount, saturation, isWolfFood);
@@ -32,6 +33,7 @@ public class MItemsFood extends ItemFood
         this.setCreativeTab(MTabs.food);
         this.droppedItem = null;
         this.igniteTime = 0;
+        this.curesEffects = false;
 	}
 	
 	public MItemsFood setDroppedItem(ItemStack stack)
@@ -46,6 +48,12 @@ public class MItemsFood extends ItemFood
 		return this;
 	}
 	
+	public MItemsFood setCuresEffects()
+	{
+		this.curesEffects = true;
+		return this;
+	}
+	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
 		super.onFoodEaten(stack, worldIn, player);
@@ -54,6 +62,10 @@ public class MItemsFood extends ItemFood
 		if(this.igniteTime > 0)
 		{
 			player.setFire(igniteTime);
+		}
+		if (this.curesEffects && !worldIn.isRemote)
+		{
+			player.curePotionEffects(stack);
 		}
 		else if(this.igniteTime < 0)
 		{

@@ -14,6 +14,7 @@ import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
+import minestrapp.block.BlockDriedMud;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
@@ -22,6 +23,7 @@ import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMPath;
+import minestrapp.block.BlockMud;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSavannaGrass;
 import minestrapp.block.BlockSoulsteelVessel;
@@ -82,8 +84,11 @@ public class MBlocks
 	public static Block lichen;
 	public static Block lichen_path;
 	public static Block permafrost_farmland;
+	public static Block mud;
+	public static Block dried_mud;
 	
 	//Stone
+	public static Block mud_bricks;
 	public static Block stone;
 	public static Block cobblestone;
 	public static Block stone_bricks;
@@ -159,8 +164,11 @@ public class MBlocks
 		register(lichen = new BlockMGrass("lichen", MapColor.SAND, SoundType.PLANT, 0.8F, 0, permafrost, false));
 		register(lichen_path = new BlockMPath("lichen_path", MapColor.DIRT, SoundType.PLANT, 0.75F, 0, permafrost));
 		register(permafrost_farmland = new BlockMFarmland("permafrost_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, permafrost, 6));
+		register(mud = new BlockMud());
+		register(dried_mud = new BlockDriedMud());
 		
 		//Stone
+		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setDropsItem(new ItemStack(Item.getItemFromBlock(MBlocks.cobblestone)), 0, 0, 0, true, false, true).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
 		register(stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone_bricks));
@@ -208,6 +216,7 @@ public class MBlocks
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
 		register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		
 		//Crops
 		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
 		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
@@ -217,8 +226,6 @@ public class MBlocks
 		GameRegistry.register(crop_onion = new OnionPlant("crop_onion"));
 		GameRegistry.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
 		GameRegistry.register(crop_tomato = new TomatoPlant("crop_tomato"));
-
-
 	}
 	
 	public static void register(Block block)

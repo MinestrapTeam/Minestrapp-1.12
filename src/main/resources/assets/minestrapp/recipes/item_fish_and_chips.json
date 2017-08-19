@@ -1,0 +1,14 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:fried_fish"
+        },
+        {
+            "item": "minestrapp:fries"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:fish_and_chips"
+    }   
+}

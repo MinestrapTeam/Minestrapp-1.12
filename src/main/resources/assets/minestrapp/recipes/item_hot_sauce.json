@@ -1,0 +1,20 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:pepper"
+        },
+        {
+            "item": "minestrapp:pepper"
+        },
+        {
+            "item": "minestrapp:pepper"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:hot_sauce"
+    }   
+}

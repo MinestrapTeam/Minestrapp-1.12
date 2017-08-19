@@ -6,9 +6,11 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
+import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
 import minestrapp.tileentity.TileEntityVessel;
 import minestrapp.worldgen.MOreGen;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -36,6 +38,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityAlloy.class, "TileEntityAlloy");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
+		
+		MinecraftForge.EVENT_BUS.register(MEventHandler.class);
 
 	}
 	
