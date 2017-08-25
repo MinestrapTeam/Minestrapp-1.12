@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/cobbled_deepstone",
+        "top": "minestrapp:blocks/stone/cobbled_deepstone",
+        "side": "minestrapp:blocks/stone/cobbled_deepstone"
+    }
+}

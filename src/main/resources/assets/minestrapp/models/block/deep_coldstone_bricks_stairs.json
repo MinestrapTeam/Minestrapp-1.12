@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/deep_coldstone_bricks",
+        "top": "minestrapp:blocks/stone/deep_coldstone_bricks",
+        "side": "minestrapp:blocks/stone/deep_coldstone_bricks"
+    }
+}

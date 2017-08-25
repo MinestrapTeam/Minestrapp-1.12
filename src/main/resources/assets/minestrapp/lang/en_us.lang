@@ -25,6 +25,7 @@ tile.dried_mud.name=Dried Mud
 
 ## Misc. Stone##
 tile.mud_bricks.name=Mud Bricks
+tile.mud_bricks_stairs.name=Mud Brick Stairs
 
 ## Biome Stone ##
 tile.m_stone_red_rock.name=Red Rock
@@ -107,6 +108,26 @@ tile.m_stone_slab_3_icestone_bricks.name=Icestone Bricks Slab
 tile.m_stone_slab_4_glacierrock_bricks.name=Glacierrock Bricks Slab
 tile.m_stone_slab_4_oceanstone_bricks.name=Oceanstone Bricks Slab
 tile.m_stone_slab_4_deep_oceanstone_bricks.name=Reefstone Bricks Slab
+
+tile.m_cobblestone_red_rock_stairs.name=Red Cobblestone Stairs
+tile.m_cobblestone_deep_red_rock_stairs.name=Deep Red Cobblestone Stairs
+tile.m_cobblestone_deepstone_stairs.name=Deep Cobblestone Stairs
+tile.m_cobblestone_coldstone_stairs.name=Cold Cobblestone Stairs
+tile.m_cobblestone_deep_coldstone_stairs.name=Deep Cold Cobblestone Stairs
+tile.m_cobblestone_icestone_stairs.name=Cracked Icestone Stairs
+tile.m_cobblestone_glacierrock_stairs.name=Cracked Glacierrock Stairs
+tile.m_cobblestone_oceanstone_stairs.name=Cobbled Oceanstone Stairs
+tile.m_cobblestone_deep_oceanstone_stairs.name=Cobbled Reefstone Stairs
+
+tile.m_stone_bricks_red_rock_stairs.name=Red Rock Brick Stairs
+tile.m_stone_bricks_deep_red_rock_stairs.name=Deep Red Rock Brick Stairs
+tile.m_stone_bricks_deepstone_stairs.name=Deepstone Brick Stairs
+tile.m_stone_bricks_coldstone_stairs.name=Coldstone Brick Stairs
+tile.m_stone_bricks_deep_coldstone_stairs.name=Deep Coldstone Brick Stairs
+tile.m_stone_bricks_icestone_stairs.name=Icestone Brick Stairs
+tile.m_stone_bricks_glacierrock_stairs.name=Glacierrock Brick Stairs
+tile.m_stone_bricks_oceanstone_stairs.name=Oceanstone Brick Stairs
+tile.m_stone_bricks_deep_oceanstone_stairs.name=Reefstone Brick Stairs
 
 ## Ores ##
 
@@ -233,6 +254,7 @@ tile.block_copper.name=Block of Copper
 tile.block_tin.name=Block of Tin
 tile.block_bronze.name=Block of Bronze
 tile.block_steel.name=Block of Steel
+tile.block_meurodite.name=Block of Meurodite
 tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Titanium
 tile.block_blazium.name=Block of Blazium
@@ -261,6 +283,13 @@ item.m_ingot_5.name=Titanium Ingot
 item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
+item.m_gem_0.name=Sunstone Shard
+item.m_gem_1.name=Desert Quartz
+item.m_gem_2.name=Rock Crystal
+item.m_gem_3.name=Irradiant Quartz
+item.m_gem_4.name=Meurodite
+item.m_gem_5.name=Blaze Shard
+item.m_gem_6.name=Glacieric Ice Shard
 item.gem_soul.name=Soul Gem
 
 ## Natural Ingredients ##
@@ -287,6 +316,26 @@ item.tin_helm.name=Tin Helmet
 item.tin_chest.name=Tin Chestplate
 item.tin_legs.name=Tin Leggings
 item.tin_feet.name=Tin Boots
+item.bronze_helm.name=Bronze Helmet
+item.bronze_chest.name=Bronze Chestplate
+item.bronze_legs.name=Bronze Leggings
+item.bronze_feet.name=Bronze Boots
+item.steel_helm.name=Steel Helmet
+item.steel_chest.name=Steel Chestplate
+item.steel_legs.name=Steel Leggings
+item.steel_feet.name=Steel Boots
+item.meurodite_helm.name=Meurodite Helmet
+item.meurodite_chest.name=Meurodite Chestplate
+item.meurodite_legs.name=Meurodite Leggings
+item.meurodite_feet.name=Meurodite Boots
+item.torite_helm.name=Torite Helmet
+item.torite_chest.name=Torite Chestplate
+item.torite_legs.name=Torite Leggings
+item.torite_feet.name=Torite Boots
+item.titanium_helm.name=Titanium Helmet
+item.titanium_chest.name=Titanium Chestplate
+item.titanium_legs.name=Titanium Leggings
+item.titanium_feet.name=Titanium Boots
 
 ## Tools ##
 item.copper_pickaxe.name=Copper Pickaxe
@@ -301,6 +350,10 @@ item.steel_pickaxe.name=Steel Pickaxe
 item.steel_axe.name=Steel Axe
 item.steel_shovel.name=Steel Shovel
 item.steel_hoe.name=Steel Hoe
+item.meurodite_pickaxe.name=Meurodite Pickaxe
+item.meurodite_axe.name=Meurodite Axe
+item.meurodite_shovel.name=Meurodite Shovel
+item.meurodite_hoe.name=Meurodite Hoe
 item.torite_pickaxe.name=Torite Pickaxe
 item.torite_axe.name=Torite Axe
 item.torite_shovel.name=Torite Shovel
@@ -320,6 +373,8 @@ item.bronze_sword.name=Bronze Sword
 item.bronze_dagger.name=Bronze Dagger
 item.steel_sword.name=Steel Sword
 item.steel_dagger.name=Steel Dagger
+item.meurodite_sword.name=Meurodite Sword
+item.meurodite_dagger.name=Meurodite Dagger
 item.torite_sword.name=Torite Sword
 item.torite_dagger.name=Torite Dagger
 item.iron_dagger.name=Iron Dagger

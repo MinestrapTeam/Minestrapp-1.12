@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "x x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 2
+        }
+     },
+     "result": {
+        "item": "minestrapp:tin_helm",
+        "data": 0
+     } 
+}

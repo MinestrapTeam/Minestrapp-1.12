@@ -53,6 +53,7 @@ public class MItems
 	
 	public static Item mud_ball;
 	public static Item ingots;
+	public static Item gems;
 	public static Item gem_soul;
 	
 	public static Item bricks;
@@ -70,6 +71,10 @@ public class MItems
 	public static Item steel_axe;
 	public static Item steel_shovel;
 	public static Item steel_hoe;
+	public static Item meurodite_pickaxe;
+	public static Item meurodite_axe;
+	public static Item meurodite_shovel;
+	public static Item meurodite_hoe;
 	public static Item torite_pickaxe;
 	public static Item torite_axe;
 	public static Item torite_shovel;
@@ -88,6 +93,8 @@ public class MItems
 	public static Item bronze_dagger;
 	public static Item steel_sword;
 	public static Item steel_dagger;
+	public static Item meurodite_sword;
+	public static Item meurodite_dagger;
 	public static Item torite_sword;
 	public static Item torite_dagger;
 	public static Item iron_dagger;
@@ -95,6 +102,31 @@ public class MItems
 	public static Item diamond_dagger;
 	public static Item titanium_sword;
 	public static Item titanium_dagger;
+	
+	public static Item tin_helm;
+	public static Item tin_chest;
+	public static Item tin_legs;
+	public static Item tin_feet;
+	public static Item bronze_helm;
+	public static Item bronze_chest;
+	public static Item bronze_legs;
+	public static Item bronze_feet;
+	public static Item steel_helm;
+	public static Item steel_chest;
+	public static Item steel_legs;
+	public static Item steel_feet;
+	public static Item meurodite_helm;
+	public static Item meurodite_chest;
+	public static Item meurodite_legs;
+	public static Item meurodite_feet;
+	public static Item torite_helm;
+	public static Item torite_chest;
+	public static Item torite_legs;
+	public static Item torite_feet;
+	public static Item titanium_helm;
+	public static Item titanium_chest;
+	public static Item titanium_legs;
+	public static Item titanium_feet;
 	
 	public static Item health_crystal;
 
@@ -189,18 +221,19 @@ public class MItems
 	public static Item fried_salmon;
 	public static Item fish_and_chips;
 	
-	public static Item tin_helm;
-	public static Item tin_chest;
-	public static Item tin_legs;
-	public static Item tin_feet;
-	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17).setRepairItem(new ItemStack(ingots, 1, 0));
 	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13).setRepairItem(new ItemStack(ingots, 1, 2));
 	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":steel", 2, 500, 7.5F, 2.5F, 19).setRepairItem(new ItemStack(ingots, 1, 3));
+	public static final ToolMaterial MEURODITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":meurodite", 2, 906, 7F, 2.5F, 16).setRepairItem(new ItemStack(gems, 1, 4));
 	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":torite", 2, 1200, 7F, 3.5F, 30).setRepairItem(new ItemStack(ingots, 1, 4));
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5).setRepairItem(new ItemStack(ingots, 1, 5));
 	
-	public static final ArmorMaterial TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ENTITY_IRONGOLEM_ATTACK, 0.0F).setRepairItem(new ItemStack(ingots, 1, 1));
+	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F).setRepairItem(new ItemStack(ingots, 1, 1));
+	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F).setRepairItem(new ItemStack(ingots, 1, 2));
+	public static final ArmorMaterial ARMOR_STEEL = EnumHelper.addArmorMaterial("steel", Minestrapp5.MODID + ":steel", 18, new int[]{3, 6, 7, 3}, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F).setRepairItem(new ItemStack(ingots, 1, 3));
+	public static final ArmorMaterial ARMOR_MEURODITE = EnumHelper.addArmorMaterial("meurodite", Minestrapp5.MODID + ":meurodite", 24, new int[]{2, 6, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F).setRepairItem(new ItemStack(gems, 1, 4));
+	public static final ArmorMaterial ARMOR_TORITE = EnumHelper.addArmorMaterial("torite", Minestrapp5.MODID + ":torite", 26, new int[]{2, 6, 7, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.5F).setRepairItem(new ItemStack(ingots, 1, 4));
+	public static final ArmorMaterial ARMOR_TITANIUM = EnumHelper.addArmorMaterial("titanium", Minestrapp5.MODID + ":titanium", 66, new int[]{3, 6, 8, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F).setRepairItem(new ItemStack(ingots, 1, 5));
 	
 	public static void init()
 	{
@@ -211,6 +244,9 @@ public class MItems
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBeaconPayment().setCreativeTab(MTabs.minerals));
+		//We, are the crystal MItems.gems
+		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard
+		register(gems = new ItemMetaBase("m_gem", 7).setCreativeTab(MTabs.minerals));
 		register(gem_soul = new ItemSoulGem("gem_soul").setBeaconPayment());
 		
 		//0=Mud Brick
@@ -229,9 +265,13 @@ public class MItems
 		register(bronze_shovel = new MShovel(BRONZE, "bronze_shovel"));
 		register(bronze_hoe = new MHoe(BRONZE, "bronze_hoe"));
 		register(steel_pickaxe = new MPickaxe(STEEL, "steel_pickaxe"));
-		register(steel_axe = new MAxe(STEEL, "steel_axe", 8.0F, -3.05F));
+		register(steel_axe = new MAxe(STEEL, "steel_axe", 8.0F, -3.08F));
 		register(steel_shovel = new MShovel(STEEL, "steel_shovel"));
 		register(steel_hoe = new MHoe(STEEL, "steel_hoe"));
+		register(meurodite_pickaxe = new MPickaxe(MEURODITE, "meurodite_pickaxe"));
+		register(meurodite_axe = new MAxe(MEURODITE, "meurodite_axe", 8.0F, -3.05F));
+		register(meurodite_shovel = new MShovel(MEURODITE, "meurodite_shovel"));
+		register(meurodite_hoe = new MHoe(MEURODITE, "meurodite_hoe"));
 		register(torite_pickaxe = new MPickaxe(TORITE, "torite_pickaxe"));
 		register(torite_axe = new MAxe(TORITE, "torite_axe", 9.0F, -3.2F));
 		register(torite_shovel = new MShovel(TORITE, "torite_shovel"));
@@ -251,6 +291,8 @@ public class MItems
 		register(bronze_dagger = new MDagger(BRONZE, "bronze_dagger"));
 		register(steel_sword = new MSword(STEEL, "steel_sword"));
 		register(steel_dagger = new MDagger(STEEL, "steel_dagger"));
+		register(meurodite_sword = new MSword(MEURODITE, "meurodite_sword"));
+		register(meurodite_dagger = new MDagger(MEURODITE, "meurodite_dagger"));
 		register(torite_sword = new MSword(TORITE, "torite_sword"));
 		register(torite_dagger = new MDagger(TORITE, "torite_dagger"));
 		register(fire_sword = new MFireSword("fire_sword"));
@@ -258,10 +300,30 @@ public class MItems
 		register(titanium_sword = new MSword(TITANIUM, "titanium_sword"));
 		register(titanium_dagger = new MDagger(TITANIUM, "titanium_dagger"));
 		
-		register(tin_helm = new MArmor(TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
-		register(tin_chest = new MArmor(TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
-		register(tin_legs = new MArmor(TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
-		register(tin_feet = new MArmor(TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
+		register(tin_helm = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
+		register(tin_chest = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
+		register(tin_legs = new MArmor(ARMOR_TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
+		register(tin_feet = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.FEET, "tin_feet"));
+		register(bronze_helm = new MArmor(ARMOR_BRONZE, 1, EntityEquipmentSlot.HEAD, "bronze_helm"));
+		register(bronze_chest = new MArmor(ARMOR_BRONZE, 1, EntityEquipmentSlot.CHEST, "bronze_chest"));
+		register(bronze_legs = new MArmor(ARMOR_BRONZE, 2, EntityEquipmentSlot.LEGS, "bronze_legs"));
+		register(bronze_feet = new MArmor(ARMOR_BRONZE, 1, EntityEquipmentSlot.FEET, "bronze_feet"));
+		register(steel_helm = new MArmor(ARMOR_STEEL, 1, EntityEquipmentSlot.HEAD, "steel_helm"));
+		register(steel_chest = new MArmor(ARMOR_STEEL, 1, EntityEquipmentSlot.CHEST, "steel_chest"));
+		register(steel_legs = new MArmor(ARMOR_STEEL, 2, EntityEquipmentSlot.LEGS, "steel_legs"));
+		register(steel_feet = new MArmor(ARMOR_STEEL, 1, EntityEquipmentSlot.FEET, "steel_feet"));
+		register(meurodite_helm = new MArmor(ARMOR_MEURODITE, 1, EntityEquipmentSlot.HEAD, "meurodite_helm"));
+		register(meurodite_chest = new MArmor(ARMOR_MEURODITE, 1, EntityEquipmentSlot.CHEST, "meurodite_chest"));
+		register(meurodite_legs = new MArmor(ARMOR_MEURODITE, 2, EntityEquipmentSlot.LEGS, "meurodite_legs"));
+		register(meurodite_feet = new MArmor(ARMOR_MEURODITE, 1, EntityEquipmentSlot.FEET, "meurodite_feet"));
+		register(torite_helm = new MArmor(ARMOR_TORITE, 1, EntityEquipmentSlot.HEAD, "torite_helm"));
+		register(torite_chest = new MArmor(ARMOR_TORITE, 1, EntityEquipmentSlot.CHEST, "torite_chest"));
+		register(torite_legs = new MArmor(ARMOR_TORITE, 2, EntityEquipmentSlot.LEGS, "torite_legs"));
+		register(torite_feet = new MArmor(ARMOR_TORITE, 1, EntityEquipmentSlot.FEET, "torite_feet"));
+		register(titanium_helm = new MArmor(ARMOR_TITANIUM, 1, EntityEquipmentSlot.HEAD, "titanium_helm"));
+		register(titanium_chest = new MArmor(ARMOR_TITANIUM, 1, EntityEquipmentSlot.CHEST, "titanium_chest"));
+		register(titanium_legs = new MArmor(ARMOR_TITANIUM, 2, EntityEquipmentSlot.LEGS, "titanium_legs"));
+		register(titanium_feet = new MArmor(ARMOR_TITANIUM, 1, EntityEquipmentSlot.FEET, "titanium_feet"));
 		
 		register(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
 		register(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));

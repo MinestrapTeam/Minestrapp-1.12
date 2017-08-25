@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeJungle;
 import net.minecraft.world.biome.BiomeProvider;
+import net.minecraft.world.biome.BiomeRiver;
 import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -119,6 +120,16 @@ public class MOreGen implements IWorldGenerator
 			if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
 			{
 				this.runGenerator(torite, world, random, chunkX, chunkZ, 6, 0, 36, true);
+			}
+			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
+			{
+				int posX = random.nextInt(16);
+				int posY = 64 - random.nextInt(6);
+				int posZ = random.nextInt(16);
+				
+				BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
+				mudGen.generate(world, random, mudPos);
 			}
 			MStoneGen.generate(world, chunkX, chunkZ, random);
 		}

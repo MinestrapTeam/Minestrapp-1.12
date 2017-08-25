@@ -47,6 +47,7 @@ import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockItemDropBase;
+import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
@@ -89,6 +90,7 @@ public class MBlocks
 	
 	//Stone
 	public static Block mud_bricks;
+	public static Block mud_brick_stairs;
 	public static Block stone;
 	public static Block cobblestone;
 	public static Block stone_bricks;
@@ -102,6 +104,24 @@ public class MBlocks
 	public static BlockDoubleStoneSlab3 double_stone_slab_3;
 	public static BlockSlab stone_slab_4;
 	public static BlockDoubleStoneSlab4 double_stone_slab_4;
+	public static Block cobbled_red_rock_stairs;
+	public static Block cobbled_deep_red_rock_stairs;
+	public static Block cobbled_deepstone_stairs;
+	public static Block cobbled_coldstone_stairs;
+	public static Block cobbled_deep_coldstone_stairs;
+	public static Block cobbled_icestone_stairs;
+	public static Block cobbled_glacierrock_stairs;
+	public static Block cobbled_oceanstone_stairs;
+	public static Block cobbled_deep_oceanstone_stairs;
+	public static Block red_rock_brick_stairs;
+	public static Block deep_red_rock_brick_stairs;
+	public static Block deepstone_brick_stairs;
+	public static Block coldstone_brick_stairs;
+	public static Block deep_coldstone_brick_stairs;
+	public static Block icestone_brick_stairs;
+	public static Block glacierrock_brick_stairs;
+	public static Block oceanstone_brick_stairs;
+	public static Block deep_oceanstone_brick_stairs;
 	
 	//Ore
 	public static Block ore_coal;
@@ -124,6 +144,7 @@ public class MBlocks
 	public static Block block_tin;
 	public static Block block_bronze;
 	public static Block block_steel;
+	public static Block block_meurodite;
 	public static Block block_torite;
 	public static Block block_titanium;
 	public static Block block_glacierite;
@@ -169,6 +190,7 @@ public class MBlocks
 		
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
+		register(mud_brick_stairs = new BlockStairBase(mud_bricks));
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setDropsItem(new ItemStack(Item.getItemFromBlock(MBlocks.cobblestone)), 0, 0, 0, true, false, true).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
 		register(stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone_bricks));
@@ -182,6 +204,24 @@ public class MBlocks
 		register(stone_slab_3 = new BlockHalfStoneSlab3("m_stone_slab_3"), new ItemBlockMSlab(stone_slab_3, stone_slab_3, double_stone_slab_3));
 		register(double_stone_slab_4 = new BlockDoubleStoneSlab4("m_stone_slab_4"));
 		register(stone_slab_4 = new BlockHalfStoneSlab4("m_stone_slab_4"), new ItemBlockMSlab(stone_slab_4, stone_slab_4, double_stone_slab_4));
+		register(cobbled_red_rock_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.RED_ROCK), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.RED_ROCK.getUnlocalizedName()));
+		register(cobbled_deep_red_rock_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_RED_ROCK), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_RED_ROCK.getUnlocalizedName()));
+		register(cobbled_deepstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEPSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEPSTONE.getUnlocalizedName()));
+		register(cobbled_coldstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.COLDSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.COLDSTONE.getUnlocalizedName()));
+		register(cobbled_deep_coldstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_COLDSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_COLDSTONE.getUnlocalizedName()));
+		register(cobbled_icestone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.ICESTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.ICESTONE.getUnlocalizedName()));
+		register(cobbled_glacierrock_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.GLACIERROCK), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.GLACIERROCK.getUnlocalizedName()));
+		register(cobbled_oceanstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.OCEANSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.OCEANSTONE.getUnlocalizedName()));
+		register(cobbled_deep_oceanstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
+		register(red_rock_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.RED_ROCK), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.RED_ROCK.getUnlocalizedName()));
+		register(deep_red_rock_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_RED_ROCK), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_RED_ROCK.getUnlocalizedName()));
+		register(deepstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEPSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEPSTONE.getUnlocalizedName()));
+		register(coldstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.COLDSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.COLDSTONE.getUnlocalizedName()));
+		register(deep_coldstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_COLDSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_COLDSTONE.getUnlocalizedName()));
+		register(icestone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.ICESTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.ICESTONE.getUnlocalizedName()));
+		register(glacierrock_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.GLACIERROCK), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.GLACIERROCK.getUnlocalizedName()));
+		register(oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.OCEANSTONE.getUnlocalizedName()));
+		register(deep_oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
 		
 		//Ore
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
@@ -204,6 +244,7 @@ public class MBlocks
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.field_193565_Q, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
 		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.field_193564_P, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
+		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.field_193572_X, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));

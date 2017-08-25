@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x x",
+        "x x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 5
+        }
+     },
+     "result": {
+        "item": "minestrapp:tin_feet",
+        "data": 0
+     } 
+}

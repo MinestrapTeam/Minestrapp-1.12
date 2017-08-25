@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/deep_red_rock_bricks",
+        "top": "minestrapp:blocks/stone/deep_red_rock_bricks",
+        "side": "minestrapp:blocks/stone/deep_red_rock_bricks"
+    }
+}

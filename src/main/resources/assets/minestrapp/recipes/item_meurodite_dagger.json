@@ -1,0 +1,20 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " x",
+        "i "
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:stick"
+        },
+        "x": {
+            "item": "minestrapp:m_gem",
+            "data": 4
+        }
+     },
+     "result": {
+        "item": "minestrapp:bronze_dagger",
+        "data": 0
+     }
+}
