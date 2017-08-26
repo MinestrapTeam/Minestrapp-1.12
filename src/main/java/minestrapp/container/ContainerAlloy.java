@@ -57,13 +57,13 @@ public class ContainerAlloy extends Container {
 			IContainerListener listener = (IContainerListener)this.listeners.get(i);
 			
 			if(this.cookTime != this.te.getField(2))
-				listener.sendProgressBarUpdate(this, 2, this.te.getField(2));
+				listener.sendWindowProperty(this, 2, this.te.getField(2));
 			if(this.burnTime != this.te.getField(0))
-				listener.sendProgressBarUpdate(this, 0, this.te.getField(0));
+				listener.sendWindowProperty(this, 0, this.te.getField(0));
 			if(this.currentBurnTime != this.te.getField(1))
-				listener.sendProgressBarUpdate(this, 1, this.te.getField(1));
+				listener.sendWindowProperty(this, 1, this.te.getField(1));
 			if(this.totalCookTime != this.te.getField(3))
-				listener.sendProgressBarUpdate(this, 3, this.te.getField(3));
+				listener.sendWindowProperty(this, 3, this.te.getField(3));
 		}
 		
 		this.cookTime = this.te.getField(2);

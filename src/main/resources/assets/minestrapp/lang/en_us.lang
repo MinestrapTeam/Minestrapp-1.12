@@ -183,6 +183,17 @@ tile.ore_gold_glacierrock.name=Gold Ore
 tile.ore_gold_oceanstone.name=Gold Ore
 tile.ore_gold_deep_oceanstone.name=Gold Ore
 
+tile.ore_meurodite_red_rock.name=Meurodite Ore
+tile.ore_meurodite_deep_red_rock.name=Meurodite Ore
+tile.ore_meurodite_deepstone.name=Meurodite Ore
+tile.ore_meurodite_coldstone.name=Meurodite Ore
+tile.ore_meurodite_deep_coldstone.name=Meurodite Ore
+tile.ore_meurodite_icestone.name=Meurodite Ore
+tile.ore_meurodite_glacierrock.name=Meurodite Ore
+tile.ore_meurodite_oceanstone.name=Meurodite Ore
+tile.ore_meurodite_deep_oceanstone.name=Meurodite Ore
+tile.ore_meurodite_stone.name=Meurodite Ore
+
 tile.ore_lapis_red_rock.name=Lapis Lazuli Ore
 tile.ore_lapis_deep_red_rock.name=Lapis Lazuli Ore
 tile.ore_lapis_deepstone.name=Lapis Lazuli Ore

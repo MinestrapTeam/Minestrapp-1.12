@@ -29,6 +29,7 @@ public class MOreGen implements IWorldGenerator
 {
 	private WorldGenerator copper;
 	private WorldGenerator tin;
+	private WorldGenerator meurodite;
 	private WorldGenerator torite;
 	private WorldGenerator titanium;
 	private WorldGenerator soul;
@@ -38,6 +39,7 @@ public class MOreGen implements IWorldGenerator
 	{
 		copper = new MGenMinable(MBlocks.ore_copper.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		tin = new MGenMinable(MBlocks.ore_tin.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
+		meurodite = new MGenMinable(MBlocks.ore_meurodite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 5);
 		torite = new MGenMinable(MBlocks.ore_torite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 4);
 		titanium = new MGenMinable(MBlocks.ore_titanium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 3);
 		soul = new MGenMinable(MBlocks.ore_soul.getDefaultState(), 3, new MMinablePredicate(Blocks.SOUL_SAND.getDefaultState()));
@@ -115,11 +117,12 @@ public class MOreGen implements IWorldGenerator
 		{
 			this.runGenerator(copper, world, random, chunkX, chunkZ, 16, 30, 110, true);
 			this.runGenerator(tin, world, random, chunkX, chunkZ, 16, 30, 110, true);
+			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
 			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
 			if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
 			{
-				this.runGenerator(torite, world, random, chunkX, chunkZ, 6, 0, 36, true);
+				this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
 			}
 			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
 			{

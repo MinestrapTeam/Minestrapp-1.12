@@ -59,7 +59,7 @@ public class ItemBlockMSlab extends ItemBlockMultistate
 
                         if (player instanceof EntityPlayerMP)
                         {
-                            CriteriaTriggers.field_193137_x.func_193173_a((EntityPlayerMP)player, pos, itemstack);
+                            CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
                         }
                     }
 

@@ -35,7 +35,7 @@ public class BlockMud extends BlockBase
 	
 	public BlockMud()
 	{
-		super("mud", Material.CLAY, MapColor.field_193573_Y, SoundType.SLIME, 0.65F, "shovel", 0);
+		super("mud", Material.CLAY, MapColor.BROWN_STAINED_HARDENED_CLAY, SoundType.SLIME, 0.65F, "shovel", 0);
 		this.setCreativeTab(MTabs.environment);
 		this.setTickRandomly(true);
 	}

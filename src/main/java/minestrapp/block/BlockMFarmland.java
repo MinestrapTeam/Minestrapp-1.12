@@ -94,95 +94,95 @@ public class BlockMFarmland extends BlockBase
 	        		for(int l = 0 ; l < items.size() ; l++)
 	        		{
 	        			EntityItem item = items.get(l);
-	        			ItemStack stack = item.getEntityItem();
+	        			ItemStack stack = item.getItem();
 			        	if(stack.getItem() == Items.WHEAT_SEEDS)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.WHEAT.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == Items.CARROT)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.CARROTS.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == Items.POTATO || stack.getItem() == Items.POISONOUS_POTATO)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.POTATOES.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == Items.BEETROOT_SEEDS)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.BEETROOTS.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == Items.MELON_SEEDS)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.MELON_STEM.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == Items.PUMPKIN_SEEDS)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), Blocks.PUMPKIN_STEM.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.pepper_seeds)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_pepper.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.cabbage_seeds)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_cabbage.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.celery_seeds)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_celery.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.lettuce)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_lettuce.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.onion)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_onion.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.peanuts)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_peanuts.getDefaultState());
 			        		break;
 			        	}
 			        	else if(stack.getItem() == MItems.tomato_seeds)
 			        	{
 			        		stack.shrink(1);
-			        		item.setEntityItemStack(stack);
+			        		item.setItem(stack);
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_tomato.getDefaultState());
 			        		break;
 			        	}

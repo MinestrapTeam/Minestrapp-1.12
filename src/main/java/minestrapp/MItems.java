@@ -43,6 +43,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MItems
@@ -433,6 +434,7 @@ public class MItems
 		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
 		GameRegistry.addSmelting(MBlocks.ore_iron, new ItemStack(Items.IRON_INGOT), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
+		GameRegistry.addSmelting(MBlocks.ore_meurodite, new ItemStack(MItems.gems, 1, 4), 0.9F);
 		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
 		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_torite, new ItemStack(ingots, 1, 4), 1F);
@@ -472,7 +474,7 @@ public class MItems
 	
 	public static void register(Item item)
 	{
-		GameRegistry.register(item);
+		ForgeRegistries.ITEMS.register(item);
 		itemList.add(item);
 	}
 	

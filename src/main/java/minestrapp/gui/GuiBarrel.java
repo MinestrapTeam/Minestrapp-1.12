@@ -29,6 +29,6 @@ public class GuiBarrel extends GuiContainer{
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		this.fontRendererObj.drawString("Barrel", 7, 7, 4210752);
+		this.fontRenderer.drawString("Barrel", 7, 7, 4210752);
 	}
 }

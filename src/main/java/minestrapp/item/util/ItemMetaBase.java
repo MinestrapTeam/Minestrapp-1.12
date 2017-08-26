@@ -24,7 +24,7 @@ public class ItemMetaBase extends ItemBase implements IItemVariants
 	{
 		for(int i = 0 ; i < this.numVariants ; i++)
 		{
-			if (this.func_194125_a(tabs))
+			if (this.isInCreativeTab(tabs))
 	        {
 				tab.add(new ItemStack(this, 1, i));
 	        }

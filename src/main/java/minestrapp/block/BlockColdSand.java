@@ -83,8 +83,8 @@ public class BlockColdSand extends BlockFalling implements IMetaBlockName
 	
 	public static enum EnumType implements IStringSerializable
     {
-        SAND(0, "default", "default", MapColor.field_193561_M, -5464706),
-        RED_SAND(1, "red", "red", MapColor.field_193559_aa, -8568786);
+        SAND(0, "default", "default", MapColor.WHITE_STAINED_HARDENED_CLAY, -5464706),
+        RED_SAND(1, "red", "red", MapColor.RED_STAINED_HARDENED_CLAY, -8568786);
 
         private static final BlockColdSand.EnumType[] META_LOOKUP = new BlockColdSand.EnumType[values().length];
         private final int meta;

@@ -24,7 +24,7 @@ public class GuiAlloy extends GuiContainer{
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String s = this.tileentity.getDisplayName().getUnformattedText();
-		this.fontRendererObj.drawString("Alloy Furnace", 7, 7, 4210752);
+		this.fontRenderer.drawString("Alloy Furnace", 7, 7, 4210752);
 	}
 
 	@Override

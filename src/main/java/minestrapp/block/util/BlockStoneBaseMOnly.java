@@ -220,7 +220,7 @@ public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<Enu
 
         Random rand = world instanceof World ? ((World)world).rand : RANDOM;
 
-        int count = quantityDropped(state, fortune, rand);
+        int count = this.quantityDropped(state, fortune, rand);
         for(int i = 0; i < count; i++)
         {
             Item item = this.getItemDropped(state, rand, fortune);

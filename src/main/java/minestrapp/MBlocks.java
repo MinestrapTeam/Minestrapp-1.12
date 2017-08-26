@@ -65,6 +65,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MBlocks
@@ -129,6 +130,7 @@ public class MBlocks
 	public static Block ore_tin;
 	public static Block ore_iron;
 	public static Block ore_gold;
+	public static Block ore_meurodite;
 	public static Block ore_redstone;
 	public static Block ore_redstone_lit;
 	public static Block ore_lapis;
@@ -229,6 +231,8 @@ public class MBlocks
 		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
 		register(ore_iron = new BlockStoneBaseMOnly("ore_iron", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_iron));
 		register(ore_gold = new BlockStoneBaseMOnly("ore_gold", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_gold));
+		//TODO: Meurodite Ore doesn't drop anything and I can't fucking fathom why.
+		register(ore_meurodite = new BlockStoneBase("ore_meurodite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(MItems.gems, 1, 4), 1, 1, 5, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_meurodite));
 		register(ore_lapis = new BlockStoneBaseMOnly("ore_lapis", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setDropsItem(new ItemStack(Items.DYE, 4, EnumDyeColor.BLUE.getDyeDamage()), 4, 2, 5, true, true,false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_lapis));
 		register(ore_redstone = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_redstone));
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
@@ -242,9 +246,9 @@ public class MBlocks
 		//Resource
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
-		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.field_193565_Q, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
-		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.field_193564_P, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
-		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.field_193572_X, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
+		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
+		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
@@ -259,27 +263,27 @@ public class MBlocks
 		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
 		//Crops
-		GameRegistry.register(crop_withered = new CropWithered("crop_withered"));
-		GameRegistry.register(crop_pepper = new PepperPlant("crop_pepper"));
-		GameRegistry.register(crop_cabbage = new CabbagePlant("crop_cabbage"));
-		GameRegistry.register(crop_celery = new CeleryPlant("crop_celery"));
-		GameRegistry.register(crop_lettuce = new LettucePlant("crop_lettuce"));
-		GameRegistry.register(crop_onion = new OnionPlant("crop_onion"));
-		GameRegistry.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
-		GameRegistry.register(crop_tomato = new TomatoPlant("crop_tomato"));
+		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
+		ForgeRegistries.BLOCKS.register(crop_pepper = new PepperPlant("crop_pepper"));
+		ForgeRegistries.BLOCKS.register(crop_cabbage = new CabbagePlant("crop_cabbage"));
+		ForgeRegistries.BLOCKS.register(crop_celery = new CeleryPlant("crop_celery"));
+		ForgeRegistries.BLOCKS.register(crop_lettuce = new LettucePlant("crop_lettuce"));
+		ForgeRegistries.BLOCKS.register(crop_onion = new OnionPlant("crop_onion"));
+		ForgeRegistries.BLOCKS.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
+		ForgeRegistries.BLOCKS.register(crop_tomato = new TomatoPlant("crop_tomato"));
 	}
 	
 	public static void register(Block block)
 	{
-		GameRegistry.register(block);
-		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		blockList.add(block);
 	}
 	
 	public static void register(Block block, ItemBlock itemBlock)
 	{
-		GameRegistry.register(block);
-		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
 	}
 	
 	public static void registerRenders()
@@ -318,6 +322,7 @@ public class MBlocks
 		{
 			initModel(ore_copper, i, "ore_copper_" + EnumStoneType.values()[i].getName());
 			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
+			initModel(ore_meurodite, i, "ore_meurodite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
 		}

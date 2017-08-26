@@ -8,14 +8,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public enum EnumStoneType implements IStringSerializable
 {
     RED_ROCK(0, "red_rock", "red_rock", MapColor.ADOBE, false),
-    DEEP_RED_ROCK(1, "deep_red_rock", "deep_red_rock", MapColor.field_193573_Y, true),
+    DEEP_RED_ROCK(1, "deep_red_rock", "deep_red_rock", MapColor.BROWN_STAINED_HARDENED_CLAY, true),
     DEEPSTONE(2, "deepstone", "deepstone", MapColor.GRAY, true),
-    COLDSTONE(3, "coldstone", "coldstone", MapColor.field_193564_P, false),
-    DEEP_COLDSTONE(4, "deep_coldstone", "deep_coldstone", MapColor.field_193572_X, true),
+    COLDSTONE(3, "coldstone", "coldstone", MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, false),
+    DEEP_COLDSTONE(4, "deep_coldstone", "deep_coldstone", MapColor.BLUE_STAINED_HARDENED_CLAY, true),
     ICESTONE(5, "icestone", "icestone", MapColor.CYAN, false),
     GLACIERROCK(6, "glacierrock", "glacierrock", MapColor.BLUE, true),
     OCEANSTONE(7, "oceanstone", "oceanstone", MapColor.WOOD, false),
-    DEEP_OCEANSTONE(8, "deep_oceanstone", "deep_oceanstone", MapColor.field_193573_Y, true),
+    DEEP_OCEANSTONE(8, "deep_oceanstone", "deep_oceanstone", MapColor.BROWN_STAINED_HARDENED_CLAY, true),
     STONE(9, "stone", "stone", MapColor.STONE, false);
 
     private static final EnumStoneType[] META_LOOKUP = new EnumStoneType[values().length];
