@@ -48,6 +48,16 @@ tile.m_cobblestone_glacierrock.name=Cracked Glacierrock
 tile.m_cobblestone_oceanstone.name=Cobbled Oceanstone
 tile.m_cobblestone_deep_oceanstone.name=Cobbled Reefstone
 
+tile.m_mossy_cobblestone_red_rock.name=Mossy Red Cobblestone
+tile.m_mossy_cobblestone_deep_red_rock.name=Deep Mossy Red Cobblestone
+tile.m_mossy_cobblestone_deepstone.name=Deep Mossy Cobblestone
+tile.m_mossy_cobblestone_coldstone.name=Mossy Cold Cobblestone
+tile.m_mossy_cobblestone_deep_coldstone.name=Deep Mossy Cold Cobblestone
+tile.m_mossy_cobblestone_icestone.name=Wet Cracked Icestone
+tile.m_mossy_cobblestone_glacierrock.name=Wet Cracked Glacierrock
+tile.m_mossy_cobblestone_oceanstone.name=Mossy Cobbled Oceanstone
+tile.m_mossy_cobblestone_deep_oceanstone.name=Mossy Cobbled Reefstone
+
 tile.m_stone_bricks_red_rock.name=Red Rock Bricks
 tile.m_stone_bricks_deep_red_rock.name=Deep Red Rock Bricks
 tile.m_stone_bricks_deepstone.name=Deepstone Bricks
@@ -77,6 +87,16 @@ tile.m_stone_bricks_mossy_icestone.name=Wet Icestone Bricks
 tile.m_stone_bricks_mossy_glacierrock.name=Wet Glacierrock Bricks
 tile.m_stone_bricks_mossy_oceanstone.name=Mossy Oceanstone Bricks
 tile.m_stone_bricks_mossy_deep_oceanstone.name=Mossy Reefstone Bricks
+
+tile.m_chiseled_stone_red_rock.name=Chiseled Red Rock
+tile.m_chiseled_stone_deep_red_rock.name=Chiseled Deep Red Rock
+tile.m_chiseled_stone_deepstone.name=Chiseled Deepstone
+tile.m_chiseled_stone_coldstone.name=Chiseled Coldstone
+tile.m_chiseled_stone_deep_coldstone.name=Chiseled Deep Coldstone
+tile.m_chiseled_stone_icestone.name=Chiseled Icestone
+tile.m_chiseled_stone_glacierrock.name=Chiseled Glacierrock
+tile.m_chiseled_stone_oceanstone.name=Chiseled Oceanstone
+tile.m_chiseled_stone_deep_oceanstone.name=Chiseled Reefstone
 
 tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
 tile.m_stone_slab_1_deep_red_rock_smooth.name=Deep Red Rock Slab
@@ -268,6 +288,7 @@ tile.block_steel.name=Block of Steel
 tile.block_meurodite.name=Block of Meurodite
 tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Titanium
+tile.block_glacierite.name=Block of Glacierite
 tile.block_blazium.name=Block of Blazium
 tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium

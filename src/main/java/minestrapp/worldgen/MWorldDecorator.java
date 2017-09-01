@@ -162,14 +162,13 @@ public class MWorldDecorator
 						}
 						else if(state.getBlock() == Blocks.MOSSY_COBBLESTONE)
 						{
-							//TODO: Replace with Biome Mossy Cobb when added.
 							if (y < deepStoneDepth)
 							{
-								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								chunk.setBlockState(subpos2, MBlocks.mossy_cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 							}
 							else if (sType != null)
 							{
-								chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								chunk.setBlockState(subpos2, MBlocks.mossy_cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 							}
 						}
 //						else if(state.getBlock() instanceof BlockStoneBrick)

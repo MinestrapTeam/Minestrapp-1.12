@@ -7,6 +7,8 @@ import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MFireSword;
 import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockStoneBase;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemJamBottle;
@@ -420,39 +422,9 @@ public class MItems
 		register(fried_salmon = new MItemsFood(8, 0.9F, false, "fried_salmon"));
 		register(fish_and_chips = new MItemsFood(12, 0.75F, false, "fish_and_chips"));
 		
-		
-		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 1), new ItemStack(Blocks.DIRT, 1, 1), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 2), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
-		GameRegistry.addSmelting(MBlocks.lichen, new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
-		GameRegistry.addSmelting(MBlocks.mud, new ItemStack(MBlocks.dried_mud), 0.1F);
-		GameRegistry.addSmelting(mud_ball, new ItemStack(bricks, 1, 0), 0.1F);
-		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
-		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(ingots, 1, 0), 0.5F);
-		GameRegistry.addSmelting(MBlocks.ore_tin, new ItemStack(ingots, 1, 1), 0.5F);
-		GameRegistry.addSmelting(MBlocks.ore_iron, new ItemStack(Items.IRON_INGOT), 0.7F);
-		GameRegistry.addSmelting(MBlocks.ore_gold, new ItemStack(Items.GOLD_INGOT), 1F);
-		GameRegistry.addSmelting(MBlocks.ore_meurodite, new ItemStack(MItems.gems, 1, 4), 0.9F);
-		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
-		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
-		GameRegistry.addSmelting(MBlocks.ore_torite, new ItemStack(ingots, 1, 4), 1F);
-		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
-		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
-		GameRegistry.addSmelting(MBlocks.ore_titanium, new ItemStack(ingots, 1, 5), 4F);
-		GameRegistry.addSmelting(MBlocks.ore_soul, new ItemStack(gem_soul), 3F);
-		GameRegistry.addSmelting(MBlocks.ore_dimensium, new ItemStack(ingots, 1, 8), 3F);
-		GameRegistry.addSmelting(corn_meal, new ItemStack(corn_bread), 0.35F);
-		GameRegistry.addSmelting(dough, new ItemStack(Items.BREAD), 0.35F);
-		GameRegistry.addSmelting(fat, new ItemStack(grease), 0.35F);
-		GameRegistry.addSmelting(squid_tentacle, new ItemStack(calamari), 0.35F);
-		
-		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
-		{
-			GameRegistry.addSmelting(new ItemStack(MBlocks.cobblestone, 1, i), new ItemStack(MBlocks.stone, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(MBlocks.cracked_stone_bricks, 1, i), new ItemStack(MBlocks.stone_bricks, 1, i), 0.1F);
-		}
+		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
+		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);
+		((BlockBase) MBlocks.ore_soul).setDropsItem(new ItemStack(gem_soul), 0, 5, 9, true, true);
 	}
 
 	

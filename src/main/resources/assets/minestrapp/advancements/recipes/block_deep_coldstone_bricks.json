@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_deep_coldstone_bricks"
+    ]
+  },
+  "criteria": {
+    "has_deep_coldstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_stone",
+            "data": 4
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_deep_coldstone_bricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_deep_coldstone",
+      "has_the_recipe"
+    ]
+  ]
+}

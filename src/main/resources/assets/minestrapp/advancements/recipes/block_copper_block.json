@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_copper_block"
+    ]
+  },
+  "criteria": {
+    "has_copper_ingots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_ingot",
+            "count": {
+                "min": 9
+            },
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_copper_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_ingots",
+      "has_the_recipe"
+    ]
+  ]
+}

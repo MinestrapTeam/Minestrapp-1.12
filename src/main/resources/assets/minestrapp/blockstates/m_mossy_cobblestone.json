@@ -1,0 +1,31 @@
+{
+    "variants": {
+        "variant=red_rock": [
+            { "model": "minestrapp:mossy_cobbled_red_rock" }
+        ],
+        "variant=deep_red_rock": [
+            { "model": "minestrapp:mossy_cobbled_deep_red_rock" }
+        ],
+        "variant=deepstone": [
+            { "model": "minestrapp:mossy_cobbled_deepstone" }
+        ],
+        "variant=coldstone": [
+            { "model": "minestrapp:mossy_cobbled_coldstone" }
+        ],
+        "variant=deep_coldstone": [
+            { "model": "minestrapp:mossy_cobbled_deep_coldstone" }
+        ],
+        "variant=icestone": [
+            { "model": "minestrapp:mossy_cobbled_icestone" }
+        ],
+        "variant=glacierrock": [
+            { "model": "minestrapp:mossy_cobbled_glacierrock" }
+        ],
+        "variant=oceanstone": [
+            { "model": "minestrapp:mossy_cobbled_oceanstone" }
+        ],
+        "variant=deep_oceanstone": [
+            { "model": "minestrapp:mossy_cobbled_deep_oceanstone" }
+        ]
+    }
+}

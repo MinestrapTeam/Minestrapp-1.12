@@ -15,6 +15,7 @@ import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockDriedMud;
+import minestrapp.block.BlockGlacierite;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
@@ -46,7 +47,6 @@ import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.util.BlockBase;
-import minestrapp.block.util.BlockItemDropBase;
 import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
@@ -94,9 +94,11 @@ public class MBlocks
 	public static Block mud_brick_stairs;
 	public static Block stone;
 	public static Block cobblestone;
+	public static Block mossy_cobblestone;
 	public static Block stone_bricks;
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
+	public static Block chiseled_stone;
 	public static BlockSlab stone_slab_1;
 	public static BlockDoubleStoneSlab1 double_stone_slab_1;
 	public static BlockSlab stone_slab_2;
@@ -194,10 +196,12 @@ public class MBlocks
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
 		register(mud_brick_stairs = new BlockStairBase(mud_bricks));
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
+		register(mossy_cobblestone = new BlockStoneBaseMOnly("m_mossy_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_cobblestone));
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setDropsItem(new ItemStack(Item.getItemFromBlock(MBlocks.cobblestone)), 0, 0, 0, true, false, true).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
 		register(stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone_bricks));
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
+		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
 		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
 		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
 		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
@@ -231,8 +235,7 @@ public class MBlocks
 		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
 		register(ore_iron = new BlockStoneBaseMOnly("ore_iron", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_iron));
 		register(ore_gold = new BlockStoneBaseMOnly("ore_gold", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_gold));
-		//TODO: Meurodite Ore doesn't drop anything and I can't fucking fathom why.
-		register(ore_meurodite = new BlockStoneBase("ore_meurodite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(MItems.gems, 1, 4), 1, 1, 5, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_meurodite));
+		register(ore_meurodite = new BlockStoneBase("ore_meurodite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_meurodite));
 		register(ore_lapis = new BlockStoneBaseMOnly("ore_lapis", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setDropsItem(new ItemStack(Items.DYE, 4, EnumDyeColor.BLUE.getDyeDamage()), 4, 2, 5, true, true,false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_lapis));
 		register(ore_redstone = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_redstone));
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
@@ -240,7 +243,7 @@ public class MBlocks
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
-		register(ore_soul = new BlockItemDropBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3, new ItemStack(MItems.gem_soul, 1), 0, 5, 9, true).setCreativeTab(MTabs.ore));
+		register(ore_soul = new BlockBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3).setCreativeTab(MTabs.ore));
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		
 		//Resource
@@ -251,6 +254,7 @@ public class MBlocks
 		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
+		register(block_glacierite = new BlockGlacierite());
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
 		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setBlockUnbreakable().setResistance(6000000.0F));
@@ -314,9 +318,11 @@ public class MBlocks
 			
 			initModel(stone, i, "m_stone_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(cobblestone, i, "m_cobblestone_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(mossy_cobblestone, i, "m_mossy_cobblestone_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(stone_bricks, i, "m_stone_bricks_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(mossy_stone_bricks, i, "m_stone_bricks_mossy_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(cracked_stone_bricks, i, "m_stone_bricks_cracked_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(chiseled_stone, i, "m_chiseled_stone_" + EnumStoneTypeMOnly.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{

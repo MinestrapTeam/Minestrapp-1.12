@@ -1,5 +1,6 @@
 {    
     "type": "minecraft:crafting_shapeless",
+    "group": "voidberry_salad",
     "ingredients": [
         {
             "item": "minestrapp:voidberry"

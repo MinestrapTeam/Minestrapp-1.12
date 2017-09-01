@@ -34,6 +34,7 @@ public class AlloyRecipes {
 		//Always Remember. Never frogget. this.addAlloyRecipeForBlock(Blocks.TNT, Blocks.JUKEBOX, new ItemStack(Items.EGG, 10), 20.0F);
 		//Adds everything else
 		this.addAlloy(MItems.corn_on_the_cob, MItems.fat, new ItemStack(MItems.grilled_corn), 0.35F);
+		this.addAlloy(MItems.dough, Items.BOWL, new ItemStack(MItems.bread_bowl), 0.35F);
 		this.addAlloy(MItems.dough, Items.SUGAR, new ItemStack(MItems.sugar_cookie, 8), 0.35F);
 		this.addAlloy(MItems.dough, new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage()), new ItemStack(Items.COOKIE, 8), 0.35F);
 		this.addAlloyRecipeForBlock(MItems.pie_crust, Blocks.PUMPKIN, new ItemStack(Items.PUMPKIN_PIE), 0.35F);

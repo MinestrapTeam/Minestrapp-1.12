@@ -6,6 +6,7 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
+import minestrapp.crafting.FurnaceRecipes;
 import minestrapp.crafting.OreDictRegistry;
 import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
@@ -25,6 +26,7 @@ public class CommonProxy
 		MBlocks.init();
 		MItems.init();
 		OreDictRegistry.register();
+		FurnaceRecipes.register();
 	}
 	
 	public void init(FMLInitializationEvent event)

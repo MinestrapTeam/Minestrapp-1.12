@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_blazium_block"
+    ]
+  },
+  "criteria": {
+    "has_blazium_ingots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_ingot",
+            "count": {
+                "min": 9
+            },
+            "data": 7
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_blazium_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blazium_ingots",
+      "has_the_recipe"
+    ]
+  ]
+}

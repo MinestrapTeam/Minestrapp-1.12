@@ -1,17 +1,18 @@
 {    
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "xx",
-        "xx"
+        "xxx",
+        "xxx",
+        "xxx"
     ],
     "key": {        
         "x": {
-            "item": "minestrapp:cold_sand",
-            "data": 1
+            "item": "minestrapp:m_ingot",
+            "data": 6
         }
      },
      "result": {
-        "item": "minecraft:red_sandstone",
+        "item": "minestrapp:block_glacierite",
         "data": 0
      }  
 }
