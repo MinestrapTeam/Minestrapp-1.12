@@ -1,9 +1,11 @@
 package minestrapp.mobs.registry;
 
+import minestrapp.mobs.entitys.EntityBroodMother;
 import minestrapp.mobs.entitys.EntityLumpGoat;
 import minestrapp.mobs.entitys.EntitySheetGhost;
 import minestrapp.mobs.models.ModelLumpGoat;
 import minestrapp.mobs.models.ModelSheetGhost;
+import minestrapp.mobs.renderers.RenderBroodMother;
 import minestrapp.mobs.renderers.RenderLumpGoat;
 import minestrapp.mobs.renderers.RenderSheetGhost;
 import minestrapp.Minestrapp5;
@@ -29,13 +31,13 @@ public class MobRegistry
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntitySheetGhost.class, new RenderSheetGhost(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLumpGoat.class, new RenderLumpGoat(Minecraft.getMinecraft().getRenderManager(), new ModelLumpGoat(), 0.5F));
-
+		RenderingRegistry.registerEntityRenderingHandler(EntityBroodMother.class, new RenderBroodMother(Minecraft.getMinecraft().getRenderManager()));
 	}
 	
 	public static void registerEntity()
 	{
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "SheetGhost"), EntitySheetGhost.class, "SheetGhost", 450, Minestrapp5.instance, 64, 1, true, 0x050505, 0x222222);
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "LumpGoat"), EntityLumpGoat.class, "LumpGoat", 451, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
-
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "BroodMother"), EntityBroodMother.class, "BroodMother", 452, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
 	}
 }

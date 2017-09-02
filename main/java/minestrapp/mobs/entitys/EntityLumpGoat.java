@@ -47,6 +47,7 @@ public class EntityLumpGoat extends EntityAnimal {
         this.setSize(1F, 1F);
     }
 
+    @Override
     protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -54,21 +55,26 @@ public class EntityLumpGoat extends EntityAnimal {
         this.tasks.addTask(3, new EntityAILookIdle(this));
     }
 
+    @Override
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
+    
     protected SoundEvent getHurtSound()
     {
         return SoundEvents.ENTITY_PIG_HURT;
     }
 
+    @Override
     protected SoundEvent getDeathSound()
     {
         return SoundEvents.ENTITY_PIG_DEATH;
     }
+    
+    @Override
     @Nullable
     protected ResourceLocation getLootTable()
     {
