@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_bread_rabbit_stew_brown_mushroom",
+      "minestrapp:item_bread_rabbit_stew_red_mushroom"
+    ]
+  },
+  "criteria": {
+    "has_rabbit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:cooked_rabbit"
+          }
+        ]
+      }
+    },
+    "has_red_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_bread_rabbit_stew_red_mushroom"
+      }
+    },
+    "has_brown_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_bread_rabbit_stew_brown_mushroom"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rabbit",
+      "has_red_recipe",
+      "has_brown_recipe"
+    ]
+  ]
+}

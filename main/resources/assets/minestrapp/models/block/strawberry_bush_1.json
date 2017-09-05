@@ -1,0 +1,7 @@
+{
+    "parent": "minestrapp:block/bush_base_1",
+    "textures": {
+        "cross": "minestrapp:blocks/plant/strawberry_stem",
+		"leaves": "minestrapp:blocks/plant/strawberry_leaves"
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_fish_and_chips"
+    ]
+  },
+  "criteria": {
+    "has_grease": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:grease"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_fish_and_chips"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grease",
+      "has_the_recipe"
+    ]
+  ]
+}

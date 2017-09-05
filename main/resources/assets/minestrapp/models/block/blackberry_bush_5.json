@@ -1,0 +1,7 @@
+{
+    "parent": "minestrapp:block/bush_base_5",
+    "textures": {
+        "cross": "minestrapp:blocks/plant/blackberry_stem",
+		"leaves": "minestrapp:blocks/plant/blackberry_bush"
+    }
+}

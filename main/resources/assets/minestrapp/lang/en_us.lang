@@ -3,6 +3,12 @@
 ## Plant ##
 tile.tundra_grass.name=Tundra Grass
 tile.savanna_grass.name=Savanna Grass
+tile.blueberry_bush.name=Blueberry Bush
+tile.blackberry_bush.name=Blackberry Bush
+tile.raspberry_bush.name=Raspberry Bush
+tile.strawberry_bush.name=Strawberry Bush
+tile.mana_bush.name=Mana Bush
+tile.voidberry_bush.name=Voidberry Bush
 
 ## Soil ##
 
@@ -332,6 +338,10 @@ item.m_natural_item_1.name=Mana Leaf
 item.m_bricks_0.name=Mud Brick
 
 ## Tech Components ##
+item.m_plating_0.name=Tin Plating
+item.m_plating_1.name=Bronze Plating
+item.m_plating_2.name=Steel Plating
+item.m_plating_3.name=Meurodite Plating
 item.m_tech_component_0.name=Reinforced Stick
 item.m_tech_component_1.name=Wing Segment
 item.m_tech_component_2.name=Propeller

@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_jam"
+    ]
+  },
+  "criteria": {
+    "has_blueberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:blueberry"
+          }
+        ]
+      }
+    },
+    "has_blackberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:blackberry"
+          }
+        ]
+      }
+    },
+    "has_raspberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:raspberry"
+          }
+        ]
+      }
+    },
+    "has_strawberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:strawberry"
+          }
+        ]
+      }
+    },  
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blueberry",
+      "has_blackberry",
+      "has_raspberry",
+      "has_strawberry",
+      "has_the_recipe"
+    ]
+  ]
+}

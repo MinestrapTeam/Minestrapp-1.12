@@ -37,6 +37,8 @@ import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.CropWithered;
+import minestrapp.block.crops.BlockBerryBush;
+import minestrapp.block.crops.BlockVoidberryBush;
 import minestrapp.block.crops.CabbagePlant;
 import minestrapp.block.crops.CeleryPlant;
 import minestrapp.block.crops.LettucePlant;
@@ -75,6 +77,12 @@ public class MBlocks
 	//Plant
 	public static Block tundra_grass;
 	public static Block savanna_grass;
+	public static Block blueberry_bush;
+	public static Block blackberry_bush;
+	public static Block raspberry_bush;
+	public static Block strawberry_bush;
+	public static Block mana_bush;
+	public static Block voidberry_bush;
 	
 	//Soil
 	public static Block cold_sand;
@@ -178,6 +186,12 @@ public class MBlocks
 		//Plant
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
 		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
+		register(blueberry_bush = new BlockBerryBush("blueberry_bush", MapColor.FOLIAGE, "plains"));
+		register(blackberry_bush = new BlockBerryBush("blackberry_bush", MapColor.FOLIAGE, "plains"));
+		register(raspberry_bush = new BlockBerryBush("raspberry_bush", MapColor.FOLIAGE, "plains"));
+		register(strawberry_bush = new BlockBerryBush("strawberry_bush", MapColor.FOLIAGE, "plains"));
+		register(mana_bush = new BlockBerryBush("mana_bush", MapColor.LAPIS, "coast"));
+		register(voidberry_bush = new BlockVoidberryBush("voidberry_bush"));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -263,7 +277,7 @@ public class MBlocks
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
-		register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
 		//Crops

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_alloy_furnace"
+    ]
+  },
+  "criteria": {
+    "has_furnace": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:furnace"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_alloy_furnace"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_furnace",
+      "has_the_recipe"
+    ]
+  ]
+}

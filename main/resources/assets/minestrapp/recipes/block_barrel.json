@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "wiw",
+        "w w",
+        "wiw"
+    ],
+    "key": {        
+        "w": {
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+        },
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotTin"
+        }
+     },
+     "result": {
+        "item": "minestrapp:barrel"
+     }  
+}

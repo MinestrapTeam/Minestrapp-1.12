@@ -6,6 +6,7 @@ import com.google.common.base.Predicate;
 
 import minestrapp.MBlocks;
 import minestrapp.block.EnumStoneType;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.state.IBlockState;
@@ -14,10 +15,17 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeForest;
+import net.minecraft.world.biome.BiomeHills;
 import net.minecraft.world.biome.BiomeJungle;
+import net.minecraft.world.biome.BiomeMesa;
+import net.minecraft.world.biome.BiomeMushroomIsland;
+import net.minecraft.world.biome.BiomeOcean;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.biome.BiomeRiver;
+import net.minecraft.world.biome.BiomeSavanna;
 import net.minecraft.world.biome.BiomeSwamp;
+import net.minecraft.world.biome.BiomeTaiga;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -134,6 +142,57 @@ public class MOreGen implements IWorldGenerator
 				MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
 				mudGen.generate(world, random, mudPos);
 			}
+			if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
+			{
+				int posX = random.nextInt(16);
+				int posY = 94 - random.nextInt(38);
+				int posZ = random.nextInt(16);
+				
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
+				bushGen.generate(world, random, berryPos);
+			}
+			if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
+			{
+				int posX = random.nextInt(16);
+				int posY = 94 - random.nextInt(38);
+				int posZ = random.nextInt(16);
+				
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
+				bushGen.generate(world, random, berryPos);
+			}
+			if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
+			{
+				int posX = random.nextInt(16);
+				int posY = 114 - random.nextInt(48);
+				int posZ = random.nextInt(16);
+				
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
+				bushGen.generate(world, random, berryPos);
+			}
+			if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
+			{
+				int posX = random.nextInt(16);
+				int posY = 94 - random.nextInt(38);
+				int posZ = random.nextInt(16);
+				
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
+				bushGen.generate(world, random, berryPos);
+			}
+			if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
+			{
+				int posX = random.nextInt(16);
+				int posY = 94 - random.nextInt(38);
+				int posZ = random.nextInt(16);
+				
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
+				bushGen.generate(world, random, berryPos);
+			}
+			
 			MStoneGen.generate(world, chunkX, chunkZ, random);
 		}
 		

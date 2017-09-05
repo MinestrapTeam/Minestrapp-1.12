@@ -1,0 +1,10 @@
+{
+    "variants": {
+       "age=0": { "model": "minestrapp:raspberry_bush_0" },
+	  "age=1": { "model": "minestrapp:raspberry_bush_1" },
+       "age=2": { "model": "minestrapp:raspberry_bush_2" },
+       "age=3": { "model": "minestrapp:raspberry_bush_3" },
+       "age=4": { "model": "minestrapp:raspberry_bush_4" },
+       "age=5": { "model": "minestrapp:raspberry_bush_5" }
+    }
+}

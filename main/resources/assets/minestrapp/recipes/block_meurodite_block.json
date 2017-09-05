@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_gem",
+            "data": 4
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_meurodite",
+        "data": 0
+     }  
+}

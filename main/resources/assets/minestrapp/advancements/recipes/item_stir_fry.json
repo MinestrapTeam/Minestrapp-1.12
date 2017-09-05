@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_stir_fry"
+    ]
+  },
+  "criteria": {
+    "has_rice_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:rice_bowl"
+          }
+        ]
+      }
+    },
+    "has_bread_rice_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bread_rice_bowl"
+          }
+        ]
+      }
+    },  
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_stir_fry"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rice_bowl",
+      "has_bread_rice_bowl",  
+      "has_the_recipe"
+    ]
+  ]
+}

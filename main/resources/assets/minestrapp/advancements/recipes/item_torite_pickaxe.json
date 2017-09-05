@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_torite_pickaxe"
+    ]
+  },
+  "criteria": {
+    "has_torite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_ingot",
+            "data": 4 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_torite_pickaxe"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_torite_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

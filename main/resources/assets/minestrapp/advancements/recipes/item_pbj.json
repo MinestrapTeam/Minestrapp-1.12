@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_pbj"
+    ]
+  },
+  "criteria": {
+    "has_jam": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:jam"
+          }
+        ]
+      }
+    },
+    "has_peanut_butter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:peanut_butter"
+          }
+        ]
+      }
+    },  
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_pbj"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jam",
+      "has_peanut_butter",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

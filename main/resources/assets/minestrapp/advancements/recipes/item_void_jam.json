@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_void_jam"
+    ]
+  },
+  "criteria": {
+    "has_voidberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:voidberry"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_void_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_voidberry",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,24 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ppp",
+        "pfp",
+        "rrr"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:m_plating",
+            "data": 0
+        },
+        "f": {
+            "item": "minecraft:furnace"
+        },
+        "r": {
+            "item": "m_stone_bricks",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:alloy"
+     }  
+}

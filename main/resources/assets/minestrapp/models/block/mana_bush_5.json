@@ -1,0 +1,8 @@
+{
+    "parent": "minestrapp:block/bush_base_5_alt",
+    "textures": {
+        "cross": "minestrapp:blocks/plant/mana_stem",
+		"leaves": "minestrapp:blocks/plant/mana_leaves",
+		"layer": "minestrapp:blocks/plant/mana_aura"
+    }
+}

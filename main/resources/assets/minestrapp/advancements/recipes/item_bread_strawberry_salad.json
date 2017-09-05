@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_bread_strawberry_salad"
+    ]
+  },
+  "criteria": {
+    "has_lettuce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:lettuce"
+          }
+        ]
+      }
+    },
+    "has_cabbage": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:cabbage"
+          }
+        ]
+      }
+    },  
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_bread_strawberry_salad"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lettuce",
+      "has_cabbage",
+      "has_the_recipe"
+    ]
+  ]
+}

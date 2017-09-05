@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_fire_sword"
+    ]
+  },
+  "criteria": {
+    "has_blazium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_ingot",
+            "data": 7 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_fire_sword"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blazium_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

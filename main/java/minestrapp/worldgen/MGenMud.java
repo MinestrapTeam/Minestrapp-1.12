@@ -30,7 +30,6 @@ public class MGenMud extends WorldGenerator
         else
         {
             int i = rand.nextInt(this.radius - 3) + 3;
-            int j = 2;
 
             for (int k = position.getX() - i; k <= position.getX() + i; ++k)
             {

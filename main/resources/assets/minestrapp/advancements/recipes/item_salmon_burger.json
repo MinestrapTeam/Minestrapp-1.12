@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_salmon_burger"
+    ]
+  },
+  "criteria": {
+    "has_fried_salmon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:fried_salmon"
+          }
+        ]
+      }
+    },
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_salmon_burger"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fried_salmon",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

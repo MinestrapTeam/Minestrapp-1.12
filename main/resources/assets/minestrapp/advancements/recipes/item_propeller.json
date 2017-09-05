@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_propeller"
+    ]
+  },
+  "criteria": {
+    "has_tech_doodad": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 4  
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_propeller"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tech_doodad",
+      "has_the_recipe"
+    ]
+  ]
+}

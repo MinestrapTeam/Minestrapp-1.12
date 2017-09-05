@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_hot_sauce"
+    ]
+  },
+  "criteria": {
+    "has_pepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:pepper"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_hot_sauce"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pepper",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_hamburger"
+    ]
+  },
+  "criteria": {
+    "has_beef": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:cooked_beef"
+          }
+        ]
+      }
+    },
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_hamburger"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beef",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

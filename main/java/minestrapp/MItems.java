@@ -3,10 +3,7 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
-import minestrapp.item.tools.MAxe;
-import minestrapp.item.tools.MDagger;
-import minestrapp.item.tools.MFireSword;
-import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.item.ItemDrySpaghetti;
@@ -16,6 +13,9 @@ import minestrapp.item.ItemPBJ;
 import minestrapp.item.ItemSoulGem;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
+import minestrapp.item.tools.MAxe;
+import minestrapp.item.tools.MDagger;
+import minestrapp.item.tools.MFireSword;
 import minestrapp.item.tools.MHoe;
 import minestrapp.item.tools.MPickaxe;
 import minestrapp.item.tools.MShovel;
@@ -32,21 +32,15 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.EnumDyeColor;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemSeedFood;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MItems
 {
@@ -56,6 +50,7 @@ public class MItems
 	
 	public static Item mud_ball;
 	public static Item ingots;
+	public static Item plating;
 	public static Item gems;
 	public static Item gem_soul;
 	
@@ -247,6 +242,8 @@ public class MItems
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBeaconPayment().setCreativeTab(MTabs.minerals));
+		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite
+		register(plating = new ItemMetaBase("m_plating", 4).setCreativeTab(MTabs.ingredients));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard
 		register(gems = new ItemMetaBase("m_gem", 7).setCreativeTab(MTabs.minerals));
@@ -425,6 +422,11 @@ public class MItems
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);
 		((BlockBase) MBlocks.ore_soul).setDropsItem(new ItemStack(gem_soul), 0, 5, 9, true, true);
+		((BlockBerryBush) MBlocks.blueberry_bush).setBushDrop(new ItemStack(blueberry));
+		((BlockBerryBush) MBlocks.blackberry_bush).setBushDrop(new ItemStack(blackberry));
+		((BlockBerryBush) MBlocks.raspberry_bush).setBushDrop(new ItemStack(raspberry));
+		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
+		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
 	}
 
 	
