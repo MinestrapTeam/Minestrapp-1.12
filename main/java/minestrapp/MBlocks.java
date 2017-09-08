@@ -20,10 +20,13 @@ import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
 import minestrapp.block.BlockHalfStoneSlab4;
+import minestrapp.block.BlockIrradium;
+import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMPath;
+import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockSavannaGrass;
@@ -75,6 +78,7 @@ public class MBlocks
 	public static List<Block> blockList = new ArrayList<Block>();
 	
 	//Plant
+	public static Block moss;
 	public static Block tundra_grass;
 	public static Block savanna_grass;
 	public static Block blueberry_bush;
@@ -144,6 +148,7 @@ public class MBlocks
 	public static Block ore_redstone;
 	public static Block ore_redstone_lit;
 	public static Block ore_lapis;
+	public static Block ore_irradium;
 	public static Block ore_torite;
 	public static Block ore_diamond;
 	public static Block ore_emerald;
@@ -157,6 +162,7 @@ public class MBlocks
 	public static Block block_bronze;
 	public static Block block_steel;
 	public static Block block_meurodite;
+	public static Block block_irradium;
 	public static Block block_torite;
 	public static Block block_titanium;
 	public static Block block_glacierite;
@@ -166,8 +172,9 @@ public class MBlocks
 	
 	//Utility
 	public static Block basket;
-	public static Block soulsteel_vessel;
 	public static Block barrel;
+	public static Block block_irradium_insulated;
+	public static Block soulsteel_vessel;
 	public static Block stonecutter;
 	public static Block alloy;
 	
@@ -184,6 +191,7 @@ public class MBlocks
 	public static void init()
 	{
 		//Plant
+		register(moss = new BlockMoss());
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
 		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
 		register(blueberry_bush = new BlockBerryBush("blueberry_bush", MapColor.FOLIAGE, "plains"));
@@ -253,6 +261,7 @@ public class MBlocks
 		register(ore_lapis = new BlockStoneBaseMOnly("ore_lapis", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 1).setDropsItem(new ItemStack(Items.DYE, 4, EnumDyeColor.BLUE.getDyeDamage()), 4, 2, 5, true, true,false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_lapis));
 		register(ore_redstone = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_redstone));
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
+		register(ore_irradium = new BlockIrradiumOre().setResistance(5F).setLightLevel(0.2F), new ItemBlockMultistate(ore_irradium));
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
@@ -266,6 +275,7 @@ public class MBlocks
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
 		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
 		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_irradium = new BlockIrradium("block_irradium", Material.ROCK, MapColor.LIME, SoundType.STONE, 5F, false).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_glacierite = new BlockGlacierite());
@@ -275,10 +285,11 @@ public class MBlocks
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
-		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
-		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
 		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
@@ -343,6 +354,7 @@ public class MBlocks
 			initModel(ore_copper, i, "ore_copper_" + EnumStoneType.values()[i].getName());
 			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
 			initModel(ore_meurodite, i, "ore_meurodite_" + EnumStoneType.values()[i].getName());
+			initModel(ore_irradium, i, "ore_irradium_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
 		}

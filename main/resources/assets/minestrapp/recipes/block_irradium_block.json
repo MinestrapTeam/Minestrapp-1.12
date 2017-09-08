@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:irradium"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_irradium"
+     }  
+}

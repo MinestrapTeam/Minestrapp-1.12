@@ -1,6 +1,9 @@
 ##### Blocks #####
 
 ## Plant ##
+tile.moss.name=Moss Lump
+tile.hanging_moss.name=Hanging Moss
+tile.hanging_glow_moss.name=Hanging Glow Moss
 tile.tundra_grass.name=Tundra Grass
 tile.savanna_grass.name=Savanna Grass
 tile.blueberry_bush.name=Blueberry Bush
@@ -240,6 +243,17 @@ tile.ore_redstone_glacierrock.name=Redstone Ore
 tile.ore_redstone_oceanstone.name=Redstone Ore
 tile.ore_redstone_deep_oceanstone.name=Redstone Ore
 
+tile.ore_irradium_red_rock.name=Irradium Ore
+tile.ore_irradium_deep_red_rock.name=Irradium Ore
+tile.ore_irradium_deepstone.name=Irradium Ore
+tile.ore_irradium_coldstone.name=Irradium Ore
+tile.ore_irradium_deep_coldstone.name=Irradium Ore
+tile.ore_irradium_icestone.name=Irradium Ore
+tile.ore_irradium_glacierrock.name=Irradium Ore
+tile.ore_irradium_oceanstone.name=Irradium Ore
+tile.ore_irradium_deep_oceanstone.name=Irradium Ore
+tile.ore_irradium_stone.name=Irradium Ore
+
 tile.ore_torite_red_rock.name=Torite Ore
 tile.ore_torite_deep_red_rock.name=Torite Ore
 tile.ore_torite_deepstone.name=Torite Ore
@@ -292,6 +306,7 @@ tile.block_tin.name=Block of Tin
 tile.block_bronze.name=Block of Bronze
 tile.block_steel.name=Block of Steel
 tile.block_meurodite.name=Block of Meurodite
+tile.block_irradium.name=Unstable Block of Irradium
 tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Titanium
 tile.block_glacierite.name=Block of Glacierite
@@ -302,6 +317,7 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 ## Utility ##
 
 tile.basket.name=Basket
+tile.block_irradium_insulated.name=Insulated Block of Uranium
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter
@@ -312,6 +328,7 @@ tile.alloy.name=Alloy Furnace
 
 ## Minerals ##
 item.mud_ball.name=Mud Ball
+item.irradium.name=Irradium
 item.m_ingot_0.name=Copper Ingot
 item.m_ingot_1.name=Tin Ingot
 item.m_ingot_2.name=Bronze Ingot

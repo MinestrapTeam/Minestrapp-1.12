@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_irradium_block"
+    ]
+  },
+  "criteria": {
+    "has_irradium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:irradium",
+            "count": {
+                "min": 9
+            }
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_irradium_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_irradium",
+      "has_the_recipe"
+    ]
+  ]
+}

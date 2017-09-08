@@ -26,6 +26,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("oreRedstone", new ItemStack(MBlocks.ore_redstone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreLapis", new ItemStack(MBlocks.ore_lapis, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreMeurodite", new ItemStack(MBlocks.ore_meurodite, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("oreIrradium", new ItemStack(MBlocks.ore_irradium, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreTorite", new ItemStack(MBlocks.ore_torite, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreDiamond", new ItemStack(MBlocks.ore_diamond, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreEmerald", new ItemStack(MBlocks.ore_emerald, 1, OreDictionary.WILDCARD_VALUE));

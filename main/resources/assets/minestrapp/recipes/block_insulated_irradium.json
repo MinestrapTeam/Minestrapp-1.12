@@ -1,0 +1,24 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ppp",
+        "gig",
+        "ppp"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:m_plating",
+            "data": 2
+        },
+        "i": {
+            "item": "minestrapp:block_irradium"
+        },
+        "g": {
+            "item": "minecraft:glass_pane"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_irradium_insulated",
+        "count": 2
+     }  
+}

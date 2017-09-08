@@ -49,6 +49,7 @@ public class MItems
 	public static Item natural_ingredients;
 	
 	public static Item mud_ball;
+	public static Item irradium;
 	public static Item ingots;
 	public static Item plating;
 	public static Item gems;
@@ -240,6 +241,7 @@ public class MItems
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
+		register(irradium = new ItemBase("irradium").setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBeaconPayment().setCreativeTab(MTabs.minerals));
 		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite
@@ -421,6 +423,7 @@ public class MItems
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);
+		((BlockStoneBase) MBlocks.ore_irradium).setDropsItem(new ItemStack(irradium), 1, 3, 6, true, true, false);
 		((BlockBase) MBlocks.ore_soul).setDropsItem(new ItemStack(gem_soul), 0, 5, 9, true, true);
 		((BlockBerryBush) MBlocks.blueberry_bush).setBushDrop(new ItemStack(blueberry));
 		((BlockBerryBush) MBlocks.blackberry_bush).setBushDrop(new ItemStack(blackberry));

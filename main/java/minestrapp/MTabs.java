@@ -19,7 +19,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(MBlocks.tundra_grass);
+			return new ItemStack(MBlocks.blueberry_bush);
 		}
 	};
 	
@@ -34,7 +34,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(Item.getItemFromBlock(MBlocks.cold_sand), 1, 0);
+			return new ItemStack(Item.getItemFromBlock(MBlocks.clay_grass));
 		}
 	};
 	
@@ -94,7 +94,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(Item.getItemFromBlock(MBlocks.soulsteel_vessel), 1, 0);
+			return new ItemStack(Item.getItemFromBlock(MBlocks.alloy));
 		}
 	};
 	
@@ -124,7 +124,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(MItems.pepper);
+			return new ItemStack(MItems.spaghetti);
 		}
 	};
 	
@@ -154,7 +154,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(MItems.copper_pickaxe);
+			return new ItemStack(MItems.titanium_pickaxe);
 		}
 	};
 	
@@ -169,7 +169,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(MItems.copper_sword);
+			return new ItemStack(MItems.titanium_sword);
 		}
 	};	
 }

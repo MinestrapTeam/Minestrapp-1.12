@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:moss_0" },
+            { "model": "minestrapp:moss_0", "y": 90 },
+            { "model": "minestrapp:moss_0", "y": 180 },
+            { "model": "minestrapp:moss_0", "y": 270 },
+            { "model": "minestrapp:moss_1" },
+            { "model": "minestrapp:moss_1", "y": 90 },
+            { "model": "minestrapp:moss_1", "y": 180 },
+            { "model": "minestrapp:moss_1", "y": 270 },
+            { "model": "minestrapp:moss_2" },
+            { "model": "minestrapp:moss_2", "y": 90 },
+            { "model": "minestrapp:moss_2", "y": 180 },
+            { "model": "minestrapp:moss_2", "y": 270 },
+            { "model": "minestrapp:moss_3" },
+            { "model": "minestrapp:moss_3", "y": 90 },
+            { "model": "minestrapp:moss_3", "y": 180 },
+            { "model": "minestrapp:moss_3", "y": 270 }
+        ]
+    }
+}

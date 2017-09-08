@@ -278,7 +278,7 @@ public class BlockVoidberryBush extends BlockBush implements IGrowable
     
     public int getLightValue(IBlockState state)
     {
-    	if(state.getValue(STEM).booleanValue() == false)
+    	if(state.getValue(STEM).booleanValue() == false && state.getValue(AGE).intValue() == this.getMaxAge())
     		return 15;
     	else
     		return 0;

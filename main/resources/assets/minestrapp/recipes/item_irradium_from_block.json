@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_irradium"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:irradium",
+        "count": 9
+     }  
+}
