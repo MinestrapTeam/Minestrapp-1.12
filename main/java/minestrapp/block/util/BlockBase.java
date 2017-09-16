@@ -96,11 +96,6 @@ public class BlockBase extends Block
 			return super.quantityDroppedWithBonus(fortune, random);
     }
 	
-	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
-    {
-        super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
-    }
-	
 	public int damageDropped(IBlockState state)
     {
 		if(dropsItem)

@@ -19,12 +19,15 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class MItemsFood extends ItemFood
 {
 	private ItemStack droppedItem;
 	private int igniteTime;
 	private boolean curesEffects;
+	private int burnTime;
+	private int burnMeta;
 	
 	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string) {
 		super(amount, saturation, isWolfFood);
@@ -34,6 +37,8 @@ public class MItemsFood extends ItemFood
         this.droppedItem = null;
         this.igniteTime = 0;
         this.curesEffects = false;
+        this.burnTime = 0;
+		this.burnMeta = OreDictionary.WILDCARD_VALUE;
 	}
 	
 	public MItemsFood setDroppedItem(ItemStack stack)
@@ -78,5 +83,25 @@ public class MItemsFood extends ItemFood
                 player.dropItem(new ItemStack(dropstack.getItem(), 1, dropstack.getMetadata()), false);
             }
         }
+    }
+	
+	public MItemsFood setBurnTime(int time)
+	{
+		return setBurnTime(time, 0);
+	}
+	
+	public MItemsFood setBurnTime(int time, int meta)
+	{
+		this.burnTime = time;
+		this.burnMeta = meta;
+		return this;
+	}
+	
+	public int getItemBurnTime(ItemStack itemStack)
+    {
+		if(this.burnTime > 0 && this.burnMeta == itemStack.getMetadata())
+			return this.burnTime;
+		else
+			return 0;
     }
 }

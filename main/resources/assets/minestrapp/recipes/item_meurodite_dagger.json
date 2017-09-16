@@ -6,7 +6,8 @@
     ],
     "key": {
         "i": {
-            "item": "minecraft:stick"
+            "item": "minestrapp:m_tech_component",
+            "data": 0
         },
         "x": {
             "item": "minestrapp:m_gem",
@@ -14,7 +15,7 @@
         }
      },
      "result": {
-        "item": "minestrapp:bronze_dagger",
+        "item": "minestrapp:meurodite_dagger",
         "data": 0
      }
 }

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up":    { "model": "minestrapp:sunstone_deposit", "uvlock": true },
+        "facing=down":  { "model": "minestrapp:sunstone_deposit", "uvlock": true, "x": 180 },
+        "facing=east":  { "model": "minestrapp:sunstone_deposit", "uvlock": true, "x": 90, "y": 90 },
+        "facing=west":  { "model": "minestrapp:sunstone_deposit", "uvlock": true, "x": 90, "y": 270 },
+        "facing=south": { "model": "minestrapp:sunstone_deposit", "uvlock": true, "x": 90, "y": 180 },
+        "facing=north": { "model": "minestrapp:sunstone_deposit", "uvlock": true, "x": 90 }
+    }
+}

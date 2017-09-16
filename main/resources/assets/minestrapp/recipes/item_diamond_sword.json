@@ -1,8 +1,9 @@
 {    
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        " x",
-        "i "
+        "x",
+        "x",
+        "i"
     ],
     "key": {
         "i": {
@@ -10,12 +11,11 @@
             "data": 0
         },
         "x": {
-            "item": "minecraft:diamond",
-            "data": 0
+            "item": "minecraft:diamond"
         }
      },
      "result": {
-        "item": "minestrapp:diamond_dagger",
+        "item": "minecraft:diamond_sword",
         "data": 0
-     }
+     }  
 }

@@ -265,6 +265,8 @@ tile.ore_torite_oceanstone.name=Torite Ore
 tile.ore_torite_deep_oceanstone.name=Torite Ore
 tile.ore_torite_stone.name=Torite Ore
 
+tile.sunstone_deposit.name=Sunstone Deposit
+
 tile.ore_diamond_red_rock.name=Diamond Ore
 tile.ore_diamond_deep_red_rock.name=Diamond Ore
 tile.ore_diamond_deepstone.name=Diamond Ore
@@ -458,6 +460,7 @@ item.onion.name=Onion
 item.peanuts.name=Peanuts
 item.tomato.name=Tomato
 item.tomato_seeds.name=Tomato Seeds
+item.corn.name=Ear of Corn
 item.corn_on_the_cob.name=Corn on the Cob
 item.grilled_corn.name=Grilled Corn
 

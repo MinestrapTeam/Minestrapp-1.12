@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.block.crops.BlockBerryBush;
+import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.item.ItemDrySpaghetti;
@@ -146,6 +147,7 @@ public class MItems
 	public static Item onion;
 	public static Item peanuts;
 	public static Item tomato;
+	public static Item corn;
 	public static Item corn_on_the_cob;
 	public static Item grilled_corn;
 	
@@ -237,18 +239,18 @@ public class MItems
 	public static void init()
 	{
 		//0=Grass Fibers, 1=Mana Leaf
-		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setCreativeTab(MTabs.ingredients));
+		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
-		register(irradium = new ItemBase("irradium").setCreativeTab(MTabs.minerals));
+		register(irradium = new ItemBase("irradium").setBurnTime(25600).setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
-		register(ingots = new ItemMetaBase("m_ingot", 9).setBeaconPayment().setCreativeTab(MTabs.minerals));
+		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
 		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite
 		register(plating = new ItemMetaBase("m_plating", 4).setCreativeTab(MTabs.ingredients));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard
-		register(gems = new ItemMetaBase("m_gem", 7).setCreativeTab(MTabs.minerals));
+		register(gems = new ItemMetaBase("m_gem", 7).setBurnTime(2000, 5).setCreativeTab(MTabs.minerals));
 		register(gem_soul = new ItemSoulGem("gem_soul").setBeaconPayment());
 		
 		//0=Mud Brick
@@ -347,6 +349,7 @@ public class MItems
 		register(peanuts = new MItemsSeedFood(2, 2.4F, MBlocks.crop_peanuts, Blocks.FARMLAND, "peanuts"));
 		register(lettuce = new MItemsSeedFood(4, 0.375F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
 		register(tomato = new MItemsFood(4, 0.275F, false, "tomato"));
+		register(corn = new MItemsSeeds(MBlocks.crop_corn, Blocks.FARMLAND, "corn"));
 		register(corn_on_the_cob = new MItemsFood(4, 0.4F, false, "corn_on_the_cob").setDroppedItem(new ItemStack(Items.STICK)));
 		register(grilled_corn = new MItemsFood(6, 0.7F, false, "grilled_corn").setDroppedItem(new ItemStack(Items.STICK)));
 		
@@ -407,8 +410,8 @@ public class MItems
 		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
 		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F));
 		
-		register(fat = new MItemsFood(1, 2.5F, true, "fat").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
-		register(grease = new ItemBase("grease").setCreativeTab(MTabs.food));
+		register(fat = new MItemsFood(1, 2.5F, true, "fat").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
+		register(grease = new ItemBase("grease").setBurnTime(2000).setCreativeTab(MTabs.food));
 		register(squid_tentacle = new MItemsFood(2, 0.075F, false, "squid_tentacle").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 240, 0), 0.4F));
 		register(calamari = new MItemsFood(5, 0.78F, false, "calamari"));
 		register(sushi = new MItemsFood(11, 0.7273F, false, "sushi"));
@@ -430,6 +433,18 @@ public class MItems
 		((BlockBerryBush) MBlocks.raspberry_bush).setBushDrop(new ItemStack(raspberry));
 		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
 		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
+		
+		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.basket)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.blackberry_bush)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.blueberry_bush)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.raspberry_bush)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.strawberry_bush)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.mana_bush)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.block_blazium)).setBurnTime(48000);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.block_irradium)).setBurnTime(256000);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.moss)).setBurnTime(800);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.savanna_grass)).setBurnTime(50);
 	}
 
 	

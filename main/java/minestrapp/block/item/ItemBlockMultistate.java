@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockMultistate extends ItemBlock
+public class ItemBlockMultistate extends MItemBlock
 {
 
 	public ItemBlockMultistate(Block block)

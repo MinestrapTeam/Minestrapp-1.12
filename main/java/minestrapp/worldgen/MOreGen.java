@@ -135,95 +135,20 @@ public class MOreGen implements IWorldGenerator
 			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
 			this.runGenerator(irradium, world, random, chunkX, chunkZ, 4, 0, 32, true);
 			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
+			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
 			if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
 			{
 				this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
 			}
-			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
-			{
-				int posX = random.nextInt(16);
-				int posY = 64 - random.nextInt(6);
-				int posZ = random.nextInt(16);
-				
-				BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
-				mudGen.generate(world, random, mudPos);
-			}
-			if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
-			{
-				int posX = random.nextInt(16);
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
-			}
-			if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
-			{
-				int posX = random.nextInt(16);
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
-			}
-			if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
-			{
-				int posX = random.nextInt(16);
-				int posY = 114 - random.nextInt(48);
-				int posZ = random.nextInt(16);
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
-			}
-			if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
-			{
-				int posX = random.nextInt(16);
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
-			}
-			if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
-			{
-				int posX = random.nextInt(16);
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
-				bushGen.generate(world, random, berryPos);
-			}
-			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getTemperature() < 0.2F))
-			{
-				int chance = 2;
-				if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA)
-					chance = 6;
-				else if(biome instanceof BiomeForest || biome instanceof BiomeSwamp || biome instanceof BiomeStoneBeach)
-					chance = 4;
-				else if(biome instanceof BiomeBeach || biome instanceof BiomeDesert || biome instanceof BiomeMesa || biome instanceof BiomePlains || biome instanceof BiomeSavanna)
-					chance = 1;
-				
-				for(int i = 0 ; i < chance ; i++)
-				{
-					int posX = random.nextInt(16);
-					int posY = 78 - random.nextInt(60);
-					int posZ = random.nextInt(16);
-					
-					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
-					{
-						MGenMoss mossGen = new MGenMoss();
-						mossGen.generate(world, random, mossPos);
-					}
-				}
-			}
+			
+			int posX = random.nextInt(16);
+			int posY = 128 - random.nextInt(120);
+			int posZ = random.nextInt(16);
+			
+			BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenSunstone sunstoneGen = new MGenSunstone(5);
+			sunstoneGen.generate(world, random, sunstonePos);
 			
 			MStoneGen.generate(world, chunkX, chunkZ, random);
 		}
@@ -246,6 +171,14 @@ public class MOreGen implements IWorldGenerator
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenVoidberry bushGen = new MGenVoidberry(12);
 				bushGen.generate(world, random, berryPos);
+				
+				posX = random.nextInt(16);
+				posY = 100 - random.nextInt(70);
+				posZ = random.nextInt(16);
+				
+				BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenSunstone sunstoneGen = new MGenSunstone(8);
+				sunstoneGen.generate(world, random, sunstonePos);
 			}
 		}
 	}

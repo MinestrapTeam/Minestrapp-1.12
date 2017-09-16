@@ -112,22 +112,23 @@ public class BlockSavannaGrass extends BlockBush implements IGrowable
 	
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        //TODO: Should drop Corn.
-		return super.getItemDropped(state, rand, fortune);
+		return MItems.corn;
     }
 	
 	public int quantityDroppedWithBonus(int fortune, Random random)
     {
-		//int i = random.nextInt(10 - fortune);
-        //return i == 0 ? 1 : 0;
-		return 0;
+		if(random.nextInt(100 - ((fortune + 1) * 5)) == 1)
+			return 1;
+		else
+			return 0;
     }
 	
 	public int quantityDropped(Random random)
     {
-		//int i = random.nextInt(10);
-        //return i == 0 ? 1 : 0;
-		return 0;
+		if(random.nextInt(100) == 1)
+			return 1;
+		else
+			return 0;
     }
 	
 	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)

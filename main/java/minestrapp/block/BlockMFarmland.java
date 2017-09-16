@@ -186,6 +186,13 @@ public class BlockMFarmland extends BlockBase
 			        		worldIn.setBlockState(pos.up(), MBlocks.crop_tomato.getDefaultState());
 			        		break;
 			        	}
+			        	else if(stack.getItem() == MItems.corn)
+			        	{
+			        		stack.shrink(1);
+			        		item.setItem(stack);
+			        		worldIn.setBlockState(pos.up(), MBlocks.crop_corn.getDefaultState());
+			        		break;
+			        	}
 	        		}
 	        	}
 	        }

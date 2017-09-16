@@ -36,6 +36,7 @@ import minestrapp.block.BlockStoneSlab1;
 import minestrapp.block.BlockStoneSlab2;
 import minestrapp.block.BlockStoneSlab3;
 import minestrapp.block.BlockStoneSlab4;
+import minestrapp.block.BlockSunstoneDeposit;
 import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
@@ -44,6 +45,7 @@ import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.crops.BlockVoidberryBush;
 import minestrapp.block.crops.CabbagePlant;
 import minestrapp.block.crops.CeleryPlant;
+import minestrapp.block.crops.CornPlant;
 import minestrapp.block.crops.LettucePlant;
 import minestrapp.block.crops.OnionPlant;
 import minestrapp.block.crops.PeanutsPlant;
@@ -51,6 +53,7 @@ import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
+import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
@@ -149,6 +152,7 @@ public class MBlocks
 	public static Block ore_redstone_lit;
 	public static Block ore_lapis;
 	public static Block ore_irradium;
+	public static Block sunstone_deposit;
 	public static Block ore_torite;
 	public static Block ore_diamond;
 	public static Block ore_emerald;
@@ -187,6 +191,7 @@ public class MBlocks
 	public static Block crop_onion;
 	public static Block crop_peanuts;
 	public static Block crop_tomato;
+	public static Block crop_corn;
 	
 	public static void init()
 	{
@@ -263,6 +268,7 @@ public class MBlocks
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
 		register(ore_irradium = new BlockIrradiumOre().setResistance(5F).setLightLevel(0.2F), new ItemBlockMultistate(ore_irradium));
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
+		register(sunstone_deposit = new BlockSunstoneDeposit());
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
@@ -300,16 +306,17 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(crop_onion = new OnionPlant("crop_onion"));
 		ForgeRegistries.BLOCKS.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
 		ForgeRegistries.BLOCKS.register(crop_tomato = new TomatoPlant("crop_tomato"));
+		ForgeRegistries.BLOCKS.register(crop_corn = new CornPlant("crop_corn"));
 	}
 	
 	public static void register(Block block)
 	{
 		ForgeRegistries.BLOCKS.register(block);
-		ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		ForgeRegistries.ITEMS.register(new MItemBlock(block).setRegistryName(block.getRegistryName()));
 		blockList.add(block);
 	}
 	
-	public static void register(Block block, ItemBlock itemBlock)
+	public static void register(Block block, MItemBlock itemBlock)
 	{
 		ForgeRegistries.BLOCKS.register(block);
 		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));

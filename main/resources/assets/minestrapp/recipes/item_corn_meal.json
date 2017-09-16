@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "cc",
+        "cc"
+    ],
+    "key": {
+        "c": {
+            "item": "minestrapp:corn"
+        }
+     },
+     "result": {
+        "item": "minestrapp:corn_meal",
+        "count": 2
+     }  
+}

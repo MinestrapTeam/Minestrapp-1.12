@@ -6,6 +6,7 @@ import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.EnumStoneTypeMOnly;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -20,10 +21,22 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeBeach;
+import net.minecraft.world.biome.BiomeDesert;
+import net.minecraft.world.biome.BiomeForest;
+import net.minecraft.world.biome.BiomeHills;
 import net.minecraft.world.biome.BiomeJungle;
+import net.minecraft.world.biome.BiomeMesa;
+import net.minecraft.world.biome.BiomeMushroomIsland;
+import net.minecraft.world.biome.BiomeOcean;
+import net.minecraft.world.biome.BiomePlains;
 import net.minecraft.world.biome.BiomeProvider;
+import net.minecraft.world.biome.BiomeRiver;
 import net.minecraft.world.biome.BiomeSavanna;
+import net.minecraft.world.biome.BiomeStoneBeach;
 import net.minecraft.world.biome.BiomeSwamp;
+import net.minecraft.world.biome.BiomeTaiga;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 
 public class MWorldDecorator
@@ -273,6 +286,96 @@ public class MWorldDecorator
 						else if (biome.getTemperature() < 0.2F)
 							chunk.setBlockState(subpos2, MBlocks.permafrost_farmland.getDefaultState());
 					}
+				}
+			}
+		}
+		
+		//TODO: Everything below this point causes "runnaway chunks", where shit generates into unloaded chunks, causing them to load and triggering lag-inducing chain reactions of unnecessary chunk generation.
+		//TODO: Vanilla fixes this by waiting to decorate chunks until several their surrounding chunks have been generated, but Idonfuckinknowhowtadothat so we'll need to fix that shit one day...
+		
+		Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
+		
+		if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
+		{
+			int posX = random.nextInt(16);
+			int posY = 64 - random.nextInt(6);
+			int posZ = random.nextInt(16);
+			
+			BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
+			mudGen.generate(world, random, mudPos);
+		}
+		if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
+		{
+			int posX = random.nextInt(16);
+			int posY = 94 - random.nextInt(38);
+			int posZ = random.nextInt(16);
+			
+			BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
+			bushGen.generate(world, random, berryPos);
+		}
+		if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
+		{
+			int posX = random.nextInt(16);
+			int posY = 94 - random.nextInt(38);
+			int posZ = random.nextInt(16);
+			
+			BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
+			bushGen.generate(world, random, berryPos);
+		}
+		if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
+		{
+			int posX = random.nextInt(16);
+			int posY = 114 - random.nextInt(48);
+			int posZ = random.nextInt(16);
+			
+			BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
+			bushGen.generate(world, random, berryPos);
+		}
+		if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
+		{
+			int posX = random.nextInt(16);
+			int posY = 94 - random.nextInt(38);
+			int posZ = random.nextInt(16);
+			
+			BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
+			bushGen.generate(world, random, berryPos);
+		}
+		if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
+		{
+			int posX = random.nextInt(16);
+			int posY = 94 - random.nextInt(38);
+			int posZ = random.nextInt(16);
+			
+			BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+			MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
+			bushGen.generate(world, random, berryPos);
+		}
+		if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getTemperature() < 0.2F))
+		{
+			int chance = 2;
+			if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA)
+				chance = 6;
+			else if(biome instanceof BiomeForest || biome instanceof BiomeSwamp || biome instanceof BiomeStoneBeach)
+				chance = 4;
+			else if(biome instanceof BiomeBeach || biome instanceof BiomeDesert || biome instanceof BiomeMesa || biome instanceof BiomePlains || biome instanceof BiomeSavanna)
+				chance = 1;
+			
+			for(int i = 0 ; i < chance ; i++)
+			{
+				int posX = random.nextInt(16);
+				int posY = 78 - random.nextInt(60);
+				int posZ = random.nextInt(16);
+				
+				BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
+				{
+					MGenMoss mossGen = new MGenMoss();
+					mossGen.generate(world, random, mossPos);
 				}
 			}
 		}

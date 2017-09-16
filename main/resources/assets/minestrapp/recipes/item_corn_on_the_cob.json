@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " c",
+        "s "
+    ],
+    "key": {
+        "c": {
+            "item": "minestrapp:corn"
+        },
+        "s": {
+            "item": "minecraft:stick"
+        }
+     },
+     "result": {
+        "item": "minestrapp:corn_on_the_cob",
+        "count": 1
+     }  
+}

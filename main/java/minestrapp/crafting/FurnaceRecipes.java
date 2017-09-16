@@ -29,6 +29,7 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MBlocks.ore_meurodite, new ItemStack(MItems.gems, 1, 4), 0.9F);
 		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
 		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
+		GameRegistry.addSmelting(MBlocks.ore_irradium, new ItemStack(MItems.irradium), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_torite, new ItemStack(MItems.ingots, 1, 4), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
