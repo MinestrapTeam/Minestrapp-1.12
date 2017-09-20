@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -32,6 +33,8 @@ public class BlockBase extends Block
 	private int xpMax;
 	private boolean silkHarvest;
 	private boolean fortune;
+	private boolean customPushLogic;
+	private EnumPushReaction pushReaction;
 
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
@@ -50,6 +53,7 @@ public class BlockBase extends Block
 		this.xpMax = 0;
 		this.silkHarvest = true;
 		this.fortune = false;
+		this.customPushLogic = false;
 	}
 	
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel)
@@ -150,6 +154,13 @@ public class BlockBase extends Block
 		return this;
 	}
 	
+	public BlockBase setPushReaction(EnumPushReaction pushReaction)
+	{
+		this.customPushLogic = true;
+		this.pushReaction = pushReaction;
+		return this;
+	}
+	
 	public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos)
     {
         return mapColor;
@@ -206,5 +217,13 @@ public class BlockBase extends Block
 	        }
 	        return toolLevel >= this.getHarvestLevel(state);
 		}
+    }
+	
+	public EnumPushReaction getMobilityFlag(IBlockState state)
+    {
+		if(this.customPushLogic)
+			return this.pushReaction;
+		else
+			return super.getMobilityFlag(state);
     }
 }

@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_gem",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_sunstone"
+     }  
+}

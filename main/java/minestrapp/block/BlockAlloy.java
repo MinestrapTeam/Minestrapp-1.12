@@ -6,10 +6,12 @@ import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
+import minestrapp.block.util.BlockBase;
 import minestrapp.gui.MGuiHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -32,15 +34,13 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockAlloy extends Block implements ITileEntityProvider {
+public class BlockAlloy extends BlockBase implements ITileEntityProvider {
 	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool BURNING = PropertyBool.create("burning");
 	
 	public BlockAlloy() {
-		super(Material.IRON, MapColor.GRAY);
-		setUnlocalizedName("alloy");
-		setRegistryName("alloy");
+		super("alloy", Material.IRON, MapColor.SILVER, SoundType.STONE, 3F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
 	}
 	

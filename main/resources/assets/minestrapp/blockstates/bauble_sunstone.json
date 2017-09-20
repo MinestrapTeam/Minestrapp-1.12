@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up":    { "model": "minestrapp:bauble_sunstone", "uvlock": true },
+        "facing=down":  { "model": "minestrapp:bauble_sunstone", "uvlock": true, "x": 180 },
+        "facing=east":  { "model": "minestrapp:bauble_sunstone", "uvlock": true, "x": 90, "y": 90 },
+        "facing=west":  { "model": "minestrapp:bauble_sunstone", "uvlock": true, "x": 90, "y": 270 },
+        "facing=south": { "model": "minestrapp:bauble_sunstone", "uvlock": true, "x": 90, "y": 180 },
+        "facing=north": { "model": "minestrapp:bauble_sunstone", "uvlock": true, "x": 90 }
+    }
+}

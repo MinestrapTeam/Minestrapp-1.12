@@ -83,6 +83,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs decor = new CreativeTabs("DecorBlocks")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "DecorBlocks";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(Item.getItemFromBlock(MBlocks.bauble_sunstone), 1, 0);
+		}
+	};
+	
 	public static CreativeTabs utility = new CreativeTabs("UtilityBlocks")
 	{
 		@Override

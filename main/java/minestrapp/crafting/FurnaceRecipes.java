@@ -34,6 +34,7 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MBlocks.ore_diamond, new ItemStack(Items.DIAMOND), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_emerald, new ItemStack(Items.EMERALD), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_titanium, new ItemStack(MItems.ingots, 1, 5), 4F);
+		GameRegistry.addSmelting(MBlocks.ore_blazium, new ItemStack(MItems.gems, 1, 5), 0.8F);
 		GameRegistry.addSmelting(MBlocks.ore_soul, new ItemStack(MItems.gem_soul), 3F);
 		GameRegistry.addSmelting(MBlocks.ore_dimensium, new ItemStack(MItems.ingots, 1, 8), 3F);
 		GameRegistry.addSmelting(MItems.corn_meal, new ItemStack(MItems.corn_bread), 0.35F);

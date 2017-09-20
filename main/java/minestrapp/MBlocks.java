@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import minestrapp.block.BlockBasket;
+import minestrapp.block.BlockBauble;
 import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
@@ -15,11 +16,14 @@ import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockDriedMud;
+import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
 import minestrapp.block.BlockHalfStoneSlab4;
+import minestrapp.block.BlockInvincium;
+import minestrapp.block.BlockIrradiantSunstone;
 import minestrapp.block.BlockIrradium;
 import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.BlockMDirt;
@@ -62,6 +66,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -114,6 +119,8 @@ public class MBlocks
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
 	public static Block chiseled_stone;
+	public static Block invincium;
+	public static Block glacial_invincium;
 	public static BlockSlab stone_slab_1;
 	public static BlockDoubleStoneSlab1 double_stone_slab_1;
 	public static BlockSlab stone_slab_2;
@@ -153,10 +160,12 @@ public class MBlocks
 	public static Block ore_lapis;
 	public static Block ore_irradium;
 	public static Block sunstone_deposit;
+	public static Block glacieric_ice_deposit;
 	public static Block ore_torite;
 	public static Block ore_diamond;
 	public static Block ore_emerald;
 	public static Block ore_titanium;
+	public static Block ore_blazium;
 	public static Block ore_soul;
 	public static Block ore_dimensium;
 	
@@ -167,6 +176,7 @@ public class MBlocks
 	public static Block block_steel;
 	public static Block block_meurodite;
 	public static Block block_irradium;
+	public static Block block_sunstone;
 	public static Block block_torite;
 	public static Block block_titanium;
 	public static Block block_glacierite;
@@ -174,9 +184,13 @@ public class MBlocks
 	public static Block block_dimensium;
 	public static Block block_dimensium_destabilized;
 	
+	//Decor
+	public static Block bauble_sunstone;
+	
 	//Utility
 	public static Block basket;
 	public static Block barrel;
+	public static Block block_irradiant_sunstone;
 	public static Block block_irradium_insulated;
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
@@ -196,7 +210,7 @@ public class MBlocks
 	public static void init()
 	{
 		//Plant
-		register(moss = new BlockMoss());
+		register(moss = new BlockMoss().setPushReaction(EnumPushReaction.DESTROY));
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
 		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
 		register(blueberry_bush = new BlockBerryBush("blueberry_bush", MapColor.FOLIAGE, "plains"));
@@ -229,6 +243,8 @@ public class MBlocks
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
 		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
+		register(invincium = new BlockInvincium());
+		register(glacial_invincium = new BlockBase("glacial_invincium", Material.ROCK, MapColor.CYAN, SoundType.STONE, -1F).setPushReaction(EnumPushReaction.BLOCK).setSlipperiness(0.85F).setEntityInvulnerability("all").setBlockUnbreakable().setCreativeTab(MTabs.environment));
 		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
 		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
 		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
@@ -269,9 +285,11 @@ public class MBlocks
 		register(ore_irradium = new BlockIrradiumOre().setResistance(5F).setLightLevel(0.2F), new ItemBlockMultistate(ore_irradium));
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
 		register(sunstone_deposit = new BlockSunstoneDeposit());
+		register(glacieric_ice_deposit = new BlockGlaciericIceDeposit());
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
+		register(ore_blazium = new BlockBase("ore_blazium", Material.ROCK, MapColor.NETHERRACK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setLightLevel(0.675F).setCreativeTab(MTabs.ore));
 		register(ore_soul = new BlockBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3).setCreativeTab(MTabs.ore));
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		
@@ -282,18 +300,23 @@ public class MBlocks
 		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
 		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_irradium = new BlockIrradium("block_irradium", Material.ROCK, MapColor.LIME, SoundType.STONE, 5F, false).setCreativeTab(MTabs.resource));
+		register(block_sunstone = new BlockBase("block_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setLightLevel(0.95F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_glacierite = new BlockGlacierite());
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
 		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setBlockUnbreakable().setResistance(6000000.0F));
+		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
+		
+		//Decor
+		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
-		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setResistance(2F).setCreativeTab(MTabs.utility));
+		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(2F).setCreativeTab(MTabs.utility));
+		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
-		register(alloy = new BlockAlloy().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		

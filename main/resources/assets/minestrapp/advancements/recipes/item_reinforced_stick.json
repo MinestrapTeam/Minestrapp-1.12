@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_reinforced_stick"
+    ]
+  },
+  "criteria": {
+    "has_tin_plating": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_plating",
+            "data": 0  
+          }
+        ]
+      }
+    },
+    "has_meurodite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_gem",
+            "data": 4  
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_reinforced_stick"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tin_plating",
+      "has_meurodite",
+      "has_the_recipe"
+    ]
+  ]
+}

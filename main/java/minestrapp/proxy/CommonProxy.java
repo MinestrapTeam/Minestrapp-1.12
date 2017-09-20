@@ -13,6 +13,8 @@ import minestrapp.gui.MGuiHandler;
 import minestrapp.tileentity.TileEntityVessel;
 import minestrapp.worldgen.MOreGen;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -29,6 +31,7 @@ public class CommonProxy
 		MItems.init();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_basic_dungeon"));
 	}
 	
 	public void init(FMLInitializationEvent event)

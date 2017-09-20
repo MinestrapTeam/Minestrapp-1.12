@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -17,6 +18,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -120,7 +122,7 @@ public class BlockSunstoneDeposit extends BlockDirectional
     
     public static boolean canGenerateBlock(World worldIn, BlockPos pos, EnumFacing direction)
     {
-    	if(worldIn.getBlockState(pos.offset(direction.getOpposite())).getBlock() instanceof BlockStone || worldIn.getBlockState(pos.offset(direction.getOpposite())).getBlock() instanceof BlockStoneBaseMOnly)
+    	if(worldIn.getBlockState(pos.offset(direction.getOpposite())).getBlock() instanceof BlockStone || worldIn.getBlockState(pos.offset(direction.getOpposite())).getBlock() instanceof BlockStoneBaseMOnly || worldIn.getBlockState(pos.offset(direction.getOpposite())).getBlock() == Blocks.END_STONE)
     		return canPlaceBlock(worldIn, pos, direction);
     	else
     		return false;
@@ -256,4 +258,9 @@ public class BlockSunstoneDeposit extends BlockDirectional
 	{
 		return true;
 	}
+	
+	public EnumPushReaction getMobilityFlag(IBlockState state)
+    {
+		return EnumPushReaction.DESTROY;
+    }
 }

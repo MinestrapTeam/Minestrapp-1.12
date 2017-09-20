@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "sss",
+        "sps",
+        "sss"
+    ],
+    "key": {        
+        "s": {
+            "item": "minecraft:stick"
+        },
+        "p": {
+            "item": "minestrapp:m_plating",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "count": 8,
+        "data": 0
+     }  
+}

@@ -46,6 +46,7 @@ public class MOreGen implements IWorldGenerator
 	private WorldGenerator irradium;
 	private WorldGenerator torite;
 	private WorldGenerator titanium;
+	private WorldGenerator blazium;
 	private WorldGenerator soul;
 	private WorldGenerator dimensium;
 	
@@ -57,6 +58,7 @@ public class MOreGen implements IWorldGenerator
 		irradium = new MGenMinable(MBlocks.ore_irradium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 2);
 		torite = new MGenMinable(MBlocks.ore_torite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 4);
 		titanium = new MGenMinable(MBlocks.ore_titanium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 3);
+		blazium = new MGenMinable(MBlocks.ore_blazium.getDefaultState(), 5, new MMinablePredicate(Blocks.NETHERRACK.getDefaultState()));
 		soul = new MGenMinable(MBlocks.ore_soul.getDefaultState(), 3, new MMinablePredicate(Blocks.SOUL_SAND.getDefaultState()));
 		dimensium = new MGenMinable(MBlocks.ore_dimensium.getDefaultState(), 4, new MMinablePredicate(Blocks.END_STONE.getDefaultState()));
 	}
@@ -155,7 +157,8 @@ public class MOreGen implements IWorldGenerator
 		
 		else if(world.provider.getDimension() == -1)
 		{
-			this.runGenerator(soul, world, random, chunkX, chunkZ, 24, 20, 100, false);
+			this.runGenerator(blazium, world, random, chunkX, chunkZ, 12, 0, 128, false);
+			this.runGenerator(soul, world, random, chunkX, chunkZ, 32, 20, 100, false);
 		}
 		
 		else if(world.provider.getDimension() == 1)

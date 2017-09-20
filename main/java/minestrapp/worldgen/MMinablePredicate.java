@@ -8,7 +8,7 @@ import net.minecraft.init.Blocks;
 
 public class MMinablePredicate implements Predicate<IBlockState>
 {
-	public static IBlockState state;
+	private IBlockState state;
 	
 	public MMinablePredicate (IBlockState state)
 	{

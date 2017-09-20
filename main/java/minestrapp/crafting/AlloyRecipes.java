@@ -7,6 +7,7 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
 
+import minestrapp.MBlocks;
 import minestrapp.MItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -28,11 +29,13 @@ public class AlloyRecipes {
 	}
 	
 	private AlloyRecipes() {
-		//Adds Double itemStacks
 		this.addAlloyRecipe(new ItemStack(MItems.ingots, 3, 0), new ItemStack(MItems.ingots, 3, 1), new ItemStack(MItems.ingots, 1, 2), 1.4F);
-		//Adds with at least one block
-		//Always Remember. Never frogget. this.addAlloyRecipeForBlock(Blocks.TNT, Blocks.JUKEBOX, new ItemStack(Items.EGG, 10), 20.0F);
-		//Adds everything else
+		this.addAlloy(Items.IRON_INGOT, new ItemStack(Items.COAL, 6, 0), new ItemStack(MItems.ingots, 1, 3), 1.4F);
+		this.addAlloyRecipe(new ItemStack(MItems.ingots, 1, 4), new ItemStack(MItems.gems, 4, 6), new ItemStack(MItems.ingots, 1, 6), 2F);
+		this.addAlloy(Items.GOLD_INGOT, new ItemStack(MItems.gems, 4, 5), new ItemStack(MItems.ingots, 1, 7), 2F);
+		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
+		this.addAlloy(Items.QUARTZ, new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
+		this.addAlloyRecipeForBlock(MBlocks.block_sunstone, MItems.irradium, new ItemStack(MBlocks.block_irradiant_sunstone, 1), 1.2F);
 		this.addAlloy(MItems.corn_on_the_cob, MItems.fat, new ItemStack(MItems.grilled_corn), 0.35F);
 		this.addAlloy(MItems.dough, Items.BOWL, new ItemStack(MItems.bread_bowl), 0.35F);
 		this.addAlloy(MItems.dough, Items.SUGAR, new ItemStack(MItems.sugar_cookie, 8), 0.35F);

@@ -427,7 +427,10 @@ public class MItems
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);
 		((BlockStoneBase) MBlocks.ore_irradium).setDropsItem(new ItemStack(irradium), 1, 3, 6, true, true, false);
+		((BlockBase) MBlocks.ore_blazium).setDropsItem(new ItemStack(gems, 2, 5), 2, 2, 7, true, true);
 		((BlockBase) MBlocks.ore_soul).setDropsItem(new ItemStack(gem_soul), 0, 5, 9, true, true);
+		((BlockBase) MBlocks.bauble_sunstone).setDropsItem(new ItemStack(gems, 1, 0), 0, 0, 0, true, false);
+		((BlockBase) MBlocks.block_sunstone).setDropsItem(new ItemStack(gems, 2, 0), 2, 0, 0, true, false);
 		((BlockBerryBush) MBlocks.blueberry_bush).setBushDrop(new ItemStack(blueberry));
 		((BlockBerryBush) MBlocks.blackberry_bush).setBushDrop(new ItemStack(blackberry));
 		((BlockBerryBush) MBlocks.raspberry_bush).setBushDrop(new ItemStack(raspberry));
