@@ -6,9 +6,12 @@ import minestrapp.Minestrapp5;
 import minestrapp.worldgen.MWorldDecorator;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootEntryTable;
@@ -35,7 +38,16 @@ public class MEventHandler
 	@SubscribeEvent
     public static void registerRecipes (RegistryEvent.Register<IRecipe> event)
     {
+		ResourceLocation chiseledStone = new ResourceLocation("minecraft:chiseled_stonebrick");
+		ResourceLocation granite = new ResourceLocation("minecraft:granite");
+		ResourceLocation diorite = new ResourceLocation("minecraft:diorite");
+		ResourceLocation andesite = new ResourceLocation("minecraft:andesite");
+		ResourceLocation granite_polished = new ResourceLocation("minecraft:polished_granite");
+		ResourceLocation diorite_polished = new ResourceLocation("minecraft:polished_diorite");
+		ResourceLocation andesite_polished = new ResourceLocation("minecraft:polished_andesite");
+		ResourceLocation cookie = new ResourceLocation("minecraft:cookie");
     	ResourceLocation bread = new ResourceLocation("minecraft:bread");
+    	ResourceLocation pumpkinPie = new ResourceLocation("minecraft:pumpkin_pie");
     	ResourceLocation diamondPickaxe = new ResourceLocation("minecraft:diamond_pickaxe");
     	ResourceLocation diamondAxe = new ResourceLocation("minecraft:diamond_axe");
     	ResourceLocation diamondShovel = new ResourceLocation("minecraft:diamond_shovel");
@@ -44,7 +56,16 @@ public class MEventHandler
 
     	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
         
+    	modRegistry.remove(chiseledStone);
+    	modRegistry.remove(granite);
+    	modRegistry.remove(diorite);
+    	modRegistry.remove(andesite);
+    	modRegistry.remove(granite_polished);
+    	modRegistry.remove(diorite_polished);
+    	modRegistry.remove(andesite_polished);
+    	modRegistry.remove(cookie);
         modRegistry.remove(bread);
+        modRegistry.remove(pumpkinPie);
         modRegistry.remove(diamondPickaxe);
         modRegistry.remove(diamondAxe);
         modRegistry.remove(diamondShovel);
@@ -62,6 +83,32 @@ public class MEventHandler
 			{
 				event.getDrops().clear();
 				event.getDrops().add(new ItemStack(MItems.onion));
+			}
+		}
+		else if(event.getState() == Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.FERN))
+		{
+			if(event.getHarvester() != null && event.getHarvester().getHeldItem(EnumHand.MAIN_HAND).getItem() != Items.SHEARS)
+			{
+				event.getDrops().clear();
+				int chance = event.getWorld().rand.nextInt(100);
+				
+				if(chance < 5)
+				{
+					if(event.getWorld().getBiome(event.getPos()).getTemperature() < 0.4)
+					{
+						if(event.getWorld().rand.nextInt(2) == 0)
+							event.getDrops().add(new ItemStack(MItems.lettuce));
+						else
+							event.getDrops().add(new ItemStack(MItems.celery_seeds));
+					}
+					else
+					{
+						if(event.getWorld().rand.nextInt(2) == 0)
+							event.getDrops().add(new ItemStack(MItems.pepper_seeds));
+						else
+							event.getDrops().add(new ItemStack(MItems.tomato_seeds));
+					}
+				}
 			}
 		}
 		else if(event.getState() == Blocks.NETHER_WART.getDefaultState().withProperty(BlockNetherWart.AGE, 3) && event.getWorld().getBlockState(event.getPos().down()).getBlock() == MBlocks.ore_soul)

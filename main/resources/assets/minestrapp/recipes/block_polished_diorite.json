@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:stone",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minecraft:stone",
+        "count": 9,
+        "data": 4
+     }  
+}

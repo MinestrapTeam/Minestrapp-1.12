@@ -13,6 +13,7 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.BlockSand;
+import net.minecraft.block.BlockStone;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -83,6 +84,21 @@ public class MStoneGen
 							else if (sType != null)
 							{
 								chunk.setBlockState(subpos2, stone.withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+							}
+						}
+						else if(state.getBlock() instanceof BlockStone && biome.getTemperature() >= 0.4F)
+						{
+							if(biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE))
+							{
+								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
+							}
+							else if(biome.getTemperature() < 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE))
+							{
+								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
+							}
+							else if(biome.getTemperature() >= 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE))
+							{
+								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
 							}
 						}
 					}

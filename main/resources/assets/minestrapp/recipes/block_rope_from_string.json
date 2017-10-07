@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "group": "rope",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:string"
+        }
+     },
+     "result": {
+        "item": "minestrapp:rope"
+     }  
+}

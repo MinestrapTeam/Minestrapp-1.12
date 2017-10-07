@@ -21,10 +21,18 @@ public class GuiAlloy extends GuiContainer{
 		this.tileentity = tileentity;
 	}
 	
+	public void drawScreen(int mouseX, int mouseY, float partialTicks)
+    {
+        this.drawDefaultBackground();
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
+    }
+	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String s = this.tileentity.getDisplayName().getUnformattedText();
-		this.fontRenderer.drawString("Alloy Furnace", 7, 7, 4210752);
+		this.fontRenderer.drawString("Alloy Furnace", 8, 6, 4210752);
+		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
 	}
 
 	@Override

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_diorite_tiles"
+    ]
+  },
+  "criteria": {
+    "has_polished_diorite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone",
+            "data": 4
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_diorite_tiles"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_diorite",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -132,10 +132,10 @@ public class MOreGen implements IWorldGenerator
 	{
 		if(world.provider.getDimension() == 0)
 		{
-			this.runGenerator(copper, world, random, chunkX, chunkZ, 16, 30, 110, true);
-			this.runGenerator(tin, world, random, chunkX, chunkZ, 16, 30, 110, true);
-			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
-			this.runGenerator(irradium, world, random, chunkX, chunkZ, 4, 0, 32, true);
+			this.runGenerator(copper, world, random, chunkX, chunkZ, 10, 30, 110, true);
+			this.runGenerator(tin, world, random, chunkX, chunkZ, 10, 30, 110, true);
+			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 4, 0, 36, true);
+			this.runGenerator(irradium, world, random, chunkX, chunkZ, 3, 0, 32, true);
 			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));

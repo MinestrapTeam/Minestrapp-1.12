@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_diorite_bricks_stairs"
+    ]
+  },
+  "criteria": {
+    "has_diorite_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:decor_stone",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_diorite_bricks_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_diorite_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

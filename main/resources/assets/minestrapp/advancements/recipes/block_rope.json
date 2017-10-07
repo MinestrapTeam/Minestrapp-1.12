@@ -1,0 +1,52 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_rope_from_grass_fibers",
+      "minestrapp:block_rope_from_string"
+    ]
+  },
+  "criteria": {
+    "has_grass_fibers": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_natural_item",
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_string": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:string"
+          }
+        ]
+      }
+    },
+    "has_fiber_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_rope_from_grass_fibers"
+      }
+    },
+    "has_string_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_rope_from_string"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grass_fibers",
+      "has_string",
+      "has_fiber_recipe",
+      "has_string_recipe"
+    ]
+  ]
+}

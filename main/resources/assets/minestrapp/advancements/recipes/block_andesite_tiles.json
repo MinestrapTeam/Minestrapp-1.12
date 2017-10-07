@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_andesite_tiles"
+    ]
+  },
+  "criteria": {
+    "has_polished_andesite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone",
+            "data": 6
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_andesite_tiles"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_andesite",
+      "has_the_recipe"
+    ]
+  ]
+}

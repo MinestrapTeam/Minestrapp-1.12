@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_glacierrock_slab"
+    ]
+  },
+  "criteria": {
+    "has_glacierrock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_stone",
+            "data": 6
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_glacierrock_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glacierrock",
+      "has_the_recipe"
+    ]
+  ]
+}

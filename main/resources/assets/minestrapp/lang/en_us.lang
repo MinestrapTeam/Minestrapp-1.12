@@ -36,6 +36,17 @@ tile.dried_mud.name=Dried Mud
 tile.mud_bricks.name=Mud Bricks
 tile.mud_bricks_stairs.name=Mud Brick Stairs
 
+tile.decor_stone_granite_bricks.name=Granite Bricks
+tile.decor_stone_granite_tiles.name=Granite Tiles
+tile.decor_stone_diorite_bricks.name=Diorite Bricks
+tile.decor_stone_diorite_tiles.name=Diorite Tiles
+tile.decor_stone_andesite_bricks.name=Andesite Bricks
+tile.decor_stone_andesite_tiles.name=Andesite Tiles
+tile.decor_stone_slate.name=Slate
+tile.decor_stone_polished_slate.name=Polished Slate
+tile.decor_stone_slate_bricks.name=Slate Bricks
+tile.decor_stone_slate_tiles.name=Slate Tiles
+
 ## Biome Stone ##
 tile.m_stone_red_rock.name=Red Rock
 tile.m_stone_deep_red_rock.name=Deep Red Rock
@@ -107,6 +118,12 @@ tile.m_chiseled_stone_glacierrock.name=Chiseled Glacierrock
 tile.m_chiseled_stone_oceanstone.name=Chiseled Oceanstone
 tile.m_chiseled_stone_deep_oceanstone.name=Chiseled Reefstone
 
+tile.m_misc_stone_slab_1_mud_bricks.name=Mud Bricks Slab
+tile.m_misc_stone_slab_1_granite_bricks.name=Granite Bricks Slab
+tile.m_misc_stone_slab_1_diorite_bricks.name=Diorite Bricks Slab
+tile.m_misc_stone_slab_1_andesite_bricks.name=Andesite Bricks Slab
+tile.m_misc_stone_slab_1_slate_bricks.name=Slate Bricks Slab
+
 tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
 tile.m_stone_slab_1_deep_red_rock_smooth.name=Deep Red Rock Slab
 tile.m_stone_slab_1_deepstone_smooth.name=Deepstone Slab
@@ -137,6 +154,11 @@ tile.m_stone_slab_3_icestone_bricks.name=Icestone Bricks Slab
 tile.m_stone_slab_4_glacierrock_bricks.name=Glacierrock Bricks Slab
 tile.m_stone_slab_4_oceanstone_bricks.name=Oceanstone Bricks Slab
 tile.m_stone_slab_4_deep_oceanstone_bricks.name=Reefstone Bricks Slab
+
+tile.decor_stone_granite_bricks_stairs.name=Granite Brick Stairs
+tile.decor_stone_diorite_bricks_stairs.name=Diorite Brick Stairs
+tile.decor_stone_andesite_bricks_stairs.name=Andesite Brick Stairs
+tile.decor_stone_slate_bricks_stairs.name=Slate Brick Stairs
 
 tile.m_cobblestone_red_rock_stairs.name=Red Cobblestone Stairs
 tile.m_cobblestone_deep_red_rock_stairs.name=Deep Red Cobblestone Stairs
@@ -323,11 +345,13 @@ tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
+tile.rope.name=Rope
 tile.bauble_sunstone.name=Sunstone Bauble
 
 ## Utility ##
 
 tile.basket.name=Basket
+tile.glacieric_ice.name=Glacieric Ice
 tile.block_irradiant_sunstone.name=Irradiant Sunstone
 tile.block_irradium_insulated.name=Insulated Block of Irradium
 tile.soulsteel_vessel.name=Soulsteel Vessel

@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class AlloyRecipes {
 	private static final AlloyRecipes SMELTING = new AlloyRecipes();
@@ -29,6 +30,16 @@ public class AlloyRecipes {
 	}
 	
 	private AlloyRecipes() {
+		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
+		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
+		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.STONE, 1, 5), 0.1F);
+		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.STONE, 1, 5), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 1), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 1), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.CLAY, 1), new ItemStack(MItems.gems, 1, 1), new ItemStack(MBlocks.decor_stone, 1, 6), 0.1F);
+		this.addAlloyRecipe(new ItemStack(Blocks.CLAY, 1), new ItemStack(Items.QUARTZ), new ItemStack(MBlocks.decor_stone, 1, 6), 0.1F);
 		this.addAlloyRecipe(new ItemStack(MItems.ingots, 3, 0), new ItemStack(MItems.ingots, 3, 1), new ItemStack(MItems.ingots, 1, 2), 1.4F);
 		this.addAlloy(Items.IRON_INGOT, new ItemStack(Items.COAL, 6, 0), new ItemStack(MItems.ingots, 1, 3), 1.4F);
 		this.addAlloyRecipe(new ItemStack(MItems.ingots, 1, 4), new ItemStack(MItems.gems, 4, 6), new ItemStack(MItems.ingots, 1, 6), 2F);

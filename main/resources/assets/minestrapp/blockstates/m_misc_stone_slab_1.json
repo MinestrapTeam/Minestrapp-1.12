@@ -1,0 +1,34 @@
+{
+    "variants": {
+        "half=bottom,variant=mud_bricks": [
+            { "model": "minestrapp:half_slab_mud_bricks" }
+        ],
+        "half=top,variant=mud_bricks": [
+            { "model": "minestrapp:upper_slab_mud_bricks" }
+        ],
+        "half=bottom,variant=granite_bricks": [
+            { "model": "minestrapp:half_slab_granite_bricks" }
+        ],
+        "half=top,variant=granite_bricks": [
+            { "model": "minestrapp:upper_slab_granite_bricks" }
+        ],
+        "half=bottom,variant=diorite_bricks": [
+            { "model": "minestrapp:half_slab_diorite_bricks" }
+        ],
+        "half=top,variant=diorite_bricks": [
+            { "model": "minestrapp:upper_slab_diorite_bricks" }
+        ],
+        "half=bottom,variant=andesite_bricks": [
+            { "model": "minestrapp:half_slab_andesite_bricks" }
+        ],
+        "half=top,variant=andesite_bricks": [
+            { "model": "minestrapp:upper_slab_andesite_bricks" }
+        ],
+        "half=bottom,variant=slate_bricks": [
+            { "model": "minestrapp:half_slab_slate_bricks" }
+        ],
+        "half=top,variant=slate_bricks": [
+            { "model": "minestrapp:upper_slab_slate_bricks" }
+        ]
+    }
+}

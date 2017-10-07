@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_cobbled_deepstone_slab"
+    ]
+  },
+  "criteria": {
+    "has_deepstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_cobblestone",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_cobbled_deepstone_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_deepstone",
+      "has_the_recipe"
+    ]
+  ]
+}

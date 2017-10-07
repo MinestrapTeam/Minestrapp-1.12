@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x  ",
+        "xx ",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:decor_stone",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:decor_stone_granite_bricks_stairs",
+        "count": 4
+     }  
+}

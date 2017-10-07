@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/diorite_bricks",
+        "top": "minestrapp:blocks/stone/diorite_bricks",
+        "side": "minestrapp:blocks/stone/diorite_bricks"
+    }
+}

@@ -10,14 +10,18 @@ import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
+import minestrapp.block.BlockDoubleMiscStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockDriedMud;
+import minestrapp.block.BlockGlaciericIce;
 import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
+import minestrapp.block.BlockHalfMiscStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
@@ -30,10 +34,13 @@ import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMPath;
+import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockRedstoneOre;
+import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
+import minestrapp.block.BlockSoulOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneCutter;
 import minestrapp.block.BlockStoneSlab1;
@@ -112,6 +119,7 @@ public class MBlocks
 	//Stone
 	public static Block mud_bricks;
 	public static Block mud_brick_stairs;
+	public static Block decor_stone;
 	public static Block stone;
 	public static Block cobblestone;
 	public static Block mossy_cobblestone;
@@ -121,6 +129,8 @@ public class MBlocks
 	public static Block chiseled_stone;
 	public static Block invincium;
 	public static Block glacial_invincium;
+	public static BlockSlab misc_stone_slab_1;
+	public static BlockDoubleMiscStoneSlab1 double_misc_stone_slab_1;
 	public static BlockSlab stone_slab_1;
 	public static BlockDoubleStoneSlab1 double_stone_slab_1;
 	public static BlockSlab stone_slab_2;
@@ -129,6 +139,10 @@ public class MBlocks
 	public static BlockDoubleStoneSlab3 double_stone_slab_3;
 	public static BlockSlab stone_slab_4;
 	public static BlockDoubleStoneSlab4 double_stone_slab_4;
+	public static Block granite_brick_stairs;
+	public static Block diorite_brick_stairs;
+	public static Block andesite_brick_stairs;
+	public static Block slate_brick_stairs;
 	public static Block cobbled_red_rock_stairs;
 	public static Block cobbled_deep_red_rock_stairs;
 	public static Block cobbled_deepstone_stairs;
@@ -188,8 +202,10 @@ public class MBlocks
 	public static Block bauble_sunstone;
 	
 	//Utility
+	public static Block rope;
 	public static Block basket;
 	public static Block barrel;
+	public static Block glacieric_ice;
 	public static Block block_irradiant_sunstone;
 	public static Block block_irradium_insulated;
 	public static Block soulsteel_vessel;
@@ -235,7 +251,7 @@ public class MBlocks
 		
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
-		register(mud_brick_stairs = new BlockStairBase(mud_bricks));
+		register(decor_stone = new BlockDecorativeStones(), new ItemBlockMultistate(decor_stone));
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
 		register(mossy_cobblestone = new BlockStoneBaseMOnly("m_mossy_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_cobblestone));
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setDropsItem(new ItemStack(Item.getItemFromBlock(MBlocks.cobblestone)), 0, 0, 0, true, false, true).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
@@ -245,6 +261,8 @@ public class MBlocks
 		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
 		register(invincium = new BlockInvincium());
 		register(glacial_invincium = new BlockBase("glacial_invincium", Material.ROCK, MapColor.CYAN, SoundType.STONE, -1F).setPushReaction(EnumPushReaction.BLOCK).setSlipperiness(0.85F).setEntityInvulnerability("all").setBlockUnbreakable().setCreativeTab(MTabs.environment));
+		register(double_misc_stone_slab_1 = new BlockDoubleMiscStoneSlab1("m_misc_stone_slab_1"));
+		register(misc_stone_slab_1 = new BlockHalfMiscStoneSlab1("m_misc_stone_slab_1"), new ItemBlockMSlab(misc_stone_slab_1, misc_stone_slab_1, double_misc_stone_slab_1));
 		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
 		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
 		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
@@ -253,6 +271,11 @@ public class MBlocks
 		register(stone_slab_3 = new BlockHalfStoneSlab3("m_stone_slab_3"), new ItemBlockMSlab(stone_slab_3, stone_slab_3, double_stone_slab_3));
 		register(double_stone_slab_4 = new BlockDoubleStoneSlab4("m_stone_slab_4"));
 		register(stone_slab_4 = new BlockHalfStoneSlab4("m_stone_slab_4"), new ItemBlockMSlab(stone_slab_4, stone_slab_4, double_stone_slab_4));
+		register(mud_brick_stairs = new BlockStairBase(mud_bricks));
+		register(granite_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.GRANITE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.GRANITE_BRICKS.getUnlocalizedName()));
+		register(diorite_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.DIORITE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.DIORITE_BRICKS.getUnlocalizedName()));
+		register(andesite_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.ANDESITE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.ANDESITE_BRICKS.getUnlocalizedName()));
+		register(slate_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.SLATE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.SLATE_BRICKS.getUnlocalizedName()));
 		register(cobbled_red_rock_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.RED_ROCK), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.RED_ROCK.getUnlocalizedName()));
 		register(cobbled_deep_red_rock_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_RED_ROCK), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_RED_ROCK.getUnlocalizedName()));
 		register(cobbled_deepstone_stairs = new BlockStairBase(cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEPSTONE), cobblestone.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEPSTONE.getUnlocalizedName()));
@@ -290,7 +313,7 @@ public class MBlocks
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
 		register(ore_blazium = new BlockBase("ore_blazium", Material.ROCK, MapColor.NETHERRACK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setLightLevel(0.675F).setCreativeTab(MTabs.ore));
-		register(ore_soul = new BlockBase("ore_soul", Material.SAND, MapColor.BROWN, SoundType.SAND, 0.8F, "shovel", 3).setCreativeTab(MTabs.ore));
+		register(ore_soul = new BlockSoulOre());
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		
 		//Resource
@@ -309,11 +332,13 @@ public class MBlocks
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Decor
+		register(rope = new BlockRope());
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(2F).setCreativeTab(MTabs.utility));
+		register(glacieric_ice = new BlockGlaciericIce());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
@@ -360,6 +385,10 @@ public class MBlocks
 			initModel(clay_soil, i, "clay_soil_" + BlockMDirt.DirtType.values()[i].getName());
 			initModel(permafrost, i, "permafrost_" + BlockMDirt.DirtType.values()[i].getName());
 		}
+		for(int i = 0 ; i < BlockDecorativeStones.DecorStoneType.values().length ; i++)
+		{
+			initModel(decor_stone, i, "decor_stone_" + BlockDecorativeStones.DecorStoneType.values()[i].getName());
+		}
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{
 			initModel(ore_coal, i, "ore_coal_" + EnumStoneTypeMOnly.values()[i].getName());
@@ -387,6 +416,10 @@ public class MBlocks
 			initModel(ore_irradium, i, "ore_irradium_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockMiscStoneSlab1.EnumType.values().length ; i++)
+		{
+			initModel(misc_stone_slab_1, i, "m_misc_stone_slab_1_" + BlockMiscStoneSlab1.EnumType.values()[i].getName());
 		}
 		for(int i = 0 ; i < 8 ; i++)
 		{

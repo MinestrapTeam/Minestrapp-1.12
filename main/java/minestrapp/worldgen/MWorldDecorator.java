@@ -393,5 +393,18 @@ public class MWorldDecorator
 				iceGen.generate(world, random, icePos);
 			}
 		}
+		if(world.provider.getDimension() == -1)
+		{
+			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
+			Chunk chunk = world.getChunkFromBlockCoords(pos);
+			for (int x = 0; x < 16; x++)
+			{
+				for (int z = 0; z < 16; z++)
+				{
+					BlockPos subpos = pos.add(x, 0, z);
+					chunk.setBlockState(subpos, MBlocks.invincium.getDefaultState());
+				}
+			}
+		}
 	}
 }

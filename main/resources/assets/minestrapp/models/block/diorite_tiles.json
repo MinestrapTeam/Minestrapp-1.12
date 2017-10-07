@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minecraft:blocks/stone_diorite_smooth_1",
+        "top": "minestrapp:blocks/stone/diorite_tiles_top",
+        "side": "minestrapp:blocks/stone/diorite_tiles_side"
+    }
+}

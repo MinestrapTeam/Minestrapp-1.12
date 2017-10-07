@@ -1,0 +1,24 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "igi",
+        "gpg",
+        "igi"
+    ],
+    "key": {        
+        "i": {
+            "item": "minecraft:ice"
+        },
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "gemGlacierite"
+        },
+        "p": {
+            "item": "minecraft:packed_ice"
+        }
+     },
+     "result": {
+        "item": "minestrapp:glacieric_ice",
+        "count": 4
+     }  
+}

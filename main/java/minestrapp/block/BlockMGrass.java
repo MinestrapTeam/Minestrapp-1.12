@@ -10,6 +10,8 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockTallGrass;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -33,10 +35,11 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeSavanna;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockMGrass extends BlockBase
+public class BlockMGrass extends BlockBase  implements IGrowable
 {
 	private BlockMDirt dirt;
 	private boolean biomecolored;
@@ -179,5 +182,70 @@ public class BlockMGrass extends BlockBase
         }
 		
         return false;
+    }
+	
+	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
+    {
+        return true;
+    }
+
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
+    {
+        return true;
+    }
+	
+	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
+    {
+        BlockPos blockpos = pos.up();
+
+        for (int i = 0; i < 128; ++i)
+        {
+            BlockPos blockpos1 = blockpos;
+            int j = 0;
+
+            while (true)
+            {
+                if (j >= i / 16)
+                {
+                    if (worldIn.isAirBlock(blockpos1))
+                    {
+                    	int flowerChance = 6;
+                    	
+                    	if(this == MBlocks.lichen)
+                    		flowerChance = 12;
+                    	
+                        if (rand.nextInt(flowerChance) == 0)
+                        {
+                            worldIn.getBiome(blockpos1).plantFlower(worldIn, rand, blockpos1);
+                        }
+                        else
+                        {
+                        	IBlockState iblockstate1 = Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.GRASS);
+                            
+                        	if(this == MBlocks.savanna_grass && worldIn.getBiome(blockpos1) instanceof BiomeSavanna)	
+                            	iblockstate1 = MBlocks.savanna_grass.getDefaultState();
+                            else if(this == MBlocks.lichen)
+                            	iblockstate1 = MBlocks.tundra_grass.getDefaultState();
+
+                            if (((BlockBush) iblockstate1.getBlock()).canBlockStay(worldIn, blockpos1, iblockstate1))
+                            {
+                                worldIn.setBlockState(blockpos1, iblockstate1, 3);
+                            }
+                        }
+                    }
+
+                    break;
+                }
+
+                blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
+
+                if (worldIn.getBlockState(blockpos1.down()).getBlock() != this || worldIn.getBlockState(blockpos1).isNormalCube())
+                {
+                    break;
+                }
+
+                ++j;
+            }
+        }
     }
 }
