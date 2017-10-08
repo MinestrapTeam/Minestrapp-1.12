@@ -86,17 +86,17 @@ public class MStoneGen
 								chunk.setBlockState(subpos2, stone.withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 							}
 						}
-						else if(state.getBlock() instanceof BlockStone && biome.getTemperature() >= 0.4F)
+						else if(state.getBlock() instanceof BlockStone && biome.getDefaultTemperature() >= 0.4F)
 						{
 							if(biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE))
 							{
 								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
 							}
-							else if(biome.getTemperature() < 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE))
+							else if(biome.getDefaultTemperature() < 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE))
 							{
 								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
 							}
-							else if(biome.getTemperature() >= 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE))
+							else if(biome.getDefaultTemperature() >= 1F && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE))
 							{
 								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
 							}
@@ -113,15 +113,15 @@ public class MStoneGen
 		{
 			return EnumStoneTypeMOnly.OCEANSTONE;
 		}
-		else if (biome.getTemperature() < 0.2F)
+		else if (biome.getDefaultTemperature() < 0.2F)
 		{
 			return EnumStoneTypeMOnly.ICESTONE;
 		}
-		else if (biome.getTemperature() < 0.4F)
+		else if (biome.getDefaultTemperature() < 0.4F)
 		{
 			return EnumStoneTypeMOnly.COLDSTONE;
 		}
-		else if (biome.getTemperature() >= 1.0F)
+		else if (biome.getDefaultTemperature() >= 1.0F)
 		{
 			return EnumStoneTypeMOnly.RED_ROCK;
 		}
@@ -137,15 +137,15 @@ public class MStoneGen
 		{
 			return EnumStoneTypeMOnly.DEEP_OCEANSTONE;
 		}
-		else if (biome.getTemperature() < 0.2F)
+		else if (biome.getDefaultTemperature() < 0.2F)
 		{
 			return EnumStoneTypeMOnly.GLACIERROCK;
 		}
-		else if (biome.getTemperature() < 0.4F)
+		else if (biome.getDefaultTemperature() < 0.4F)
 		{
 			return EnumStoneTypeMOnly.DEEP_COLDSTONE;
 		}
-		else if (biome.getTemperature() >= 1.0F)
+		else if (biome.getDefaultTemperature() >= 1.0F)
 		{
 			return EnumStoneTypeMOnly.DEEP_RED_ROCK;
 		}
@@ -161,15 +161,15 @@ public class MStoneGen
 		{
 			return random.nextInt(5) + 20;
 		}
-		else if (biome.getTemperature() < 0.2F)
+		else if (biome.getDefaultTemperature() < 0.2F)
 		{
 			return random.nextInt(5) + 30;
 		}
-		else if (biome.getTemperature() < 0.4F)
+		else if (biome.getDefaultTemperature() < 0.4F)
 		{
 			return random.nextInt(5) + 40;
 		}
-		else if (biome.getTemperature() >= 1.0F)
+		else if (biome.getDefaultTemperature() >= 1.0F)
 		{
 			return random.nextInt(5) + 25;
 		}

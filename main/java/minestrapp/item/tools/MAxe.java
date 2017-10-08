@@ -24,7 +24,7 @@ public class MAxe extends ItemTool
      
     public MAxe(ToolMaterial material, String unlocalizedName, float damage, float speed) {
         super(material, EFFECTIVE_ON);
-        this.damageVsEntity = damage;
+        this.attackDamage = damage;
         this.attackSpeed = speed;
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
@@ -34,6 +34,6 @@ public class MAxe extends ItemTool
     public float getStrVsBlock(ItemStack stack, IBlockState state)
     {
         Material material = state.getMaterial();
-        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : this.efficiency;
     }
 }

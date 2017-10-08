@@ -94,7 +94,7 @@ public class MEventHandler
 				
 				if(chance < 5)
 				{
-					if(event.getWorld().getBiome(event.getPos()).getTemperature() < 0.4)
+					if(event.getWorld().getBiome(event.getPos()).getDefaultTemperature() < 0.4)
 					{
 						if(event.getWorld().rand.nextInt(2) == 0)
 							event.getDrops().add(new ItemStack(MItems.lettuce));

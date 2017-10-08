@@ -83,7 +83,7 @@ public class BlockMud extends BlockBase
     {
         if (!worldIn.isRemote)
         {
-        	float temp = worldIn.getBiome(pos).getTemperature();
+        	float temp = worldIn.getBiome(pos).getDefaultTemperature();
         	boolean sky = true;
         	for(int i = pos.up().getY() ; i < 256 ; i++)
         	{

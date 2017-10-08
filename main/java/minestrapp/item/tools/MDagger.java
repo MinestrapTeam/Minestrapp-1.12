@@ -29,7 +29,7 @@ public class MDagger extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.attackDamage = 1.5F + material.getDamageVsEntity();
+        this.attackDamage = 1.5F + material.getAttackDamage();
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
@@ -40,7 +40,7 @@ public class MDagger extends Item
      */
     public float getDamageVsEntity()
     {
-        return this.material.getDamageVsEntity();
+        return this.material.getAttackDamage();
     }
 
     public float getStrVsBlock(ItemStack stack, IBlockState state)

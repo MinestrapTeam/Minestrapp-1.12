@@ -223,7 +223,7 @@ public class MWorldDecorator
 	//								}
 	//							}
 	//						}
-							else if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							else if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
 							{
 								if (state.getBlock() == Blocks.DIRT)
 									chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
@@ -235,7 +235,7 @@ public class MWorldDecorator
 										chunk.setBlockState(subpos2, MBlocks.clay_grass.getDefaultState());
 								}
 							}
-							else if (biome.getTemperature() < 0.2F)
+							else if (biome.getDefaultTemperature() < 0.2F)
 							{
 								if (state.getBlock() == Blocks.DIRT)
 									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
@@ -261,7 +261,7 @@ public class MWorldDecorator
 						}
 						else if (state.getBlock() == Blocks.TALLGRASS)
 						{
-							if(biome.getTemperature() < 0.2F)
+							if(biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
 							else if (biome instanceof BiomeSavanna)
 							{
@@ -277,16 +277,16 @@ public class MWorldDecorator
 						}
 						else if (state.getBlock() == Blocks.GRASS_PATH)
 						{
-							if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
 								chunk.setBlockState(subpos2, MBlocks.clay_grass_path.getDefaultState());
-							else if (biome.getTemperature() < 0.2F)
+							else if (biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.lichen_path.getDefaultState());
 						}
 						else if (state.getBlock() == Blocks.FARMLAND)
 						{
-							if (biome.getTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
 								chunk.setBlockState(subpos2, MBlocks.clay_farmland.getDefaultState());
-							else if (biome.getTemperature() < 0.2F)
+							else if (biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.permafrost_farmland.getDefaultState());
 						}
 					}
@@ -358,7 +358,7 @@ public class MWorldDecorator
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
 				bushGen.generate(world, random, berryPos);
 			}
-			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getTemperature() < 0.2F))
+			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getDefaultTemperature() < 0.2F))
 			{
 				int chance = 2;
 				if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA)

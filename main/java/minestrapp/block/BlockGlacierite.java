@@ -45,7 +45,7 @@ public class BlockGlacierite extends BlockBase
 		int x = 3 - rand.nextInt(7);
 		int z = 3 - rand.nextInt(7);
 		
-		if(worldIn.getBiome(pos).getFloatTemperature(pos) < 0.8F && Math.abs(x) + Math.abs(z) < 5)
+		if(worldIn.getBiome(pos).getTemperature(pos) < 0.8F && Math.abs(x) + Math.abs(z) < 5)
 		{
 			for(int i = -1 ; i < 2 ; i++)
 			{
@@ -98,7 +98,7 @@ public class BlockGlacierite extends BlockBase
 		EnumParticleTypes particle = EnumParticleTypes.END_ROD;
 		float offsetPatch = 0F;
 		
-		if(worldIn.getBiome(pos).getFloatTemperature(pos) >= 0.8F)
+		if(worldIn.getBiome(pos).getTemperature(pos) >= 0.8F)
 		{
 			particle = EnumParticleTypes.DRIP_WATER;
 			offsetPatch = 0.2F;
