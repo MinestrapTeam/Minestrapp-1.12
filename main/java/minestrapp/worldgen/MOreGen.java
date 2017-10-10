@@ -144,9 +144,9 @@ public class MOreGen implements IWorldGenerator
 				this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
 			}
 			
-			int posX = random.nextInt(16);
+			int posX = random.nextInt(16)+8;
 			int posY = 128 - random.nextInt(120);
-			int posZ = random.nextInt(16);
+			int posZ = random.nextInt(16)+8;
 			
 			BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 			MGenSunstone sunstoneGen = new MGenSunstone(5);
