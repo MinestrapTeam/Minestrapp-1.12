@@ -300,9 +300,9 @@ public class MWorldDecorator
 			
 			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 64 - random.nextInt(6);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
@@ -310,9 +310,9 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
@@ -320,9 +320,9 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
@@ -330,9 +330,9 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 114 - random.nextInt(48);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
@@ -340,9 +340,9 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
@@ -350,9 +350,9 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
@@ -370,9 +370,9 @@ public class MWorldDecorator
 				
 				for(int i = 0 ; i < chance ; i++)
 				{
-					int posX = random.nextInt(16);
+					int posX = random.nextInt(16)+8;
 					int posY = 78 - random.nextInt(60);
-					int posZ = random.nextInt(16);
+					int posZ = random.nextInt(16)+8;
 					
 					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 					if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
@@ -384,9 +384,9 @@ public class MWorldDecorator
 			}
 			if(biome == Biomes.ICE_PLAINS)
 			{
-				int posX = random.nextInt(16);
+				int posX = random.nextInt(16)+8;
 				int posY = 80 - random.nextInt(20);
-				int posZ = random.nextInt(16);
+				int posZ = random.nextInt(16)+8;
 				
 				BlockPos icePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenIceDeposit iceGen = new MGenIceDeposit();
