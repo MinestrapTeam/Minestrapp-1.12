@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "glowshroom_stew",
+    "ingredients": [
+        {
+            "item": "minestrapp:purple_glowshroom"
+        },
+        {
+            "item": "minestrapp:green_glowshroom"
+        },
+        {
+            "item": "minestrapp:bread_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:bread_glowshroom_stew"
+    }   
+}

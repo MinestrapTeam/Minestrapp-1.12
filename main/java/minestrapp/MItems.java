@@ -7,6 +7,7 @@ import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStoneBase;
+import minestrapp.item.ItemCandy;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemJamBottle;
@@ -48,11 +49,13 @@ public class MItems
 	static List<Item> itemList = new ArrayList<Item>();
 	
 	public static Item natural_ingredients;
+	public static Item mob_loot;
 	
 	public static Item mud_ball;
 	public static Item irradium;
 	public static Item ingots;
 	public static Item plating;
+	public static Item salt;
 	public static Item gems;
 	public static Item gem_soul;
 	
@@ -222,6 +225,10 @@ public class MItems
 	public static Item fried_salmon;
 	public static Item fish_and_chips;
 	
+	public static Item candy_red;
+	public static Item candy_blue;
+	public static Item candy_yellow;
+	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17).setRepairItem(new ItemStack(ingots, 1, 0));
 	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13).setRepairItem(new ItemStack(ingots, 1, 2));
 	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":steel", 2, 500, 7.5F, 2.5F, 19).setRepairItem(new ItemStack(ingots, 1, 3));
@@ -240,6 +247,8 @@ public class MItems
 	{
 		//0=Grass Fibers, 1=Mana Leaf
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 2).setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
@@ -248,6 +257,7 @@ public class MItems
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
 		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite
 		register(plating = new ItemMetaBase("m_plating", 4).setCreativeTab(MTabs.ingredients));
+		register(salt = new ItemBase("salt").setCreativeTab(MTabs.food));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard
 		register(gems = new ItemMetaBase("m_gem", 7).setBurnTime(2000, 5).setCreativeTab(MTabs.minerals));
@@ -423,6 +433,10 @@ public class MItems
 		register(fried_fish = new MItemsFood(8, 0.5625F, false, "fried_fish"));
 		register(fried_salmon = new MItemsFood(8, 0.9F, false, "fried_salmon"));
 		register(fish_and_chips = new MItemsFood(12, 0.75F, false, "fish_and_chips"));
+		
+		register(candy_red = new ItemCandy("candy_red", new PotionEffect(MobEffects.HEALTH_BOOST, 600, 1), new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), new PotionEffect(MobEffects.REGENERATION, 600, 0)).setAlwaysEdible());
+		register(candy_blue = new ItemCandy("candy_blue", new PotionEffect(MobEffects.STRENGTH, 600, 0), new PotionEffect(MobEffects.INVISIBILITY, 600, 0), new PotionEffect(MobEffects.NIGHT_VISION, 600, 0)).setAlwaysEdible());
+		register(candy_yellow = new ItemCandy("candy_yellow", new PotionEffect(MobEffects.SPEED, 600, 1), new PotionEffect(MobEffects.LEVITATION, 600, 1), new PotionEffect(MobEffects.JUMP_BOOST, 700, 1)).setAlwaysEdible());
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);

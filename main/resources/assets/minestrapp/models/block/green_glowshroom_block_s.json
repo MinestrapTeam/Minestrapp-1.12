@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "minestrapp:blocks/plant/glowshroom_block_inside",
+        "down": "minestrapp:blocks/plant/glowshroom_block_inside",
+        "up": "minestrapp:blocks/plant/glowshroom_block_skin_green",
+        "north": "minestrapp:blocks/plant/glowshroom_block_inside",
+        "east": "minestrapp:blocks/plant/glowshroom_block_inside",
+        "south": "minestrapp:blocks/plant/glowshroom_block_skin_green",
+        "west": "minestrapp:blocks/plant/glowshroom_block_inside"
+    }
+}

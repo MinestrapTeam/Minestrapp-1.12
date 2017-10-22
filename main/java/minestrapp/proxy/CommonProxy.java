@@ -31,6 +31,13 @@ public class CommonProxy
 		MItems.init();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/flesh"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/husk/salt"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/squid/squid_tentacle"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/witch/wand"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/candy"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_basic_dungeon"));
 	}
 	
@@ -48,7 +55,7 @@ public class CommonProxy
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		
-		MinecraftForge.EVENT_BUS.register(MEventHandler.class);
+		MinecraftForge.EVENT_BUS.register(new MEventHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

@@ -9,6 +9,7 @@ import minestrapp.block.BlockBauble;
 import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
+import minestrapp.block.BlockCandle;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
@@ -21,6 +22,7 @@ import minestrapp.block.BlockDriedMud;
 import minestrapp.block.BlockGlaciericIce;
 import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
+import minestrapp.block.BlockGlowshroom;
 import minestrapp.block.BlockHalfMiscStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
@@ -33,6 +35,7 @@ import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
+import minestrapp.block.BlockMHugeMushroom;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMoss;
@@ -71,6 +74,7 @@ import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHugeMushroom;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -94,6 +98,12 @@ public class MBlocks
 	
 	//Plant
 	public static Block moss;
+	public static Block blue_glowshroom;
+	public static Block green_glowshroom;
+	public static Block purple_glowshroom;
+	public static Block blue_glowshroom_block;
+	public static Block green_glowshroom_block;
+	public static Block purple_glowshroom_block;
 	public static Block tundra_grass;
 	public static Block savanna_grass;
 	public static Block blueberry_bush;
@@ -200,6 +210,9 @@ public class MBlocks
 	
 	//Decor
 	public static Block bauble_sunstone;
+	public static Block candle;
+	public static Block candle_fire;
+	public static Block candle_ender;
 	
 	//Utility
 	public static Block rope;
@@ -227,6 +240,12 @@ public class MBlocks
 	{
 		//Plant
 		register(moss = new BlockMoss().setPushReaction(EnumPushReaction.DESTROY));
+		register(blue_glowshroom = new BlockGlowshroom("blue_glowshroom").setLightLevel(0.6F));
+		register(green_glowshroom = new BlockGlowshroom("green_glowshroom").setLightLevel(0.8F));
+		register(purple_glowshroom = new BlockGlowshroom("purple_glowshroom").setLightLevel(0.7F));
+		register(blue_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.BLUE, blue_glowshroom, "blue_glowshroom_block").setLightLevel(0.6F));
+		register(green_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.LIME, green_glowshroom, "green_glowshroom_block").setLightLevel(0.8F));
+		register(purple_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.PURPLE, purple_glowshroom, "purple_glowshroom_block").setLightLevel(0.7F));
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
 		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
 		register(blueberry_bush = new BlockBerryBush("blueberry_bush", MapColor.FOLIAGE, "plains"));
@@ -334,6 +353,9 @@ public class MBlocks
 		//Decor
 		register(rope = new BlockRope());
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
+		register(candle = new BlockCandle("candle", "unlit"), new ItemBlockMultistate(candle));
+		register(candle_fire = new BlockCandle("candle_fire", "fire"));
+		register(candle_ender = new BlockCandle("candle_ender", "ender"));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
@@ -431,7 +453,10 @@ public class MBlocks
 		{
 			initModel(stone_slab_4, i, "m_stone_slab_4_" + BlockStoneSlab4.EnumType.values()[i].getName());
 		}
-
+		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
+		{
+			initModel(candle, i, "candle_" + EnumDyeColor.values()[i].getName());
+		}
 	}
 	
 	private static void initModel(Block block)

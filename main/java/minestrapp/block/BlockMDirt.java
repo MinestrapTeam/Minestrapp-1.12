@@ -7,6 +7,7 @@ import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -129,7 +130,7 @@ public class BlockMDirt extends Block implements IMetaBlockName
         {
             case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
             case Plains: 
-            	if(plantable instanceof BlockFlower)
+            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling)
             		return true;
             	else
             		return this == MBlocks.clay_soil;

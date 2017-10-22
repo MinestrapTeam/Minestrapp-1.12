@@ -1,0 +1,20 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "r",
+        "t"
+    ],
+    "key": {        
+        "r": {
+            "item": "minestrapp:rope"
+        },
+        "t": {
+            "item": "minestrapp:m_mob_loot",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:candle",
+        "data": 0
+     }  
+}

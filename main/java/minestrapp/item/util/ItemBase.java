@@ -51,7 +51,10 @@ public class ItemBase extends Item
 	@SideOnly(Side.CLIENT)
 	public boolean hasEffect(ItemStack stack)
 	{
-		return this.foiled;
+		if(this.foiled)
+			return true;
+		else
+			return super.hasEffect(stack);
 	}
 	
 	public boolean isBeaconPayment(ItemStack stack)

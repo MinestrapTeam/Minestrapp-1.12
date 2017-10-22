@@ -4,6 +4,12 @@
 tile.moss.name=Moss Lump
 tile.hanging_moss.name=Hanging Moss
 tile.hanging_glow_moss.name=Hanging Glow Moss
+tile.blue_glowshroom.name=Glowshroom
+tile.green_glowshroom.name=Glowshroom
+tile.purple_glowshroom.name=Glowshroom
+tile.blue_glowshroom_block.name=Glowshroom
+tile.green_glowshroom_block.name=Glowshroom
+tile.purple_glowshroom_block.name=Glowshroom
 tile.tundra_grass.name=Tundra Grass
 tile.savanna_grass.name=Savanna Grass
 tile.blueberry_bush.name=Blueberry Bush
@@ -347,6 +353,22 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 ## Decor ##
 tile.rope.name=Rope
 tile.bauble_sunstone.name=Sunstone Bauble
+tile.candle_white.name=Candle
+tile.candle_silver.name=Light Gray Candle
+tile.candle_gray.name=Gray Candle
+tile.candle_black.name=Black Candle
+tile.candle_brown.name=Brown Candle
+tile.candle_pink.name=Pink Candle
+tile.candle_red.name=Red Candle
+tile.candle_orange.name=Orange Candle
+tile.candle_yellow.name=Yellow Candle
+tile.candle_lime.name=Lime Candle
+tile.candle_green.name=Green Candle
+tile.candle_cyan.name=Cyan Candle
+tile.candle_light_blue.name=Light Blue Candle
+tile.candle_blue.name=Blue Candle
+tile.candle_purple.name=Purple Candle
+tile.candle_magenta.name=Magenta Candle
 
 ## Utility ##
 
@@ -374,6 +396,7 @@ item.m_ingot_5.name=Titanium Ingot
 item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
+item.salt.name=Salt
 item.m_gem_0.name=Sunstone Shard
 item.m_gem_1.name=Desert Quartz
 item.m_gem_2.name=Rock Crystal
@@ -386,6 +409,10 @@ item.gem_soul.name=Soul Gem
 ## Natural Ingredients ##
 item.m_natural_item_0.name=Grass Fibers
 item.m_natural_item_1.name=Mana Leaf
+
+## Mob Loot ##
+item.m_mob_loot_0.name=Animal Bones
+item.m_mob_loot_1.name=Tallow
 
 ##Bricks
 item.m_bricks_0.name=Mud Brick
@@ -569,6 +596,11 @@ item.fries.name=Fries
 item.fried_fish.name=Fried Fish
 item.fried_salmon.name=Fried Salmon
 item.fish_and_chips.name=Fish & Chips
+
+item.candy_red.name=Living Licorice
+item.candy_blue.name=Camo Candy
+item.candy_yellow.name=Lofty Lolly
+
 
 ##Mobs##
 entity.SheetGhost.name=Sheet Ghost

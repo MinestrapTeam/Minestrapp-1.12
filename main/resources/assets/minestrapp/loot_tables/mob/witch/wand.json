@@ -1,0 +1,41 @@
+{
+    "pools": [
+        {
+            "name": "main",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minestrapp:m_tech_component",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        },
+                        {
+                            "function": "set_data",
+                            "data": 0
+                        },
+                        {
+                            "function": "enchant_randomly",
+                            "enchantments": [
+                                "minecraft:knockback",
+                                "minecraft:fire_aspect"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 999
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "killed_by_player"
+                }
+            ]
+        }
+    ]
+}

@@ -40,6 +40,7 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MItems.corn_meal, new ItemStack(MItems.corn_bread), 0.35F);
 		GameRegistry.addSmelting(MItems.dough, new ItemStack(Items.BREAD), 0.35F);
 		GameRegistry.addSmelting(MItems.fat, new ItemStack(MItems.grease), 0.35F);
+		GameRegistry.addSmelting(MItems.grease, new ItemStack(MItems.mob_loot, 1, 1), 0.45F);
 		GameRegistry.addSmelting(MItems.squid_tentacle, new ItemStack(MItems.calamari), 0.35F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)

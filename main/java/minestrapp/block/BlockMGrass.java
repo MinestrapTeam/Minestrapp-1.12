@@ -10,6 +10,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -128,7 +129,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
         {
             case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
             case Plains:
-            	if(plantable instanceof BlockFlower)
+            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling)
             		return true;
             	else
             		return this == MBlocks.clay_grass;

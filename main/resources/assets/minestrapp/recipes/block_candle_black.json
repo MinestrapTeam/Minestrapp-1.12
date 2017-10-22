@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "candle",
+    "ingredients": [
+        {
+            "item": "minestrapp:candle",
+            "data": 0
+        },
+        {
+            "item": "minecraft:dye",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "minestrapp:candle",
+        "data": 15
+    }   
+}

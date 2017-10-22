@@ -129,7 +129,7 @@ public class AlloyRecipes {
 	}
 	
 	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
-		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 630 || stack2.getMetadata() == stack1.getMetadata());
+		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 630 || stack2.getMetadata() == stack1.getMetadata()) && (stack2.getCount() == stack1.getCount());
 	}
 	
 	public Table<ItemStack, ItemStack, ItemStack> getAlloySmelting() {

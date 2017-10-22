@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_bread_glowshroom_stew"
+    ]
+  },
+  "criteria": {
+    "has_green_glowshroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:green_glowshroom"
+          }
+        ]
+      }
+    },
+    "has_purple_glowshroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:purple_glowshroom"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_bread_glowshroom_stew"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_green_glowshroom",
+      "has_purple_glowshroom",
+      "has_the_recipe"
+    ]
+  ]
+}

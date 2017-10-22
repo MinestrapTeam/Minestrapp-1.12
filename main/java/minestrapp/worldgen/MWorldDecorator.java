@@ -4,6 +4,7 @@ import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockGlowshroom;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.BlockBerryBush;
@@ -392,6 +393,36 @@ public class MWorldDecorator
 				MGenIceDeposit iceGen = new MGenIceDeposit();
 				iceGen.generate(world, random, icePos);
 			}
+			if(biome instanceof BiomeMushroomIsland)
+			{
+				for(int i = 0 ;  i < 3 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 100 - random.nextInt(40);
+					int posZ = random.nextInt(16)+8;
+					int centerChance = random.nextInt(10);
+
+					Block glowshroom = MBlocks.blue_glowshroom;
+					Block bigGlowshroom = MBlocks.blue_glowshroom_block;
+						
+					BlockPos glowshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenFairyCircle glowshroomGen = new MGenFairyCircle((BlockGlowshroom) glowshroom, 8);
+					glowshroomGen.generate(world, random, glowshroomPos);
+					MGenBigGlowshroom bigShroomGen = new MGenBigGlowshroom(bigGlowshroom);
+					if(centerChance == 1)
+						bigShroomGen.generate(world, random, glowshroomPos);
+					
+					for(int j = 0 ; j < 4 ; j++)
+					{
+						posX = random.nextInt(16)+8;
+						posY = 129 - random.nextInt(128);
+						posZ = random.nextInt(16)+8;
+						
+						BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						bigShroomGen.generate(world, random, bigshroomPos);
+					}
+				}
+			}
 		}
 		if(world.provider.getDimension() == -1)
 		{
@@ -403,6 +434,44 @@ public class MWorldDecorator
 				{
 					BlockPos subpos = pos.add(x, 0, z);
 					chunk.setBlockState(subpos, MBlocks.invincium.getDefaultState());
+				}
+			}
+			
+			for(int i = 0 ;  i < 3 ; i++)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = 129 - random.nextInt(128);
+				int posZ = random.nextInt(16)+8;
+				boolean glowType = random.nextBoolean();
+				int centerChance = random.nextInt(10);
+
+				Block glowshroom = MBlocks.green_glowshroom;
+				if(glowType)
+					glowshroom = MBlocks.purple_glowshroom;
+				Block bigGlowshroom = MBlocks.green_glowshroom_block;
+				if(glowType)
+					bigGlowshroom = MBlocks.purple_glowshroom_block;
+					
+				BlockPos glowshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenFairyCircle glowshroomGen = new MGenFairyCircle((BlockGlowshroom) glowshroom, 8);
+				glowshroomGen.generate(world, random, glowshroomPos);
+				MGenBigGlowshroom bigShroomGen = new MGenBigGlowshroom(bigGlowshroom);
+				if(centerChance == 1)
+					bigShroomGen.generate(world, random, glowshroomPos);
+				
+				for(int j = 0 ; j < 4 ; j++)
+				{
+					posX = random.nextInt(16)+8;
+					posY = 129 - random.nextInt(128);
+					posZ = random.nextInt(16)+8;
+					
+					glowType = random.nextBoolean();
+					bigGlowshroom = MBlocks.green_glowshroom_block;
+					if(glowType)
+						bigGlowshroom = MBlocks.purple_glowshroom_block;
+					
+					BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					bigShroomGen.generate(world, random, bigshroomPos);
 				}
 			}
 		}

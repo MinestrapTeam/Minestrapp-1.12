@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_candle_white"
+    ]
+  },
+  "criteria": {
+    "has_tallow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mob_loot",
+            "data": 1
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_candle_white"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tallow",
+      "has_the_recipe"
+    ]
+  ]
+}
