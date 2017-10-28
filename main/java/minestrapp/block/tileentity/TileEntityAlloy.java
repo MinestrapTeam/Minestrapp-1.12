@@ -227,8 +227,8 @@ public class TileEntityAlloy extends TileEntity implements IInventory, ITickable
 			else if(output.getItem() == result.getItem())
 				output.grow(result.getCount());
 			
-			input1.shrink(1);
-			input2.shrink(1);
+			input1.shrink(AlloyRecipes.instance().getSlotOne(input1, input2).getCount());
+			input2.shrink(AlloyRecipes.instance().getSlotTwo(input1, input2).getCount());
 		}
 	}
 	

@@ -87,8 +87,9 @@ public class BlockAlloy extends BlockBase implements ITileEntityProvider {
 		IBlockState state = worldIn.getBlockState(pos);
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		
-		if(active)
-			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);
+		if(active){
+			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);			
+		}
 		else
 			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, false), 3);
 		
