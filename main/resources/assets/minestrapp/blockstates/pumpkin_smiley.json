@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=north,variant=simple": { "model": "minestrapp:pumpkin_smiley_simple", "uvlock": true, "y": 180 },
+        "facing=east,variant=simple":  { "model": "minestrapp:pumpkin_smiley_simple", "uvlock": true, "y": 270 },
+        "facing=west,variant=simple":  { "model": "minestrapp:pumpkin_smiley_simple", "uvlock": true, "y": 90 },
+        "facing=south,variant=simple": { "model": "minestrapp:pumpkin_smiley_simple", "uvlock": true },
+        "facing=north,variant=average": { "model": "minestrapp:pumpkin_smiley_average", "uvlock": true, "y": 180 },
+        "facing=east,variant=average":  { "model": "minestrapp:pumpkin_smiley_average", "uvlock": true, "y": 270 },
+        "facing=west,variant=average":  { "model": "minestrapp:pumpkin_smiley_average", "uvlock": true, "y": 90 },
+        "facing=south,variant=average": { "model": "minestrapp:pumpkin_smiley_average", "uvlock": true },
+        "facing=north,variant=complex": { "model": "minestrapp:pumpkin_smiley_complex", "uvlock": true, "y": 180 },
+        "facing=east,variant=complex":  { "model": "minestrapp:pumpkin_smiley_complex", "uvlock": true, "y": 270 },
+        "facing=west,variant=complex":  { "model": "minestrapp:pumpkin_smiley_complex", "uvlock": true, "y": 90 },
+        "facing=south,variant=complex": { "model": "minestrapp:pumpkin_smiley_complex", "uvlock": true }
+    }
+}

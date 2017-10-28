@@ -1,0 +1,64 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_pumpkin_normie",
+      "minestrapp:block_pumpkin_creepy",
+      "minestrapp:block_pumpkin_dumpy",
+      "minestrapp:block_pumpkin_grumpy",
+      "minestrapp:block_pumpkin_smiley"
+    ]
+  },
+  "criteria": {
+    "has_candle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:candle"
+          }
+        ]
+      }
+    },
+    "has_normie_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_pumpkin_normie"
+      }
+    },
+    "has_creepy_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_pumpkin_creepy"
+      }
+    },
+    "has_dumpy_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_pumpkin_dumpy"
+      }
+    },
+    "has_grumpy_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_pumpkin_grumpy"
+      }
+    },
+    "has_smiley_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_pumpkin_smiley"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_candle",
+      "has_normie_recipe",
+      "has_creepy_recipe",
+      "has_dumpy_recipe",
+      "has_grumpy_recipe",
+      "has_smiley_recipe"
+    ]
+  ]
+}

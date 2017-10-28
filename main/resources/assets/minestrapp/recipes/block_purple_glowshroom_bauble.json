@@ -1,0 +1,15 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:purple_glowshroom_block"
+        }
+     },
+     "result": {
+        "item": "minestrapp:bauble_sunstone",
+        "count": 4
+     }  
+}

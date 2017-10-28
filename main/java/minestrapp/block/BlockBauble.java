@@ -15,6 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
@@ -22,6 +23,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBauble extends BlockBase
 {	
@@ -34,6 +37,8 @@ public class BlockBauble extends BlockBase
 	protected static final AxisAlignedBB AABB_SOUTH = new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.5D);
 	protected static final AxisAlignedBB AABB_WEST = new AxisAlignedBB(0.5D, 0.25D, 0.25D, 1D, 0.75D, 0.75D);
 	
+	private BlockRenderLayer layer = BlockRenderLayer.SOLID;
+	
 	public BlockBauble(String name, Material materialIn, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(name, materialIn, mapColor, soundType, hardness);
@@ -45,6 +50,18 @@ public class BlockBauble extends BlockBase
 		super(name, materialIn, mapColor, soundType, hardness, tool, harvestLevel);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
+	
+	public BlockBauble setRenderLayer(BlockRenderLayer layer)
+	{
+		this.layer = layer;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+        return this.layer;
+    }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {

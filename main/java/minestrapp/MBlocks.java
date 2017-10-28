@@ -32,6 +32,8 @@ import minestrapp.block.BlockInvincium;
 import minestrapp.block.BlockIrradiantSunstone;
 import minestrapp.block.BlockIrradium;
 import minestrapp.block.BlockIrradiumOre;
+import minestrapp.block.BlockJackOLantern;
+import minestrapp.block.BlockJackOLanternSmashed;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
@@ -88,6 +90,7 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -210,9 +213,32 @@ public class MBlocks
 	
 	//Decor
 	public static Block bauble_sunstone;
+	public static Block bauble_glowstone;
+	public static Block bauble_glowshroom_blue;
+	public static Block bauble_glowshroom_green;
+	public static Block bauble_glowshroom_purple;
+	public static Block bauble_blazium;
 	public static Block candle;
 	public static Block candle_fire;
 	public static Block candle_ender;
+	public static BlockJackOLantern pumpkin_normie;
+	public static Block pumpkin_normie_fire;
+	public static Block pumpkin_normie_ender;
+	public static BlockJackOLantern pumpkin_grumpy;
+	public static Block pumpkin_grumpy_fire;
+	public static Block pumpkin_grumpy_ender;
+	public static BlockJackOLantern pumpkin_dumpy;
+	public static Block pumpkin_dumpy_fire;
+	public static Block pumpkin_dumpy_ender;
+	public static BlockJackOLantern pumpkin_creepy;
+	public static Block pumpkin_creepy_fire;
+	public static Block pumpkin_creepy_ender;
+	public static BlockJackOLantern pumpkin_smiley;
+	public static Block pumpkin_smiley_fire;
+	public static Block pumpkin_smiley_ender;
+	public static Block pumpkin_smashed;
+	public static Block pumpkin_smashed_fire;
+	public static Block pumpkin_smashed_ender;
 	
 	//Utility
 	public static Block rope;
@@ -243,9 +269,9 @@ public class MBlocks
 		register(blue_glowshroom = new BlockGlowshroom("blue_glowshroom").setLightLevel(0.6F));
 		register(green_glowshroom = new BlockGlowshroom("green_glowshroom").setLightLevel(0.8F));
 		register(purple_glowshroom = new BlockGlowshroom("purple_glowshroom").setLightLevel(0.7F));
-		register(blue_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.BLUE, blue_glowshroom, "blue_glowshroom_block").setLightLevel(0.6F));
-		register(green_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.LIME, green_glowshroom, "green_glowshroom_block").setLightLevel(0.8F));
-		register(purple_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.PURPLE, purple_glowshroom, "purple_glowshroom_block").setLightLevel(0.7F));
+		register(blue_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.BLUE, blue_glowshroom, "blue_glowshroom_block").setHardness(0.2F).setLightLevel(0.6F));
+		register(green_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.LIME, green_glowshroom, "green_glowshroom_block").setHardness(0.2F).setLightLevel(0.8F));
+		register(purple_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.PURPLE, purple_glowshroom, "purple_glowshroom_block").setHardness(0.2F).setLightLevel(0.7F));
 		register(tundra_grass = new BlockTundraGrass("tundra_grass"));
 		register(savanna_grass = new BlockSavannaGrass("savanna_grass"));
 		register(blueberry_bush = new BlockBerryBush("blueberry_bush", MapColor.FOLIAGE, "plains"));
@@ -353,9 +379,37 @@ public class MBlocks
 		//Decor
 		register(rope = new BlockRope());
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
+		register(bauble_glowstone = new BlockBauble("bauble_glowstone", Material.GLASS, MapColor.SAND, SoundType.GLASS, 0.3F).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.9F).setCreativeTab(MTabs.decor));
+		register(bauble_glowshroom_blue = new BlockBauble("bauble_glowshroom_blue", Material.WOOD, MapColor.BLUE, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.5F).setCreativeTab(MTabs.decor));
+		register(bauble_glowshroom_green = new BlockBauble("bauble_glowshroom_green", Material.WOOD, MapColor.LIME, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.7F).setCreativeTab(MTabs.decor));
+		register(bauble_glowshroom_purple = new BlockBauble("bauble_glowshroom_purple", Material.WOOD, MapColor.PURPLE, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.6F).setCreativeTab(MTabs.decor));
+		register(bauble_blazium = new BlockBauble("bauble_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setLightLevel(0.7F).setResistance(5F).setCreativeTab(MTabs.decor));
 		register(candle = new BlockCandle("candle", "unlit"), new ItemBlockMultistate(candle));
 		register(candle_fire = new BlockCandle("candle_fire", "fire"));
 		register(candle_ender = new BlockCandle("candle_ender", "ender"));
+		register(pumpkin_normie = new BlockJackOLantern("pumpkin_normie", "unlit", pumpkin_normie_fire, pumpkin_normie_ender), new ItemBlockMultistate(pumpkin_normie));
+		register(pumpkin_normie_fire = new BlockJackOLantern("pumpkin_normie_fire", "fire", pumpkin_normie, pumpkin_normie_ender));
+		register(pumpkin_normie_ender = new BlockJackOLantern("pumpkin_normie_ender", "ender", pumpkin_normie, pumpkin_normie_fire));
+		pumpkin_normie.setBlockVariants(pumpkin_normie, pumpkin_normie_fire, pumpkin_normie_ender);
+		register(pumpkin_grumpy = new BlockJackOLantern("pumpkin_grumpy", "unlit", pumpkin_grumpy_fire, pumpkin_grumpy_ender), new ItemBlockMultistate(pumpkin_grumpy));
+		register(pumpkin_grumpy_fire = new BlockJackOLantern("pumpkin_grumpy_fire", "fire", pumpkin_grumpy, pumpkin_grumpy_ender));
+		register(pumpkin_grumpy_ender = new BlockJackOLantern("pumpkin_grumpy_ender", "ender", pumpkin_grumpy, pumpkin_grumpy_fire));
+		pumpkin_grumpy.setBlockVariants(pumpkin_grumpy, pumpkin_grumpy_fire, pumpkin_grumpy_ender);
+		register(pumpkin_dumpy = new BlockJackOLantern("pumpkin_dumpy", "unlit", pumpkin_dumpy_fire, pumpkin_dumpy_ender), new ItemBlockMultistate(pumpkin_dumpy));
+		register(pumpkin_dumpy_fire = new BlockJackOLantern("pumpkin_dumpy_fire", "fire", pumpkin_dumpy, pumpkin_dumpy_ender));
+		register(pumpkin_dumpy_ender = new BlockJackOLantern("pumpkin_dumpy_ender", "ender", pumpkin_dumpy, pumpkin_dumpy_fire));
+		pumpkin_dumpy.setBlockVariants(pumpkin_dumpy, pumpkin_dumpy_fire, pumpkin_dumpy_ender);
+		register(pumpkin_creepy = new BlockJackOLantern("pumpkin_creepy", "unlit", pumpkin_creepy_fire, pumpkin_creepy_ender), new ItemBlockMultistate(pumpkin_creepy));
+		register(pumpkin_creepy_fire = new BlockJackOLantern("pumpkin_creepy_fire", "fire", pumpkin_creepy, pumpkin_creepy_ender));
+		register(pumpkin_creepy_ender = new BlockJackOLantern("pumpkin_creepy_ender", "ender", pumpkin_creepy, pumpkin_creepy_fire));
+		pumpkin_creepy.setBlockVariants(pumpkin_creepy, pumpkin_creepy_fire, pumpkin_creepy_ender);
+		register(pumpkin_smiley = new BlockJackOLantern("pumpkin_smiley", "unlit", pumpkin_smiley_fire, pumpkin_smiley_ender), new ItemBlockMultistate(pumpkin_smiley));
+		register(pumpkin_smiley_fire = new BlockJackOLantern("pumpkin_smiley_fire", "fire", pumpkin_smiley, pumpkin_smiley_ender));
+		register(pumpkin_smiley_ender = new BlockJackOLantern("pumpkin_smiley_ender", "ender", pumpkin_smiley, pumpkin_smiley_fire));
+		pumpkin_smiley.setBlockVariants(pumpkin_smiley, pumpkin_smiley_fire, pumpkin_smiley_ender);
+		register(pumpkin_smashed = new BlockJackOLanternSmashed("pumpkin_smashed", "unlit", pumpkin_smashed_fire, pumpkin_smashed_ender));
+		register(pumpkin_smashed_fire = new BlockJackOLanternSmashed("pumpkin_smashed_fire", "fire", pumpkin_smashed, pumpkin_smashed_ender));
+		register(pumpkin_smashed_ender = new BlockJackOLanternSmashed("pumpkin_smashed_ender", "ender", pumpkin_smashed, pumpkin_smashed_fire));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
@@ -456,6 +510,14 @@ public class MBlocks
 		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
 		{
 			initModel(candle, i, "candle_" + EnumDyeColor.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockJackOLantern.EnumFaceType.values().length ; i++)
+		{
+			initModel(pumpkin_normie, i, "pumpkin_normie_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
+			initModel(pumpkin_grumpy, i, "pumpkin_grumpy_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
+			initModel(pumpkin_dumpy, i, "pumpkin_dumpy_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
+			initModel(pumpkin_creepy, i, "pumpkin_creepy_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
+			initModel(pumpkin_smiley, i, "pumpkin_smiley_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
 		}
 	}
 	

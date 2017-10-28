@@ -1,0 +1,23 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "jack_o_lanterns",
+    "pattern": [
+        "p  ",
+        " c ",
+        "   "
+    ],
+    "key": {        
+        "p": {
+            "item": "minecraft:pumpkin"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "candle"
+        }
+     },
+     "result": {
+        "item": "minestrapp:pumpkin_creepy",
+        "count": 1,
+        "data": 0
+     }  
+}

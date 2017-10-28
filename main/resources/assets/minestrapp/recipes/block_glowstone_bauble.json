@@ -1,0 +1,15 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:glowstone"
+        }
+     },
+     "result": {
+        "item": "minestrapp:bauble_glowstone",
+        "count": 4
+     }  
+}

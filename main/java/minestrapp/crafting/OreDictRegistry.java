@@ -9,6 +9,7 @@ public class OreDictRegistry
 {
 	public static void register()
 	{
+		OreDictionary.registerOre("candle", new ItemStack(MBlocks.candle, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("sand", new ItemStack(MBlocks.cold_sand, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("dirt", MBlocks.clay_soil);
 		OreDictionary.registerOre("grass", MBlocks.clay_grass);

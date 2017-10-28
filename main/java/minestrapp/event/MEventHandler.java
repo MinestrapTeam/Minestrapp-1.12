@@ -52,6 +52,7 @@ public class MEventHandler
 		ResourceLocation granite_polished = new ResourceLocation("minecraft:polished_granite");
 		ResourceLocation diorite_polished = new ResourceLocation("minecraft:polished_diorite");
 		ResourceLocation andesite_polished = new ResourceLocation("minecraft:polished_andesite");
+		ResourceLocation lit_pumpkin = new ResourceLocation("minecraft:lit_pumpkin");
 		ResourceLocation cookie = new ResourceLocation("minecraft:cookie");
     	ResourceLocation bread = new ResourceLocation("minecraft:bread");
     	ResourceLocation pumpkinPie = new ResourceLocation("minecraft:pumpkin_pie");
@@ -70,6 +71,7 @@ public class MEventHandler
     	modRegistry.remove(granite_polished);
     	modRegistry.remove(diorite_polished);
     	modRegistry.remove(andesite_polished);
+    	modRegistry.remove(lit_pumpkin);
     	modRegistry.remove(cookie);
         modRegistry.remove(bread);
         modRegistry.remove(pumpkinPie);

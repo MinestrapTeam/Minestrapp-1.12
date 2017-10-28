@@ -44,6 +44,7 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 		}
 		
 		this.isOn = isOn;
+		this.doesDropItem = true;
 	}
 
 	public int tickRate(World worldIn)
