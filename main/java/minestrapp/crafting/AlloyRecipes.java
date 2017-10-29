@@ -24,8 +24,6 @@ public class AlloyRecipes {
 	private static final AlloyRecipes SMELTING = new AlloyRecipes();
 	private final Table<ItemStack, ItemStack, ItemStack> alloySmelting = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
 	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
-	private ItemStack first;
-	private ItemStack baseItem;
 
 	public static AlloyRecipes instance() {
 		return SMELTING;
