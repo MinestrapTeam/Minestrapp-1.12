@@ -40,6 +40,7 @@ import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMHugeMushroom;
 import minestrapp.block.BlockMPath;
+import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
@@ -129,6 +130,10 @@ public class MBlocks
 	public static Block permafrost_farmland;
 	public static Block mud;
 	public static Block dried_mud;
+	
+	//Wood
+	public static Block planks;
+	public static Block mossy_m_planks;
 	
 	//Stone
 	public static Block mud_bricks;
@@ -297,6 +302,10 @@ public class MBlocks
 		register(mud = new BlockMud());
 		register(dried_mud = new BlockDriedMud());
 		
+		//Wood
+		register(planks = new BlockMPlanks("m_planks"), new ItemBlockMultistate(planks));
+		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
+		
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
 		register(decor_stone = new BlockDecorativeStones(), new ItemBlockMultistate(decor_stone));
@@ -464,6 +473,11 @@ public class MBlocks
 		{
 			initModel(clay_soil, i, "clay_soil_" + BlockMDirt.DirtType.values()[i].getName());
 			initModel(permafrost, i, "permafrost_" + BlockMDirt.DirtType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockMPlanks.EnumType.values().length ; i++)
+		{
+			initModel(planks, i, "m_planks_" + BlockMPlanks.EnumType.values()[i].getName());
+			initModel(mossy_m_planks, i, "m_planks_mossy_" + BlockMPlanks.EnumType.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockDecorativeStones.DecorStoneType.values().length ; i++)
 		{

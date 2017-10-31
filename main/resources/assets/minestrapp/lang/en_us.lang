@@ -20,7 +20,6 @@ tile.mana_bush.name=Mana Bush
 tile.voidberry_bush.name=Voidberry Bush
 
 ## Soil ##
-
 tile.cold_sand_default.name=Cold Sand
 tile.cold_sand_red.name=Cold Red Sand
 tile.permafrost_default.name=Permafrost
@@ -37,6 +36,14 @@ tile.clay_grass_path.name=Clay Grass Path
 tile.clay_farmland.name=Clay Farmland
 tile.mud.name=Mud
 tile.dried_mud.name=Dried Mud
+
+## Wood ##
+tile.m_planks_redwood.name=Redwood Planks
+tile.m_planks_mossy_redwood.name=Mossy Redwood Planks
+tile.m_planks_frozen_oak.name=Frozen Oak Planks
+tile.m_planks_mossy_frozen_oak.name=Mossy Frozen Oak Planks
+tile.m_planks_charwood.name=Charwood Planks
+tile.m_planks_mossy_charwood.name=Smoldering Charwood Planks
 
 ## Misc. Stone##
 tile.mud_bricks.name=Mud Bricks
@@ -632,6 +639,7 @@ entity.LumpGoat.name=Lump Goat
 
 itemGroup.Plants=Minestrapp Plants
 itemGroup.EnvironmentalBlocks=Minestrapp Environmental Blocks
+itemGroup.Wood=Minestrapp Wood Blocks
 itemGroup.Stone=Minestrapp Stone Blocks
 itemGroup.Ores=Minestrapp Ores
 itemGroup.ResourceBlocks=Minestrapp Resource Blocks

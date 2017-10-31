@@ -17,6 +17,8 @@ public class OreDictRegistry
 		OreDictionary.registerOre("grass", MBlocks.lichen);
 		OreDictionary.registerOre("dirt", MBlocks.mud);
 		OreDictionary.registerOre("dirt", MBlocks.dried_mud);
+		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.planks, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.mossy_m_planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("stone", new ItemStack(MBlocks.stone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("cobblestone", new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreCoal", new ItemStack(MBlocks.ore_coal, 1, OreDictionary.WILDCARD_VALUE));

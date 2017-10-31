@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "variant=redwood": [
+            { "model": "minestrapp:planks_redwood_mossy" }
+        ],
+        "variant=frozen_oak": [
+            { "model": "minestrapp:planks_frozen_oak_mossy" }
+        ],
+        "variant=charwood": [
+            { "model": "minestrapp:planks_charwood_smoldering_0" },
+            { "model": "minestrapp:planks_charwood_smoldering_1" },
+            { "model": "minestrapp:planks_charwood_smoldering_2" },
+            { "model": "minestrapp:planks_charwood_smoldering_3" }
+        ]
+    }
+}

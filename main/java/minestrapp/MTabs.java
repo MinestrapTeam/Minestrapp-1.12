@@ -38,6 +38,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs wood = new CreativeTabs("Wood")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Wood";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(Item.getItemFromBlock(MBlocks.planks));
+		}
+	};
+	
 	public static CreativeTabs stone = new CreativeTabs("Stone")
 	{
 		@Override
