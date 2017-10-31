@@ -11,6 +11,7 @@ import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockCrusher;
 import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
 import minestrapp.block.BlockDoubleMiscStoneSlab1;
@@ -250,6 +251,8 @@ public class MBlocks
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
 	public static Block alloy;
+	public static Block crusher;
+
 	
 	//Crops
 	public static Block crop_withered;
@@ -418,6 +421,7 @@ public class MBlocks
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
+		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		

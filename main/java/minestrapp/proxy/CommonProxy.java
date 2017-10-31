@@ -5,6 +5,7 @@ import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
+import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.crafting.FurnaceRecipes;
 import minestrapp.crafting.MCraftingManager;
@@ -54,6 +55,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, "TileEntityStoneCutter");
 		
 		GameRegistry.registerTileEntity(TileEntityAlloy.class, "TileEntityAlloy");
+		
+		GameRegistry.registerTileEntity(TileEntityCrusher.class, "TileEntityCrusher");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		
