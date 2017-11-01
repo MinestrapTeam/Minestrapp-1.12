@@ -408,6 +408,7 @@ tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter
 tile.alloy.name=Alloy Furnace
+tile.crusher.name=Crusher
 
 
 ##### Items #####
