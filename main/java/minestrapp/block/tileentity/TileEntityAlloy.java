@@ -205,8 +205,8 @@ public class TileEntityAlloy extends TileEntity implements IInventory, ITickable
 			if(result.isEmpty()){
 				return false;
 			}
-			else if(this.inventory.get(0).getCount() != AlloyRecipes.instance().getSlotOne((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()||
-					this.inventory.get(1).getCount() != AlloyRecipes.instance().getSlotTwo((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()){
+			else if(this.inventory.get(0).getCount() < AlloyRecipes.instance().getSlotOne((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()||
+					this.inventory.get(1).getCount() < AlloyRecipes.instance().getSlotTwo((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()){
 				return false;
 			}
 			
