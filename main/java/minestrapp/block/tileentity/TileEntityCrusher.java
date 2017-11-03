@@ -3,7 +3,6 @@ package minestrapp.block.tileentity;
 import java.util.Random;
 
 import minestrapp.block.BlockCrusher;
-import minestrapp.crafting.AlloyRecipes;
 import minestrapp.crafting.CrusherRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -206,6 +205,9 @@ public class TileEntityCrusher extends TileEntity implements IInventory, ITickab
 		else {
 			ItemStack result = CrusherRecipes.instance().getCrusherResult((ItemStack)this.inventory.get(0));
 			if(result.isEmpty()){
+				return false;
+			}
+			else if(this.inventory.get(0).getCount() < CrusherRecipes.instance().getSlotOne((ItemStack)this.inventory.get(0)).getCount()){
 				return false;
 			}
 			else {
