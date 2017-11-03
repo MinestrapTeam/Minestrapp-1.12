@@ -205,12 +205,18 @@ public class TileEntityAlloy extends TileEntity implements IInventory, ITickable
 			if(result.isEmpty()){
 				return false;
 			}
+			else if(this.inventory.get(0).getCount() != AlloyRecipes.instance().getSlotOne((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()||
+					this.inventory.get(1).getCount() != AlloyRecipes.instance().getSlotTwo((ItemStack)this.inventory.get(0), (ItemStack)this.inventory.get(1)).getCount()){
+				return false;
+			}
+			
 			else {
 				ItemStack output = (ItemStack)this.inventory.get(3);
 				if(output.isEmpty()) return true;
 				if(!output.isItemEqual(result)) return false;
 				int res = output.getCount() + result.getCount();
 				return res <= getInventoryStackLimit() && res <= output.getMaxStackSize();
+				
 			}
 		}
 	}
@@ -218,6 +224,7 @@ public class TileEntityAlloy extends TileEntity implements IInventory, ITickable
 	public void smeltItem() {
 		if(this.canSmelt()) {
 			ItemStack input1 = (ItemStack)this.inventory.get(0);
+			ItemStack input1temp = input1.copy();
 			ItemStack input2 = (ItemStack)this.inventory.get(1);
 			ItemStack result = AlloyRecipes.instance().getAlloyResult(input1, input2);
 			ItemStack output = (ItemStack)this.inventory.get(3);
@@ -228,7 +235,7 @@ public class TileEntityAlloy extends TileEntity implements IInventory, ITickable
 				output.grow(result.getCount());
 			
 			input1.shrink(AlloyRecipes.instance().getSlotOne(input1, input2).getCount());
-			input2.shrink(AlloyRecipes.instance().getSlotTwo(input1, input2).getCount());
+			input2.shrink(AlloyRecipes.instance().getSlotTwo(input1temp, input2).getCount());
 		}
 	}
 	
