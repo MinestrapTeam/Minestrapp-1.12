@@ -32,13 +32,13 @@ public class GuiBarrel extends GuiContainer{
 		GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
 		mc.getTextureManager().bindTexture(BG_TEXTURE);
 		int x = (width - xSize) / 2;
-		int y = (height - ySize) / 2;
+		int y = (height - ySize -20) / 2;
 		drawTexturedModalRect(x, y, 0, 0, xSize, this.inventoryRows * 18 + 17 + 96);
 	}
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		this.fontRenderer.drawString("Barrel", 8, 6, 4210752);
-		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize - 3 * 18 - 19, 4210752);
+		this.fontRenderer.drawString("Barrel", 8, 6 -10, 4210752);
+		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, this.ySize - 3 * 18 - 19 -10, 4210752);
 	}
 }

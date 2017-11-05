@@ -18,7 +18,7 @@ public class ContainerBarrel extends Container{
 		{
 			for (int k = 0; k < 9; ++k)
 			{
-				addSlotToContainer(new SlotItemHandler(inventory, k + j * 9 , 8 + k * 18, 18 + j * 18){
+				addSlotToContainer(new SlotItemHandler(inventory, k + j * 9, 8 + k * 18, 18 + j * 18 -10){
 					@Override
 					public void onSlotChanged() {
 						barrel.markDirty();
@@ -29,12 +29,12 @@ public class ContainerBarrel extends Container{
 		}
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 9; j++) {
-				addSlotToContainer(new Slot(playerInv, j + i * 9 + 9, 8 + j * 18, 104 + i * 18));
+				addSlotToContainer(new Slot(playerInv, j + i * 9 + 9, 8 + j * 18, 104 + i * 18 -10));
 			}
 		}
 	
 		for (int k = 0; k < 9; k++) {
-			addSlotToContainer(new Slot(playerInv, k, 8 + k * 18, 162));
+			addSlotToContainer(new Slot(playerInv, k , 8 + k * 18, 162 -10));
 		}
 	}
 	@Override
