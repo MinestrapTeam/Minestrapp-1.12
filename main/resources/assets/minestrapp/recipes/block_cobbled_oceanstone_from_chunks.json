@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_chunks",
+            "data": 4
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_cobblestone",
+        "data": 7
+     }  
+}

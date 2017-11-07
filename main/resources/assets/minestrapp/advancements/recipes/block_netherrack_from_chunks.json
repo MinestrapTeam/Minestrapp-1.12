@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_netherrack_from_chunks"
+    ]
+  },
+  "criteria": {
+    "has_netherrack_chunk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_chunks",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_netherrack_from_chunks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_netherrack_chunk",
+      "has_the_recipe"
+    ]
+  ]
+}

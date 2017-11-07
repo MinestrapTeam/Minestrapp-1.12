@@ -415,6 +415,20 @@ tile.crusher.name=Crusher
 
 ## Minerals ##
 item.mud_ball.name=Mud Ball
+item.m_chunks_0.name=Red Rock Chunk
+item.m_chunks_1.name=Stone Chunk
+item.m_chunks_2.name=Coldstone Chunk
+item.m_chunks_3.name=Icestone Chunk
+item.m_chunks_4.name=Oceanstone Chunk
+item.m_chunks_5.name=Netherrack Chunk
+item.m_chunks_6.name=End Stone Chunk
+item.m_chunks_7.name=Copper Chunk
+item.m_chunks_8.name=Tin Chunk
+item.m_chunks_9.name=Iron Chunk
+item.m_chunks_10.name=Gold Chunk
+item.m_chunks_11.name=Torite Chunk
+item.m_chunks_12.name=Titanium Chunk
+item.m_chunks_13.name=Dimensium Chunk
 item.irradium.name=Irradium
 item.m_ingot_0.name=Copper Ingot
 item.m_ingot_1.name=Tin Ingot
