@@ -1,0 +1,29 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "bpb",
+        "bgb",
+        "oto"
+    ],
+    "key": {        
+        "b": {
+            "item": "minestrapp:block_bronze"
+        },
+        "p": {
+            "item": "minecraft:piston"
+        },
+        "g": {
+            "item": "minecraft:glass_pane"
+        },
+        "o": {
+            "item": "minecraft:obsidian"
+        },
+        "t": {
+            "item": "minestrapp:m_ingot",
+            "data": 5
+        }
+     },
+     "result": {
+        "item": "minestrapp:crusher"
+     }  
+}
