@@ -109,7 +109,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(Item.getItemFromBlock(MBlocks.bauble_sunstone), 1, 0);
+			return new ItemStack(Item.getItemFromBlock(MBlocks.candle), 1, 0);
 		}
 	};
 	

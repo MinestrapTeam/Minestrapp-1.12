@@ -1,0 +1,8 @@
+{
+    "parent": "block/piston_head",
+    "textures": {
+        "unsticky": "minestrapp:blocks/utility/magnet_piston/piston_top_magnet",
+        "side": "minestrapp:blocks/utility/magnet_piston/piston_side_magnet",
+        "platform": "minestrapp:blocks/utility/magnet_piston/piston_top_magnet"
+    }
+}

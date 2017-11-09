@@ -403,6 +403,7 @@ tile.pumpkin_smashed.name=Smashed Jack-o'-Lantern
 tile.basket.name=Basket
 tile.glacieric_ice.name=Glacieric Ice
 tile.block_irradiant_sunstone.name=Irradiant Sunstone
+tile.magnet_piston.name=Magnet Piston
 tile.block_irradium_insulated.name=Insulated Block of Irradium
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
@@ -439,6 +440,7 @@ item.m_ingot_5.name=Titanium Ingot
 item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
+item.m_ingot_9.name=Conductive Copper Ingot
 item.salt.name=Salt
 item.m_gem_0.name=Sunstone Shard
 item.m_gem_1.name=Desert Quartz
@@ -471,6 +473,7 @@ item.m_tech_component_2.name=Propeller
 item.m_tech_component_3.name=Inert Chip
 item.m_tech_component_4.name=Technological Doodad
 item.m_tech_component_5.name=Advanced Tech Doodad
+item.m_tech_component_6.name=Magnet
 
 ## S H I T T Y  M E M E S ##
 item.health_crystal.name='Health Crystal'

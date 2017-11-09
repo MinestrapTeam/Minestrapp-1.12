@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=down,short=false,type=normal": { "model": "minestrapp:piston_head_magnet", "x": 90 },
+        "facing=up,short=false,type=normal": { "model": "minestrapp:piston_head_magnet", "x": 270 },
+        "facing=north,short=false,type=normal": { "model": "minestrapp:piston_head_magnet" },
+        "facing=south,short=false,type=normal": { "model": "minestrapp:piston_head_magnet", "y": 180 },
+        "facing=west,short=false,type=normal": { "model": "minestrapp:piston_head_magnet", "y": 270 },
+        "facing=east,short=false,type=normal": { "model": "minestrapp:piston_head_magnet", "y": 90 },
+        "facing=down,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet", "x": 90 },
+        "facing=up,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet", "x": 270 },
+        "facing=north,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet" },
+        "facing=south,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet", "y": 180 },
+        "facing=west,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet", "y": 270 },
+        "facing=east,short=true,type=normal": { "model": "minestrapp:piston_head_short_magnet", "y": 90 }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "extended=false,facing=down,strength=3": { "model": "minestrapp:piston_magnet3", "x": 90 },
+        "extended=false,facing=up,strength=3": { "model": "minestrapp:piston_magnet3", "x": 270 },
+        "extended=false,facing=north,strength=3": { "model": "minestrapp:piston_magnet3" },
+        "extended=false,facing=south,strength=3": { "model": "minestrapp:piston_magnet3", "y": 180 },
+        "extended=false,facing=west,strength=3": { "model": "minestrapp:piston_magnet3", "y": 270 },
+        "extended=false,facing=east,strength=3": { "model": "minestrapp:piston_magnet3", "y": 90 },
+        "extended=true,facing=down,strength=3": { "model": "minestrapp:piston_extended_magnet3", "x": 90 },
+        "extended=true,facing=up,strength=3": { "model": "minestrapp:piston_extended_magnet3", "x": 270 },
+        "extended=true,facing=north,strength=3": { "model": "minestrapp:piston_extended_magnet3" },
+        "extended=true,facing=south,strength=3": { "model": "minestrapp:piston_extended_magnet3", "y": 180 },
+        "extended=true,facing=west,strength=3": { "model": "minestrapp:piston_extended_magnet3", "y": 270 },
+        "extended=true,facing=east,strength=3": { "model": "minestrapp:piston_extended_magnet3", "y": 90 }
+    }
+}

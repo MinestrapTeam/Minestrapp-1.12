@@ -8,6 +8,8 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.BlockMGrass;
 import minestrapp.gui.MGuiHandler;
 import minestrapp.mobs.registry.MobRegistry;
+import minestrapp.tileentity.TileEntityMagnetPiston;
+import minestrapp.tileentity.renderer.TileEntityMagnetPistonRenderer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -20,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -35,7 +38,7 @@ public class ClientProxy extends CommonProxy
 		super.preInit(event);
 		MBlocks.registerRenders();
 		MItems.registerRenders();
-
+		registerRenderers();
 	}
 	
 	public void init(FMLInitializationEvent event)
@@ -92,4 +95,10 @@ public class ClientProxy extends CommonProxy
 		
 		blockcolors.registerBlockColorHandler(mGrassColorHandler, MBlocks.clay_grass);
 	}
+	
+	public static void registerRenderers()
+	{
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagnetPiston.class, new TileEntityMagnetPistonRenderer());
+	}
+
 }
