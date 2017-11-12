@@ -33,10 +33,6 @@ import net.minecraft.world.World;
 public class BlockMagnetPistonMoving extends BlockPistonMoving
 //Credit to crazysnailboy for all code.
 {
-
-//	public static final PropertyDirection FACING = BlockMagnetPistonExtension.FACING;
-//	public static final PropertyEnum<net.minecraft.block.BlockPistonExtension.EnumPistonType> TYPE = BlockMagnetPistonExtension.TYPE;
-
 	public BlockMagnetPistonMoving()
 	{
 		super();
@@ -130,16 +126,6 @@ public class BlockMagnetPistonMoving extends BlockPistonMoving
 	@Override
 	public void dropBlockAsItemWithChance(World world, BlockPos pos, IBlockState state, float chance, int fortune)
 	{
-//        if (false && !world.isRemote) // Forge: Noop this out
-//        {
-//            TileEntityMagnetPiston TileEntityMagnetPiston = this.getTilePistonAt(world, pos);
-//
-//            if (TileEntityMagnetPiston != null)
-//            {
-//                IBlockState iblockstate = TileEntityMagnetPiston.getPistonState();
-//                iblockstate.getBlock().dropBlockAsItem(world, pos, iblockstate, 0);
-//            }
-//        }
 		super.dropBlockAsItemWithChance(world, pos, state, 1, fortune); // mimic vanilla behavior from above and ignore chance
 	}
 

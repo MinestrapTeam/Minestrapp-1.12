@@ -13,7 +13,6 @@ import minestrapp.crafting.OreDictRegistry;
 import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
 import minestrapp.tileentity.TileEntityMagnetPiston;
-import minestrapp.tileentity.TileEntityPiston;
 import minestrapp.tileentity.TileEntityVessel;
 import minestrapp.worldgen.MOreGen;
 import net.minecraft.item.crafting.CraftingManager;
@@ -61,8 +60,6 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityCrusher.class, "TileEntityCrusher");
 		
 		GameRegistry.registerTileEntity(TileEntityMagnetPiston.class, "TileEntityMagnetPiston");
-		
-		GameRegistry.registerTileEntity(TileEntityPiston.class, "TileEntityPiston");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

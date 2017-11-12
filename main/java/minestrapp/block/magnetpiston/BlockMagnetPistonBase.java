@@ -169,9 +169,7 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 
 			worldIn.setBlockState(pos, MBlocks.magnet_piston_extension.getDefaultState().withProperty(BlockMagnetPistonMoving.FACING, enumfacing).withProperty(BlockMagnetPistonMoving.TYPE, this.isSticky ? EnumPistonType.STICKY : EnumPistonType.DEFAULT), 3);
 			worldIn.setTileEntity(pos, BlockMagnetPistonMoving.createTilePiston(this.getStateFromMeta(param), enumfacing, false, true));
-
-//			if (this.isSticky)
-//			{
+			
 			BlockPos blockpos = pos.add(enumfacing.getFrontOffsetX() * 2, enumfacing.getFrontOffsetY() * 2, enumfacing.getFrontOffsetZ() * 2);
 			IBlockState iblockstate = worldIn.getBlockState(blockpos);
 			Block block = iblockstate.getBlock();
@@ -195,11 +193,6 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 			{
 				this.doMove(worldIn, pos, enumfacing, false);
 			}
-//			}
-//			else
-//			{
-//				worldIn.setBlockToAir(pos.offset(enumfacing));
-//			}
 
 			worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_PISTON_CONTRACT, SoundCategory.BLOCKS, 0.5F, worldIn.rand.nextFloat() * 0.15F + 0.6F);
 		}
@@ -396,4 +389,12 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 	{
 		return Item.getItemFromBlock(MBlocks.magnet_piston_1);
 	}
+	
+	public EnumPushReaction getMobilityFlag(IBlockState state)
+    {
+		if(state.getValue(EXTENDED).booleanValue() == false)
+			return EnumPushReaction.NORMAL;
+		else
+			return EnumPushReaction.BLOCK;
+    }
 }

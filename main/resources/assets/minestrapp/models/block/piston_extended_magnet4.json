@@ -1,8 +1,8 @@
 {
     "parent": "block/piston_extended",
     "textures": {
-        "bottom": "blocks/piston_bottom",
+        "bottom": "minestrapp:blocks/utility/magnet_piston/piston_bottom_magnet",
         "side": "minestrapp:blocks/utility/magnet_piston/piston_side_magnet4",
-        "inside": "blocks/piston_inner"
+        "inside": "minestrapp:blocks/utility/magnet_piston/piston_inside_magnet"
     }
 }

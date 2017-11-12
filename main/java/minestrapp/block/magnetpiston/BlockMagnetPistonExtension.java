@@ -2,6 +2,9 @@ package minestrapp.block.magnetpiston;
 
 import minestrapp.MBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPistonBase;
+import net.minecraft.block.BlockPistonExtension;
+import net.minecraft.block.BlockPistonExtension.EnumPistonType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
