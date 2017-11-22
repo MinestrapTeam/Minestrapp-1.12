@@ -1,7 +1,21 @@
 package minestrapp.item.tools;
 
+import minestrapp.MItems;
 import minestrapp.MTabs;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class MPickaxe extends ItemPickaxe
 {
@@ -12,4 +26,44 @@ public class MPickaxe extends ItemPickaxe
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.tools);
 	}
+	
+	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
+    {
+        if(this.toolMaterial == MItems.BLAZIUM)
+        {
+        	target.setFire(4);
+        }
+        return super.hitEntity(stack, target, attacker);
+    }
+    
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+    	if(this.toolMaterial == MItems.BLAZIUM && super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ) == EnumActionResult.PASS)
+    	{
+	        pos = pos.offset(facing);
+	        ItemStack itemstack = player.getHeldItem(hand);
+	
+	        if (!player.canPlayerEdit(pos, facing, itemstack))
+	        {
+	            return EnumActionResult.FAIL;
+	        }
+	        else
+	        {
+	            if (worldIn.isAirBlock(pos))
+	            {
+	                worldIn.playSound(player, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+	                worldIn.setBlockState(pos, Blocks.FIRE.getDefaultState(), 11);
+	            }
+	
+	            if (player instanceof EntityPlayerMP)
+	            {
+	                CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+	            }
+	
+	            itemstack.damageItem(4, player);
+	            return EnumActionResult.SUCCESS;
+	        }
+    	}
+    	return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    }
 }

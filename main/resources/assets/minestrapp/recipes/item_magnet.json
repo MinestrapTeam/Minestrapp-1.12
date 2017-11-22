@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "r r",
+        "i i",
+        " i "
+    ],
+    "key": {        
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "dustRedstone"
+        },
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 6
+     }  
+}

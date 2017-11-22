@@ -8,7 +8,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:saddle",
+                    "name": "minecraft:lead",
                     "weight": 20
                 },
                 {
@@ -44,17 +44,17 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:golden_horse_armor",
+                    "name": "minecraft:chainmail_chestplate",
                     "weight": 10
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_horse_armor",
+                    "name": "minecraft:diamond_hoe",
                     "weight": 15
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:diamond_horse_armor",
+                    "name": "minecraft:diamond_chestplate",
                     "weight": 5
                 },
                 {

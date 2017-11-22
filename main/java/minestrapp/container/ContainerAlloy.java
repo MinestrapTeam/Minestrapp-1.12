@@ -101,12 +101,12 @@ public class ContainerAlloy extends Container {
 				
 				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
 				
-				if(!AlloyRecipes.instance().getAlloyResult(stack1, slot1.getStack()).isEmpty())
-					if(!this.mergeItemStack(stack1, 0, 2, false))
-						return ItemStack.EMPTY;
-				else if(TileEntityAlloy.isItemFuel(stack1))
-					if(!this.mergeItemStack(stack1, 2, 3, false))
-						return ItemStack.EMPTY;
+				if(!TileEntityAlloy.isItemFuel(stack1) && !this.mergeItemStack(stack1, 0, 2, false))
+					return ItemStack.EMPTY;
+				else if(TileEntityAlloy.isItemFuel(stack1) && !this.mergeItemStack(stack1, 2, 3, false))
+					return ItemStack.EMPTY;
+				else if(TileEntityAlloy.isItemFuel(stack1) && !this.mergeItemStack(stack1, 0, 2, false))
+					return ItemStack.EMPTY;
 				else if(index >= 4 && index < 31)
 					if(!this.mergeItemStack(stack1, 31, 40, false))
 						return ItemStack.EMPTY;

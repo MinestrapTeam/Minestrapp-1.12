@@ -6,13 +6,20 @@ import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.worldgen.MWorldDecorator;
-import net.minecraft.block.BlockFlower;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.BlockTallGrass;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntry;
@@ -21,12 +28,9 @@ import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
-import net.minecraft.world.storage.loot.conditions.LootConditionManager;
-import net.minecraft.world.storage.loot.functions.LootFunction;
-import net.minecraft.world.storage.loot.functions.LootingEnchantBonus;
-import net.minecraft.world.storage.loot.functions.SetCount;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -36,6 +40,8 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 @EventBusSubscriber
 public class MEventHandler
 {
+	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
+	
 	@SubscribeEvent
     public static void populateChunks (PopulateChunkEvent.Post event)
 	{
@@ -83,9 +89,35 @@ public class MEventHandler
     }
 	
 	@SubscribeEvent
+	public static void onLivingAttack (LivingAttackEvent event)
+	{
+		if("mob".equals(event.getSource().damageType) || "player".equals(event.getSource().damageType))
+		{
+			if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET) != null)
+			{
+				if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == MItems.fire_helm && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == MItems.fire_chest && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == MItems.fire_legs && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == MItems.fire_feet)
+				{
+					event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
+					Entity living = event.getSource().getTrueSource();
+					living.setFire(10);
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent
 	public static void onBlockBreak (BlockEvent.HarvestDropsEvent event)
 	{
-		if(event.getState() == Blocks.RED_FLOWER.getStateFromMeta(2) && !event.isSilkTouching())
+		Item tool = null;
+		if(event.getHarvester() != null)
+			tool = event.getHarvester().getHeldItem(EnumHand.MAIN_HAND).getItem();
+		ItemStack smeltStack = furnaceRecipes.getSmeltingResult(new ItemStack(event.getState().getBlock(), 1, event.getState().getBlock().getMetaFromState(event.getState())));
+		if(tool != null && (tool == MItems.fire_axe || tool == MItems.fire_dagger || tool == MItems.fire_hoe || tool == MItems.fire_pickaxe || tool == MItems.fire_shovel || tool == MItems.fire_sword) && smeltStack != ItemStack.EMPTY && smeltStack.getItem() != event.getDrops().get(0).getItem())
+		{
+			event.getDrops().clear();
+			event.getDrops().add(new ItemStack(smeltStack.getItem(), smeltStack.getCount(), smeltStack.getMetadata()));
+		}
+		else if(event.getState() == Blocks.RED_FLOWER.getStateFromMeta(2) && !event.isSilkTouching())
 		{
 			int chance = event.getWorld().rand.nextInt(100);
 			if(chance <= 6 + (3 * (1 + event.getFortuneLevel())))
@@ -198,12 +230,128 @@ public class MEventHandler
 			}
 		}
 			
-		//TODO: Figure out the fuck dungeon loot works. It's a goddamn mystery.
 	    if (event.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON))
 	    {
 	    	LootEntry basic_dungeon = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_basic_dungeon"), 1, 1, new LootCondition[0], "m_basic_loot");
 
 	    	LootPool pool = new LootPool(new LootEntry[] {basic_dungeon}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_basic_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_ABANDONED_MINESHAFT))
+	    {
+	    	LootEntry mineshaft = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_abandoned_mineshaft"), 1, 1, new LootCondition[0], "m_mineshaft_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {mineshaft}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_mineshaft_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_DESERT_PYRAMID))
+	    {
+	    	LootEntry pyramid = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_desert_temple"), 1, 1, new LootCondition[0], "m_pyramid_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {pyramid}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_pyramid_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_END_CITY_TREASURE))
+	    {
+	    	LootEntry endCity = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_end_city"), 1, 1, new LootCondition[0], "m_end_city_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {endCity}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_end_city_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_IGLOO_CHEST))
+	    {
+	    	LootEntry igloo = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_igloo"), 1, 1, new LootCondition[0], "m_igloo_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {igloo}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_igloo_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_JUNGLE_TEMPLE))
+	    {
+	    	LootEntry jungleTemple = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_jungle_temple"), 1, 1, new LootCondition[0], "m_jungle_temple_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {jungleTemple}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_jungle_temple_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_JUNGLE_TEMPLE_DISPENSER))
+	    {
+	    	LootEntry jungleDispenser = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_jungle_dispenser"), 1, 1, new LootCondition[0], "m_jungle_dispenser_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {jungleDispenser}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_jungle_dispenser_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_NETHER_BRIDGE))
+	    {
+	    	LootEntry netherFortress = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_nether_fortress"), 1, 1, new LootCondition[0], "m_nether_fortress_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {netherFortress}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_nether_fortress_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_SPAWN_BONUS_CHEST))
+	    {
+	    	LootEntry bonusChest = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_bonus_chest"), 1, 1, new LootCondition[0], "m_bonus_chest_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {bonusChest}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_bonus_chest_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_STRONGHOLD_CORRIDOR))
+	    {
+	    	LootEntry corridor = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_stronghold_corridor"), 1, 1, new LootCondition[0], "m_stronghold_corridor_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {corridor}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_stronghold_corridor_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_STRONGHOLD_CROSSING))
+	    {
+	    	LootEntry crossing = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_stronghold_crossing"), 1, 1, new LootCondition[0], "m_stronghold_crossing_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {crossing}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_stronghold_crossing_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_STRONGHOLD_LIBRARY))
+	    {
+	    	LootEntry library = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_stronghold_library"), 1, 1, new LootCondition[0], "m_stronghold_library_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {library}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_stronghold_library_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_VILLAGE_BLACKSMITH))
+	    {
+	    	LootEntry blacksmith = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_blacksmith"), 1, 1, new LootCondition[0], "m_blacksmith_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {blacksmith}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_blacksmith_pool");
+
+	    	event.getTable().addPool(pool);
+	    }
+	    
+	    if (event.getName().equals(LootTableList.CHESTS_WOODLAND_MANSION))
+	    {
+	    	LootEntry mansion = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/m_woodland_mansion"), 1, 1, new LootCondition[0], "m_woodland_mansion_loot");
+
+	    	LootPool pool = new LootPool(new LootEntry[] {mansion}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "m_woodland_mansion_pool");
 
 	    	event.getTable().addPool(pool);
 	    }

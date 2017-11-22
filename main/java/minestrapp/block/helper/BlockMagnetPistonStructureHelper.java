@@ -34,7 +34,7 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 		if(extending)
 			this.strength = 12;
 		else
-			this.strength = strength;
+			this.strength = strength * 3;
 		this.extending = extending;
 
 		if (extending)

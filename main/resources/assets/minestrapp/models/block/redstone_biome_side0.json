@@ -1,0 +1,6 @@
+{
+    "parent": "block/redstone_side",
+    "textures": {
+        "line": "minestrapp:blocks/utility/biome_redstone/biome_dust_line0"
+    }
+}

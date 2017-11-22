@@ -5,8 +5,7 @@ import javax.annotation.Nullable;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
-import minestrapp.block.BlockMGrass;
-import minestrapp.gui.MGuiHandler;
+import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.mobs.registry.MobRegistry;
 import minestrapp.tileentity.TileEntityMagnetPiston;
 import minestrapp.tileentity.renderer.TileEntityMagnetPistonRenderer;
@@ -15,7 +14,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -25,9 +23,6 @@ import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -47,6 +42,7 @@ public class ClientProxy extends CommonProxy
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.cold_sand), new ResourceLocation(Minestrapp5.MODID, "cold_sand_default"), new ResourceLocation(Minestrapp5.MODID, "cold_sand_red"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.clay_soil), new ResourceLocation(Minestrapp5.MODID, "clay_soil_default"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_course"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_podzol"));	
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.permafrost), new ResourceLocation(Minestrapp5.MODID, "permafrost_default"), new ResourceLocation(Minestrapp5.MODID, "permafrost_course"), new ResourceLocation(Minestrapp5.MODID, "permafrost_podzol"));
+		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.log), new ResourceLocation(Minestrapp5.MODID, "m_log_redwood"), new ResourceLocation(Minestrapp5.MODID, "m_log_frozen_oak"), new ResourceLocation(Minestrapp5.MODID, "m_log_charwood"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.planks), new ResourceLocation(Minestrapp5.MODID, "m_planks_redwood"), new ResourceLocation(Minestrapp5.MODID, "m_planks_frozen_oak"), new ResourceLocation(Minestrapp5.MODID, "m_planks_charwood"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.mossy_m_planks), new ResourceLocation(Minestrapp5.MODID, "m_planks_mossy_redwood"), new ResourceLocation(Minestrapp5.MODID, "m_planks_mossy_frozen_oak"), new ResourceLocation(Minestrapp5.MODID, "m_planks_mossy_charwood"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.decor_stone), new ResourceLocation(Minestrapp5.MODID, "decor_stone_granite_bricks"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_granite_tiles"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_diorite_bricks"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_diorite_tiles"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_andesite_bricks"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_andesite_tiles"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_slate"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_polished_slate"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_slate_bricks"), new ResourceLocation(Minestrapp5.MODID, "decor_stone_slate_tiles"));	
@@ -93,7 +89,31 @@ public class ClientProxy extends CommonProxy
 			return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
 		};
 		
+		final IBlockColor sandyRedstoneColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return BlockBiomeRedstoneWire.colorMultiplier(worldIn.getBlockState(pos).getValue(BlockBiomeRedstoneWire.POWER).intValue(), MBlocks.redstone_sandy);
+		};
+		
+		final IBlockColor frostedRedstoneColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return BlockBiomeRedstoneWire.colorMultiplier(worldIn.getBlockState(pos).getValue(BlockBiomeRedstoneWire.POWER).intValue(), MBlocks.redstone_frosted);
+		};
+		
+		final IBlockColor icyRedstoneColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return BlockBiomeRedstoneWire.colorMultiplier(worldIn.getBlockState(pos).getValue(BlockBiomeRedstoneWire.POWER).intValue(), MBlocks.redstone_icy);
+		};
+		
+		final IBlockColor brinyRedstoneColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return BlockBiomeRedstoneWire.colorMultiplier(worldIn.getBlockState(pos).getValue(BlockBiomeRedstoneWire.POWER).intValue(), MBlocks.redstone_briny);
+		};
+		
 		blockcolors.registerBlockColorHandler(mGrassColorHandler, MBlocks.clay_grass);
+		blockcolors.registerBlockColorHandler(sandyRedstoneColorHandler, MBlocks.redstone_sandy);
+		blockcolors.registerBlockColorHandler(frostedRedstoneColorHandler, MBlocks.redstone_frosted);
+		blockcolors.registerBlockColorHandler(icyRedstoneColorHandler, MBlocks.redstone_icy);
+		blockcolors.registerBlockColorHandler(brinyRedstoneColorHandler, MBlocks.redstone_briny);
 	}
 	
 	public static void registerRenderers()

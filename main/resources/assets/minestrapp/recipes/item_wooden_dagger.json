@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         " x",
         "i "
@@ -9,8 +9,8 @@
             "item": "minecraft:stick"
         },
         "x": {
-            "item": "minecraft:planks",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
         }
      },
      "result": {

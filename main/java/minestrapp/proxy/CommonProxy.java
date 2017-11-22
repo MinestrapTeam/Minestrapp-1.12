@@ -43,6 +43,19 @@ public class CommonProxy
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/witch/wand"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/candy"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_basic_dungeon"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_abandoned_mineshaft"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_desert_temple"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_end_city"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_igloo"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_jungle_temple"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_jungle_dispenser"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_nether_fortress"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_bonus_chest"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_corridor"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_crossing"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_library"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_blacksmith"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_woodland_mansion"));
 	}
 	
 	public void init(FMLInitializationEvent event)

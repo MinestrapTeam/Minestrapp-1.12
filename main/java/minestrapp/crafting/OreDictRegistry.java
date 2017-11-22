@@ -21,6 +21,11 @@ public class OreDictRegistry
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.mossy_m_planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("stone", new ItemStack(MBlocks.stone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("cobblestone", new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 1));
+		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 2));
+		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 4));
+		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 6));
+		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 8));
 		OreDictionary.registerOre("oreCoal", new ItemStack(MBlocks.ore_coal, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreCopper", new ItemStack(MBlocks.ore_copper, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreTin", new ItemStack(MBlocks.ore_tin, 1, OreDictionary.WILDCARD_VALUE));
@@ -45,6 +50,10 @@ public class OreDictRegistry
 		OreDictionary.registerOre("blockTitanium", MBlocks.block_titanium);
 		OreDictionary.registerOre("blockBlazium", MBlocks.block_blazium);
 		OreDictionary.registerOre("blockDimensium", MBlocks.block_dimensium);
+		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_sandy);
+		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_frosted);
+		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_icy);
+		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_briny);
 		OreDictionary.registerOre("ingotCopper", new ItemStack(MItems.ingots, 1, 0));
 		OreDictionary.registerOre("ingotTin", new ItemStack(MItems.ingots, 1, 1));
 		OreDictionary.registerOre("ingotBronze", new ItemStack(MItems.ingots, 1, 2));
@@ -62,6 +71,11 @@ public class OreDictRegistry
 		OreDictionary.registerOre("gemBlazium", new ItemStack(MItems.gems, 1, 5));
 		OreDictionary.registerOre("gemGlacierite", new ItemStack(MItems.gems, 1, 6));
 		OreDictionary.registerOre("gemSoul", MItems.gem_soul);
+		OreDictionary.registerOre("plateTin", new ItemStack(MItems.plating, 1, 0));
+		OreDictionary.registerOre("plateBronze", new ItemStack(MItems.plating, 1, 1));
+		OreDictionary.registerOre("plateSteel", new ItemStack(MItems.plating, 1, 2));
+		OreDictionary.registerOre("plateMeurodite", new ItemStack(MItems.plating, 1, 3));
+		OreDictionary.registerOre("magnet", new ItemStack(MItems.tech_components, 1, 6));
 		OreDictionary.registerOre("seedPepper", MItems.pepper_seeds);
 		OreDictionary.registerOre("seedCabbage", MItems.cabbage_seeds);
 		OreDictionary.registerOre("seedCelery", MItems.celery_seeds);

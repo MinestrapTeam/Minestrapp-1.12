@@ -17,7 +17,6 @@ import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
-import minestrapp.item.tools.MFireSword;
 import minestrapp.item.tools.MHoe;
 import minestrapp.item.tools.MPickaxe;
 import minestrapp.item.tools.MShovel;
@@ -87,6 +86,10 @@ public class MItems
 	public static Item titanium_axe;
 	public static Item titanium_shovel;
 	public static Item titanium_hoe;
+	public static Item fire_pickaxe;
+	public static Item fire_axe;
+	public static Item fire_shovel;
+	public static Item fire_hoe;
 	
 	public static Item gold_dagger;
 	public static Item wooden_dagger;
@@ -102,10 +105,11 @@ public class MItems
 	public static Item torite_sword;
 	public static Item torite_dagger;
 	public static Item iron_dagger;
-	public static Item fire_sword;
 	public static Item diamond_dagger;
 	public static Item titanium_sword;
 	public static Item titanium_dagger;
+	public static Item fire_sword;
+	public static Item fire_dagger;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -131,6 +135,10 @@ public class MItems
 	public static Item titanium_chest;
 	public static Item titanium_legs;
 	public static Item titanium_feet;
+	public static Item fire_helm;
+	public static Item fire_chest;
+	public static Item fire_legs;
+	public static Item fire_feet;
 	
 	public static Item health_crystal;
 
@@ -236,6 +244,7 @@ public class MItems
 	public static final ToolMaterial MEURODITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":meurodite", 2, 906, 7F, 2.5F, 16).setRepairItem(new ItemStack(gems, 1, 4));
 	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":torite", 2, 1200, 7F, 3.5F, 30).setRepairItem(new ItemStack(ingots, 1, 4));
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5).setRepairItem(new ItemStack(ingots, 1, 5));
+	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":blazium", 2, 960, 7.5F, 3F, 22).setRepairItem(new ItemStack(ingots, 1, 7));
 	
 	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F).setRepairItem(new ItemStack(ingots, 1, 1));
 	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F).setRepairItem(new ItemStack(ingots, 1, 2));
@@ -243,6 +252,7 @@ public class MItems
 	public static final ArmorMaterial ARMOR_MEURODITE = EnumHelper.addArmorMaterial("meurodite", Minestrapp5.MODID + ":meurodite", 24, new int[]{2, 6, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F).setRepairItem(new ItemStack(gems, 1, 4));
 	public static final ArmorMaterial ARMOR_TORITE = EnumHelper.addArmorMaterial("torite", Minestrapp5.MODID + ":torite", 26, new int[]{2, 6, 7, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.5F).setRepairItem(new ItemStack(ingots, 1, 4));
 	public static final ArmorMaterial ARMOR_TITANIUM = EnumHelper.addArmorMaterial("titanium", Minestrapp5.MODID + ":titanium", 66, new int[]{3, 6, 8, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F).setRepairItem(new ItemStack(ingots, 1, 5));
+	public static final ArmorMaterial ARMOR_BLAZIUM = EnumHelper.addArmorMaterial("blazium", Minestrapp5.MODID + ":blazium", 25, new int[]{2, 5, 6, 3}, 23, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.2F).setRepairItem(new ItemStack(ingots, 1, 7));
 	
 	public static void init()
 	{
@@ -268,8 +278,8 @@ public class MItems
 		
 		//0=Mud Brick
 		register(bricks = new ItemMetaBase("m_bricks", 1).setCreativeTab(MTabs.ingredients));
-		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad
-		register(tech_components = new ItemMetaBase("m_tech_component", 6).setCreativeTab(MTabs.ingredients));
+		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
+		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
 		
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
 
@@ -297,6 +307,10 @@ public class MItems
 		register(titanium_axe = new MAxe(TITANIUM, "titanium_axe", 16.0F, -3.9F));
 		register(titanium_shovel = new MShovel(TITANIUM, "titanium_shovel"));
 		register(titanium_hoe = new MHoe(TITANIUM, "titanium_hoe"));
+		register(fire_pickaxe = new MPickaxe(BLAZIUM, "fire_pickaxe"));
+		register(fire_axe = new MAxe(BLAZIUM, "fire_axe", 9.0F, -3.2F));
+		register(fire_shovel = new MShovel(BLAZIUM, "fire_shovel"));
+		register(fire_hoe = new MHoe(BLAZIUM, "fire_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
 		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
@@ -312,10 +326,11 @@ public class MItems
 		register(meurodite_dagger = new MDagger(MEURODITE, "meurodite_dagger"));
 		register(torite_sword = new MSword(TORITE, "torite_sword"));
 		register(torite_dagger = new MDagger(TORITE, "torite_dagger"));
-		register(fire_sword = new MFireSword("fire_sword"));
 		register(diamond_dagger = new MDagger(Item.ToolMaterial.DIAMOND, "diamond_dagger"));
 		register(titanium_sword = new MSword(TITANIUM, "titanium_sword"));
 		register(titanium_dagger = new MDagger(TITANIUM, "titanium_dagger"));
+		register(fire_sword = new MSword(BLAZIUM, "fire_sword"));
+		register(fire_dagger = new MDagger(BLAZIUM, "fire_dagger"));
 		
 		register(tin_helm = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
@@ -341,6 +356,10 @@ public class MItems
 		register(titanium_chest = new MArmor(ARMOR_TITANIUM, 1, EntityEquipmentSlot.CHEST, "titanium_chest"));
 		register(titanium_legs = new MArmor(ARMOR_TITANIUM, 2, EntityEquipmentSlot.LEGS, "titanium_legs"));
 		register(titanium_feet = new MArmor(ARMOR_TITANIUM, 1, EntityEquipmentSlot.FEET, "titanium_feet"));
+		register(fire_helm = new MArmor(ARMOR_BLAZIUM, 1, EntityEquipmentSlot.HEAD, "fire_helm"));
+		register(fire_chest = new MArmor(ARMOR_BLAZIUM, 1, EntityEquipmentSlot.CHEST, "fire_chest"));
+		register(fire_legs = new MArmor(ARMOR_BLAZIUM, 2, EntityEquipmentSlot.LEGS, "fire_legs"));
+		register(fire_feet = new MArmor(ARMOR_BLAZIUM, 1, EntityEquipmentSlot.FEET, "fire_feet"));
 		
 		register(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
 		register(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));

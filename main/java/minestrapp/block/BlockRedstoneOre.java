@@ -91,7 +91,16 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 	
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Items.REDSTONE;
+		if(state.getValue(VARIANT) == EnumStoneTypeMOnly.RED_ROCK || state.getValue(VARIANT) == EnumStoneTypeMOnly.DEEP_RED_ROCK)
+			return Item.getItemFromBlock(MBlocks.redstone_sandy);
+		else if(state.getValue(VARIANT) == EnumStoneTypeMOnly.COLDSTONE || state.getValue(VARIANT) == EnumStoneTypeMOnly.DEEP_COLDSTONE)
+			return Item.getItemFromBlock(MBlocks.redstone_frosted);
+		else if(state.getValue(VARIANT) == EnumStoneTypeMOnly.ICESTONE || state.getValue(VARIANT) == EnumStoneTypeMOnly.GLACIERROCK)
+			return Item.getItemFromBlock(MBlocks.redstone_icy);
+		else if(state.getValue(VARIANT) == EnumStoneTypeMOnly.OCEANSTONE || state.getValue(VARIANT) == EnumStoneTypeMOnly.DEEP_OCEANSTONE)
+			return Item.getItemFromBlock(MBlocks.redstone_briny);
+		else
+			return Items.REDSTONE;
     }
 	
 	public int quantityDroppedWithBonus(int fortune, Random random)

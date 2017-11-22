@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestrapp:blocks/wood/log_frozen_oak_top",
+        "side": "minestrapp:blocks/wood/log_frozen_oak_side"
+    }
+}

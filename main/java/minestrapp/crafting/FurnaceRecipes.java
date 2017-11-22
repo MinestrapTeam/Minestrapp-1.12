@@ -32,7 +32,15 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(new ItemStack(MItems.chunks, 1, 10), new ItemStack(Items.GOLD_INGOT), 1F);
 		GameRegistry.addSmelting(MBlocks.ore_meurodite, new ItemStack(MItems.gems, 1, 4), 0.9F);
 		GameRegistry.addSmelting(MBlocks.ore_lapis, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()), 0.2F);
-		GameRegistry.addSmelting(MBlocks.ore_redstone, new ItemStack(Items.REDSTONE), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 0), new ItemStack(MBlocks.redstone_sandy), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 1), new ItemStack(MBlocks.redstone_sandy), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 2), new ItemStack(Items.REDSTONE), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 3), new ItemStack(MBlocks.redstone_frosted), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 4), new ItemStack(MBlocks.redstone_frosted), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 5), new ItemStack(MBlocks.redstone_icy), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 6), new ItemStack(MBlocks.redstone_icy), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 7), new ItemStack(MBlocks.redstone_briny), 0.7F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.ore_redstone, 1, 8), new ItemStack(MBlocks.redstone_briny), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_irradium, new ItemStack(MItems.irradium), 0.7F);
 		GameRegistry.addSmelting(MBlocks.ore_torite, new ItemStack(MItems.ingots, 1, 4), 1F);
 		GameRegistry.addSmelting(new ItemStack(MItems.chunks, 1, 11), new ItemStack(MItems.ingots, 1, 4), 1F);

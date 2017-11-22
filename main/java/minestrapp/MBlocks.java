@@ -6,6 +6,7 @@ import java.util.List;
 
 import minestrapp.block.BlockBasket;
 import minestrapp.block.BlockBauble;
+import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
@@ -39,6 +40,7 @@ import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMHugeMushroom;
+import minestrapp.block.BlockMLog;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
@@ -135,6 +137,7 @@ public class MBlocks
 	public static Block dried_mud;
 	
 	//Wood
+	public static Block log;
 	public static Block planks;
 	public static Block mossy_m_planks;
 	
@@ -270,6 +273,10 @@ public class MBlocks
 	public static Block stonecutter;
 	public static Block alloy;
 	public static Block crusher;
+	public static BlockBiomeRedstoneWire redstone_sandy;
+	public static BlockBiomeRedstoneWire redstone_frosted;
+	public static BlockBiomeRedstoneWire redstone_icy;
+	public static BlockBiomeRedstoneWire redstone_briny;
 
 	
 	//Crops
@@ -316,6 +323,7 @@ public class MBlocks
 		register(dried_mud = new BlockDriedMud());
 		
 		//Wood
+		register(log = new BlockMLog().setCreativeTab(MTabs.wood), new ItemBlockMultistate(log));
 		register(planks = new BlockMPlanks("m_planks"), new ItemBlockMultistate(planks));
 		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
 		
@@ -441,10 +449,6 @@ public class MBlocks
 		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(2F).setCreativeTab(MTabs.utility));
 		register(glacieric_ice = new BlockGlaciericIce());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
-		//register(PISTON = new BlockPistonBase(false).setRegistryName("minecraft:piston").setUnlocalizedName("pistonBase"));
-		//register(STICKY_PISTON = new BlockPistonBase(true).setRegistryName("minecraft:sticky_piston").setUnlocalizedName("pistonStickyBase"));
-		//ForgeRegistries.BLOCKS.register(PISTON_HEAD = new BlockPistonExtension().setRegistryName("minecraft:piston_head"));
-		//ForgeRegistries.BLOCKS.register(PISTON_EXTENSION = new BlockPistonMoving().setRegistryName("minecraft:piston_extension"));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
 		register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));
@@ -455,7 +459,10 @@ public class MBlocks
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
-		//register(stonecutter = new BlockStoneCutter().setHardness(3.0F).setCreativeTab(MTabs.utility));
+		register(redstone_sandy = new BlockBiomeRedstoneWire("redstone_sandy", 149F, 67F, 0F));
+		register(redstone_frosted = new BlockBiomeRedstoneWire("redstone_frosted", 140F, 36F, 76F));
+		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
+		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
@@ -499,6 +506,7 @@ public class MBlocks
 		}
 		for(int i = 0 ; i < BlockMPlanks.EnumType.values().length ; i++)
 		{
+			initModel(log, i, "m_log_" + BlockMPlanks.EnumType.values()[i].getName());
 			initModel(planks, i, "m_planks_" + BlockMPlanks.EnumType.values()[i].getName());
 			initModel(mossy_m_planks, i, "m_planks_mossy_" + BlockMPlanks.EnumType.values()[i].getName());
 		}

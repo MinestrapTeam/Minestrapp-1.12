@@ -38,6 +38,9 @@ tile.mud.name=Mud
 tile.dried_mud.name=Dried Mud
 
 ## Wood ##
+tile.m_log_redwood.name=Redwood
+tile.m_log_frozen_oak.name=Frozen Oak Wood
+tile.m_log_charwood.name=Charwood
 tile.m_planks_redwood.name=Redwood Planks
 tile.m_planks_mossy_redwood.name=Mossy Redwood Planks
 tile.m_planks_frozen_oak.name=Frozen Oak Planks
@@ -410,6 +413,10 @@ tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter
 tile.alloy.name=Alloy Furnace
 tile.crusher.name=Crusher
+tile.redstone_sandy.name=Sandy Redstone
+tile.redstone_frosted.name=Frosted Redstone
+tile.redstone_icy.name=Icy Redstone
+tile.redstone_briny.name=Briny Redstone
 
 
 ##### Items #####
@@ -477,7 +484,6 @@ item.m_tech_component_6.name=Magnet
 
 ## S H I T T Y  M E M E S ##
 item.health_crystal.name='Health Crystal'
-item.fire_sword.name=Fire Sword
 
 ## Armor ##
 item.tin_helm.name=Tin Helmet
@@ -504,6 +510,10 @@ item.titanium_helm.name=Titanium Helmet
 item.titanium_chest.name=Titanium Chestplate
 item.titanium_legs.name=Titanium Leggings
 item.titanium_feet.name=Titanium Boots
+item.fire_helm.name=Blazium Helmet
+item.fire_chest.name=Blazium Chestplate
+item.fire_legs.name=Blazium Leggings
+item.fire_feet.name=Blazium Boots
 
 ## Tools ##
 item.copper_pickaxe.name=Copper Pickaxe
@@ -530,6 +540,10 @@ item.titanium_pickaxe.name=Titanium Pickaxe
 item.titanium_axe.name=Titanium Axe
 item.titanium_shovel.name=Titanium Shovel
 item.titanium_hoe.name=Titanium Hoe
+item.fire_pickaxe.name=Blazium Pickaxe
+item.fire_axe.name=Blazium Axe
+item.fire_shovel.name=Blazium Shovel
+item.fire_hoe.name=Blazium Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
@@ -549,6 +563,8 @@ item.iron_dagger.name=Iron Dagger
 item.diamond_dagger.name=Diamond Dagger
 item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
+item.fire_sword.name=Blazium Sword
+item.fire_dagger.name=Blazium Dagger
 
 ##Crops&Food##
 item.blueberry.name=Blueberry

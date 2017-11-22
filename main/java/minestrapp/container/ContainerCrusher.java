@@ -99,7 +99,7 @@ public class ContainerCrusher extends Container {
 			}
 			else if(index != 2 && index != 1 && index != 0) {
 				
-				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+				Slot slot1 = (Slot)this.inventorySlots.get(index);
 				
 				
 				if(!this.mergeItemStack(stack1, 0, 2, false))

@@ -238,7 +238,15 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_lapis, 1, 7), new ItemStack(Items.DYE, 8, EnumDyeColor.BLUE.getDyeDamage()), new ItemStack(MItems.chunks, 1, 4), 40, 0.2F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_lapis, 1, 8), new ItemStack(Items.DYE, 8, EnumDyeColor.BLUE.getDyeDamage()), new ItemStack(MItems.chunks, 1, 4), 40, 0.2F);
 		this.addCrusherRecipe(new ItemStack(Blocks.REDSTONE_ORE), new ItemStack(Items.REDSTONE, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 630), new ItemStack(Items.REDSTONE, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 0), new ItemStack(MBlocks.redstone_sandy, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 1), new ItemStack(MBlocks.redstone_sandy, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 2), new ItemStack(Items.REDSTONE, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 3), new ItemStack(MBlocks.redstone_frosted, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 4), new ItemStack(MBlocks.redstone_frosted, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 5), new ItemStack(MBlocks.redstone_icy, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 6), new ItemStack(MBlocks.redstone_icy, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 7), new ItemStack(MBlocks.redstone_briny, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_redstone, 1, 8), new ItemStack(MBlocks.redstone_briny, 8), new ItemStack(Items.GUNPOWDER), 12, 0.2F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_irradium, 1, 630), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 5, 0.25F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_torite, 1, 630), new ItemStack(MItems.chunks, 2, 11), new ItemStack(MItems.chunks, 1, 10), 12, 0.25F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.sunstone_deposit), new ItemStack(MItems.gems, 3, 0), new ItemStack(MItems.gems, 1, 0), 50, 0.1F);

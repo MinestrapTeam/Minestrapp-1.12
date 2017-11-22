@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "minestrapp:items/weapon/fire_sword"
+        "layer0": "minestrapp:items/weapon/blazium_sword"
     }
 }

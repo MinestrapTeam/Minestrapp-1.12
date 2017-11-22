@@ -1,0 +1,28 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " s ",
+        "cpc",
+        " m "
+    ],
+    "key": {        
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "cobblestoneDeep"
+        },
+        "p": {
+            "item": "minecraft:piston"
+        },
+        "m": {
+            "type": "forge:ore_dict",
+            "ore": "magnet"
+        }
+     },
+     "result": {
+        "item": "minestrapp:magnet_piston1"
+     }  
+}
