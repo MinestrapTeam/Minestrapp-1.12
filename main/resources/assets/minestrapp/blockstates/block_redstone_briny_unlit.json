@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:block_redstone_briny_unlit" }
+        ]
+    }
+}

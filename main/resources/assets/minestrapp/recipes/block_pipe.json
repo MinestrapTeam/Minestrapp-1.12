@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        "cdc",
+        " c "
+    ],
+    "key": {        
+        "d": {
+            "item": "minecraft:dropper"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "ingotCopper"
+        }
+     },
+     "result": {
+        "item": "minestrapp:pipe",
+        "count": 16
+     }  
+}

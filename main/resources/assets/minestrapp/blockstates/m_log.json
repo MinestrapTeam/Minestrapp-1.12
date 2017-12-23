@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=y,variant=redwood":  { "model": "minestrapp:log_redwood" },
+        "axis=z,variant=redwood":   { "model": "minestrapp:log_redwood", "x": 90 },
+        "axis=x,variant=redwood":   { "model": "minestrapp:log_redwood", "x": 90, "y": 90 },
+        "axis=none,variant=redwood": { "model": "minestrapp:bark_redwood" },
+        "axis=y,variant=frozen_oak":  { "model": "minestrapp:log_frozen_oak" },
+        "axis=z,variant=frozen_oak":   { "model": "minestrapp:log_frozen_oak", "x": 90 },
+        "axis=x,variant=frozen_oak":   { "model": "minestrapp:log_frozen_oak", "x": 90, "y": 90 },
+        "axis=none,variant=frozen_oak": { "model": "minestrapp:bark_frozen_oak" },
+        "axis=y,variant=charwood":  { "model": "minestrapp:log_charwood" },
+        "axis=z,variant=charwood":   { "model": "minestrapp:log_charwood", "x": 90 },
+        "axis=x,variant=charwood":   { "model": "minestrapp:log_charwood", "x": 90, "y": 90 },
+        "axis=none,variant=charwood": { "model": "minestrapp:bark_charwood" }
+    }
+}

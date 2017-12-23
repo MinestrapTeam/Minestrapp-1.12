@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_redstone_sandy_lit"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:redstone_sandy",
+        "count": 9
+     }  
+}

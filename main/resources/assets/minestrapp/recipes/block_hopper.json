@@ -1,0 +1,20 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "s s",
+        "sps",
+        " s "
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:pipe"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "ingotSteel"
+        }
+     },
+     "result": {
+        "item": "minecraft:hopper"
+     }  
+}

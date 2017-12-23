@@ -88,7 +88,7 @@ public class MStoneGen
 						}
 						else if(state.getBlock() instanceof BlockStone && biome.getDefaultTemperature() >= 0.4F)
 						{
-							if(biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE))
+							if((biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland) && state == Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE))
 							{
 								chunk.setBlockState(subpos2, MBlocks.decor_stone.getDefaultState());
 							}

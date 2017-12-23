@@ -2,8 +2,8 @@
     "type": "forge:ore_shaped",
     "pattern": [
         " s ",
-        "cpc",
-        " m "
+        "mpt",
+        "ccc"
     ],
     "key": {        
         "s": {
@@ -20,6 +20,10 @@
         "m": {
             "type": "forge:ore_dict",
             "ore": "magnet"
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 4
         }
      },
      "result": {

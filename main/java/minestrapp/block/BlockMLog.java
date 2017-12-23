@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
+import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.MapColor;
@@ -18,7 +19,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockMLog extends BlockLog
+public class BlockMLog extends BlockLog implements IMetaBlockName
 {	
 	public static final PropertyEnum<BlockMPlanks.EnumType> VARIANT = PropertyEnum.<BlockMPlanks.EnumType>create("variant", BlockMPlanks.EnumType.class, new Predicate<BlockMPlanks.EnumType>()
     {
@@ -128,4 +129,10 @@ public class BlockMLog extends BlockLog
     {
         return ((BlockMPlanks.EnumType)state.getValue(VARIANT)).getMetadata();
     }
+
+    @Override
+	public String getSpecialName(ItemStack stack)
+	{
+		return BlockMPlanks.EnumType.byMetadata(stack.getMetadata()).getName();
+	}
 }

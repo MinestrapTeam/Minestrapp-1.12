@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=south": { "model": "minestrapp:sorter_horizontal", "y": 0 },
+        "facing=north": { "model": "minestrapp:sorter_horizontal", "y": 180 },
+        "facing=west": { "model": "minestrapp:sorter_horizontal", "y": 90 },
+        "facing=east": { "model": "minestrapp:sorter_horizontal", "y": 270 },
+        "facing=up": { "model": "minestrapp:sorter_vertical" },
+        "facing=down": { "model": "minestrapp:sorter_vertical" }
+    }
+}

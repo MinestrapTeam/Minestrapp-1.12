@@ -39,7 +39,7 @@ public class BlockSunstoneDeposit extends BlockDirectional
 	protected static final AxisAlignedBB AABB_SOUTH = new AxisAlignedBB(0.0625D, 0.0625D, 0D, 0.9375D, 0.9375D, 0.0625D);
 	protected static final AxisAlignedBB AABB_WEST = new AxisAlignedBB(0.9375D, 0.0625D, 0.0625D, 1D, 0.9375D, 0.9375D);
 	
-	public BlockSunstoneDeposit()
+	public BlockSunstoneDeposit(String name)
 	{
 		super(Material.ROCK);
 		this.setSoundType(SoundType.GLASS);
@@ -48,8 +48,8 @@ public class BlockSunstoneDeposit extends BlockDirectional
 		this.setLightLevel(0.75F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 		this.setCreativeTab(MTabs.environment);
-		this.setUnlocalizedName("sunstone_deposit");
-		this.setRegistryName("sunstone_deposit");
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)

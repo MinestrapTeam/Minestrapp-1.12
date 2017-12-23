@@ -10,6 +10,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -158,5 +159,10 @@ public class BlockRope extends BlockBase
     public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
     {
         return 30;
+    }
+    
+    public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
+    {
+        return BlockFaceShape.UNDEFINED;
     }
 }

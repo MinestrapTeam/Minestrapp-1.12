@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_redstone_frosted_lit"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:redstone_frosted",
+        "count": 9
+     }  
+}

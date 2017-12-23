@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=south": { "model": "minestrapp:pipe", "x": 90, "y": 0 },
+		"facing=north": { "model": "minestrapp:pipe", "x": 90, "y": 180 },
+		"facing=west": { "model": "minestrapp:pipe", "x": 90, "y": 90 },
+		"facing=east": { "model": "minestrapp:pipe", "x": 90, "y": 270 },
+        "facing=up": { "model": "minestrapp:pipe", "x": 180, "y": 90 },
+        "facing=down": { "model": "minestrapp:pipe", "y": 90 }
+    }
+}

@@ -6,9 +6,9 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityCrusher;
+import minestrapp.block.tileentity.TileEntityPipe;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.crafting.FurnaceRecipes;
-import minestrapp.crafting.MCraftingManager;
 import minestrapp.crafting.OreDictRegistry;
 import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
@@ -33,7 +33,6 @@ public class CommonProxy
 		MBlocks.init();
 		MItems.init();
 		OreDictRegistry.register();
-		MCraftingManager.register();
 		FurnaceRecipes.register();
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
@@ -73,6 +72,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityCrusher.class, "TileEntityCrusher");
 		
 		GameRegistry.registerTileEntity(TileEntityMagnetPiston.class, "TileEntityMagnetPiston");
+		
+		GameRegistry.registerTileEntity(TileEntityPipe.class, "TileEntityPipe");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

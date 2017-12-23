@@ -21,6 +21,7 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MBlocks.lichen, new ItemStack(Blocks.DIRT, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.mud, new ItemStack(MBlocks.dried_mud), 0.1F);
 		GameRegistry.addSmelting(MItems.mud_ball, new ItemStack(MItems.bricks, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MBlocks.ore_salt, new ItemStack(MItems.salt), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_coal, new ItemStack(Items.COAL, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MBlocks.ore_copper, new ItemStack(MItems.ingots, 1, 0), 0.5F);
 		GameRegistry.addSmelting(new ItemStack(MItems.chunks, 1, 7), new ItemStack(MItems.ingots, 1, 0), 0.5F);

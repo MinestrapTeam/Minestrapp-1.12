@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:redstone"
+        }
+     },
+     "result": {
+        "item": "minecraft:redstone_block",
+        "data": 0
+     }  
+}

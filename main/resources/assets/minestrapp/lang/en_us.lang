@@ -89,8 +89,8 @@ tile.m_mossy_cobblestone_deep_red_rock.name=Deep Mossy Red Cobblestone
 tile.m_mossy_cobblestone_deepstone.name=Deep Mossy Cobblestone
 tile.m_mossy_cobblestone_coldstone.name=Mossy Cold Cobblestone
 tile.m_mossy_cobblestone_deep_coldstone.name=Deep Mossy Cold Cobblestone
-tile.m_mossy_cobblestone_icestone.name=Wet Cracked Icestone
-tile.m_mossy_cobblestone_glacierrock.name=Wet Cracked Glacierrock
+tile.m_mossy_cobblestone_icestone.name=Snowy Cracked Icestone
+tile.m_mossy_cobblestone_glacierrock.name=Snowy Cracked Glacierrock
 tile.m_mossy_cobblestone_oceanstone.name=Mossy Cobbled Oceanstone
 tile.m_mossy_cobblestone_deep_oceanstone.name=Mossy Cobbled Reefstone
 
@@ -119,8 +119,8 @@ tile.m_stone_bricks_mossy_deep_red_rock.name=Mossy Deep Red Rock Bricks
 tile.m_stone_bricks_mossy_deepstone.name=Mossy Deepstone Bricks
 tile.m_stone_bricks_mossy_coldstone.name=Mossy Coldstone Bricks
 tile.m_stone_bricks_mossy_deep_coldstone.name=Mossy Deep Coldstone Bricks
-tile.m_stone_bricks_mossy_icestone.name=Wet Icestone Bricks
-tile.m_stone_bricks_mossy_glacierrock.name=Wet Glacierrock Bricks
+tile.m_stone_bricks_mossy_icestone.name=Snowy Icestone Bricks
+tile.m_stone_bricks_mossy_glacierrock.name=Snowy Glacierrock Bricks
 tile.m_stone_bricks_mossy_oceanstone.name=Mossy Oceanstone Bricks
 tile.m_stone_bricks_mossy_deep_oceanstone.name=Mossy Reefstone Bricks
 
@@ -200,6 +200,17 @@ tile.invincium.name=Invincium
 tile.glacial_invincium.name=Glacial Invincium
 
 ## Ores ##
+
+tile.ore_salt_red_rock.name=Salt Ore
+tile.ore_salt_deep_red_rock.name=Salt Ore
+tile.ore_salt_deepstone.name=Salt Ore
+tile.ore_salt_coldstone.name=Salt Ore
+tile.ore_salt_deep_coldstone.name=Salt Ore
+tile.ore_salt_icestone.name=Salt Ore
+tile.ore_salt_glacierrock.name=Salt Ore
+tile.ore_salt_oceanstone.name=Salt Ore
+tile.ore_salt_deep_oceanstone.name=Salt Ore
+tile.ore_salt_stone.name=Salt Ore
 
 tile.ore_coal_red_rock.name=Coal Ore
 tile.ore_coal_deep_red_rock.name=Coal Ore
@@ -308,6 +319,7 @@ tile.ore_torite_stone.name=Torite Ore
 
 tile.sunstone_deposit.name=Sunstone Deposit
 tile.glacieric_ice_deposit.name=Glacieric Ice Deposit
+tile.soul_eyes.name=Soul Eyes
 
 tile.ore_diamond_red_rock.name=Diamond Ore
 tile.ore_diamond_deep_red_rock.name=Diamond Ore
@@ -351,6 +363,14 @@ tile.block_tin.name=Block of Tin
 tile.block_bronze.name=Block of Bronze
 tile.block_steel.name=Block of Steel
 tile.block_meurodite.name=Block of Meurodite
+tile.block_redstone_sandy_unlit.name=Block of Sandy Redstone
+tile.block_redstone_sandy_lit.name=Block of Sandy Redstone
+tile.block_redstone_frosted_unlit.name=Block of Frosted Redstone
+tile.block_redstone_frosted_lit.name=Block of Frosted Redstone
+tile.block_redstone_icy_unlit.name=Block of Icy Redstone
+tile.block_redstone_icy_lit.name=Block of Icy Redstone
+tile.block_redstone_briny_unlit.name=Block of Briny Redstone
+tile.block_redstone_briny_lit.name=Block of Briny Redstone
 tile.block_irradium.name=Unstable Block of Irradium
 tile.block_sunstone.name=Sunstone
 tile.block_torite.name=Block of Torite
@@ -417,6 +437,8 @@ tile.redstone_sandy.name=Sandy Redstone
 tile.redstone_frosted.name=Frosted Redstone
 tile.redstone_icy.name=Icy Redstone
 tile.redstone_briny.name=Briny Redstone
+tile.pipe.name=Pipe
+tile.sorter.name=Sorter
 
 
 ##### Items #####

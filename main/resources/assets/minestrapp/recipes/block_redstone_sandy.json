@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:redstone_sandy"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_redstone_sandy_lit",
+        "data": 0
+     }  
+}

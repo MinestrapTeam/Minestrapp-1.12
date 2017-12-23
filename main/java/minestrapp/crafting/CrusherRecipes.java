@@ -185,6 +185,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.PURPUR_PILLAR), new ItemStack(Items.CHORUS_FRUIT_POPPED, 3), new ItemStack(Items.CHORUS_FRUIT_POPPED), 45, 0.05F);
 		
 		//Ores
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_salt, 1, 630), new ItemStack(MItems.salt, 3, 0), new ItemStack(MItems.gems, 1, 2), 5, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Blocks.COAL_ORE), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 1), 40, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 0), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 0), 40, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 1), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 0), 40, 0.1F);

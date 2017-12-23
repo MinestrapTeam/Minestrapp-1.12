@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:redstone_frosted"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_redstone_frosted_lit",
+        "data": 0
+     }  
+}

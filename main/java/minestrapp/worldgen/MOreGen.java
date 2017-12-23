@@ -5,6 +5,7 @@ import java.util.Random;
 import com.google.common.base.Predicate;
 
 import minestrapp.MBlocks;
+import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBase;
@@ -55,7 +56,7 @@ public class MOreGen implements IWorldGenerator
 		copper = new MGenMinable(MBlocks.ore_copper.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		tin = new MGenMinable(MBlocks.ore_tin.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		meurodite = new MGenMinable(MBlocks.ore_meurodite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 5);
-		irradium = new MGenMinable(MBlocks.ore_irradium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 2);
+		irradium = new MGenMinable(MBlocks.ore_irradium.getDefaultState().withProperty(BlockIrradiumOre.VARIANT, EnumStoneType.STONE), 3);
 		torite = new MGenMinable(MBlocks.ore_torite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 4);
 		titanium = new MGenMinable(MBlocks.ore_titanium.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 3);
 		blazium = new MGenMinable(MBlocks.ore_blazium.getDefaultState(), 5, new MMinablePredicate(Blocks.NETHERRACK.getDefaultState()));
@@ -98,17 +99,26 @@ public class MOreGen implements IWorldGenerator
 		        
 		        if(y < MStoneGen.getDeepstoneDepthForBiome(biome, rand))
 		        {
-		        	generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.byMetadata(MStoneGen.getDeepStoneForBiome(biome).getMetadata())), count, predicate);
+		        	if(state.getBlock() instanceof BlockIrradiumOre)
+		        		generator = new MGenMinable(state.withProperty(BlockIrradiumOre.VARIANT, EnumStoneType.byMetadata(MStoneGen.getDeepStoneForBiome(biome).getMetadata())), count, predicate);
+		        	else
+		        		generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.byMetadata(MStoneGen.getDeepStoneForBiome(biome).getMetadata())), count, predicate);
 		        }
 		        else
 		        {
 		        	if(MStoneGen.getStoneForBiome(biome) != null)
 		        	{
-		        		generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.byMetadata(MStoneGen.getStoneForBiome(biome).getMetadata())), count, predicate);
+		        		if(state.getBlock() instanceof BlockIrradiumOre)
+		        			generator = new MGenMinable(state.withProperty(BlockIrradiumOre.VARIANT, EnumStoneType.byMetadata(MStoneGen.getStoneForBiome(biome).getMetadata())), count, predicate);
+			        	else
+			        		generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.byMetadata(MStoneGen.getStoneForBiome(biome).getMetadata())), count, predicate);
 		        	}
 		        	else
 		        	{
-		        		generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), count, predicate);
+		        		if(state.getBlock() instanceof BlockIrradiumOre)
+		        			generator = new MGenMinable(state.withProperty(BlockIrradiumOre.VARIANT, EnumStoneType.STONE), count, predicate);
+			        	else
+			        		generator = new MGenMinable(state.withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), count, predicate);
 		        	}
 		        }
 		        
@@ -135,7 +145,7 @@ public class MOreGen implements IWorldGenerator
 			this.runGenerator(copper, world, random, chunkX, chunkZ, 10, 30, 110, true);
 			this.runGenerator(tin, world, random, chunkX, chunkZ, 10, 30, 110, true);
 			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
-			this.runGenerator(irradium, world, random, chunkX, chunkZ, 4, 0, 32, true);
+			this.runGenerator(irradium, world, random, chunkX, chunkZ, 5, 0, 32, true);
 			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));

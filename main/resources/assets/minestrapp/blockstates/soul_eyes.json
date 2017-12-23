@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "facing=up":    [
+            { "model": "minestrapp:soul_eyes", "uvlock": false },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "y": 90 },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "y": 180 },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "y": 270 }
+        ],
+        "facing=down":  [
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 180 },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 180, "y": 90 },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 180, "y": 180 },
+            { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 180, "y": 270 }
+        ],
+        "facing=east":  { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 90, "y": 90 },
+        "facing=west":  { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 90, "y": 270 },
+        "facing=south": { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 90, "y": 180 },
+        "facing=north": { "model": "minestrapp:soul_eyes", "uvlock": false, "x": 90 }
+    }
+}

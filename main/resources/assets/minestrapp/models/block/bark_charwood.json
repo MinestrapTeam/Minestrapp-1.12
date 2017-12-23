@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "minestrapp:blocks/wood/log_charwood_side"
+    }
+}

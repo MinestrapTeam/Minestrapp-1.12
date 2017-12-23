@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:redstone_briny"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_redstone_briny_lit",
+        "data": 0
+     }  
+}

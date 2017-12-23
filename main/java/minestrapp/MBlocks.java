@@ -6,6 +6,7 @@ import java.util.List;
 
 import minestrapp.block.BlockBasket;
 import minestrapp.block.BlockBauble;
+import minestrapp.block.BlockBiomeRedstone;
 import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
@@ -46,9 +47,11 @@ import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
+import minestrapp.block.BlockPipe;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
+import minestrapp.block.BlockSoulEyes;
 import minestrapp.block.BlockSoulOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneCutter;
@@ -188,6 +191,7 @@ public class MBlocks
 	public static Block deep_oceanstone_brick_stairs;
 	
 	//Ore
+	public static Block ore_salt;
 	public static Block ore_coal;
 	public static Block ore_copper;
 	public static Block ore_tin;
@@ -200,6 +204,7 @@ public class MBlocks
 	public static Block ore_irradium;
 	public static Block sunstone_deposit;
 	public static Block glacieric_ice_deposit;
+	public static Block soul_eyes;
 	public static Block ore_torite;
 	public static Block ore_diamond;
 	public static Block ore_emerald;
@@ -214,6 +219,14 @@ public class MBlocks
 	public static Block block_bronze;
 	public static Block block_steel;
 	public static Block block_meurodite;
+	public static Block block_redstone_sandy_unlit;
+	public static Block block_redstone_sandy_lit;
+	public static Block block_redstone_frosted_unlit;
+	public static Block block_redstone_frosted_lit;
+	public static Block block_redstone_icy_unlit;
+	public static Block block_redstone_icy_lit;
+	public static Block block_redstone_briny_unlit;
+	public static Block block_redstone_briny_lit;
 	public static Block block_irradium;
 	public static Block block_sunstone;
 	public static Block block_torite;
@@ -257,10 +270,8 @@ public class MBlocks
 	public static Block basket;
 	public static Block barrel;
 	public static Block glacieric_ice;
-	public static Block PISTON;
-	public static Block STICKY_PISTON;
-	public static Block PISTON_HEAD;
-	public static Block PISTON_EXTENSION;
+	public static Block pipe;
+	public static Block sorter;
 	public static Block magnet_piston_1;
 	public static Block magnet_piston_2;
 	public static Block magnet_piston_3;
@@ -374,6 +385,7 @@ public class MBlocks
 		register(deep_oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
 		
 		//Ore
+		register(ore_salt = new BlockStoneBase("ore_salt", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_salt));
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
 		register(ore_tin = new BlockStoneBase("ore_tin", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_tin));
@@ -385,8 +397,9 @@ public class MBlocks
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
 		register(ore_irradium = new BlockIrradiumOre().setResistance(5F).setLightLevel(0.2F), new ItemBlockMultistate(ore_irradium));
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
-		register(sunstone_deposit = new BlockSunstoneDeposit());
+		register(sunstone_deposit = new BlockSunstoneDeposit("sunstone_deposit"));
 		register(glacieric_ice_deposit = new BlockGlaciericIceDeposit());
+		register(soul_eyes = new BlockSoulEyes("soul_eyes"));
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
@@ -400,6 +413,18 @@ public class MBlocks
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
 		register(block_steel = new BlockBase("block_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 1).setBeaconBase().setResistance(12F).setCreativeTab(MTabs.resource));
 		register(block_meurodite = new BlockBase("block_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_redstone_sandy_unlit = new BlockBiomeRedstone("block_redstone_sandy_unlit", MapColor.ADOBE, 0, 20, block_redstone_sandy_lit, 149F, 67F, 0F));
+		register(block_redstone_sandy_lit = new BlockBiomeRedstone("block_redstone_sandy_lit", MapColor.ADOBE, 15, 80, block_redstone_sandy_unlit, 149F, 67F, 0F));
+		((BlockBiomeRedstone) block_redstone_sandy_unlit).setSwapBlock(block_redstone_sandy_lit);
+		register(block_redstone_frosted_unlit = new BlockBiomeRedstone("block_redstone_frosted_unlit", MapColor.PINK, 0, 60, block_redstone_frosted_lit, 140F, 36F, 76F));
+		register(block_redstone_frosted_lit = new BlockBiomeRedstone("block_redstone_frosted_lit", MapColor.PINK, 15, 40, block_redstone_frosted_unlit, 140F, 36F, 76F));
+		((BlockBiomeRedstone) block_redstone_frosted_unlit).setSwapBlock(block_redstone_frosted_lit);
+		register(block_redstone_icy_unlit = new BlockBiomeRedstone("block_redstone_icy_unlit", MapColor.MAGENTA, 0, 80, block_redstone_icy_lit, 159F, 30F, 198F));
+		register(block_redstone_icy_lit = new BlockBiomeRedstone("block_redstone_icy_lit", MapColor.MAGENTA, 15, 20, block_redstone_icy_unlit, 159F, 30F, 198F));
+		((BlockBiomeRedstone) block_redstone_icy_unlit).setSwapBlock(block_redstone_icy_lit);
+		register(block_redstone_briny_unlit = new BlockBiomeRedstone("block_redstone_briny_unlit", MapColor.YELLOW, 0, 40, block_redstone_briny_lit, 172F, 150F, 27F));
+		register(block_redstone_briny_lit = new BlockBiomeRedstone("block_redstone_briny_lit", MapColor.YELLOW, 15, 60, block_redstone_briny_unlit, 172F, 150F, 27F));
+		((BlockBiomeRedstone) block_redstone_briny_unlit).setSwapBlock(block_redstone_briny_lit);
 		register(block_irradium = new BlockIrradium("block_irradium", Material.ROCK, MapColor.LIME, SoundType.STONE, 5F, false).setCreativeTab(MTabs.resource));
 		register(block_sunstone = new BlockBase("block_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setLightLevel(0.95F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
@@ -446,7 +471,7 @@ public class MBlocks
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
-		register(barrel = new BlockBarrel("barrel", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(2F).setCreativeTab(MTabs.utility));
+		register(barrel = new BlockBarrel());
 		register(glacieric_ice = new BlockGlaciericIce());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
@@ -456,6 +481,7 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(magnet_piston_head = new BlockMagnetPistonExtension().setRegistryName("magnet_piston_head"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
+		register(pipe = new BlockPipe());
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
@@ -535,6 +561,7 @@ public class MBlocks
 		}
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{
+			initModel(ore_salt, i, "ore_salt_" + EnumStoneType.values()[i].getName());
 			initModel(ore_copper, i, "ore_copper_" + EnumStoneType.values()[i].getName());
 			initModel(ore_tin, i, "ore_tin_" + EnumStoneType.values()[i].getName());
 			initModel(ore_meurodite, i, "ore_meurodite_" + EnumStoneType.values()[i].getName());

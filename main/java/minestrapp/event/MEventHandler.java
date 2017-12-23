@@ -51,6 +51,10 @@ public class MEventHandler
 	@SubscribeEvent
     public static void registerRecipes (RegistryEvent.Register<IRecipe> event)
     {
+		ResourceLocation redstone_block = new ResourceLocation("minecraft:redstone_block");
+		ResourceLocation hopper = new ResourceLocation("minecraft:hopper");
+		ResourceLocation mossyCobble = new ResourceLocation("minecraft:mossy_cobblestone");
+		ResourceLocation mossyStoneBricks = new ResourceLocation("minecraft:mossy_stonebrick");
 		ResourceLocation chiseledStone = new ResourceLocation("minecraft:chiseled_stonebrick");
 		ResourceLocation granite = new ResourceLocation("minecraft:granite");
 		ResourceLocation diorite = new ResourceLocation("minecraft:diorite");
@@ -70,6 +74,9 @@ public class MEventHandler
 
     	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
         
+    	modRegistry.remove(hopper);
+    	modRegistry.remove(mossyCobble);
+    	modRegistry.remove(mossyStoneBricks);
     	modRegistry.remove(chiseledStone);
     	modRegistry.remove(granite);
     	modRegistry.remove(diorite);

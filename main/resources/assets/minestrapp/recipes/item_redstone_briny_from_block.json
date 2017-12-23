@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_redstone_briny_lit"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:redstone_briny",
+        "count": 9
+     }  
+}

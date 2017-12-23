@@ -461,6 +461,7 @@ public class MItems
 		register(candy_yellow = new ItemCandy("candy_yellow", new PotionEffect(MobEffects.SPEED, 600, 1), new PotionEffect(MobEffects.LEVITATION, 600, 1), new PotionEffect(MobEffects.JUMP_BOOST, 700, 1)).setAlwaysEdible());
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
+		((BlockStoneBase) MBlocks.ore_salt).setDropsItem(new ItemStack(MItems.salt, 1), 1, 0, 2, true, true, false);
 		((BlockStoneBase) MBlocks.ore_meurodite).setDropsItem(new ItemStack(gems, 1, 4), 0, 1, 5, true, true, false);
 		((BlockStoneBase) MBlocks.ore_irradium).setDropsItem(new ItemStack(irradium), 1, 3, 6, true, true, false);
 		((BlockBase) MBlocks.ore_blazium).setDropsItem(new ItemStack(gems, 2, 5), 2, 2, 7, true, true);
