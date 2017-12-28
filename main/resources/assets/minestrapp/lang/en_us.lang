@@ -382,6 +382,7 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
 tile.rope.name=Rope
+tile.bauble_ice.name=Ice Bauble
 tile.bauble_sunstone.name=Sunstone Bauble
 tile.bauble_glowstone.name=Glowstone Bauble
 tile.bauble_glowshroom_blue.name=Blue Glowshroom Bauble
@@ -431,6 +432,7 @@ tile.block_irradium_insulated.name=Insulated Block of Irradium
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter
+tile.tanning_rack.name=Tanning Rack
 tile.alloy.name=Alloy Furnace
 tile.crusher.name=Crusher
 tile.redstone_sandy.name=Sandy Redstone
@@ -536,6 +538,10 @@ item.fire_helm.name=Blazium Helmet
 item.fire_chest.name=Blazium Chestplate
 item.fire_legs.name=Blazium Leggings
 item.fire_feet.name=Blazium Boots
+item.ice_helm.name=Glacierite Helmet
+item.ice_chest.name=Glacierite Chestplate
+item.ice_legs.name=Glacierite Leggings
+item.ice_feet.name=Glacierite Boots
 
 ## Tools ##
 item.copper_pickaxe.name=Copper Pickaxe
@@ -566,6 +572,10 @@ item.fire_pickaxe.name=Blazium Pickaxe
 item.fire_axe.name=Blazium Axe
 item.fire_shovel.name=Blazium Shovel
 item.fire_hoe.name=Blazium Hoe
+item.ice_pickaxe.name=Glacierite Pickaxe
+item.ice_axe.name=Glacierite Axe
+item.ice_shovel.name=Glacierite Shovel
+item.ice_hoe.name=Glacierite Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
@@ -587,6 +597,8 @@ item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
 item.fire_sword.name=Blazium Sword
 item.fire_dagger.name=Blazium Dagger
+item.ice_sword.name=Glacierite Sword
+item.ice_dagger.name=Glacierite Dagger
 
 ##Crops&Food##
 item.blueberry.name=Blueberry

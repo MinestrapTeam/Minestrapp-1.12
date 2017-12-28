@@ -7,10 +7,12 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -67,6 +69,10 @@ public class MSword extends ItemSword
         if(this.material == MItems.BLAZIUM)
         {
         	target.setFire(4);
+        }
+        else if(this.material == MItems.GLACIERITE)
+        {
+        	target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 200, 1));
         }
         return super.hitEntity(stack, target, attacker);
     }

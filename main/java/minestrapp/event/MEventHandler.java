@@ -1,16 +1,25 @@
 package minestrapp.event;
 
 import java.util.Calendar;
+import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
+import minestrapp.crafting.FreezingRecipes;
 import minestrapp.worldgen.MWorldDecorator;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFrostedIce;
 import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.BlockTallGrass;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -18,10 +27,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootEntryTable;
 import net.minecraft.world.storage.loot.LootPool;
@@ -31,6 +44,7 @@ import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -41,6 +55,7 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 public class MEventHandler
 {
 	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
+	private static final FreezingRecipes freezingRecipes = FreezingRecipes.instance();
 	
 	@SubscribeEvent
     public static void populateChunks (PopulateChunkEvent.Post event)
@@ -110,6 +125,157 @@ public class MEventHandler
 				}
 			}
 		}
+		else if(event.getSource().isFireDamage())
+		{
+			if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET) != null)
+			{
+				if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == MItems.meurodite_helm && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == MItems.meurodite_chest && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == MItems.meurodite_legs && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == MItems.meurodite_feet)
+				{
+					Random rand = new Random();
+					
+					if(rand.nextInt(10) == 1)
+					{
+						EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
+						int chance = rand.nextInt(4);
+						if(chance == 1)
+							slot = EntityEquipmentSlot.CHEST;
+						else if(chance == 2)
+							slot = EntityEquipmentSlot.LEGS;
+						else if(chance == 3)
+							slot = EntityEquipmentSlot.FEET;
+						
+						event.getEntityLiving().getItemStackFromSlot(slot).damageItem(1, event.getEntityLiving());
+					}
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public static void onLivingUpdate (LivingUpdateEvent event)
+	{
+		EntityLivingBase living = event.getEntityLiving();
+		
+		ItemStack helm = living.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+		ItemStack chest = living.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
+		ItemStack legs = living.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+		ItemStack boots = living.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+		
+		if(helm != null && chest != null && legs != null && boots != null)
+		{
+			if(helm.getItem() == MItems.torite_helm && chest.getItem() == MItems.torite_chest && legs.getItem() == MItems.torite_legs && boots.getItem() == MItems.torite_feet)
+			{
+				living.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10, 0, true, false));
+			}
+			else if(helm.getItem() == MItems.titanium_helm && chest.getItem() == MItems.titanium_chest && legs.getItem() == MItems.titanium_legs && boots.getItem() == MItems.titanium_feet)
+			{
+				living.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 10, 0, true, false));
+			}
+			else if(helm.getItem() == MItems.meurodite_helm && chest.getItem() == MItems.meurodite_chest && legs.getItem() == MItems.meurodite_legs && boots.getItem() == MItems.meurodite_feet)
+			{
+				living.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 10, 0, true, false));
+			}
+			else if(helm.getItem() == MItems.ice_helm && chest.getItem() == MItems.ice_chest && legs.getItem() == MItems.ice_legs && boots.getItem() == MItems.ice_feet)
+			{
+				if(!living.world.isRemote)
+				{
+					BlockPos basePos = new BlockPos(living.posX, living.posY, living.posZ);
+					float chanceModifier = living.world.getBiome(basePos).getTemperature(basePos);
+					int r = 4 - Math.round(chanceModifier);
+					
+					for(int i = Math.round((float)living.posX - r) ; i <= Math.round((float)living.posX + r) ; i++)
+					{
+						for(int j = Math.round((float)living.posZ - r) ; j <= Math.round((float)living.posZ + r) ; j++)
+						{
+							if(living.world.rand.nextInt(15 + Math.round(chanceModifier * 10)) == 1)
+							{
+								if(((living.posX - i) * (living.posX - i)) + ((living.posZ - j) * (living.posZ - j)) < (r * r))
+								{
+									World world = living.getEntityWorld();
+									BlockPos pos = new BlockPos(i, living.posY - 1, j);
+									IBlockState state = world.getBlockState(pos);
+									if(!world.isAirBlock(pos))
+									{
+										Item result = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "physical").getItem();
+										int meta = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "physical").getMetadata();
+										
+										if(Block.getBlockFromItem(result) != null && freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "physical") != ItemStack.EMPTY)
+										{
+											world.setBlockState(pos, Block.getBlockFromItem(result).getStateFromMeta(meta));
+										}
+										else
+										{
+											boolean frostWalker = false;
+											
+											NBTTagList nbttaglist = getEnchantments(boots);
+		
+									        for (int m = 0; m < nbttaglist.tagCount(); ++m)
+									        {
+									            NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(m);
+									            int n = nbttagcompound.getShort("id");
+									            Enchantment enchantment = Enchantment.getEnchantmentByID(n);
+									            
+									            if(n == Enchantment.getEnchantmentID(Enchantments.FROST_WALKER))
+									            	frostWalker = true;
+											}
+											
+											if(frostWalker)
+											{
+												result = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "deep").getItem();
+												meta = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "deep").getMetadata();
+												
+												if(Block.getBlockFromItem(result) != null && freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "deep") != ItemStack.EMPTY)
+												{
+													world.setBlockState(pos, Block.getBlockFromItem(result).getStateFromMeta(meta));
+												}
+												else
+												{
+													result = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light").getItem();
+													meta = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light").getMetadata();
+													
+													if(Block.getBlockFromItem(result) != null && freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light") != ItemStack.EMPTY)
+													{
+														world.setBlockState(pos, Block.getBlockFromItem(result).getStateFromMeta(meta));
+													}
+													else if(state.getBlock() instanceof BlockStaticLiquid)
+													{
+														if(state.getMaterial() == Material.WATER)
+															world.setBlockState(pos, Blocks.PACKED_ICE.getDefaultState());
+														else if(state.getMaterial() == Material.LAVA)
+															world.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState());
+													}
+													else if(state.getBlock() instanceof BlockFrostedIce)
+													{
+														world.setBlockState(pos, Blocks.ICE.getDefaultState());
+													}
+												}
+											}
+											else
+											{
+												result = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light").getItem();
+												meta = freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light").getMetadata();
+												
+												if(Block.getBlockFromItem(result) != null && freezingRecipes.getFreezingResult(new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state)), "light") != ItemStack.EMPTY)
+												{
+													world.setBlockState(pos, Block.getBlockFromItem(result).getStateFromMeta(meta));
+												}
+												else if(state.getBlock() instanceof BlockStaticLiquid)
+												{
+													if(state.getMaterial() == Material.WATER)
+														world.setBlockState(pos, Blocks.FROSTED_ICE.getDefaultState());
+													else if(state.getMaterial() == Material.LAVA)
+														world.setBlockState(pos, Blocks.MAGMA.getDefaultState());
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	@SubscribeEvent
@@ -119,10 +285,16 @@ public class MEventHandler
 		if(event.getHarvester() != null)
 			tool = event.getHarvester().getHeldItem(EnumHand.MAIN_HAND).getItem();
 		ItemStack smeltStack = furnaceRecipes.getSmeltingResult(new ItemStack(event.getState().getBlock(), 1, event.getState().getBlock().getMetaFromState(event.getState())));
-		if(tool != null && (tool == MItems.fire_axe || tool == MItems.fire_dagger || tool == MItems.fire_hoe || tool == MItems.fire_pickaxe || tool == MItems.fire_shovel || tool == MItems.fire_sword) && smeltStack != ItemStack.EMPTY && smeltStack.getItem() != event.getDrops().get(0).getItem())
+		ItemStack freezeStack = freezingRecipes.getFreezingResult(new ItemStack(event.getState().getBlock(), 1, event.getState().getBlock().getMetaFromState(event.getState())), "light");
+		if(tool != null && (tool == MItems.fire_axe || tool == MItems.fire_dagger || tool == MItems.fire_hoe || tool == MItems.fire_pickaxe || tool == MItems.fire_shovel || tool == MItems.fire_sword) && smeltStack != ItemStack.EMPTY && event.getDrops().size() > 0 && smeltStack.getItem() != event.getDrops().get(0).getItem())
 		{
 			event.getDrops().clear();
 			event.getDrops().add(new ItemStack(smeltStack.getItem(), smeltStack.getCount(), smeltStack.getMetadata()));
+		}
+		else if(tool != null && (tool == MItems.ice_axe || tool == MItems.ice_dagger || tool == MItems.ice_hoe || tool == MItems.ice_pickaxe || tool == MItems.ice_shovel || tool == MItems.ice_sword) && freezeStack != ItemStack.EMPTY && event.getDrops().size() > 0 && freezeStack.getItem() != event.getDrops().get(0).getItem())
+		{
+			event.getDrops().clear();
+			event.getDrops().add(new ItemStack(freezeStack.getItem(), freezeStack.getCount(), freezeStack.getMetadata()));
 		}
 		else if(event.getState() == Blocks.RED_FLOWER.getStateFromMeta(2) && !event.isSilkTouching())
 		{
@@ -365,4 +537,10 @@ public class MEventHandler
 	    
 	    //Command for spawning test chests w/ loot tables: /setblock ~ ~ ~ minecraft:chest 2 replace {LootTable:"chests/simple_dungeon"}*/
 	}
+	
+	public static NBTTagList getEnchantments(ItemStack stack)
+    {
+        NBTTagCompound nbttagcompound = stack.getTagCompound();
+        return nbttagcompound != null ? nbttagcompound.getTagList("ench", 10) : new NBTTagList();
+    }
 }

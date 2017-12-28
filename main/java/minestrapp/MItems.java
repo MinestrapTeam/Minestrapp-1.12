@@ -90,6 +90,10 @@ public class MItems
 	public static Item fire_axe;
 	public static Item fire_shovel;
 	public static Item fire_hoe;
+	public static Item ice_pickaxe;
+	public static Item ice_axe;
+	public static Item ice_shovel;
+	public static Item ice_hoe;
 	
 	public static Item gold_dagger;
 	public static Item wooden_dagger;
@@ -110,6 +114,8 @@ public class MItems
 	public static Item titanium_dagger;
 	public static Item fire_sword;
 	public static Item fire_dagger;
+	public static Item ice_sword;
+	public static Item ice_dagger;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -139,6 +145,10 @@ public class MItems
 	public static Item fire_chest;
 	public static Item fire_legs;
 	public static Item fire_feet;
+	public static Item ice_helm;
+	public static Item ice_chest;
+	public static Item ice_legs;
+	public static Item ice_feet;
 	
 	public static Item health_crystal;
 
@@ -245,6 +255,7 @@ public class MItems
 	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":torite", 2, 1200, 7F, 3.5F, 30).setRepairItem(new ItemStack(ingots, 1, 4));
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5).setRepairItem(new ItemStack(ingots, 1, 5));
 	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":blazium", 2, 960, 7.5F, 3F, 22).setRepairItem(new ItemStack(ingots, 1, 7));
+	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":glacierite", 3, 1400, 8F, 4F, 34).setRepairItem(new ItemStack(ingots, 1, 6));
 	
 	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F).setRepairItem(new ItemStack(ingots, 1, 1));
 	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F).setRepairItem(new ItemStack(ingots, 1, 2));
@@ -253,6 +264,7 @@ public class MItems
 	public static final ArmorMaterial ARMOR_TORITE = EnumHelper.addArmorMaterial("torite", Minestrapp5.MODID + ":torite", 26, new int[]{2, 6, 7, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.5F).setRepairItem(new ItemStack(ingots, 1, 4));
 	public static final ArmorMaterial ARMOR_TITANIUM = EnumHelper.addArmorMaterial("titanium", Minestrapp5.MODID + ":titanium", 66, new int[]{3, 6, 8, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F).setRepairItem(new ItemStack(ingots, 1, 5));
 	public static final ArmorMaterial ARMOR_BLAZIUM = EnumHelper.addArmorMaterial("blazium", Minestrapp5.MODID + ":blazium", 25, new int[]{2, 5, 6, 3}, 23, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.2F).setRepairItem(new ItemStack(ingots, 1, 7));
+	public static final ArmorMaterial ARMOR_GLACIERITE = EnumHelper.addArmorMaterial("glacierite", Minestrapp5.MODID + ":glacierite", 28, new int[]{2, 6, 7, 2}, 34, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2F).setRepairItem(new ItemStack(ingots, 1, 6));
 	
 	public static void init()
 	{
@@ -311,6 +323,10 @@ public class MItems
 		register(fire_axe = new MAxe(BLAZIUM, "fire_axe", 9.0F, -3.2F));
 		register(fire_shovel = new MShovel(BLAZIUM, "fire_shovel"));
 		register(fire_hoe = new MHoe(BLAZIUM, "fire_hoe"));
+		register(ice_pickaxe = new MPickaxe(GLACIERITE, "ice_pickaxe"));
+		register(ice_axe = new MAxe(GLACIERITE, "ice_axe", 11.0F, -3.4F));
+		register(ice_shovel = new MShovel(GLACIERITE, "ice_shovel"));
+		register(ice_hoe = new MHoe(GLACIERITE, "ice_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
 		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
@@ -331,6 +347,8 @@ public class MItems
 		register(titanium_dagger = new MDagger(TITANIUM, "titanium_dagger"));
 		register(fire_sword = new MSword(BLAZIUM, "fire_sword"));
 		register(fire_dagger = new MDagger(BLAZIUM, "fire_dagger"));
+		register(ice_sword = new MSword(GLACIERITE, "ice_sword"));
+		register(ice_dagger = new MDagger(GLACIERITE, "ice_dagger"));
 		
 		register(tin_helm = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
@@ -360,6 +378,10 @@ public class MItems
 		register(fire_chest = new MArmor(ARMOR_BLAZIUM, 1, EntityEquipmentSlot.CHEST, "fire_chest"));
 		register(fire_legs = new MArmor(ARMOR_BLAZIUM, 2, EntityEquipmentSlot.LEGS, "fire_legs"));
 		register(fire_feet = new MArmor(ARMOR_BLAZIUM, 1, EntityEquipmentSlot.FEET, "fire_feet"));
+		register(ice_helm = new MArmor(ARMOR_GLACIERITE, 1, EntityEquipmentSlot.HEAD, "ice_helm"));
+		register(ice_chest = new MArmor(ARMOR_GLACIERITE, 1, EntityEquipmentSlot.CHEST, "ice_chest"));
+		register(ice_legs = new MArmor(ARMOR_GLACIERITE, 2, EntityEquipmentSlot.LEGS, "ice_legs"));
+		register(ice_feet = new MArmor(ARMOR_GLACIERITE, 1, EntityEquipmentSlot.FEET, "ice_feet"));
 		
 		register(pepper_seeds = new MItemsSeeds(MBlocks.crop_pepper, Blocks.FARMLAND, "pepper_seeds"));
 		register(cabbage_seeds = new MItemsSeeds(MBlocks.crop_cabbage, Blocks.FARMLAND, "cabbage_seeds"));

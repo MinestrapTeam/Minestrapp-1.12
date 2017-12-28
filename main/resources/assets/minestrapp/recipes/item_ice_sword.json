@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "i"
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 6
+        }
+     },
+     "result": {
+        "item": "minestrapp:ice_sword",
+        "data": 0
+     }  
+}

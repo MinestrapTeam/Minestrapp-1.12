@@ -60,6 +60,7 @@ import minestrapp.block.BlockStoneSlab2;
 import minestrapp.block.BlockStoneSlab3;
 import minestrapp.block.BlockStoneSlab4;
 import minestrapp.block.BlockSunstoneDeposit;
+import minestrapp.block.BlockTanningRack;
 import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
@@ -237,6 +238,7 @@ public class MBlocks
 	public static Block block_dimensium_destabilized;
 	
 	//Decor
+	public static Block bauble_ice;
 	public static Block bauble_sunstone;
 	public static Block bauble_glowstone;
 	public static Block bauble_glowshroom_blue;
@@ -269,6 +271,7 @@ public class MBlocks
 	public static Block rope;
 	public static Block basket;
 	public static Block barrel;
+	public static Block tanning_rack;
 	public static Block glacieric_ice;
 	public static Block pipe;
 	public static Block sorter;
@@ -436,6 +439,7 @@ public class MBlocks
 		
 		//Decor
 		register(rope = new BlockRope());
+		register(bauble_ice = new BlockBauble("bauble_ice", Material.ICE, MapColor.ICE, SoundType.GLASS, 0.5F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setSlipperiness(0.98F).setPushReaction(EnumPushReaction.DESTROY).setLightOpacity(3).setCreativeTab(MTabs.decor));
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		register(bauble_glowstone = new BlockBauble("bauble_glowstone", Material.GLASS, MapColor.SAND, SoundType.GLASS, 0.3F).setDropsItem(new ItemStack(Items.GLOWSTONE_DUST), 0, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.9F).setCreativeTab(MTabs.decor));
 		register(bauble_glowshroom_blue = new BlockBauble("bauble_glowshroom_blue", Material.WOOD, MapColor.BLUE, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.5F).setCreativeTab(MTabs.decor));
@@ -472,6 +476,7 @@ public class MBlocks
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(barrel = new BlockBarrel());
+		register(tanning_rack = new BlockTanningRack());
 		register(glacieric_ice = new BlockGlaciericIce());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));

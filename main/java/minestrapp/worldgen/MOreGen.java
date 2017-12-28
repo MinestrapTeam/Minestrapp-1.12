@@ -41,6 +41,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class MOreGen implements IWorldGenerator
 {
+	private WorldGenerator salt;
 	private WorldGenerator copper;
 	private WorldGenerator tin;
 	private WorldGenerator meurodite;
@@ -53,6 +54,7 @@ public class MOreGen implements IWorldGenerator
 	
 	public MOreGen()
 	{
+		salt = new MGenMinable(MBlocks.ore_salt.getDefaultState().withProperty(BlockStoneBase.VARIANT,  EnumStoneType.STONE), 20);
 		copper = new MGenMinable(MBlocks.ore_copper.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		tin = new MGenMinable(MBlocks.ore_tin.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 10);
 		meurodite = new MGenMinable(MBlocks.ore_meurodite.getDefaultState().withProperty(BlockStoneBase.VARIANT, EnumStoneType.STONE), 5);
@@ -149,7 +151,11 @@ public class MOreGen implements IWorldGenerator
 			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
-			if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
+			if(biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+			{
+				this.runGenerator(salt, world, random, chunkX, chunkZ, 3, 12, 60, true);
+			}
+			else if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
 			{
 				this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
 			}

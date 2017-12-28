@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "minestrapp:tanning_rack", "uvlock": true, "y": 180 },
+        "facing=east":  { "model": "minestrapp:tanning_rack", "uvlock": true, "y": 270 },
+        "facing=west":  { "model": "minestrapp:tanning_rack", "uvlock": true, "y": 90 },
+        "facing=south": { "model": "minestrapp:tanning_rack", "uvlock": true }
+    }
+}
