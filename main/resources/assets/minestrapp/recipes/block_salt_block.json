@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:salt"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_salt",
+        "data": 0
+     }  
+}

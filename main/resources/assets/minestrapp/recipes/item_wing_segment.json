@@ -1,0 +1,24 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "lll",
+        "sss",
+        "fff"
+    ],
+    "key": {
+        "l": {
+            "item": "minecraft:leather"
+        },
+        "s": {
+            "item": "minestrapp:m_mob_loot",
+            "data": 2
+        },
+        "f": {
+            "item": "minecraft:feather"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 1
+     }  
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_wing_segment"
+    ]
+  },
+  "criteria": {
+    "has_wing_sinew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mob_loot",
+            "data": 2 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_wing_segment"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wing_sinew",
+      "has_the_recipe"
+    ]
+  ]
+}

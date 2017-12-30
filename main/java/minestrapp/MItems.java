@@ -12,6 +12,7 @@ import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemPBJ;
+import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
@@ -32,12 +33,14 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -150,6 +153,7 @@ public class MItems
 	public static Item ice_legs;
 	public static Item ice_feet;
 	
+	public static Item smelling_salts;
 	public static Item health_crystal;
 
 	public static Item pepper_seeds;
@@ -232,6 +236,11 @@ public class MItems
 	
 	public static Item fat;
 	public static Item grease;
+	public static Item salted_chicken;
+	public static Item salted_rabbit;
+	public static Item salted_mutton;
+	public static Item salted_steak;
+	public static Item salted_porkchop;
 	public static Item squid_tentacle;
 	public static Item calamari;
 	public static Item sushi;
@@ -270,8 +279,8 @@ public class MItems
 	{
 		//0=Grass Fibers, 1=Mana Leaf
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
-		//0=Animal Bones, 1=Tallow
-		register(mob_loot = new ItemMetaBase("m_mob_loot", 2).setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow, 2=Wing Sinew
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 3).setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
@@ -293,6 +302,7 @@ public class MItems
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
 		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
 		
+		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
 
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
@@ -466,6 +476,11 @@ public class MItems
 		
 		register(fat = new MItemsFood(1, 2.5F, true, "fat").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
 		register(grease = new ItemBase("grease").setBurnTime(2000).setCreativeTab(MTabs.food));
+		register(salted_chicken = new MItemsFood(8, 0.575F, true, "salted_chicken"));
+		register(salted_mutton = new MItemsFood(8, 0.725F, true, "salted_mutton"));
+		register(salted_rabbit = new MItemsFood(7, 0.5714F, true, "salted_rabbit"));
+		register(salted_steak = new MItemsFood(10, 0.74F, true, "salted_steak"));
+		register(salted_porkchop = new MItemsFood(10, 0.74F, true, "salted_porkchop"));
 		register(squid_tentacle = new MItemsFood(2, 0.075F, false, "squid_tentacle").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 240, 0), 0.4F));
 		register(calamari = new MItemsFood(5, 0.78F, false, "calamari"));
 		register(sushi = new MItemsFood(11, 0.7273F, false, "sushi"));

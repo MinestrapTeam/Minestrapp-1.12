@@ -215,6 +215,7 @@ public class MBlocks
 	public static Block ore_dimensium;
 	
 	//Resource
+	public static Block block_salt;
 	public static Block block_copper;
 	public static Block block_tin;
 	public static Block block_bronze;
@@ -411,6 +412,7 @@ public class MBlocks
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		
 		//Resource
+		register(block_salt = new BlockBase("block_salt", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.STONE, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));

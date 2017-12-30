@@ -19,14 +19,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scala.tools.nsc.doc.model.Public;
 
-public class MItemHealthCrystal extends Item{
+public class MItemHealthCrystal extends Item
+{
 	
 	public MItemHealthCrystal(String unlocalizedName){
 		maxStackSize=1;
 		setMaxDamage(1);
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
-        this.setCreativeTab(MTabs.minerals);
 	}
 
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)

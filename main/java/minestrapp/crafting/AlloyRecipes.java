@@ -77,7 +77,11 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.POISONOUS_POTATO), new ItemStack(MItems.fries), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 0), new ItemStack(MItems.fried_fish), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 1), new ItemStack(MItems.fried_salmon), 0.35F);
-
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.CHICKEN), new ItemStack(MItems.salted_chicken), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.RABBIT), new ItemStack(MItems.salted_rabbit), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.MUTTON), new ItemStack(MItems.salted_mutton), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.PORKCHOP), new ItemStack(MItems.salted_porkchop), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.BEEF), new ItemStack(MItems.salted_steak), 0.35F);
 	}
 	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {
 		this.alloySmelting.put(input1, input2, result);

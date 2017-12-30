@@ -99,7 +99,7 @@ public class ContainerAlloy extends Container {
 			}
 			else if(index != 2 && index != 1 && index != 0) {
 				
-				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
+				Slot slot1 = (Slot)this.inventorySlots.get(index);
 				
 				if(!TileEntityAlloy.isItemFuel(stack1) && !this.mergeItemStack(stack1, 0, 2, false))
 					return ItemStack.EMPTY;

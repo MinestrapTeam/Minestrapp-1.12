@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
@@ -70,7 +71,7 @@ public class MItemsFood extends ItemFood
 		}
 		if (this.curesEffects && !worldIn.isRemote)
 		{
-			player.curePotionEffects(stack);
+			player.curePotionEffects(new ItemStack(Items.MILK_BUCKET));
 		}
 		else if(this.igniteTime < 0)
 		{

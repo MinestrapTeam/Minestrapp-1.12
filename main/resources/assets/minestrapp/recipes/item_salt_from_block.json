@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_salt"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:salt",
+        "count": 9
+     }  
+}

@@ -358,6 +358,7 @@ tile.ore_dimensium.name=Dimensium Ore
 
 ## Resource ##
 
+tile.block_salt.name=Block of Salt
 tile.block_copper.name=Block of Copper
 tile.block_tin.name=Block of Tin
 tile.block_bronze.name=Block of Bronze
@@ -489,6 +490,7 @@ item.m_natural_item_1.name=Mana Leaf
 ## Mob Loot ##
 item.m_mob_loot_0.name=Animal Bones
 item.m_mob_loot_1.name=Tallow
+item.m_mob_loot_2.name=Wing Sinew
 
 ##Bricks
 item.m_bricks_0.name=Mud Brick
@@ -681,6 +683,11 @@ item.hot_sauce.name=Hot Sauce
 
 item.fat.name=Fat
 item.grease.name=Grease
+item.salted_chicken.name=Salted Chicken
+item.salted_rabbit.name=Salted Rabbit
+item.salted_mutton.name=Salted Mutton
+item.salted_steak.name=Salted Steak
+item.salted_porkchop.name=Salted Porkchop
 item.squid_tentacle.name=Squid Tentacle
 item.calamari.name=Calamari
 item.sushi.name=Sushi
@@ -696,6 +703,9 @@ item.fish_and_chips.name=Fish & Chips
 item.candy_red.name=Living Licorice
 item.candy_blue.name=Camo Candy
 item.candy_yellow.name=Lofty Lolly
+
+##Misc##
+item.smelling_salts.name=Smelling Salts
 
 
 ##Mobs##

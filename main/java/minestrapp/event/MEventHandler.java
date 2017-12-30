@@ -400,6 +400,13 @@ public class MEventHandler
 			
 			event.getTable().addPool(salt_pool);
 		}
+		else if(event.getName().equals(LootTableList.ENTITIES_BAT))
+		{
+			LootEntry sinew_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/wing_sinew"), 1, 1, new LootCondition[0], "sinew_entry");
+			LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
+			
+			event.getTable().addPool(sinew_pool);
+		}
 		
 		if(calendar.get(2) + 1 == 10 && calendar.get(5) >= 15 && calendar.get(5) <= 31)
 		{

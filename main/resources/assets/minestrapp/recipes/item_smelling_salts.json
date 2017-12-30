@@ -1,0 +1,24 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:paper"
+        },
+        {
+            "item": "minestrapp:salt"
+        },
+        {
+            "item": "minestrapp:salt"
+        },
+        {
+            "item": "minestrapp:salt"
+        },
+        {
+            "item": "minestrapp:m_natural_item",
+            "data": 1
+        }
+    ],
+    "result": {
+        "item": "minestrapp:smelling_salts"
+    }   
+}

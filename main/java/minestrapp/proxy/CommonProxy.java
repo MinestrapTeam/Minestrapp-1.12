@@ -35,6 +35,7 @@ public class CommonProxy
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/bat/wing_sinew"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/flesh"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/husk/salt"));
