@@ -1,5 +1,6 @@
 {
 	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube_all",
 	"textures": {
 		"particle": "blocks/log_oak",
 		"Planks": "blocks/planks_oak",

@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "minestrapp",
+  "name": "Minestrappolation 5",
+  "description": "A Vanilla-faithful survival overhaul.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Delocuro, triplg3"],
+  "credits": "Lead Coder: Delocuro, Tile Entities & Misc Features: triplg3, Main Devs for M3 & M4: Thewerty & SoBiohazardous.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

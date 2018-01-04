@@ -10,6 +10,7 @@ import minestrapp.block.util.BlockStoneBase;
 import minestrapp.item.ItemCandy;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
+import minestrapp.item.ItemHangGlider;
 import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemPBJ;
 import minestrapp.item.ItemSmellingSalts;
@@ -155,6 +156,7 @@ public class MItems
 	
 	public static Item smelling_salts;
 	public static Item health_crystal;
+	public static Item hang_glider_wood;
 
 	public static Item pepper_seeds;
 	public static Item cabbage_seeds;
@@ -304,6 +306,7 @@ public class MItems
 		
 		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
+		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood").setCreativeTab(MTabs.tools));
 
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
 		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));

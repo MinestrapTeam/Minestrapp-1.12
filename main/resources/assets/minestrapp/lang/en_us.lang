@@ -508,8 +508,9 @@ item.m_tech_component_4.name=Technological Doodad
 item.m_tech_component_5.name=Advanced Tech Doodad
 item.m_tech_component_6.name=Magnet
 
-## S H I T T Y  M E M E S ##
+## Misc Tools ##
 item.health_crystal.name='Health Crystal'
+item.hang_glider_wood.name=Wooden Hang Glider
 
 ## Armor ##
 item.tin_helm.name=Tin Helmet
