@@ -89,6 +89,7 @@ public class MEventHandler
 
     	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
         
+    	modRegistry.remove(redstone_block);
     	modRegistry.remove(hopper);
     	modRegistry.remove(mossyCobble);
     	modRegistry.remove(mossyStoneBricks);

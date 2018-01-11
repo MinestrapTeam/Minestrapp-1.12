@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_hang_glider_wood"
+    ]
+  },
+  "criteria": {
+    "has_wing_segment": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 1 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_hang_glider_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wing_segment",
+      "has_the_recipe"
+    ]
+  ]
+}

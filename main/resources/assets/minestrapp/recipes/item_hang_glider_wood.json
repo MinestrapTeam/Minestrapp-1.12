@@ -1,0 +1,28 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "prp",
+        "wpw",
+        "wsw"
+    ],
+    "key": {        
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+        },
+        "r": {
+            "item": "minestrapp:rope"
+        },
+        "w": {
+            "item": "minestrapp:m_tech_component",
+            "data": 1
+        },
+        "s": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:hang_glider_wood"
+     }  
+}

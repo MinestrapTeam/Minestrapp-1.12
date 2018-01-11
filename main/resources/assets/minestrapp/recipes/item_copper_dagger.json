@@ -1,16 +1,17 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         " x",
         "i "
     ],
     "key": {
         "i": {
-            "item": "minecraft:stick"
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
         },
         "x": {
-            "item": "minestrapp:m_ingot",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "ingotCopper"
         }
      },
      "result": {

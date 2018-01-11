@@ -511,6 +511,7 @@ item.m_tech_component_6.name=Magnet
 ## Misc Tools ##
 item.health_crystal.name='Health Crystal'
 item.hang_glider_wood.name=Wooden Hang Glider
+item.hang_glider_steel.name=Reinforced Hang Glider
 
 ## Armor ##
 item.tin_helm.name=Tin Helmet

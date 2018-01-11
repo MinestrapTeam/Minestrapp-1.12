@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "xx",
         "ix",
@@ -11,7 +11,8 @@
             "data": 0
         },
         "x": {
-            "item": "minecraft:diamond"
+            "type": "forge:ore_dict",
+            "ore": "gemDiamond"
         }
      },
      "result": {

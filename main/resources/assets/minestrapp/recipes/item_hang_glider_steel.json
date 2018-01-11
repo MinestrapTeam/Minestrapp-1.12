@@ -1,0 +1,24 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "sss",
+        "whw",
+        "sss"
+    ],
+    "key": {        
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
+        },
+        "h": {
+            "item": "minestrapp:hang_glider_wood"
+        },
+        "w": {
+            "item": "minestrapp:m_tech_component",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:hang_glider_steel"
+     }  
+}

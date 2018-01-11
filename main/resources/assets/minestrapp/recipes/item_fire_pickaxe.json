@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "xxx",
         " i ",
@@ -10,8 +10,8 @@
             "item": "minecraft:blaze_rod"
         },
         "x": {
-            "item": "minestrapp:m_ingot",
-            "data": 7
+            "type": "forge:ore_dict",
+            "ore": "ingotBlazium"
         }
      },
      "result": {

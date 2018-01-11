@@ -157,6 +157,7 @@ public class MItems
 	public static Item smelling_salts;
 	public static Item health_crystal;
 	public static Item hang_glider_wood;
+	public static Item hang_glider_steel;
 
 	public static Item pepper_seeds;
 	public static Item cabbage_seeds;
@@ -306,7 +307,8 @@ public class MItems
 		
 		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
-		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood").setCreativeTab(MTabs.tools));
+		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
+		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
 
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
 		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));
@@ -473,7 +475,7 @@ public class MItems
 		register(bread_voidberry_salad = new MItemsFood(13, 0.2808F, false, "bread_voidberry_salad").setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 240, 1), 1F));
 		
 		register(jam = new ItemJamBottle(7, 0.2714F, false, "jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible());
-		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.6F));
+		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.8F));
 		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
 		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F));
 		
