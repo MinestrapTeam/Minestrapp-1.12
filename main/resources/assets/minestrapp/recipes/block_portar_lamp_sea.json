@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " x ",
+        "xsx",
+        " x "
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:portar",
+            "data": 3
+        },
+        "s": {
+            "item": "minecraft:sea_lantern"
+        }
+     },
+     "result": {
+        "item": "minestrapp:portar",
+        "count": 4,
+        "data": 6
+     }  
+}

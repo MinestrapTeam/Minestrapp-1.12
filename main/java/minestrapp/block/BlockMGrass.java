@@ -43,6 +43,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockMGrass extends BlockBase  implements IGrowable
 {
 	private BlockMDirt dirt;
+	private int minLight;
 	private boolean biomecolored;
 	public static final PropertyBool SNOWY = PropertyBool.create("snowy");
 	
@@ -54,6 +55,12 @@ public class BlockMGrass extends BlockBase  implements IGrowable
         this.setCreativeTab(MTabs.environment);
         this.dirt = dirt;
         this.biomecolored = biome;
+        this.minLight = 9;
+	}
+	
+	public void setMinLight(int light)
+	{
+		this.minLight = light;
 	}
 	
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
@@ -72,7 +79,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
             }
             else
             {
-                if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
+                if (worldIn.getLightFromNeighbors(pos.up()) >= this.minLight)
                 {
                     for (int i = 0; i < 4; ++i)
                     {

@@ -22,6 +22,8 @@ import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockDriedMud;
+import minestrapp.block.BlockFargrowth;
+import minestrapp.block.BlockFargrowthPath;
 import minestrapp.block.BlockGlaciericIce;
 import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
@@ -37,6 +39,7 @@ import minestrapp.block.BlockIrradium;
 import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.BlockJackOLantern;
 import minestrapp.block.BlockJackOLanternSmashed;
+import minestrapp.block.BlockLavaSponge;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
 import minestrapp.block.BlockMGrass;
@@ -48,6 +51,8 @@ import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockPipe;
+import minestrapp.block.BlockPortalDust;
+import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
@@ -126,6 +131,7 @@ public class MBlocks
 	public static Block strawberry_bush;
 	public static Block mana_bush;
 	public static Block voidberry_bush;
+	public static Block melon_bricks;
 	
 	//Soil
 	public static Block cold_sand;
@@ -139,6 +145,9 @@ public class MBlocks
 	public static Block permafrost_farmland;
 	public static Block mud;
 	public static Block dried_mud;
+	public static BlockMDirt portal_dust;
+	public static Block fargrowth;
+	public static Block fargrowth_path;
 	
 	//Wood
 	public static Block log;
@@ -156,6 +165,8 @@ public class MBlocks
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
 	public static Block chiseled_stone;
+	public static Block purpur;
+	public static Block portar;
 	public static Block invincium;
 	public static Block glacial_invincium;
 	public static BlockSlab misc_stone_slab_1;
@@ -190,6 +201,7 @@ public class MBlocks
 	public static Block glacierrock_brick_stairs;
 	public static Block oceanstone_brick_stairs;
 	public static Block deep_oceanstone_brick_stairs;
+	public static Block portar_stairs;
 	
 	//Ore
 	public static Block ore_salt;
@@ -274,6 +286,7 @@ public class MBlocks
 	public static Block barrel;
 	public static Block tanning_rack;
 	public static Block glacieric_ice;
+	public static Block lava_sponge;
 	public static Block pipe;
 	public static Block sorter;
 	public static Block magnet_piston_1;
@@ -323,6 +336,7 @@ public class MBlocks
 		register(strawberry_bush = new BlockBerryBush("strawberry_bush", MapColor.FOLIAGE, "plains"));
 		register(mana_bush = new BlockBerryBush("mana_bush", MapColor.LAPIS, "coast"));
 		register(voidberry_bush = new BlockVoidberryBush("voidberry_bush"));
+		register(melon_bricks = new BlockBase("melon_bricks", Material.GOURD, MapColor.LIME, SoundType.WOOD, 1F, "axe", 0).setDropsItem(new ItemStack(Items.MELON, 3), 6, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setCreativeTab(MTabs.plant));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -336,6 +350,9 @@ public class MBlocks
 		register(permafrost_farmland = new BlockMFarmland("permafrost_farmland", MapColor.ADOBE, SoundType.GROUND, 0.6F, 0, permafrost, 6));
 		register(mud = new BlockMud());
 		register(dried_mud = new BlockDriedMud());
+		register(portal_dust = new BlockPortalDust(), new ItemBlockMultistate(portal_dust));
+		register(fargrowth = new BlockFargrowth());
+		register(fargrowth_path = new BlockFargrowthPath());
 		
 		//Wood
 		register(log = new BlockMLog().setCreativeTab(MTabs.wood), new ItemBlockMultistate(log));
@@ -352,6 +369,8 @@ public class MBlocks
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
 		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
+		register(purpur = new BlockBase("m_purpur", Material.ROCK, MapColor.MAGENTA, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone));
+		register(portar = new BlockPortar(), new ItemBlockMultistate(portar));
 		register(invincium = new BlockInvincium());
 		register(glacial_invincium = new BlockBase("glacial_invincium", Material.ROCK, MapColor.CYAN, SoundType.STONE, -1F).setPushReaction(EnumPushReaction.BLOCK).setSlipperiness(0.85F).setEntityInvulnerability("all").setBlockUnbreakable().setCreativeTab(MTabs.environment));
 		register(double_misc_stone_slab_1 = new BlockDoubleMiscStoneSlab1("m_misc_stone_slab_1"));
@@ -387,6 +406,7 @@ public class MBlocks
 		register(glacierrock_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.GLACIERROCK), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.GLACIERROCK.getUnlocalizedName()));
 		register(oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.OCEANSTONE.getUnlocalizedName()));
 		register(deep_oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
+		register(portar_stairs = new BlockStairBase(portar.getDefaultState().withProperty(BlockPortar.VARIANT, BlockPortar.PortarType.SLABBED), portar.getUnlocalizedName() + "_" + BlockPortar.PortarType.SLABBED.getUnlocalizedName()));
 		
 		//Ore
 		register(ore_salt = new BlockStoneBase("ore_salt", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_salt));
@@ -480,6 +500,7 @@ public class MBlocks
 		register(barrel = new BlockBarrel());
 		register(tanning_rack = new BlockTanningRack());
 		register(glacieric_ice = new BlockGlaciericIce());
+		register(lava_sponge = new BlockLavaSponge(), new ItemBlockMultistate(lava_sponge));
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
@@ -528,6 +549,11 @@ public class MBlocks
 		{
 			initModel(block);
 		}
+		for(int i = 0 ; i < 2 ; i++)
+		{
+			String suffix = i == 0 ? "dry" : "wet";
+			initModel(lava_sponge, i, "lava_sponge_" + suffix);
+		}
 		for(int i = 0 ; i < BlockColdSand.EnumType.values().length ; i++)
 		{
 			initModel(cold_sand, i, "cold_sand_" + BlockColdSand.EnumType.values()[i].getName());
@@ -536,6 +562,7 @@ public class MBlocks
 		{
 			initModel(clay_soil, i, "clay_soil_" + BlockMDirt.DirtType.values()[i].getName());
 			initModel(permafrost, i, "permafrost_" + BlockMDirt.DirtType.values()[i].getName());
+			initModel(portal_dust, i, "portal_dust_" + BlockMDirt.DirtType.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockMPlanks.EnumType.values().length ; i++)
 		{
@@ -575,6 +602,10 @@ public class MBlocks
 			initModel(ore_irradium, i, "ore_irradium_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockPortar.PortarType.values().length ; i++)
+		{
+			initModel(portar, i, "portar_" + BlockPortar.PortarType.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockMiscStoneSlab1.EnumType.values().length ; i++)
 		{

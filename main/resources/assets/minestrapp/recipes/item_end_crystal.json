@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " s ",
+        "srs",
+        " s "
+    ],
+    "key": {
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "gemSoul"
+        },
+        "r": {
+            "type": "forge:ore_dict", 
+            "ore": "gemIrradiantQuartz"
+        }
+     },
+     "result": {
+        "item": "minecraft:end_crystal"
+     }  
+}

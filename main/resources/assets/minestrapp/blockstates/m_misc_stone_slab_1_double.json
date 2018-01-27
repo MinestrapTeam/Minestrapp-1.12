@@ -29,6 +29,12 @@
         ],
         "seamless=true,variant=slate_bricks": [
             { "model": "minestrapp:slate_bricks" }
+        ],
+        "seamless=false,variant=portar": [
+            { "model": "minestrapp:slabbed_portar" }
+        ],
+        "seamless=true,variant=portar": [
+            { "model": "minestrapp:slabbed_portar" }
         ]
     }
 }

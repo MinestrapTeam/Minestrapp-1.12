@@ -29,6 +29,12 @@
         ],
         "half=top,variant=slate_bricks": [
             { "model": "minestrapp:upper_slab_slate_bricks" }
+        ],
+        "half=bottom,variant=portar": [
+            { "model": "minestrapp:half_slab_portar" }
+        ],
+        "half=top,variant=portar": [
+            { "model": "minestrapp:upper_slab_portar" }
         ]
     }
 }

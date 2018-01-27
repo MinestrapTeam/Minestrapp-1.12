@@ -53,9 +53,9 @@ public class MGenVoidberry extends WorldGenerator
 									
 									if (chance == 0 && worldIn.getBlockState(newPos.offset(EnumFacing.UP, height)).getBlock().isReplaceable(worldIn, newPos.offset(EnumFacing.UP, height)))
 									{
-										worldIn.setBlockState(newPos.offset(EnumFacing.UP, height), bush.getDefaultState().withProperty(BlockVoidberryBush.AGE, ((BlockVoidberryBush) bush).getMaxAge()).withProperty(BlockVoidberryBush.STEM, false));
+										worldIn.setBlockState(newPos.offset(EnumFacing.UP, height), bush.getDefaultState().withProperty(BlockVoidberryBush.AGE, ((BlockVoidberryBush) bush).getMaxAge()).withProperty(BlockVoidberryBush.STEM, false), 2);
 										if(height > 0)
-											worldIn.setBlockState(newPos.offset(EnumFacing.UP, height - 1), bush.getDefaultState().withProperty(BlockVoidberryBush.AGE, ((BlockVoidberryBush) bush).getMaxAge()).withProperty(BlockVoidberryBush.STEM, true));
+											worldIn.setBlockState(newPos.offset(EnumFacing.UP, height - 1), bush.getDefaultState().withProperty(BlockVoidberryBush.AGE, ((BlockVoidberryBush) bush).getMaxAge()).withProperty(BlockVoidberryBush.STEM, true), 2);
 									}
 									else
 										break;

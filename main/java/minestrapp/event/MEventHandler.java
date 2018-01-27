@@ -86,6 +86,7 @@ public class MEventHandler
     	ResourceLocation diamondShovel = new ResourceLocation("minecraft:diamond_shovel");
     	ResourceLocation diamondHoe = new ResourceLocation("minecraft:diamond_hoe");
     	ResourceLocation diamondSword = new ResourceLocation("minecraft:diamond_sword");
+    	ResourceLocation endCrystal = new ResourceLocation("minecraft:end_crystal");
 
     	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
         
@@ -109,6 +110,7 @@ public class MEventHandler
         modRegistry.remove(diamondShovel);
         modRegistry.remove(diamondHoe);
         modRegistry.remove(diamondSword);
+        modRegistry.remove(endCrystal);
     }
 	
 	@SubscribeEvent

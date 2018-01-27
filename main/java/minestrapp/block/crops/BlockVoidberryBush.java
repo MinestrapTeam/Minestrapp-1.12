@@ -5,6 +5,8 @@ import java.util.Random;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.MTabs;
+import minestrapp.block.BlockFargrowth;
+import minestrapp.block.BlockPortalDust;
 import minestrapp.block.BlockSavannaGrass;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -65,7 +67,7 @@ public class BlockVoidberryBush extends BlockBush implements IGrowable
 	protected boolean canSustainBush(IBlockState state)
     {
 		Block block = state.getBlock();
-		return block == Blocks.END_STONE || block == this;
+		return block == Blocks.END_STONE || block instanceof BlockPortalDust || block instanceof BlockFargrowth || block == this;
     }
 	
 	protected PropertyInteger getAgeProperty()

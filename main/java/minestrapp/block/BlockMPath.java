@@ -47,7 +47,7 @@ public class BlockMPath extends BlockBase
             case EAST:
                 IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
                 Block block = iblockstate.getBlock();
-                return !iblockstate.isOpaqueCube() && block != Blocks.FARMLAND && block != Blocks.GRASS_PATH && block != MBlocks.clay_grass_path && block != MBlocks.lichen_path && block != MBlocks.clay_farmland && block != MBlocks.permafrost_farmland;
+                return !iblockstate.isOpaqueCube() && block != Blocks.FARMLAND && block != Blocks.GRASS_PATH && !(block instanceof BlockMPath) && !(block instanceof BlockMFarmland);
             default:
                 return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
         }

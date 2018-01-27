@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:melon_block"
+        }
+     },
+     "result": {
+        "item": "minestrapp:melon_bricks",
+        "count": 4
+     }  
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "minestrapp:blocks/plant/mite_hive_inside",
+        "down": "minestrapp:blocks/plant/mite_hive_inside",
+        "up": "minestrapp:blocks/plant/mite_hive_top",
+        "north": "minestrapp:blocks/plant/mite_hive_inside",
+        "east": "minestrapp:blocks/plant/mite_hive_side",
+        "south": "minestrapp:blocks/plant/mite_hive_side",
+        "west": "minestrapp:blocks/plant/mite_hive_inside"
+    }
+}

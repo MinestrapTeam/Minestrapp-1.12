@@ -88,8 +88,10 @@ public class OreDictRegistry
 		OreDictionary.registerOre("gemSalt", new ItemStack(MItems.salt));
 		OreDictionary.registerOre("gemSunstone", new ItemStack(MItems.gems, 1, 0));
 		OreDictionary.registerOre("gemQuartz", new ItemStack(MItems.gems, 1, 1));
+		OreDictionary.registerOre("gemDesertQuartz", new ItemStack(MItems.gems, 1, 1));
 		OreDictionary.registerOre("gemCrystal", new ItemStack(MItems.gems, 1, 2));
 		OreDictionary.registerOre("gemQuartz", new ItemStack(MItems.gems, 1, 3));
+		OreDictionary.registerOre("gemIrradiantQuartz", new ItemStack(MItems.gems, 1, 3));
 		OreDictionary.registerOre("gemMeurodite", new ItemStack(MItems.gems, 1, 4));
 		OreDictionary.registerOre("gemBlazium", new ItemStack(MItems.gems, 1, 5));
 		OreDictionary.registerOre("gemGlacierite", new ItemStack(MItems.gems, 1, 6));

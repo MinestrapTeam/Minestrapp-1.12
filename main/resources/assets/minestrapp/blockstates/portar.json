@@ -1,0 +1,25 @@
+{
+    "variants": {
+        "variant=slabbed": [
+            { "model": "minestrapp:slabbed_portar" }
+        ],
+        "variant=fishboned": [
+            { "model": "minestrapp:fishboned_portar" }
+        ],
+        "variant=tiled": [
+            { "model": "minestrapp:tiled_portar" }
+        ],
+        "variant=chiseled": [
+            { "model": "minestrapp:chiseled_portar" }
+        ],
+        "variant=lamp_sunstone": [
+            { "model": "minestrapp:portar_lamp_sunstone" }
+        ],
+        "variant=lamp_glowstone": [
+            { "model": "minestrapp:portar_lamp_glowstone" }
+        ],
+        "variant=lamp_sea": [
+            { "model": "minestrapp:portar_lamp_sea" }
+        ]
+    }
+}

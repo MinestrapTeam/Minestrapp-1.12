@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_fishboned_portar"
+    ]
+  },
+  "criteria": {
+    "has_portar_stairs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:portar_slabbed_stairs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_fishboned_portar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_portar_stairs",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_bricks",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:portar",
+        "count": 2,
+        "data": 2
+     }  
+}

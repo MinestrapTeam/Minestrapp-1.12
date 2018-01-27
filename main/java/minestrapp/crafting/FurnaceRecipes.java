@@ -8,6 +8,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class FurnaceRecipes
 {
@@ -58,6 +59,7 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MItems.fat, new ItemStack(MItems.grease), 0.35F);
 		GameRegistry.addSmelting(MItems.grease, new ItemStack(MItems.mob_loot, 1, 1), 0.45F);
 		GameRegistry.addSmelting(MItems.squid_tentacle, new ItemStack(MItems.calamari), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.portal_dust, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.bricks, 1, 1), 0.15F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{

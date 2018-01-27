@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/soil/portal_dust",
+        "top": "minestrapp:blocks/soil/fargrowth_top",
+        "side": "minestrapp:blocks/soil/fargrowth_side"
+    }
+}

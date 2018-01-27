@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "wet=false": [
+            { "model": "minestrapp:lava_sponge_dry" }
+        ],
+        "wet=true": [
+            { "model": "minestrapp:lava_sponge_wet" }
+        ]
+    }
+}

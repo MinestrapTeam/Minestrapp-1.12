@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " x ",
+        "xgx",
+        " x "
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:portar",
+            "data": 3
+        },
+        "g": {
+            "item": "minecraft:glowstone"
+        }
+     },
+     "result": {
+        "item": "minestrapp:portar",
+        "count": 4,
+        "data": 5
+     }  
+}

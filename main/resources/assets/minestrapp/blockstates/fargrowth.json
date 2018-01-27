@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "minestrapp:fargrowth" },
+            { "model": "minestrapp:fargrowth", "y": 90 },
+            { "model": "minestrapp:fargrowth", "y": 180 },
+            { "model": "minestrapp:fargrowth", "y": 270 }
+        ],
+        "snowy=true": [
+            { "model": "minestrapp:snowy_portal_dust" }
+        ]
+    }
+}

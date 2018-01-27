@@ -1,0 +1,37 @@
+{
+    "variants": {
+        "snowy=false,variant=default": [
+            { "model": "minestrapp:portal_dust" },
+            { "model": "minestrapp:portal_dust", "y": 90 },
+            { "model": "minestrapp:portal_dust", "y": 180 },
+            { "model": "minestrapp:portal_dust", "y": 270 }
+        ],
+        "snowy=false,variant=coarse": [
+            { "model": "minestrapp:coarse_portal_dust" },
+            { "model": "minestrapp:coarse_portal_dust", "y": 90 },
+            { "model": "minestrapp:coarse_portal_dust", "y": 180 },
+            { "model": "minestrapp:coarse_portal_dust", "y": 270 }
+        ],
+        "snowy=false,variant=podzol": [
+            { "model": "minestrapp:chordsol" },
+            { "model": "minestrapp:chordsol", "y": 90 },
+            { "model": "minestrapp:chordsol", "y": 180 },
+            { "model": "minestrapp:chordsol", "y": 270 }
+        ],
+        "snowy=true,variant=default": [
+            { "model": "minestrapp:portal_dust" },
+            { "model": "minestrapp:portal_dust", "y": 90 },
+            { "model": "minestrapp:portal_dust", "y": 180 },
+            { "model": "minestrapp:portal_dust", "y": 270 }
+        ],
+        "snowy=true,variant=coarse": [
+            { "model": "minestrapp:coarse_portal_dust" },
+            { "model": "minestrapp:coarse_portal_dust", "y": 90 },
+            { "model": "minestrapp:coarse_portal_dust", "y": 180 },
+            { "model": "minestrapp:coarse_portal_dust", "y": 270 }
+        ],
+        "snowy=true,variant=podzol": [
+            { "model": "minestrapp:snowy_portal_dust" }
+        ]
+    }
+}

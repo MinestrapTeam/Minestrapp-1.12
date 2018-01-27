@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/slabbed_portar",
+        "top": "minestrapp:blocks/stone/slabbed_portar",
+        "side": "minestrapp:blocks/stone/slabbed_portar"
+    }
+}

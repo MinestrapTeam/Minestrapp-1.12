@@ -198,6 +198,14 @@ public class MOreGen implements IWorldGenerator
 				BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 				MGenSunstone sunstoneGen = new MGenSunstone(8);
 				sunstoneGen.generate(world, random, sunstonePos);
+				
+				posX = random.nextInt(16);
+				posY = random.nextInt(26) + 10;
+				posZ = random.nextInt(16);
+				
+				BlockPos spongePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenLavaSponge spongeGen = new MGenLavaSponge();
+				spongeGen.generate(world, random, spongePos);
 			}
 		}
 	}

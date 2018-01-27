@@ -19,6 +19,7 @@ import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -294,8 +295,7 @@ public class MWorldDecorator
 				}
 			}
 			
-			//TODO: Everything below this point causes "runnaway chunks", where shit generates into unloaded chunks, causing them to load and triggering lag-inducing chain reactions of unnecessary chunk generation.
-			//TODO: Vanilla fixes this by waiting to decorate chunks until several their surrounding chunks have been generated, but Idonfuckinknowhowtadothat so we'll need to fix that shit one day...
+			//TODO: I think there's still a bug where runaway chunks or partially generated replacement blocks can still happen in the positive x & z directions, but it's unconfirmed. Needs further testing...
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
 			
@@ -424,7 +424,7 @@ public class MWorldDecorator
 				}
 			}
 		}
-		if(world.provider.getDimension() == -1)
+		else if(world.provider.getDimension() == -1)
 		{
 			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
 			Chunk chunk = world.getChunkFromBlockCoords(pos);
@@ -475,5 +475,98 @@ public class MWorldDecorator
 				}
 			}
 		}
+		else if(world.provider.getDimension() == 1)
+		{
+			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
+			Chunk chunk = world.getChunkFromBlockCoords(pos);
+	
+			if((chunkX * chunkX) + (chunkZ * chunkZ) > 3844)
+			{
+				for (int x = 0; x < 16; x++)
+				{
+					for (int z = 0; z < 16; z++)
+					{
+						for (int y = 90; y >= 58; y--)
+						{
+							BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
+							IBlockState state = world.getBlockState(subpos2);
+							Block block = state.getBlock();
+							
+							if (state.isFullBlock() == true && block == Blocks.END_STONE)
+							{
+								if(!world.getBlockState(subpos2.up()).isFullBlock() && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_PLANT && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_FLOWER)
+								{
+									world.setBlockState(subpos2, MBlocks.fargrowth.getDefaultState());
+									
+									int depth = random.nextInt(5) + 2;
+									
+									for(int i = 1 ; i < depth ; i++)
+									{
+										BlockPos dirtPos = subpos2.offset(EnumFacing.DOWN, i);
+										
+										if(world.getBlockState(dirtPos).getBlock() == Blocks.END_STONE)
+											world.setBlockState(dirtPos, MBlocks.portal_dust.getDefaultState());
+									}
+								}
+							}
+						}
+					}
+				}
+				for (int x = 0; x < 16; x++)
+				{
+					for (int z = 0; z < 16; z++)
+					{
+						for (int y = 90; y >= 58; y--)
+						{
+							BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
+							IBlockState state = world.getBlockState(subpos2);
+							Block block = state.getBlock();
+							
+							if (block == Blocks.CHORUS_PLANT || block == Blocks.CHORUS_FLOWER)
+							{
+								Block north = world.getBlockState(subpos2.down().north()).getBlock();
+								Block south = world.getBlockState(subpos2.down().south()).getBlock();
+								Block east = world.getBlockState(subpos2.down().east()).getBlock();
+								Block west = world.getBlockState(subpos2.down().west()).getBlock();
+								
+								if(north == MBlocks.fargrowth)
+									generateChordsolTendril(world, random, subpos2.down().north());
+								if(south == MBlocks.fargrowth)
+									generateChordsolTendril(world, random, subpos2.down().south());
+								if(east == MBlocks.fargrowth)
+									generateChordsolTendril(world, random, subpos2.down().east());
+								if(west == MBlocks.fargrowth)
+									generateChordsolTendril(world, random, subpos2.down().west());
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public static void generateChordsolTendril (World world, Random rand, BlockPos pos)
+	{
+		IBlockState chordsol = MBlocks.portal_dust.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL);
+		world.setBlockState(pos, chordsol, 2);
+		
+		int dir = rand.nextInt(4);
+		EnumFacing facing = EnumFacing.NORTH;
+		
+		if(dir == 1)
+			facing = EnumFacing.EAST;
+		else if(dir == 2)
+			facing = EnumFacing.SOUTH;
+		else if(dir == 3)
+			facing = EnumFacing.WEST;
+		
+		BlockPos offsetPos = pos.offset(facing);
+		if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
+			offsetPos = pos.offset(facing).down();
+		if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
+			offsetPos = pos.offset(facing).up();
+		if(world.getBlockState(offsetPos).getBlock() == MBlocks.fargrowth && world.getBlockState(offsetPos.offset(facing)) != chordsol)
+			generateChordsolTendril(world, rand, offsetPos);
+			
 	}
 }

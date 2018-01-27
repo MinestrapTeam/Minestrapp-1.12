@@ -300,8 +300,8 @@ public class MItems
 		register(gems = new ItemMetaBase("m_gem", 7).setBurnTime(2000, 5).setCreativeTab(MTabs.minerals));
 		register(gem_soul = new ItemSoulGem("gem_soul").setBeaconPayment());
 		
-		//0=Mud Brick
-		register(bricks = new ItemMetaBase("m_bricks", 1).setCreativeTab(MTabs.ingredients));
+		//0=Mud Brick, 1=Portar
+		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
 		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
 		
