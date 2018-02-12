@@ -28,14 +28,14 @@ public class BlockPortalDust extends BlockMDirt
 {
 	public BlockPortalDust()
 	{
-		super("portal_dust", MapColor.PURPLE, SoundType.GLASS, 0.8F, 0);
+		super("portal_dust", MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.GLASS, 0.8F, 0);
 		this.setHarvestLevel("pickaxe", 0);
 	}
 	
 	public MapColor getMapColor(IBlockState state, IBlockAccess access, BlockPos pos)
     {
 		if(((BlockMDirt.DirtType)state.getValue(VARIANT)) == BlockMDirt.DirtType.PODZOL)
-			return MapColor.YELLOW_STAINED_HARDENED_CLAY;
+			return MapColor.PURPLE_STAINED_HARDENED_CLAY;
 		else
 			return super.getMapColor(state, access, pos);
     }

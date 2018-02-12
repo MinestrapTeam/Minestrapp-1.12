@@ -97,7 +97,7 @@ public class BlockSavannaGrass extends BlockBush implements IGrowable
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
         IBlockState soil = worldIn.getBlockState(pos.down());
-        return this.canSustainBush(worldIn.getBlockState(pos.down()));
+        return this.canSustainBush(soil);
     }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

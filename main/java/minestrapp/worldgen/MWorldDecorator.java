@@ -41,6 +41,7 @@ import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.biome.BiomeTaiga;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.storage.WorldInfo;
 
 public class MWorldDecorator
 {
@@ -507,6 +508,9 @@ public class MWorldDecorator
 										if(world.getBlockState(dirtPos).getBlock() == Blocks.END_STONE)
 											world.setBlockState(dirtPos, MBlocks.portal_dust.getDefaultState());
 									}
+									
+									if(world.getBlockState(subpos2.up()).getBlock().isReplaceable(world, subpos2.up()) && random.nextInt(3) == 1)
+										world.setBlockState(subpos2.up(), MBlocks.clutchthorn.getDefaultState());
 								}
 							}
 						}
@@ -530,43 +534,63 @@ public class MWorldDecorator
 								Block west = world.getBlockState(subpos2.down().west()).getBlock();
 								
 								if(north == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().north());
+									generateChordsolTendril(world, random, subpos2.down().north(), EnumFacing.NORTH);
 								if(south == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().south());
+									generateChordsolTendril(world, random, subpos2.down().south(), EnumFacing.SOUTH);
 								if(east == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().east());
+									generateChordsolTendril(world, random, subpos2.down().east(), EnumFacing.EAST);
 								if(west == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().west());
+									generateChordsolTendril(world, random, subpos2.down().west(), EnumFacing.WEST);
 							}
 						}
 					}
+				}
+				
+				for(int i = 0 ;  i < 3 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 90 - random.nextInt(50);
+					int posZ = random.nextInt(16)+8;
+
+					BlockPos hivePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenMiteHive hiveGen = new MGenMiteHive();
+					if(world.getBlockState(hivePos).getBlock().isReplaceable(world, hivePos) && world.getBlockState(hivePos.offset(EnumFacing.DOWN)).getBlock() == MBlocks.fargrowth)
+					hiveGen.generate(world, random, hivePos);
 				}
 			}
 		}
 	}
 	
-	public static void generateChordsolTendril (World world, Random rand, BlockPos pos)
+	public static void generateChordsolTendril (World world, Random rand, BlockPos pos, EnumFacing faceDir)
 	{
 		IBlockState chordsol = MBlocks.portal_dust.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL);
-		world.setBlockState(pos, chordsol, 2);
 		
-		int dir = rand.nextInt(4);
-		EnumFacing facing = EnumFacing.NORTH;
+		if(world.getBlockState(pos.offset(faceDir.rotateY())) != chordsol && world.getBlockState(pos.offset(faceDir.rotateYCCW())) != chordsol && world.getBlockState(pos.offset(faceDir)) != chordsol)
+		{
+			world.setBlockState(pos, chordsol, 2);
+			if(rand.nextInt(10) < 7 && world.getBlockState(pos.up()).getBlock() == MBlocks.clutchthorn && world.isAirBlock(pos.up().up()))
+				world.setBlockState(pos.up().up(), MBlocks.clutchthorn.getDefaultState());
 		
-		if(dir == 1)
-			facing = EnumFacing.EAST;
-		else if(dir == 2)
-			facing = EnumFacing.SOUTH;
-		else if(dir == 3)
-			facing = EnumFacing.WEST;
-		
-		BlockPos offsetPos = pos.offset(facing);
-		if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
-			offsetPos = pos.offset(facing).down();
-		if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
-			offsetPos = pos.offset(facing).up();
-		if(world.getBlockState(offsetPos).getBlock() == MBlocks.fargrowth && world.getBlockState(offsetPos.offset(facing)) != chordsol)
-			generateChordsolTendril(world, rand, offsetPos);
-			
+			for(int i = 0 ; i < 3 ; i++)
+			{
+				int dir = rand.nextInt(4);
+				EnumFacing facing = EnumFacing.NORTH;
+				
+				if(dir == 1)
+					facing = EnumFacing.EAST;
+				else if(dir == 2)
+					facing = EnumFacing.SOUTH;
+				else if(dir == 3)
+					facing = EnumFacing.WEST;
+				
+				BlockPos offsetPos = pos.offset(facing);
+				if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
+					offsetPos = pos.offset(facing).down();
+				if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
+					offsetPos = pos.offset(facing).up();
+				if(world.getBlockState(offsetPos).getBlock() == MBlocks.fargrowth && world.getBlockState(offsetPos.offset(facing)) != chordsol)
+					generateChordsolTendril(world, rand, offsetPos, facing);
+			}
+		}
 	}
 }

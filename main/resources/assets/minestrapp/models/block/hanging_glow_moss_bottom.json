@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "minestrapp:blocks/plant/hanging_glow_moss_bottom"
+    }
+}

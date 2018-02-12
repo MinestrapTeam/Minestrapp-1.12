@@ -51,7 +51,6 @@ public class MGenLavaSponge extends WorldGenerator
                     {
                     	boolean wet = rand.nextBoolean();
                         worldIn.setBlockState(blockpos, MBlocks.lava_sponge.getDefaultState().withProperty(BlockLavaSponge.WET, wet), 2);
-                        System.out.println("placed sponge @ " + blockpos.getX() + ", " + blockpos.getY() + ", " + blockpos.getZ());
                     }
                 }
             }

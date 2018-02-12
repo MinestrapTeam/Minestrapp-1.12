@@ -27,7 +27,7 @@ public class BlockFargrowth extends BlockMGrass
 {
 	public BlockFargrowth()
 	{
-		super("fargrowth", MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.GLASS, 0.9F, 0, MBlocks.portal_dust, false);
+		super("fargrowth", MapColor.RED, SoundType.GLASS, 0.9F, 0, MBlocks.portal_dust, false);
 		this.setHarvestLevel("pickaxe", 0);
 		this.setMinLight(5);
 	}

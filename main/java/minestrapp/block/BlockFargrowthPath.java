@@ -17,7 +17,7 @@ public class BlockFargrowthPath extends BlockMPath
 {
 	public BlockFargrowthPath()
 	{
-		super("fargrowth_path", MapColor.ORANGE_STAINED_HARDENED_CLAY, SoundType.GLASS, 0.9F, 0, MBlocks.portal_dust);
+		super("fargrowth_path", MapColor.ADOBE, SoundType.GLASS, 0.9F, 0, MBlocks.portal_dust);
 		this.setHarvestLevel("pickaxe", 0);
 	}
 	

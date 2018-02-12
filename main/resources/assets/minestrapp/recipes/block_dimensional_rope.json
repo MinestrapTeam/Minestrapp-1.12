@@ -1,0 +1,24 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "fhf",
+        "fdf",
+        "fhf"
+    ],
+    "key": {        
+        "f": {
+            "item": "minestrapp:m_natural_item",
+            "data": 2
+        },
+        "h": {
+            "item": "minestrapp:mite_honey"
+        },
+        "d": {
+            "item": "minestrapp:m_ingot",
+            "data": 8
+        }
+     },
+     "result": {
+        "item": "minestrapp:dimensium_rope"
+     }
+}

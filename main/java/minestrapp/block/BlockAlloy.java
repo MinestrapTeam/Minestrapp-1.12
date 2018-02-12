@@ -22,6 +22,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,32 +30,46 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockAlloy extends BlockBase implements ITileEntityProvider {
-	
+public class BlockAlloy extends BlockBase implements ITileEntityProvider
+{	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool BURNING = PropertyBool.create("burning");
 	
-	public BlockAlloy() {
+	public BlockAlloy()
+	{
 		super("alloy", Material.IRON, MapColor.SILVER, SoundType.STONE, 3F);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, Boolean.valueOf(false)));
 	}
 	
+	@Deprecated
+    public int getLightValue(IBlockState state)
+    {
+        return ((Boolean)state.getValue(BURNING)).booleanValue() ? 15 : 0;
+    }
+	
 	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	{
 		return Item.getItemFromBlock(MBlocks.alloy);
 	}
 	
 	@Override
-	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	{
 		this.setDefaultFacing(worldIn, pos, state);
 	}
 	
-	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state) {
+	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
+	{
         if (!worldIn.isRemote) {
             IBlockState north = worldIn.getBlockState(pos.north());
             IBlockState south = worldIn.getBlockState(pos.south());
@@ -75,85 +90,156 @@ public class BlockAlloy extends BlockBase implements ITileEntityProvider {
     }
 	
 	@Override
-	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-		if (!world.isRemote) {
-  				player.openGui(Minestrapp5.instance, MGuiHandler.ALLOY, world, pos.getX(), pos.getY(), pos.getZ());  			
-  		}
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+	{
+		if (!world.isRemote)
+  			player.openGui(Minestrapp5.instance, MGuiHandler.ALLOY, world, pos.getX(), pos.getY(), pos.getZ());  			
+		
   		return true;
-
 	}
 	
-	public static void setState(boolean active, World worldIn, BlockPos pos) {
+	public static void setState(boolean active, World worldIn, BlockPos pos)
+	{
 		IBlockState state = worldIn.getBlockState(pos);
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		
-		if(active){
-			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);			
-		}
+		if(active)
+			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, Boolean.valueOf(true)), 3);			
 		else
-			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, false), 3);
+			worldIn.setBlockState(pos, MBlocks.alloy.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, Boolean.valueOf(false)), 3);
 		
-		if(tileentity != null) {
+		if(tileentity != null)
+		{
 			tileentity.validate();
 			worldIn.setTileEntity(pos, tileentity);
 		}
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
+	public TileEntity createNewTileEntity(World worldIn, int meta)
+	{
 		return new TileEntityAlloy();
 	}
 	
 	@Override
-	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand)
+	{
 		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
+	{
 		worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 	}
 	
 	@Override
-	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+	{
 		TileEntityAlloy tileentity = (TileEntityAlloy)worldIn.getTileEntity(pos);
 		InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
 		super.breakBlock(worldIn, pos, state);
 	}
 	
 	@Override
-	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
+	{
 		return new ItemStack(MBlocks.alloy);
 	}
 	
 	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
+	public EnumBlockRenderType getRenderType(IBlockState state)
+	{
 		return EnumBlockRenderType.MODEL;
 	}
 	
-	public IBlockState getStateFromMeta(int meta) {
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
+	public IBlockState getStateFromMeta(int meta)
+	{
+		EnumFacing enumfacing = EnumFacing.NORTH;
+		boolean burning = false;
+		
+		if(meta >= 4)
+			burning = true;
+		
+		if(meta == 1 || meta == 5)
+			enumfacing = EnumFacing.SOUTH;
+		else if(meta == 2 || meta == 6)
+			enumfacing = EnumFacing.WEST;
+		else if(meta == 3 || meta == 7)
+			enumfacing = EnumFacing.EAST;
 
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-            enumfacing = EnumFacing.NORTH;
-
-        return this.getDefaultState().withProperty(FACING, enumfacing);
+        return this.getDefaultState().withProperty(FACING, enumfacing).withProperty(BURNING, Boolean.valueOf(burning));
     }
 
-    public int getMetaFromState(IBlockState state) {
-        return ((EnumFacing)state.getValue(FACING)).getIndex();
+    public int getMetaFromState(IBlockState state)
+    {
+		int metaMod = 0;
+		
+		if(state.getValue(BURNING) == Boolean.valueOf(true))
+			metaMod = 4;
+		
+		if(state.getValue(FACING) == EnumFacing.NORTH)
+			return 0 + metaMod;
+		else if(state.getValue(FACING) == EnumFacing.SOUTH)
+			return 1 + metaMod;
+		else if(state.getValue(FACING) == EnumFacing.WEST)
+			return 2 + metaMod;
+		else
+			return 3 + metaMod;
     }
 
-    public IBlockState withRotation(IBlockState state, Rotation rot) {
+    public IBlockState withRotation(IBlockState state, Rotation rot)
+    {
         return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
     }
     
-    public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+    public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
+    {
         return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
     }
     
     @Override
-    protected BlockStateContainer createBlockState() {
+    protected BlockStateContainer createBlockState()
+    {
     	return new BlockStateContainer(this, new IProperty[] {BURNING, FACING});
+    }
+    
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("incomplete-switch")
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    {
+        if (stateIn.getValue(BURNING) == Boolean.valueOf(true))
+        {
+            EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
+            double d0 = (double)pos.getX() + 0.5D;
+            double d1 = (double)pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
+            double d2 = (double)pos.getZ() + 0.5D;
+            double d3 = 0.52D;
+            double d4 = rand.nextDouble() * 0.6D - 0.3D;
+
+            if (rand.nextDouble() < 0.1D)
+            {
+                worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+            }
+
+            switch (enumfacing)
+            {
+                case WEST:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    break;
+                case EAST:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    break;
+                case NORTH:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+                    break;
+                case SOUTH:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+            }
+        }
     }
 }

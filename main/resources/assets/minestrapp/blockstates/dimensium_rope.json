@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "top=false": [
+            { "model": "minestrapp:dimensium_rope" }
+        ],
+        "top=true": [
+            { "model": "minestrapp:dimensium_rope" }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_clutchthorn_fibers"
+    ]
+  },
+  "criteria": {
+    "has_clutchthorn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:clutchthorn"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_clutchthorn_fibers"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_clutchthorn",
+      "has_the_recipe"
+    ]
+  ]
+}

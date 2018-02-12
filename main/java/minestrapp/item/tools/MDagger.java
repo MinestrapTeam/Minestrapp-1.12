@@ -4,6 +4,7 @@ import com.google.common.collect.Multimap;
 
 import minestrapp.MItems;
 import minestrapp.MTabs;
+import minestrapp.item.util.ItemBase;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -37,6 +38,7 @@ public class MDagger extends Item
 {
     private final float attackDamage;
     private final Item.ToolMaterial material;
+    private int burnTime;
 
     public MDagger(Item.ToolMaterial material, String unlocalizedName)
     {
@@ -44,6 +46,7 @@ public class MDagger extends Item
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
         this.attackDamage = 1.5F + (material.getAttackDamage() / 2);
+        this.burnTime = 0;
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
@@ -201,5 +204,16 @@ public class MDagger extends Item
     public boolean canApplyAtEnchantingTable(ItemStack stack, net.minecraft.enchantment.Enchantment enchantment)
     {
         return (enchantment == Enchantments.BANE_OF_ARTHROPODS || enchantment == Enchantments.FIRE_ASPECT || enchantment == Enchantments.KNOCKBACK || enchantment == Enchantments.LOOTING || enchantment == Enchantments.SHARPNESS || enchantment == Enchantments.SMITE || enchantment == Enchantments.UNBREAKING || enchantment == Enchantments.MENDING || enchantment == Enchantments.VANISHING_CURSE);
+    }
+    
+    public MDagger setBurnTime(int time)
+	{
+		this.burnTime = time;
+		return this;
+	}
+    
+    public int getItemBurnTime(ItemStack itemStack)
+    {
+		return this.burnTime;
     }
 }

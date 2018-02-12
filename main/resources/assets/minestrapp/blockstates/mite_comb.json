@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:mite_hive_inside_all" }
+        ]
+    }
+}

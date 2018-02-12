@@ -3,7 +3,7 @@
     "textures": {
         "particle": "minestrapp:blocks/plant/mite_hive_honeyed_inside",
         "down": "minestrapp:blocks/plant/mite_hive_honeyed_inside",
-        "up": "minestrapp:blocks/plant/mite_hive_honeyed_top",
+        "up": "minestrapp:blocks/plant/mite_hive_top_s",
         "north": "minestrapp:blocks/plant/mite_hive_honeyed_inside",
         "east": "minestrapp:blocks/plant/mite_hive_honeyed_inside",
         "south": "minestrapp:blocks/plant/mite_hive_honeyed_side",

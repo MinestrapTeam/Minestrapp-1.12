@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "bottom=false": [
+            { "model": "minestrapp:hanging_glow_moss" }
+        ],
+        "bottom=true": [
+            { "model": "minestrapp:hanging_glow_moss_bottom" }
+        ]
+    }
+}

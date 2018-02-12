@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "glowing=false,section=default": [
+            { "model": "minestrapp:clutchthorn" }
+        ],
+        "glowing=false,section=flower": [
+            { "model": "minestrapp:clutchthorn_flower" }
+        ],
+        "glowing=false,section=bottom": [
+            { "model": "minestrapp:clutchthorn_bottom" }
+        ],
+        "glowing=true,section=default": [
+            { "model": "minestrapp:clutchthorn_glowing" }
+        ],
+        "glowing=true,section=flower": [
+            { "model": "minestrapp:clutchthorn_flower_glowing" }
+        ],
+        "glowing=true,section=bottom": [
+            { "model": "minestrapp:clutchthorn_bottom_glowing" }
+        ]
+    }
+}

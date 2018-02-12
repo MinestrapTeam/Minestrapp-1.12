@@ -12,16 +12,19 @@ import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
+import minestrapp.block.BlockClutchthorn;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockCrusher;
 import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
+import minestrapp.block.BlockDimensiumRope;
 import minestrapp.block.BlockDoubleMiscStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
 import minestrapp.block.BlockDriedMud;
+import minestrapp.block.BlockEndermiteHiveHusk;
 import minestrapp.block.BlockFargrowth;
 import minestrapp.block.BlockFargrowthPath;
 import minestrapp.block.BlockGlaciericIce;
@@ -33,6 +36,7 @@ import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
 import minestrapp.block.BlockHalfStoneSlab4;
+import minestrapp.block.BlockHangingMoss;
 import minestrapp.block.BlockInvincium;
 import minestrapp.block.BlockIrradiantSunstone;
 import minestrapp.block.BlockIrradium;
@@ -48,6 +52,7 @@ import minestrapp.block.BlockMLog;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
+import minestrapp.block.BlockMiteEggsack;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockPipe;
@@ -66,6 +71,7 @@ import minestrapp.block.BlockStoneSlab3;
 import minestrapp.block.BlockStoneSlab4;
 import minestrapp.block.BlockSunstoneDeposit;
 import minestrapp.block.BlockTanningRack;
+import minestrapp.block.BlockTerracreep;
 import minestrapp.block.BlockTundraGrass;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
@@ -130,8 +136,14 @@ public class MBlocks
 	public static Block raspberry_bush;
 	public static Block strawberry_bush;
 	public static Block mana_bush;
+	public static Block hanging_glow_moss;
+	public static Block clutchthorn;
 	public static Block voidberry_bush;
+	public static Block terracreep;
 	public static Block melon_bricks;
+	public static Block mite_hive;
+	public static Block mite_hive_honeyed;
+	public static Block mite_comb;
 	
 	//Soil
 	public static Block cold_sand;
@@ -282,11 +294,13 @@ public class MBlocks
 	
 	//Utility
 	public static Block rope;
+	public static Block dimensium_rope;
 	public static Block basket;
 	public static Block barrel;
 	public static Block tanning_rack;
 	public static Block glacieric_ice;
 	public static Block lava_sponge;
+	public static Block mite_eggsack;
 	public static Block pipe;
 	public static Block sorter;
 	public static Block magnet_piston_1;
@@ -335,8 +349,14 @@ public class MBlocks
 		register(raspberry_bush = new BlockBerryBush("raspberry_bush", MapColor.FOLIAGE, "plains"));
 		register(strawberry_bush = new BlockBerryBush("strawberry_bush", MapColor.FOLIAGE, "plains"));
 		register(mana_bush = new BlockBerryBush("mana_bush", MapColor.LAPIS, "coast"));
+		register(clutchthorn = new BlockClutchthorn());
 		register(voidberry_bush = new BlockVoidberryBush("voidberry_bush"));
+		register(terracreep = new BlockTerracreep());
+		register(hanging_glow_moss = new BlockHangingMoss("hanging_glow_moss").setLightLevel(0.8F));
 		register(melon_bricks = new BlockBase("melon_bricks", Material.GOURD, MapColor.LIME, SoundType.WOOD, 1F, "axe", 0).setDropsItem(new ItemStack(Items.MELON, 3), 6, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setCreativeTab(MTabs.plant));
+		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));
+		register(mite_hive_honeyed = new BlockEndermiteHiveHusk("mite_hive_honeyed", true).setLightLevel(0.5F));
+		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setCreativeTab(MTabs.environment));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -461,6 +481,7 @@ public class MBlocks
 		
 		//Decor
 		register(rope = new BlockRope());
+		register(dimensium_rope = new BlockDimensiumRope());
 		register(bauble_ice = new BlockBauble("bauble_ice", Material.ICE, MapColor.ICE, SoundType.GLASS, 0.5F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setSlipperiness(0.98F).setPushReaction(EnumPushReaction.DESTROY).setLightOpacity(3).setCreativeTab(MTabs.decor));
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		register(bauble_glowstone = new BlockBauble("bauble_glowstone", Material.GLASS, MapColor.SAND, SoundType.GLASS, 0.3F).setDropsItem(new ItemStack(Items.GLOWSTONE_DUST), 0, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.9F).setCreativeTab(MTabs.decor));
@@ -501,6 +522,7 @@ public class MBlocks
 		register(tanning_rack = new BlockTanningRack());
 		register(glacieric_ice = new BlockGlaciericIce());
 		register(lava_sponge = new BlockLavaSponge(), new ItemBlockMultistate(lava_sponge));
+		register(mite_eggsack = new BlockMiteEggsack());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));

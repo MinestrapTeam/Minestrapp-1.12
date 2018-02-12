@@ -274,11 +274,11 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
         if (destination instanceof ISidedInventory && direction != null)
         {
             ISidedInventory isidedinventory = (ISidedInventory)destination;
-            int[] aint = isidedinventory.getSlotsForFace(direction);
+            int[] aint = isidedinventory.getSlotsForFace(direction.getOpposite());
 
             for (int k = 0; k < aint.length && !stack.isEmpty(); ++k)
             {
-                stack = insertStack(source, destination, stack, aint[k], direction);
+                stack = insertStack(source, destination, stack, aint[k], direction.getOpposite());
             }
         }
         else
@@ -287,7 +287,7 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
 
             for (int j = 0; j < i && !stack.isEmpty(); ++j)
             {
-                stack = insertStack(source, destination, stack, j, direction);
+                stack = insertStack(source, destination, stack, j, direction.getOpposite());
             }
         }
 

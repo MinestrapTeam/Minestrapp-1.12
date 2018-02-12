@@ -18,7 +18,9 @@ tile.blackberry_bush.name=Blackberry Bush
 tile.raspberry_bush.name=Raspberry Bush
 tile.strawberry_bush.name=Strawberry Bush
 tile.mana_bush.name=Mana Bush
+tile.clutchthorn.name=Clutchthorn
 tile.voidberry_bush.name=Voidberry Bush
+tile.terracreep.name=Terracreep Spore
 tile.mite_hive.name=Endermite Hive Husk
 tile.mite_hive_honeyed.name=Honeyed Endermite Hive Husk
 tile.mite_comb.name=Endermite Hive Combs
@@ -406,6 +408,7 @@ tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
 tile.rope.name=Rope
+tile.dimensium_rope.name=Dimensional Rope
 tile.bauble_ice.name=Ice Bauble
 tile.bauble_sunstone.name=Sunstone Bauble
 tile.bauble_glowstone.name=Glowstone Bauble
@@ -511,6 +514,7 @@ item.gem_soul.name=Soul Gem
 ## Natural Ingredients ##
 item.m_natural_item_0.name=Grass Fibers
 item.m_natural_item_1.name=Mana Leaf
+item.m_natural_item_2.name=Clutchthorn Fibers
 
 ## Mob Loot ##
 item.m_mob_loot_0.name=Animal Bones
@@ -708,6 +712,7 @@ item.jam.name=Jam
 item.void_jam.name=Void Jam
 item.peanut_butter.name=Peanut Butter
 item.hot_sauce.name=Hot Sauce
+item.mite_honey.name=Endermite Honey
 
 item.fat.name=Fat
 item.grease.name=Grease

@@ -236,6 +236,7 @@ public class MItems
 	public static Item void_jam;
 	public static Item peanut_butter;
 	public static Item hot_sauce;
+	public static Item mite_honey;
 	
 	public static Item fat;
 	public static Item grease;
@@ -280,8 +281,8 @@ public class MItems
 	
 	public static void init()
 	{
-		//0=Grass Fibers, 1=Mana Leaf
-		register(natural_ingredients = new ItemMetaBase("m_natural_item", 2).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
+		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
+		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew
 		register(mob_loot = new ItemMetaBase("m_mob_loot", 3).setCreativeTab(MTabs.ingredients));
 		
@@ -344,7 +345,7 @@ public class MItems
 		register(ice_hoe = new MHoe(GLACIERITE, "ice_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
-		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
+		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger").setBurnTime(200));
 		register(stone_dagger = new MDagger(Item.ToolMaterial.STONE, "stone_dagger"));
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
 		register(copper_dagger = new MDagger(COPPER, "copper_dagger"));
@@ -478,6 +479,7 @@ public class MItems
 		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.8F));
 		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
 		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F));
+		register(mite_honey = new MItemsFood(2, 0.6F, false, "mite_honey").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.GLOWING, 300, 0), 1F));
 		
 		register(fat = new MItemsFood(1, 2.5F, true, "fat").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
 		register(grease = new ItemBase("grease").setBurnTime(2000).setCreativeTab(MTabs.food));
