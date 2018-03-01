@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:candle"
+        },
+        "title": {
+            "translate": "advancements.husbandry.candle.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.candle.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/tallow",
+    "criteria": {
+        "tallow": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:candle"
+                    }
+                ]
+            }
+        }
+    }
+}

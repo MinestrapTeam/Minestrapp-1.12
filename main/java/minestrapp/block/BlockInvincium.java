@@ -23,6 +23,7 @@ public class BlockInvincium extends BlockBase
 		this.setPushReaction(EnumPushReaction.BLOCK);
 		this.setBlockUnbreakable();
 		this.setLightLevel(0.2F);
+		this.setResistance(9999F);
 		this.setCreativeTab(MTabs.environment);
 	}
 	

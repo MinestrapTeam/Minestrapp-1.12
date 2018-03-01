@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:gem_soul"
+        },
+        "title": {
+            "translate": "advancements.nether.soul_gem.title"
+        },
+        "description": {
+            "translate": "advancements.nether.soul_gem.description"
+        }
+    },
+    "parent": "minecraft:nether/root",
+    "criteria": {
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:gem_soul"
+                    }
+                ]
+            }
+        }
+    }
+}

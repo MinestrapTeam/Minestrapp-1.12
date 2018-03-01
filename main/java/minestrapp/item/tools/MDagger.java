@@ -60,7 +60,7 @@ public class MDagger extends Item
         return this.material.getAttackDamage();
     }
 
-    public float getStrVsBlock(ItemStack stack, IBlockState state)
+    public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
         Block block = state.getBlock();
 

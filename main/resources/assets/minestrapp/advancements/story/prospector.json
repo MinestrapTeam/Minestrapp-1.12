@@ -1,0 +1,655 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:ore_torite",
+            "data": 2
+        },
+        "title": {
+            "translate": "advancements.story.prospector.title"
+        },
+        "description": {
+            "translate": "advancements.story.prospector.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minecraft:story/mine_diamond",
+    "criteria": {
+        "salt_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_salt"
+                    }
+                ]
+            }
+        },
+        "salt_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salt"
+                    }
+                ]
+            }
+        },
+        "coal_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:coal_ore"
+                    }
+                ]
+            }
+        },
+        "coal_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_coal"
+                    }
+                ]
+            }
+        },
+        "coal_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:coal",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "copper_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_copper"
+                    }
+                ]
+            }
+        },
+        "tin_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_tin"
+                    }
+                ]
+            }
+        },
+        "iron_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:iron_ore"
+                    }
+                ]
+            }
+        },
+        "iron_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_iron"
+                    }
+                ]
+            }
+        },
+        "gold_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:gold_ore"
+                    }
+                ]
+            }
+        },
+        "gold_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_gold"
+                    }
+                ]
+            }
+        },
+        "meurodite_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_meurodite"
+                    }
+                ]
+            }
+        },
+        "meurodite_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_gem",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "lapis_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:lapis_ore"
+                    }
+                ]
+            }
+        },
+        "lapis_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_lapis"
+                    }
+                ]
+            }
+        },
+        "lapis_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:dye",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "redstone_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:redstone_ore"
+                    }
+                ]
+            }
+        },
+        "redstone_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "redstone_deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "redstone_deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "redstone_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "redstone_deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "redstone_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "redstone_glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "redstone_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "redstone_reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_redstone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "redstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:redstone"
+                    }
+                ]
+            }
+        },
+        "sandy_redstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:redstone_sandy"
+                    }
+                ]
+            }
+        },
+        "frosted_redstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:redstone_frosted"
+                    }
+                ]
+            }
+        },
+        "icy_redstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:redstone_icy"
+                    }
+                ]
+            }
+        },
+        "briny_redstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:redstone_briny"
+                    }
+                ]
+            }
+        },
+        "irradium_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_irradium"
+                    }
+                ]
+            }
+        },
+        "irradium_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:irradium"
+                    }
+                ]
+            }
+        },
+        "torite_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_torite"
+                    }
+                ]
+            }
+        },
+        "sunstone_deposit": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:sunstone_deposit"
+                    }
+                ]
+            }
+        },
+        "sunstone_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_gem",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "glacierite_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_gem",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "diamond_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:diamond_ore"
+                    }
+                ]
+            }
+        },
+        "diamond_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_diamond"
+                    }
+                ]
+            }
+        },
+        "diamond_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:diamond"
+                    }
+                ]
+            }
+        },
+        "emerald_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:emerald_ore"
+                    }
+                ]
+            }
+        },
+        "emerald_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_emerald"
+                    }
+                ]
+            }
+        },
+        "emerald_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:emerald"
+                    }
+                ]
+            }
+        },
+        "titanium_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_titanium"
+                    }
+                ]
+            }
+        },
+        "nether_quartz_vanilla": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz_ore"
+                    }
+                ]
+            }
+        },
+        "nether_quartz_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz"
+                    }
+                ]
+            }
+        },
+        "blazium_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_blazium"
+                    }
+                ]
+            }
+        },
+        "blazium_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_gem",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "soul_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_soul"
+                    }
+                ]
+            }
+        },
+        "soul_eyes": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:soul_eyes"
+                    }
+                ]
+            }
+        },
+        "soul_gem_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:gem_soul"
+                    }
+                ]
+            }
+        },
+        "dimensium_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_dimensium"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "salt_ore",
+            "salt_item"
+        ],
+        [
+            "coal_vanilla",
+            "coal_ore",
+            "coal_item"
+        ],
+        [
+            "copper_ore"
+        ],
+        [
+            "tin_ore"
+        ],
+        [
+            "iron_vanilla",
+            "iron_ore"
+        ],
+        [
+            "gold_vanilla",
+            "gold_ore"
+        ],
+        [
+            "meurodite_ore",
+            "meurodite_item"
+        ],
+        [
+            "lapis_vanilla",
+            "lapis_ore",
+            "lapis_item"
+        ],
+        [
+            "redstone_vanilla",
+            "redstone_deepstone",
+            "redstone_item"
+        ],
+        [
+            "redstone_red_rock",
+            "redstone_deep_red_rock",
+            "sandy_redstone_item"
+        ],
+        [
+            "redstone_coldstone",
+            "redstone_deep_coldstone",
+            "frosted_redstone_item"
+        ],
+        [
+            "redstone_icestone",
+            "redstone_glacierrock",
+            "icy_redstone_item"
+        ],
+        [
+            "redstone_oceanstone",
+            "redstone_reefstone",
+            "briny_redstone_item"
+        ],
+        [
+            "irradium_ore",
+            "irradium_item"
+        ],
+        [
+            "torite_ore"
+        ],
+        [
+            "sunstone_deposit",
+            "sunstone_item"
+        ],
+        [
+            "glacierite_item"
+        ],
+        [
+            "diamond_vanilla",
+            "diamond_ore",
+            "diamond_item"
+        ],
+        [
+            "emerald_vanilla",
+            "emerald_ore",
+            "emerald_item"
+        ],
+        [
+            "titanium_ore"
+        ],
+        [
+            "nether_quartz_vanilla",
+            "nether_quartz_item"
+        ],
+        [
+            "blazium_ore",
+            "blazium_item"
+        ],
+        [
+            "soul_ore",
+            "soul_eyes",
+            "soul_gem_item"
+        ],
+        [
+            "dimensium_ore"
+        ]
+    ]
+}

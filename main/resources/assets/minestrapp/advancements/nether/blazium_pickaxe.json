@@ -1,0 +1,86 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:fire_pickaxe"
+        },
+        "title": {
+            "translate": "advancements.nether.blazium_pickaxe.title"
+        },
+        "description": {
+            "translate": "advancements.nether.blazium_pickaxe.description"
+        }
+    },
+    "parent": "minestrapp:nether/blazium_ingot",
+    "criteria": {
+        "pickaxe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_pickaxe"
+                    }
+                ]
+            }
+        },
+        "axe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_axe"
+                    }
+                ]
+            }
+        },
+        "shovel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_shovel"
+                    }
+                ]
+            }
+        },
+        "hoe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_hoe"
+                    }
+                ]
+            }
+        },
+        "sword": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_sword"
+                    }
+                ]
+            }
+        },
+        "dagger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_dagger"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "pickaxe",
+            "axe",
+            "shovel",
+            "hoe",
+            "sword",
+            "dagger"
+        ]
+    ]
+}

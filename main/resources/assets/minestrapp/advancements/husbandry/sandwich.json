@@ -1,0 +1,46 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:hamburger"
+        },
+        "title": {
+            "translate": "advancements.husbandry.sandwich.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.sandwich.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/buns",
+    "criteria": {
+        "hamburger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:hamburger"
+                    }
+                ]
+            }
+        },
+        "pbj": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:pbj"
+                    }
+                ]
+            }
+        },
+        "salmon_burger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salmon_burger"
+                    }
+                ]
+            }
+        }
+    }
+}

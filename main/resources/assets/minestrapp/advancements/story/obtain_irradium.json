@@ -1,0 +1,42 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:irradium"
+        },
+        "title": {
+            "translate": "advancements.story.obtain_irradium.title"
+        },
+        "description": {
+            "translate": "advancements.story.obtain_irradium.description"
+        }
+    },
+    "parent": "minecraft:story/iron_tools",
+    "criteria": {
+        "irradium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:irradium"
+                    }
+                ]
+            }
+        },
+        "irradium_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_irradium"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "irradium",
+            "irradium_ore"
+        ]
+    ]
+}

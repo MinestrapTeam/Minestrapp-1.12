@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "salads",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict", 
+            "ore": "saladGreens"
+        },
+        {
+            "item": "minestrapp:lettuce"
+        },
+        {
+            "item": "minestrapp:cabbage"
+        },
+        {
+            "item": "minestrapp:bread_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:bread_salad"
+    }   
+}

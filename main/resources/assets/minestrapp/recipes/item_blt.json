@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:bun"
+        },
+        {
+            "item": "minestrapp:bacon"
+        },
+        {
+            "item": "minestrapp:lettuce"
+        },
+        {
+            "item": "minestrapp:tomato"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:blt"
+    }   
+}

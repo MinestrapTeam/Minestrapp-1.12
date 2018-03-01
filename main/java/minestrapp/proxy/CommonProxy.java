@@ -7,6 +7,7 @@ import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityPipe;
+import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.crafting.FurnaceRecipes;
 import minestrapp.crafting.OreDictRegistry;
@@ -75,6 +76,8 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityMagnetPiston.class, "TileEntityMagnetPiston");
 		
 		GameRegistry.registerTileEntity(TileEntityPipe.class, "TileEntityPipe");
+		
+		GameRegistry.registerTileEntity(TileEntitySorter.class, "TileEntitySorter");
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

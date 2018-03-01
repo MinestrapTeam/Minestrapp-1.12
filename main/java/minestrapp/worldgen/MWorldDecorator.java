@@ -6,9 +6,11 @@ import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockGlowshroom;
 import minestrapp.block.BlockMDirt;
+import minestrapp.block.BlockTerracreep;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBaseMOnly;
+import minestrapp.config.MConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockLeaves;
@@ -16,6 +18,7 @@ import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -386,13 +389,16 @@ public class MWorldDecorator
 			}
 			if(biome == Biomes.ICE_PLAINS)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 80 - random.nextInt(20);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos icePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenIceDeposit iceGen = new MGenIceDeposit();
-				iceGen.generate(world, random, icePos);
+				if(MConfig.generateIceMounds)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 80 - random.nextInt(20);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos icePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenIceDeposit iceGen = new MGenIceDeposit();
+					iceGen.generate(world, random, icePos);
+				}
 			}
 			if(biome instanceof BiomeMushroomIsland)
 			{
@@ -435,6 +441,20 @@ public class MWorldDecorator
 				{
 					BlockPos subpos = pos.add(x, 0, z);
 					chunk.setBlockState(subpos, MBlocks.invincium.getDefaultState());
+				}
+			}
+			
+			for(int i = 0 ; i < 10 ; i++)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = 128 - random.nextInt(90);
+				int posZ = random.nextInt(16)+8;
+				
+				BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
+				{
+					MGenHangingMoss mossGen = new MGenHangingMoss(40);
+					mossGen.generate(world, random, mossPos);
 				}
 			}
 			
@@ -533,14 +553,22 @@ public class MWorldDecorator
 								Block east = world.getBlockState(subpos2.down().east()).getBlock();
 								Block west = world.getBlockState(subpos2.down().west()).getBlock();
 								
+								MGenChordsolTendril gen = new MGenChordsolTendril(EnumFacing.NORTH);
+								
 								if(north == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().north(), EnumFacing.NORTH);
+									gen.generate(world, random, subpos2.down().north());
 								if(south == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().south(), EnumFacing.SOUTH);
+								{
+									gen.setFacing(EnumFacing.SOUTH).generate(world, random, subpos2.down().south());
+								}
 								if(east == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().east(), EnumFacing.EAST);
+								{
+									gen.setFacing(EnumFacing.EAST).generate(world, random, subpos2.down().east());
+								}
 								if(west == MBlocks.fargrowth)
-									generateChordsolTendril(world, random, subpos2.down().west(), EnumFacing.WEST);
+								{
+									gen.setFacing(EnumFacing.WEST).generate(world, random, subpos2.down().west());
+								}
 							}
 						}
 					}
@@ -557,39 +585,31 @@ public class MWorldDecorator
 					if(world.getBlockState(hivePos).getBlock().isReplaceable(world, hivePos) && world.getBlockState(hivePos.offset(EnumFacing.DOWN)).getBlock() == MBlocks.fargrowth)
 					hiveGen.generate(world, random, hivePos);
 				}
-			}
-		}
-	}
-	
-	public static void generateChordsolTendril (World world, Random rand, BlockPos pos, EnumFacing faceDir)
-	{
-		IBlockState chordsol = MBlocks.portal_dust.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.PODZOL);
-		
-		if(world.getBlockState(pos.offset(faceDir.rotateY())) != chordsol && world.getBlockState(pos.offset(faceDir.rotateYCCW())) != chordsol && world.getBlockState(pos.offset(faceDir)) != chordsol)
-		{
-			world.setBlockState(pos, chordsol, 2);
-			if(rand.nextInt(10) < 7 && world.getBlockState(pos.up()).getBlock() == MBlocks.clutchthorn && world.isAirBlock(pos.up().up()))
-				world.setBlockState(pos.up().up(), MBlocks.clutchthorn.getDefaultState());
-		
-			for(int i = 0 ; i < 3 ; i++)
-			{
-				int dir = rand.nextInt(4);
-				EnumFacing facing = EnumFacing.NORTH;
 				
-				if(dir == 1)
-					facing = EnumFacing.EAST;
-				else if(dir == 2)
-					facing = EnumFacing.SOUTH;
-				else if(dir == 3)
-					facing = EnumFacing.WEST;
+				for(int i = 0 ; i < 15 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 90 - random.nextInt(80);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
+					{
+						MGenHangingMoss mossGen = new MGenHangingMoss(36);
+						mossGen.generate(world, random, mossPos);
+					}
+				}
 				
-				BlockPos offsetPos = pos.offset(facing);
-				if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
-					offsetPos = pos.offset(facing).down();
-				if(world.getBlockState(offsetPos).getBlock() != MBlocks.fargrowth)
-					offsetPos = pos.offset(facing).up();
-				if(world.getBlockState(offsetPos).getBlock() == MBlocks.fargrowth && world.getBlockState(offsetPos.offset(facing)) != chordsol)
-					generateChordsolTendril(world, rand, offsetPos, facing);
+				int posX = random.nextInt(16) + 8;
+				int posY = random.nextInt(250);
+				int posZ = random.nextInt(16) + 8;
+				
+				BlockPos creepPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				
+				if(world.isAirBlock(creepPos) && ((world.getBlockState(creepPos.up()).isFullBlock() && world.getBlockState(creepPos.up()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.down()).isFullBlock() && world.getBlockState(creepPos.down()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.north()).isFullBlock() && world.getBlockState(creepPos.north()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.east()).isFullBlock() && world.getBlockState(creepPos.east()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.south()).isFullBlock() && world.getBlockState(creepPos.south()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.west()).isFullBlock() && world.getBlockState(creepPos.west()).getMaterial() == Material.ROCK)))
+				{
+					world.setBlockState(creepPos, MBlocks.terracreep.getDefaultState());
+				}
 			}
 		}
 	}

@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " x ",
+        "xix",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:blaze_rod"
+        },
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBlazium"
+        }
+     },
+     "result": {
+        "item": "minestrapp:fire_mace",
+        "data": 0
+     }
+}

@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "variant=polished": [
+            { "model": "minestrapp:polished_soul_glass" }
+        ],
+        "variant=tiles": [
+            { "model": "minestrapp:soul_glass_tiles" }
+        ],
+        "variant=lines_y": [
+            { "model": "minestrapp:soul_glass_pillar" }
+        ],
+        "variant=lines_z": [
+            { "model": "minestrapp:soul_glass_pillar", "x": 90 }
+        ],
+        "variant=lines_x": [
+            { "model": "minestrapp:soul_glass_pillar", "x": 90, "y": 90 }
+        ]
+    }
+}

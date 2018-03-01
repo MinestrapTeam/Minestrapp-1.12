@@ -1,0 +1,127 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_cobblestone",
+            "data": 0
+        },
+        "title": {
+            "translate": "advancements.story.biome_stones.title"
+        },
+        "description": {
+            "translate": "advancements.story.biome_stones.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minecraft:story/mine_stone",
+    "criteria": {
+        "stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone"
+                    }
+                ]
+            }
+        },
+        "red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 8
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:crusher"
+        },
+        "title": {
+            "translate": "advancements.story.crusher.title"
+        },
+        "description": {
+            "translate": "advancements.story.crusher.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minestrapp:story/obtain_titanium",
+    "criteria": {
+        "crusher": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:crusher"
+                    }
+                ]
+            }
+        }
+    }
+}

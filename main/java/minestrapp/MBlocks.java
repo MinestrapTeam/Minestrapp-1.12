@@ -27,6 +27,7 @@ import minestrapp.block.BlockDriedMud;
 import minestrapp.block.BlockEndermiteHiveHusk;
 import minestrapp.block.BlockFargrowth;
 import minestrapp.block.BlockFargrowthPath;
+import minestrapp.block.BlockGlacialInvincium;
 import minestrapp.block.BlockGlaciericIce;
 import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
@@ -61,7 +62,9 @@ import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
+import minestrapp.block.BlockSorter;
 import minestrapp.block.BlockSoulEyes;
+import minestrapp.block.BlockSoulGlass;
 import minestrapp.block.BlockSoulOre;
 import minestrapp.block.BlockSoulsteelVessel;
 import minestrapp.block.BlockStoneCutter;
@@ -96,6 +99,7 @@ import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
+import minestrapp.config.MConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHugeMushroom;
@@ -177,6 +181,8 @@ public class MBlocks
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
 	public static Block chiseled_stone;
+	public static Block soul_glass;
+	public static Block blazed_soul_glass;
 	public static Block purpur;
 	public static Block portar;
 	public static Block invincium;
@@ -389,10 +395,13 @@ public class MBlocks
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
 		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
+		register(soul_glass = new BlockSoulGlass("soul_glass", MapColor.BROWN).setCreativeTab(MTabs.stone), new ItemBlockMultistate(soul_glass));
+		register(blazed_soul_glass = new BlockSoulGlass("blazed_soul_glass", MapColor.ADOBE).setCreativeTab(MTabs.stone).setLightLevel(0.3F), new ItemBlockMultistate(blazed_soul_glass));
 		register(purpur = new BlockBase("m_purpur", Material.ROCK, MapColor.MAGENTA, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone));
 		register(portar = new BlockPortar(), new ItemBlockMultistate(portar));
 		register(invincium = new BlockInvincium());
-		register(glacial_invincium = new BlockBase("glacial_invincium", Material.ROCK, MapColor.CYAN, SoundType.STONE, -1F).setPushReaction(EnumPushReaction.BLOCK).setSlipperiness(0.85F).setEntityInvulnerability("all").setBlockUnbreakable().setCreativeTab(MTabs.environment));
+		register(glacial_invincium = new BlockGlacialInvincium().setPushReaction(EnumPushReaction.BLOCK).setSlipperiness(0.85F).setEntityInvulnerability("all").setBlockUnbreakable().setResistance(9999F).setCreativeTab(MTabs.environment));
+		
 		register(double_misc_stone_slab_1 = new BlockDoubleMiscStoneSlab1("m_misc_stone_slab_1"));
 		register(misc_stone_slab_1 = new BlockHalfMiscStoneSlab1("m_misc_stone_slab_1"), new ItemBlockMSlab(misc_stone_slab_1, misc_stone_slab_1, double_misc_stone_slab_1));
 		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
@@ -403,6 +412,7 @@ public class MBlocks
 		register(stone_slab_3 = new BlockHalfStoneSlab3("m_stone_slab_3"), new ItemBlockMSlab(stone_slab_3, stone_slab_3, double_stone_slab_3));
 		register(double_stone_slab_4 = new BlockDoubleStoneSlab4("m_stone_slab_4"));
 		register(stone_slab_4 = new BlockHalfStoneSlab4("m_stone_slab_4"), new ItemBlockMSlab(stone_slab_4, stone_slab_4, double_stone_slab_4));
+		
 		register(mud_brick_stairs = new BlockStairBase(mud_bricks));
 		register(granite_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.GRANITE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.GRANITE_BRICKS.getUnlocalizedName()));
 		register(diorite_brick_stairs = new BlockStairBase(decor_stone.getDefaultState().withProperty(BlockDecorativeStones.VARIANT, BlockDecorativeStones.DecorStoneType.DIORITE_BRICKS), decor_stone.getUnlocalizedName() + "_" + BlockDecorativeStones.DecorStoneType.DIORITE_BRICKS.getUnlocalizedName()));
@@ -531,7 +541,8 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(magnet_piston_head = new BlockMagnetPistonExtension().setRegistryName("magnet_piston_head"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
-		register(pipe = new BlockPipe());
+		register(pipe = new BlockPipe("pipe"));
+		register(sorter = new BlockSorter("sorter"));
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
@@ -624,6 +635,11 @@ public class MBlocks
 			initModel(ore_irradium, i, "ore_irradium_" + EnumStoneType.values()[i].getName());
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
+		}
+		for(int i = 0 ; i < 3 ; i++)
+		{
+			initModel(soul_glass, i, "soul_glass_" + BlockSoulGlass.EnumType.values()[i].toString());
+			initModel(blazed_soul_glass, i, "blazed_soul_glass_" + BlockSoulGlass.EnumType.values()[i].toString());
 		}
 		for(int i = 0 ; i < BlockPortar.PortarType.values().length ; i++)
 		{

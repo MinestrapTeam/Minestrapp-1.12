@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:moss"
+        },
+        "title": {
+            "translate": "advancements.foraging.obtain_moss.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.obtain_moss.description"
+        }
+    },
+    "parent": "minestrapp:foraging/root",
+    "criteria": {
+        "moss": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:moss"
+                    }
+                ]
+            }
+        }
+    }
+}

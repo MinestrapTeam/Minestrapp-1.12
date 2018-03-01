@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:smelling_salts"
+        },
+        "title": {
+            "translate": "advancements.adventure.smelling_salts.title"
+        },
+        "description": {
+            "translate": "advancements.adventure.smelling_salts.description"
+        }
+    },
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+        "smelling_salts": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item":
+                {
+                    "item": "minestrapp:smelling_salts"
+                }
+            }
+        }
+    }
+}

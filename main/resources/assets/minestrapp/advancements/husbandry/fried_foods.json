@@ -1,0 +1,53 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:fish_and_chips"
+        },
+        "title": {
+            "translate": "advancements.husbandry.fried_foods.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.fried_foods.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/tallow",
+    "criteria": {
+        "fries": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fries"
+                    }
+                ]
+            }
+        },
+        "fried_fish": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fried_fish"
+                    }
+                ]
+            }
+        },
+        "fried_salmon": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fried_salmon"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "fries",
+            "fried_fish",
+            "fried_salmon"
+        ]
+    ]
+}

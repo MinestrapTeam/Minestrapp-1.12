@@ -1,0 +1,60 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:titanium_chest"
+        },
+        "title": {
+            "translate": "advancements.story.titanium_armor.title"
+        },
+        "description": {
+            "translate": "advancements.story.titanium_armor.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minestrapp:story/obtain_titanium",
+    "rewards": {
+        "experience": 2500
+    },
+    "criteria": {
+        "titanium_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:titanium_chest"
+                    }
+                ]
+            }
+        },
+        "titanium_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:titanium_helm"
+                    }
+                ]
+            }
+        },
+        "titanium_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:titanium_legs"
+                    }
+                ]
+            }
+        },
+        "titanium_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:titanium_feet"
+                    }
+                ]
+            }
+        }
+    }
+}

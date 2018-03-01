@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:dimensium_rope"
+        },
+        "title": {
+            "translate": "advancements.end.dimensional_rope.title"
+        },
+        "description": {
+            "translate": "advancements.end.dimensional_rope.description"
+        }
+    },
+    "parent": "minestrapp:end/obtain_mite_honey",
+    "criteria": {
+        "mite_honey": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:dimensium_rope"
+                    }
+                ]
+            }
+        }
+    }
+}

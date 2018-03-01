@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " x ",
+        "xix",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "x": {
+            "type": "forge:ore_dict", 
+            "ore": "ingotGold"
+        }
+     },
+     "result": {
+        "item": "minestrapp:gold_mace",
+        "data": 0
+     }
+}

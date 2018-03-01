@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:rope"
+        },
+        "title": {
+            "translate": "advancements.foraging.rope.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.rope.description"
+        }
+    },
+    "parent": "minestrapp:foraging/obtain_grasses",
+    "criteria": {
+        "rope": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:rope"
+                    }
+                ]
+            }
+        }
+    }
+}

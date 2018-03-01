@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:alloy"
+        },
+        "title": {
+            "translate": "advancements.story.alloy_furnace.title"
+        },
+        "description": {
+            "translate": "advancements.story.alloy_furnace.description"
+        }
+    },
+    "parent": "minestrapp:story/smelt_tin",
+    "criteria": {
+        "alloy": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:alloy"
+                    }
+                ]
+            }
+        }
+    }
+}

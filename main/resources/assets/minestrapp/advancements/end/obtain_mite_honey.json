@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:mite_honey"
+        },
+        "title": {
+            "translate": "advancements.end.obtain_mite_honey.title"
+        },
+        "description": {
+            "translate": "advancements.end.obtain_mite_honey.description"
+        }
+    },
+    "parent": "minecraft:end/enter_end_gateway",
+    "criteria": {
+        "mite_honey": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mite_honey"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestrapp:blocks/stone/soul_glass_pillar_top",
+        "side": "minestrapp:blocks/stone/soul_glass_pillar_side"
+    }
+}

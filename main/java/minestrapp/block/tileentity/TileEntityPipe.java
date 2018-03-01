@@ -306,6 +306,11 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
         }
     }
 	
+	public long getLastUpdateTime()
+	{
+		return tickedGameTime;
+	}
+	
 	private static ItemStack insertStack(IInventory source, IInventory destination, ItemStack stack, int index, EnumFacing direction)
     {
         ItemStack itemstack = destination.getStackInSlot(index);
@@ -365,7 +370,28 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
                         {
                             TileEntityPipe tileentityhopper = (TileEntityPipe)source;
 
-                            if (tileentityhopper1.transferCooldown >= tileentityhopper.transferCooldown)
+                            if (tileentityhopper1.getLastUpdateTime() >= tileentityhopper.getLastUpdateTime())
+                            {
+                                k = 1;
+                            }
+                        }
+
+                        tileentityhopper1.setTransferCooldown(8 - k);
+                    }
+                }
+            	else if (flag1 && destination instanceof TileEntitySorter)
+            	{
+                    TileEntitySorter tileentityhopper1 = (TileEntitySorter)destination;
+
+                    if (!tileentityhopper1.mayTransfer())
+                    {
+                        int k = 0;
+
+                        if (source != null && source instanceof TileEntitySorter)
+                        {
+                            TileEntitySorter tileentityhopper = (TileEntitySorter)source;
+
+                            if (tileentityhopper1.getLastUpdateTime() >= tileentityhopper.getLastUpdateTime())
                             {
                                 k = 1;
                             }

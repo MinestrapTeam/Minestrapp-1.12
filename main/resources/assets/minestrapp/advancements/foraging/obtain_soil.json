@@ -1,0 +1,257 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:dirt",
+            "data": 0
+        },
+        "title": {
+            "translate": "advancements.foraging.obtain_soil.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.obtain_soil.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minestrapp:foraging/root",
+    "criteria": {
+        "clay": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:clay"
+                    }
+                ]
+            }
+        },
+        "dirt": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:dirt"
+                    }
+                ]
+            }
+        },
+        "grass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:grass"
+                    }
+                ]
+            }
+        },
+        "mycelium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:mycelium"
+                    }
+                ]
+            }
+        },
+        "gravel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:gravel"
+                    }
+                ]
+            }
+        },
+        "sand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sand",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "red_sand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sand",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cold_sand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:cold_sand",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cold_red_sand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:cold_sand",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "clay_soil": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:clay_soil"
+                    }
+                ]
+            }
+        },
+        "clay_grass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:clay_grass"
+                    }
+                ]
+            }
+        },
+        "permafrost": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:permafrost"
+                    }
+                ]
+            }
+        },
+        "lichen": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:lichen"
+                    }
+                ]
+            }
+        },
+        "mud": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mud"
+                    }
+                ]
+            }
+        },
+        "dried_mud": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:dried_mud"
+                    }
+                ]
+            }
+        },
+        "soul_sand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:soul_sand"
+                    }
+                ]
+            }
+        },
+        "soul_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_soul"
+                    }
+                ]
+            }
+        },
+        "portal_dust": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portal_dust"
+                    }
+                ]
+            }
+        },
+        "fargrowth": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fargrowth"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "clay"
+        ],
+        [
+            "dirt",
+            "grass",
+            "mycelium"
+        ],
+        [
+            "gravel"
+        ],
+        [
+            "sand"
+        ],
+        [
+            "red_sand"
+        ],
+        [
+            "cold_sand"
+        ],
+        [
+            "cold_red_sand"
+        ],
+        [
+            "clay_soil",
+            "clay_grass"
+        ],
+        [
+            "permafrost",
+            "lichen"
+        ],
+        [
+            "mud",
+            "dried_mud"
+        ],
+        [
+            "soul_sand",
+            "soul_ore"
+        ],
+        [
+            "portal_dust",
+            "fargrowth"
+        ]
+    ]
+}

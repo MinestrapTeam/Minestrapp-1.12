@@ -1,0 +1,75 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:salted_steak"
+        },
+        "title": {
+            "translate": "advancements.husbandry.salted_meat.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.salted_meat.description"
+        }
+    },
+    "parent": "minecraft:husbandry/breed_an_animal",
+    "criteria": {
+        "chicken": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salted_chicken"
+                    }
+                ]
+            }
+        },
+        "mutton": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salted_mutton"
+                    }
+                ]
+            }
+        },
+        "rabbit": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salted_rabbit"
+                    }
+                ]
+            }
+        },
+        "steak": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salted_steak"
+                    }
+                ]
+            }
+        },
+        "porkchop": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salted_porkchop"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "chicken",
+            "mutton",
+            "rabbit",
+            "steak",
+            "porkchop"
+        ]
+    ]
+}

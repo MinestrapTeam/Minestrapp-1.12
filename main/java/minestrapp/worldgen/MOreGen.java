@@ -10,6 +10,7 @@ import minestrapp.block.EnumStoneType;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
+import minestrapp.config.MConfig;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -144,42 +145,55 @@ public class MOreGen implements IWorldGenerator
 	{
 		if(world.provider.getDimension() == 0)
 		{
-			this.runGenerator(copper, world, random, chunkX, chunkZ, 10, 30, 110, true);
-			this.runGenerator(tin, world, random, chunkX, chunkZ, 10, 30, 110, true);
-			this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
-			this.runGenerator(irradium, world, random, chunkX, chunkZ, 5, 0, 32, true);
-			this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
+			if(MConfig.generateCopper)
+				this.runGenerator(copper, world, random, chunkX, chunkZ, 10, 30, 110, true);
+			if(MConfig.generateTin)
+				this.runGenerator(tin, world, random, chunkX, chunkZ, 10, 30, 110, true);
+			if(MConfig.generateMeurodite)
+				this.runGenerator(meurodite, world, random, chunkX, chunkZ, 5, 0, 36, true);
+			if(MConfig.generateIrradium)
+				this.runGenerator(irradium, world, random, chunkX, chunkZ, 5, 0, 32, true);
+			if(MConfig.generateTitanium)
+				this.runGenerator(titanium, world, random, chunkX, chunkZ, 3, 0, 10, true);
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
 			if(biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
 			{
-				this.runGenerator(salt, world, random, chunkX, chunkZ, 3, 12, 60, true);
+				if(MConfig.generateSalt)
+					this.runGenerator(salt, world, random, chunkX, chunkZ, 3, 12, 60, true);
 			}
 			else if(biome instanceof BiomeJungle || biome instanceof BiomeSwamp || biome == Biome.getBiome(29))
 			{
-				this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
+				if(MConfig.generateTorite)
+					this.runGenerator(torite, world, random, chunkX, chunkZ, 4, 0, 36, true);
 			}
 			
-			int posX = random.nextInt(16)+8;
-			int posY = 128 - random.nextInt(120);
-			int posZ = random.nextInt(16)+8;
-			
-			BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-			MGenSunstone sunstoneGen = new MGenSunstone(5);
-			sunstoneGen.generate(world, random, sunstonePos);
+			if(MConfig.generateSunstone)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = 128 - random.nextInt(120);
+				int posZ = random.nextInt(16)+8;
+				
+				BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenSunstone sunstoneGen = new MGenSunstone(5);
+				sunstoneGen.generate(world, random, sunstonePos);
+			}
 			
 			MStoneGen.generate(world, chunkX, chunkZ, random);
 		}
 		
 		else if(world.provider.getDimension() == -1)
 		{
-			this.runGenerator(blazium, world, random, chunkX, chunkZ, 12, 0, 128, false);
-			this.runGenerator(soul, world, random, chunkX, chunkZ, 32, 20, 100, false);
+			if(MConfig.generateBlazium)
+				this.runGenerator(blazium, world, random, chunkX, chunkZ, 12, 0, 128, false);
+			if(MConfig.generateSoulOre)
+				this.runGenerator(soul, world, random, chunkX, chunkZ, 32, 20, 100, false);
 		}
 		
 		else if(world.provider.getDimension() == 1)
 		{
-			this.runGenerator(dimensium, world, random, chunkX, chunkZ, 8, 20, 128, false);
+			if(MConfig.generateDimensium)
+				this.runGenerator(dimensium, world, random, chunkX, chunkZ, 8, 20, 128, false);
 			
 			if((chunkX * chunkX) + (chunkZ * chunkZ) > 3844)
 			{
@@ -191,13 +205,16 @@ public class MOreGen implements IWorldGenerator
 				MGenVoidberry bushGen = new MGenVoidberry(12);
 				bushGen.generate(world, random, berryPos);
 				
-				posX = random.nextInt(16);
-				posY = 100 - random.nextInt(70);
-				posZ = random.nextInt(16);
-				
-				BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenSunstone sunstoneGen = new MGenSunstone(8);
-				sunstoneGen.generate(world, random, sunstonePos);
+				if(MConfig.generateSunstone)
+				{
+					posX = random.nextInt(16);
+					posY = 100 - random.nextInt(70);
+					posZ = random.nextInt(16);
+					
+					BlockPos sunstonePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenSunstone sunstoneGen = new MGenSunstone(8);
+					sunstoneGen.generate(world, random, sunstonePos);
+				}
 				
 				posX = random.nextInt(16);
 				posY = random.nextInt(26) + 10;

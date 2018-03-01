@@ -1,0 +1,87 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:deadbush",
+            "data": 0
+        },
+        "title": {
+            "translate": "advancements.foraging.obtain_bushes.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.obtain_bushes.description"
+        }
+    },
+    "parent": "minestrapp:foraging/root",
+    "criteria": {
+        "dead": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:deadbush"
+                    }
+                ]
+            }
+        },
+        "blueberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blueberry_bush"
+                    }
+                ]
+            }
+        },
+        "raspberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:raspberry_bush"
+                    }
+                ]
+            }
+        },
+        "strawberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:strawberry_bush"
+                    }
+                ]
+            }
+        },
+        "blackberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blackberry_bush"
+                    }
+                ]
+            }
+        },
+        "mana": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mana_bush"
+                    }
+                ]
+            }
+        },
+        "voidberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:voidberry_bush"
+                    }
+                ]
+            }
+        }
+    }
+}

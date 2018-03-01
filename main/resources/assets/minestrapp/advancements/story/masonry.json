@@ -1,0 +1,2609 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:mud_bricks"
+        },
+        "title": {
+            "translate": "advancements.story.masonry.title"
+        },
+        "description": {
+            "translate": "advancements.story.masonry.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minestrapp:story/biome_stones",
+    "rewards": {
+        "experience": 5000
+    },
+    "criteria": {
+        "terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:hardened_clay"
+                    }
+                ]
+            }
+        },
+        "white_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "orange_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "magenta_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "light_blue_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "yellow_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "lime_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "pink_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "gray_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "light_gray_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "cyan_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 9
+                    }
+                ]
+            }
+        },
+        "purple_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 10
+                    }
+                ]
+            }
+        },
+        "blue_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 11
+                    }
+                ]
+            }
+        },
+        "brown_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 12
+                    }
+                ]
+            }
+        },
+        "green_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 13
+                    }
+                ]
+            }
+        },
+        "red_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 14
+                    }
+                ]
+            }
+        },
+        "black_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stained_hardened_clay",
+                        "data": 15
+                    }
+                ]
+            }
+        },
+        "obsidian": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:obsidian"
+                    }
+                ]
+            }
+        },
+        "sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sandstone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "chiseled_sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sandstone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "smooth_sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sandstone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "red_sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_sandstone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "chiseled_red_sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_sandstone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "smooth_red_sandstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_sandstone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "granite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "polished_granite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "diorite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "polished_diorite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "andesite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "polished_andesite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "netherrack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:netherrack"
+                    }
+                ]
+            }
+        },
+        "end_stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:end_stone"
+                    }
+                ]
+            }
+        },
+        "cobblestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone"
+                    }
+                ]
+            }
+        },
+        "mossy_cobblestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:mossy_cobblestone"
+                    }
+                ]
+            }
+        },
+        "cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone_wall",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "mossy_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone_wall",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "prismarine": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:prismarine",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "prismarine_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:prismarine",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "dark_prismarine": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:prismarine",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "stone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stonebrick",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "mossy_stone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stonebrick",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cracked_stone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stonebrick",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "chiseled_stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stonebrick",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "nether_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:nether_brick"
+                    }
+                ]
+            }
+        },
+        "red_nether_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_nether_brick"
+                    }
+                ]
+            }
+        },
+        "end_stone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:end_bricks"
+                    }
+                ]
+            }
+        },
+        "purpur_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:purpur_block"
+                    }
+                ]
+            }
+        },
+        "purpur_pillar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:purpur_pillar"
+                    }
+                ]
+            }
+        },
+        "clay_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:brick_block"
+                    }
+                ]
+            }
+        },
+        "white_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "orange_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "magenta_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "light_blue_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "yellow_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "lime_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "pink_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "gray_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "light_gray_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "cyan_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 9
+                    }
+                ]
+            }
+        },
+        "purple_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 10
+                    }
+                ]
+            }
+        },
+        "blue_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 11
+                    }
+                ]
+            }
+        },
+        "brown_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 12
+                    }
+                ]
+            }
+        },
+        "green_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 13
+                    }
+                ]
+            }
+        },
+        "red_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 14
+                    }
+                ]
+            }
+        },
+        "black_concrete": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:concrete",
+                        "data": 15
+                    }
+                ]
+            }
+        },
+        "white_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:white_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "orange_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:orange_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "magenta_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:magenta_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "light_blue_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:light_blue_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "yellow_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:yellow_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "lime_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:lime_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "pink_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:pink_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "gray_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:gray_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "light_gray_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:silver_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "cyan_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cyan_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "purple_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:purple_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "blue_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:blue_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "brown_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:brown_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "green_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:green_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "red_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "black_glazed_terracotta": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:black_glazed_terracotta"
+                    }
+                ]
+            }
+        },
+        "stone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "sandstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cobblestone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "clay_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "stone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "quartz_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "nether_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "red_sandstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab2",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "purpur_tile_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:purpur_slab",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_stairs"
+                    }
+                ]
+            }
+        },
+        "clay_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:brick_stairs"
+                    }
+                ]
+            }
+        },
+        "stone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_brick_stairs"
+                    }
+                ]
+            }
+        },
+        "nether_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:nether_brick_stairs"
+                    }
+                ]
+            }
+        },
+        "sandstone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:sandstone_stairs"
+                    }
+                ]
+            }
+        },
+        "quartz_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz_stairs"
+                    }
+                ]
+            }
+        },
+        "red_sandstone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:red_sandstone_stairs"
+                    }
+                ]
+            }
+        },
+        "purpur_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:purpur_stairs"
+                    }
+                ]
+            }
+        },
+        "nether_quartz": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz_block",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "chiseled_nether_quartz": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz_block",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "nether_quartz_pillar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:quartz_block",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "mud_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mud_bricks"
+                    }
+                ]
+            }
+        },
+        "granite_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "granite_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "diorite_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "diorite_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "andesite_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "andesite_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "slate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "polished_slate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "slate_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "slate_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone",
+                        "data": 9
+                    }
+                ]
+            }
+        },
+        "cobbled_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cobbled_deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cobbled_deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "cobbled_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "cobbled_deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "cobbled_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "cobbled_glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "cobbled_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "cobbled_reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "stone_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "stone_deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "stone_deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "stone_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "stone_deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "stone_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "stone_glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "stone_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "stone_reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "deep_red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "deepstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "deep_coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "icestone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "glacierrock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "oceanstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "reefstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "mossy_red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "mossy_deep_red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "mossy_deepstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "mossy_coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "mossy_deep_coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "mossy_icestone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "mossy_glacierrock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "mossy_oceanstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "mossy_reefstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_mossy",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "cracked_red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cracked_deep_red_rock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cracked_deepstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "cracked_coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "cracked_deep_coldstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "cracked_icestone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "cracked_glacierrock_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "cracked_oceanstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "cracked_reefstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_cracked",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "chiseled_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "chiseled_deep_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "chiseled_deepstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "chiseled_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "chiseled_deep_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "chiseled_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "chiseled_glacierrock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "chiseled_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "chiseled_reefstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_chiseled_stone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "polished_purpur": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_purpur"
+                    }
+                ]
+            }
+        },
+        "slabbed_portar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "fishboned_portar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "tiled_portar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "chiseled_portar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "sunstone_portar_lamp": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "glowstone_portar_lamp": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "sea_portar_lamp": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "red_rock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "deep_red_rock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "deepstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "coldstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "deep_coldstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "icestone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "glacierrock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "oceanstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_1",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "reefstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cobbled_red_rock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "cobbled_deep_red_rock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "cobbled_deepstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "cobbled_coldstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "cobbled_deep_coldstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "cobbled_icestone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "cobbled_glacierrock_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_2",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "cobbled_oceanstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cobbled_reefstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "red_rock_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "deep_red_rock_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "deepstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "coldstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "deep_coldstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "icestone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_3",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "glacierrock_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_4",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "oceanstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_4",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "reefstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_slab_4",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "mud_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "granite_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "diorite_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "andesite_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "slate_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "portar_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "slabbed_portar_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:portar_slabbed_stairs"
+                    }
+                ]
+            }
+        },
+        "andesite_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone_andesite_bricks_stairs"
+                    }
+                ]
+            }
+        },
+        "diorite_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone_diorite_bricks_stairs"
+                    }
+                ]
+            }
+        },
+        "granite_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone_granite_bricks_stairs"
+                    }
+                ]
+            }
+        },
+        "slate_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:decor_stone_slate_bricks_stairs"
+                    }
+                ]
+            }
+        },
+        "mud_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mud_bricks_stairs"
+                    }
+                ]
+            }
+        },
+        "red_rock_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_red_rock_stairs"
+                    }
+                ]
+            }
+        },
+        "deep_red_rock_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_deep_red_rock_stairs"
+                    }
+                ]
+            }
+        },
+        "deepstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_deepstone_stairs"
+                    }
+                ]
+            }
+        },
+        "coldstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_coldstone_stairs"
+                    }
+                ]
+            }
+        },
+        "deep_coldstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_deep_coldstone_stairs"
+                    }
+                ]
+            }
+        },
+        "icestone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_icestone_stairs"
+                    }
+                ]
+            }
+        },
+        "glacierrock_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_glacierrock_stairs"
+                    }
+                ]
+            }
+        },
+        "oceanstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_oceanstone_stairs"
+                    }
+                ]
+            }
+        },
+        "reefstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_stone_bricks_deep_oceanstone_stairs"
+                    }
+                ]
+            }
+        },
+        "red_rock_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_red_rock_stairs"
+                    }
+                ]
+            }
+        },
+        "deep_red_rock_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_deep_red_rock_stairs"
+                    }
+                ]
+            }
+        },
+        "deepstone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_deepstone_stairs"
+                    }
+                ]
+            }
+        },
+        "coldstone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_coldstone_stairs"
+                    }
+                ]
+            }
+        },
+        "deep_coldstone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_deep_coldstone_stairs"
+                    }
+                ]
+            }
+        },
+        "icestone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_icestone_stairs"
+                    }
+                ]
+            }
+        },
+        "glacierrock_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_glacierrock_stairs"
+                    }
+                ]
+            }
+        },
+        "oceanstone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_oceanstone_stairs"
+                    }
+                ]
+            }
+        },
+        "reefstone_cobblestone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_deep_oceanstone_stairs"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_ingot",
+            "data": 2
+        },
+        "title": {
+            "translate": "advancements.story.bronze.title"
+        },
+        "description": {
+            "translate": "advancements.story.bronze.description"
+        }
+    },
+    "parent": "minestrapp:story/alloy_furnace",
+    "criteria": {
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_ingot",
+                        "data": 2
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -52,6 +52,7 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.SUGAR), new ItemStack(MItems.sugar_cookie, 8), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage()), new ItemStack(Items.COOKIE, 8), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(MItems.pepper_seeds), new ItemStack(MItems.bun, 2), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Blocks.IRON_BARS), new ItemStack(MItems.dry_spaghetti), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(Blocks.PUMPKIN), new ItemStack(Items.PUMPKIN_PIE), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(Items.APPLE), new ItemStack(MItems.apple_pie), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(MItems.blueberry, 4), new ItemStack(MItems.blueberry_pie), 0.35F);
@@ -65,6 +66,8 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.bread_tomato_sauce), new ItemStack(MItems.fat), new ItemStack(MItems.bread_tomato_soup), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.tomato_sauce), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.spaghetti), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.bread_tomato_sauce), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.bread_spaghetti), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.corn), new ItemStack(Items.BOWL), new ItemStack(MItems.popcorn), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.corn), new ItemStack(MItems.bread_bowl), new ItemStack(MItems.bread_popcorn), 0.35F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.LONG_REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
@@ -78,6 +81,7 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.POISONOUS_POTATO), new ItemStack(MItems.fries), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 0), new ItemStack(MItems.fried_fish), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 1), new ItemStack(MItems.fried_salmon), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.PORKCHOP), new ItemStack(MItems.bacon), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.CHICKEN), new ItemStack(MItems.salted_chicken), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.RABBIT), new ItemStack(MItems.salted_rabbit), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.MUTTON), new ItemStack(MItems.salted_mutton), 0.35F);

@@ -1,0 +1,57 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:torite_chest"
+        },
+        "title": {
+            "translate": "advancements.story.torite_armor.title"
+        },
+        "description": {
+            "translate": "advancements.story.torite_armor.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minestrapp:story/obtain_torite",
+    "criteria": {
+        "torite_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:torite_chest"
+                    }
+                ]
+            }
+        },
+        "torite_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:torite_helm"
+                    }
+                ]
+            }
+        },
+        "torite_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:torite_legs"
+                    }
+                ]
+            }
+        },
+        "torite_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:torite_feet"
+                    }
+                ]
+            }
+        }
+    }
+}

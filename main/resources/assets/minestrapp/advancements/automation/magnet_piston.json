@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:magnet_piston1"
+        },
+        "title": {
+            "translate": "advancements.automation.magnet_piston.title"
+        },
+        "description": {
+            "translate": "advancements.automation.magnet_piston.description"
+        }
+    },
+    "parent": "minestrapp:automation/piston",
+    "criteria": {
+        "hopper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:magnet_piston1"
+                    }
+                ]
+            }
+        }
+    }
+}

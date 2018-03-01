@@ -44,10 +44,9 @@ public class ContainerPipe extends Container
 		return this.pipeInventory.isUsableByPlayer(player);
 	}
 	
-	@Override
-	public ItemStack transferStackInSlot(EntityPlayer player, int index)
-	{
-		ItemStack itemstack = ItemStack.EMPTY;
+	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
+    {
+        ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
 
         if (slot != null && slot.getHasStack())
@@ -55,14 +54,14 @@ public class ContainerPipe extends Container
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
 
-            if (index < this.numRows)
+            if (index < this.pipeInventory.getSizeInventory())
             {
-                if (!this.mergeItemStack(itemstack1, this.numRows * 9, this.inventorySlots.size(), true))
+                if (!this.mergeItemStack(itemstack1, this.pipeInventory.getSizeInventory(), this.inventorySlots.size(), true))
                 {
                     return ItemStack.EMPTY;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 0, this.numRows * 9, false))
+            else if (!this.mergeItemStack(itemstack1, 0, this.pipeInventory.getSizeInventory(), false))
             {
                 return ItemStack.EMPTY;
             }
@@ -78,7 +77,7 @@ public class ContainerPipe extends Container
         }
 
         return itemstack;
-	}
+    }
 	
 	public void onContainerClosed(EntityPlayer playerIn)
     {

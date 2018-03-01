@@ -22,11 +22,12 @@
       "conditions": {
         "recipe": "minestrapp:block_dimensional_rope"
       }
-    },
-  "requirements": [
-    [
-      "has_clutchthorn_fibers",
-      "has_recipe"
+    }
+  },
+    "requirements": [
+        [
+          "has_clutchthorn_fibers",
+          "has_recipe"
+        ]
     ]
-  ]
 }

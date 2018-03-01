@@ -1,0 +1,29 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "coleslaw",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict", 
+            "ore": "coleslawGreens"
+        },
+        {
+            "item": "minecraft:carrot"
+        },
+        {
+            "item": "minestrapp:cabbage"
+        },
+        {
+            "type": "forge:ore_dict", 
+            "ore": "seedCelery"
+        },
+        {
+            "item": "minecraft:milk_bucket"
+        },
+        {
+            "item": "minestrapp:bread_bowl"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:bread_coleslaw"
+    }   
+}

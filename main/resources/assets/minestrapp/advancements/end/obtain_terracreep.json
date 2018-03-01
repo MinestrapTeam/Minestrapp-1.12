@@ -1,0 +1,27 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:terracreep"
+        },
+        "title": {
+            "translate": "advancements.end.obtain_terracreep.title"
+        },
+        "description": {
+            "translate": "advancements.end.obtain_terracreep.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minecraft:end/enter_end_gateway",
+    "criteria": {
+        "terracreep": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:terracreep"
+                    }
+                ]
+            }
+        }
+    }
+}

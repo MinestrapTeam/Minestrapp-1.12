@@ -1,0 +1,57 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:meurodite_chest"
+        },
+        "title": {
+            "translate": "advancements.story.meurodite_armor.title"
+        },
+        "description": {
+            "translate": "advancements.story.meurodite_armor.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minecraft:story/iron_tools",
+    "criteria": {
+        "meurodite_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:meurodite_chest"
+                    }
+                ]
+            }
+        },
+        "meurodite_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:meurodite_helm"
+                    }
+                ]
+            }
+        },
+        "meurodite_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:meurodite_legs"
+                    }
+                ]
+            }
+        },
+        "meurodite_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:meurodite_feet"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:blueberry_bush"
+        },
+        "title": {
+            "translate": "advancements.foraging.root.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.root.description"
+        },
+        "background": "minestrapp:textures/gui/advancements/backgrounds/foraging.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "obtained_blueberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blueberry"
+                    }
+                ]
+            }
+        },
+        "obtained_raspberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:raspberry"
+                    }
+                ]
+            }
+        },
+        "obtained_strawberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:strawberry"
+                    }
+                ]
+            }
+        },
+        "obtained_blackberry": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blackberry"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "obtained_blueberry",
+            "obtained_blackberry",
+            "obtained_strawberry",
+            "obtained_raspberry"
+        ]
+    ]
+}

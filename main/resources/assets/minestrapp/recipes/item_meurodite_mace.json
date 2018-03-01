@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " x ",
+        "xix",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "gemMeurodite"
+        }
+     },
+     "result": {
+        "item": "minestrapp:meurodite_mace",
+        "data": 0
+     }
+}

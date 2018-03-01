@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:block_irradium"
+        },
+        "title": {
+            "translate": "advancements.story.unstable_irradium.title"
+        },
+        "description": {
+            "translate": "advancements.story.unstable_irradium.description"
+        }
+    },
+    "parent": "minestrapp:story/obtain_irradium",
+    "criteria": {
+        "block_placed": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:block_irradium"
+            }
+        }
+    }
+}

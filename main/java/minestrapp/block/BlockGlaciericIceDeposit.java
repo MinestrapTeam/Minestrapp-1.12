@@ -45,6 +45,7 @@ public class BlockGlaciericIceDeposit extends BlockBase
 		this.setDefaultState(this.blockState.getBaseState().withProperty(this.getAgeProperty(), Integer.valueOf(0)));
 		this.setCreativeTab(MTabs.environment);
 		this.setBlockUnbreakable();
+		this.setResistance(9999F);
 		this.setEntityInvulnerability("all");
 		this.setPushReaction(EnumPushReaction.BLOCK);
 		this.setSlipperiness(1F);

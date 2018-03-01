@@ -82,7 +82,7 @@ public class BlockHangingMoss extends BlockBush implements IGrowable
         if(soil.getBlock() == this)
         	return false;
         
-        return this.canSustainBush(soil);
+        return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) && this.canSustainBush(soil);
     }
 	
 	protected boolean canSustainBush(IBlockState state)

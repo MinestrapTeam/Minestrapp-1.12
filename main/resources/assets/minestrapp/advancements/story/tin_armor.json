@@ -1,0 +1,64 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:tin_chest"
+        },
+        "title": {
+            "translate": "advancements.story.tin_armor.title"
+        },
+        "description": {
+            "translate": "advancements.story.tin_armor.description"
+        }
+    },
+    "parent": "minestrapp:story/smelt_tin",
+    "criteria": {
+        "tin_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tin_chest"
+                    }
+                ]
+            }
+        },
+        "tin_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tin_helm"
+                    }
+                ]
+            }
+        },
+        "tin_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tin_legs"
+                    }
+                ]
+            }
+        },
+        "tin_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tin_feet"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "tin_chest",
+            "tin_helm",
+            "tin_legs",
+            "tin_boots"
+        ]
+    ]
+}

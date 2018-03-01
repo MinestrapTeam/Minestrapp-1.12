@@ -12,7 +12,8 @@ import javax.annotation.Nullable;
 
 import minestrapp.block.util.BlockBase;
 
-public abstract class MBlockTileEntity<TE extends TileEntity> extends BlockBase {
+public abstract class MBlockTileEntity<TE extends TileEntity> extends BlockBase
+{
 
 	public MBlockTileEntity(String name, Material material, MapColor mapColor, SoundType soundType, float hardness, String tool, int harvestLevel)
 	{

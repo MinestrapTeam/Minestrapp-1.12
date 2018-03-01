@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:piston"
+        },
+        "title": {
+            "translate": "advancements.automation.piston.title"
+        },
+        "description": {
+            "translate": "advancements.automation.piston.description"
+        }
+    },
+    "parent": "minestrapp:automation/root",
+    "criteria": {
+        "hopper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:piston"
+                    }
+                ]
+            }
+        }
+    }
+}

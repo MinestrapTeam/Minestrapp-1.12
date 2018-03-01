@@ -1,0 +1,23 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " s ",
+        "mmm",
+        " b "
+    ],
+    "key": {
+        "s": {
+            "item": "minecraft:sugar"
+        },
+        "m": {
+            "item": "minecraft:melon"
+        },
+        "b": {
+            "item": "minecraft:glass_bottle"
+        }
+     },
+     "result": {
+        "item": "minestrapp:melonade",
+        "count": 1
+     }  
+}

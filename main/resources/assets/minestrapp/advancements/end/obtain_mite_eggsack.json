@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:mite_eggsack"
+        },
+        "title": {
+            "translate": "advancements.end.obtain_mite_eggsack.title"
+        },
+        "description": {
+            "translate": "advancements.end.obtain_mite_eggsack.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minestrapp:end/obtain_mite_honey",
+    "rewards": {
+        "experience": 50
+    },
+    "criteria": {
+        "mite_eggsack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mite_eggsack"
+                    }
+                ]
+            }
+        }
+    }
+}

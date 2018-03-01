@@ -1,0 +1,48 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:tallgrass",
+            "data": 1
+        },
+        "title": {
+            "translate": "advancements.foraging.obtain_grasses.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.obtain_grasses.description"
+        }
+    },
+    "parent": "minestrapp:foraging/root",
+    "criteria": {
+        "tall_grass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:tallgrass",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "savanna_grass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:savanna_grass"
+                    }
+                ]
+            }
+        },
+        "tundra_grass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tundra_grass"
+                    }
+                ]
+            }
+        }
+    }
+}

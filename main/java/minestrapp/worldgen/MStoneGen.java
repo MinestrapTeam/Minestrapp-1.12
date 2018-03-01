@@ -7,6 +7,7 @@ import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.util.BlockStoneBaseMOnly;
+import minestrapp.config.MConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockLeaves;
@@ -71,7 +72,7 @@ public class MStoneGen
 					IBlockState state = world.getBlockState(subpos2);
 					Block block = state.getBlock();
 
-					if (y == 0)
+					if (y == 0 && MConfig.generateInvincium)
 						chunk.setBlockState(subpos2, MBlocks.invincium.getDefaultState());
 					else if (state.isFullBlock() == true)
 					{

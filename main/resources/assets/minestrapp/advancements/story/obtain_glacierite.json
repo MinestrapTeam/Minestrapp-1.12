@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_gem",
+            "data": 6
+        },
+        "title": {
+            "translate": "advancements.story.obtain_glacierite.title"
+        },
+        "description": {
+            "translate": "advancements.story.obtain_glacierite.description"
+        }
+    },
+    "parent": "minestrapp:story/obtain_torite",
+    "criteria": {
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_gem",
+                        "data": 6
+                    }
+                ]
+            }
+        }
+    }
+}

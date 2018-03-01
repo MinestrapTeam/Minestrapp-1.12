@@ -20,6 +20,7 @@ import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MHoe;
+import minestrapp.item.tools.MMace;
 import minestrapp.item.tools.MPickaxe;
 import minestrapp.item.tools.MShovel;
 import minestrapp.item.tools.MSword;
@@ -100,26 +101,39 @@ public class MItems
 	public static Item ice_hoe;
 	
 	public static Item gold_dagger;
+	public static Item gold_mace;
 	public static Item wooden_dagger;
+	public static Item wooden_mace;
 	public static Item stone_dagger;
+	public static Item stone_mace;
 	public static Item copper_sword;
 	public static Item copper_dagger;
+	public static Item copper_mace;
 	public static Item bronze_sword;
 	public static Item bronze_dagger;
+	public static Item bronze_mace;
 	public static Item steel_sword;
 	public static Item steel_dagger;
+	public static Item steel_mace;
 	public static Item meurodite_sword;
 	public static Item meurodite_dagger;
+	public static Item meurodite_mace;
 	public static Item torite_sword;
 	public static Item torite_dagger;
+	public static Item torite_mace;
 	public static Item iron_dagger;
+	public static Item iron_mace;
 	public static Item diamond_dagger;
+	public static Item diamond_mace;
 	public static Item titanium_sword;
 	public static Item titanium_dagger;
+	public static Item titanium_mace;
 	public static Item fire_sword;
 	public static Item fire_dagger;
+	public static Item fire_mace;
 	public static Item ice_sword;
 	public static Item ice_dagger;
+	public static Item ice_mace;
 	
 	public static Item tin_helm;
 	public static Item tin_chest;
@@ -186,6 +200,7 @@ public class MItems
 	public static Item sugar_cookie;
 	public static Item bun;
 	public static Item pbj;
+	public static Item blt;
 	public static Item salmon_burger;
 	public static Item hamburger;
 	public static Item dry_spaghetti;
@@ -214,6 +229,7 @@ public class MItems
 	public static Item spaghetti;
 	public static Item bread_spaghetti;
 	public static Item ice_cream;
+	public static Item bread_ice_cream;
 	public static Item popcorn;
 	public static Item bread_popcorn;
 	public static Item glowshroom_stew;
@@ -229,9 +245,12 @@ public class MItems
 	public static Item bread_raspberry_salad;
 	public static Item strawberry_salad;
 	public static Item bread_strawberry_salad;
+	public static Item coleslaw;
+	public static Item bread_coleslaw;
 	public static Item voidberry_salad;
 	public static Item bread_voidberry_salad;
 	
+	public static Item melonade;
 	public static Item jam;
 	public static Item void_jam;
 	public static Item peanut_butter;
@@ -256,6 +275,7 @@ public class MItems
 	public static Item fried_fish;
 	public static Item fried_salmon;
 	public static Item fish_and_chips;
+	public static Item bacon;
 	
 	public static Item candy_red;
 	public static Item candy_blue;
@@ -345,26 +365,39 @@ public class MItems
 		register(ice_hoe = new MHoe(GLACIERITE, "ice_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
+		register(gold_mace = new MMace(Item.ToolMaterial.GOLD, "gold_mace"));
 		register(wooden_dagger = new MDagger(Item.ToolMaterial.WOOD, "wooden_dagger").setBurnTime(200));
+		register(wooden_mace = new MMace(Item.ToolMaterial.WOOD, "wooden_mace").setBurnTime(200));
 		register(stone_dagger = new MDagger(Item.ToolMaterial.STONE, "stone_dagger"));
+		register(stone_mace = new MMace(Item.ToolMaterial.STONE, "stone_mace"));
 		register(copper_sword = new MSword(COPPER, "copper_sword"));
 		register(copper_dagger = new MDagger(COPPER, "copper_dagger"));
+		register(copper_mace = new MMace(COPPER, "copper_mace"));
 		register(iron_dagger = new MDagger(Item.ToolMaterial.IRON, "iron_dagger"));
+		register(iron_mace = new MMace(Item.ToolMaterial.IRON, "iron_mace"));
 		register(bronze_sword = new MSword(BRONZE, "bronze_sword"));
 		register(bronze_dagger = new MDagger(BRONZE, "bronze_dagger"));
+		register(bronze_mace = new MMace(BRONZE, "bronze_mace"));
 		register(steel_sword = new MSword(STEEL, "steel_sword"));
 		register(steel_dagger = new MDagger(STEEL, "steel_dagger"));
+		register(steel_mace = new MMace(STEEL, "steel_mace"));
 		register(meurodite_sword = new MSword(MEURODITE, "meurodite_sword"));
 		register(meurodite_dagger = new MDagger(MEURODITE, "meurodite_dagger"));
+		register(meurodite_mace = new MMace(MEURODITE, "meurodite_mace"));
 		register(torite_sword = new MSword(TORITE, "torite_sword"));
 		register(torite_dagger = new MDagger(TORITE, "torite_dagger"));
+		register(torite_mace = new MMace(TORITE, "torite_mace"));
 		register(diamond_dagger = new MDagger(Item.ToolMaterial.DIAMOND, "diamond_dagger"));
+		register(diamond_mace = new MMace(Item.ToolMaterial.DIAMOND, "diamond_mace"));
 		register(titanium_sword = new MSword(TITANIUM, "titanium_sword"));
 		register(titanium_dagger = new MDagger(TITANIUM, "titanium_dagger"));
+		register(titanium_mace = new MMace(TITANIUM, "titanium_mace"));
 		register(fire_sword = new MSword(BLAZIUM, "fire_sword"));
 		register(fire_dagger = new MDagger(BLAZIUM, "fire_dagger"));
+		register(fire_mace = new MMace(BLAZIUM, "fire_mace"));
 		register(ice_sword = new MSword(GLACIERITE, "ice_sword"));
 		register(ice_dagger = new MDagger(GLACIERITE, "ice_dagger"));
+		register(ice_mace = new MMace(GLACIERITE, "ice_mace"));
 		
 		register(tin_helm = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
@@ -429,6 +462,7 @@ public class MItems
 		register(sugar_cookie = new MItemsFood(1, 0.4F, false, "sugar_cookie"));
 		register(bun = new MItemsFood(2, 0.75F, false, "bun"));
 		register(pbj = new ItemPBJ(12, 1.5F, false, "pbj"));
+		register(blt = new MItemsFood(18, 0.6667F, false, "blt"));
 		register(salmon_burger = new MItemsFood(17, 0.6529F, false, "salmon_burger"));
 		register(hamburger = new MItemsFood(19, 0.6F, false, "hamburger"));
 		register(dry_spaghetti = new ItemDrySpaghetti(1, 0.1F, false, "dry_spaghetti"));
@@ -458,7 +492,8 @@ public class MItems
 		register(bread_spaghetti = new MItemsFood(14, 0.5357F, false, "bread_spaghetti"));
 		register(popcorn= new MItemBowlFood(6, 0.0333F, false, "popcorn"));
 		register(bread_popcorn = new MItemsFood(8, 0.0875F, false, "bread_popcorn"));
-		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream", new ItemStack(Items.BUCKET), false).setIgnitesPlayer(-1).setCuresEffects());
+		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream").setIgnitesPlayer(-1).setCuresEffects());
+		register(bread_ice_cream = new MItemsFood(12, 0.1667F, false, "bread_ice_cream").setIgnitesPlayer(-1).setCuresEffects());
 		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false));
 		register(bread_glowshroom_stew = new ItemGlowshroomStew(8, 0.5125F, false, "bread_glowshroom_stew", true));
 		
@@ -472,9 +507,12 @@ public class MItems
 		register(bread_raspberry_salad = new MItemsFood(12, 0.2917F, false, "bread_raspberry_salad").setPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 0), 1F));
 		register(strawberry_salad = new MItemBowlFood(12, 0.2833F, false, "strawberry_salad").setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 240, 1), 1F));
 		register(bread_strawberry_salad = new MItemsFood(14, 0.2786F, false, "bread_strawberry_salad").setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 240, 1), 1F));
+		register(coleslaw = new MItemBowlFood(11, 0.4091F, false, "coleslaw").setCuresEffects());
+		register(bread_coleslaw = new MItemsFood(12, 0.4167F, false, "bread_coleslaw").setCuresEffects());
 		register(voidberry_salad = new MItemBowlFood(11, 0.2864F, false, "voidberry_salad").setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 240, 1), 1F));
 		register(bread_voidberry_salad = new MItemsFood(13, 0.2808F, false, "bread_voidberry_salad").setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 240, 1), 1F));
 		
+		register(melonade = new MItemBowlFood(6, 0.3F, false, "melonade", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(-1).setAlwaysEdible());
 		register(jam = new ItemJamBottle(7, 0.2714F, false, "jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible());
 		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.8F));
 		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
@@ -495,10 +533,12 @@ public class MItems
 		register(onigiri = new MItemsFood(5, 0.43F, false, "onigiri"));
 		register(flesh = new MItemsFood(4, 0.2F, true, "flesh").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 160, 0), 0.2F));
 		
+		//Fried Foods: hunger = 4 x raw food hunger value, sat. = 1.5 x cooked food effective sat. value.
 		register(fries = new MItemsFood(4, 1.125F, false, "fries"));
 		register(fried_fish = new MItemsFood(8, 0.5625F, false, "fried_fish"));
 		register(fried_salmon = new MItemsFood(8, 0.9F, false, "fried_salmon"));
 		register(fish_and_chips = new MItemsFood(12, 0.75F, false, "fish_and_chips"));
+		register(bacon = new MItemsFood(12, 0.8F, true, "bacon"));
 		
 		register(candy_red = new ItemCandy("candy_red", new PotionEffect(MobEffects.HEALTH_BOOST, 600, 1), new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), new PotionEffect(MobEffects.REGENERATION, 600, 0)).setAlwaysEdible());
 		register(candy_blue = new ItemCandy("candy_blue", new PotionEffect(MobEffects.STRENGTH, 600, 0), new PotionEffect(MobEffects.INVISIBILITY, 600, 0), new PotionEffect(MobEffects.NIGHT_VISION, 600, 0)).setAlwaysEdible());

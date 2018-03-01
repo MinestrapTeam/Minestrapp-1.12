@@ -1,0 +1,60 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:ice_chest"
+        },
+        "title": {
+            "translate": "advancements.story.glacierite_armor.title"
+        },
+        "description": {
+            "translate": "advancements.story.glacierite_armor.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minestrapp:story/alloy_glacierite",
+    "rewards": {
+        "experience": 500
+    },
+    "criteria": {
+        "ice_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_chest"
+                    }
+                ]
+            }
+        },
+        "ice_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_helm"
+                    }
+                ]
+            }
+        },
+        "ice_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_legs"
+                    }
+                ]
+            }
+        },
+        "ice_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_feet"
+                    }
+                ]
+            }
+        }
+    }
+}

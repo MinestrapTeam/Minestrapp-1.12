@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:hang_glider_wood"
+        },
+        "title": {
+            "translate": "advancements.adventure.hang_glider.title"
+        },
+        "description": {
+            "translate": "advancements.adventure.hang_glider.description"
+        }
+    },
+    "parent": "minecraft:adventure/root",
+    "criteria": {
+        "hang_glider": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:hang_glider_wood"
+                    }
+                ]
+            }
+        }
+    }
+}

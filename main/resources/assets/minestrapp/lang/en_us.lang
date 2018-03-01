@@ -146,6 +146,23 @@ tile.m_chiseled_stone_glacierrock.name=Chiseled Glacierrock
 tile.m_chiseled_stone_oceanstone.name=Chiseled Oceanstone
 tile.m_chiseled_stone_deep_oceanstone.name=Chiseled Reefstone
 
+tile.soul_glass_polished.name=Soul Glass
+tile.soul_glass_tiles.name=Soul Glass Tiles
+tile.soul_glass_pillar.name=Soul Glass Pillar
+tile.blazed_soul_glass_polished.name=Blazed Soul Glass
+tile.blazed_soul_glass_tiles.name=Blazed Soul Glass Tiles
+tile.blazed_soul_glass_pillar.name=Blazed Soul Glass Pillar
+
+tile.m_purpur.name=Polished Purpur
+
+tile.portar_slabbed.name=Slabbed Portar
+tile.portar_fishboned.name=Fishboned Portar
+tile.portar_tiled.name=Tiled Portar
+tile.portar_chiseled.name=Chiseled Portar
+tile.portar_lamp_sunstone.name=Sunstone Portar Lamp
+tile.portar_lamp_glowstone.name=Glowstone Portar Lamp
+tile.portar_lamp_sea.name=Sea Portar Lamp
+
 tile.m_misc_stone_slab_1_mud_bricks.name=Mud Bricks Slab
 tile.m_misc_stone_slab_1_granite_bricks.name=Granite Bricks Slab
 tile.m_misc_stone_slab_1_diorite_bricks.name=Diorite Bricks Slab
@@ -210,16 +227,6 @@ tile.m_stone_bricks_oceanstone_stairs.name=Oceanstone Brick Stairs
 tile.m_stone_bricks_deep_oceanstone_stairs.name=Reefstone Brick Stairs
 
 tile.portar_slabbed_stairs.name=Slabbed Portar Stairs
-
-tile.m_purpur.name=Polished Purpur
-
-tile.portar_slabbed.name=Slabbed Portar
-tile.portar_fishboned.name=Fishboned Portar
-tile.portar_tiled.name=Tiled Portar
-tile.portar_chiseled.name=Chiseled Portar
-tile.portar_lamp_sunstone.name=Sunstone Portar Lamp
-tile.portar_lamp_glowstone.name=Glowstone Portar Lamp
-tile.portar_lamp_sea.name=Sea Portar Lamp
 
 tile.invincium.name=Invincium
 tile.glacial_invincium.name=Glacial Invincium
@@ -613,28 +620,41 @@ item.ice_hoe.name=Glacierite Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
+item.gold_mace.name=Gold Scepter
 item.wooden_dagger.name=Wooden Dagger
+item.wooden_mace.name=Wooden Club
 item.stone_dagger.name=Stone Dagger
+item.stone_mace.name=Stone Mace
 item.copper_sword.name=Copper Sword
 item.copper_dagger.name=Copper Dagger
+item.copper_mace.name=Copper Mace
 item.bronze_sword.name=Bronze Sword
 item.bronze_dagger.name=Bronze Dagger
+item.bronze_mace.name=Bronze Mace
 item.steel_sword.name=Steel Sword
 item.steel_dagger.name=Steel Dagger
+item.steel_mace.name=Steel Mace
 item.meurodite_sword.name=Meurodite Sword
 item.meurodite_dagger.name=Meurodite Dagger
+item.meurodite_mace.name=Meurodite Mace
 item.torite_sword.name=Torite Sword
 item.torite_dagger.name=Torite Dagger
+item.torite_mace.name=Torite Mace
 item.iron_dagger.name=Iron Dagger
+item.iron_mace.name=Iron Mace
 item.diamond_dagger.name=Diamond Dagger
+item.diamond_mace.name=Diamond Mace
 item.titanium_sword.name=Titanium Sword
 item.titanium_dagger.name=Titanium Dagger
+item.titanium_mace.name=Titanium Mace
 item.fire_sword.name=Blazium Sword
 item.fire_dagger.name=Blazium Dagger
+item.fire_mace.name=Blazium Mace
 item.ice_sword.name=Glacierite Sword
 item.ice_dagger.name=Glacierite Dagger
+item.ice_mace.name=Glacierite Mace
 
-##Crops&Food##
+## Crops & Food ##
 item.blueberry.name=Blueberry
 item.raspberry.name=Raspberry
 item.blackberry.name=Blackberry
@@ -661,6 +681,7 @@ item.dough.name=Dough
 item.sugar_cookie.name=Sugar Cookie
 item.bun.name=Bun
 item.pbj.name=PB&J Sandwich
+item.blt.name=BLT Sandwich
 item.salmon_burger.name=Salmon Burger
 item.hamburger.name=Hamburger
 item.dry_spaghetti.name=Dry Spaghetti
@@ -705,9 +726,12 @@ item.raspberry_salad.name=Healthy Salad
 item.bread_raspberry_salad.name=Healthy Salad
 item.strawberry_salad.name=Fitness Salad
 item.bread_strawberry_salad.name=Fitness Salad
+item.coleslaw.name=Coleslaw
+item.bread_coleslaw.name=Coleslaw
 item.voidberry_salad.name=Mystic Salad
 item.bread_voidberry_salad.name=Mystic Salad
 
+item.melonade.name=Melonade
 item.jam.name=Jam
 item.void_jam.name=Void Jam
 item.peanut_butter.name=Peanut Butter
@@ -732,6 +756,7 @@ item.fries.name=Fries
 item.fried_fish.name=Fried Fish
 item.fried_salmon.name=Fried Salmon
 item.fish_and_chips.name=Fish & Chips
+item.bacon.name=Bacon
 
 item.candy_red.name=Living Licorice
 item.candy_blue.name=Camo Candy
@@ -741,7 +766,7 @@ item.candy_yellow.name=Lofty Lolly
 item.smelling_salts.name=Smelling Salts
 
 
-##Mobs##
+#####Mobs#####
 entity.SheetGhost.name=Sheet Ghost
 entity.LumpGoat.name=Lump Goat
 
@@ -786,3 +811,178 @@ tile.woodSlab.jungle.name=Jungle Plank Slab
 tile.woodSlab.oak.name=Oak Plank Slab
 tile.woodSlab.spruce.name=Spruce Plank Slab
 tile.litpumpkin.name=Glowpumpkin
+
+
+##### Advancements #####
+
+advancements.story.biome_stones.title=Total Stoner
+advancements.story.biome_stones.description=Collect all 10 types of cobblestone.
+advancements.story.masonry.title=The Absolute Madmason
+advancements.story.masonry.description=Craft every single stone decor block in the game, INCLUDING the slabs and stairs.
+advancements.story.smelt_copper.title=Big Penny
+advancements.story.smelt_copper.description=Smelt a copper ingot.
+advancements.story.pipe.title=The Pipes are Broken
+advancements.story.pipe.description=Craft a copper item pipe.
+advancements.story.smelt_tin.title=Tin Outta Ten
+advancements.story.smelt_tin.description=Smelt a tin ingot.
+advancements.story.copper_pickaxe.title=Skipping an Upgrade
+advancements.story.copper_pickaxe.description=Skip stone tools by crafting a copper pickaxe.
+advancements.story.tin_armor.title=Thrift-Store Fashion
+advancements.story.tin_armor.description=Protect(?) yourself with a piece of tin armor.
+advancements.story.alloy_furnace.title=Metallurgical!
+advancements.story.alloy_furnace.description=Craft an alloy furnace.
+advancements.story.bronze.title=Bronze Age
+advancements.story.bronze.description=Alloy some copper and tin to get a bronze ingot.
+advancements.story.steel.title=Nuggets of Steel
+advancements.story.steel.description=Alloy an iron ingot and some coal into a steel ingot.
+advancements.story.obtain_irradium.title=NUCULAR!
+advancements.story.obtain_irradium.description=Find that stupid ore block that keeps poisoning you while you're trying to mine.
+advancements.story.unstable_irradium.title=Mistakes Were Made
+advancements.story.unstable_irradium.description=Place an unstable block of irradium.
+advancements.story.meurodite_armor.title=Fireproof
+advancements.story.meurodite_armor.description=Obtain a full set of meurodite armor.
+advancements.story.obtain_torite.title=The Jungle Block
+advancements.story.obtain_torite.description=Smelt some exotic torite ore.
+advancements.story.torite_armor.title=Self-Healing Armor
+advancements.story.torite_armor.description=Obtain a full set of torite armor.
+advancements.story.obtain_glacierite.title=Arctic Expedition
+advancements.story.obtain_glacierite.description=Harvest a glacieric ice deposit using a pickaxe.
+advancements.story.glacieric_ice.title=Gotta Slide Fast
+advancements.story.glacieric_ice.description=Craft a block of glacieric ice.
+advancements.story.alloy_glacierite.title=An Unlikely Alloyance
+advancements.story.alloy_glacierite.description=Alloy some glacieric ice shards with a torite ingot.
+advancements.story.glacierite_armor.title=Stay Frosty
+advancements.story.glacierite_armor.description=Obtain a full set of glacierite armor. Then go for a walk.
+advancements.story.glacierite_pickaxe.title=Cold to the Touch
+advancements.story.glacierite_pickaxe.description=Craft any glacierite tool or weapon.
+advancements.story.prospector.title=Prospective Prospector
+advancements.story.prospector.description=Discover every type of ore.
+advancements.story.obtain_titanium.title=Ti-ti-ti-tenic!
+advancements.story.obtain_titanium.description=Smelt the rarest ore in the game to obtain the rarest ingot in the game.
+advancements.story.titanium_armor.title=Invincible
+advancements.story.titanium_armor.description=Obtain a full set of titanium armor, then cry when you realize how long that took.
+advancements.story.crusher.title=Crushin' It
+advancements.story.crusher.description=Craft a crusher and double your ore output!
+
+advancements.foraging.root.title=Foraging
+advancements.foraging.root.description=If you can find it, you can utilize it.
+advancements.foraging.obtain_soil.title=Soiled It!
+advancements.foraging.obtain_soil.description=Collect every type of soil available in any dimension.
+advancements.foraging.obtain_moss.title=Biofuel
+advancements.foraging.obtain_moss.description=Dig up a clump of moss.
+advancements.foraging.obtain_grasses.title=Grass Enthusiast
+advancements.foraging.obtain_grasses.description=Collect all three types of tall grass.
+advancements.foraging.rope.title=Aint Nothin' but a Hang Strang
+advancements.foraging.rope.description=Craft some climbable rope.
+advancements.foraging.basket.title=A Tisket, a Tasket
+advancements.foraging.basket.description=Craft yourself a basket.
+advancements.foraging.obtain_bushes.title=Bring Me a Shrubbery
+advancements.foraging.obtain_bushes.description=Collect every type of bush. EVERY type.
+
+advancements.husbandry.salted_meat.title=Y So Salty
+advancements.husbandry.salted_meat.description=Alloy some raw meat with salt to enhance its flavor.
+advancements.husbandry.tallow.title=Artisinal Lard
+advancements.husbandry.tallow.description=Smelt some fat into tallow.
+advancements.husbandry.candle.title=Setting the Mood
+advancements.husbandry.candle.description=Craft a decorative candle.
+advancements.husbandry.fried_foods.title=Fat Frier
+advancements.husbandry.fried_foods.description=Smelt some tallow into grease, then alloy it with some other food.
+advancements.husbandry.plant_everything.title=Stardew
+advancements.husbandry.plant_everything.description=Plant ALL the crops!!!
+advancements.husbandry.buns.title=The Best Thing Since...
+advancements.husbandry.buns.description=Alloy dough and pepper seeds together to bake some tasty buns.
+advancements.husbandry.sandwich.title=The Philosophy of Sandwich
+advancements.husbandry.sandwich.description=What is a sandwich, really?
+
+advancements.adventure.smelling_salts.title=Saved by the Smell
+advancements.adventure.smelling_salts.description=Use some smelling salts to cure all your ailments.
+advancements.adventure.hang_glider.title=On the Wings of a Bat
+advancements.adventure.hang_glider.description=Craft a hang glider and soar through the skies.
+advancements.adventure.reinforced_hang_glider.title=Flying in Style
+advancements.adventure.reinforced_hang_glider.description=Reinforce your hang glider for a faster, longer flight.
+
+advancements.automation.root.title=Automation
+advancements.automation.root.description=Work smarter, not harder.
+advancements.automation.hopper.title=It Sucks More than Anything!
+advancements.automation.hopper.description=Craft a hopper using steel and a pipe.
+advancements.automation.sorter.title=Glad We Got That Sorted Out
+advancements.automation.sorter.description=Craft a sorter pipe using bronze plating, a pipe, and a hopper.
+advancements.automation.insulated_irradium.title=The Toxicity Problem
+advancements.automation.insulated_irradium.description=Craft an insulated block of irradium.
+advancements.automation.irradiant_sunstone.title=Some Harmless Radiation
+advancements.automation.irradiant_sunstone.description=Alloy some irradium with a block of sunstone and monitor your mob farms through walls.
+advancements.automation.piston.title=So Pushy
+advancements.automation.piston.description=Craft a piston.
+advancements.automation.magnet_piston.title=A Very Attractive Block
+advancements.automation.magnet_piston.description=Craft a magnet piston.
+
+advancements.nether.soul_gem.title=Souls to Go
+advancements.nether.soul_gem.description=Obtain a soul gem, then consume it to gain its power.
+advancements.nether.blazium_ingot.title=Molten Metal
+advancements.nether.blazium_ingot.description=Alloy some blaze shards with a gold ingot.
+advancements.nether.blazium_pickaxe.title=Hot to the Touch
+advancements.nether.blazium_pickaxe.description=Craft any blazium tool or weapon.
+advancements.nether.blazium_armor.title=Blistering Heat
+advancements.nether.blazium_armor.description=Obtain a full set of blazium armor. Then let an overworld mob attack you.
+
+advancements.end.obtain_terracreep.title=Creepy Quarry
+advancements.end.obtain_terracreep.description=Collect some hazardous terracreep spores.
+advancements.end.obtain_mite_honey.title=The Delicious Honey
+advancements.end.obtain_mite_honey.description=Raid an endermite hive for its honey.
+advancements.end.obtain_mite_eggsack.title=Long Live the Queen
+advancements.end.obtain_mite_eggsack.description=Break into a mite hive and steal their babies like the monster you are.
+advancements.end.dimensional_rope.title=Dope Rope
+advancements.end.dimensional_rope.description=Craft some infinitely long, multi-dimensional rope.
+
+
+##### Config GUI #####
+
+gui.config.main.title=Minestrapp Configuration
+
+gui.config.category.blocks.title=Blocks
+gui.config.category.blocks.title.tooltip=Alter various Minestrapp block properties.
+gui.config.blocks.minable_glacial_invincium.name=Is Glacial Invincium Minable
+gui.config.blocks.minable_glacial_invincium.comment=Determines whether Glacial Invincium be harvested with a Pickaxe.
+gui.config.blocks.minable_glacial_invincium.name.tooltip=Determines whether Glacial Invincium be harvested with a Pickaxe.
+
+gui.config.category.worldgen.title=World Generation
+gui.config.category.worldgen.title.tooltip=Toggle aspects of Minestrapp's custom world generation.
+gui.config.worldgen.generate_salt.name=Generate Salt Ore
+gui.config.worldgen.generate_salt.comment=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
+gui.config.worldgen.generate_salt.name.tooltip=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
+gui.config.worldgen.generate_copper.name=Generate Copper Ore
+gui.config.worldgen.generate_copper.comment=Determines whether Copper Ore will generate.
+gui.config.worldgen.generate_copper.name.tooltip=Determines whether Copper Ore will generate.
+gui.config.worldgen.generate_tin.name=Generate Tin Ore
+gui.config.worldgen.generate_comment=Determines whether Tin Ore will generate.
+gui.config.worldgen.generate_name.tooltip=Determines whether Tin Ore will generate.
+gui.config.worldgen.generate_meurodite.name=Generate Meurodite Ore
+gui.config.worldgen.generate_meurodite.comment=Determines whether Meurodite Ore will generate.
+gui.config.worldgen.generate_meurodite.name.tooltip=Determines whether Meurodite Ore will generate.
+gui.config.worldgen.generate_torite.name=Generate Torite Ore
+gui.config.worldgen.generate_torite.comment=Determines whether Torite Ore will generate in Jungles, Roofed Forests, and Swamps.
+gui.config.worldgen.generate_torite.name.tooltip=Determines whether Torite Ore will generate in Jungles, Roofed Forests, and Swamps.
+gui.config.worldgen.generate_irradium.name=Generate Irradium Ore
+gui.config.worldgen.generate_irradium.comment=Determines whether Irradium Ore will generate.
+gui.config.worldgen.generate_irradium.name.tooltip=Determines whether Irradium Ore will generate.
+gui.config.worldgen.generate_sunstone.name=Generate Sunstone Deposits
+gui.config.worldgen.generate_sunstone.comment=Determines whether Sunstone Deposits will generate in the overworld and the End.
+gui.config.worldgen.generate_sunstone.name.tooltip=Determines whether Sunstone Deposits will generate in the overworld and the End.
+gui.config.worldgen.generate_ice_mounds.name=Generate Glacieric Ice Mounds
+gui.config.worldgen.generate_ice_mounds.comment=Determines whether Glacieric Ice Mounds will generate in snow biomes.
+gui.config.worldgen.generate_ice_mounds.name.tooltip=Determines whether Glacieric Ice Mounds will generate in snow biomes.
+gui.config.worldgen.generate_titanium.name=Generate Titanium Ore
+gui.config.worldgen.generate_titanium.comment=Determines whether Titanium Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Titanium as-is...
+gui.config.worldgen.generate_titanium.name.tooltip=Determines whether Titanium Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Titanium as-is...
+gui.config.worldgen.generate_blazium.name=Generate Blazium Ore
+gui.config.worldgen.generate_blazium.comment=Determines whether Blazium Ore will generate in the Nether.
+gui.config.worldgen.generate_blazium.name.tooltip=Determines whether Blazium Ore will generate in the Nether.
+gui.config.worldgen.generate_soul_ore.name=Generate Soul Ore
+gui.config.worldgen.generate_soul_ore.comment=Determines whether Soul Ore will generate in the Nether.
+gui.config.worldgen.generate_soul_ore.name.tooltip=Determines whether Soul Ore will generate in the Nether.
+gui.config.worldgen.generate_dimensium.name=Generate Dimensium Ore
+gui.config.worldgen.generate_dimensium.comment=Determines whether Dimensium Ore will generate in the End.
+gui.config.worldgen.generate_dimensium.name.tooltip=Determines whether Dimensium Ore will generate in the End.
+gui.config.worldgen.generate_invincium.name=Generate Invincium
+gui.config.worldgen.generate_invincium.comment=Determines whether Invincium will generate at the bottom layer of overworld and the Nether.
+gui.config.worldgen.generate_invincium.name.tooltip=Determines whether Invincium will generate at the bottom layer of overworld and the Nether.

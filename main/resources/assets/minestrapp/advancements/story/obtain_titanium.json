@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_ingot",
+            "data": 5
+        },
+        "title": {
+            "translate": "advancements.story.obtain_titanium.title"
+        },
+        "description": {
+            "translate": "advancements.story.obtain_titanium.description"
+        }
+    },
+    "parent": "minecraft:story/mine_diamond",
+    "criteria": {
+        "torite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_ingot",
+                        "data": 5
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:pipe"
+        },
+        "title": {
+            "translate": "advancements.automation.root.title"
+        },
+        "description": {
+            "translate": "advancements.automation.root.description"
+        },
+        "background": "minestrapp:textures/gui/advancements/backgrounds/automation.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:pipe"
+                    }
+                ]
+            }
+        }
+    }
+}

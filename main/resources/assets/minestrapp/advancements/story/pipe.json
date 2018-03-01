@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:pipe"
+        },
+        "title": {
+            "translate": "advancements.story.pipe.title"
+        },
+        "description": {
+            "translate": "advancements.story.pipe.description"
+        }
+    },
+    "parent": "minestrapp:story/smelt_copper",
+    "criteria": {
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:pipe"
+                    }
+                ]
+            }
+        }
+    }
+}

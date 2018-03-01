@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:copper_pickaxe"
+        },
+        "title": {
+            "translate": "advancements.story.copper_pickaxe.title"
+        },
+        "description": {
+            "translate": "advancements.story.copper_pickaxe.description"
+        }
+    },
+    "parent": "minestrapp:story/smelt_copper",
+    "criteria": {
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:copper_pickaxe"
+                    }
+                ]
+            }
+        }
+    }
+}

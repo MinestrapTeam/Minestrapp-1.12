@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_blt"
+    ]
+  },
+  "criteria": {
+    "has_bacon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bacon"
+          }
+        ]
+      }
+    },
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_blt"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bacon",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

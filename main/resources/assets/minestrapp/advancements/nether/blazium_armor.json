@@ -1,0 +1,57 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:fire_chest"
+        },
+        "title": {
+            "translate": "advancements.nether.blazium_armor.title"
+        },
+        "description": {
+            "translate": "advancements.nether.blazium_armor.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minestrapp:nether/blazium_ingot",
+    "criteria": {
+        "ice_chest": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_chest"
+                    }
+                ]
+            }
+        },
+        "ice_helm": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_helm"
+                    }
+                ]
+            }
+        },
+        "ice_legs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_legs"
+                    }
+                ]
+            }
+        },
+        "ice_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fire_feet"
+                    }
+                ]
+            }
+        }
+    }
+}

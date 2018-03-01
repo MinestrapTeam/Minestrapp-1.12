@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_ingot",
+            "data": 1
+        },
+        "title": {
+            "translate": "advancements.story.smelt_tin.title"
+        },
+        "description": {
+            "translate": "advancements.story.smelt_tin.description"
+        }
+    },
+    "parent": "minecraft:story/mine_stone",
+    "criteria": {
+        "tin": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_ingot",
+                        "data": 1
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "pb",
+        " h"
+    ],
+    "key": {
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "plateBronze"
+        },
+        "p": {
+            "item": "minestrapp:pipe"
+        },
+        "h": {
+            "item": "minecraft:hopper"
+        }
+     },
+     "result": {
+        "item": "minestrapp:sorter"
+     }
+}

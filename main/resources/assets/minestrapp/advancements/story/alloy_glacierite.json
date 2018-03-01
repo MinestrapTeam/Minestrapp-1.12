@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_ingot",
+            "data": 6
+        },
+        "title": {
+            "translate": "advancements.story.alloy_glacierite.title"
+        },
+        "description": {
+            "translate": "advancements.story.alloy_glacierite.description"
+        }
+    },
+    "parent": "minestrapp:story/obtain_glacierite",
+    "criteria": {
+        "tin": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_ingot",
+                        "data": 6
+                    }
+                ]
+            }
+        }
+    }
+}

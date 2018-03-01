@@ -1,0 +1,86 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:ice_pickaxe"
+        },
+        "title": {
+            "translate": "advancements.story.glacierite_pickaxe.title"
+        },
+        "description": {
+            "translate": "advancements.story.glacierite_pickaxe.description"
+        }
+    },
+    "parent": "minestrapp:story/alloy_glacierite",
+    "criteria": {
+        "pickaxe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_pickaxe"
+                    }
+                ]
+            }
+        },
+        "axe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_axe"
+                    }
+                ]
+            }
+        },
+        "shovel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_shovel"
+                    }
+                ]
+            }
+        },
+        "hoe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_hoe"
+                    }
+                ]
+            }
+        },
+        "sword": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_sword"
+                    }
+                ]
+            }
+        },
+        "dagger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ice_dagger"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "pickaxe",
+            "axe",
+            "shovel",
+            "hoe",
+            "sword",
+            "dagger"
+        ]
+    ]
+}

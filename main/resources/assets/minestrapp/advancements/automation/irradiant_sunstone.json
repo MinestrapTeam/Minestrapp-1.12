@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:block_irradiant_sunstone"
+        },
+        "title": {
+            "translate": "advancements.automation.irradiant_sunstone.title"
+        },
+        "description": {
+            "translate": "advancements.automation.irradiant_sunstone.description"
+        }
+    },
+    "parent": "minestrapp:automation/root",
+    "criteria": {
+        "irradium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:block_irradiant_sunstone"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_ingot",
+            "data": 7
+        },
+        "title": {
+            "translate": "advancements.nether.blazium_ingot.title"
+        },
+        "description": {
+            "translate": "advancements.nether.blazium_ingot.description"
+        }
+    },
+    "parent": "minecraft:nether/obtain_blaze_rod",
+    "criteria": {
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_ingot",
+                        "data": 7
+                    }
+                ]
+            }
+        }
+    }
+}

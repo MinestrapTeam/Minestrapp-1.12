@@ -2,6 +2,7 @@ package minestrapp.crafting;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -106,5 +107,12 @@ public class OreDictRegistry
 		OreDictionary.registerOre("seedCelery", MItems.celery_seeds);
 		OreDictionary.registerOre("seedTomato", MItems.tomato_seeds);
 		OreDictionary.registerOre("tallow", new ItemStack(MItems.mob_loot, 1, 1));
+		OreDictionary.registerOre("saladGreens", Items.CARROT);
+		OreDictionary.registerOre("saladGreens", MItems.pepper);
+		OreDictionary.registerOre("saladGreens", MItems.celery);
+		OreDictionary.registerOre("saladGreens", MItems.onion);
+		OreDictionary.registerOre("saladGreens", MItems.tomato);
+		OreDictionary.registerOre("coleslawGreens", MItems.onion);
+		OreDictionary.registerOre("coleslawGreens", MItems.pepper);
 	}
 }

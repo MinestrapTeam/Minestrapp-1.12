@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:basket"
+        },
+        "title": {
+            "translate": "advancements.foraging.basket.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.basket.description"
+        }
+    },
+    "parent": "minestrapp:foraging/obtain_grasses",
+    "criteria": {
+        "rope": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:basket"
+                    }
+                ]
+            }
+        }
+    }
+}

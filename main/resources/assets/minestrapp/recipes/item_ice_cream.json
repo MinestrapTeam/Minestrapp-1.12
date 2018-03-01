@@ -1,9 +1,9 @@
 {    
     "type": "minecraft:crafting_shaped",
+    "group": "ice_cream",
     "pattern": [
-        " t ",
-        "csu",
-        " b "
+        "ctu",
+        "sbm"
     ],
     "key": {
         "c": {
@@ -20,6 +20,9 @@
             "item": "minecraft:sugar"
         },
         "b": {
+            "item": "minecraft:bowl"
+        },
+        "m": {
             "item": "minecraft:milk_bucket"
         }
      },

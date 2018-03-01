@@ -1,0 +1,106 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:cabbage"
+        },
+        "title": {
+            "translate": "advancements.husbandry.plant_everything.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.plant_everything.description"
+        }
+    },
+    "parent": "minecraft:husbandry/plant_seed",
+    "criteria": {
+        "wheat": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:wheat"
+            }
+        },
+        "beetroot": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:beetroots"
+            }
+        },
+        "carrot": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:carrots"
+            }
+        },
+        "potato": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:potatoes"
+            }
+        },
+        "melon": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:melon_stem"
+            }
+        },
+        "pumpkin": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:pumpkin_stem"
+            }
+        },
+        "nether_wart": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:nether_wart"
+            }
+        },
+        "pepper": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_pepper"
+            }
+        },
+        "cabbage": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_cabbage"
+            }
+        },
+        "celery": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_celery"
+            }
+        },
+        "lettuce": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_lettuce"
+            }
+        },
+        "onion": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_onion"
+            }
+        },
+        "peanut": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_peanuts"
+            }
+        },
+        "tomato": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_tomato"
+            }
+        },
+        "corn": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minestrapp:crop_corn"
+            }
+        }
+    }
+}

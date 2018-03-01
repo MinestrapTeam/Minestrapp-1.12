@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_mob_loot",
+            "data": 1
+        },
+        "title": {
+            "translate": "advancements.husbandry.tallow.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.tallow.description"
+        }
+    },
+    "parent": "minecraft:husbandry/breed_an_animal",
+    "criteria": {
+        "tallow": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mob_loot",
+                        "data": 1
+                    }
+                ]
+            }
+        }
+    }
+}

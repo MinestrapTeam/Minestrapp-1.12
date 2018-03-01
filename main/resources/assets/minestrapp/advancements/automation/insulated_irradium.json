@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:block_irradium_insulated"
+        },
+        "title": {
+            "translate": "advancements.automation.insulated_irradium.title"
+        },
+        "description": {
+            "translate": "advancements.automation.insulated_irradium.description"
+        }
+    },
+    "parent": "minestrapp:automation/root",
+    "criteria": {
+        "irradium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:block_irradium_insulated"
+                    }
+                ]
+            }
+        }
+    }
+}

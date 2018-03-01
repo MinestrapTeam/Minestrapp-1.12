@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:bun"
+        },
+        "title": {
+            "translate": "advancements.husbandry.buns.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.buns.description"
+        }
+    },
+    "parent": "minecraft:husbandry/plant_seed",
+    "criteria": {
+        "bun": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:bun"
+                    }
+                ]
+            }
+        }
+    }
+}

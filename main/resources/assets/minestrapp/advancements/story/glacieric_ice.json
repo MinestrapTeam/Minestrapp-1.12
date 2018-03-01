@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:glacieric_ice"
+        },
+        "title": {
+            "translate": "advancements.story.glacieric_ice.title"
+        },
+        "description": {
+            "translate": "advancements.story.glacieric_ice.description"
+        }
+    },
+    "parent": "minestrapp:story/obtain_glacierite",
+    "criteria": {
+        "torite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:glacieric_ice"
+                    }
+                ]
+            }
+        }
+    }
+}

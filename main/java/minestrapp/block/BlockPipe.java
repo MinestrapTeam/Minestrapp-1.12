@@ -47,7 +47,7 @@ public class BlockPipe extends BlockContainer
 	protected static final AxisAlignedBB AABB_NORTH = new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.75D);
 	protected static final AxisAlignedBB AABB_EAST = new AxisAlignedBB(0.25D, 0.25D, 0.25D, 1D, 0.75D, 0.75D);
 	
-	public BlockPipe()
+	public BlockPipe(String name)
 	{
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
@@ -55,8 +55,13 @@ public class BlockPipe extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
-		this.setUnlocalizedName("pipe");
-		this.setRegistryName("pipe");
+		this.setUnlocalizedName(name);
+		this.setRegistryName(name);
+		this.setOverridableDefaultState();
+	}
+	
+	public void setOverridableDefaultState()
+	{
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
 	
