@@ -78,7 +78,7 @@ public class MStoneGen
 					{
 						if (state == Blocks.STONE.getDefaultState())
 						{
-							if (y < deepStoneDepth)
+							if (MConfig.generateDeepstone && y < deepStoneDepth)
 							{
 								chunk.setBlockState(subpos2, stone.withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 							}
@@ -110,19 +110,19 @@ public class MStoneGen
 	
 	public static EnumStoneTypeMOnly getStoneForBiome(Biome biome)
 	{
-		if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+		if (MConfig.generateOceanstone && (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland))
 		{
 			return EnumStoneTypeMOnly.OCEANSTONE;
 		}
-		else if (biome.getDefaultTemperature() < 0.2F)
+		else if (MConfig.generateIcestone && biome.getDefaultTemperature() < 0.2F)
 		{
 			return EnumStoneTypeMOnly.ICESTONE;
 		}
-		else if (biome.getDefaultTemperature() < 0.4F)
+		else if (MConfig.generateColdstone && biome.getDefaultTemperature() < 0.4F)
 		{
 			return EnumStoneTypeMOnly.COLDSTONE;
 		}
-		else if (biome.getDefaultTemperature() >= 1.0F)
+		else if (MConfig.generateRedRock && biome.getDefaultTemperature() >= 1.0F)
 		{
 			return EnumStoneTypeMOnly.RED_ROCK;
 		}
@@ -134,19 +134,19 @@ public class MStoneGen
 	
 	public static EnumStoneTypeMOnly getDeepStoneForBiome(Biome biome)
 	{
-		if (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland)
+		if (MConfig.generateOceanstone && (biome.getTempCategory() == TempCategory.OCEAN || biome instanceof BiomeMushroomIsland))
 		{
 			return EnumStoneTypeMOnly.DEEP_OCEANSTONE;
 		}
-		else if (biome.getDefaultTemperature() < 0.2F)
+		else if (MConfig.generateIcestone && biome.getDefaultTemperature() < 0.2F)
 		{
 			return EnumStoneTypeMOnly.GLACIERROCK;
 		}
-		else if (biome.getDefaultTemperature() < 0.4F)
+		else if (MConfig.generateColdstone && biome.getDefaultTemperature() < 0.4F)
 		{
 			return EnumStoneTypeMOnly.DEEP_COLDSTONE;
 		}
-		else if (biome.getDefaultTemperature() >= 1.0F)
+		else if (MConfig.generateRedRock && biome.getDefaultTemperature() >= 1.0F)
 		{
 			return EnumStoneTypeMOnly.DEEP_RED_ROCK;
 		}

@@ -62,6 +62,7 @@ import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
+import minestrapp.block.BlockSilverfishStone;
 import minestrapp.block.BlockSorter;
 import minestrapp.block.BlockSoulEyes;
 import minestrapp.block.BlockSoulGlass;
@@ -220,6 +221,12 @@ public class MBlocks
 	public static Block oceanstone_brick_stairs;
 	public static Block deep_oceanstone_brick_stairs;
 	public static Block portar_stairs;
+	public static Block silverfish_stone;
+	public static Block silverfish_cobblestone;
+	public static Block silverfish_stone_bricks;
+	public static Block silverfish_mossy_stone_bricks;
+	public static Block silverfish_cracked_stone_bricks;
+	public static Block silverfish_chiseled_stone;
 	
 	//Ore
 	public static Block ore_salt;
@@ -438,6 +445,13 @@ public class MBlocks
 		register(deep_oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
 		register(portar_stairs = new BlockStairBase(portar.getDefaultState().withProperty(BlockPortar.VARIANT, BlockPortar.PortarType.SLABBED), portar.getUnlocalizedName() + "_" + BlockPortar.PortarType.SLABBED.getUnlocalizedName()));
 		
+		register(silverfish_stone = new BlockSilverfishStone("m_silverfish_stone", stone), new ItemBlockMultistate(silverfish_stone));
+		register(silverfish_cobblestone = new BlockSilverfishStone("m_silverfish_cobblestone", cobblestone), new ItemBlockMultistate(silverfish_cobblestone));
+		register(silverfish_stone_bricks = new BlockSilverfishStone("m_silverfish_stone_bricks", stone_bricks), new ItemBlockMultistate(silverfish_stone_bricks));
+		register(silverfish_mossy_stone_bricks = new BlockSilverfishStone("m_silverfish_mossy_stone_bricks", mossy_stone_bricks), new ItemBlockMultistate(silverfish_mossy_stone_bricks));
+		register(silverfish_cracked_stone_bricks = new BlockSilverfishStone("m_silverfish_cracked_stone_bricks", cracked_stone_bricks), new ItemBlockMultistate(silverfish_cracked_stone_bricks));
+		register(silverfish_chiseled_stone = new BlockSilverfishStone("m_silverfish_chiseled_stone", chiseled_stone), new ItemBlockMultistate(silverfish_chiseled_stone));
+		
 		//Ore
 		register(ore_salt = new BlockStoneBase("ore_salt", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_salt));
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
@@ -625,6 +639,13 @@ public class MBlocks
 			initModel(mossy_stone_bricks, i, "m_stone_bricks_mossy_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(cracked_stone_bricks, i, "m_stone_bricks_cracked_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(chiseled_stone, i, "m_chiseled_stone_" + EnumStoneTypeMOnly.values()[i].getName());
+			
+			initModel(silverfish_stone, i, "m_silverfish_stone_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(silverfish_cobblestone, i, "m_silverfish_cobblestone_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(silverfish_stone_bricks, i, "m_silverfish_stone_bricks_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(silverfish_mossy_stone_bricks, i, "m_silverfish_mossy_stone_bricks_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(silverfish_cracked_stone_bricks, i, "m_silverfish_cracked_stone_bricks_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(silverfish_chiseled_stone, i, "m_silverfish_chiseled_stone_" + EnumStoneTypeMOnly.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumStoneType.values().length ; i++)
 		{

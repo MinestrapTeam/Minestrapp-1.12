@@ -95,7 +95,7 @@ public class MWorldDecorator
 							{
 								if(state == Blocks.COAL_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_coal.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -106,7 +106,7 @@ public class MWorldDecorator
 								}
 								else if(state == Blocks.IRON_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_iron.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -117,7 +117,7 @@ public class MWorldDecorator
 								}
 								else if(state == Blocks.GOLD_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_gold.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -128,7 +128,7 @@ public class MWorldDecorator
 								}
 								else if(state == Blocks.LAPIS_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_lapis.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -139,7 +139,7 @@ public class MWorldDecorator
 								}
 								else if(state == Blocks.DIAMOND_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_diamond.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -150,7 +150,7 @@ public class MWorldDecorator
 								}
 								else if(state == Blocks.EMERALD_ORE.getDefaultState())
 								{
-									if (y < deepStoneDepth)
+									if (MConfig.generateDeepstone && y < deepStoneDepth)
 									{
 										chunk.setBlockState(subpos2, MBlocks.ore_emerald.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 									}
@@ -162,7 +162,7 @@ public class MWorldDecorator
 							}
 							else if(state.getBlock() instanceof BlockRedstoneOre)
 							{
-								if (y < deepStoneDepth)
+								if (MConfig.generateDeepstone && y < deepStoneDepth)
 								{
 									chunk.setBlockState(subpos2, MBlocks.ore_redstone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 								}
@@ -173,7 +173,7 @@ public class MWorldDecorator
 							}
 							else if(state.getBlock() == Blocks.COBBLESTONE)
 							{
-								if (y < deepStoneDepth)
+								if (MConfig.generateDeepstone && y < deepStoneDepth)
 								{
 									chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 								}
@@ -182,7 +182,7 @@ public class MWorldDecorator
 									chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 								}
 							}
-							else if(state.getBlock() == Blocks.MOSSY_COBBLESTONE)
+							else if(MConfig.generateDeepstone && state.getBlock() == Blocks.MOSSY_COBBLESTONE)
 							{
 								if (y < deepStoneDepth)
 								{

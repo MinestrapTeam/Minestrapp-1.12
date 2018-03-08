@@ -308,7 +308,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.END_ROD), new ItemStack(Items.BLAZE_POWDER, 4), new ItemStack(Items.CHORUS_FRUIT_POPPED), 45, 0.05F);
 		
 		//Misc Items
-		this.addCrusherRecipe(new ItemStack(MItems.mob_loot, 1, 0), new ItemStack(Items.DYE, 1, EnumDyeColor.WHITE.getDyeDamage()), null, 0, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MItems.mob_loot, 1, 0), new ItemStack(Items.DYE, 2, EnumDyeColor.WHITE.getDyeDamage()), null, 0, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Items.BONE), new ItemStack(Items.DYE, 5, EnumDyeColor.WHITE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.WHITE.getDyeDamage()), 35, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.BLAZE_ROD), new ItemStack(Items.BLAZE_POWDER, 4), new ItemStack(Items.DYE, 1, EnumDyeColor.WHITE.getDyeDamage()), 8, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Items.CHORUS_FRUIT_POPPED), new ItemStack(Items.DYE, 1, EnumDyeColor.PURPLE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.PURPLE.getDyeDamage()), 15, 0.05F);

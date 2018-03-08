@@ -35,6 +35,12 @@ public class MConfig
 	public static boolean generateBlazium;
 	public static boolean generateSoulOre;
 	public static boolean generateDimensium;
+	
+	public static boolean generateRedRock;
+	public static boolean generateColdstone;
+	public static boolean generateIcestone;
+	public static boolean generateOceanstone;
+	public static boolean generateDeepstone;
 	public static boolean generateInvincium;
 	
 	public static void preInit()
@@ -105,6 +111,17 @@ public class MConfig
 		registerProperty(propertySoulOreGen, CATEGORY_WORLDGEN, "generate_soul_ore");
 		Property propertyDimensiumGen = config.get(CATEGORY_WORLDGEN, "generate_dimensium", true);
 		registerProperty(propertyDimensiumGen, CATEGORY_WORLDGEN, "generate_dimensium");
+		
+		Property propertyRedRockGen = config.get(CATEGORY_WORLDGEN, "generate_red_rock", true);
+		registerProperty(propertyRedRockGen, CATEGORY_WORLDGEN, "generate_red_rock");
+		Property propertyColdstoneGen = config.get(CATEGORY_WORLDGEN, "generate_coldstone", true);
+		registerProperty(propertyColdstoneGen, CATEGORY_WORLDGEN, "generate_coldstone");
+		Property propertyIcestoneGen = config.get(CATEGORY_WORLDGEN, "generate_icestone", true);
+		registerProperty(propertyIcestoneGen, CATEGORY_WORLDGEN, "generate_icestone");
+		Property propertyOceanstoneGen = config.get(CATEGORY_WORLDGEN, "generate_oceanstone", true);
+		registerProperty(propertyOceanstoneGen, CATEGORY_WORLDGEN, "generate_oceanstone");
+		Property propertyDeepstoneGen = config.get(CATEGORY_WORLDGEN, "generate_deepstone", true);
+		registerProperty(propertyDeepstoneGen, CATEGORY_WORLDGEN, "generate_deepstone");
 		Property propertyInvinciumGen = config.get(CATEGORY_WORLDGEN, "generate_invincium", true);
 		registerProperty(propertyInvinciumGen, CATEGORY_WORLDGEN, "generate_invincium");
 		
@@ -128,6 +145,12 @@ public class MConfig
 			generateBlazium = propertyBlaziumGen.getBoolean();
 			generateSoulOre = propertySoulOreGen.getBoolean();
 			generateDimensium = propertyDimensiumGen.getBoolean();
+			
+			generateRedRock = propertyRedRockGen.getBoolean();
+			generateColdstone = propertyColdstoneGen.getBoolean();
+			generateIcestone = propertyIcestoneGen.getBoolean();
+			generateOceanstone = propertyOceanstoneGen.getBoolean();
+			generateDeepstone = propertyDeepstoneGen.getBoolean();
 			generateInvincium = propertyInvinciumGen.getBoolean();
 		}
 		
@@ -145,6 +168,12 @@ public class MConfig
 		propertyBlaziumGen.set(generateBlazium);
 		propertySoulOreGen.set(generateSoulOre);
 		propertyDimensiumGen.set(generateDimensium);
+		
+		propertyRedRockGen.set(generateRedRock);
+		propertyColdstoneGen.set(generateColdstone);
+		propertyIcestoneGen.set(generateIcestone);
+		propertyOceanstoneGen.set(generateOceanstone);
+		propertyDeepstoneGen.set(generateDeepstone);
 		propertyInvinciumGen.set(generateInvincium);
 		
 		if(config.hasChanged())

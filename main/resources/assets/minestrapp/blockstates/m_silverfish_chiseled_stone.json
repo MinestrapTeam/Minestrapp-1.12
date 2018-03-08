@@ -1,0 +1,31 @@
+{
+    "variants": {
+        "variant=red_rock": [
+            { "model": "minestrapp:chiseled_red_rock" }
+        ],
+        "variant=deep_red_rock": [
+            { "model": "minestrapp:chiseled_deep_red_rock" }
+        ],
+        "variant=deepstone": [
+            { "model": "minestrapp:chiseled_deepstone" }
+        ],
+        "variant=coldstone": [
+            { "model": "minestrapp:chiseled_coldstone" }
+        ],
+        "variant=deep_coldstone": [
+            { "model": "minestrapp:chiseled_deep_coldstone" }
+        ],
+        "variant=icestone": [
+            { "model": "minestrapp:chiseled_icestone" }
+        ],
+        "variant=glacierrock": [
+            { "model": "minestrapp:chiseled_glacierrock" }
+        ],
+        "variant=oceanstone": [
+            { "model": "minestrapp:chiseled_oceanstone" }
+        ],
+        "variant=deep_oceanstone": [
+            { "model": "minestrapp:chiseled_deep_oceanstone" }
+        ]
+    }
+}

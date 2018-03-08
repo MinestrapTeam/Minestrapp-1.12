@@ -100,7 +100,7 @@ public class MOreGen implements IWorldGenerator
 
 		        biome = Biome.getBiome(k);
 		        
-		        if(y < MStoneGen.getDeepstoneDepthForBiome(biome, rand))
+		        if(MConfig.generateDeepstone && y < MStoneGen.getDeepstoneDepthForBiome(biome, rand))
 		        {
 		        	if(state.getBlock() instanceof BlockIrradiumOre)
 		        		generator = new MGenMinable(state.withProperty(BlockIrradiumOre.VARIANT, EnumStoneType.byMetadata(MStoneGen.getDeepStoneForBiome(biome).getMetadata())), count, predicate);
