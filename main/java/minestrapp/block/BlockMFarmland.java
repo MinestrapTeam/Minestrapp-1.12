@@ -5,6 +5,7 @@ import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBeetroot;
@@ -357,7 +358,7 @@ public class BlockMFarmland extends BlockBase
         {
         	case Crop: return true;
             case Plains:
-            	if(plantable instanceof BlockFlower)
+            	if(plantable instanceof BlockFlower || plantable instanceof BlockBerryBush)
             		return true;
             	else
             		return this == MBlocks.clay_grass;

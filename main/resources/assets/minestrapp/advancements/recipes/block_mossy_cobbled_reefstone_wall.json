@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_mossy_cobbled_reefstone_wall"
+    ]
+  },
+  "criteria": {
+    "has_reefstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mossy_cobblestone",
+            "data": 8
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_mossy_cobbled_reefstone_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_reefstone",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,139 @@
+{
+    "multipart": [
+        {   "when": { "up": "true", "variant": "red_rock" },
+            "apply": { "model": "minestrapp:mossy_red_rock_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "deep_red_rock" },
+            "apply": { "model": "minestrapp:mossy_deep_red_rock_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "deepstone" },
+            "apply": { "model": "minestrapp:mossy_deepstone_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "coldstone" },
+            "apply": { "model": "minestrapp:mossy_coldstone_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "deep_coldstone" },
+            "apply": { "model": "minestrapp:mossy_deep_coldstone_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "icestone" },
+            "apply": { "model": "minestrapp:mossy_icestone_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "glacierrock" },
+            "apply": { "model": "minestrapp:mossy_glacierrock_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "oceanstone" },
+            "apply": { "model": "minestrapp:mossy_oceanstone_wall_post" }
+        },
+        {   "when": { "up": "true", "variant": "deep_oceanstone" },
+            "apply": { "model": "minestrapp:mossy_reefstone_wall_post" }
+        },
+        {   "when": { "north": "true", "variant": "red_rock" },
+            "apply": { "model": "minestrapp:mossy_red_rock_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "deep_red_rock" },
+            "apply": { "model": "minestrapp:mossy_deep_red_rock_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "deepstone" },
+            "apply": { "model": "minestrapp:mossy_deepstone_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "coldstone" },
+            "apply": { "model": "minestrapp:mossy_coldstone_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "deep_coldstone" },
+            "apply": { "model": "minestrapp:mossy_deep_coldstone_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "icestone" },
+            "apply": { "model": "minestrapp:mossy_icestone_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "glacierrock" },
+            "apply": { "model": "minestrapp:mossy_glacierrock_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "oceanstone" },
+            "apply": { "model": "minestrapp:mossy_oceanstone_wall_side", "uvlock": true }
+        },
+        {   "when": { "north": "true", "variant": "deep_oceanstone" },
+            "apply": { "model": "minestrapp:mossy_reefstone_wall_side", "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "red_rock" },
+            "apply": { "model": "minestrapp:mossy_red_rock_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "deep_red_rock" },
+            "apply": { "model": "minestrapp:mossy_deep_red_rock_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "deepstone" },
+            "apply": { "model": "minestrapp:mossy_deepstone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "coldstone" },
+            "apply": { "model": "minestrapp:mossy_coldstone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "deep_coldstone" },
+            "apply": { "model": "minestrapp:mossy_deep_coldstone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "icestone" },
+            "apply": { "model": "minestrapp:mossy_icestone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "glacierrock" },
+            "apply": { "model": "minestrapp:mossy_glacierrock_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "oceanstone" },
+            "apply": { "model": "minestrapp:mossy_oceanstone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "east": "true", "variant": "deep_oceanstone" },
+            "apply": { "model": "minestrapp:mossy_reefstone_wall_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "red_rock" },
+            "apply": { "model": "minestrapp:mossy_red_rock_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "deep_red_rock" },
+            "apply": { "model": "minestrapp:mossy_deep_red_rock_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "deepstone" },
+            "apply": { "model": "minestrapp:mossy_deepstone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "coldstone" },
+            "apply": { "model": "minestrapp:mossy_coldstone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "deep_coldstone" },
+            "apply": { "model": "minestrapp:mossy_deep_coldstone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "icestone" },
+            "apply": { "model": "minestrapp:mossy_icestone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "glacierrock" },
+            "apply": { "model": "minestrapp:mossy_glacierrock_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "oceanstone" },
+            "apply": { "model": "minestrapp:mossy_oceanstone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "south": "true", "variant": "deep_oceanstone" },
+            "apply": { "model": "minestrapp:mossy_reefstone_wall_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "red_rock" },
+            "apply": { "model": "minestrapp:mossy_red_rock_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "deep_red_rock" },
+            "apply": { "model": "minestrapp:mossy_deep_red_rock_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "deepstone" },
+            "apply": { "model": "minestrapp:mossy_deepstone_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "coldstone" },
+            "apply": { "model": "minestrapp:mossy_coldstone_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "deep_coldstone" },
+            "apply": { "model": "minestrapp:mossy_deep_coldstone_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "icestone" },
+            "apply": { "model": "minestrapp:mossy_icestone_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "glacierrock" },
+            "apply": { "model": "minestrapp:mossy_glacierrock_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "oceanstone" },
+            "apply": { "model": "minestrapp:mossy_oceanstone_wall_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "west": "true", "variant": "deep_oceanstone" },
+            "apply": { "model": "minestrapp:mossy_reefstone_wall_side", "y": 270, "uvlock": true }
+        }
+    ]
+}

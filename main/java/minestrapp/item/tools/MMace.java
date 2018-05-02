@@ -26,6 +26,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,19 +42,16 @@ public class MMace extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.attackDamage = 4F + Math.round((material.getAttackDamage() * 2.2));
+        this.attackDamage = 4F + Math.round((material.getAttackDamage() * 2.5F));
         this.burnTime = 0;
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
     }
-
-    /**
-     * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
-     */
-    public float getDamageVsEntity()
+    
+    public float getAttackDamage()
     {
-        return this.material.getAttackDamage();
+        return this.material.getAttackDamage() * 2.5F;
     }
 
     public float getDestroySpeed(ItemStack stack, IBlockState state)
@@ -72,6 +70,17 @@ public class MMace extends Item
      */
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
+    	float knockback = 0.8F + this.getAttackDamage() / 10;
+    	
+    	if (target instanceof EntityLivingBase)
+        {
+            ((EntityLivingBase)target).knockBack(attacker, knockback, (double)MathHelper.sin(attacker.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(attacker.rotationYaw * 0.017453292F)));
+        }
+        else
+        {
+            target.addVelocity((double)(-MathHelper.sin(attacker.rotationYaw * 0.017453292F) * knockback), 0.1D, (double)(MathHelper.cos(attacker.rotationYaw * 0.017453292F) * knockback));
+        }
+    	
         if(this.material == MItems.BLAZIUM)
         {
         	target.setFire(4);
@@ -80,6 +89,7 @@ public class MMace extends Item
         {
         	target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 200, 1));
         }
+        
         stack.damageItem(1, attacker);
         return true;
     }

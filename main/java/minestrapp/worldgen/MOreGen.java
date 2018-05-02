@@ -187,7 +187,7 @@ public class MOreGen implements IWorldGenerator
 			if(MConfig.generateBlazium)
 				this.runGenerator(blazium, world, random, chunkX, chunkZ, 12, 0, 128, false);
 			if(MConfig.generateSoulOre)
-				this.runGenerator(soul, world, random, chunkX, chunkZ, 32, 20, 100, false);
+				this.runGenerator(soul, world, random, chunkX, chunkZ, 40, 20, 100, false);
 		}
 		
 		else if(world.provider.getDimension() == 1)
@@ -201,10 +201,12 @@ public class MOreGen implements IWorldGenerator
 				int posY = 100 - random.nextInt(70);
 				int posZ = random.nextInt(16);
 				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenVoidberry bushGen = new MGenVoidberry(12);
-				bushGen.generate(world, random, berryPos);
-				
+				if(MConfig.generateBerryBushes)
+				{
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenVoidberry bushGen = new MGenVoidberry(12);
+					bushGen.generate(world, random, berryPos);
+				}
 				if(MConfig.generateSunstone)
 				{
 					posX = random.nextInt(16);
@@ -215,14 +217,16 @@ public class MOreGen implements IWorldGenerator
 					MGenSunstone sunstoneGen = new MGenSunstone(8);
 					sunstoneGen.generate(world, random, sunstonePos);
 				}
-				
-				posX = random.nextInt(16);
-				posY = random.nextInt(26) + 10;
-				posZ = random.nextInt(16);
-				
-				BlockPos spongePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenLavaSponge spongeGen = new MGenLavaSponge();
-				spongeGen.generate(world, random, spongePos);
+				if(MConfig.generateLavaSponge)
+				{
+					posX = random.nextInt(16);
+					posY = random.nextInt(26) + 10;
+					posZ = random.nextInt(16);
+					
+					BlockPos spongePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenLavaSponge spongeGen = new MGenLavaSponge();
+					spongeGen.generate(world, random, spongePos);
+				}
 			}
 		}
 	}

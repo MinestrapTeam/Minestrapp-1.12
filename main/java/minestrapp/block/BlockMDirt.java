@@ -3,6 +3,7 @@ package minestrapp.block;
 import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.Minestrapp5;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -130,7 +131,7 @@ public class BlockMDirt extends Block implements IMetaBlockName
         {
             case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
             case Plains: 
-            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling)
+            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling || plantable instanceof BlockBerryBush)
             		return true;
             	else
             		return this == MBlocks.clay_soil;

@@ -47,6 +47,9 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
 		this.addAlloyRecipe(new ItemStack(Items.QUARTZ), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
 		this.addAlloyRecipe(new ItemStack(MBlocks.block_sunstone), new ItemStack(MItems.irradium), new ItemStack(MBlocks.block_irradiant_sunstone, 1), 1.2F);
+		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
+		this.addAlloyRecipe(new ItemStack(Items.QUARTZ), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
+		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 5), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.blazed_soul_glass, 2, 0), 0.4F);
 		this.addAlloyRecipe(new ItemStack(MItems.corn_on_the_cob), new ItemStack(MItems.fat), new ItemStack(MItems.grilled_corn), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.BOWL), new ItemStack(MItems.bread_bowl), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.SUGAR), new ItemStack(MItems.sugar_cookie, 8), 0.35F);
@@ -87,6 +90,9 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.MUTTON), new ItemStack(MItems.salted_mutton), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.PORKCHOP), new ItemStack(MItems.salted_porkchop), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.BEEF), new ItemStack(MItems.salted_steak), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(Items.SPECKLED_MELON, 4, 1), new ItemStack(MItems.candy_red), 0.8F);
+		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MItems.natural_ingredients, 4, 1), new ItemStack(MItems.candy_blue), 0.8F);
+		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MBlocks.hanging_glow_moss, 4), new ItemStack(MItems.candy_yellow), 0.8F);
 	}
 	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {
 		this.alloySmelting.put(input1, input2, result);

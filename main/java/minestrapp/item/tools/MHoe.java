@@ -30,6 +30,16 @@ public class MHoe extends ItemHoe
 		this.setCreativeTab(MTabs.tools);
 	}
 	
+	//TODO: Apparently there's a bug with Vanilla where Hoes can't be repaired on an anvil, so it's disabled with Minestrapp Hoes too for consistency's sake. Leaving this as a reminder to re-enable it, should Vanilla ever actually fix that issue.
+	/*
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+        ItemStack mat = this.toolMaterial.getRepairItemStack();
+        if (!mat.isEmpty() && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
+        return super.getIsRepairable(toRepair, repair);
+    }
+	*/
+	
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if(this.toolMaterial == MItems.BLAZIUM)

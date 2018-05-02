@@ -168,7 +168,8 @@ public class MEventHandler
 		{
 			if(helm.getItem() == MItems.torite_helm && chest.getItem() == MItems.torite_chest && legs.getItem() == MItems.torite_legs && boots.getItem() == MItems.torite_feet)
 			{
-				living.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10, 0, true, false));
+				if(living.getActivePotionEffect(MobEffects.REGENERATION) == null)
+				living.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 50, 0, true, false));
 			}
 			else if(helm.getItem() == MItems.titanium_helm && chest.getItem() == MItems.titanium_chest && legs.getItem() == MItems.titanium_legs && boots.getItem() == MItems.titanium_feet)
 			{

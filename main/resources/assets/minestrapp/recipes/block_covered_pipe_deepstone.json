@@ -1,0 +1,29 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "group": "covered_pipe",
+    "pattern": [
+        "xcx",
+        "mpm",
+        "xcx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_chiseled_stone",
+            "data": 2
+        },
+        "c": {
+            "item": "minestrapp:m_chunks",
+            "data": 1
+        },
+        "m": {
+            "item": "minestrapp:mud_ball"
+        },
+        "p": {
+            "item": "minestrapp:pipe"
+        }
+     },
+     "result": {
+        "item": "minestrapp:covered_pipe_deepstone",
+        "count": 1
+     }  
+}

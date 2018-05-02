@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_covered_pipe_deep_red_rock"
+    ]
+  },
+  "criteria": {
+    "has_pipe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:pipe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_covered_pipe_deep_red_rock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pipe",
+      "has_the_recipe"
+    ]
+  ]
+}

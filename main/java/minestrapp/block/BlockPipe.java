@@ -38,6 +38,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockPipe extends BlockContainer
 {
+	private boolean covered;
+	
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	
 	protected static final AxisAlignedBB AABB_DOWN = new AxisAlignedBB(0.25D, 0D, 0.25D, 0.75D, 0.75D, 0.75D);
@@ -47,17 +49,23 @@ public class BlockPipe extends BlockContainer
 	protected static final AxisAlignedBB AABB_NORTH = new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.75D);
 	protected static final AxisAlignedBB AABB_EAST = new AxisAlignedBB(0.25D, 0.25D, 0.25D, 1D, 0.75D, 0.75D);
 	
-	public BlockPipe(String name)
+	public BlockPipe(String name, boolean covered, boolean deep)
 	{
 		super(Material.IRON);
 		this.setSoundType(SoundType.METAL);
-		this.setHardness(3.0F);
-		this.setHarvestLevel("pickaxe", 0);
+		
+		float hardMult = 1F;
+		if(deep)
+			hardMult = 1.5F;
+		
+		this.setHardness(3.0F * hardMult);
+		this.setHarvestLevel("pickaxe", deep ? 1 : 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setOverridableDefaultState();
+		this.covered = covered;
 	}
 	
 	public void setOverridableDefaultState()
@@ -67,6 +75,8 @@ public class BlockPipe extends BlockContainer
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
+		if(this.covered)
+			return FULL_BLOCK_AABB;
         if(blockState.getValue(FACING) == EnumFacing.UP)
         	return AABB_UP;
         if(blockState.getValue(FACING) == EnumFacing.DOWN)
@@ -95,12 +105,12 @@ public class BlockPipe extends BlockContainer
 	
 	public boolean isOpaqueCube(IBlockState state)
     {
-        return false;
+        return this.covered;
     }
 
     public boolean isFullCube(IBlockState state)
     {
-        return false;
+        return this.covered;
     }
     
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)

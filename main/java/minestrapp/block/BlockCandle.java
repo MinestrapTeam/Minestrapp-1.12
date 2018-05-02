@@ -123,7 +123,7 @@ public class BlockCandle extends BlockBase implements IMetaBlockName
     {
 		Block block = worldIn.getBlockState(pos.down()).getBlock();
 		
-		if(worldIn.isSideSolid(pos.down(), EnumFacing.UP) || block instanceof BlockFence || block instanceof BlockWall)
+		if(worldIn.isSideSolid(pos.down(), EnumFacing.UP) || block.getBlockFaceShape(worldIn, worldIn.getBlockState(pos.down()), pos, EnumFacing.UP) == BlockFaceShape.CENTER || block.getBlockFaceShape(worldIn, worldIn.getBlockState(pos.down()), pos, EnumFacing.UP) == BlockFaceShape.CENTER_BIG)
 			return true;
 		
 		return false;

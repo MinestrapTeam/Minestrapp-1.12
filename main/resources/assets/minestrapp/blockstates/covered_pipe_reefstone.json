@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=south": { "model": "minestrapp:covered_pipe_reefstone", "x": 90, "y": 180, "uvlock": true },
+		"facing=north": { "model": "minestrapp:covered_pipe_reefstone", "x": 90, "y": 0, "uvlock": true },
+		"facing=west": { "model": "minestrapp:covered_pipe_reefstone", "x": 90, "y": 270, "uvlock": true },
+		"facing=east": { "model": "minestrapp:covered_pipe_reefstone", "x": 90, "y": 90, "uvlock": true },
+        "facing=up": { "model": "minestrapp:covered_pipe_reefstone", "y": 90, "uvlock": true },
+        "facing=down": { "model": "minestrapp:covered_pipe_reefstone", "x": 180, "y": 90, "uvlock": true }
+    }
+}

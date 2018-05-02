@@ -45,19 +45,16 @@ public class MDagger extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.attackDamage = 1.5F + (material.getAttackDamage() / 2);
+        this.attackDamage = 1.5F + (material.getAttackDamage() / 2F);
         this.burnTime = 0;
         this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
     }
-
-    /**
-     * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
-     */
-    public float getDamageVsEntity()
+    
+    public float getAttackDamage()
     {
-        return this.material.getAttackDamage();
+        return this.material.getAttackDamage() / 2F;
     }
 
     public float getDestroySpeed(ItemStack stack, IBlockState state)

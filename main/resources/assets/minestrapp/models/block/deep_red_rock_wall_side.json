@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_side",
+    "textures": {
+        "wall": "minestrapp:blocks/stone/cobbled_deep_red_rock"
+    }
+}

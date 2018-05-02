@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "mud",
+    "pattern": [
+        "ddd",
+        "dbd",
+        "ddd"
+    ],
+    "key": {        
+        "d": {
+            "type": "forge:ore_dict",
+            "ore": "soilDry"
+        },
+        "b": {
+            "item": "minecraft:water_bucket"
+        }
+     },
+     "result": {
+        "item": "minestrapp:mud",
+        "count": 8
+     }  
+}

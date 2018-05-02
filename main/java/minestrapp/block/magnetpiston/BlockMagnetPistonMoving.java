@@ -5,7 +5,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import minestrapp.tileentity.TileEntityMagnetPiston;
+import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPistonMoving;
 import net.minecraft.block.properties.IProperty;

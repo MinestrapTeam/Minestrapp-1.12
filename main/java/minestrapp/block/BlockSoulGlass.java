@@ -27,7 +27,13 @@ public class BlockSoulGlass extends BlockBase implements IMetaBlockName
 	public BlockSoulGlass(String name, MapColor mapColor)
 	{
 		super(name, Material.ROCK, mapColor, SoundType.GLASS, 1.2F, "pickaxe", 0);
+		this.setLightOpacity(1);
 	}
+	
+	public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
 	
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {

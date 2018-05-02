@@ -13,6 +13,7 @@ import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
 import minestrapp.block.BlockClutchthorn;
+import minestrapp.block.BlockCobblestoneWall;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockCrusher;
 import minestrapp.block.BlockDecorativeStones;
@@ -283,6 +284,8 @@ public class MBlocks
 	public static Block bauble_glowshroom_green;
 	public static Block bauble_glowshroom_purple;
 	public static Block bauble_blazium;
+	public static Block cobblestone_wall;
+	public static Block mossy_cobblestone_wall;
 	public static Block candle;
 	public static Block candle_fire;
 	public static Block candle_ender;
@@ -315,6 +318,16 @@ public class MBlocks
 	public static Block lava_sponge;
 	public static Block mite_eggsack;
 	public static Block pipe;
+	public static Block covered_pipe_red_rock;
+	public static Block covered_pipe_deep_red_rock;
+	public static Block covered_pipe_stone;
+	public static Block covered_pipe_deepstone;
+	public static Block covered_pipe_coldstone;
+	public static Block covered_pipe_deep_coldstone;
+	public static Block covered_pipe_icestone;
+	public static Block covered_pipe_glacierrock;
+	public static Block covered_pipe_oceanstone;
+	public static Block covered_pipe_reefstone;
 	public static Block sorter;
 	public static Block magnet_piston_1;
 	public static Block magnet_piston_2;
@@ -513,6 +526,8 @@ public class MBlocks
 		register(bauble_glowshroom_green = new BlockBauble("bauble_glowshroom_green", Material.WOOD, MapColor.LIME, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.7F).setCreativeTab(MTabs.decor));
 		register(bauble_glowshroom_purple = new BlockBauble("bauble_glowshroom_purple", Material.WOOD, MapColor.PURPLE, SoundType.WOOD, 0.2F).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.6F).setCreativeTab(MTabs.decor));
 		register(bauble_blazium = new BlockBauble("bauble_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setLightLevel(0.7F).setResistance(5F).setCreativeTab(MTabs.decor));
+		register(cobblestone_wall = new BlockCobblestoneWall(cobblestone, "m_cobblestone_wall"), new ItemBlockMultistate(cobblestone_wall));
+		register(mossy_cobblestone_wall = new BlockCobblestoneWall(mossy_cobblestone, "m_mossy_cobblestone_wall"), new ItemBlockMultistate(mossy_cobblestone_wall));
 		register(candle = new BlockCandle("candle", "unlit"), new ItemBlockMultistate(candle));
 		register(candle_fire = new BlockCandle("candle_fire", "fire"));
 		register(candle_ender = new BlockCandle("candle_ender", "ender"));
@@ -555,7 +570,17 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(magnet_piston_head = new BlockMagnetPistonExtension().setRegistryName("magnet_piston_head"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
-		register(pipe = new BlockPipe("pipe"));
+		register(pipe = new BlockPipe("pipe", false, false));
+		register(covered_pipe_red_rock = new BlockPipe("covered_pipe_red_rock", true, false));
+		register(covered_pipe_deep_red_rock = new BlockPipe("covered_pipe_deep_red_rock", true, false));
+		register(covered_pipe_stone = new BlockPipe("covered_pipe_stone", true, false));
+		register(covered_pipe_deepstone = new BlockPipe("covered_pipe_deepstone", true, false));
+		register(covered_pipe_coldstone = new BlockPipe("covered_pipe_coldstone", true, false));
+		register(covered_pipe_deep_coldstone = new BlockPipe("covered_pipe_deep_coldstone", true, false));
+		register(covered_pipe_icestone = new BlockPipe("covered_pipe_icestone", true, false));
+		register(covered_pipe_glacierrock = new BlockPipe("covered_pipe_glacierrock", true, false));
+		register(covered_pipe_oceanstone = new BlockPipe("covered_pipe_oceanstone", true, false));
+		register(covered_pipe_reefstone = new BlockPipe("covered_pipe_reefstone", true, false));
 		register(sorter = new BlockSorter("sorter"));
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
@@ -639,6 +664,9 @@ public class MBlocks
 			initModel(mossy_stone_bricks, i, "m_stone_bricks_mossy_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(cracked_stone_bricks, i, "m_stone_bricks_cracked_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(chiseled_stone, i, "m_chiseled_stone_" + EnumStoneTypeMOnly.values()[i].getName());
+			
+			initModel(cobblestone_wall, i, "m_cobblestone_wall_" + EnumStoneTypeMOnly.values()[i].getName());
+			initModel(mossy_cobblestone_wall, i, "m_mossy_cobblestone_wall_" + EnumStoneTypeMOnly.values()[i].getName());
 			
 			initModel(silverfish_stone, i, "m_silverfish_stone_" + EnumStoneTypeMOnly.values()[i].getName());
 			initModel(silverfish_cobblestone, i, "m_silverfish_cobblestone_" + EnumStoneTypeMOnly.values()[i].getName());

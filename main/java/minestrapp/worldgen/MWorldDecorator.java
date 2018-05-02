@@ -17,6 +17,7 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.BlockSand;
+import net.minecraft.block.BlockSilverfish;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -182,15 +183,26 @@ public class MWorldDecorator
 									chunk.setBlockState(subpos2, MBlocks.cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 								}
 							}
-							else if(MConfig.generateDeepstone && state.getBlock() == Blocks.MOSSY_COBBLESTONE)
+							else if(state.getBlock() == Blocks.MOSSY_COBBLESTONE)
 							{
-								if (y < deepStoneDepth)
+								if (MConfig.generateDeepstone && y < deepStoneDepth)
 								{
 									chunk.setBlockState(subpos2, MBlocks.mossy_cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
 								}
 								else if (sType != null)
 								{
 									chunk.setBlockState(subpos2, MBlocks.mossy_cobblestone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
+								}
+							}
+							else if(state == Blocks.MONSTER_EGG.getDefaultState().withProperty(BlockSilverfish.VARIANT, BlockSilverfish.EnumType.STONE))
+							{
+								if (MConfig.generateDeepstone && y < deepStoneDepth)
+								{
+									chunk.setBlockState(subpos2, MBlocks.silverfish_stone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, dType));
+								}
+								else if (sType != null)
+								{
+									chunk.setBlockState(subpos2, MBlocks.silverfish_stone.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, sType));
 								}
 							}
 	//						else if(state.getBlock() instanceof BlockStoneBrick)
@@ -229,7 +241,7 @@ public class MWorldDecorator
 	//								}
 	//							}
 	//						}
-							else if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							else if (MConfig.generateClaySoil && (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp))
 							{
 								if (state.getBlock() == Blocks.DIRT)
 									chunk.setBlockState(subpos2, MBlocks.clay_soil.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
@@ -241,7 +253,7 @@ public class MWorldDecorator
 										chunk.setBlockState(subpos2, MBlocks.clay_grass.getDefaultState());
 								}
 							}
-							else if (biome.getDefaultTemperature() < 0.2F)
+							else if (MConfig.generatePermafrost && biome.getDefaultTemperature() < 0.2F)
 							{
 								if (state.getBlock() == Blocks.DIRT)
 									chunk.setBlockState(subpos2, MBlocks.permafrost.getDefaultState().withProperty(BlockMDirt.VARIANT, BlockMDirt.DirtType.byMetadata(((BlockDirt.DirtType)state.getValue(BlockDirt.VARIANT)).getMetadata())));
@@ -267,9 +279,9 @@ public class MWorldDecorator
 						}
 						else if (state.getBlock() == Blocks.TALLGRASS)
 						{
-							if(biome.getDefaultTemperature() < 0.2F)
+							if(MConfig.generateTundraGrass && biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.tundra_grass.getDefaultState());
-							else if (biome instanceof BiomeSavanna)
+							else if (MConfig.generateSavannaGrass && biome instanceof BiomeSavanna)
 							{
 								int o = random.nextInt(3) + 1;
 								
@@ -283,16 +295,16 @@ public class MWorldDecorator
 						}
 						else if (state.getBlock() == Blocks.GRASS_PATH)
 						{
-							if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							if (MConfig.generateClaySoil && (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp))
 								chunk.setBlockState(subpos2, MBlocks.clay_grass_path.getDefaultState());
-							else if (biome.getDefaultTemperature() < 0.2F)
+							else if (MConfig.generatePermafrost && biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.lichen_path.getDefaultState());
 						}
 						else if (state.getBlock() == Blocks.FARMLAND)
 						{
-							if (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp)
+							if (MConfig.generateClaySoil && (biome.getDefaultTemperature() >= 1.0F || biome instanceof BiomeJungle || biome instanceof BiomeSwamp))
 								chunk.setBlockState(subpos2, MBlocks.clay_farmland.getDefaultState());
-							else if (biome.getDefaultTemperature() < 0.2F)
+							else if (MConfig.generatePermafrost && biome.getDefaultTemperature() < 0.2F)
 								chunk.setBlockState(subpos2, MBlocks.permafrost_farmland.getDefaultState());
 						}
 					}
@@ -305,85 +317,106 @@ public class MWorldDecorator
 			
 			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 64 - random.nextInt(6);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
-				mudGen.generate(world, random, mudPos);
+				if(MConfig.generateMud)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 64 - random.nextInt(6);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mudPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenMud mudGen = new MGenMud(MBlocks.mud, 7);
+					mudGen.generate(world, random, mudPos);
+				}
 			}
 			if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
+				if(MConfig.generateBerryBushes)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 94 - random.nextInt(38);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
+					bushGen.generate(world, random, berryPos);
+				}
 			}
 			if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
+				if(MConfig.generateBerryBushes)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 94 - random.nextInt(38);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
+					bushGen.generate(world, random, berryPos);
+				}
 			}
 			if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 114 - random.nextInt(48);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
+				if(MConfig.generateBerryBushes)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 114 - random.nextInt(48);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
+					bushGen.generate(world, random, berryPos);
+				}
 			}
 			if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
-				bushGen.generate(world, random, berryPos);
+				if(MConfig.generateBerryBushes)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 94 - random.nextInt(38);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
+					bushGen.generate(world, random, berryPos);
+				}
 			}
 			if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
 			{
-				int posX = random.nextInt(16)+8;
-				int posY = 94 - random.nextInt(38);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
-				bushGen.generate(world, random, berryPos);
+				if(MConfig.generateManaBushes)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 94 - random.nextInt(38);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
+					bushGen.generate(world, random, berryPos);
+				}
 			}
 			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getDefaultTemperature() < 0.2F))
 			{
-				int chance = 2;
-				if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA)
-					chance = 6;
-				else if(biome instanceof BiomeForest || biome instanceof BiomeSwamp || biome instanceof BiomeStoneBeach)
-					chance = 4;
-				else if(biome instanceof BiomeBeach || biome instanceof BiomeDesert || biome instanceof BiomeMesa || biome instanceof BiomePlains || biome instanceof BiomeSavanna)
-					chance = 1;
-				
-				for(int i = 0 ; i < chance ; i++)
+				if(MConfig.generateMoss)
 				{
-					int posX = random.nextInt(16)+8;
-					int posY = 78 - random.nextInt(60);
-					int posZ = random.nextInt(16)+8;
+					int chance = 2;
+					if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST || biome == Biomes.MUTATED_REDWOOD_TAIGA || biome == Biomes.REDWOOD_TAIGA)
+						chance = 6;
+					else if(biome instanceof BiomeForest || biome instanceof BiomeSwamp || biome instanceof BiomeStoneBeach)
+						chance = 4;
+					else if(biome instanceof BiomeBeach || biome instanceof BiomeDesert || biome instanceof BiomeMesa || biome instanceof BiomePlains || biome instanceof BiomeSavanna)
+						chance = 1;
 					
-					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
+					for(int i = 0 ; i < chance ; i++)
 					{
-						MGenMoss mossGen = new MGenMoss();
-						mossGen.generate(world, random, mossPos);
+						int posX = random.nextInt(16)+8;
+						int posY = 78 - random.nextInt(60);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
+						{
+							MGenMoss mossGen = new MGenMoss();
+							mossGen.generate(world, random, mossPos);
+						}
 					}
 				}
 			}
@@ -402,15 +435,85 @@ public class MWorldDecorator
 			}
 			if(biome instanceof BiomeMushroomIsland)
 			{
+				if(MConfig.generateGlowshrooms)
+				{
+					for(int i = 0 ;  i < 3 ; i++)
+					{
+						int posX = random.nextInt(16)+8;
+						int posY = 100 - random.nextInt(40);
+						int posZ = random.nextInt(16)+8;
+						int centerChance = random.nextInt(10);
+	
+						Block glowshroom = MBlocks.blue_glowshroom;
+						Block bigGlowshroom = MBlocks.blue_glowshroom_block;
+							
+						BlockPos glowshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						MGenFairyCircle glowshroomGen = new MGenFairyCircle((BlockGlowshroom) glowshroom, 8);
+						glowshroomGen.generate(world, random, glowshroomPos);
+						MGenBigGlowshroom bigShroomGen = new MGenBigGlowshroom(bigGlowshroom);
+						if(centerChance == 1)
+							bigShroomGen.generate(world, random, glowshroomPos);
+						
+						for(int j = 0 ; j < 4 ; j++)
+						{
+							posX = random.nextInt(16)+8;
+							posY = 129 - random.nextInt(128);
+							posZ = random.nextInt(16)+8;
+							
+							BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+							bigShroomGen.generate(world, random, bigshroomPos);
+						}
+					}
+				}
+			}
+		}
+		else if(world.provider.getDimension() == -1)
+		{
+			if(MConfig.generateInvincium)
+			{
+				BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
+				Chunk chunk = world.getChunkFromBlockCoords(pos);
+				for (int x = 0; x < 16; x++)
+				{
+					for (int z = 0; z < 16; z++)
+					{
+						BlockPos subpos = pos.add(x, 0, z);
+						chunk.setBlockState(subpos, MBlocks.invincium.getDefaultState());
+					}
+				}
+			}
+			if(MConfig.generateGlowMoss)
+			{
+				for(int i = 0 ; i < 10 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 128 - random.nextInt(90);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
+					{
+						MGenHangingMoss mossGen = new MGenHangingMoss(40);
+						mossGen.generate(world, random, mossPos);
+					}
+				}
+			}
+			if(MConfig.generateGlowshrooms)
+			{
 				for(int i = 0 ;  i < 3 ; i++)
 				{
 					int posX = random.nextInt(16)+8;
-					int posY = 100 - random.nextInt(40);
+					int posY = 129 - random.nextInt(128);
 					int posZ = random.nextInt(16)+8;
+					boolean glowType = random.nextBoolean();
 					int centerChance = random.nextInt(10);
-
-					Block glowshroom = MBlocks.blue_glowshroom;
-					Block bigGlowshroom = MBlocks.blue_glowshroom_block;
+	
+					Block glowshroom = MBlocks.green_glowshroom;
+					if(glowType)
+						glowshroom = MBlocks.purple_glowshroom;
+					Block bigGlowshroom = MBlocks.green_glowshroom_block;
+					if(glowType)
+						bigGlowshroom = MBlocks.purple_glowshroom_block;
 						
 					BlockPos glowshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 					MGenFairyCircle glowshroomGen = new MGenFairyCircle((BlockGlowshroom) glowshroom, 8);
@@ -425,74 +528,14 @@ public class MWorldDecorator
 						posY = 129 - random.nextInt(128);
 						posZ = random.nextInt(16)+8;
 						
+						glowType = random.nextBoolean();
+						bigGlowshroom = MBlocks.green_glowshroom_block;
+						if(glowType)
+							bigGlowshroom = MBlocks.purple_glowshroom_block;
+						
 						BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 						bigShroomGen.generate(world, random, bigshroomPos);
 					}
-				}
-			}
-		}
-		else if(world.provider.getDimension() == -1)
-		{
-			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
-			Chunk chunk = world.getChunkFromBlockCoords(pos);
-			for (int x = 0; x < 16; x++)
-			{
-				for (int z = 0; z < 16; z++)
-				{
-					BlockPos subpos = pos.add(x, 0, z);
-					chunk.setBlockState(subpos, MBlocks.invincium.getDefaultState());
-				}
-			}
-			
-			for(int i = 0 ; i < 10 ; i++)
-			{
-				int posX = random.nextInt(16)+8;
-				int posY = 128 - random.nextInt(90);
-				int posZ = random.nextInt(16)+8;
-				
-				BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
-				{
-					MGenHangingMoss mossGen = new MGenHangingMoss(40);
-					mossGen.generate(world, random, mossPos);
-				}
-			}
-			
-			for(int i = 0 ;  i < 3 ; i++)
-			{
-				int posX = random.nextInt(16)+8;
-				int posY = 129 - random.nextInt(128);
-				int posZ = random.nextInt(16)+8;
-				boolean glowType = random.nextBoolean();
-				int centerChance = random.nextInt(10);
-
-				Block glowshroom = MBlocks.green_glowshroom;
-				if(glowType)
-					glowshroom = MBlocks.purple_glowshroom;
-				Block bigGlowshroom = MBlocks.green_glowshroom_block;
-				if(glowType)
-					bigGlowshroom = MBlocks.purple_glowshroom_block;
-					
-				BlockPos glowshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				MGenFairyCircle glowshroomGen = new MGenFairyCircle((BlockGlowshroom) glowshroom, 8);
-				glowshroomGen.generate(world, random, glowshroomPos);
-				MGenBigGlowshroom bigShroomGen = new MGenBigGlowshroom(bigGlowshroom);
-				if(centerChance == 1)
-					bigShroomGen.generate(world, random, glowshroomPos);
-				
-				for(int j = 0 ; j < 4 ; j++)
-				{
-					posX = random.nextInt(16)+8;
-					posY = 129 - random.nextInt(128);
-					posZ = random.nextInt(16)+8;
-					
-					glowType = random.nextBoolean();
-					bigGlowshroom = MBlocks.green_glowshroom_block;
-					if(glowType)
-						bigGlowshroom = MBlocks.purple_glowshroom_block;
-					
-					BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					bigShroomGen.generate(world, random, bigshroomPos);
 				}
 			}
 		}
@@ -503,112 +546,122 @@ public class MWorldDecorator
 	
 			if((chunkX * chunkX) + (chunkZ * chunkZ) > 3844)
 			{
-				for (int x = 0; x < 16; x++)
+				if(MConfig.generatePortalDust)
 				{
-					for (int z = 0; z < 16; z++)
+					for (int x = 0; x < 16; x++)
 					{
-						for (int y = 90; y >= 58; y--)
+						for (int z = 0; z < 16; z++)
 						{
-							BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
-							IBlockState state = world.getBlockState(subpos2);
-							Block block = state.getBlock();
-							
-							if (state.isFullBlock() == true && block == Blocks.END_STONE)
+							for (int y = 90; y >= 58; y--)
 							{
-								if(!world.getBlockState(subpos2.up()).isFullBlock() && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_PLANT && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_FLOWER)
+								BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
+								IBlockState state = world.getBlockState(subpos2);
+								Block block = state.getBlock();
+								
+								if (state.isFullBlock() == true && block == Blocks.END_STONE)
 								{
-									world.setBlockState(subpos2, MBlocks.fargrowth.getDefaultState());
-									
-									int depth = random.nextInt(5) + 2;
-									
-									for(int i = 1 ; i < depth ; i++)
+									if(!world.getBlockState(subpos2.up()).isFullBlock() && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_PLANT && world.getBlockState(subpos2.up()).getBlock() != Blocks.CHORUS_FLOWER)
 									{
-										BlockPos dirtPos = subpos2.offset(EnumFacing.DOWN, i);
+										world.setBlockState(subpos2, MBlocks.fargrowth.getDefaultState());
 										
-										if(world.getBlockState(dirtPos).getBlock() == Blocks.END_STONE)
-											world.setBlockState(dirtPos, MBlocks.portal_dust.getDefaultState());
+										int depth = random.nextInt(5) + 2;
+										
+										for(int i = 1 ; i < depth ; i++)
+										{
+											BlockPos dirtPos = subpos2.offset(EnumFacing.DOWN, i);
+											
+											if(world.getBlockState(dirtPos).getBlock() == Blocks.END_STONE)
+												world.setBlockState(dirtPos, MBlocks.portal_dust.getDefaultState());
+										}
+										
+										if(MConfig.generateClutchthorn && world.getBlockState(subpos2.up()).getBlock().isReplaceable(world, subpos2.up()) && random.nextInt(3) == 1)
+											world.setBlockState(subpos2.up(), MBlocks.clutchthorn.getDefaultState());
 									}
-									
-									if(world.getBlockState(subpos2.up()).getBlock().isReplaceable(world, subpos2.up()) && random.nextInt(3) == 1)
-										world.setBlockState(subpos2.up(), MBlocks.clutchthorn.getDefaultState());
 								}
 							}
 						}
 					}
-				}
-				for (int x = 0; x < 16; x++)
-				{
-					for (int z = 0; z < 16; z++)
+					for (int x = 0; x < 16; x++)
 					{
-						for (int y = 90; y >= 58; y--)
+						for (int z = 0; z < 16; z++)
 						{
-							BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
-							IBlockState state = world.getBlockState(subpos2);
-							Block block = state.getBlock();
-							
-							if (block == Blocks.CHORUS_PLANT || block == Blocks.CHORUS_FLOWER)
+							for (int y = 90; y >= 58; y--)
 							{
-								Block north = world.getBlockState(subpos2.down().north()).getBlock();
-								Block south = world.getBlockState(subpos2.down().south()).getBlock();
-								Block east = world.getBlockState(subpos2.down().east()).getBlock();
-								Block west = world.getBlockState(subpos2.down().west()).getBlock();
+								BlockPos subpos2 = new BlockPos((chunkX * 16 + x), y, (chunkZ * 16 + z));
+								IBlockState state = world.getBlockState(subpos2);
+								Block block = state.getBlock();
 								
-								MGenChordsolTendril gen = new MGenChordsolTendril(EnumFacing.NORTH);
-								
-								if(north == MBlocks.fargrowth)
-									gen.generate(world, random, subpos2.down().north());
-								if(south == MBlocks.fargrowth)
+								if (block == Blocks.CHORUS_PLANT || block == Blocks.CHORUS_FLOWER)
 								{
-									gen.setFacing(EnumFacing.SOUTH).generate(world, random, subpos2.down().south());
-								}
-								if(east == MBlocks.fargrowth)
-								{
-									gen.setFacing(EnumFacing.EAST).generate(world, random, subpos2.down().east());
-								}
-								if(west == MBlocks.fargrowth)
-								{
-									gen.setFacing(EnumFacing.WEST).generate(world, random, subpos2.down().west());
+									Block north = world.getBlockState(subpos2.down().north()).getBlock();
+									Block south = world.getBlockState(subpos2.down().south()).getBlock();
+									Block east = world.getBlockState(subpos2.down().east()).getBlock();
+									Block west = world.getBlockState(subpos2.down().west()).getBlock();
+									
+									MGenChordsolTendril gen = new MGenChordsolTendril(EnumFacing.NORTH);
+									
+									if(north == MBlocks.fargrowth)
+										gen.generate(world, random, subpos2.down().north());
+									if(south == MBlocks.fargrowth)
+									{
+										gen.setFacing(EnumFacing.SOUTH).generate(world, random, subpos2.down().south());
+									}
+									if(east == MBlocks.fargrowth)
+									{
+										gen.setFacing(EnumFacing.EAST).generate(world, random, subpos2.down().east());
+									}
+									if(west == MBlocks.fargrowth)
+									{
+										gen.setFacing(EnumFacing.WEST).generate(world, random, subpos2.down().west());
+									}
 								}
 							}
 						}
 					}
-				}
-				
-				for(int i = 0 ;  i < 3 ; i++)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 90 - random.nextInt(50);
-					int posZ = random.nextInt(16)+8;
-
-					BlockPos hivePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenMiteHive hiveGen = new MGenMiteHive();
-					if(world.getBlockState(hivePos).getBlock().isReplaceable(world, hivePos) && world.getBlockState(hivePos.offset(EnumFacing.DOWN)).getBlock() == MBlocks.fargrowth)
-					hiveGen.generate(world, random, hivePos);
-				}
-				
-				for(int i = 0 ; i < 15 ; i++)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 90 - random.nextInt(80);
-					int posZ = random.nextInt(16)+8;
 					
-					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
+					if(MConfig.generateMiteHive)
 					{
-						MGenHangingMoss mossGen = new MGenHangingMoss(36);
-						mossGen.generate(world, random, mossPos);
+						for(int i = 0 ;  i < 3 ; i++)
+						{
+							int posX = random.nextInt(16)+8;
+							int posY = 90 - random.nextInt(50);
+							int posZ = random.nextInt(16)+8;
+		
+							BlockPos hivePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+							MGenMiteHive hiveGen = new MGenMiteHive();
+							if(world.getBlockState(hivePos).getBlock().isReplaceable(world, hivePos) && world.getBlockState(hivePos.offset(EnumFacing.DOWN)).getBlock() == MBlocks.fargrowth)
+							hiveGen.generate(world, random, hivePos);
+						}
 					}
 				}
-				
-				int posX = random.nextInt(16) + 8;
-				int posY = random.nextInt(250);
-				int posZ = random.nextInt(16) + 8;
-				
-				BlockPos creepPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-				
-				if(world.isAirBlock(creepPos) && ((world.getBlockState(creepPos.up()).isFullBlock() && world.getBlockState(creepPos.up()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.down()).isFullBlock() && world.getBlockState(creepPos.down()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.north()).isFullBlock() && world.getBlockState(creepPos.north()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.east()).isFullBlock() && world.getBlockState(creepPos.east()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.south()).isFullBlock() && world.getBlockState(creepPos.south()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.west()).isFullBlock() && world.getBlockState(creepPos.west()).getMaterial() == Material.ROCK)))
+				if(MConfig.generateGlowMoss)
 				{
-					world.setBlockState(creepPos, MBlocks.terracreep.getDefaultState());
+					for(int i = 0 ; i < 15 ; i++)
+					{
+						int posX = random.nextInt(16)+8;
+						int posY = 90 - random.nextInt(80);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
+						{
+							MGenHangingMoss mossGen = new MGenHangingMoss(36);
+							mossGen.generate(world, random, mossPos);
+						}
+					}
+				}
+				if(MConfig.generateTerracreep)
+				{
+					int posX = random.nextInt(16) + 8;
+					int posY = random.nextInt(250);
+					int posZ = random.nextInt(16) + 8;
+					
+					BlockPos creepPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					
+					if(world.isAirBlock(creepPos) && ((world.getBlockState(creepPos.up()).isFullBlock() && world.getBlockState(creepPos.up()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.down()).isFullBlock() && world.getBlockState(creepPos.down()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.north()).isFullBlock() && world.getBlockState(creepPos.north()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.east()).isFullBlock() && world.getBlockState(creepPos.east()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.south()).isFullBlock() && world.getBlockState(creepPos.south()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.west()).isFullBlock() && world.getBlockState(creepPos.west()).getMaterial() == Material.ROCK)))
+					{
+						world.setBlockState(creepPos, MBlocks.terracreep.getDefaultState());
+					}
 				}
 			}
 		}

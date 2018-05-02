@@ -358,7 +358,7 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
 		else if(index != 2)
 			return true;
 		else {
-			ItemStack itemstack = this.inventory.get(1);
+			ItemStack itemstack = this.inventory.get(2);
             return isItemFuel(stack) || SlotFurnaceFuel.isBucket(stack) && itemstack.getItem() != Items.BUCKET;
 		}
 	}

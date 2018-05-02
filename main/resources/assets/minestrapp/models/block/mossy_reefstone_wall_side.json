@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_side",
+    "textures": {
+        "wall": "minestrapp:blocks/stone/mossy_cobbled_deep_oceanstone"
+    }
+}

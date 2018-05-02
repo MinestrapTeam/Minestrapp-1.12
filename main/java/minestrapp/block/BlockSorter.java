@@ -42,7 +42,7 @@ public class BlockSorter extends BlockPipe
 	
 	public BlockSorter(String name)
 	{
-		super(name);
+		super(name, false, false);
 	}
 	
 	public void setOverridableDefaultState()

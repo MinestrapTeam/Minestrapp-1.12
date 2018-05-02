@@ -6,8 +6,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import minestrapp.MItems;
+import minestrapp.block.tileentity.TileEntityVessel;
 import minestrapp.item.tools.MDagger;
-import minestrapp.tileentity.TileEntityVessel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockFlowerPot;
@@ -215,7 +215,7 @@ public class BlockSoulsteelVessel extends BlockContainer
         }
         else if(itemstack.getItem() instanceof MDagger && tileentityvessel.getLevel() < 10)
         {
-        	float daggerDamage = 1.5F + ((MDagger)itemstack.getItem()).getDamageVsEntity();
+        	float daggerDamage = 1.5F + ((MDagger)itemstack.getItem()).getAttackDamage();
         	playerIn.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), daggerDamage);
         	itemstack.damageItem(1, playerIn);
         	int levels = Math.round(daggerDamage);

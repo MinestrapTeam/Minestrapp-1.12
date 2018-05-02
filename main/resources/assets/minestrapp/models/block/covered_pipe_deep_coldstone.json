@@ -1,0 +1,36 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube",
+	"textures": {
+		"particle": "minestrapp:blocks/stone/chiseled_deep_coldstone",
+		"texture": "minestrapp:blocks/stone/chiseled_deep_coldstone",
+		"texture1": "minestrapp:blocks/utility/pipe_side"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 6, 16, 6 ],
+			"to": [ 10, 20, 10 ],
+			"faces": {
+				"up": { "uv": [ 7, 7, 11, 11 ], "texture": "#texture1" },
+				"north": { "uv": [ 6, 0, 10, 4 ], "texture": "#texture1" },
+				"south": { "uv": [ 2, 0, 6, 4 ], "texture": "#texture1" },
+				"west": { "uv": [ 10, 0, 14, 4 ], "texture": "#texture1" },
+				"east": { "uv": [ 1, 0, 5, 4 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:blazed_soul_glass",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:blazed_soul_glass",
+        "count": 4,
+        "data": 1
+     }  
+}

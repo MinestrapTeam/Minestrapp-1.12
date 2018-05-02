@@ -36,12 +36,29 @@ public class MConfig
 	public static boolean generateSoulOre;
 	public static boolean generateDimensium;
 	
+	public static boolean generateClaySoil;
+	public static boolean generatePermafrost;
+	public static boolean generateMud;
 	public static boolean generateRedRock;
 	public static boolean generateColdstone;
 	public static boolean generateIcestone;
 	public static boolean generateOceanstone;
 	public static boolean generateDeepstone;
 	public static boolean generateInvincium;
+	public static boolean generatePortalDust;
+	
+	public static boolean generateMoss;
+	public static boolean generateSavannaGrass;
+	public static boolean generateTundraGrass;
+	public static boolean generateBerryBushes;
+	public static boolean generateManaBushes;
+	public static boolean generateGlowshrooms;
+	public static boolean generateGlowMoss;
+	public static boolean generateClutchthorn;
+	public static boolean generateTerracreep;
+	public static boolean generateLavaSponge;
+	
+	public static boolean generateMiteHive;
 	
 	public static void preInit()
 	{
@@ -112,6 +129,12 @@ public class MConfig
 		Property propertyDimensiumGen = config.get(CATEGORY_WORLDGEN, "generate_dimensium", true);
 		registerProperty(propertyDimensiumGen, CATEGORY_WORLDGEN, "generate_dimensium");
 		
+		Property propertyClaySoilGen = config.get(CATEGORY_WORLDGEN, "generate_clay_soil", true);
+		registerProperty(propertyClaySoilGen, CATEGORY_WORLDGEN, "generate_clay_soil");
+		Property propertyPermafrostGen = config.get(CATEGORY_WORLDGEN, "generate_permafrost", true);
+		registerProperty(propertyPermafrostGen, CATEGORY_WORLDGEN, "generate_permafrost");
+		Property propertyMudGen = config.get(CATEGORY_WORLDGEN, "generate_mud", true);
+		registerProperty(propertyMudGen, CATEGORY_WORLDGEN, "generate_mud");
 		Property propertyRedRockGen = config.get(CATEGORY_WORLDGEN, "generate_red_rock", true);
 		registerProperty(propertyRedRockGen, CATEGORY_WORLDGEN, "generate_red_rock");
 		Property propertyColdstoneGen = config.get(CATEGORY_WORLDGEN, "generate_coldstone", true);
@@ -124,6 +147,32 @@ public class MConfig
 		registerProperty(propertyDeepstoneGen, CATEGORY_WORLDGEN, "generate_deepstone");
 		Property propertyInvinciumGen = config.get(CATEGORY_WORLDGEN, "generate_invincium", true);
 		registerProperty(propertyInvinciumGen, CATEGORY_WORLDGEN, "generate_invincium");
+		Property propertyPortalDustGen = config.get(CATEGORY_WORLDGEN, "generate_portal_dust", true);
+		registerProperty(propertyPortalDustGen, CATEGORY_WORLDGEN, "generate_portal_dust");
+		
+		Property propertyMossGen = config.get(CATEGORY_WORLDGEN, "generate_moss", true);
+		registerProperty(propertyMossGen, CATEGORY_WORLDGEN, "generate_moss");
+		Property propertySavannaGrassGen = config.get(CATEGORY_WORLDGEN, "generate_savanna_grass", true);
+		registerProperty(propertySavannaGrassGen, CATEGORY_WORLDGEN, "generate_savanna_grass");
+		Property propertyTundraGrassGen = config.get(CATEGORY_WORLDGEN, "generate_tundra_grass", true);
+		registerProperty(propertyTundraGrassGen, CATEGORY_WORLDGEN, "generate_tundra_grass");
+		Property propertyBerryBushGen = config.get(CATEGORY_WORLDGEN, "generate_berry_bushes", true);
+		registerProperty(propertyBerryBushGen, CATEGORY_WORLDGEN, "generate_berry_bushes");
+		Property propertyManaBushGen = config.get(CATEGORY_WORLDGEN, "generate_mana_bushes", true);
+		registerProperty(propertyManaBushGen, CATEGORY_WORLDGEN, "generate_mana_bushes");
+		Property propertyGlowshroomGen = config.get(CATEGORY_WORLDGEN, "generate_glowshrooms", true);
+		registerProperty(propertyGlowshroomGen, CATEGORY_WORLDGEN, "generate_glowshrooms");
+		Property propertyGlowMossGen = config.get(CATEGORY_WORLDGEN, "generate_glow_moss", true);
+		registerProperty(propertyGlowMossGen, CATEGORY_WORLDGEN, "generate_glow_moss");
+		Property propertyClutchthornGen = config.get(CATEGORY_WORLDGEN, "generate_clutchthorn", true);
+		registerProperty(propertyClutchthornGen, CATEGORY_WORLDGEN, "generate_clutchthorn");
+		Property propertyTerracreepGen = config.get(CATEGORY_WORLDGEN, "generate_terracreep", true);
+		registerProperty(propertyTerracreepGen, CATEGORY_WORLDGEN, "generate_terracreep");
+		Property propertyLavaSpongeGen = config.get(CATEGORY_WORLDGEN, "generate_lava_sponge", true);
+		registerProperty(propertyLavaSpongeGen, CATEGORY_WORLDGEN, "generate_lava_sponge");
+		
+		Property propertyMiteHiveGen = config.get(CATEGORY_WORLDGEN, "generate_mite_hive", true);
+		registerProperty(propertyMiteHiveGen, CATEGORY_WORLDGEN, "generate_mite_hive");
 		
 		List<String> propertyOrderWorldgen = new ArrayList<String>();
 		propertyOrderWorldgen.add(propertyInvinciumGen.getName());
@@ -146,12 +195,29 @@ public class MConfig
 			generateSoulOre = propertySoulOreGen.getBoolean();
 			generateDimensium = propertyDimensiumGen.getBoolean();
 			
+			generateClaySoil = propertyClaySoilGen.getBoolean();
+			generatePermafrost = propertyPermafrostGen.getBoolean();
+			generateMud = propertyMudGen.getBoolean();
 			generateRedRock = propertyRedRockGen.getBoolean();
 			generateColdstone = propertyColdstoneGen.getBoolean();
 			generateIcestone = propertyIcestoneGen.getBoolean();
 			generateOceanstone = propertyOceanstoneGen.getBoolean();
 			generateDeepstone = propertyDeepstoneGen.getBoolean();
 			generateInvincium = propertyInvinciumGen.getBoolean();
+			generatePortalDust = propertyPortalDustGen.getBoolean();
+			
+			generateMoss = propertyMossGen.getBoolean();
+			generateSavannaGrass = propertySavannaGrassGen.getBoolean();
+			generateTundraGrass = propertyTundraGrassGen.getBoolean();
+			generateBerryBushes = propertyBerryBushGen.getBoolean();
+			generateManaBushes = propertyManaBushGen.getBoolean();
+			generateGlowshrooms = propertyGlowshroomGen.getBoolean();
+			generateGlowMoss = propertyGlowMossGen.getBoolean();
+			generateClutchthorn = propertyClutchthornGen.getBoolean();
+			generateTerracreep = propertyTerracreepGen.getBoolean();
+			generateLavaSponge = propertyLavaSpongeGen.getBoolean();
+			
+			generateMiteHive = propertyMiteHiveGen.getBoolean();
 		}
 		
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
@@ -169,12 +235,29 @@ public class MConfig
 		propertySoulOreGen.set(generateSoulOre);
 		propertyDimensiumGen.set(generateDimensium);
 		
+		propertyClaySoilGen.set(generateClaySoil);
+		propertyPermafrostGen.set(generatePermafrost);
+		propertyMudGen.set(generateMud);
 		propertyRedRockGen.set(generateRedRock);
 		propertyColdstoneGen.set(generateColdstone);
 		propertyIcestoneGen.set(generateIcestone);
 		propertyOceanstoneGen.set(generateOceanstone);
 		propertyDeepstoneGen.set(generateDeepstone);
 		propertyInvinciumGen.set(generateInvincium);
+		propertyPortalDustGen.set(generatePortalDust);
+		
+		propertyMossGen.set(generateMoss);
+		propertySavannaGrassGen.set(generateSavannaGrass);
+		propertyTundraGrassGen.set(generateTundraGrass);
+		propertyBerryBushGen.set(generateBerryBushes);
+		propertyManaBushGen.set(generateManaBushes);
+		propertyGlowshroomGen.set(generateGlowshrooms);
+		propertyGlowMossGen.set(generateGlowMoss);
+		propertyClutchthornGen.set(generateClutchthorn);
+		propertyTerracreepGen.set(generateTerracreep);
+		propertyLavaSpongeGen.set(generateLavaSponge);
+		
+		propertyMiteHiveGen.set(generateMiteHive);
 		
 		if(config.hasChanged())
 		{

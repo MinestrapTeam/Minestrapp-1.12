@@ -4,6 +4,7 @@ import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.MTabs;
+import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -136,7 +137,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
         {
             case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
             case Plains:
-            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling)
+            	if(plantable instanceof BlockFlower || plantable instanceof BlockSapling || plantable instanceof BlockBerryBush)
             		return true;
             	else
             		return this == MBlocks.clay_grass;

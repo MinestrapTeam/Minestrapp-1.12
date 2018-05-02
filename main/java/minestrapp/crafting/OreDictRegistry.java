@@ -2,6 +2,7 @@ package minestrapp.crafting;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -18,6 +19,11 @@ public class OreDictRegistry
 		OreDictionary.registerOre("grass", MBlocks.lichen);
 		OreDictionary.registerOre("dirt", MBlocks.mud);
 		OreDictionary.registerOre("dirt", MBlocks.dried_mud);
+		OreDictionary.registerOre("soilDry", new ItemStack(Blocks.DIRT, 1, 0));
+		OreDictionary.registerOre("soilDry", new ItemStack(Blocks.DIRT, 1, 1));
+		OreDictionary.registerOre("soilDry", new ItemStack(MBlocks.clay_soil, 1, 0));
+		OreDictionary.registerOre("soilDry", new ItemStack(MBlocks.clay_soil, 1, 1));
+		OreDictionary.registerOre("soilDry", MBlocks.dried_mud);
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.mossy_m_planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("stone", new ItemStack(MBlocks.stone, 1, OreDictionary.WILDCARD_VALUE));

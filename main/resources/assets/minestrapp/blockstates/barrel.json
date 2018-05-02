@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "minestrapp:barrel"
-    }
+        "axis=y":  { "model": "minestrapp:barrel" },
+        "axis=z":   { "model": "minestrapp:barrel", "x": 90 },
+        "axis=x":   { "model": "minestrapp:barrel", "x": 90, "y": 90 }
   }
 }
