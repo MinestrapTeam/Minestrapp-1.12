@@ -1,0 +1,31 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "plp",
+        "seg",
+        "pmp"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:glow_paste"
+        },
+        "l": {
+            "item": "minecraft:sea_lantern"
+        },
+        "s": {
+            "item": "minestrapp:block_sunstone"
+        },
+        "g": {
+            "item": "minecraft:glowstone"
+        },
+        "m": {
+            "item": "minecraft:magma"
+        },
+        "e": {
+            "item": "minecraft:end_stone"
+        }
+     },
+     "result": {
+        "item": "minestrapp:godstone"
+     }  
+}

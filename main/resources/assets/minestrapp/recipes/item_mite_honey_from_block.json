@@ -1,0 +1,12 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:block_mite_honey"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:mite_honey",
+        "count": 9
+     }  
+}

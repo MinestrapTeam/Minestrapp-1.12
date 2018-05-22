@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "minestrapp:blocks/wood/planks_frozen_oak",
+        "top": "minestrapp:blocks/wood/planks_frozen_oak",
+        "side": "minestrapp:blocks/wood/planks_frozen_oak"
+    }
+}

@@ -8,12 +8,17 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import minestrapp.block.tileentity.renderer.TileEntityMagnetPistonRenderer;
+import minestrapp.entity.render.RenderMBoat;
+import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.mobs.registry.MobRegistry;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -21,8 +26,11 @@ import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -34,11 +42,12 @@ public class ClientProxy extends CommonProxy
 		MBlocks.registerRenders();
 		MItems.registerRenders();
 		registerRenderers();
+		registerEntities();
 	}
 	
 	public void init(FMLInitializationEvent event)
 	{
-		super.init(event);
+		super.init(event);/*
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.lava_sponge), new ResourceLocation(Minestrapp5.MODID, "lava_sponge_dry"), new ResourceLocation(Minestrapp5.MODID, "lava_sponge_wet"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.cold_sand), new ResourceLocation(Minestrapp5.MODID, "cold_sand_default"), new ResourceLocation(Minestrapp5.MODID, "cold_sand_red"));
 		//ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.clay_soil), new ResourceLocation(Minestrapp5.MODID, "clay_soil_default"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_course"), new ResourceLocation(Minestrapp5.MODID, "clay_soil_podzol"));
@@ -78,7 +87,7 @@ public class ClientProxy extends CommonProxy
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.pumpkin_dumpy), new ResourceLocation(Minestrapp5.MODID, "pumpkin_dumpy_simple"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_dumpy_average"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_dumpy_complex"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.pumpkin_creepy), new ResourceLocation(Minestrapp5.MODID, "pumpkin_creepy_simple"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_creepy_average"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_creepy_complex"));
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(MBlocks.pumpkin_smiley), new ResourceLocation(Minestrapp5.MODID, "pumpkin_smiley_simple"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_smiley_average"), new ResourceLocation(Minestrapp5.MODID, "pumpkin_smiley_complex"));
-		
+		*/
 		MobRegistry.register();
 		
 		registerColorHandlers();
@@ -123,6 +132,44 @@ public class ClientProxy extends CommonProxy
 	public static void registerRenderers()
 	{
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagnetPiston.class, new TileEntityMagnetPistonRenderer());
+		
+		registerEntityRenderer(EntityMBoat.class, RenderMBoat.class);
+	}
+	
+	public static void registerEntities()
+	{
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "m_boat"), EntityMBoat.class, "m_boat", 500, Minestrapp5.instance, 64, 1, true);
 	}
 
+	private static <E extends Entity> void registerEntityRenderer(Class<E> entityClass, Class<? extends Render<E>> renderClass)
+    {
+        RenderingRegistry.registerEntityRenderingHandler(entityClass, new EntityRenderFactory<E>(renderClass));
+    }
+	
+	private static class EntityRenderFactory<E extends Entity> implements IRenderFactory<E>
+    {
+        private Class<? extends Render<E>> renderClass;
+
+        private EntityRenderFactory(Class<? extends Render<E>> renderClass)
+        {
+            this.renderClass = renderClass;
+        }
+
+        @Override
+        public Render<E> createRenderFor(RenderManager manager) 
+        {
+            Render<E> renderer = null;
+
+            try 
+            {
+                renderer = renderClass.getConstructor(RenderManager.class).newInstance(manager);
+            } 
+            catch (Exception e) 
+            {
+                e.printStackTrace();
+            }
+
+            return renderer;
+        }
+    }
 }

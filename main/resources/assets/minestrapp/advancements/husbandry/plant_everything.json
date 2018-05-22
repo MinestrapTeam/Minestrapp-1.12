@@ -24,18 +24,6 @@
                 "block": "minecraft:beetroots"
             }
         },
-        "carrot": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minecraft:carrots"
-            }
-        },
-        "potato": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minecraft:potatoes"
-            }
-        },
         "melon": {
             "trigger": "minecraft:placed_block",
             "conditions": {
@@ -72,34 +60,10 @@
                 "block": "minestrapp:crop_celery"
             }
         },
-        "lettuce": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minestrapp:crop_lettuce"
-            }
-        },
-        "onion": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minestrapp:crop_onion"
-            }
-        },
-        "peanut": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minestrapp:crop_peanuts"
-            }
-        },
         "tomato": {
             "trigger": "minecraft:placed_block",
             "conditions": {
                 "block": "minestrapp:crop_tomato"
-            }
-        },
-        "corn": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minestrapp:crop_corn"
             }
         }
     }

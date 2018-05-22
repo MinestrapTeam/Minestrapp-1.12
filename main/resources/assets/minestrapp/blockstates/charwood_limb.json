@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "minestrapp:charwood_limb",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "minestrapp:charwood_limb",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "minestrapp:charwood_limb",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "minestrapp:charwood_limb",
+      "y": 180
+    }
+  }
+}  

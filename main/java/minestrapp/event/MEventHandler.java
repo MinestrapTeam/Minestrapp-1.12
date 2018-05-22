@@ -6,6 +6,7 @@ import java.util.Random;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
+import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
 import minestrapp.worldgen.MWorldDecorator;
 import net.minecraft.enchantment.Enchantment;
@@ -66,51 +67,54 @@ public class MEventHandler
 	@SubscribeEvent
     public static void registerRecipes (RegistryEvent.Register<IRecipe> event)
     {
-		ResourceLocation redstone_block = new ResourceLocation("minecraft:redstone_block");
-		ResourceLocation hopper = new ResourceLocation("minecraft:hopper");
-		ResourceLocation mossyCobble = new ResourceLocation("minecraft:mossy_cobblestone");
-		ResourceLocation mossyStoneBricks = new ResourceLocation("minecraft:mossy_stonebrick");
-		ResourceLocation chiseledStone = new ResourceLocation("minecraft:chiseled_stonebrick");
-		ResourceLocation granite = new ResourceLocation("minecraft:granite");
-		ResourceLocation diorite = new ResourceLocation("minecraft:diorite");
-		ResourceLocation andesite = new ResourceLocation("minecraft:andesite");
-		ResourceLocation granite_polished = new ResourceLocation("minecraft:polished_granite");
-		ResourceLocation diorite_polished = new ResourceLocation("minecraft:polished_diorite");
-		ResourceLocation andesite_polished = new ResourceLocation("minecraft:polished_andesite");
-		ResourceLocation lit_pumpkin = new ResourceLocation("minecraft:lit_pumpkin");
-		ResourceLocation cookie = new ResourceLocation("minecraft:cookie");
-    	ResourceLocation bread = new ResourceLocation("minecraft:bread");
-    	ResourceLocation pumpkinPie = new ResourceLocation("minecraft:pumpkin_pie");
-    	ResourceLocation diamondPickaxe = new ResourceLocation("minecraft:diamond_pickaxe");
-    	ResourceLocation diamondAxe = new ResourceLocation("minecraft:diamond_axe");
-    	ResourceLocation diamondShovel = new ResourceLocation("minecraft:diamond_shovel");
-    	ResourceLocation diamondHoe = new ResourceLocation("minecraft:diamond_hoe");
-    	ResourceLocation diamondSword = new ResourceLocation("minecraft:diamond_sword");
-    	ResourceLocation endCrystal = new ResourceLocation("minecraft:end_crystal");
-
-    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
-        
-    	modRegistry.remove(redstone_block);
-    	modRegistry.remove(hopper);
-    	modRegistry.remove(mossyCobble);
-    	modRegistry.remove(mossyStoneBricks);
-    	modRegistry.remove(chiseledStone);
-    	modRegistry.remove(granite);
-    	modRegistry.remove(diorite);
-    	modRegistry.remove(andesite);
-    	modRegistry.remove(granite_polished);
-    	modRegistry.remove(diorite_polished);
-    	modRegistry.remove(andesite_polished);
-    	modRegistry.remove(lit_pumpkin);
-    	modRegistry.remove(cookie);
-        modRegistry.remove(bread);
-        modRegistry.remove(pumpkinPie);
-        modRegistry.remove(diamondPickaxe);
-        modRegistry.remove(diamondAxe);
-        modRegistry.remove(diamondShovel);
-        modRegistry.remove(diamondHoe);
-        modRegistry.remove(diamondSword);
-        modRegistry.remove(endCrystal);
+		if(MConfig.removeVanillaRecipes)
+		{
+			ResourceLocation redstone_block = new ResourceLocation("minecraft:redstone_block");
+			ResourceLocation hopper = new ResourceLocation("minecraft:hopper");
+			ResourceLocation mossyCobble = new ResourceLocation("minecraft:mossy_cobblestone");
+			ResourceLocation mossyStoneBricks = new ResourceLocation("minecraft:mossy_stonebrick");
+			ResourceLocation chiseledStone = new ResourceLocation("minecraft:chiseled_stonebrick");
+			ResourceLocation granite = new ResourceLocation("minecraft:granite");
+			ResourceLocation diorite = new ResourceLocation("minecraft:diorite");
+			ResourceLocation andesite = new ResourceLocation("minecraft:andesite");
+			ResourceLocation granite_polished = new ResourceLocation("minecraft:polished_granite");
+			ResourceLocation diorite_polished = new ResourceLocation("minecraft:polished_diorite");
+			ResourceLocation andesite_polished = new ResourceLocation("minecraft:polished_andesite");
+			ResourceLocation lit_pumpkin = new ResourceLocation("minecraft:lit_pumpkin");
+			ResourceLocation cookie = new ResourceLocation("minecraft:cookie");
+	    	ResourceLocation bread = new ResourceLocation("minecraft:bread");
+	    	ResourceLocation pumpkinPie = new ResourceLocation("minecraft:pumpkin_pie");
+	    	ResourceLocation diamondPickaxe = new ResourceLocation("minecraft:diamond_pickaxe");
+	    	ResourceLocation diamondAxe = new ResourceLocation("minecraft:diamond_axe");
+	    	ResourceLocation diamondShovel = new ResourceLocation("minecraft:diamond_shovel");
+	    	ResourceLocation diamondHoe = new ResourceLocation("minecraft:diamond_hoe");
+	    	ResourceLocation diamondSword = new ResourceLocation("minecraft:diamond_sword");
+	    	ResourceLocation endCrystal = new ResourceLocation("minecraft:end_crystal");
+	
+	    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
+	        
+	    	modRegistry.remove(redstone_block);
+	    	modRegistry.remove(hopper);
+	    	modRegistry.remove(mossyCobble);
+	    	modRegistry.remove(mossyStoneBricks);
+	    	modRegistry.remove(chiseledStone);
+	    	modRegistry.remove(granite);
+	    	modRegistry.remove(diorite);
+	    	modRegistry.remove(andesite);
+	    	modRegistry.remove(granite_polished);
+	    	modRegistry.remove(diorite_polished);
+	    	modRegistry.remove(andesite_polished);
+	    	modRegistry.remove(lit_pumpkin);
+	    	modRegistry.remove(cookie);
+	        modRegistry.remove(bread);
+	        modRegistry.remove(pumpkinPie);
+	        modRegistry.remove(diamondPickaxe);
+	        modRegistry.remove(diamondAxe);
+	        modRegistry.remove(diamondShovel);
+	        modRegistry.remove(diamondHoe);
+	        modRegistry.remove(diamondSword);
+	        modRegistry.remove(endCrystal);
+		}
     }
 	
 	@SubscribeEvent

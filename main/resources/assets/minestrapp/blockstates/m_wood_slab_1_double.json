@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "seamless=false,variant=redwood_planks": [
+            { "model": "minestrapp:planks_redwood" }
+        ],
+        "seamless=true,variant=redwood_planks": [
+            { "model": "minestrapp:planks_redwood" }
+        ],
+        "seamless=false,variant=frozen_oak_planks": [
+            { "model": "minestrapp:planks_frozen_oak" }
+        ],
+        "seamless=true,variant=frozen_oak_planks": [
+            { "model": "minestrapp:planks_frozen_oak" }
+        ],
+        "seamless=false,variant=charwood_planks": [
+            { "model": "minestrapp:planks_charwood" }
+        ],
+        "seamless=true,variant=charwood_planks": [
+            { "model": "minestrapp:planks_charwood" }
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_smoldering_charwood_planks"
+    ]
+  },
+  "criteria": {
+    "has_charwood_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_planks",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_smoldering_charwood_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_charwood_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

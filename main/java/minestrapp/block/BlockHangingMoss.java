@@ -87,7 +87,7 @@ public class BlockHangingMoss extends BlockBush implements IGrowable
 	
 	protected boolean canSustainBush(IBlockState state)
     {
-        return (state.isSideSolid(null, null, EnumFacing.DOWN) && state.getMaterial() == Material.ROCK) || state.getBlock() == this;
+		return state.isFullBlock();
     }
 	
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)

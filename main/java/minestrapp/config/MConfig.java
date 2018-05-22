@@ -20,6 +20,7 @@ public class MConfig
 	
 	public static final String CATEGORY_BLOCKS = "blocks";
 	public static final String CATEGORY_WORLDGEN = "worldgen";
+	public static final String CATEGORY_VANILLA_TWEAKS = "vanilla_tweaks";
 	
 	public static boolean minableGlacialInvincium;
 	
@@ -59,6 +60,8 @@ public class MConfig
 	public static boolean generateLavaSponge;
 	
 	public static boolean generateMiteHive;
+	
+	public static boolean removeVanillaRecipes;
 	
 	public static void preInit()
 	{
@@ -101,7 +104,7 @@ public class MConfig
 		registerProperty(propertyMinableGlacialInvincium, CATEGORY_BLOCKS, "minable_glacial_invincium", true, true);
 		
 		List<String> propertyOrderBlocks = new ArrayList<String>();
-		propertyOrderBlocks.add(propertyMinableGlacialInvincium.getName());
+		//propertyOrderBlocks.add(propertyMinableGlacialInvincium.getName());
 		config.setCategoryPropertyOrder(CATEGORY_BLOCKS, propertyOrderBlocks);
 		
 		Property propertySaltGen = config.get(CATEGORY_WORLDGEN, "generate_salt", true);
@@ -175,8 +178,15 @@ public class MConfig
 		registerProperty(propertyMiteHiveGen, CATEGORY_WORLDGEN, "generate_mite_hive");
 		
 		List<String> propertyOrderWorldgen = new ArrayList<String>();
-		propertyOrderWorldgen.add(propertyInvinciumGen.getName());
+		//propertyOrderWorldgen.add(propertyInvinciumGen.getName());
 		config.setCategoryPropertyOrder(CATEGORY_WORLDGEN, propertyOrderWorldgen);
+		
+		Property propertyRemoveVanillaRecipes = config.get(CATEGORY_VANILLA_TWEAKS, "remove_vanilla_recipes", true);
+		registerProperty(propertyRemoveVanillaRecipes, CATEGORY_VANILLA_TWEAKS, "remove_vanilla_recipes", true, true);
+		
+		List<String> propertyOrderVanillaTweaks = new ArrayList<String>();
+		//propertyOrderVanillaTweaks.add(propertyMinableGlacialInvincium.getName());
+		config.setCategoryPropertyOrder(CATEGORY_VANILLA_TWEAKS, propertyOrderVanillaTweaks);
 		
 		if(readFieldsFromConfig)
 		{
@@ -218,6 +228,8 @@ public class MConfig
 			generateLavaSponge = propertyLavaSpongeGen.getBoolean();
 			
 			generateMiteHive = propertyMiteHiveGen.getBoolean();
+			
+			removeVanillaRecipes = propertyRemoveVanillaRecipes.getBoolean();
 		}
 		
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
@@ -258,6 +270,8 @@ public class MConfig
 		propertyLavaSpongeGen.set(generateLavaSponge);
 		
 		propertyMiteHiveGen.set(generateMiteHive);
+		
+		propertyRemoveVanillaRecipes.set(removeVanillaRecipes);
 		
 		if(config.hasChanged())
 		{

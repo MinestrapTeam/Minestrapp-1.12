@@ -9,6 +9,7 @@
 			"__comment": "Box1",
 			"from": [ 10, 0, 6 ],
 			"to": [ 13, 1, 9 ],
+            "shade": false,
 			"faces": {
 				"down": { "uv": [ 3, 8, 6, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 3, 11, 6, 8 ], "texture": "#texture" },
@@ -22,6 +23,7 @@
 			"__comment": "Box1",
 			"from": [ 3, 0, 6 ],
 			"to": [ 6, 1, 9 ],
+            "shade": false,
 			"faces": {
 				"down": { "uv": [ 10, 8, 13, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 10, 11, 13, 8 ], "texture": "#texture" },

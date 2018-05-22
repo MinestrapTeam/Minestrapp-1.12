@@ -1,0 +1,36 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:void_jam"
+        },
+        {
+            "item": "minestrapp:hanging_glow_moss"
+        },
+        {
+            "item": "minestrapp:blue_glowshroom"
+        },
+        {
+            "item": "minestrapp:glowshroom_stew"
+        },
+        {
+            "item": "minestrapp:mite_honey"
+        },
+        {
+            "item": "minecraft:glowstone_dust"
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        },
+        {
+            "item": "minecraft:prismarine_crystals"
+        },
+        {
+            "item": "minestrapp:m_gem",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "minestrapp:glow_paste"
+    }   
+}

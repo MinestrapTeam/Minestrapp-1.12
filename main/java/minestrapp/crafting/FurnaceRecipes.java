@@ -14,6 +14,7 @@ public class FurnaceRecipes
 {
 	public static void register()
 	{
+		GameRegistry.addSmelting(new ItemStack(MBlocks.log, 1, 2), new ItemStack(Items.COAL, 4, 1), 0.2F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 0), new ItemStack(Blocks.SAND, 1, 0), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.cold_sand, 1, 1), new ItemStack(Blocks.SAND, 1, 1), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.permafrost, 1, 0), new ItemStack(Blocks.DIRT, 1, 0), 0.1F);

@@ -20,7 +20,7 @@
       "y": 90
     },    
     "burning=true,facing=south": {
-      "model": "minestrapp:crusher",
+      "model": "minestrapp:crusher_active",
       "y": 180
     },
     "burning=true,facing=north": {

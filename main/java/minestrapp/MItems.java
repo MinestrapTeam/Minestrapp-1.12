@@ -3,15 +3,19 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import minestrapp.block.BlockMDoor;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStoneBase;
+import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.item.ItemCandy;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemHangGlider;
 import minestrapp.item.ItemJamBottle;
+import minestrapp.item.ItemMBoat;
+import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
 import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
@@ -35,14 +39,13 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -51,6 +54,8 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class MItems
 {
 	static List<Item> itemList = new ArrayList<Item>();
+	
+	public static Item door_charwood;
 	
 	public static Item natural_ingredients;
 	public static Item mob_loot;
@@ -66,6 +71,7 @@ public class MItems
 	
 	public static Item bricks;
 	public static Item tech_components;
+	public static Item glow_paste;
 	
 	public static Item copper_pickaxe;
 	public static Item copper_axe;
@@ -170,6 +176,9 @@ public class MItems
 	
 	public static Item smelling_salts;
 	public static Item health_crystal;
+	public static Item boat_redwood;
+	public static Item boat_frozen_oak;
+	public static Item boat_charwood;
 	public static Item hang_glider_wood;
 	public static Item hang_glider_steel;
 
@@ -301,6 +310,8 @@ public class MItems
 	
 	public static void init()
 	{
+		register(door_charwood = new ItemMDoor(MBlocks.door_charwood).setCreativeTab(MTabs.utility));
+		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew
@@ -325,9 +336,13 @@ public class MItems
 		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
 		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
+		//register(glow_paste = new ItemBase("glow_paste").setCreativeTab(MTabs.ingredients).setContainerItem(Items.GLASS_BOTTLE));
 		
 		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
+		register(boat_redwood = new ItemMBoat(EntityMBoat.Type.REDWOOD));
+		register(boat_frozen_oak = new ItemMBoat(EntityMBoat.Type.FROZEN_OAK));
+		register(boat_charwood = new ItemMBoat(EntityMBoat.Type.CHARWOOD));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
 
@@ -494,7 +509,7 @@ public class MItems
 		register(bread_popcorn = new MItemsFood(8, 0.0875F, false, "bread_popcorn"));
 		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream").setIgnitesPlayer(-1).setCuresEffects());
 		register(bread_ice_cream = new MItemsFood(12, 0.1667F, false, "bread_ice_cream").setIgnitesPlayer(-1).setCuresEffects());
-		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false));
+		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false).setContainerItem(Items.BOWL));
 		register(bread_glowshroom_stew = new ItemGlowshroomStew(8, 0.5125F, false, "bread_glowshroom_stew", true));
 		
 		register(salad = new MItemBowlFood(12, 0.375F, false, "salad"));
@@ -557,6 +572,7 @@ public class MItems
 		((BlockBerryBush) MBlocks.raspberry_bush).setBushDrop(new ItemStack(raspberry));
 		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
 		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
+		((BlockMDoor) MBlocks.door_charwood).setDoorItem(door_charwood);
 		
 		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.basket)).setBurnTime(100);
@@ -569,6 +585,17 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.block_irradium)).setBurnTime(256000);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.moss)).setBurnTime(800);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.savanna_grass)).setBurnTime(50);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.planks)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.mossy_m_planks)).setBurnTime(400);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.fence)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.wood_slab_1)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_plank_stairs)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_plank_stairs)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_plank_stairs)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_fence_gate)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_fence_gate)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_fence_gate)).setBurnTime(300);
+		
 		
 		COPPER.setRepairItem(new ItemStack(ingots, 1, 0));
 		BRONZE.setRepairItem(new ItemStack(ingots, 1, 2));

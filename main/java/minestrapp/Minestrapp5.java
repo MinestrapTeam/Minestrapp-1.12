@@ -13,12 +13,12 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Minestrapp5.MODID, name = Minestrapp5.NAME, version = Minestrapp5.VERSION, guiFactory = "minestrapp.config.MConfigGUIFactory")
+@Mod(modid = Minestrapp5.MODID, name = Minestrapp5.NAME, version = "5.3.0A", guiFactory = "minestrapp.config.MConfigGUIFactory", useMetadata = true)
 public class Minestrapp5
 {
     public static final String MODID = "minestrapp";
     public static final String NAME = "Minestrappolation";
-    public static final String VERSION = "5.2.1A";
+    public static final String VERSION = "5.3.0A";
     
     @SidedProxy(clientSide = "minestrapp.proxy.ClientProxy", serverSide = "minestrapp.proxy.CommonProxy")
     public static CommonProxy proxy;

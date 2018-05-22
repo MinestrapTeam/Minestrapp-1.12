@@ -55,6 +55,7 @@ public class MConfigGUIFactory implements IModGuiFactory
 			List<IConfigElement> list = new ArrayList<IConfigElement>();
 			list.add(new DummyCategoryElement(I18n.format("gui.config.category.blocks.title"), "gui.config.category.blocks.title", CategoryEntryBlocks.class));
 			list.add(new DummyCategoryElement(I18n.format("gui.config.category.worldgen.title"), "gui.config.category.worldgen.title", CategoryEntryWorldgen.class));
+			list.add(new DummyCategoryElement(I18n.format("gui.config.category.vanilla_tweaks.title"), "gui.config.category.vanilla_tweaks.title", CategoryEntryVanillaTweaks.class));
 			return list;
 		}
 		
@@ -90,6 +91,24 @@ public class MConfigGUIFactory implements IModGuiFactory
 				ConfigElement categoryWorldgen = new ConfigElement(config.getCategory(MConfig.CATEGORY_WORLDGEN));
 				List<IConfigElement> propertiesOnScreen = categoryWorldgen.getChildElements();
 				String windowTitle = I18n.format("gui.config.category.worldgen.title");
+				return new GuiConfig(owningScreen, propertiesOnScreen, owningScreen.modID, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, windowTitle);
+			}
+		}
+		
+		public static class CategoryEntryVanillaTweaks extends CategoryEntry
+		{
+			public CategoryEntryVanillaTweaks(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement)
+			{
+				super(owningScreen, owningEntryList, configElement);
+			}
+			
+			@Override
+			protected GuiScreen buildChildScreen()
+			{
+				Configuration config = MConfig.getConfig();
+				ConfigElement categoryVanillaTweaks = new ConfigElement(config.getCategory(MConfig.CATEGORY_VANILLA_TWEAKS));
+				List<IConfigElement> propertiesOnScreen = categoryVanillaTweaks.getChildElements();
+				String windowTitle = I18n.format("gui.config.category.vanilla_tweaks.title");
 				return new GuiConfig(owningScreen, propertiesOnScreen, owningScreen.modID, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, windowTitle);
 			}
 		}

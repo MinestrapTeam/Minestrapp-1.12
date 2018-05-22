@@ -55,10 +55,23 @@ tile.m_log_frozen_oak.name=Frozen Oak Wood
 tile.m_log_charwood.name=Charwood
 tile.m_planks_redwood.name=Redwood Planks
 tile.m_planks_mossy_redwood.name=Mossy Redwood Planks
-tile.m_planks_frozen_oak.name=Frozen Oak Planks
-tile.m_planks_mossy_frozen_oak.name=Mossy Frozen Oak Planks
+tile.m_planks_frozen_oak.name=Frozen Oak Wood Planks
+tile.m_planks_mossy_frozen_oak.name=Mossy Frozen Oak Wood Planks
 tile.m_planks_charwood.name=Charwood Planks
 tile.m_planks_mossy_charwood.name=Smoldering Charwood Planks
+tile.m_wood_slab_1_redwood_planks.name=Redwood Plank Slab
+tile.m_wood_slab_1_frozen_oak_planks.name=Frozen Oak Plank Slab
+tile.m_wood_slab_1_charwood_planks.name=Charwood Plank Slab
+tile.m_planks_redwood_stairs.name=Redwood Plank Stairs
+tile.m_planks_frozen_oak_stairs.name=Frozen Oak Plank Stairs
+tile.m_planks_charwood_stairs.name=Charwood Plank Stairs
+tile.m_fence_redwood.name=Redwood Fence
+tile.m_fence_frozen_oak.name=Frozen Oak Fence
+tile.m_fence_charwood.name=Charwood Fence
+tile.redwood_fence_gate.name=Redwood Fence Gate
+tile.frozen_oak_fence_gate.name=Frozen Oak Fence Gate
+tile.charwood_fence_gate.name=Charwood Fence Gate
+tile.charwood_limb.name=Charwood Limb
 
 ## Misc. Stone##
 tile.mud_bricks.name=Mud Bricks
@@ -465,12 +478,14 @@ tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Titanium
 tile.block_glacierite.name=Block of Glacierite
 tile.block_blazium.name=Block of Blazium
+tile.block_mite_honey.name=Block of Mite Honey
 tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
 tile.rope.name=Rope
 tile.dimensium_rope.name=Dimensional Rope
+tile.door_charwood.name=Charwood Door
 tile.bauble_ice.name=Ice Bauble
 tile.bauble_sunstone.name=Sunstone Bauble
 tile.bauble_glowstone.name=Glowstone Bauble
@@ -534,6 +549,7 @@ tile.pumpkin_smashed.name=Smashed Jack-o'-Lantern
 tile.basket.name=Basket
 tile.glacieric_ice.name=Glacieric Ice
 tile.block_irradiant_sunstone.name=Irradiant Sunstone
+tile.godstone.name=Godstone
 tile.lava_sponge_dry.name=Lava Sponge
 tile.lava_sponge_wet.name=Molten Lava Sponge
 tile.magnet_piston.name=Magnet Piston
@@ -563,6 +579,9 @@ tile.sorter.name=Sorter
 
 
 ##### Items #####
+
+## Decor ##
+item.door_charwood.name=Charwood Door
 
 ## Minerals ##
 item.mud_ball.name=Mud Ball
@@ -627,9 +646,13 @@ item.m_tech_component_3.name=Inert Chip
 item.m_tech_component_4.name=Technological Doodad
 item.m_tech_component_5.name=Advanced Tech Doodad
 item.m_tech_component_6.name=Magnet
+tile.glow_paste.name=Glow Paste
 
 ## Misc Tools ##
 item.health_crystal.name='Health Crystal'
+item.boat_redwood.name=Redwood Boat
+item.boat_frozen_oak.name=Frozen Oak Boat
+item.boat_charwood.name=Charwood Boat
 item.hang_glider_wood.name=Wooden Hang Glider
 item.hang_glider_steel.name=Reinforced Hang Glider
 
@@ -971,7 +994,7 @@ advancements.husbandry.candle.description=Craft a decorative candle.
 advancements.husbandry.fried_foods.title=Fat Frier
 advancements.husbandry.fried_foods.description=Smelt some tallow into grease, then alloy it with some other food.
 advancements.husbandry.plant_everything.title=Stardew
-advancements.husbandry.plant_everything.description=Plant ALL the crops!!!
+advancements.husbandry.plant_everything.description=Plant ALL the seeds!!!
 advancements.husbandry.buns.title=The Best Thing Since...
 advancements.husbandry.buns.description=Alloy dough and pepper seeds together to bake some tasty buns.
 advancements.husbandry.sandwich.title=The Philosophy of Sandwich
@@ -1016,6 +1039,8 @@ advancements.end.obtain_mite_eggsack.title=Long Live the Queen
 advancements.end.obtain_mite_eggsack.description=Break into a mite hive and steal their babies like the monster you are.
 advancements.end.dimensional_rope.title=Dope Rope
 advancements.end.dimensional_rope.description=Craft some infinitely long, multi-dimensional rope.
+advancements.end.obtain_godstone.title=God-Tier
+advancements.end.obtain_godstone.description=Craft a block of undead-smiting godstone.
 
 
 ##### Config GUI #####
@@ -1024,12 +1049,14 @@ gui.config.main.title=Minestrapp Configuration
 
 gui.config.category.blocks.title=Blocks
 gui.config.category.blocks.title.tooltip=Alter various Minestrapp block properties.
+
 gui.config.blocks.minable_glacial_invincium.name=Is Glacial Invincium Minable
 gui.config.blocks.minable_glacial_invincium.comment=Determines whether Glacial Invincium be harvested with a Pickaxe.
 gui.config.blocks.minable_glacial_invincium.name.tooltip=Determines whether Glacial Invincium be harvested with a Pickaxe.
 
 gui.config.category.worldgen.title=World Generation
 gui.config.category.worldgen.title.tooltip=Toggle aspects of Minestrapp's custom world generation.
+
 gui.config.worldgen.generate_salt.name=Generate Salt Ore
 gui.config.worldgen.generate_salt.comment=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
 gui.config.worldgen.generate_salt.name.tooltip=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
@@ -1132,3 +1159,10 @@ gui.config.worldgen.generate_lava_sponge.name.tooltip=Determines whether Lava Sp
 gui.config.worldgen.generate_mite_hive.name=Generate Endermite Hives
 gui.config.worldgen.generate_mite_hive.comment=Determines whether Endermite Hives generate in the End.
 gui.config.worldgen.generate_mite_hive.name.tooltip=Determines whether Endermite Hives generate in the End.
+
+gui.config.category.vanilla_tweaks.title=Vanilla Tweaks
+gui.config.category.vanilla_tweaks.title.tooltip=Determine which Vanilla features Minestrapp alters.
+
+gui.config.vanilla_tweaks.remove_vanilla_recipes.name=Remove Vanilla Recipes
+gui.config.vanilla_tweaks.remove_vanilla_recipes.comment=Determines whether all Vanilla recipes replaced by Minestrapp ones will be removed on launch. Does not disable Minestrapp replacement recipes from being added.
+gui.config.vanilla_tweaks.remove_vanilla_recipes.name.tooltip=Determines whether all Vanilla recipes replaced by Minestrapp ones will be removed on launch. Does not disable Minestrapp replacement recipes from being added.

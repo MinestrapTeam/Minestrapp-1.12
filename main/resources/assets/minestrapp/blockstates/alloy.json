@@ -20,7 +20,7 @@
       "y": 90
     },    
     "burning=true,facing=south": {
-      "model": "minestrapp:alloy",
+      "model": "minestrapp:alloy_active",
       "y": 180
     },
     "burning=true,facing=north": {

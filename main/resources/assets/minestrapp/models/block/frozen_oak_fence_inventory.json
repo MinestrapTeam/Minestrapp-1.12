@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_inventory",
+    "textures": {
+        "texture": "minestrapp:blocks/wood/planks_frozen_oak"
+    }
+}

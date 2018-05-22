@@ -1,0 +1,37 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube",
+	"textures": {
+		"particle": "minestrapp:blocks/resource/block_mite_honey",
+		"texture": "minestrapp:blocks/resource/block_mite_honey",
+		"texture1": "minestrapp:blocks/resource/block_mite_honey_overlay"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 1, 1, 1 ],
+			"to": [ 15, 15, 15 ],
+			"faces": {
+				"down": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+				"up": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+				"north": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+				"south": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+				"west": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+				"east": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

@@ -94,11 +94,7 @@ public class BlockMud extends BlockBase
         			break;
         		}
         	}
-        	//System.out.println("Temp: " + (temp > 0.9F));
-        	//System.out.println("Sky: " + worldIn.canSeeSky(pos));
-        	//System.out.println("Rain: " + (worldIn.isRaining()));
-        	//System.out.println("Day: " + (worldIn.isDaytime()));
-        	//System.out.println("Wet: " + (worldIn.getBlockState(pos.up()).getMaterial() == Material.WATER));
+        	
         	if(temp > 0.9F && sky && !worldIn.isRaining() && worldIn.isDaytime() && worldIn.getBlockState(pos.up()).getMaterial() != Material.WATER)
         	{
         		worldIn.setBlockState(pos, MBlocks.dried_mud.getDefaultState());

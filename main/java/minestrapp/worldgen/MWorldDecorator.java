@@ -538,6 +538,30 @@ public class MWorldDecorator
 					}
 				}
 			}
+			for(int i = 0 ; i < 5 ; i++)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = 128 - random.nextInt(90);
+				int posZ = random.nextInt(16)+8;
+				
+				BlockPos treePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				int dir = random.nextInt(4);
+				EnumFacing facing = EnumFacing.NORTH;
+				
+				if(dir == 0)
+					facing = EnumFacing.SOUTH;
+				else if(dir == 1)
+					facing = EnumFacing.EAST;
+				else if(dir == 2)
+					facing = EnumFacing.WEST;
+				
+				MGenHellTree treeGen = new MGenHellTree(facing);
+				
+				if(treeGen.canGenerateTree(world, treePos) >= 5)
+				{
+					treeGen.generate(world, random, treePos);
+				}
+			}
 		}
 		else if(world.provider.getDimension() == 1)
 		{

@@ -41,6 +41,24 @@
                     }
                 ]
             }
+        },
+        "blt": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blt"
+                    }
+                ]
+            }
         }
-    }
+    },
+    "requirements": [
+        [
+            "hamburger",
+            "pbj",
+            "salmon_burger",
+            "blt"
+        ]
+    ]
 }

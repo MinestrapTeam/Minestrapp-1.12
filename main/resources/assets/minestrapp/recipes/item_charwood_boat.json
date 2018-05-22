@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "group": "boat",
+    "pattern": [
+        "x x",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        }
+     },
+     "result": {
+        "item": "minestrapp:boat_charwood"
+     }  
+}

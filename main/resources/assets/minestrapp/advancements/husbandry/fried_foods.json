@@ -41,13 +41,24 @@
                     }
                 ]
             }
+        },
+        "bacon": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:bacon"
+                    }
+                ]
+            }
         }
     },
     "requirements": [
         [
             "fries",
             "fried_fish",
-            "fried_salmon"
+            "fried_salmon",
+            "bacon"
         ]
     ]
 }

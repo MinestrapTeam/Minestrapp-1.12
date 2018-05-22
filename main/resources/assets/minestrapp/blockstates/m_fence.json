@@ -1,0 +1,49 @@
+{
+    "multipart": [
+        {   "when": { "variant": "redwood" },
+            "apply": { "model": "minestrapp:redwood_fence_post" }
+        },
+        {   "when": { "variant": "frozen_oak" },
+            "apply": { "model": "minestrapp:frozen_oak_fence_post" }
+        },
+        {   "when": { "variant": "charwood" },
+            "apply": { "model": "minestrapp:charwood_fence_post" }
+        },
+        {   "when": { "variant": "redwood", "north": "true" },
+            "apply": { "model": "minestrapp:redwood_fence_side", "uvlock": true }
+        },
+        {   "when": { "variant": "redwood", "east": "true" },
+            "apply": { "model": "minestrapp:redwood_fence_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "variant": "redwood", "south": "true" },
+            "apply": { "model": "minestrapp:redwood_fence_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "variant": "redwood", "west": "true" },
+            "apply": { "model": "minestrapp:redwood_fence_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "variant": "frozen_oak", "north": "true" },
+            "apply": { "model": "minestrapp:frozen_oak_fence_side", "uvlock": true }
+        },
+        {   "when": { "variant": "frozen_oak", "east": "true" },
+            "apply": { "model": "minestrapp:frozen_oak_fence_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "variant": "frozen_oak", "south": "true" },
+            "apply": { "model": "minestrapp:frozen_oak_fence_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "variant": "frozen_oak", "west": "true" },
+            "apply": { "model": "minestrapp:frozen_oak_fence_side", "y": 270, "uvlock": true }
+        },
+        {   "when": { "variant": "charwood", "north": "true" },
+            "apply": { "model": "minestrapp:charwood_fence_side", "uvlock": true }
+        },
+        {   "when": { "variant": "charwood", "east": "true" },
+            "apply": { "model": "minestrapp:charwood_fence_side", "y": 90, "uvlock": true }
+        },
+        {   "when": { "variant": "charwood", "south": "true" },
+            "apply": { "model": "minestrapp:charwood_fence_side", "y": 180, "uvlock": true }
+        },
+        {   "when": { "variant": "charwood", "west": "true" },
+            "apply": { "model": "minestrapp:charwood_fence_side", "y": 270, "uvlock": true }
+        }
+    ]
+}

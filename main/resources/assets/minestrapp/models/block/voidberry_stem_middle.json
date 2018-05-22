@@ -1,5 +1,5 @@
 {
-    "parent": "block/cross",
+    "parent": "minestrapp:block/bush_base_0",
     "textures": {
         "cross": "minestrapp:blocks/plant/voidberry_stem_middle"
     }

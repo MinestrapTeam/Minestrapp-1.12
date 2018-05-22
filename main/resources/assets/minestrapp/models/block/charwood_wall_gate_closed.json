@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "minestrapp:blocks/wood/planks_charwood"
+    }
+}

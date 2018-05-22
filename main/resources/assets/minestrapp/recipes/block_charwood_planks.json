@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "group": "planks",
+    "pattern": [
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_log",
+            "data": 2
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_planks",
+        "count": 4,
+        "data": 2
+     }  
+}

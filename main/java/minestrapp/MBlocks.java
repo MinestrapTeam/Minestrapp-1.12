@@ -12,6 +12,7 @@ import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
+import minestrapp.block.BlockCharwoodLimb;
 import minestrapp.block.BlockClutchthorn;
 import minestrapp.block.BlockCobblestoneWall;
 import minestrapp.block.BlockColdSand;
@@ -24,6 +25,7 @@ import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
 import minestrapp.block.BlockDoubleStoneSlab4;
+import minestrapp.block.BlockDoubleWoodSlab1;
 import minestrapp.block.BlockDriedMud;
 import minestrapp.block.BlockEndermiteHiveHusk;
 import minestrapp.block.BlockFargrowth;
@@ -33,11 +35,13 @@ import minestrapp.block.BlockGlaciericIce;
 import minestrapp.block.BlockGlaciericIceDeposit;
 import minestrapp.block.BlockGlacierite;
 import minestrapp.block.BlockGlowshroom;
+import minestrapp.block.BlockGodstone;
 import minestrapp.block.BlockHalfMiscStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
 import minestrapp.block.BlockHalfStoneSlab4;
+import minestrapp.block.BlockHalfWoodSlab1;
 import minestrapp.block.BlockHangingMoss;
 import minestrapp.block.BlockInvincium;
 import minestrapp.block.BlockIrradiantSunstone;
@@ -46,8 +50,12 @@ import minestrapp.block.BlockIrradiumOre;
 import minestrapp.block.BlockJackOLantern;
 import minestrapp.block.BlockJackOLanternSmashed;
 import minestrapp.block.BlockLavaSponge;
+import minestrapp.block.BlockLightPaste;
 import minestrapp.block.BlockMDirt;
+import minestrapp.block.BlockMDoor;
 import minestrapp.block.BlockMFarmland;
+import minestrapp.block.BlockMFence;
+import minestrapp.block.BlockMFenceGate;
 import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockMHugeMushroom;
 import minestrapp.block.BlockMLog;
@@ -55,6 +63,7 @@ import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
 import minestrapp.block.BlockMiteEggsack;
+import minestrapp.block.BlockMiteHoney;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockPipe;
@@ -78,6 +87,7 @@ import minestrapp.block.BlockSunstoneDeposit;
 import minestrapp.block.BlockTanningRack;
 import minestrapp.block.BlockTerracreep;
 import minestrapp.block.BlockTundraGrass;
+import minestrapp.block.BlockWoodSlab1;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.CropWithered;
@@ -91,6 +101,7 @@ import minestrapp.block.crops.OnionPlant;
 import minestrapp.block.crops.PeanutsPlant;
 import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.crops.TomatoPlant;
+import minestrapp.block.item.ItemBlockContainer;
 import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.item.MItemBlock;
@@ -171,6 +182,16 @@ public class MBlocks
 	public static Block log;
 	public static Block planks;
 	public static Block mossy_m_planks;
+	public static BlockSlab wood_slab_1;
+	public static BlockDoubleWoodSlab1 double_wood_slab_1;
+	public static Block redwood_plank_stairs;
+	public static Block frozen_oak_plank_stairs;
+	public static Block charwood_plank_stairs;
+	public static Block fence;
+	public static Block redwood_fence_gate;
+	public static Block frozen_oak_fence_gate;
+	public static Block charwood_fence_gate;
+	public static Block charwood_limb;
 	
 	//Stone
 	public static Block mud_bricks;
@@ -273,6 +294,7 @@ public class MBlocks
 	public static Block block_titanium;
 	public static Block block_glacierite;
 	public static Block block_blazium;
+	public static Block block_mite_honey;
 	public static Block block_dimensium;
 	public static Block block_dimensium_destabilized;
 	
@@ -311,6 +333,7 @@ public class MBlocks
 	//Utility
 	public static Block rope;
 	public static Block dimensium_rope;
+	public static Block door_charwood;
 	public static Block basket;
 	public static Block barrel;
 	public static Block tanning_rack;
@@ -336,6 +359,7 @@ public class MBlocks
 	public static Block magnet_piston_head;
 	public static Block magnet_piston_extension;
 	public static Block block_irradiant_sunstone;
+	public static Block godstone;
 	public static Block block_irradium_insulated;
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
@@ -345,6 +369,7 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_frosted;
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
+	public static Block glow_paste;
 
 	
 	//Crops
@@ -404,6 +429,16 @@ public class MBlocks
 		register(log = new BlockMLog().setCreativeTab(MTabs.wood), new ItemBlockMultistate(log));
 		register(planks = new BlockMPlanks("m_planks"), new ItemBlockMultistate(planks));
 		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
+		register(double_wood_slab_1 = new BlockDoubleWoodSlab1("m_wood_slab_1"));
+		register(wood_slab_1 = new BlockHalfWoodSlab1("m_wood_slab_1"), new ItemBlockMSlab(wood_slab_1, wood_slab_1, double_wood_slab_1));
+		register(redwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.REDWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.REDWOOD.getUnlocalizedName()));
+		register(frozen_oak_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.FROZEN_OAK), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.FROZEN_OAK.getUnlocalizedName()));
+		register(charwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.CHARWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.CHARWOOD.getUnlocalizedName()));
+		register(fence = new BlockMFence(), new ItemBlockMultistate(fence));
+		register(redwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.REDWOOD));
+		register(frozen_oak_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.FROZEN_OAK));
+		register(charwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.CHARWOOD));
+		register(charwood_limb = new BlockCharwoodLimb());
 		
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
@@ -513,12 +548,14 @@ public class MBlocks
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
 		register(block_glacierite = new BlockGlacierite());
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setPushReaction(EnumPushReaction.NORMAL).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
+		register(block_mite_honey = new BlockMiteHoney());
 		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Decor
 		register(rope = new BlockRope());
 		register(dimensium_rope = new BlockDimensiumRope());
+		ForgeRegistries.BLOCKS.register(door_charwood = new BlockMDoor("door_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor()));
 		register(bauble_ice = new BlockBauble("bauble_ice", Material.ICE, MapColor.ICE, SoundType.GLASS, 0.5F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setSlipperiness(0.98F).setPushReaction(EnumPushReaction.DESTROY).setLightOpacity(3).setCreativeTab(MTabs.decor));
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		register(bauble_glowstone = new BlockBauble("bauble_glowstone", Material.GLASS, MapColor.SAND, SoundType.GLASS, 0.3F).setDropsItem(new ItemStack(Items.GLOWSTONE_DUST), 0, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.9F).setCreativeTab(MTabs.decor));
@@ -563,6 +600,7 @@ public class MBlocks
 		register(lava_sponge = new BlockLavaSponge(), new ItemBlockMultistate(lava_sponge));
 		register(mite_eggsack = new BlockMiteEggsack());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
+		register(godstone = new BlockGodstone());
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
 		register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));
@@ -589,6 +627,7 @@ public class MBlocks
 		register(redstone_frosted = new BlockBiomeRedstoneWire("redstone_frosted", 140F, 36F, 76F));
 		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
 		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
+		register(glow_paste = new BlockLightPaste(), new ItemBlockContainer(glow_paste, new ItemStack(Items.GLASS_BOTTLE)));
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
@@ -613,6 +652,13 @@ public class MBlocks
 	{
 		ForgeRegistries.BLOCKS.register(block);
 		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
+	}
+	
+	public static void register(Block block, ItemBlockContainer itemBlock)
+	{
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
+		blockList.add(block);
 	}
 	
 	public static void registerRenders()
@@ -641,6 +687,7 @@ public class MBlocks
 			initModel(log, i, "m_log_" + BlockMPlanks.EnumType.values()[i].getName());
 			initModel(planks, i, "m_planks_" + BlockMPlanks.EnumType.values()[i].getName());
 			initModel(mossy_m_planks, i, "m_planks_mossy_" + BlockMPlanks.EnumType.values()[i].getName());
+			initModel(fence, i, "m_fence_" + BlockMPlanks.EnumType.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockDecorativeStones.DecorStoneType.values().length ; i++)
 		{
@@ -693,6 +740,10 @@ public class MBlocks
 		for(int i = 0 ; i < BlockPortar.PortarType.values().length ; i++)
 		{
 			initModel(portar, i, "portar_" + BlockPortar.PortarType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockWoodSlab1.EnumType.values().length ; i++)
+		{
+			initModel(wood_slab_1, i, "m_wood_slab_1_" + BlockWoodSlab1.EnumType.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockMiscStoneSlab1.EnumType.values().length ; i++)
 		{

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up":    { "model": "minestrapp:null" },
+        "facing=down":  { "model": "minestrapp:null" },
+        "facing=east":  { "model": "minestrapp:null" },
+        "facing=west":  { "model": "minestrapp:null" },
+        "facing=south": { "model": "minestrapp:null" },
+        "facing=north": { "model": "minestrapp:null" }
+    }
+}

@@ -417,6 +417,204 @@
                 ]
             }
         },
+        "red_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "mossy_red_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "deep_red_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "mossy_deep_red_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "deep_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "mossy_deep_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "cold_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "mossy_cold_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "deep_cold_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "mossy_deep_cold_cobblestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "cracked_icestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "snowy_cracked_icestone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "cracked_glacierrock_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "snowy_cracked_glacierrock_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "cobbled_oceanstone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_oceanstone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "cobbled_reefstone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_cobblestone_wall",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "mossy_cobbled_reefstone_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_mossy_cobblestone_wall",
+                        "data": 8
+                    }
+                ]
+            }
+        },
         "prismarine": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
@@ -1029,6 +1227,16 @@
                 ]
             }
         },
+        "nether_brick_fence": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:nether_brick_fence"
+                    }
+                ]
+            }
+        },
         "sandstone_stairs": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
@@ -1098,6 +1306,16 @@
                     {
                         "item": "minecraft:quartz_block",
                         "data": 2
+                    }
+                ]
+            }
+        },
+        "dried_mud": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:dried_mud"
                     }
                 ]
             }
@@ -2601,6 +2819,182 @@
                 "items": [
                     {
                         "item": "minestrapp:m_cobblestone_deep_oceanstone_stairs"
+                    }
+                ]
+            }
+        },
+        "soul_glass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:soul_glass",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "soul_glass_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:soul_glass",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "soul_glass_pillar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:soul_glass",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "blazed_soul_glass": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blazed_soul_glass",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "blazed_soul_glass_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blazed_soul_glass",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "blazed_soul_glass_pillar": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:blazed_soul_glass",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "chiseled_red_rock_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_red_rock"
+                    }
+                ]
+            }
+        },
+        "chiseled_deep_red_rock_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_deep_red_rock"
+                    }
+                ]
+            }
+        },
+        "chiseled_stone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_stone"
+                    }
+                ]
+            }
+        },
+        "chiseled_deepstone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_deepstone"
+                    }
+                ]
+            }
+        },
+        "chiseled_coldstone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_coldstone"
+                    }
+                ]
+            }
+        },
+        "chiseled_deep_coldstone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_deep_coldstone"
+                    }
+                ]
+            }
+        },
+        "chiseled_icestone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_icestone"
+                    }
+                ]
+            }
+        },
+        "chiseled_glacierrock_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_glacierrock"
+                    }
+                ]
+            }
+        },
+        "chiseled_oceanstone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_oceanstone"
+                    }
+                ]
+            }
+        },
+        "chiseled_reefstone_covered_pipe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:covered_pipe_reefstone"
+                    }
+                ]
+            }
+        },
+        "godstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:godstone"
                     }
                 ]
             }

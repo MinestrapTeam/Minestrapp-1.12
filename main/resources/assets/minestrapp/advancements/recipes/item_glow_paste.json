@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glow_paste"
+    ]
+  },
+  "criteria": {
+    "has_void_jam": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:void_jam"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glow_paste"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_void_jam",
+      "has_the_recipe"
+    ]
+  ]
+}

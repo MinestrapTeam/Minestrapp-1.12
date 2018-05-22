@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.google.common.collect.Lists;
 
+import minestrapp.MItems;
 import minestrapp.MTabs;
 import minestrapp.block.item.IMetaBlockName;
 import minestrapp.block.util.BlockBase;
@@ -18,17 +19,21 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -106,6 +111,40 @@ public class BlockLavaSponge extends BlockBase implements IMetaBlockName
             worldIn.setBlockState(pos, state.withProperty(WET, Boolean.valueOf(true)), 2);
             worldIn.playEvent(2001, pos, Block.getIdFromBlock(Blocks.LAVA));
         }
+        else if(((Boolean)state.getValue(WET)).booleanValue())
+        {
+        	Material north = worldIn.getBlockState(pos.north()).getMaterial();
+        	Material south = worldIn.getBlockState(pos.south()).getMaterial();
+        	Material east = worldIn.getBlockState(pos.east()).getMaterial();
+        	Material west = worldIn.getBlockState(pos.west()).getMaterial();
+        	Material up = worldIn.getBlockState(pos.up()).getMaterial();
+        	
+        	if(isWet(north) || isWet(south) || isWet(east) || isWet(west) || isWet(up))
+        	{
+        		worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
+
+                if (worldIn instanceof WorldServer)
+                {
+                    ((WorldServer)worldIn).spawnParticle(EnumParticleTypes.SMOKE_LARGE, (double)pos.getX() + 0.5D, (double)pos.getY() + 1.25D, (double)pos.getZ() + 0.5D, 8, 0.5D, 0.25D, 0.5D, 0.0D);
+                }
+                
+        		worldIn.setBlockState(pos, this.getDefaultState().withProperty(WET, Boolean.valueOf(false)));
+        		int count = worldIn.rand.nextInt(4);
+        		
+        		for(int i = 0 ; i < count ; i++)
+        		{
+        			EntityItem chunk = new EntityItem(worldIn, pos.getX() + worldIn.rand.nextDouble(), pos.getY() + 1, pos.getZ() + worldIn.rand.nextDouble(), new ItemStack(MItems.chunks, 1, 1));
+        			worldIn.spawnEntity(chunk);
+        		}
+        	}
+        }
+    }
+    
+    public boolean isWet(Material material)
+    {
+    	if(material == Material.WATER)
+    		return true;
+    	return false;
     }
     
     private boolean absorb(World worldIn, BlockPos pos)

@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:godstone"
+        },
+        "title": {
+            "translate": "advancements.end.obtain_godstone.title"
+        },
+        "description": {
+            "translate": "advancements.end.obtain_godstone.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minestrapp:end/obtain_mite_honey",
+    "rewards": {
+        "experience": 25
+    },
+    "criteria": {
+        "godstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:godstone"
+                    }
+                ]
+            }
+        }
+    }
+}

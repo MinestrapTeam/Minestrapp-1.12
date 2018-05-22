@@ -1,0 +1,45 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minestrapp:m_planks",
+            "data": 2
+        },
+        {
+            "item": "minecraft:blaze_powder"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_planks_mossy",
+        "count": 8,
+        "data": 2
+    }   
+}

@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "half=bottom,variant=redwood_planks": [
+            { "model": "minestrapp:half_slab_redwood_planks" }
+        ],
+        "half=top,variant=redwood_planks": [
+            { "model": "minestrapp:upper_slab_redwood_planks" }
+        ],
+        "half=bottom,variant=frozen_oak_planks": [
+            { "model": "minestrapp:half_slab_frozen_oak_planks" }
+        ],
+        "half=top,variant=frozen_oak_planks": [
+            { "model": "minestrapp:upper_slab_frozen_oak_planks" }
+        ],
+        "half=bottom,variant=charwood_planks": [
+            { "model": "minestrapp:half_slab_charwood_planks" }
+        ],
+        "half=top,variant=charwood_planks": [
+            { "model": "minestrapp:upper_slab_charwood_planks" }
+        ]
+    }
+}

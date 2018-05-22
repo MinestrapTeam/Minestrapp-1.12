@@ -1,0 +1,36 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/wood/log_charwood_side",
+		"texture": "minestrapp:blocks/wood/log_charwood_side"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 5, 6, 6.5 ],
+			"to": [ 8, 16, 9.5 ],
+			"rotation": { "origin": [ 5, 6, 6.5 ], "axis": "z", "angle": 45 },
+			"faces": {
+				"down": { "uv": [ 8, 8, 11, 11 ], "texture": "#texture" },
+				"up": { "uv": [ 3, 6, 6, 9 ], "texture": "#texture" },
+				"north": { "uv": [ 11, 0, 14, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 5, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 0, 9, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 10, 0, 13, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 5, -2, 7 ],
+			"to": [ 7, 8, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 6, 2, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 3, 8, 5, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 11, 0, 13, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 3, 0, 5, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 0, 8, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 10, 0, 12, 10 ], "texture": "#texture" }
+			}
+		}
+	]
+}
