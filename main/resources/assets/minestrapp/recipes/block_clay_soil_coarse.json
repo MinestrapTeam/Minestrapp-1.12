@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "pg",
         "gp"
@@ -10,7 +10,8 @@
             "data": 0
         },
         "g": {
-            "item": "minecraft:gravel"
+            "type": "forge:ore_dict",
+            "ore": "gravel"
         }
      },
      "result": {

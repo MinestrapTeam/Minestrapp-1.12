@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "ppp",
         "gig",
@@ -7,14 +7,16 @@
     ],
     "key": {        
         "p": {
-            "item": "minestrapp:m_plating",
-            "data": 2
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
         },
         "i": {
-            "item": "minestrapp:block_irradium"
+            "type": "forge:ore_dict",
+            "ore": "blockIrradium"
         },
         "g": {
-            "item": "minecraft:glass_pane"
+            "type": "forge:ore_dict",
+            "ore": "paneGlassColorless"
         }
      },
      "result": {

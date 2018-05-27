@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "r",
         "t"
@@ -9,8 +9,8 @@
             "item": "minestrapp:rope"
         },
         "t": {
-            "item": "minestrapp:m_mob_loot",
-            "data": 1
+            "type": "forge:ore_dict",
+            "ore": "tallow"
         }
      },
      "result": {

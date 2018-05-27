@@ -1,17 +1,21 @@
 {    
-    "type": "minecraft:crafting_shapeless",
+    "type": "forge:ore_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:paper"
+            "type": "forge:ore_dict",
+            "ore": "paper"
         },
         {
-            "item": "minestrapp:salt"
+            "type": "forge:ore_dict",
+            "ore": "gemSalt"
         },
         {
-            "item": "minestrapp:salt"
+            "type": "forge:ore_dict",
+            "ore": "gemSalt"
         },
         {
-            "item": "minestrapp:salt"
+            "type": "forge:ore_dict",
+            "ore": "gemSalt"
         },
         {
             "item": "minestrapp:m_natural_item",

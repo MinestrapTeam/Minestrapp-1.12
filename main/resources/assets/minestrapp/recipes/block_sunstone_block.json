@@ -1,13 +1,13 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "xx",
         "xx"
     ],
     "key": {        
         "x": {
-            "item": "minestrapp:m_gem",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "gemSunstone"
         }
      },
      "result": {

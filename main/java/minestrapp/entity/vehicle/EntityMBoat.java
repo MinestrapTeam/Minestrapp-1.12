@@ -14,6 +14,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentProtection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
@@ -21,6 +22,7 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,6 +31,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CPacketSteerBoat;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraft.util.EntitySelectors;
@@ -48,7 +51,7 @@ public class EntityMBoat extends EntityBoat
     private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(EntityMBoat.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(EntityMBoat.class, DataSerializers.VARINT);
     private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(EntityMBoat.class, DataSerializers.FLOAT);
-    private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.<Integer>createKey(EntityMBoat.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> MBOAT_TYPE = EntityDataManager.<Integer>createKey(EntityMBoat.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(EntityMBoat.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(EntityMBoat.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
@@ -108,7 +111,7 @@ public class EntityMBoat extends EntityBoat
         this.dataManager.register(TIME_SINCE_HIT, Integer.valueOf(0));
         this.dataManager.register(FORWARD_DIRECTION, Integer.valueOf(1));
         this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
-        this.dataManager.register(BOAT_TYPE, Integer.valueOf(EntityMBoat.Type.REDWOOD.getMetadata()));
+        this.dataManager.register(MBOAT_TYPE, Integer.valueOf(EntityMBoat.Type.REDWOOD.getMetadata()));
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -139,7 +142,10 @@ public class EntityMBoat extends EntityBoat
     @Override
     public double getMountedYOffset()
     {
-        return -0.1D;
+    	if(this.getMBoatType().getMaterial()!= Material.LAVA)
+    		return -0.1D;
+    	else
+    		return 0.826D;
     }
 
     @Override
@@ -151,6 +157,8 @@ public class EntityMBoat extends EntityBoat
         {
             if (source instanceof EntityDamageSourceIndirect && source.getTrueSource() != null && this.isPassenger(source.getTrueSource()))
                 return false;
+            else if(this.getMBoatType().getMaterial() == Material.LAVA && source.isFireDamage())
+            	return false;
             else
             {
                 this.setForwardDirection(-this.getForwardDirection());
@@ -179,7 +187,7 @@ public class EntityMBoat extends EntityBoat
     @Override
     public void applyEntityCollision(Entity entityIn)
     {
-        if (entityIn instanceof EntityBoat)
+        if (entityIn instanceof EntityMBoat)
         {
             if (entityIn.getEntityBoundingBox().minY < this.getEntityBoundingBox().maxY)
                 super.applyEntityCollision(entityIn);
@@ -259,14 +267,30 @@ public class EntityMBoat extends EntityBoat
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
         this.prevPosZ = this.posZ;
-        super.onUpdate();
+        if (!this.world.isRemote)
+        {
+            this.setFlag(6, this.isGlowing());
+        }
+
+        this.onEntityUpdate();
         this.tickLerp();
 
         if (this.canPassengerSteer())
         {
             if (this.getPassengers().isEmpty() || !(this.getPassengers().get(0) instanceof EntityPlayer))
-                this.setPaddleState(false, false);
-
+            	this.setPaddleState(false, false);
+            
+            /*if (!this.getPassengers().isEmpty())
+            {
+            	for(int i = 0 ; i < this.getPassengers().size() ; i++)
+            	{
+            		if(this.getPassengers().get(i) instanceof EntityLiving)
+            			((EntityLiving)this.getPassengers().get(i)).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
+            		else if(this.getPassengers().get(i) instanceof EntityPlayer)
+            			((EntityPlayer)this.getPassengers().get(i)).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
+            	}
+            }*/
+            
             this.updateMotion();
 
             if (this.world.isRemote)
@@ -887,17 +911,17 @@ public class EntityMBoat extends EntityBoat
 
     public void setBoatType(EntityMBoat.Type boatType)
     {
-        this.dataManager.set(BOAT_TYPE, Integer.valueOf(boatType.ordinal()));
+        this.dataManager.set(MBOAT_TYPE, Integer.valueOf(boatType.ordinal()));
     }
     
     public void setBoatType(int boatType)
     {
-        this.dataManager.set(BOAT_TYPE, Integer.valueOf(boatType));
+        this.dataManager.set(MBOAT_TYPE, Integer.valueOf(boatType));
     }
 
     public EntityMBoat.Type getMBoatType()
     {
-        return EntityMBoat.Type.byId(((Integer)this.dataManager.get(BOAT_TYPE)).intValue());
+        return EntityMBoat.Type.byId(((Integer)this.dataManager.get(MBOAT_TYPE)).intValue());
     }
     
     public void setFireImmune()
@@ -942,7 +966,7 @@ public class EntityMBoat extends EntityBoat
     {
         REDWOOD(BlockMPlanks.EnumType.REDWOOD.getMetadata(), "redwood", Material.WATER),
         FROZEN_OAK(BlockMPlanks.EnumType.FROZEN_OAK.getMetadata(), "frozen_oak", Material.WATER),
-        CHARWOOD(BlockMPlanks.EnumType.CHARWOOD.getMetadata(), "charwood", Material.WATER);
+        CHARWOOD(BlockMPlanks.EnumType.CHARWOOD.getMetadata(), "charwood", Material.LAVA);
 
         private final String name;
         private final int metadata;

@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "lll",
         "sss",
@@ -7,14 +7,16 @@
     ],
     "key": {
         "l": {
-            "item": "minecraft:leather"
+            "type": "forge:ore_dict",
+            "ore": "leather"
         },
         "s": {
             "item": "minestrapp:m_mob_loot",
             "data": 2
         },
         "f": {
-            "item": "minecraft:feather"
+            "type": "forge:ore_dict",
+            "ore": "feather"
         }
      },
      "result": {

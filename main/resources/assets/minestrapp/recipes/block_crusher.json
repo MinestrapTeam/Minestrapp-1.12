@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "bpb",
         "bgb",
@@ -7,20 +7,23 @@
     ],
     "key": {        
         "b": {
-            "item": "minestrapp:block_bronze"
+            "type": "forge:ore_dict",
+            "ore": "blockBronze"
         },
         "p": {
             "item": "minecraft:piston"
         },
         "g": {
-            "item": "minecraft:glass_pane"
+            "type": "forge:ore_dict",
+            "ore": "paneGlassColorless"
         },
         "o": {
-            "item": "minecraft:obsidian"
+            "type": "forge:ore_dict",
+            "ore": "obsidian"
         },
         "t": {
-            "item": "minestrapp:m_ingot",
-            "data": 5
+            "type": "forge:ore_dict",
+            "ore": "ingotTitanium"
         }
      },
      "result": {

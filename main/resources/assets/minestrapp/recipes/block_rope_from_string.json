@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "group": "rope",
     "pattern": [
         "x",
@@ -8,7 +8,8 @@
     ],
     "key": {        
         "x": {
-            "item": "minecraft:string"
+            "type": "forge:ore_dict",
+            "ore": "string"
         }
      },
      "result": {

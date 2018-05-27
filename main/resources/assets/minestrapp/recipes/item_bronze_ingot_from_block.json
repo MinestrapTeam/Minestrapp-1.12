@@ -1,8 +1,9 @@
 {    
-    "type": "minecraft:crafting_shapeless",
+    "type": "forge:ore_shapeless",
     "ingredients": [
         {
-            "item": "minestrapp:block_bronze"
+            "type": "forge:ore_dict",
+            "ore": "blockBronze"
         }
      ],
      "result": {

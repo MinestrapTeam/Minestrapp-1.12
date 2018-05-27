@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "fhf",
         "fdf",
@@ -14,8 +14,8 @@
             "item": "minestrapp:mite_honey"
         },
         "d": {
-            "item": "minestrapp:m_ingot",
-            "data": 8
+            "type": "forge:ore_dict",
+            "ore": "ingotDimensium"
         }
      },
      "result": {

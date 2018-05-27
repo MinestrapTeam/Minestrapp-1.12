@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         " x ",
         "xsx",
@@ -11,7 +11,8 @@
             "data": 3
         },
         "s": {
-            "item": "minestrapp:block_sunstone"
+            "type": "forge:ore_dict",
+            "ore": "blockSunstone"
         }
      },
      "result": {

@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "b b",
         "gsg",
@@ -11,12 +11,12 @@
             "data": 0
         },
         "i": {
-            "item": "minestrapp:m_ingot",
-            "data": 3
+            "type": "forge:ore_dict",
+            "ore": "ingotSteel"
         },
         "g": {
-            "item": "minestrapp:gem_soul",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "gemSoul"
         },
         "s": {
             "item": "minecraft:skull",

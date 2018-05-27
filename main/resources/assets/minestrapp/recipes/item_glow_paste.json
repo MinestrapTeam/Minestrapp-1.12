@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shapeless",
+    "type": "forge:ore_shapeless",
     "ingredients": [
         {
             "item": "minestrapp:void_jam"
@@ -17,17 +17,19 @@
             "item": "minestrapp:mite_honey"
         },
         {
-            "item": "minecraft:glowstone_dust"
+            "type": "forge:ore_dict",
+            "ore": "dustGlowstone"
         },
         {
             "item": "minecraft:blaze_powder"
         },
         {
-            "item": "minecraft:prismarine_crystals"
+            "type": "forge:ore_dict",
+            "ore": "dustPrismarine"
         },
         {
-            "item": "minestrapp:m_gem",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "gemSunstone"
         }
     ],
     "result": {

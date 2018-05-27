@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "xxx",
         "xxx",
@@ -7,8 +7,8 @@
     ],
     "key": {        
         "x": {
-            "item": "minestrapp:m_ingot",
-            "data": 3
+            "type": "forge:ore_dict",
+            "ore": "ingotSteel"
         }
      },
      "result": {

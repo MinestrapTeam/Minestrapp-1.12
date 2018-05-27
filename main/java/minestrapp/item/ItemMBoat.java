@@ -90,7 +90,7 @@ public class ItemMBoat extends Item
             else
             {
                 Block block = worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock();
-                boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER;
+                boolean flag1 = block == Blocks.WATER || block == Blocks.FLOWING_WATER || block == Blocks.LAVA || block == Blocks.FLOWING_LAVA;
                 EntityMBoat entitybopboat = new EntityMBoat(worldIn, raytraceresult.hitVec.x, flag1 ? raytraceresult.hitVec.y - 0.12D : raytraceresult.hitVec.y, raytraceresult.hitVec.z);
                 entitybopboat.setBoatType(this.type);
                 if(this.type == EntityMBoat.Type.CHARWOOD)

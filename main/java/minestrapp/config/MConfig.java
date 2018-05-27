@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.Minestrapp5;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MConfig
 {
@@ -282,7 +285,7 @@ public class MConfig
 	private static void registerProperty(Property property, String category, String name)
 	{
 		property.setLanguageKey("gui.config." + category + "." + name + ".name");
-		property.setComment(I18n.format("gui.config." + category + "." + name + ".name"));
+		//property.setComment(I18n.format("gui.config." + category + "." + name + ".name"));
 	}
 	
 	private static void registerProperty(Property property, String category, String name, boolean requiresWorldRestart, boolean requiresMCRestart)

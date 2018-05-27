@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "ppp",
         "pfp",
@@ -7,8 +7,8 @@
     ],
     "key": {        
         "p": {
-            "item": "minestrapp:m_plating",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "plateTin"
         },
         "f": {
             "item": "minecraft:furnace"

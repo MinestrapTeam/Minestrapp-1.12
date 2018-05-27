@@ -1,5 +1,5 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "plp",
         "seg",
@@ -13,16 +13,19 @@
             "item": "minecraft:sea_lantern"
         },
         "s": {
-            "item": "minestrapp:block_sunstone"
+            "type": "forge:ore_dict",
+            "ore": "blockSunstone"
         },
         "g": {
-            "item": "minecraft:glowstone"
+            "type": "forge:ore_dict",
+            "ore": "glowstone"
         },
         "m": {
             "item": "minecraft:magma"
         },
         "e": {
-            "item": "minecraft:end_stone"
+            "type": "forge:ore_dict",
+            "ore": "endstone"
         }
      },
      "result": {

@@ -1,11 +1,12 @@
 {    
-    "type": "minecraft:crafting_shaped",
+    "type": "forge:ore_shaped",
     "pattern": [
         "x"
     ],
     "key": {        
         "x": {
-            "item": "minecraft:glowstone"
+            "type": "forge:ore_dict",
+            "ore": "glowstone"
         }
      },
      "result": {

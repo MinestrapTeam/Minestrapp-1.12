@@ -83,6 +83,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("dustTorite", new ItemStack(MItems.chunks, 1, 11));
 		OreDictionary.registerOre("dustTitanium", new ItemStack(MItems.chunks, 1, 12));
 		OreDictionary.registerOre("dustDimensium", new ItemStack(MItems.chunks, 1, 13));
+		OreDictionary.registerOre("dustIrradium", MItems.irradium);
 		OreDictionary.registerOre("ingotCopper", new ItemStack(MItems.ingots, 1, 0));
 		OreDictionary.registerOre("ingotTin", new ItemStack(MItems.ingots, 1, 1));
 		OreDictionary.registerOre("ingotBronze", new ItemStack(MItems.ingots, 1, 2));
