@@ -576,6 +576,7 @@ tile.covered_pipe_glacierrock.name=Covered Pipe
 tile.covered_pipe_oceanstone.name=Covered Pipe
 tile.covered_pipe_reefstone.name=Covered Pipe
 tile.sorter.name=Sorter
+tile.axel_wood.name=Wooden Axel
 
 
 ##### Items #####

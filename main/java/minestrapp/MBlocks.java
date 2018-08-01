@@ -9,6 +9,7 @@ import minestrapp.block.BlockBauble;
 import minestrapp.block.BlockBiomeRedstone;
 import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.BlockAlloy;
+import minestrapp.block.BlockAxel;
 import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
@@ -352,6 +353,7 @@ public class MBlocks
 	public static Block covered_pipe_oceanstone;
 	public static Block covered_pipe_reefstone;
 	public static Block sorter;
+	public static Block wooden_axel;
 	public static Block magnet_piston_1;
 	public static Block magnet_piston_2;
 	public static Block magnet_piston_3;
@@ -620,6 +622,7 @@ public class MBlocks
 		register(covered_pipe_oceanstone = new BlockPipe("covered_pipe_oceanstone", true, false));
 		register(covered_pipe_reefstone = new BlockPipe("covered_pipe_reefstone", true, false));
 		register(sorter = new BlockSorter("sorter"));
+		register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
