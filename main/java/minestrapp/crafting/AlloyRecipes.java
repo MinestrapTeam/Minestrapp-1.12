@@ -22,7 +22,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class AlloyRecipes {
 	private static final AlloyRecipes SMELTING = new AlloyRecipes();
-	private final Table<ItemStack, ItemStack, ItemStack> alloySmelting = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
+	public final Table<ItemStack, ItemStack, ItemStack> alloySmelting = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
 	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
 
 	public static AlloyRecipes instance() {

@@ -1,31 +1,25 @@
 package minestrapp.crafting;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Table;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.block.EnumStoneTypeMOnly;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionType;
-import net.minecraft.potion.PotionUtils;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class CrusherRecipes {
 	private static final CrusherRecipes CRUSHING = new CrusherRecipes();
-	private final Map<ItemStack, ItemStack> crushing = Maps.<ItemStack, ItemStack>newHashMap();
-	private final Map<ItemStack, ItemStack> extra = Maps.<ItemStack, ItemStack>newHashMap();
-	private final Map<ItemStack, Integer> chance = Maps.<ItemStack, Integer>newHashMap();
+	public final Map<ItemStack, ItemStack> crushing = Maps.<ItemStack, ItemStack>newHashMap();
+	public final Map<ItemStack, ItemStack> extra = Maps.<ItemStack, ItemStack>newHashMap();
+	public final Map<ItemStack, Integer> chance = Maps.<ItemStack, Integer>newHashMap();
 	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
 
 	public static CrusherRecipes instance() {
@@ -196,8 +190,24 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 6), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 3), 40, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 7), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 4), 40, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 8), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 4), 40, 0.1F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 630), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 8), 30, 0.15F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 630), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 7), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 0), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 0), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 1), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 0), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 2), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 1), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 3), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 2), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 4), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 2), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 5), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 3), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 6), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 3), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 7), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 4), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_copper, 1, 8), new ItemStack(MItems.chunks, 2, 7), new ItemStack(MItems.chunks, 1, 4), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 0), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 0), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 1), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 0), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 2), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 1), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 3), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 2), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 4), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 2), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 5), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 3), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 6), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 3), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 7), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 4), 30, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_tin, 1, 8), new ItemStack(MItems.chunks, 2, 8), new ItemStack(MItems.chunks, 1, 4), 30, 0.15F);
 		this.addCrusherRecipe(new ItemStack(Blocks.IRON_ORE), new ItemStack(MItems.chunks, 2, 9), new ItemStack(MItems.chunks, 1, 1), 40, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_iron, 1, 0), new ItemStack(MItems.chunks, 2, 9), new ItemStack(MItems.chunks, 1, 0), 40, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_iron, 1, 1), new ItemStack(MItems.chunks, 2, 9), new ItemStack(MItems.chunks, 1, 0), 40, 0.15F);
