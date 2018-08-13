@@ -17,6 +17,7 @@ import minestrapp.block.BlockCharwoodLimb;
 import minestrapp.block.BlockClutchthorn;
 import minestrapp.block.BlockCobblestoneWall;
 import minestrapp.block.BlockColdSand;
+import minestrapp.block.BlockCreativeEngine;
 import minestrapp.block.BlockCrusher;
 import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
@@ -105,11 +106,13 @@ import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockContainer;
 import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
+import minestrapp.block.item.ItemBlockPanel;
 import minestrapp.block.item.MItemBlock;
 import minestrapp.block.magnetpiston.BlockMagnetPistonBase;
 import minestrapp.block.magnetpiston.BlockMagnetPistonExtension;
 import minestrapp.block.magnetpiston.BlockMagnetPistonMoving;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockPanelBase;
 import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.block.util.BlockStoneBaseMOnly;
@@ -125,6 +128,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
@@ -185,6 +189,7 @@ public class MBlocks
 	public static Block mossy_m_planks;
 	public static BlockSlab wood_slab_1;
 	public static BlockDoubleWoodSlab1 double_wood_slab_1;
+	public static BlockPanelBase oak_plank_panel;
 	public static Block redwood_plank_stairs;
 	public static Block frozen_oak_plank_stairs;
 	public static Block charwood_plank_stairs;
@@ -354,6 +359,7 @@ public class MBlocks
 	public static Block covered_pipe_reefstone;
 	public static Block sorter;
 	public static Block wooden_axel;
+	public static Block creative_engine;
 	public static Block magnet_piston_1;
 	public static Block magnet_piston_2;
 	public static Block magnet_piston_3;
@@ -433,6 +439,7 @@ public class MBlocks
 		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
 		register(double_wood_slab_1 = new BlockDoubleWoodSlab1("m_wood_slab_1"));
 		register(wood_slab_1 = new BlockHalfWoodSlab1("m_wood_slab_1"), new ItemBlockMSlab(wood_slab_1, wood_slab_1, double_wood_slab_1));
+		register(oak_plank_panel = new BlockPanelBase(Blocks.PLANKS, 0, "oak"), new ItemBlockPanel(oak_plank_panel));
 		register(redwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.REDWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.REDWOOD.getUnlocalizedName()));
 		register(frozen_oak_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.FROZEN_OAK), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.FROZEN_OAK.getUnlocalizedName()));
 		register(charwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.CHARWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.CHARWOOD.getUnlocalizedName()));
@@ -623,6 +630,7 @@ public class MBlocks
 		register(covered_pipe_reefstone = new BlockPipe("covered_pipe_reefstone", true, false));
 		register(sorter = new BlockSorter("sorter"));
 		register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
+		register(creative_engine = new BlockCreativeEngine());
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
@@ -658,6 +666,13 @@ public class MBlocks
 	}
 	
 	public static void register(Block block, ItemBlockContainer itemBlock)
+	{
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));
+		blockList.add(block);
+	}
+	
+	public static void register(Block block, ItemBlockPanel itemBlock)
 	{
 		ForgeRegistries.BLOCKS.register(block);
 		ForgeRegistries.ITEMS.register(itemBlock.setRegistryName(block.getRegistryName()));

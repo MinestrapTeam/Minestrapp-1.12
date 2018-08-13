@@ -27,7 +27,7 @@ public class BlockMechanical extends BlockBase
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWER, Integer.valueOf(0)));
 	}
 
-	public int isProvidingPowerFromFace(IBlockAccess world, BlockPos pos, EnumFacing face)
+	public int isProvidingPowerFromFace(World world, BlockPos pos, EnumFacing face)
 	{
 		return 0;
 	}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "default": [
+            { "model": "minestrapp:creative_engine" }
+        ]
+    }
+}

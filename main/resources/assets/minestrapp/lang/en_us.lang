@@ -62,6 +62,7 @@ tile.m_planks_mossy_charwood.name=Smoldering Charwood Planks
 tile.m_wood_slab_1_redwood_planks.name=Redwood Plank Slab
 tile.m_wood_slab_1_frozen_oak_planks.name=Frozen Oak Plank Slab
 tile.m_wood_slab_1_charwood_planks.name=Charwood Plank Slab
+tile.panel_wood_oak.name=Oak Plank Panel
 tile.m_planks_redwood_stairs.name=Redwood Plank Stairs
 tile.m_planks_frozen_oak_stairs.name=Frozen Oak Plank Stairs
 tile.m_planks_charwood_stairs.name=Charwood Plank Stairs
@@ -576,6 +577,7 @@ tile.covered_pipe_glacierrock.name=Covered Pipe
 tile.covered_pipe_oceanstone.name=Covered Pipe
 tile.covered_pipe_reefstone.name=Covered Pipe
 tile.sorter.name=Sorter
+tile.creative_engine.name=Creative Engine
 tile.axel_wood.name=Wooden Axel
 
 

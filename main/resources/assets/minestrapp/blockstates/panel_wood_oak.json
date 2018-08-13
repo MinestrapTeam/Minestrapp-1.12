@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up":    { "model": "oak_planks", "uvlock": true },
+        "facing=east":  { "model": "minestrapp:panel_oak", "uvlock": true, "y": 90 },
+        "facing=west":  { "model": "minestrapp:panel_oak", "uvlock": true, "y": 270 },
+        "facing=south": { "model": "minestrapp:panel_oak", "uvlock": true, "y": 180 },
+        "facing=north": { "model": "minestrapp:panel_oak", "uvlock": true }
+    }
+}

@@ -1,8 +1,14 @@
 package minestrapp.block;
 
+import javax.annotation.Nullable;
+
+import minestrapp.MBlocks;
+import minestrapp.block.tileentity.TileEntityAxel;
+import minestrapp.block.tileentity.TileEntityVessel;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockMechanical;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -11,17 +17,29 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ChunkCache;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.IWorldNameable;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
-public class BlockAxel extends BlockMechanical
+public class BlockAxel extends BlockMechanical implements ITileEntityProvider
 {
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	
@@ -33,17 +51,69 @@ public class BlockAxel extends BlockMechanical
 	{
 		super(name, material, mapColor, soundType, hardness, tool, harvestLevel);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWER, Integer.valueOf(0)).withProperty(FACING, EnumFacing.UP));
+		this.hasTileEntity = true;
 	}
+	
+	public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+    }
+	
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        super.breakBlock(worldIn, pos, state);
+        worldIn.removeTileEntity(pos);
+    }
+	
+	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
+    {
+        if (te instanceof IWorldNameable && ((IWorldNameable)te).hasCustomName())
+        {
+            player.addStat(StatList.getBlockStats(this));
+            player.addExhaustion(0.005F);
+
+            if (worldIn.isRemote)
+            {
+                return;
+            }
+
+            int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, stack);
+            Item item = this.getItemDropped(state, worldIn.rand, i);
+
+            if (item == Items.AIR)
+            {
+                return;
+            }
+
+            ItemStack itemstack = new ItemStack(item, this.quantityDropped(worldIn.rand));
+            itemstack.setStackDisplayName(((IWorldNameable)te).getName());
+            spawnAsEntity(worldIn, pos, itemstack);
+        }
+        else
+        {
+            super.harvestBlock(worldIn, player, pos, state, (TileEntity)null, stack);
+        }
+    }
+	
+	public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int id, int param)
+    {
+        super.eventReceived(state, worldIn, pos, id, param);
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        return tileentity == null ? false : tileentity.receiveClientEvent(id, param);
+    }
 	
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-		EnumFacing facing = state.getValue(FACING).getOpposite();
-        IBlockState checkState = worldIn.getBlockState(pos.offset(facing));
+		TileEntity tileentity = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
+        int level = 0;
         
-        if(checkState.getBlock() instanceof BlockMechanical)
-        	return state.withProperty(POWER, ((BlockMechanical)checkState.getBlock()).isProvidingPowerFromFace(worldIn, pos, facing.getOpposite()));
+        if (tileentity instanceof TileEntityAxel)
+        {
+            TileEntityAxel tileentityaxel = (TileEntityAxel)tileentity;
+            level = tileentityaxel.getLevel();
+        }
         
-        return state.withProperty(POWER, Integer.valueOf(0));
+        return state.withProperty(POWER, level);
     }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
@@ -65,10 +135,10 @@ public class BlockAxel extends BlockMechanical
         return false;
     }
 	
-	public int isProvidingPowerFromFace(IBlockAccess world, BlockPos pos, EnumFacing face)
+	public int isProvidingPowerFromFace(World world, BlockPos pos, EnumFacing face)
 	{
 		IBlockState state = world.getBlockState(pos);
-		return face == state.getValue(FACING) ? state.getValue(POWER).intValue() : 0;
+		return face == state.getValue(FACING) ? ((TileEntityAxel)this.getTileEntity(world, pos)).getLevel() : 0;
 	}
 	
 	protected BlockStateContainer createBlockState()
@@ -136,5 +206,32 @@ public class BlockAxel extends BlockMechanical
     public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
     {
         return BlockFaceShape.UNDEFINED;
+    }
+    
+    @Nullable
+    private TileEntityAxel getTileEntity(World worldIn, BlockPos pos)
+    {
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        return tileentity instanceof TileEntityAxel ? (TileEntityAxel)tileentity : null;
+    }
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta)
+	{
+		return new TileEntityAxel();
+	}
+	
+	public void updatePower(World world, BlockPos pos)
+	{
+		EnumFacing facing = world.getBlockState(pos).getValue(FACING).getOpposite();
+		IBlockState state = world.getBlockState(pos.offset(facing));
+		
+		if(state.getBlock() instanceof BlockMechanical)
+			this.getTileEntity(world, pos).setLevel(((BlockMechanical)state.getBlock()).isProvidingPowerFromFace(world, pos, facing.getOpposite()));
+	}
+	
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    {
+		this.updatePower(worldIn, fromPos);
     }
 }

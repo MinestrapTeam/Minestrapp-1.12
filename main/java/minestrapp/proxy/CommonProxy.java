@@ -4,6 +4,7 @@ import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
+import minestrapp.block.tileentity.TileEntityAxel;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
@@ -62,6 +63,8 @@ public class CommonProxy
 	public void init(FMLInitializationEvent event)
 	{
 		GameRegistry.registerWorldGenerator(new MOreGen(), 0);
+		
+		GameRegistry.registerTileEntity(TileEntityAxel.class, "TileEntityAxel");
 		
 		GameRegistry.registerTileEntity(TileEntityVessel.class, "TileEntityVessel");
 		
