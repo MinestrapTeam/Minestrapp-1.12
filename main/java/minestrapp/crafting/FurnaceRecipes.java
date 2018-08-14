@@ -65,7 +65,7 @@ public class FurnaceRecipes
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{
 			GameRegistry.addSmelting(new ItemStack(MBlocks.cobblestone, 1, i), new ItemStack(MBlocks.stone, 1, i), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(MBlocks.cracked_stone_bricks, 1, i), new ItemStack(MBlocks.stone_bricks, 1, i), 0.1F);
+			GameRegistry.addSmelting(new ItemStack(MBlocks.stone_bricks, 1, i), new ItemStack(MBlocks.cracked_stone_bricks, 1, i), 0.1F);
 		}
 	}
 }

@@ -90,7 +90,7 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.MUTTON), new ItemStack(MItems.salted_mutton), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.PORKCHOP), new ItemStack(MItems.salted_porkchop), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.BEEF), new ItemStack(MItems.salted_steak), 0.35F);
-		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(Items.SPECKLED_MELON, 4, 1), new ItemStack(MItems.candy_red), 0.8F);
+		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(Items.SPECKLED_MELON, 4), new ItemStack(MItems.candy_red), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MItems.natural_ingredients, 4, 1), new ItemStack(MItems.candy_blue), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MBlocks.hanging_glow_moss, 4), new ItemStack(MItems.candy_yellow), 0.8F);
 	}
