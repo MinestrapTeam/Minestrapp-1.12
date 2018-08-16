@@ -3,11 +3,11 @@ package minestrapp.block.tileentity;
 import minestrapp.crafting.TannerRecipes;
 import minestrapp.crafting.TannerRecipes.TannerRecipe;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
@@ -71,5 +71,22 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		ItemStackHelper.saveAllItems(compound, this.hide);
 		return compound;
 	}
+	
+	@Override
+	public NBTTagCompound getUpdateTag(){
+		return writeToNBT(new NBTTagCompound());
+	}
+	
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket(){
+	    return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) 
+	{
+	    this.readFromNBT(packet.getNbtCompound());
+	}
+
 
 }
