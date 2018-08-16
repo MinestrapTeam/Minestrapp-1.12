@@ -163,26 +163,6 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 		
 		return compound;
 	}
-	
-	/*
-	private void notifyBlockUpdate() {
-		final IBlockState state = getWorld().getBlockState(getPos());
-		getWorld().notifyBlockUpdate(getPos(), state, state, 3);
-		if (getWorld().isRemote) {
-            getWorld().markBlockRangeForRenderUpdate(getPos(), getPos());
-		}
-	}	
-	
-	@Nullable
-	@Override
-	public SPacketUpdateTileEntity getUpdatePacket() {
-		return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
-	}
-	
-	@Override
-	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-		readFromNBT(pkt.getNbtCompound());
-	} */
 
 	@Override
 	public int getInventoryStackLimit()
@@ -301,8 +281,7 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 		}
 	}
 	
-	public void smeltItem()
-	{
+	public void smeltItem() {
 		if(this.canSmelt())
 		{
 			ItemStack input1 = (ItemStack)this.inventory.get(0);
@@ -311,13 +290,15 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 			ItemStack bonusresult = CrusherRecipes.instance().getExtra(input1);
 			ItemStack bonus = (ItemStack)this.inventory.get(3);
 			
-			if(output.isEmpty())
+			if(output.isEmpty()) {
 				this.inventory.set(2, result.copy());
-			else if(output.getItem() == result.getItem())
+				this.notifyBlockUpdate();
+			}else if(output.getItem() == result.getItem()) {
 				output.grow(result.getCount());
+				this.notifyBlockUpdate();
+			}
 			
-			if(CrusherRecipes.instance().getChance(input1) >= r.nextInt(100) + 1)
-			{
+			if(CrusherRecipes.instance().getChance(input1) >= r.nextInt(100) + 1) {
 				if(bonus.isEmpty())
 					this.inventory.set(3, bonusresult.copy());
 				else if(bonus.getItem() == bonusresult.getItem())
@@ -510,4 +491,28 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
                 return (T) handlerSide;
         return super.getCapability(capability, facing);
     }
+    
+    private void notifyBlockUpdate() {
+		final IBlockState state = getWorld().getBlockState(getPos());
+		getWorld().notifyBlockUpdate(getPos(), state, state, 3);
+		if (getWorld().isRemote) {
+            getWorld().markBlockRangeForRenderUpdate(getPos(), getPos());
+		}
+	}	
+    
+    @Override
+	public NBTTagCompound getUpdateTag(){
+		return writeToNBT(new NBTTagCompound());
+	}
+	
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket(){
+	    return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) 
+	{
+	    this.readFromNBT(packet.getNbtCompound());
+	}
 }
