@@ -1,8 +1,10 @@
 package minestrapp.block;
 
 import minestrapp.MTabs;
+import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -12,17 +14,19 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockTanningRack extends BlockBase
+public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
@@ -31,6 +35,44 @@ public class BlockTanningRack extends BlockBase
 		super("tanning_rack", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1F, "axe", 0);
 		this.setCreativeTab(MTabs.utility);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+	}
+	
+	@Override
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+		TileEntityTanningRack tet = (TileEntityTanningRack) world.getTileEntity(pos);
+		
+		ItemStack heldItem = player.getHeldItem(hand);
+		
+		if(!heldItem.isEmpty()) {
+			
+			if(state.getValue(FACING) == EnumFacing.NORTH) {
+				if(tet.tryToAddItem(heldItem, 0)) {
+					player.getHeldItem(hand).shrink(1);
+				}
+			}
+			
+			if(state.getValue(FACING) == EnumFacing.SOUTH) {
+				if(tet.tryToAddItem(heldItem, 180)) {
+					player.getHeldItem(hand).shrink(1);
+				}
+			}
+			
+			if(state.getValue(FACING) == EnumFacing.WEST) {
+				if(tet.tryToAddItem(heldItem, 270)) {
+					player.getHeldItem(hand).shrink(1);
+				}
+			}
+			
+			if(state.getValue(FACING) == EnumFacing.EAST) {
+				if(tet.tryToAddItem(heldItem, 90)) {
+					player.getHeldItem(hand).shrink(1);
+				}
+			}
+		} else {
+			tet.takeItem();
+		}
+		
+		return true;
 	}
 
 	public boolean isOpaqueCube(IBlockState state)
@@ -101,4 +143,9 @@ public class BlockTanningRack extends BlockBase
     {
         return BlockFaceShape.UNDEFINED;
     }
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) {
+		return new TileEntityTanningRack();
+	}
 }

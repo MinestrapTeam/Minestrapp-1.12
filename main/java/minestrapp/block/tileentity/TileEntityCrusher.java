@@ -2,10 +2,13 @@ package minestrapp.block.tileentity;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import minestrapp.block.BlockCrusher;
 import minestrapp.crafting.CrusherRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -16,7 +19,6 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemBoat;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemHoe;
@@ -24,6 +26,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -42,7 +46,7 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
     private static final int[] SLOTS_BOTTOM = new int[] {1, 2, 3};
     private static final int[] SLOTS_SIDES = new int[] {1};
 	
-	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
+	public NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	
 	private static final float FUELMULT = 0.5F;
 	private String customName;
@@ -51,6 +55,8 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 	private int cookTime;
 	private int totalCookTime;
 	private Random r = new Random();
+	
+	public int itemAngel = 0;
 	
 	@Override
 	public String getName()
@@ -136,6 +142,7 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 		this.cookTime = compound.getInteger("CookTime");
 		this.totalCookTime = compound.getInteger("CookTimeTotal");
 		this.currentBurnTime = getItemBurnTime((ItemStack)this.inventory.get(1));
+		this.itemAngel = compound.getInteger("angle");
 		
 		if(compound.hasKey("CustomName", 8))
 			this.setCustomName(compound.getString("CustomName"));
@@ -148,6 +155,7 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 		compound.setInteger("BurnTime", (short)this.burnTime);
 		compound.setInteger("CookTime", (short)this.cookTime);
 		compound.setInteger("CookTimeTotal", (short)this.totalCookTime);
+		compound.setInteger("angle", this.itemAngel);
 		ItemStackHelper.saveAllItems(compound, this.inventory);
 		
 		if(this.hasCustomName())
@@ -155,6 +163,26 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 		
 		return compound;
 	}
+	
+	/*
+	private void notifyBlockUpdate() {
+		final IBlockState state = getWorld().getBlockState(getPos());
+		getWorld().notifyBlockUpdate(getPos(), state, state, 3);
+		if (getWorld().isRemote) {
+            getWorld().markBlockRangeForRenderUpdate(getPos(), getPos());
+		}
+	}	
+	
+	@Nullable
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
+	} */
 
 	@Override
 	public int getInventoryStackLimit()

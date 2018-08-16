@@ -65,25 +65,25 @@ public class BlockCrusher extends BlockBase implements ITileEntityProvider
 		this.setDefaultFacing(worldIn, pos, state);
 	}
 	
-	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
-	{
-        if (!worldIn.isRemote)
-        {
+	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state){
+        if (!worldIn.isRemote) {
             IBlockState north = worldIn.getBlockState(pos.north());
             IBlockState south = worldIn.getBlockState(pos.south());
             IBlockState west = worldIn.getBlockState(pos.west());
             IBlockState east = worldIn.getBlockState(pos.east());
             EnumFacing face = (EnumFacing)state.getValue(FACING);
-
-            if (face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock())
-                face = EnumFacing.SOUTH;
-            else if (face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock())
-                face = EnumFacing.NORTH;
-            else if (face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock())
-                face = EnumFacing.EAST;
-            else if (face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock())
-                face = EnumFacing.WEST;
-            worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);
+           
+           
+            if (face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock()) {
+            	face = EnumFacing.SOUTH; 
+            }else if (face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock()) {
+            	 face = EnumFacing.NORTH;
+            } else if (face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock()) {
+            	 face = EnumFacing.EAST;
+            } else if (face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) {
+            	face = EnumFacing.WEST;
+            }
+            worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);      	          
         }
     }
 	
@@ -93,6 +93,20 @@ public class BlockCrusher extends BlockBase implements ITileEntityProvider
 		if (!world.isRemote)
   			player.openGui(Minestrapp5.instance, MGuiHandler.CRUSHER, world, pos.getX(), pos.getY(), pos.getZ());  			
 
+		TileEntityCrusher tec = (TileEntityCrusher)world.getTileEntity(pos);
+		EnumFacing face = (EnumFacing)state.getValue(FACING);
+		if(face == EnumFacing.NORTH) {
+			tec.itemAngel = 0;
+		}
+		if(face == EnumFacing.SOUTH) {
+			tec.itemAngel = 90;
+		}
+		if(face == EnumFacing.WEST) {
+			tec.itemAngel = 180;
+		}
+		if(face == EnumFacing.EAST) {
+			tec.itemAngel = 270;
+		}
   		return true;
 
 	}

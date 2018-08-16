@@ -14,6 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CrusherRecipes {
 	private static final CrusherRecipes CRUSHING = new CrusherRecipes();
@@ -146,7 +147,7 @@ public class CrusherRecipes {
 			this.addCrusherRecipe(new ItemStack(MBlocks.cracked_stone_bricks, 1, i), new ItemStack(MBlocks.cobblestone, 1, i), null, 0, 0.05F);
 			this.addCrusherRecipe(new ItemStack(MBlocks.chiseled_stone, 1, i), new ItemStack(MBlocks.cobblestone, 1, i), null, 0, 0.05F);
 		}
-		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 630), new ItemStack(MItems.chunks, 5, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.chunks, 5, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, 630), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.WHITE_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SILVER_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
