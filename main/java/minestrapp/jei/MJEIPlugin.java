@@ -12,6 +12,8 @@ import minestrapp.jei.alloy.AlloyRecipeCategory;
 import minestrapp.jei.alloy.AlloyRecipeMaker;
 import minestrapp.jei.crusher.CrusherRecipeCategory;
 import minestrapp.jei.crusher.CrusherRecipeMaker;
+import minestrapp.jei.tanning.TannerRecipeCategory;
+import minestrapp.jei.tanning.TannerRecipeMaker;
 import net.minecraft.item.ItemStack;
 
 @JEIPlugin
@@ -25,6 +27,7 @@ public class MJEIPlugin implements IModPlugin {
 		
 		registry.addRecipeCategories(new CrusherRecipeCategory(guiHelper));
 		registry.addRecipeCategories(new AlloyRecipeCategory(guiHelper));
+		registry.addRecipeCategories(new TannerRecipeCategory(guiHelper));
 	}
 	
 	@Override
@@ -37,6 +40,9 @@ public class MJEIPlugin implements IModPlugin {
 		
 		registry.addRecipes(AlloyRecipeMaker.getAlloyRecipes(jeiHelpers), "alloy");
 		registry.addRecipeCatalyst(new ItemStack(MBlocks.alloy), "alloy");
+		
+		registry.addRecipes(TannerRecipeMaker.getTannerRecipes(jeiHelpers), "tanning");
+		registry.addRecipeCatalyst(new ItemStack(MBlocks.tanning_rack), "tanning");
 
 	}
 }
