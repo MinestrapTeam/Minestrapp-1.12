@@ -1,6 +1,7 @@
 package minestrapp.worldgen;
 
 import java.util.Random;
+import java.util.Set;
 
 import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
@@ -46,6 +47,8 @@ import net.minecraft.world.biome.BiomeTaiga;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.WorldInfo;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 
 public class MWorldDecorator
 {
@@ -328,7 +331,9 @@ public class MWorldDecorator
 					mudGen.generate(world, random, mudPos);
 				}
 			}
-			if(biome instanceof BiomeForest && biome != Biomes.ROOFED_FOREST)
+
+			//Berry Gen
+			if(BiomeDictionary.hasType(biome, Type.FOREST))
 			{
 				if(MConfig.generateBerryBushes)
 				{
@@ -341,7 +346,7 @@ public class MWorldDecorator
 					bushGen.generate(world, random, berryPos);
 				}
 			}
-			if(biome instanceof BiomeTaiga || biome instanceof BiomeHills)
+			if(BiomeDictionary.hasType(biome, Type.COLD) || BiomeDictionary.hasType(biome, Type.HILLS))
 			{
 				if(MConfig.generateBerryBushes)
 				{
@@ -354,7 +359,7 @@ public class MWorldDecorator
 					bushGen.generate(world, random, berryPos);
 				}
 			}
-			if(biome instanceof BiomeSavanna || biome instanceof BiomeMesa)
+			if(BiomeDictionary.hasType(biome, Type.SAVANNA) || BiomeDictionary.hasType(biome, Type.MESA))
 			{
 				if(MConfig.generateBerryBushes)
 				{
@@ -367,7 +372,7 @@ public class MWorldDecorator
 					bushGen.generate(world, random, berryPos);
 				}
 			}
-			if(biome instanceof BiomeSwamp || biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
+			if(BiomeDictionary.hasType(biome, Type.SWAMP) || BiomeDictionary.hasType(biome, Type.SPOOKY))
 			{
 				if(MConfig.generateBerryBushes)
 				{
@@ -380,7 +385,7 @@ public class MWorldDecorator
 					bushGen.generate(world, random, berryPos);
 				}
 			}
-			if(biome instanceof BiomeOcean || biome instanceof BiomeMushroomIsland)
+			if(BiomeDictionary.hasType(biome, Type.OCEAN) || BiomeDictionary.hasType(biome, Type.MUSHROOM))
 			{
 				if(MConfig.generateManaBushes)
 				{
@@ -393,6 +398,8 @@ public class MWorldDecorator
 					bushGen.generate(world, random, berryPos);
 				}
 			}
+			
+			// Moss Gen
 			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getDefaultTemperature() < 0.2F))
 			{
 				if(MConfig.generateMoss)
@@ -420,6 +427,8 @@ public class MWorldDecorator
 					}
 				}
 			}
+			
+			// IceMound Gen
 			if(biome == Biomes.ICE_PLAINS)
 			{
 				if(MConfig.generateIceMounds)
