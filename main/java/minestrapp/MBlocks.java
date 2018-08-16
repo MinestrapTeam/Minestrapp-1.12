@@ -378,7 +378,6 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
-
 	
 	//Crops
 	public static Block crop_withered;

@@ -333,70 +333,15 @@ public class MWorldDecorator
 			}
 
 			//Berry Gen
-			if(BiomeDictionary.hasType(biome, Type.FOREST))
+			if(MConfig.generateBerryBushes)
 			{
-				if(MConfig.generateBerryBushes)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 94 - random.nextInt(38);
-					int posZ = random.nextInt(16)+8;
+				int posX = random.nextInt(16)+8;
+				int posY = 94 - random.nextInt(38);
+				int posZ = random.nextInt(16)+8;
 					
-					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blueberry_bush, 6);
-					bushGen.generate(world, random, berryPos);
-				}
-			}
-			if(BiomeDictionary.hasType(biome, Type.COLD) || BiomeDictionary.hasType(biome, Type.HILLS))
-			{
-				if(MConfig.generateBerryBushes)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 94 - random.nextInt(38);
-					int posZ = random.nextInt(16)+8;
-					
-					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.blackberry_bush, 6);
-					bushGen.generate(world, random, berryPos);
-				}
-			}
-			if(BiomeDictionary.hasType(biome, Type.SAVANNA) || BiomeDictionary.hasType(biome, Type.MESA))
-			{
-				if(MConfig.generateBerryBushes)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 114 - random.nextInt(48);
-					int posZ = random.nextInt(16)+8;
-					
-					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.raspberry_bush, 6);
-					bushGen.generate(world, random, berryPos);
-				}
-			}
-			if(BiomeDictionary.hasType(biome, Type.SWAMP) || BiomeDictionary.hasType(biome, Type.SPOOKY))
-			{
-				if(MConfig.generateBerryBushes)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 94 - random.nextInt(38);
-					int posZ = random.nextInt(16)+8;
-					
-					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.strawberry_bush, 6);
-					bushGen.generate(world, random, berryPos);
-				}
-			}
-			if(BiomeDictionary.hasType(biome, Type.OCEAN) || BiomeDictionary.hasType(biome, Type.MUSHROOM))
-			{
-				if(MConfig.generateManaBushes)
-				{
-					int posX = random.nextInt(16)+8;
-					int posY = 94 - random.nextInt(38);
-					int posZ = random.nextInt(16)+8;
-					
-					BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					MGenBushes bushGen = new MGenBushes((BlockBerryBush) MBlocks.mana_bush, 6);
-					bushGen.generate(world, random, berryPos);
-				}
+				BlockPos berryPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				MGenBushes bushGen = new MGenBushes(biome, 6);
+				bushGen.generate(world, random, berryPos);
 			}
 			
 			// Moss Gen

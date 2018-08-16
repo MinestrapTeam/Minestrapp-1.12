@@ -4,6 +4,7 @@ import java.util.Random;
 
 import minestrapp.MTabs;
 import minestrapp.block.util.BlockBase;
+import minestrapp.utils.BlockUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDynamicLiquid;
 import net.minecraft.block.BlockLiquid;

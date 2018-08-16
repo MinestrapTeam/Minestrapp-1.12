@@ -2,28 +2,32 @@ package minestrapp.worldgen;
 
 import java.util.Random;
 
+import minestrapp.MBlocks;
 import minestrapp.block.crops.BlockBerryBush;
 import net.minecraft.block.Block;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 
 public class MGenBushes extends WorldGenerator
 {
 	private final BlockBerryBush bush;
 	private final int radius;
 	
-	public MGenBushes(BlockBerryBush bush, int radius)
+	public MGenBushes(Biome biome, int radius)
 	{
-		this.bush = bush;
+		this.bush = this.determinTypeOfBush(biome);
 		this.radius = radius;
 	}
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos)
 	{
-		if (!this.bush.canBlockStay(worldIn, pos, bush.getDefaultState()))
+		if (this.bush == null || !this.bush.canBlockStay(worldIn, pos, bush.getDefaultState()))
 			return false;
 		else
 		{
@@ -63,5 +67,24 @@ public class MGenBushes extends WorldGenerator
 			}	
 			return true;
 		}
+	}
+	
+	private BlockBerryBush determinTypeOfBush(Biome biome) {
+		if(BiomeDictionary.hasType(biome, Type.FOREST) && !BiomeDictionary.hasType(biome, Type.CONIFEROUS) && !BiomeDictionary.hasType(biome, Type.SPOOKY)) {
+			return (BlockBerryBush)MBlocks.blueberry_bush;
+		}
+		if(BiomeDictionary.hasType(biome, Type.CONIFEROUS) || BiomeDictionary.hasType(biome, Type.HILLS)) {
+			return (BlockBerryBush)MBlocks.blackberry_bush;
+		}
+		if(BiomeDictionary.hasType(biome, Type.SAVANNA) || BiomeDictionary.hasType(biome, Type.MESA)) {
+			return (BlockBerryBush)MBlocks.raspberry_bush;
+		}
+		if(BiomeDictionary.hasType(biome, Type.SWAMP) || BiomeDictionary.hasType(biome, Type.SPOOKY)) {
+			return (BlockBerryBush)MBlocks.strawberry_bush;
+		}
+		if(BiomeDictionary.hasType(biome, Type.OCEAN) || BiomeDictionary.hasType(biome, Type.MUSHROOM)) {
+			return (BlockBerryBush)MBlocks.mana_bush;
+		}
+		return null;
 	}
 }
