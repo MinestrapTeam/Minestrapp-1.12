@@ -35,7 +35,9 @@ public class TannerRecipeWrapper implements IRecipeWrapper{
 	@Override
 	public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY){
 		RenderItem tool = minecraft.getRenderItem();
-	    tool.renderItemIntoGUI(this.tool, 15, 15);    
-		minecraft.fontRenderer.drawString(Integer.toString(this.time)+"s", 55, 10, Color.DARK_GRAY.getRGB());
+		if(this.tool != null) {
+			tool.renderItemIntoGUI(this.tool, 44, 2);    
+		}
+		minecraft.fontRenderer.drawString(Integer.toString(this.time)+"s", 47 - Integer.toString(this.time).length(), 30, Color.ORANGE.getRGB());
 	}
 }
