@@ -26,7 +26,7 @@ public class TannerRecipeMaker {
 			TannerRecipe temp = entry.getValue();
 			
 			List<ItemStack> inputs = stackHelper.getSubtypes(temp.input);
-			recipes.add(new TannerRecipeWrapper(inputs, temp.output, temp.time));
+			recipes.add(new TannerRecipeWrapper(inputs, temp.output, temp.tool, temp.time));
 		}
 		
 		return recipes;

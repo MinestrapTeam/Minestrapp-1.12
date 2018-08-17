@@ -247,7 +247,7 @@ public class BlockBerryBush extends BlockBush implements IGrowable
     {
     	if(!worldIn.isRemote && this.getAge(state) == this.getMaxAge())
     	{
-    		EntityItem item = new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, this.dropStack);
+    		EntityItem item = new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, this.dropStack.copy());
     		worldIn.spawnEntity(item);
     		worldIn.setBlockState(pos, state.withProperty(AGE, 0));
     		return true;

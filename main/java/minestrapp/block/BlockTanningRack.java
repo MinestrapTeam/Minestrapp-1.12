@@ -43,8 +43,7 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 		
 		ItemStack heldItem = player.getHeldItem(hand);
 		
-		if(!heldItem.isEmpty()) {
-			
+		if(!tet.isHoldingItem()) {
 			if(state.getValue(FACING) == EnumFacing.NORTH) {
 				if(tet.tryToAddItem(heldItem, 0)) {
 					player.getHeldItem(hand).shrink(1);
@@ -69,9 +68,16 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 				}
 			}
 		} else {
-			tet.takeItem();
+			if(tet.getRecipe() == null || tet.getRecipe().tool == null) {
+				tet.takeItem();
+			}
+			else if(heldItem.getItem() == tet.getRecipe().tool.getItem() && tet.doneTanning == true) {
+				tet.tryToAddItem(tet.getRecipe().output, tet.angle);
+			} else {
+				tet.takeItem();
+			}
 		}
-		
+				
 		return true;
 	}
 

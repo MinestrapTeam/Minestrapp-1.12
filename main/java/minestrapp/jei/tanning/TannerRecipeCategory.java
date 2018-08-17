@@ -9,6 +9,8 @@ import minestrapp.jei.MinestrappRecipeCategory;
 import minestrapp.jei.crusher.CrusherRecipeWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 
 public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeWrapper>{

@@ -17,6 +17,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public NonNullList<ItemStack> hide = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	public int angle;
 	
+	public boolean doneTanning = false;
 	private int ticks = 0;
 	private int secondsToTan = 5;
 	
@@ -24,36 +25,42 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public void update() {
 		if(!this.hide.get(0).isEmpty()) {
 			TannerRecipe recipe = this.getRecipe();
-			if(recipe != null) {
+			if(recipe != null && !this.doneTanning) {
 				this.ticks++;
-				if(this.ticks / 20 >= recipe.time) {
+				if(this.ticks / 20 >= recipe.time && recipe.tool == null) {
 					this.hide.set(0, recipe.output);
 					this.ticks = 0;
+					this.doneTanning = true;
+				} else if(this.ticks / 20 >= recipe.time && recipe.tool != null) {
+					this.doneTanning = true;
 				}
 			}
 		}
 	}
 	
 	public boolean tryToAddItem(ItemStack stack, int angle){
-		if(this.hide.get(0).isEmpty()) {
-			ItemStack temp = stack.copy();
-			temp.setCount(1);
-			this.hide.set(0, temp);
-			this.angle = angle;
-			this.markDirty();
-			return true;
-		}
-		return false;
+		ItemStack temp = stack.copy();
+		temp.setCount(1);
+		this.hide.set(0, temp);
+		this.angle = angle;
+		this.ticks = 0;
+		this.markDirty();
+		return true;
 	}
 	
 	public void takeItem() {
 		if(!this.getWorld().isRemote) {
 			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), this.hide.get(0)));
+			this.doneTanning = false;
 		}
 		this.hide.set(0, ItemStack.EMPTY);
 	}
 	
-	private TannerRecipe getRecipe() {
+	public boolean isHoldingItem() {
+		return !this.hide.get(0).isEmpty();
+	}
+	
+	public TannerRecipe getRecipe() {
 		return TannerRecipes.instance.recipes.get(this.hide.get(0).getItem());
 	}
 	
@@ -61,6 +68,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
 		this.angle = compound.getInteger("angle");
+		this.doneTanning = compound.getBoolean("done");
 		ItemStackHelper.loadAllItems(compound, this.hide);
 	}
 	
@@ -68,6 +76,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 		super.writeToNBT(compound);
 		compound.setInteger("angle", this.angle);
+		compound.setBoolean("done", this.doneTanning);
 		ItemStackHelper.saveAllItems(compound, this.hide);
 		return compound;
 	}
