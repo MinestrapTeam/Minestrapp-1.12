@@ -1,0 +1,6 @@
+{
+    "parent": "minestrapp:block/panel_corner",
+    "textures": {
+        "texture": "minestrapp:blocks/stone/deep_oceanstone_slab_top"
+    }
+}

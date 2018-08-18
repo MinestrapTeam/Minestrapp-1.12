@@ -1,6 +1,6 @@
 {
 	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
-    "parent": "block/cube_all",
+	"parent": "block/block",
 	"textures": {
 		"particle": "#texture",
 		"texture": "#texture"
@@ -19,5 +19,40 @@
 				"east": { "uv": [ 8, 0, 16, 16 ], "texture": "#texture" }
 			}
 		}
-	]
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"firstperson_righthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"firstperson_lefthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"translation":  [ -1.625, 1, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"ground": {
+			"translation":  [ 0, 3, 1 ],
+			"scale":  [ 0.25, 0.25, 0.25 ]
+		},
+		"fixed": {
+			"translation":  [ 0, 0, 1.5 ],
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
 }

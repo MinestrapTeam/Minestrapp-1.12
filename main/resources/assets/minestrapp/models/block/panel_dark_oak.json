@@ -1,0 +1,6 @@
+{
+    "parent": "minestrapp:block/panel_base",
+    "textures": {
+        "texture": "blocks/planks_big_oak"
+    }
+}

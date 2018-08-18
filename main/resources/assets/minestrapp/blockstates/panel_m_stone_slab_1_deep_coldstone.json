@@ -1,0 +1,40 @@
+{
+    "multipart": [
+        {   
+            "when": { "connected": "0|3|4", "facing": "north" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone" }
+        },
+        {   
+            "when": { "connected": "0|1|3", "facing": "east" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone" , "y": 90, "uvlock": true}
+        },
+        {   
+            "when": { "connected": "0|1|2", "facing": "south" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone" , "y": 180, "uvlock": true}
+        },
+        {   
+            "when": { "connected": "0|2|4", "facing": "west" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone" , "y": 270, "uvlock": true}
+        },
+        {   
+            "when": { "connected": "1" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone_corner"}
+        },
+        {   
+            "when": { "connected": "2" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone_corner" , "y": 90, "uvlock": true}
+        },
+        {   
+            "when": { "connected": "4" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone_corner" , "y": 180, "uvlock": true}
+        },
+        {   
+            "when": { "connected": "3" },
+            "apply": { "model": "minestrapp:panel_deep_coldstone_corner" , "y": 270, "uvlock": true}
+        },
+        {   
+            "when": { "facing": "up" },
+            "apply": { "model": "minestrapp:smooth_double_slab_deep_coldstone" }
+        }
+    ]
+}
