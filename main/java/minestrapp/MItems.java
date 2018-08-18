@@ -9,6 +9,7 @@ import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
 import minestrapp.block.util.BlockStoneBase;
 import minestrapp.entity.vehicle.EntityMBoat;
+import minestrapp.item.ItemBackpack;
 import minestrapp.item.ItemCandy;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
@@ -36,6 +37,7 @@ import minestrapp.item.util.MItemsFood;
 import minestrapp.item.util.MItemsSeedFood;
 import minestrapp.item.util.MItemsSeeds;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -288,6 +290,8 @@ public class MItems
 	public static Item candy_red;
 	public static Item candy_blue;
 	public static Item candy_yellow;
+	
+	public static Item backpack;
 	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17);
 	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13);
@@ -557,6 +561,8 @@ public class MItems
 		register(candy_red = new ItemCandy("candy_red", new PotionEffect(MobEffects.HEALTH_BOOST, 600, 1), new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), new PotionEffect(MobEffects.REGENERATION, 600, 0)).setAlwaysEdible());
 		register(candy_blue = new ItemCandy("candy_blue", new PotionEffect(MobEffects.STRENGTH, 600, 0), new PotionEffect(MobEffects.INVISIBILITY, 600, 0), new PotionEffect(MobEffects.NIGHT_VISION, 600, 0)).setAlwaysEdible());
 		register(candy_yellow = new ItemCandy("candy_yellow", new PotionEffect(MobEffects.SPEED, 600, 1), new PotionEffect(MobEffects.LEVITATION, 600, 1), new PotionEffect(MobEffects.JUMP_BOOST, 700, 1)).setAlwaysEdible());
+		
+		register(backpack = new ItemBackpack("backpack"));
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_salt).setDropsItem(new ItemStack(MItems.salt, 1), 1, 0, 2, true, true, false);
