@@ -9,6 +9,7 @@ import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import minestrapp.block.tileentity.TileEntityPipe;
+import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.block.tileentity.TileEntityTanningRack;
@@ -75,6 +76,7 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityPipe.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPipe"));
 		GameRegistry.registerTileEntity(TileEntitySorter.class, new ResourceLocation(Minestrapp5.MODID, "TileEntitySorter"));
 		GameRegistry.registerTileEntity(TileEntityTanningRack.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityTanningRack"));
+		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPlate"));
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

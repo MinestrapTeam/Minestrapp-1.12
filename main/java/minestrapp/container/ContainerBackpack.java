@@ -15,11 +15,24 @@ public class ContainerBackpack extends Container {
 	public ContainerBackpack(InventoryPlayer player, InventoryBackpack backpack) {
 		this.inventory = backpack;
 		
-		for (int j = 0; j < 2; ++j) {
-			for (int k = 0; k < 9; ++k) {
-				this.addSlotToContainer(new SlotBackpack(this.inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+		//Backpack
+		if(this.inventory.type == 1) {
+			for (int j = 0; j < 2; ++j) {
+				for (int k = 0; k < 9; ++k) {
+					this.addSlotToContainer(new SlotBackpack(this.inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+				}
 			}
 		}
+		
+		//Satchel
+		if(this.inventory.type == 2) {
+			for (int j = 0; j < 1; ++j) {
+				for (int k = 0; k < 9; ++k) {
+					this.addSlotToContainer(new SlotBackpack(this.inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+				}
+			}
+		}
+		
 		
 		// Player Inventory, Slot 9-35, Slot IDs 4-30
 	    for (int y = 0; y < 3; ++y) {

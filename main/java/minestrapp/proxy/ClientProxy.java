@@ -8,8 +8,10 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
+import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.block.tileentity.renderer.TESRCrusher;
+import minestrapp.block.tileentity.renderer.TESRPlate;
 import minestrapp.block.tileentity.renderer.TESRTanningRack;
 import minestrapp.block.tileentity.renderer.TileEntityMagnetPistonRenderer;
 import minestrapp.entity.render.RenderMBoat;
@@ -17,13 +19,11 @@ import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.mobs.registry.MobRegistry;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ColorizerGrass;
@@ -98,6 +98,7 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagnetPiston.class, new TileEntityMagnetPistonRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrusher.class, new TESRCrusher());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTanningRack.class, new TESRTanningRack());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPlate.class, new TESRPlate());
 		registerEntityRenderer(EntityMBoat.class, RenderMBoat.class);
 	}
 	

@@ -16,10 +16,17 @@ import net.minecraft.world.World;
 
 public class ItemBackpack extends ItemBase{
 
-	public ItemBackpack(String name) {
+	public int type;
+	
+	public ItemBackpack(String name, int type) {
 		super(name);
 		this.maxStackSize = 1;
+		this.type = type;
 		this.setCreativeTab(MTabs.tools);
+	}
+	
+	public int getType() {
+		return this.type;
 	}
 
 	@Override

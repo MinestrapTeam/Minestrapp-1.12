@@ -1,0 +1,73 @@
+{
+"__comment": "Designed by Werty1124 with BDcraft Cubik PRO 0.96 Beta - http://bdcraft.net",
+"textures": {
+        "plate": "minestrapp:blocks/plate"
+},
+"elements": [ 
+{
+    "__comment": "plate_bottom",
+    "from": [ 4, 0, 4 ],
+    "to": [ 12, 1, 12 ],
+    "faces": {
+        "down":  { "uv": [ 12, 12, 4, 4 ], "texture": "#plate" },
+        "up":    { "uv": [ 4, 4, 12, 12 ], "texture": "#plate" },
+        "north": { "uv": [ 4, 15, 12, 16 ], "texture": "#plate" },
+        "south": { "uv": [ 4, 15, 12, 16 ], "texture": "#plate" },
+        "west":  { "uv": [ 4, 15, 12, 16 ], "texture": "#plate" },
+        "east":  { "uv": [ 4, 15, 12, 16 ], "texture": "#plate" }
+    }
+},
+{
+    "__comment": "edge_left",
+    "from": [ 3, 1, 3 ],
+    "to": [ 4, 2, 13 ],
+    "faces": {
+        "down":  { "uv": [ 13, 13, 12, 3 ], "texture": "#plate" },
+        "up":    { "uv": [ 3, 3, 4, 13 ], "texture": "#plate" },
+        "north": { "uv": [ 12, 14, 13, 15 ], "texture": "#plate" },
+        "south": { "uv": [ 3, 14, 4, 15 ], "texture": "#plate" },
+        "west":  { "uv": [ 3, 14, 13, 15 ], "texture": "#plate" },
+        "east":  { "uv": [ 3, 14, 13, 15 ], "texture": "#plate" }
+    }
+},
+{
+    "__comment": "edge_right",
+    "from": [ 12, 1, 3 ],
+    "to": [ 13, 2, 13 ],
+    "faces": {
+        "down":  { "uv": [ 4, 13, 3, 3 ], "texture": "#plate" },
+        "up":    { "uv": [ 12, 3, 13, 13 ], "texture": "#plate" },
+        "north": { "uv": [ 3, 14, 4, 15 ], "texture": "#plate" },
+        "south": { "uv": [ 12, 14, 13, 15 ], "texture": "#plate" },
+        "west":  { "uv": [ 3, 14, 13, 15 ], "texture": "#plate" },
+        "east":  { "uv": [ 3, 14, 13, 15 ], "texture": "#plate" }
+    }
+},
+{
+    "__comment": "edge_top",
+    "from": [ 4, 1, 3 ],
+    "to": [ 12, 2, 4 ],
+    "faces": {
+        "down":  { "uv": [ 12, 4, 4, 3 ], "texture": "#plate" },
+        "up":    { "uv": [ 4, 3, 12, 4 ], "texture": "#plate" },
+        "north": { "uv": [ 4, 14, 12, 15 ], "texture": "#plate" },
+        "south": { "uv": [ 4, 14, 12, 15 ], "texture": "#plate" },
+        "west":  { "uv": [ 3, 14, 4, 15 ], "texture": "#plate" },
+        "east":  { "uv": [ 12, 14, 13, 15 ], "texture": "#plate" }
+    }
+},
+{
+    "__comment": "edge_bottom",
+    "from": [ 4, 1, 12 ],
+    "to": [ 12, 2, 13 ],
+    "faces": {
+        "down":  { "uv": [ 12, 13, 4, 12 ], "texture": "#plate" },
+        "up":    { "uv": [ 4, 12, 12, 13 ], "texture": "#plate" },
+        "north": { "uv": [ 4, 14, 12, 15 ], "texture": "#plate" },
+        "south": { "uv": [ 4, 14, 12, 15 ], "texture": "#plate" },
+        "west":  { "uv": [ 12, 14, 13, 15 ], "texture": "#plate" },
+        "east":  { "uv": [ 3, 14, 4, 15 ], "texture": "#plate" }
+    }
+}
+]
+}

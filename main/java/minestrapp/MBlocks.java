@@ -69,6 +69,7 @@ import minestrapp.block.BlockMiteHoney;
 import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockPipe;
+import minestrapp.block.BlockPlate;
 import minestrapp.block.BlockPortalDust;
 import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
@@ -378,6 +379,7 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
+	public static Block plate;
 	
 	//Crops
 	public static Block crop_withered;
@@ -638,6 +640,7 @@ public class MBlocks
 		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
 		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
 		register(glow_paste = new BlockLightPaste(), new ItemBlockContainer(glow_paste, new ItemStack(Items.GLASS_BOTTLE)));
+		register(plate = new BlockPlate("food_plate", Material.IRON, MapColor.GOLD, SoundType.ANVIL, 1F));
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));

@@ -18,9 +18,13 @@ public class InventoryBackpack implements IInventory {
 	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(36, ItemStack.EMPTY);
 
 	public final ItemStack invStack;
+	
+	public int type;
 
 	public InventoryBackpack(ItemStack stack) {
 		this.invStack = stack;
+		ItemBackpack item = (ItemBackpack) stack.getItem();
+		this.type = item.getType();
 		if (!this.invStack.hasTagCompound()) {
 			this.invStack.setTagCompound(new NBTTagCompound());
 		}

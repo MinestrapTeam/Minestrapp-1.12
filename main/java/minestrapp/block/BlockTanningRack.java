@@ -1,6 +1,7 @@
 package minestrapp.block;
 
 import minestrapp.MTabs;
+import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.BlockHorizontal;
@@ -80,6 +81,13 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 				
 		return true;
 	}
+	
+	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		TileEntityTanningRack tet = (TileEntityTanningRack) worldIn.getTileEntity(pos);
+		tet.takeItem();
+        super.breakBlock(worldIn, pos, state);
+    }
 
 	public boolean isOpaqueCube(IBlockState state)
     {
