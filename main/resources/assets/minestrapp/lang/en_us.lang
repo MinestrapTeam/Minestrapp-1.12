@@ -185,11 +185,11 @@ tile.portar_lamp_sunstone.name=Sunstone Portar Lamp
 tile.portar_lamp_glowstone.name=Glowstone Portar Lamp
 tile.portar_lamp_sea.name=Sea Portar Lamp
 
-tile.m_misc_stone_slab_1_mud_bricks.name=Mud Bricks Slab
-tile.m_misc_stone_slab_1_granite_bricks.name=Granite Bricks Slab
-tile.m_misc_stone_slab_1_diorite_bricks.name=Diorite Bricks Slab
-tile.m_misc_stone_slab_1_andesite_bricks.name=Andesite Bricks Slab
-tile.m_misc_stone_slab_1_slate_bricks.name=Slate Bricks Slab
+tile.m_misc_stone_slab_1_mud_bricks.name=Mud Brick Slab
+tile.m_misc_stone_slab_1_granite_bricks.name=Granite Brick Slab
+tile.m_misc_stone_slab_1_diorite_bricks.name=Diorite Brick Slab
+tile.m_misc_stone_slab_1_andesite_bricks.name=Andesite Brick Slab
+tile.m_misc_stone_slab_1_slate_bricks.name=Slate Brick Slab
 tile.m_misc_stone_slab_1_portar.name=Portar Slab
 
 tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
@@ -212,16 +212,54 @@ tile.m_stone_slab_2_glacierrock_cobbled.name=Cracked Glacierrock Slab
 
 tile.m_stone_slab_3_oceanstone_cobbled.name=Cobbled Oceanstone Slab
 tile.m_stone_slab_3_deep_oceanstone_cobbled.name=Cobbled Reefstone Slab
-tile.m_stone_slab_3_red_rock_bricks.name=Red Rock Bricks Slab
-tile.m_stone_slab_3_deep_red_rock_bricks.name=Deep Red Rock Bricks Slab
-tile.m_stone_slab_3_deepstone_bricks.name=Deepstone Bricks Slab
-tile.m_stone_slab_3_coldstone_bricks.name=Coldstone Bricks Slab
-tile.m_stone_slab_3_deep_coldstone_bricks.name=Deep Coldstone Bricks Slab
-tile.m_stone_slab_3_icestone_bricks.name=Icestone Bricks Slab
+tile.m_stone_slab_3_red_rock_bricks.name=Red Rock Brick Slab
+tile.m_stone_slab_3_deep_red_rock_bricks.name=Deep Red Rock Brick Slab
+tile.m_stone_slab_3_deepstone_bricks.name=Deepstone Brick Slab
+tile.m_stone_slab_3_coldstone_bricks.name=Coldstone Brick Slab
+tile.m_stone_slab_3_deep_coldstone_bricks.name=Deep Coldstone Brick Slab
+tile.m_stone_slab_3_icestone_bricks.name=Icestone Brick Slab
 
 tile.m_stone_slab_4_glacierrock_bricks.name=Glacierrock Bricks Slab
 tile.m_stone_slab_4_oceanstone_bricks.name=Oceanstone Bricks Slab
 tile.m_stone_slab_4_deep_oceanstone_bricks.name=Reefstone Bricks Slab
+
+tile.panel_mud_bricks.name=Mud Brick Panel
+tile.panel_decor_stone_granite_bricks.name=Granite Brick Panel
+tile.panel_decor_stone_diorite_bricks.name=Diorite Brick Panel
+tile.panel_decor_stone_andesite_bricks.name=Andesite Brick Panel
+tile.panel_decor_stone_slate_bricks.name=Slate Brick Panel
+
+tile.panel_m_cobblestone_red_rock.name=Red Cobblestone Panel
+tile.panel_m_cobblestone_deep_red_rock.name=Deep Red Cobblestone Panel
+tile.panel_m_cobblestone_deepstone.name=Deep Cobblestone Panel
+tile.panel_m_cobblestone_coldstone.name=Cold Cobblestone Panel
+tile.panel_m_cobblestone_deep_coldstone.name=Deep Cold Cobblestone Panel
+tile.panel_m_cobblestone_icestone.name=Cracked Icestone Panel
+tile.panel_m_cobblestone_glacierrock.name=Cracked Glacierrock Panel
+tile.panel_m_cobblestone_oceanstone.name=Cobbled Oceanstone Panel
+tile.panel_m_cobblestone_reefstone.name=Cobbled Reefstone Panel
+
+tile.panel_m_stone_slab_1_red_rock.name=Red Rock Panel
+tile.panel_m_stone_slab_1_deep_red_rock.name=Deep Red Rock Panel
+tile.panel_m_stone_slab_1_deepstone.name=Deepstone Panel
+tile.panel_m_stone_slab_1_coldstone.name=Coldstone Panel
+tile.panel_m_stone_slab_1_deep_coldstone.name=Deep Coldstone Panel
+tile.panel_m_stone_slab_1_icestone.name=Icestone Panel
+tile.panel_m_stone_slab_1_glacierrock.name=Glacierrock Panel
+tile.panel_m_stone_slab_1_oceanstone.name=Oceanstone Panel
+tile.panel_m_stone_slab_2_reefstone.name=Reefstone Panel
+
+tile.panel_m_stone_bricks_red_rock.name=Red Rock Brick Panel
+tile.panel_m_stone_bricks_deep_red_rock.name=Deep Red Rock Brick Panel
+tile.panel_m_stone_bricks_deepstone.name=Deepstone Brick Panel
+tile.panel_m_stone_bricks_coldstone.name=Coldstone Brick Panel
+tile.panel_m_stone_bricks_deep_coldstone.name=Deep Coldstone Brick Panel
+tile.panel_m_stone_bricks_icestone.name=Icestone Brick Panel
+tile.panel_m_stone_bricks_glacierrock.name=Glacierrock Brick Panel
+tile.panel_m_stone_bricks_oceanstone.name=Oceanstone Brick Panel
+tile.panel_m_stone_bricks_reefstone.name=Reefstone Brick Panel
+
+tile.panel_portar_slabbed.name=Slabbed Portar Panel
 
 tile.decor_stone_granite_bricks_stairs.name=Granite Brick Stairs
 tile.decor_stone_diorite_bricks_stairs.name=Diorite Brick Stairs
