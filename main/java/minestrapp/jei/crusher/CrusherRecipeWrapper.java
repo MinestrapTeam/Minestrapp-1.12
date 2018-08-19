@@ -1,5 +1,6 @@
 package minestrapp.jei.crusher;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,19 +11,23 @@ import net.minecraft.item.ItemStack;
 public class CrusherRecipeWrapper implements IRecipeWrapper{
 	
 	public final List<List<ItemStack>> input;
-	public final ItemStack output;
-	public final ItemStack extra;
+	public final List<ItemStack> output;
+	public final List<ItemStack> extra;
 	
-	public CrusherRecipeWrapper(List<ItemStack> input, ItemStack output, ItemStack extra){
+	public CrusherRecipeWrapper(List<ItemStack> input, List<ItemStack> output, List<ItemStack> extra){
 		this.input = Collections.singletonList(input);
-		this.output = output;
+		this.output =  output;
 		this.extra = extra;
 	}
 
 	@Override
 	public void getIngredients(IIngredients ingredients) {
 		ingredients.setInputLists(ItemStack.class, this.input);
-		ingredients.setOutput(ItemStack.class, this.output);
+		
+		List<List<ItemStack>> outputs = new ArrayList<>();
+		outputs.add(output);
+		outputs.add(extra);
+		ingredients.setOutputLists(ItemStack.class, outputs);
 	}
 
 }

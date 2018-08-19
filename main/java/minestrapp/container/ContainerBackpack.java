@@ -1,5 +1,6 @@
 package minestrapp.container;
 
+import minestrapp.MItems;
 import minestrapp.inventories.InventoryBackpack;
 import minestrapp.inventories.SlotBackpack;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,6 +8,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
 
 public class ContainerBackpack extends Container {
 	
@@ -45,6 +47,42 @@ public class ContainerBackpack extends Container {
 	    for (int x = 0; x < 9; ++x) {
 	        this.addSlotToContainer(new Slot(player, x, 8 + x * 18, 162));
 	    }
+	}
+	
+	@Override
+	public ItemStack transferStackInSlot(EntityPlayer player, int index) {
+		ItemStack itemstack = ItemStack.EMPTY;
+        Slot slot = this.inventorySlots.get(index);
+
+        if (slot != null && slot.getHasStack()) {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+            int numRows = 1;
+            if(inventory.type == 1) {
+            	numRows = 2;
+            }
+            if(inventory.type == 2) {
+            	numRows = 1;
+            }
+            
+            if (index < numRows * 9) {
+                if (!this.mergeItemStack(itemstack1, numRows * 9, this.inventorySlots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+            else if (!this.mergeItemStack(itemstack1, 0, numRows * 9, false)) {
+                return ItemStack.EMPTY;
+            }
+
+            if (itemstack1.isEmpty()) {
+                slot.putStack(ItemStack.EMPTY);
+            }
+            else {
+                slot.onSlotChanged();
+            }
+        }
+
+        return itemstack;
 	}
 	
 	@Override

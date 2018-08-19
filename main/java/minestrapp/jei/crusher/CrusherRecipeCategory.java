@@ -9,6 +9,7 @@ import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import minestrapp.Minestrapp5;
 import minestrapp.jei.MinestrappRecipeCategory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class CrusherRecipeCategory extends MinestrappRecipeCategory<CrusherRecipeWrapper>{
@@ -34,7 +35,9 @@ public class CrusherRecipeCategory extends MinestrappRecipeCategory<CrusherRecip
 		guiItemStacks.init(input, true, 7, 0);
 		guiItemStacks.init(output, false, 67, 8);
 		guiItemStacks.init(outputExtra, false, 67, 32);
-		guiItemStacks.set(outputExtra, recipeWrapper.extra);
+		
+		guiItemStacks.set(output, ingredients.getOutputs(ItemStack.class).get(0));
+		guiItemStacks.set(outputExtra, ingredients.getOutputs(ItemStack.class).get(1));
 		
 		guiItemStacks.set(ingredients);
 	}
