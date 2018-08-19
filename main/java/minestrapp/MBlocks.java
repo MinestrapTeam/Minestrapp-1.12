@@ -541,8 +541,12 @@ public class MBlocks
 		register(diorite_brick_panel = new BlockPanelBase(decor_stone, MTabs.stone, 2, "diorite_bricks"), new ItemBlockPanel(diorite_brick_panel));
 		register(andesite_brick_panel = new BlockPanelBase(decor_stone, MTabs.stone, 4, "andesite_bricks"), new ItemBlockPanel(andesite_brick_panel));
 		register(slate_brick_panel = new BlockPanelBase(decor_stone, MTabs.stone, 8, "slate_bricks"), new ItemBlockPanel(slate_brick_panel));
+		register(clay_brick_panel = new BlockPanelBase(Blocks.BRICK_BLOCK, MTabs.stone), new ItemBlockPanel(clay_brick_panel));
+		register(sandstone_panel = new BlockPanelBase(Blocks.SANDSTONE, MTabs.stone), new ItemBlockPanel(sandstone_panel));
+		register(red_sandstone_panel = new BlockPanelBase(Blocks.RED_SANDSTONE, MTabs.stone), new ItemBlockPanel(red_sandstone_panel));
 		register(cobbled_red_rock_panel = new BlockPanelBase(cobblestone, MTabs.stone, 0, "red_rock"), new ItemBlockPanel(cobbled_red_rock_panel));
 		register(cobbled_deep_red_rock_panel = new BlockPanelBase(cobblestone, MTabs.stone, 1, "deep_red_rock"), new ItemBlockPanel(cobbled_deep_red_rock_panel));
+		register(cobblestone_panel = new BlockPanelBase(Blocks.COBBLESTONE, MTabs.stone), new ItemBlockPanel(cobblestone_panel));
 		register(cobbled_deepstone_panel = new BlockPanelBase(cobblestone, MTabs.stone, 2, "deepstone"), new ItemBlockPanel(cobbled_deepstone_panel));
 		register(cobbled_coldstone_panel = new BlockPanelBase(cobblestone, MTabs.stone, 3, "coldstone"), new ItemBlockPanel(cobbled_coldstone_panel));
 		register(cobbled_deep_coldstone_panel = new BlockPanelBase(cobblestone, MTabs.stone, 4, "deep_coldstone"), new ItemBlockPanel(cobbled_deep_coldstone_panel));
@@ -552,6 +556,7 @@ public class MBlocks
 		register(cobbled_deep_oceanstone_panel = new BlockPanelBase(cobblestone, MTabs.stone, 8, "reefstone"), new ItemBlockPanel(cobbled_deep_oceanstone_panel));
 		register(red_rock_panel = new BlockPanelBase(double_stone_slab_1, MTabs.stone, 8, "red_rock"), new ItemBlockPanel(red_rock_panel));
 		register(deep_red_rock_panel = new BlockPanelBase(double_stone_slab_1, MTabs.stone, 9, "deep_red_rock"), new ItemBlockPanel(deep_red_rock_panel));
+		register(stone_panel = new BlockPanelBase(Blocks.DOUBLE_STONE_SLAB, MTabs.stone), new ItemBlockPanel(stone_panel));
 		register(deepstone_panel = new BlockPanelBase(double_stone_slab_1, MTabs.stone, 10, "deepstone"), new ItemBlockPanel(deepstone_panel));
 		register(coldstone_panel = new BlockPanelBase(double_stone_slab_1, MTabs.stone, 11, "coldstone"), new ItemBlockPanel(coldstone_panel));
 		register(deep_coldstone_panel = new BlockPanelBase(double_stone_slab_1, MTabs.stone, 12, "deep_coldstone"), new ItemBlockPanel(deep_coldstone_panel));
@@ -561,6 +566,7 @@ public class MBlocks
 		register(deep_oceanstone_panel = new BlockPanelBase(double_stone_slab_2, MTabs.stone, 8, "reefstone"), new ItemBlockPanel(deep_oceanstone_panel));
 		register(red_rock_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 0, "red_rock"), new ItemBlockPanel(red_rock_brick_panel));
 		register(deep_red_rock_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 1, "deep_red_rock"), new ItemBlockPanel(deep_red_rock_brick_panel));
+		register(stone_brick_panel = new BlockPanelBase(Blocks.STONEBRICK, MTabs.stone), new ItemBlockPanel(stone_brick_panel));
 		register(deepstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 2, "deepstone"), new ItemBlockPanel(deepstone_brick_panel));
 		register(coldstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 3, "coldstone"), new ItemBlockPanel(coldstone_brick_panel));
 		register(deep_coldstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 4, "deep_coldstone"), new ItemBlockPanel(deep_coldstone_brick_panel));
@@ -568,6 +574,9 @@ public class MBlocks
 		register(glacierrock_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 6, "glacierrock"), new ItemBlockPanel(glacierrock_brick_panel));
 		register(oceanstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 7, "oceanstone"), new ItemBlockPanel(oceanstone_brick_panel));
 		register(deep_oceanstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 8, "reefstone"), new ItemBlockPanel(deep_oceanstone_brick_panel));
+		register(nether_brick_panel = new BlockPanelBase(Blocks.NETHER_BRICK, MTabs.stone), new ItemBlockPanel(nether_brick_panel));
+		register(nether_quartz_panel = new BlockPanelBase(Blocks.QUARTZ_BLOCK, MTabs.stone), new ItemBlockPanel(nether_quartz_panel));
+		register(purpur_panel = new BlockPanelBase(Blocks.PURPUR_BLOCK, MTabs.stone), new ItemBlockPanel(purpur_panel));
 		register(portar_panel = new BlockPanelBase(portar, MTabs.stone, 0, "slabbed"), new ItemBlockPanel(portar_panel));
 		
 		register(mud_brick_stairs = new BlockStairBase(mud_bricks));

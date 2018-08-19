@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_stone_bricks",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_m_stone_bricks_deep_red_rock",
+        "count": 6
+     }  
+}

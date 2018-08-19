@@ -1,0 +1,6 @@
+{
+    "parent": "minestrapp:block/panel_corner",
+    "textures": {
+        "texture": "blocks/cobblestone"
+    }
+}

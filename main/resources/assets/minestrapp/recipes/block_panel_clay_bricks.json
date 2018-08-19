@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:brick_block"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_brick",
+        "count": 6
+     }  
+}

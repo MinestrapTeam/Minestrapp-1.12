@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_cobblestone",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_m_cobblestone_red_rock",
+        "count": 6
+     }  
+}

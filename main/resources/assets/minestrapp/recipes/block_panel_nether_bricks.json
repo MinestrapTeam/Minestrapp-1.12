@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:nether_brick"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_netherbrick",
+        "count": 6
+     }  
+}

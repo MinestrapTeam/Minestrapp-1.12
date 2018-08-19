@@ -450,7 +450,7 @@ public class BlockPanelBase extends BlockBase
     @Deprecated
     public float getBlockHardness(IBlockState blockState, World worldIn, BlockPos pos)
     {
-        return this.block.getBlockHardness(blockState, worldIn, pos);
+        return this.block.getBlockHardness(this.block.getStateFromMeta(this.meta), worldIn, pos);
     }
     
     /**

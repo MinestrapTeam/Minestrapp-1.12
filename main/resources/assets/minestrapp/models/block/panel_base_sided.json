@@ -1,0 +1,60 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"particle": "#side",
+		"top": "#top",
+        "side": "#side",
+        "bottom": "#bottom"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 8 ],
+			"faces": {
+				"down": { "uv": [ 0, 8, 16, 16 ], "texture": "#bottom" },
+				"up": { "uv": [ 0, 0, 16, 8 ], "texture": "#top" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#side" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#side" },
+				"west": { "uv": [ 0, 0, 8, 16 ], "texture": "#side" },
+				"east": { "uv": [ 8, 0, 16, 16 ], "texture": "#side" }
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"firstperson_righthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"firstperson_lefthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"translation":  [ 1.25, 0, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"translation":  [ -1.625, 1, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"ground": {
+			"translation":  [ 0, 3, 1 ],
+			"scale":  [ 0.25, 0.25, 0.25 ]
+		},
+		"fixed": {
+			"translation":  [ 0, 0, 1.5 ],
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}

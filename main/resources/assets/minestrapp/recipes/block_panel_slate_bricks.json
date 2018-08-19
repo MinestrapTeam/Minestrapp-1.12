@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:decor_stone",
+            "data": 8
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_decor_stone_slate_bricks",
+        "count": 6
+     }  
+}

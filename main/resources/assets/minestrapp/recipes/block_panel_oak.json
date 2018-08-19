@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:planks",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_wood_oak",
+        "count": 6
+     }  
+}

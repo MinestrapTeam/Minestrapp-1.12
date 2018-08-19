@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minecraft:cobblestone"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_stonebrick",
+        "count": 6
+     }  
+}

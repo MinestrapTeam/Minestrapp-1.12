@@ -1,0 +1,17 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:mud_bricks"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_mud_bricks",
+        "count": 6
+     }  
+}
