@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "sss",
+        " p "
+    ],
+    "key": {        
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "ingotSteel"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_metal",
+        "data": 2
+     }  
+}

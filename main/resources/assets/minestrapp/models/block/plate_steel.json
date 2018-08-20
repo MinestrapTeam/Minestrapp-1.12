@@ -1,0 +1,7 @@
+{
+    "parent": "minestrapp:block/plate_metal",
+    "textures": {
+        "top": "minestrapp:blocks/decor/plate_steel_top",
+        "side": "minestrapp:blocks/decor/plate_steel_side"
+    }
+}

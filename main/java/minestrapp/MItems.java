@@ -328,8 +328,8 @@ public class MItems
 		register(irradium = new ItemBase("irradium").setBurnTime(25600).setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
-		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite
-		register(plating = new ItemMetaBase("m_plating", 4).setCreativeTab(MTabs.ingredients));
+		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite, 4=Copper, 5=Gold
+		register(plating = new ItemMetaBase("m_plating", 6).setCreativeTab(MTabs.ingredients));
 		register(salt = new ItemBase("salt").setCreativeTab(MTabs.food));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard

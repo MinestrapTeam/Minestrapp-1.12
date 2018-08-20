@@ -1,6 +1,6 @@
 package minestrapp.block.tileentity;
 
-import ibxm.Player;
+import minestrapp.block.BlockPlate;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ItemStackHelper;
@@ -14,6 +14,7 @@ import net.minecraft.util.NonNullList;
 
 public class TileEntityPlate extends TileEntity{
 	public NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+	private int height;
 	public int angle;
 	
 	public boolean tryToAddItem(ItemStack item) {
@@ -22,8 +23,20 @@ public class TileEntityPlate extends TileEntity{
 			temp.setCount(1);
 			this.inventory.set(0,temp);
 			this.markDirty();
+			return true;
 		}
-		return true;
+		return false;
+	}
+	
+	public TileEntityPlate setHeight(int height)
+	{
+		this.height = height;
+		return this;
+	}
+	
+	public int getHeight()
+	{
+		return this.height;
 	}
 	
 	public void takeItem() {
@@ -47,6 +60,7 @@ public class TileEntityPlate extends TileEntity{
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
 		this.angle = compound.getInteger("angle");
+		this.height = compound.getInteger("height");
 		ItemStackHelper.loadAllItems(compound, this.inventory);
 	}
 	
@@ -54,6 +68,7 @@ public class TileEntityPlate extends TileEntity{
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 		super.writeToNBT(compound);
 		compound.setInteger("angle", this.angle);
+		compound.setInteger("height", this.height);
 		ItemStackHelper.saveAllItems(compound, this.inventory);
 		return compound;
 	}

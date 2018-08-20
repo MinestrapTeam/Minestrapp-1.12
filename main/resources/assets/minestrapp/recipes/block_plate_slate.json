@@ -1,0 +1,20 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        " s "
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:decor_stone",
+            "data": 6
+        },
+        "s": {
+            "item": "minestrapp:m_misc_stone_slab_1",
+            "data": 4
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_slate"
+     }  
+}

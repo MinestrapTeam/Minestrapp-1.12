@@ -108,6 +108,8 @@ public class OreDictRegistry
 		OreDictionary.registerOre("plateBronze", new ItemStack(MItems.plating, 1, 1));
 		OreDictionary.registerOre("plateSteel", new ItemStack(MItems.plating, 1, 2));
 		OreDictionary.registerOre("plateMeurodite", new ItemStack(MItems.plating, 1, 3));
+		OreDictionary.registerOre("plateCopper", new ItemStack(MItems.plating, 1, 4));
+		OreDictionary.registerOre("plateGold", new ItemStack(MItems.plating, 1, 5));
 		OreDictionary.registerOre("magnet", new ItemStack(MItems.tech_components, 1, 6));
 		OreDictionary.registerOre("seedPepper", MItems.pepper_seeds);
 		OreDictionary.registerOre("seedCabbage", MItems.cabbage_seeds);

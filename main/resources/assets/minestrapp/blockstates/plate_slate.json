@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:plate_slate" },
+            { "model": "minestrapp:plate_slate", "y": 90 },
+            { "model": "minestrapp:plate_slate", "y": 180 },
+            { "model": "minestrapp:plate_slate", "y": 270 }
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube_all",
+	"textures": {
+		"particle": "minestrapp:blocks/stone/slate_top_3",
+		"texture": "minestrapp:blocks/stone/slate_top_3",
+		"texture1": "minestrapp:blocks/stone/slate_side"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 2, 0, 2 ],
+			"to": [ 14, 1, 14 ],
+			"faces": {
+				"down": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture" },
+				"north": { "uv": [ 2, 13, 14, 14 ], "texture": "#texture1" },
+				"south": { "uv": [ 2, 13, 14, 14 ], "texture": "#texture1" },
+				"west": { "uv": [ 2, 13, 14, 14 ], "texture": "#texture1" },
+				"east": { "uv": [ 2, 13, 14, 14 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "variant=copper": [
+            { "model": "minestrapp:plate_copper" }
+        ],
+        "variant=bronze": [
+            { "model": "minestrapp:plate_bronze" }
+        ],
+        "variant=steel": [
+            { "model": "minestrapp:plate_steel" }
+        ],
+        "variant=gold": [
+            { "model": "minestrapp:plate_gold" }
+        ]
+    }
+}
