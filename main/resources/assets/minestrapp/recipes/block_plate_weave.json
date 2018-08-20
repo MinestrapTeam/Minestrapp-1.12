@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xxx",
+        " x "
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_natural_item",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_weave"
+     }  
+}

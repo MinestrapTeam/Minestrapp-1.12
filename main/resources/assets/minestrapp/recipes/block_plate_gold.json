@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ggg",
+        " p "
+    ],
+    "key": {        
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateGold"
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_metal",
+        "data": 3
+     }  
+}

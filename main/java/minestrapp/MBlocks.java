@@ -70,6 +70,7 @@ import minestrapp.block.BlockMoss;
 import minestrapp.block.BlockMud;
 import minestrapp.block.BlockPipe;
 import minestrapp.block.BlockPlate;
+import minestrapp.block.BlockPlateMetal;
 import minestrapp.block.BlockPortalDust;
 import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
@@ -386,6 +387,9 @@ public class MBlocks
 	public static Block pumpkin_smashed;
 	public static Block pumpkin_smashed_fire;
 	public static Block pumpkin_smashed_ender;
+	public static Block plate_weave;
+	public static Block plate_slate;
+	public static Block plate_metal;
 	
 	//Utility
 	public static Block rope;
@@ -429,7 +433,6 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
-	public static Block plate;
 	
 	//Crops
 	public static Block crop_withered;
@@ -702,6 +705,9 @@ public class MBlocks
 		register(pumpkin_smashed = new BlockJackOLanternSmashed("pumpkin_smashed", "unlit", pumpkin_smashed_fire, pumpkin_smashed_ender));
 		register(pumpkin_smashed_fire = new BlockJackOLanternSmashed("pumpkin_smashed_fire", "fire", pumpkin_smashed, pumpkin_smashed_ender));
 		register(pumpkin_smashed_ender = new BlockJackOLanternSmashed("pumpkin_smashed_ender", "ender", pumpkin_smashed, pumpkin_smashed_fire));
+		register(plate_weave = new BlockPlate("plate_weave", Material.CLOTH, MapColor.SAND, SoundType.CLOTH, 0.6F, 2, 3));
+		register(plate_slate = new BlockPlate("plate_slate", Material.ROCK, MapColor.GRAY, SoundType.STONE, 0.75F, 1, 1, "pickaxe", 0));
+		register(plate_metal = new BlockPlateMetal(), new ItemBlockMultistate(plate_metal));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
@@ -741,7 +747,6 @@ public class MBlocks
 		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
 		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
 		register(glow_paste = new BlockLightPaste(), new ItemBlockContainer(glow_paste, new ItemStack(Items.GLASS_BOTTLE)));
-		register(plate = new BlockPlate("food_plate", Material.IRON, MapColor.GOLD, SoundType.ANVIL, 1F));
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
@@ -891,6 +896,10 @@ public class MBlocks
 			initModel(pumpkin_dumpy, i, "pumpkin_dumpy_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
 			initModel(pumpkin_creepy, i, "pumpkin_creepy_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
 			initModel(pumpkin_smiley, i, "pumpkin_smiley_" + BlockJackOLantern.EnumFaceType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockPlateMetal.EnumType.values().length ; i++)
+		{
+			initModel(plate_metal, i, "plate_metal_" + BlockPlateMetal.EnumType.values()[i].getName());
 		}
 	}
 	

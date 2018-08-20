@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "bbb",
+        " p "
+    ],
+    "key": {        
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBronze"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateBronze"
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_metal",
+        "data": 1
+     }  
+}

@@ -599,6 +599,12 @@ tile.pumpkin_smiley_simple.name=Simple Smiley Jack o'Lantern
 tile.pumpkin_smiley_average.name=Average Smiley Jack o'Lantern
 tile.pumpkin_smiley_complex.name=Complex Smiley Jack o'Lantern
 tile.pumpkin_smashed.name=Smashed Jack-o'-Lantern
+tile.plate_weave.name=Woven Plate
+tile.plate_slate.name=Slate Plate
+tile.plate_metal_copper.name=Copper Plate
+tile.plate_metal_bronze.name=Bronze Plate
+tile.plate_metal_steel.name=Steel Plate
+tile.plate_metal_gold.name=Golden Plate
 
 ## Utility ##
 
@@ -697,6 +703,8 @@ item.m_plating_0.name=Tin Plating
 item.m_plating_1.name=Bronze Plating
 item.m_plating_2.name=Steel Plating
 item.m_plating_3.name=Meurodite Plating
+item.m_plating_4.name=Copper Plating
+item.m_plating_5.name=Gold Plating
 item.m_tech_component_0.name=Reinforced Stick
 item.m_tech_component_1.name=Wing Segment
 item.m_tech_component_2.name=Propeller
@@ -1051,6 +1059,8 @@ advancements.husbandry.candle.title=Setting the Mood
 advancements.husbandry.candle.description=Craft a decorative candle.
 advancements.husbandry.fried_foods.title=Fat Frier
 advancements.husbandry.fried_foods.description=Smelt some tallow into grease, then alloy it with some other food.
+advancements.husbandry.dinnerware.title=Fine Dining and Breathing
+advancements.husbandry.dinnerware.description=Collect every type of dinnerware.
 advancements.husbandry.plant_everything.title=Stardew
 advancements.husbandry.plant_everything.description=Plant ALL the seeds!!!
 advancements.husbandry.buns.title=The Best Thing Since...

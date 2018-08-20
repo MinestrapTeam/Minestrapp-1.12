@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        " p "
+    ],
+    "key": {        
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "ingotCopper"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateCopper"
+        }
+     },
+     "result": {
+        "item": "minestrapp:plate_metal",
+        "data": 0
+     }  
+}

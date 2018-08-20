@@ -1,0 +1,82 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:plate_metal",
+            "data": 3
+        },
+        "title": {
+            "translate": "advancements.husbandry.dinnerware.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.dinnerware.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minecraft:husbandry/plant_seed",
+    "criteria": {
+        "weave": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_weave"
+                    }
+                ]
+            }
+        },
+        "slate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_slate"
+                    }
+                ]
+            }
+        },
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_metal",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_metal",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "steel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_metal",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "gold": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:plate_metal",
+                        "data": 3
+                    }
+                ]
+            }
+        }
+    }
+}
