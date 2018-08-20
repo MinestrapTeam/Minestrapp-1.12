@@ -18,8 +18,8 @@ import minestrapp.crafting.FurnaceRecipes;
 import minestrapp.crafting.OreDictRegistry;
 import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
+import minestrapp.potion.MPotions;
 import minestrapp.worldgen.MOreGen;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,7 +27,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy
@@ -36,6 +35,7 @@ public class CommonProxy
 	{
 		MBlocks.init();
 		MItems.init();
+		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
@@ -81,6 +81,7 @@ public class CommonProxy
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		
 		MinecraftForge.EVENT_BUS.register(new MEventHandler());
+		MinecraftForge.EVENT_BUS.register(new MPotions());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

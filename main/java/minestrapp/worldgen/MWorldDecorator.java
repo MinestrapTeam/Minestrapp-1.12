@@ -13,6 +13,7 @@ import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import minestrapp.config.MConfig;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOre;
@@ -46,6 +47,7 @@ import net.minecraft.world.biome.BiomeSwamp;
 import net.minecraft.world.biome.BiomeTaiga;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
@@ -417,6 +419,19 @@ public class MWorldDecorator
 							BlockPos bigshroomPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 							bigShroomGen.generate(world, random, bigshroomPos);
 						}
+					}
+				}
+				
+				for(int i = 0 ; i < 5 ; i++) {
+					int posX = random.nextInt(16)+8;
+					int posY = 78 - random.nextInt(60);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.infected_mushroom.canPlaceBlockAt(world, mossPos))
+					{
+						WorldGenBush infectedMushroomGen = new WorldGenBush((BlockBush)MBlocks.infected_mushroom);
+						infectedMushroomGen.generate(world, random, mossPos);
 					}
 				}
 			}

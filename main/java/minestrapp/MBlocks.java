@@ -45,6 +45,7 @@ import minestrapp.block.BlockHalfStoneSlab3;
 import minestrapp.block.BlockHalfStoneSlab4;
 import minestrapp.block.BlockHalfWoodSlab1;
 import minestrapp.block.BlockHangingMoss;
+import minestrapp.block.BlockInfectedMushroom;
 import minestrapp.block.BlockInvincium;
 import minestrapp.block.BlockIrradiantSunstone;
 import minestrapp.block.BlockIrradium;
@@ -121,6 +122,7 @@ import minestrapp.config.MConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHugeMushroom;
+import net.minecraft.block.BlockMushroom;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -167,6 +169,7 @@ public class MBlocks
 	public static Block mite_hive;
 	public static Block mite_hive_honeyed;
 	public static Block mite_comb;
+	public static Block infected_mushroom;
 	
 	//Soil
 	public static Block cold_sand;
@@ -467,6 +470,7 @@ public class MBlocks
 		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));
 		register(mite_hive_honeyed = new BlockEndermiteHiveHusk("mite_hive_honeyed", true).setLightLevel(0.5F));
 		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setCreativeTab(MTabs.environment));
+		register(infected_mushroom = new BlockInfectedMushroom("infected_mushroom"));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
