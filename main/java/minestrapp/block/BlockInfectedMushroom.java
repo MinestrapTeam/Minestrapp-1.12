@@ -20,7 +20,9 @@ public class BlockInfectedMushroom extends BlockGlowshroom{
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if(entity instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase)entity;
-			living.addPotionEffect(new PotionEffect(MPotions.infection, 3600));
+			if(!living.isPotionActive(MPotions.infection)) {
+				living.addPotionEffect(new PotionEffect(MPotions.infection, 3600));
+			}
 		}
 	}
 

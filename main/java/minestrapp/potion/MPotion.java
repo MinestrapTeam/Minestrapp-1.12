@@ -15,11 +15,13 @@ public class MPotion extends Potion{
 
 	private ResourceLocation iconTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/potion_icons.png");
 	
-	private int iconIndex = 1;
+	private int iconIndexX = 1;
+	private int iconIndexY = 1;
 	
-	protected MPotion(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndex) {
+	protected MPotion(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndexX, int iconIndexY) {
 		super(isBadEffectIn, liquidColorIn);
-		this.iconIndex = iconIndex;
+		this.iconIndexX = iconIndexX;
+		this.iconIndexY = iconIndexY;
 		this.setPotionName(name);
 	}
 	
@@ -40,14 +42,14 @@ public class MPotion extends Potion{
 	{
 		if (mc.currentScreen != null) {
 			mc.getTextureManager().bindTexture(iconTexture);
-			Gui.drawModalRectWithCustomSizedTexture(x + 6, y + 7, this.iconIndex * 18, 0, 18, 18, 256, 256);
+			Gui.drawModalRectWithCustomSizedTexture(x + 6, y + 7, this.iconIndexX * 18, this.iconIndexY * 18, 18, 18, 256, 256);
 		}
 	}
 	
 	@SideOnly(Side.CLIENT)
     public void renderHUDEffect(int x, int y, PotionEffect effect, net.minecraft.client.Minecraft mc, float alpha) { 
 		mc.getTextureManager().bindTexture(iconTexture);
-		Gui.drawModalRectWithCustomSizedTexture(x + 3, y + 3, this.iconIndex * 18, 0, 18, 18, 256, 256);
+		Gui.drawModalRectWithCustomSizedTexture(x + 3, y + 3, this.iconIndexX * 18, this.iconIndexY * 18, 18, 18, 256, 256);
 		
 	}
 

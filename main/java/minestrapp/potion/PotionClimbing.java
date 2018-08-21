@@ -6,8 +6,8 @@ import net.minecraft.util.math.MathHelper;
 
 public class PotionClimbing extends MPotion{
 
-	protected PotionClimbing(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndex) {
-		super(isBadEffectIn, liquidColorIn, name, iconIndex);
+	protected PotionClimbing(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndexX, int iconIndexY) {
+		super(isBadEffectIn, liquidColorIn, name, iconIndexX, iconIndexY);
 	}
 	
 	@Override

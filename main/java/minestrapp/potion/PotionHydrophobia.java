@@ -10,8 +10,8 @@ import net.minecraft.world.World;
 
 public class PotionHydrophobia extends MPotion{
 
-	protected PotionHydrophobia(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndex) {
-		super(isBadEffectIn, liquidColorIn, name, iconIndex);
+	protected PotionHydrophobia(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndexX, int iconIndexY) {
+		super(isBadEffectIn, liquidColorIn, name, iconIndexX, iconIndexY);
 	}
 	
 	@Override

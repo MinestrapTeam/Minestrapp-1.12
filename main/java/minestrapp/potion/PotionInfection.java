@@ -18,8 +18,8 @@ public class PotionInfection extends MPotion{
 
 	private Random rand = new Random();
 	
-	protected PotionInfection(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndex) {
-		super(isBadEffectIn, liquidColorIn, name, iconIndex);
+	protected PotionInfection(boolean isBadEffectIn, int liquidColorIn, String name, int iconIndexX, int iconIndexY) {
+		super(isBadEffectIn, liquidColorIn, name, iconIndexX, iconIndexY);
 	}
 	
 	@Override
