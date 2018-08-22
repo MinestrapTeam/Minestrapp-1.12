@@ -1,5 +1,7 @@
 package minestrapp.block.tileentity;
 
+import java.util.Map;
+
 import minestrapp.crafting.TannerRecipes;
 import minestrapp.crafting.TannerRecipes.TannerRecipe;
 import net.minecraft.entity.item.EntityItem;
@@ -17,28 +19,45 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public NonNullList<ItemStack> hide = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	public int angle;
 	
-	public boolean doneTanning = false;
+	public boolean isTanning = true;
 	private int ticks = 0;
 	private int secondsToTan = 5;
 	
 	@Override
-	public void update() {
-		if(!this.hide.get(0).isEmpty()) {
+	public void update()
+	{
+		if(this.hide.get(0).isEmpty())
+			this.isTanning = false;
+		if(this.isTanning)
+		{
 			TannerRecipe recipe = this.getRecipe();
-			if(recipe != null && !this.doneTanning) {
-				this.ticks++;
-				if(this.ticks / 20 >= recipe.time && recipe.tool == null) {
-					this.hide.set(0, recipe.output);
-					this.ticks = 0;
-					this.doneTanning = true;
-				} else if(this.ticks / 20 >= recipe.time && recipe.tool != null) {
-					this.doneTanning = true;
+			
+			if(recipe == null)
+				this.isTanning = false;
+			else
+			{
+				boolean progress = true;
+				
+				if(recipe.sun && (!this.world.isDaytime() || !this.world.canSeeSky(this.pos)))
+					progress = false;
+				
+				if(progress)
+				{
+					this.ticks++;
+				
+					if(this.ticks / 20 >= recipe.time)
+					{
+						this.hide.set(0, recipe.output);
+						this.ticks = 0;
+						this.isTanning = false;
+					}
 				}
 			}
 		}
 	}
 	
-	public boolean tryToAddItem(ItemStack stack, int angle){
+	public boolean tryToAddItem(ItemStack stack, int angle)
+	{
 		ItemStack temp = stack.copy();
 		temp.setCount(1);
 		this.hide.set(0, temp);
@@ -48,46 +67,62 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		return true;
 	}
 	
-	public void takeItem() {
-		if(!this.getWorld().isRemote) {
+	public void takeItem()
+	{
+		if(!this.getWorld().isRemote)
+		{
 			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), this.hide.get(0)));
-			this.doneTanning = false;
+			this.isTanning = false;
 		}
 		this.hide.set(0, ItemStack.EMPTY);
 	}
 	
-	public boolean isHoldingItem() {
+	public boolean isHoldingItem()
+	{
 		return !this.hide.get(0).isEmpty();
 	}
 	
-	public TannerRecipe getRecipe() {
-		return TannerRecipes.instance.recipes.get(this.hide.get(0).getItem());
-	}
+	public TannerRecipe getRecipe()
+	{
+        for(Map.Entry<ItemStack, TannerRecipe> entry: TannerRecipes.instance.recipes.entrySet())
+        {
+            TannerRecipe recipe = entry.getValue();
+            if(ItemStack.areItemStacksEqual(this.hide.get(0), recipe.input))
+            {
+                return recipe;
+            }
+        }
+        return null;
+    }
 	
 	@Override
-	public void readFromNBT(NBTTagCompound compound) {
+	public void readFromNBT(NBTTagCompound compound)
+	{
 		super.readFromNBT(compound);
 		this.angle = compound.getInteger("angle");
-		this.doneTanning = compound.getBoolean("done");
+		this.isTanning = compound.getBoolean("tanning");
 		ItemStackHelper.loadAllItems(compound, this.hide);
 	}
 	
 	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+	public NBTTagCompound writeToNBT(NBTTagCompound compound)
+	{
 		super.writeToNBT(compound);
 		compound.setInteger("angle", this.angle);
-		compound.setBoolean("done", this.doneTanning);
+		compound.setBoolean("tanning", this.isTanning);
 		ItemStackHelper.saveAllItems(compound, this.hide);
 		return compound;
 	}
 	
 	@Override
-	public NBTTagCompound getUpdateTag(){
+	public NBTTagCompound getUpdateTag()
+	{
 		return writeToNBT(new NBTTagCompound());
 	}
 	
 	@Override
-	public SPacketUpdateTileEntity getUpdatePacket(){
+	public SPacketUpdateTileEntity getUpdatePacket()
+	{
 	    return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
 	}
 
@@ -96,6 +131,4 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	{
 	    this.readFromNBT(packet.getNbtCompound());
 	}
-
-
 }

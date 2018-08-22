@@ -1,5 +1,7 @@
 package minestrapp.block;
 
+import java.util.Set;
+
 import minestrapp.MTabs;
 import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
@@ -44,38 +46,32 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 		
 		ItemStack heldItem = player.getHeldItem(hand);
 		
-		if(!tet.isHoldingItem()) {
-			if(state.getValue(FACING) == EnumFacing.NORTH) {
-				if(tet.tryToAddItem(heldItem, 0)) {
-					player.getHeldItem(hand).shrink(1);
-				}
-			}
-			
-			if(state.getValue(FACING) == EnumFacing.SOUTH) {
-				if(tet.tryToAddItem(heldItem, 180)) {
-					player.getHeldItem(hand).shrink(1);
-				}
-			}
-			
-			if(state.getValue(FACING) == EnumFacing.WEST) {
-				if(tet.tryToAddItem(heldItem, 270)) {
-					player.getHeldItem(hand).shrink(1);
-				}
-			}
-			
-			if(state.getValue(FACING) == EnumFacing.EAST) {
-				if(tet.tryToAddItem(heldItem, 90)) {
-					player.getHeldItem(hand).shrink(1);
-				}
-			}
-		} else {
-			if(tet.getRecipe() == null || tet.getRecipe().tool == null) {
+		if(!tet.isHoldingItem() && tet.tryToAddItem(heldItem, tet.angle))
+				player.getHeldItem(hand).shrink(1);
+		else
+		{			
+			if(tet.getRecipe() == null || tet.getRecipe().tool == null || tet.isTanning)
+			{
 				tet.takeItem();
 			}
-			else if(heldItem.getItem() == tet.getRecipe().tool.getItem() && tet.doneTanning == true) {
-				tet.tryToAddItem(tet.getRecipe().output, tet.angle);
-			} else {
-				tet.takeItem();
+			else
+			{
+				boolean isTool = false;
+				
+				if(ItemStack.areItemStacksEqual(heldItem, tet.getRecipe().tool))
+					isTool = true;
+				else
+				{
+					Set<String> toolType = tet.getRecipe().tool.getItem().getToolClasses(tet.getRecipe().tool);
+					Set<String> heldType = heldItem.getItem().getToolClasses(heldItem);
+					if(toolType.removeAll(heldType))
+						isTool = true;
+				}
+				
+				if(isTool && tet.isTanning == false)
+					tet.tryToAddItem(tet.getRecipe().output, tet.angle);
+				else
+					tet.takeItem();
 			}
 		}
 				

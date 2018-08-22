@@ -22,7 +22,7 @@ public class TannerRecipeMaker {
 		
 		List<TannerRecipeWrapper> recipes = new ArrayList<>();
 		
-		for(Map.Entry<Item, TannerRecipe> entry: TannerRecipes.instance.recipes.entrySet()) {
+		for(Map.Entry<ItemStack, TannerRecipe> entry: TannerRecipes.instance.recipes.entrySet()) {
 			TannerRecipe temp = entry.getValue();
 			
 			List<ItemStack> inputs = stackHelper.getSubtypes(temp.input);
