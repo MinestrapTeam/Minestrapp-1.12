@@ -45,14 +45,15 @@ public class ClientProxy extends CommonProxy
 		super.preInit(event);
 		MBlocks.registerRenders();
 		MItems.registerRenders();
+		MobRegistry.register();
 		registerRenderers();
 		registerEntities();
+		
 	}
 	
 	public void init(FMLInitializationEvent event)
 	{
 		super.init(event);
-		MobRegistry.register();
 		
 		registerColorHandlers();
 	}
