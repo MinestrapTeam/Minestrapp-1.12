@@ -2,6 +2,7 @@ package minestrapp.potion;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -20,6 +21,7 @@ public class MPotions {
 	
 	public static final Potion hydrophobia = new PotionHydrophobia(true, 62207, "Hydrophobia", 1, 0);
 	private static PotionType hydrophobiaType = new PotionType("hydrophobia", new PotionEffect(hydrophobia, 1800));
+	private static PotionType hydrophobiaStrongType = new PotionType("hydrophobia", new PotionEffect(hydrophobia, 1800, 1));
 	
 	public static final Potion climbing = new PotionClimbing(false, 4986914, "Climbing", 2, 0);
 	private static PotionType climbingType = new PotionType("climbing", new PotionEffect(climbing, 1800));
@@ -39,6 +41,8 @@ public class MPotions {
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.glow_paste).getItem(), climbingType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.mob_loot, 1, 3).getItem(), restorationType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.bread_voidberry_salad).getItem(), aggressionType);
+		
+		PotionHelper.addMix(hydrophobiaType, Items.GLOWSTONE_DUST, hydrophobiaStrongType);
 	}
 	
     @SubscribeEvent
@@ -55,6 +59,7 @@ public class MPotions {
     public static void registerPotionTypes(RegistryEvent.Register<PotionType> event) {
         event.getRegistry().register(infectionType.setRegistryName("infection"));
         event.getRegistry().register(hydrophobiaType.setRegistryName("hydrophobia"));
+        event.getRegistry().register(hydrophobiaStrongType.setRegistryName("hydrophobia_strong"));
         event.getRegistry().register(climbingType.setRegistryName("climbing"));
         event.getRegistry().register(restorationType.setRegistryName("restoration"));
         event.getRegistry().register(aggressionType.setRegistryName("aggression"));
