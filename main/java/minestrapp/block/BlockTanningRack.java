@@ -69,7 +69,10 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 				}
 				
 				if(isTool && tet.isTanning == false)
-					tet.tryToAddItem(tet.getRecipe().output, tet.angle);
+					if(tet.getRecipe().time == 0)
+						tet.hide.set(0, tet.getRecipe().output);
+					else
+						tet.isTanning = true;
 				else
 					tet.takeItem();
 			}
