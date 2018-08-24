@@ -719,6 +719,8 @@ item.health_crystal.name='Health Crystal'
 item.boat_redwood.name=Redwood Boat
 item.boat_frozen_oak.name=Frozen Oak Boat
 item.boat_charwood.name=Charwood Boat
+item.satchel.name=Satchel
+item.backpack.name=Backpack
 item.hang_glider_wood.name=Wooden Hang Glider
 item.hang_glider_steel.name=Reinforced Hang Glider
 
@@ -983,6 +985,28 @@ tile.woodSlab.jungle.name=Jungle Plank Slab
 tile.woodSlab.oak.name=Oak Plank Slab
 tile.woodSlab.spruce.name=Spruce Plank Slab
 tile.litpumpkin.name=Glowpumpkin
+
+
+
+##### Potions #####
+potion.effect.infection=Potion of Infection
+potion.effect.hydrophobia=Potion of Water Aversion
+potion.effect.climbing=Potion of Grip
+potion.effect.restoration=Potion of Restoration
+potion.effect.agression=Potion of Angst
+potion.effect.harmony=Potion of Calm
+splash_potion.effect.infection=Splash Potion of Infection
+splash_potion.effect.hydrophobia=Splash Potion of Water Aversion
+splash_potion.effect.climbing=Splash Potion of Grip
+splash_potion.effect.restoration=Splash Potion of Restoration
+splash_potion.effect.agression=Splash Potion of Angst
+splash_potion.effect.harmony=Splash Potion of Calm
+lingering_potion.effect.infection=Lingering Potion of Infection
+lingering_potion.effect.hydrophobia=Lingering Potion of Water Aversion
+lingering_potion.effect.climbing=Lingering Potion of Grip
+lingering_potion.effect.restoration=Lingering Potion of Restoration
+lingering_potion.effect.agression=Lingering Potion of Angst
+lingering_potion.effect.harmony=Lingering Potion of Calm
 
 
 ##### Advancements #####

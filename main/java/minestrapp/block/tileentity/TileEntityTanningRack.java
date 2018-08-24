@@ -19,41 +19,44 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public NonNullList<ItemStack> hide = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	public int angle;
 	
-	public boolean isTanning = true;
+	public boolean isTanning = false;
 	private int ticks = 0;
 	private int secondsToTan = 5;
 	
 	@Override
 	public void update()
 	{
-		if(this.hide.get(0).isEmpty())
-			this.isTanning = false;
-		if(this.isTanning)
-		{
-			TannerRecipe recipe = this.getRecipe();
-			
-			if(recipe == null)
+		
+			if(this.hide.get(0).isEmpty())
 				this.isTanning = false;
-			else
+			if(this.isTanning)
 			{
-				boolean progress = true;
+				TannerRecipe recipe = this.getRecipe();
 				
-				if(recipe.sun && (!this.world.isDaytime() || !this.world.canSeeSky(this.pos)))
-					progress = false;
-				
-				if(progress)
+				if(recipe == null)
+					this.isTanning = false;
+				else
 				{
-					this.ticks++;
-				
-					if(this.ticks / 20 >= recipe.time)
+					boolean progress = true;
+					
+					if(recipe.sun && (!this.world.isDaytime() || !this.world.canSeeSky(this.pos)))
+						progress = false;
+					
+					if(progress)
 					{
-						this.hide.set(0, recipe.output);
-						this.ticks = 0;
-						this.isTanning = false;
+						this.ticks++;
+					
+						if(this.ticks / 20 >= recipe.time)
+						{
+							this.hide.set(0, recipe.output);
+							this.ticks = 0;
+							this.isTanning = false;
+							this.markDirty();
+						}
 					}
 				}
 			}
-		}
+		
 	}
 	
 	public boolean tryToAddItem(ItemStack stack, int angle)
