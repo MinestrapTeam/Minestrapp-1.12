@@ -23,7 +23,7 @@ public class TannerRecipes {
 	public TannerRecipes()
 	{
 		this.addRecipe(new ItemStack(Items.RABBIT_HIDE), new ItemStack(Items.LEATHER), new ItemStack(MItems.copper_sword), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, true);
-		this.addRecipe(new ItemStack(Items.POTATO), new ItemStack(Items.BAKED_POTATO), new ItemStack(MItems.salt), 15, true, SoundEvents.BLOCK_FIRE_EXTINGUISH, EnumParticleTypes.ITEM_CRACK, false);
+		this.addRecipe(new ItemStack(Items.POTATO), new ItemStack(Items.BAKED_POTATO), new ItemStack(MItems.salt), 15, true, SoundEvents.BLOCK_FIRE_EXTINGUISH, EnumParticleTypes.ITEM_CRACK, true);
 		
 		//this.addRecipe(new ItemStack(Items.POTATO), new ItemStack(MItems.chunks, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.salt), 15, true, SoundEvents.BLOCK_FIRE_EXTINGUISH, EnumParticleTypes.ITEM_CRACK, false);
 	}

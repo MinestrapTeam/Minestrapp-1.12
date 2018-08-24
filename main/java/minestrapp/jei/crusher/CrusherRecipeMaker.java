@@ -31,7 +31,6 @@ public class CrusherRecipeMaker {
 			ItemStack extraSlot = extra.get(entry.getKey());
 			
 			List<ItemStack> inputs = stackHelper.getSubtypes(input);
-			System.out.println(stackHelper.getSubtypes(input));
 			List<ItemStack> outputs = stackHelper.getSubtypes(output);
 			List<ItemStack> extras = stackHelper.getSubtypes(extraSlot);
 			recipes.add(new CrusherRecipeWrapper(inputs, outputs, extras));

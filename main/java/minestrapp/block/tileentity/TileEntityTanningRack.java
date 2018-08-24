@@ -4,6 +4,7 @@ import java.util.Map;
 
 import minestrapp.crafting.TannerRecipes;
 import minestrapp.crafting.TannerRecipes.TannerRecipe;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,8 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.EnumSkyBlock;
 
 public class TileEntityTanningRack extends TileEntity implements ITickable{
 
@@ -39,15 +42,10 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 				else
 				{
 					
-					if(!this.world.isRemote) {
-						if(recipe.sun && (!this.world.isDaytime() || this.world.canSeeSky(this.getPos()))) {
-							this.setCanProgress(false);
-						}
+					if(recipe.sun && (this.getLight() < 10 || !this.world.canSeeSky(this.getPos()) )) {
+						this.setCanProgress(false);
 					}
-					
-					
-					System.out.println(this.canProgress);
-					
+						
 					if(this.canProgress)
 					{
 						this.ticks++;
@@ -63,6 +61,25 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 				}
 			}
 		
+	}
+	
+	//Stolen from the vanilla daylight sensor
+	private int getLight() {
+		IBlockState iblockstate = this.world.getBlockState(pos);
+        int i = this.world.getLightFor(EnumSkyBlock.SKY, pos) - this.world.getSkylightSubtracted();
+        float f = this.world.getCelestialAngleRadians(1.0F);
+
+        if (i > 0)
+        {
+            float f1 = f < (float)Math.PI ? 0.0F : ((float)Math.PI * 2F);
+            f = f + (f1 - f) * 0.2F;
+            i = Math.round((float)i * MathHelper.cos(f));
+        }
+
+        i = MathHelper.clamp(i, 0, 15);
+        
+        System.out.println(i);
+        return i;
 	}
 	
 	public void setCanProgress(boolean progress) {
