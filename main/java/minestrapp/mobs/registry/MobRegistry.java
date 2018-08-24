@@ -36,9 +36,6 @@ public class MobRegistry
 	
 	public static void registerEntity()
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "SheetGhost"), EntitySheetGhost.class, "SheetGhost", 450, Minestrapp5.instance, 64, 1, true, 0x050505, 0x222222);
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "LumpGoat"), EntityLumpGoat.class, "LumpGoat", 451, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "BroodMother"), EntityBroodMother.class, "BroodMother", 452, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "TheInfected"), EntityTheInfected.class, "TheInfected", 453, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
 	}
 }

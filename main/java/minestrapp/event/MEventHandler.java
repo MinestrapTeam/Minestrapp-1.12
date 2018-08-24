@@ -9,6 +9,7 @@ import minestrapp.Minestrapp5;
 import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
 import minestrapp.mobs.models.ModelSheetGhost;
+import minestrapp.utils.EntityUtil;
 import minestrapp.worldgen.MWorldDecorator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFrostedIce;
@@ -123,39 +124,33 @@ public class MEventHandler
 	{
 		if("mob".equals(event.getSource().damageType) || "player".equals(event.getSource().damageType))
 		{
-			if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET) != null)
+			if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.fire_helm, MItems.fire_chest, MItems.fire_legs, MItems.fire_feet)) 
 			{
-				if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == MItems.fire_helm && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == MItems.fire_chest && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == MItems.fire_legs && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == MItems.fire_feet)
-				{
-					event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
-					Entity living = event.getSource().getTrueSource();
-					living.setFire(10);
-				}
-			}
+				event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 2, 0, true, false));
+				Entity living = event.getSource().getTrueSource();
+				living.setFire(10);
+			}					
 		}
 		else if(event.getSource().isFireDamage())
 		{
-			if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET) != null)
+			if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.meurodite_helm, MItems.meurodite_chest, MItems.meurodite_legs, MItems.meurodite_feet))
 			{
-				if(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == MItems.meurodite_helm && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == MItems.meurodite_chest && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == MItems.meurodite_legs && event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == MItems.meurodite_feet)
-				{
-					Random rand = new Random();
+				Random rand = new Random();
 					
-					if(rand.nextInt(10) == 1)
-					{
-						EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
-						int chance = rand.nextInt(4);
-						if(chance == 1)
-							slot = EntityEquipmentSlot.CHEST;
-						else if(chance == 2)
-							slot = EntityEquipmentSlot.LEGS;
-						else if(chance == 3)
-							slot = EntityEquipmentSlot.FEET;
+				if(rand.nextInt(10) == 1)
+				{
+					EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
+					int chance = rand.nextInt(4);
+					if(chance == 1)
+						slot = EntityEquipmentSlot.CHEST;
+					else if(chance == 2)
+						slot = EntityEquipmentSlot.LEGS;
+					else if(chance == 3)
+						slot = EntityEquipmentSlot.FEET;
 						
-						event.getEntityLiving().getItemStackFromSlot(slot).damageItem(1, event.getEntityLiving());
-					}
+					event.getEntityLiving().getItemStackFromSlot(slot).damageItem(1, event.getEntityLiving());
 				}
-			}
+			}	
 		}
 	}
 	
@@ -164,27 +159,20 @@ public class MEventHandler
 	{
 		EntityLivingBase living = event.getEntityLiving();
 		
-		ItemStack helm = living.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
-		ItemStack chest = living.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-		ItemStack legs = living.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-		ItemStack boots = living.getItemStackFromSlot(EntityEquipmentSlot.FEET);
-		
-		if(helm != null && chest != null && legs != null && boots != null)
-		{
-			if(helm.getItem() == MItems.torite_helm && chest.getItem() == MItems.torite_chest && legs.getItem() == MItems.torite_legs && boots.getItem() == MItems.torite_feet)
+			if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.torite_helm, MItems.torite_chest, MItems.torite_legs, MItems.torite_feet))
 			{
 				if(living.getActivePotionEffect(MobEffects.REGENERATION) == null)
 				living.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 50, 0, true, false));
 			}
-			else if(helm.getItem() == MItems.titanium_helm && chest.getItem() == MItems.titanium_chest && legs.getItem() == MItems.titanium_legs && boots.getItem() == MItems.titanium_feet)
+			else if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.titanium_helm, MItems.titanium_chest, MItems.titanium_legs, MItems.titanium_feet))
 			{
 				living.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 10, 0, true, false));
 			}
-			else if(helm.getItem() == MItems.meurodite_helm && chest.getItem() == MItems.meurodite_chest && legs.getItem() == MItems.meurodite_legs && boots.getItem() == MItems.meurodite_feet)
+			else if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.meurodite_helm, MItems.meurodite_chest, MItems.meurodite_legs, MItems.meurodite_feet))
 			{
 				living.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 10, 0, true, false));
 			}
-			else if(helm.getItem() == MItems.ice_helm && chest.getItem() == MItems.ice_chest && legs.getItem() == MItems.ice_legs && boots.getItem() == MItems.ice_feet)
+			else if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.ice_helm, MItems.ice_chest, MItems.ice_legs, MItems.ice_feet))
 			{
 				if(!living.world.isRemote)
 				{
@@ -216,7 +204,7 @@ public class MEventHandler
 										{
 											boolean frostWalker = false;
 											
-											NBTTagList nbttaglist = getEnchantments(boots);
+											NBTTagList nbttaglist = getEnchantments(event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET));
 		
 									        for (int m = 0; m < nbttaglist.tagCount(); ++m)
 									        {
@@ -284,7 +272,6 @@ public class MEventHandler
 					}
 				}
 			}
-		}
 	}
 	
 	@SubscribeEvent

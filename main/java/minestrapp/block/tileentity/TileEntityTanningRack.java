@@ -30,7 +30,6 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	@Override
 	public void update()
 	{
-		
 			if(this.hide.get(0).isEmpty())
 				this.isTanning = false;
 			if(this.isTanning)
@@ -59,8 +58,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 						}
 					}
 				}
-			}
-		
+			}	
 	}
 	
 	//Stolen from the vanilla daylight sensor
@@ -77,8 +75,6 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
         }
 
         i = MathHelper.clamp(i, 0, 15);
-        
-        System.out.println(i);
         return i;
 	}
 	
