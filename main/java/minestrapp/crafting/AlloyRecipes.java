@@ -96,48 +96,46 @@ public class AlloyRecipes {
 	}
 	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {
 		this.alloySmelting.put(input1, input2, result);
-		this.alloySmelting.put(input2, input1, result);
 		this.experienceList.put(result, Float.valueOf(experience));
 	}
 	
 	public ItemStack getAlloyResult(ItemStack input1, ItemStack input2) {
-		for(Entry<ItemStack, Map<ItemStack, ItemStack>> entry : this.alloySmelting.columnMap().entrySet()) {
-			if(this.compareItemStacks(input1, (ItemStack)entry.getKey())) {
-				for(Entry<ItemStack, ItemStack> ent : entry.getValue().entrySet()) {
-					if(this.compareItemStacks(input2, (ItemStack)ent.getKey())) {
-						return (ItemStack)ent.getValue();
-					}
-				}
-			}
-		}
-		return ItemStack.EMPTY;
+        for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
+            if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
+                return table.getValue();
+            }
+        }
+        return ItemStack.EMPTY;
 	}
 	
 	public ItemStack getSlotOne(ItemStack input1, ItemStack input2) {
-		for(Entry<ItemStack, Map<ItemStack, ItemStack>> entry : this.alloySmelting.columnMap().entrySet()) {
-			if(this.compareItemStacks(input1, (ItemStack)entry.getKey())) {
-				for(Entry<ItemStack, ItemStack> ent : entry.getValue().entrySet()) {
-					if(this.compareItemStacks(input2, (ItemStack)ent.getKey())) {
-						return (ItemStack)entry.getKey();
-					}
-				}
-			}
-		}
-		return ItemStack.EMPTY;
+		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
+			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
+	            if(this.compareItemStacks(input1, table.getRowKey())) {
+	            	return table.getRowKey();
+	            }
+	            if(this.compareItemStacks(input1, table.getColumnKey())) {
+	            	return table.getColumnKey();
+	            }
+	        }
+	     }
+	     return ItemStack.EMPTY;
 	}
 	
 	public ItemStack getSlotTwo(ItemStack input1, ItemStack input2) {
-		for(Entry<ItemStack, Map<ItemStack, ItemStack>> entry : this.alloySmelting.columnMap().entrySet()) {
-			if(this.compareItemStacks(input1, (ItemStack)entry.getKey())) {
-				for(Entry<ItemStack, ItemStack> ent : entry.getValue().entrySet()) {
-					if(this.compareItemStacks(input2, (ItemStack)ent.getKey())) {
-						return (ItemStack)ent.getKey();
-					}
-				}
-			}
-		}
-		return ItemStack.EMPTY;
+		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
+			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
+	            if(this.compareItemStacks(input2, table.getRowKey())) {
+	            	return table.getRowKey();
+	            }
+	            if(this.compareItemStacks(input2, table.getColumnKey())) {
+	            	return table.getColumnKey();
+	            }
+	        }
+	     }
+	     return ItemStack.EMPTY;
 	}
+	
 	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
 		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 630 || stack2.getMetadata() == stack1.getMetadata());
 	}
