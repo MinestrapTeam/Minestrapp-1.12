@@ -3,9 +3,9 @@ package minestrapp.block;
 import java.util.Set;
 
 import minestrapp.MTabs;
-import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.block.util.BlockBase;
+import minestrapp.crafting.TannerRecipes.TannerRecipe;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -18,8 +18,8 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -58,23 +58,40 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 			{
 				boolean isTool = false;
 				
-				if(ItemStack.areItemStacksEqual(heldItem, tet.getRecipe().tool))
+				TannerRecipe recipe = tet.getRecipe();
+	
+				if(ItemStack.areItemsEqual(heldItem, recipe.tool)) {
 					isTool = true;
-				else
-				{
-					Set<String> toolType = tet.getRecipe().tool.getItem().getToolClasses(tet.getRecipe().tool);
-					Set<String> heldType = heldItem.getItem().getToolClasses(heldItem);
-					if(toolType.removeAll(heldType))
-						isTool = true;
+				} else if(recipe.tool.getItem() instanceof ItemSword && heldItem.getItem() instanceof ItemSword) {
+					isTool = true;
+				} else {
+					Set<String> recipeToolClasses  = recipe.tool.getItem().getToolClasses(recipe.tool);
+					Set<String> heldToolClasses  = heldItem.getItem().getToolClasses(heldItem);
+					
+					for(String toolClass : recipeToolClasses) {
+						if(heldToolClasses.contains(toolClass)){
+							isTool = true;
+							break;
+						}
+					}
 				}
-				
-				if(isTool && tet.isTanning == false)
-					if(tet.getRecipe().time == 0)
-						tet.hide.set(0, tet.getRecipe().output);
-					else
+
+				if(isTool && tet.isTanning == false) {
+					
+					if(recipe.time == 0) {
+						tet.hide.set(0, recipe.output);
+					} else {
 						tet.isTanning = true;
-				else
+					}
+					
+					if(recipe.consumeItem) {
+						heldItem.shrink(1);
+					}
+				} else {
 					tet.takeItem();
+				}
+
+					
 			}
 		}
 				

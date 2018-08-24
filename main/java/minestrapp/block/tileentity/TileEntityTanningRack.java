@@ -20,6 +20,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public int angle;
 	
 	public boolean isTanning = false;
+	public boolean canProgress = true;
 	private int ticks = 0;
 	private int secondsToTan = 5;
 	
@@ -32,17 +33,22 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 			if(this.isTanning)
 			{
 				TannerRecipe recipe = this.getRecipe();
-				
+				this.setCanProgress(true);
 				if(recipe == null)
 					this.isTanning = false;
 				else
 				{
-					boolean progress = true;
 					
-					if(recipe.sun && (!this.world.isDaytime() || !this.world.canSeeSky(this.pos)))
-						progress = false;
+					if(!this.world.isRemote) {
+						if(recipe.sun && (!this.world.isDaytime() || this.world.canSeeSky(this.getPos()))) {
+							this.setCanProgress(false);
+						}
+					}
 					
-					if(progress)
+					
+					System.out.println(this.canProgress);
+					
+					if(this.canProgress)
 					{
 						this.ticks++;
 					
@@ -57,6 +63,13 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 				}
 			}
 		
+	}
+	
+	public void setCanProgress(boolean progress) {
+		if(this.canProgress != progress) {
+			this.canProgress = progress;
+			this.markDirty();
+		}
 	}
 	
 	public boolean tryToAddItem(ItemStack stack, int angle)
@@ -104,6 +117,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		super.readFromNBT(compound);
 		this.angle = compound.getInteger("angle");
 		this.isTanning = compound.getBoolean("tanning");
+		this.canProgress = compound.getBoolean("progress");
 		ItemStackHelper.loadAllItems(compound, this.hide);
 	}
 	
@@ -113,6 +127,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		super.writeToNBT(compound);
 		compound.setInteger("angle", this.angle);
 		compound.setBoolean("tanning", this.isTanning);
+		compound.setBoolean("progress", this.canProgress);
 		ItemStackHelper.saveAllItems(compound, this.hide);
 		return compound;
 	}
