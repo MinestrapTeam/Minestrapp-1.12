@@ -78,7 +78,6 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 
         i = MathHelper.clamp(i, 0, 15);
         
-        System.out.println(i);
         return i;
 	}
 	
