@@ -50,11 +50,12 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class MEventHandler
 {
 	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();

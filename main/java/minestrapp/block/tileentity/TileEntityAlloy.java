@@ -1,7 +1,6 @@
 package minestrapp.block.tileentity;
 
 import minestrapp.block.BlockAlloy;
-import minestrapp.container.ContainerAlloy;
 import minestrapp.crafting.AlloyRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -10,13 +9,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemBoat;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemHoe;
@@ -24,7 +21,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -36,6 +32,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 
 public class TileEntityAlloy extends TileEntityLockable implements ISidedInventory, ITickable
 {

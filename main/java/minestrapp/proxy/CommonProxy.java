@@ -79,9 +79,6 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPlate"));
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
-		
-		MinecraftForge.EVENT_BUS.register(new MEventHandler());
-		MinecraftForge.EVENT_BUS.register(new MPotions());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

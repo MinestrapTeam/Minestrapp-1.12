@@ -7,6 +7,7 @@ import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import mezz.jei.util.Translator;
 import minestrapp.Minestrapp5;
+import net.minecraft.client.Minecraft;
 
 public abstract class MinestrappRecipeCategory<T extends IRecipeWrapper> implements IRecipeCategory<T>{
 

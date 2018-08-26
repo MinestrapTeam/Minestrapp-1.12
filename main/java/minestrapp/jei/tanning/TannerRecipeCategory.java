@@ -23,7 +23,8 @@ public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeW
 	}
 	
 	private static final int input = 0;
-	private static final int output = 1;
+	private static final int tool = 1;
+	private static final int output = 2;
 
 	@Override
 	public String getUid() {
@@ -34,6 +35,9 @@ public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeW
 	public void setRecipe(IRecipeLayout recipeLayout, TannerRecipeWrapper recipeWrapper, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 		guiItemStacks.init(input, true, 16, 25);
+		guiItemStacks.set(input, ingredients.getInputs(ItemStack.class).get(0));
+		guiItemStacks.init(tool, true, 43, 1);
+		guiItemStacks.set(input, ingredients.getInputs(ItemStack.class).get(1));
 		guiItemStacks.init(output, false, 71, 25);
 		
 		guiItemStacks.set(ingredients);
