@@ -7,6 +7,7 @@ import minestrapp.crafting.TannerRecipes.TannerRecipe;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -20,10 +21,11 @@ import net.minecraft.world.EnumSkyBlock;
 public class TileEntityTanningRack extends TileEntity implements ITickable{
 
 	public NonNullList<ItemStack> hide = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
-	public int angle;
+	private int angle;
 	
 	public boolean isTanning = false;
 	public boolean canProgress = true;
+	public ItemStack lastToolUsed = ItemStack.EMPTY;
 	private int ticks = 0;
 	private int secondsToTan = 5;
 	
@@ -34,7 +36,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 				this.isTanning = false;
 			if(this.isTanning)
 			{
-				TannerRecipe recipe = this.getRecipe();
+				TannerRecipe recipe = this.getRecipe(lastToolUsed);
 				this.setCanProgress(true);
 				if(recipe == null)
 					this.isTanning = false;
@@ -100,7 +102,18 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	{
 		if(!this.getWorld().isRemote)
 		{
-			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), this.hide.get(0)));
+			double xOffset = 0.5D;
+			double zOffset = 0.5D;
+			
+			if(this.angle == 0)
+				zOffset = 1D;
+			else if(this.angle == 90)
+				xOffset = 0D;
+			else if(this.angle == 180)
+				zOffset = 0D;
+			else
+				xOffset = 1D;
+			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + xOffset, this.getPos().getY() + 0.25D, this.getPos().getZ() + zOffset, this.hide.get(0)));
 			this.isTanning = false;
 		}
 		this.hide.set(0, ItemStack.EMPTY);
@@ -111,18 +124,23 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		return !this.hide.get(0).isEmpty();
 	}
 	
-	public TannerRecipe getRecipe()
+	public TannerRecipe getRecipe(ItemStack tool)
 	{
         for(Map.Entry<ItemStack, TannerRecipe> entry: TannerRecipes.instance.recipes.entrySet())
         {
             TannerRecipe recipe = entry.getValue();
-            if(ItemStack.areItemStacksEqual(this.hide.get(0), recipe.input))
+            if(ItemStack.areItemStacksEqual(this.hide.get(0), recipe.input) && tool != null && ItemStack.areItemStacksEqual(recipe.tool, new ItemStack(tool.getItem(), 1, tool.getMetadata())))
             {
                 return recipe;
             }
         }
         return null;
     }
+	
+	public int getAngle()
+	{
+		return this.angle;
+	}
 	
 	@Override
 	public void readFromNBT(NBTTagCompound compound)
@@ -131,6 +149,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		this.angle = compound.getInteger("angle");
 		this.isTanning = compound.getBoolean("tanning");
 		this.canProgress = compound.getBoolean("progress");
+		this.lastToolUsed = new ItemStack(Item.getItemById(compound.getInteger("lastToolID")), 1, compound.getInteger("lastToolMeta"));
 		ItemStackHelper.loadAllItems(compound, this.hide);
 	}
 	
@@ -141,6 +160,8 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 		compound.setInteger("angle", this.angle);
 		compound.setBoolean("tanning", this.isTanning);
 		compound.setBoolean("progress", this.canProgress);
+		compound.setInteger("lastToolID", Item.getIdFromItem(this.lastToolUsed.getItem()));
+		compound.setInteger("lastToolMeta", this.lastToolUsed.getMetadata());
 		ItemStackHelper.saveAllItems(compound, this.hide);
 		return compound;
 	}

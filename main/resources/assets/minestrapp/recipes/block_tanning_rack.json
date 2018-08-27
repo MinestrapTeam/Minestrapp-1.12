@@ -1,0 +1,24 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ppp",
+        "srs",
+        "ppp"
+    ],
+    "key": { 
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+        },
+        "r": {
+            "item": "minestrapp:rope"
+        }
+     },
+     "result": {
+        "item": "minestrapp:tanning_rack"
+     } 
+}

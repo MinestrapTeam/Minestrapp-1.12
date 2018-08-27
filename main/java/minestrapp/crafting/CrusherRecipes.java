@@ -82,6 +82,9 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.CLAY), new ItemStack(Items.CLAY_BALL, 4), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.GRAVEL), new ItemStack(Blocks.SAND, 1, 0), new ItemStack(Items.FLINT), 12, 0.05F);
 		
+		//Wood
+		this.addCrusherRecipe(new ItemStack(Items.STICK), new ItemStack(MItems.sawdust), new ItemStack(MItems.sawdust), 10, 0.05F);
+		
 		//Snow & Ice
 		this.addCrusherRecipe(new ItemStack(Blocks.SNOW_LAYER), new ItemStack(Items.SNOWBALL, 1), new ItemStack(Items.SNOWBALL, 1), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SNOW), new ItemStack(Blocks.SNOW_LAYER, 2), new ItemStack(Items.SNOWBALL, 1), 35, 0.05F);

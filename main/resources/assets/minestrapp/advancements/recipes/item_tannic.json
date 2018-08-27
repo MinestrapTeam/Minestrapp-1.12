@@ -1,0 +1,91 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_tannin_poor_1",
+        "minestrapp:item_tannin_normal_1",
+        "minestrapp:item_tannin_normal_2",
+        "minestrapp:item_tannin_normal_3",
+        "minestrapp:item_tannin_fine_1",
+        "minestrapp:item_tannin_fine_2",
+        "minestrapp:item_tannin_fine_3",
+        "minestrapp:item_tannin_fine_4",
+        "minestrapp:item_tannin_fine_5",
+        "minestrapp:item_tannin_fine_6",
+        "minestrapp:item_tannin_fine_7",
+        "minestrapp:item_tannin_fine_8",
+        "minestrapp:item_tannin_fine_9"
+    ]
+  },
+  "criteria": {
+    "has_rabbit_hide": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:rabbit_hide"
+          }
+        ]
+      }
+    },
+    "has_cow_hide": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minecraft:leather"
+          }
+        ]
+      }
+    },
+    "has_horse_hide": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mob_loot",
+            "data": 3
+          }
+        ]
+      }
+    },
+      "has_pig_hide": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mob_loot",
+            "data": 4
+          }
+        ]
+      }
+    },
+      "has_wolf_hide": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_mob_loot",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_tannin_poor_1"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rabbit_hide",
+        "has_cow_hide",
+        "has_horse_hide",
+        "has_pig_hide",
+        "has_wolf_hide",
+      "has_the_recipe"
+    ]
+  ]
+}

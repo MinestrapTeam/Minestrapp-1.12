@@ -135,6 +135,11 @@ public class MDagger extends Item
     {
         return this.material.toString();
     }
+    
+    public int getToolMaterialHarvestLevel()
+    {
+    	return this.material.getHarvestLevel();
+    }
 
     /**
      * Return whether this item is repairable in an anvil.

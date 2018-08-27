@@ -59,7 +59,10 @@ public class MItems
 	public static Item door_charwood;
 	
 	public static Item natural_ingredients;
+	public static Item sawdust;
 	public static Item mob_loot;
+	public static Item leather;
+	public static Item tannic;
 	
 	public static Item mud_ball;
 	public static Item chunks;
@@ -274,6 +277,13 @@ public class MItems
 	public static Item salted_mutton;
 	public static Item salted_steak;
 	public static Item salted_porkchop;
+	public static Item chicken_jerky;
+	public static Item rabbit_jerky;
+	public static Item mutton_jerky;
+	public static Item beef_jerky;
+	public static Item pork_jerky;
+	public static Item cod_jerky;
+	public static Item salmon_jerky;
 	public static Item squid_tentacle;
 	public static Item calamari;
 	public static Item sushi;
@@ -318,8 +328,13 @@ public class MItems
 		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
-		//0=Animal Bones, 1=Tallow, 2=Wing Sinew
-		register(mob_loot = new ItemMetaBase("m_mob_loot", 3).setCreativeTab(MTabs.ingredients));
+		register(sawdust = new ItemBase("sawdust").setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 7).setCreativeTab(MTabs.ingredients));
+		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
+		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
+		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic
+		register(tannic = new ItemMetaBase("tannic", 3).setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
@@ -545,6 +560,16 @@ public class MItems
 		register(salted_rabbit = new MItemsFood(7, 0.5714F, true, "salted_rabbit"));
 		register(salted_steak = new MItemsFood(10, 0.74F, true, "salted_steak"));
 		register(salted_porkchop = new MItemsFood(10, 0.74F, true, "salted_porkchop"));
+		
+		//Jerky: hunger = cooked food hunger value - 2, sat. = 2 x cooked food effective sat. value.
+		register(chicken_jerky = new MItemsFood(4, 1.8F, true, "chicken_jerky"));
+		register(rabbit_jerky = new MItemsFood(3, 2F, true, "rabbit_jerky"));
+		register(mutton_jerky = new MItemsFood(4, 2.4F, true, "mutton_jerky"));
+		register(beef_jerky = new MItemsFood(6, 2.13F, true, "beef_jerky"));
+		register(pork_jerky = new MItemsFood(6, 2.13F, true, "pork_jerky"));
+		register(cod_jerky = new MItemsFood(3, 2F, true, "cod_jerky"));
+		register(salmon_jerky = new MItemsFood(4, 2.4F, true, "salmon_jerky"));
+		
 		register(squid_tentacle = new MItemsFood(2, 0.075F, false, "squid_tentacle").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 240, 0), 0.4F));
 		register(calamari = new MItemsFood(5, 0.78F, false, "calamari"));
 		register(sushi = new MItemsFood(11, 0.7273F, false, "sushi"));

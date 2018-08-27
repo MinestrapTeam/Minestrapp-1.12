@@ -8,7 +8,7 @@
     "key": {
         "l": {
             "type": "forge:ore_dict",
-            "ore": "leather"
+            "ore": "leatherFine"
         },
         "s": {
             "item": "minestrapp:m_mob_loot",

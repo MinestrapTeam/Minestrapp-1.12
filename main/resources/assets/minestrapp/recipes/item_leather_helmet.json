@@ -1,0 +1,17 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xxx",
+        "x x"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "leatherSuede"
+        }
+     },
+     "result": {
+        "item": "minecraft:leather_helmet",
+        "data": 0
+     } 
+}

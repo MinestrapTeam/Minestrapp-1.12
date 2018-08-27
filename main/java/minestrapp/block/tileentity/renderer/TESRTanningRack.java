@@ -22,20 +22,20 @@ public class TESRTanningRack extends TileEntitySpecialRenderer<TileEntityTanning
 		item.hoverStart = 0;
 
 		GlStateManager.pushMatrix();
-		if(te.angle == 0) {
+		if(te.getAngle() == 0) {
 			GlStateManager.translate(x+.5, y-.4, z+.45);
 		}
-		if(te.angle == 90) {
+		if(te.getAngle() == 90) {
 			GlStateManager.translate(x+.55, y-.4, z+.5);
 		}
-		if(te.angle == 180) {
+		if(te.getAngle() == 180) {
 			GlStateManager.translate(x+.5, y-.4, z+.55);
 		}
-		if(te.angle == 270) {
-			GlStateManager.translate(x+.45, y-.4, z+.45);
+		if(te.getAngle() == 270) {
+			GlStateManager.translate(x+.45, y-.4, z+.5);
 		}
 		
-		GlStateManager.rotate(te.angle, 0, 1, 0);
+		GlStateManager.rotate(te.getAngle(), 0, 1, 0);
 		GlStateManager.scale(2F, 2F, 2F);
 		Minecraft.getMinecraft().getRenderManager().renderEntity(item, 0, 0, 0, 0, 0, true);
 		GlStateManager.popMatrix();

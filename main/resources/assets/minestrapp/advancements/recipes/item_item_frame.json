@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_item_frame"
+    ]
+  },
+  "criteria": {
+    "has_leather": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_leather",
+            "data": 13 
+          }
+        ]
+      }
+    },
+    "has_fine_leather": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_leather",
+            "data": 14 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_item_frame"
+      }
+    }
+  },
+  "requirements": [
+    [
+        "has_leather",
+        "has_fine_leather",
+      "has_the_recipe"
+    ]
+  ]
+}

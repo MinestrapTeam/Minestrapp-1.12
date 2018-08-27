@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "sss",
+        "sls",
+        "sss"
+    ],
+    "key": { 
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "l": {
+            "type": "forge:ore_dict",
+            "ore": "leatherNormal"
+        }
+     },
+     "result": {
+        "item": "minecraft:item_frame"
+     } 
+}

@@ -93,6 +93,12 @@ public class MEventHandler
 	    	ResourceLocation diamondHoe = new ResourceLocation("minecraft:diamond_hoe");
 	    	ResourceLocation diamondSword = new ResourceLocation("minecraft:diamond_sword");
 	    	ResourceLocation endCrystal = new ResourceLocation("minecraft:end_crystal");
+	    	ResourceLocation leatherHelmet = new ResourceLocation("minecraft:leather_helmet");
+	    	ResourceLocation leatherChestplate = new ResourceLocation("minecraft:leather_chestplate");
+	    	ResourceLocation leatherLeggings = new ResourceLocation("minecraft:leather_leggings");
+	    	ResourceLocation leatherBoots = new ResourceLocation("minecraft:leather_boots");
+	    	ResourceLocation itemFrame = new ResourceLocation("minecraft:item_frame");
+	    	ResourceLocation book = new ResourceLocation("minecraft:book");
 	
 	    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 	        
@@ -117,6 +123,12 @@ public class MEventHandler
 	        modRegistry.remove(diamondHoe);
 	        modRegistry.remove(diamondSword);
 	        modRegistry.remove(endCrystal);
+	        modRegistry.remove(leatherHelmet);
+	        modRegistry.remove(leatherChestplate);
+	        modRegistry.remove(leatherLeggings);
+	        modRegistry.remove(leatherBoots);
+	        modRegistry.remove(itemFrame);
+	        modRegistry.remove(book);
 		}
     }
 	
@@ -351,8 +363,11 @@ public class MEventHandler
 		{
 			LootEntry fat_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/fat"), 1, 1, new LootCondition[0], "fat_entry");
 			LootPool fat_pool = new LootPool(new LootEntry[] {fat_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "fat_pool");
+			LootEntry pig_skin_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/pig_skin"), 1, 1, new LootCondition[0], "pig_skin_entry");
+			LootPool pig_skin_pool = new LootPool(new LootEntry[] {pig_skin_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "pig_skin_pool");
 
 			event.getTable().addPool(fat_pool);
+			event.getTable().addPool(pig_skin_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_COW) || event.getName().equals(LootTableList.ENTITIES_MUSHROOM_COW))
@@ -365,10 +380,27 @@ public class MEventHandler
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE) || event.getName().equals(LootTableList.ENTITIES_LLAMA))
 		{
+			event.getTable().removePool("main");
+			
+			LootEntry horse_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/horse/horse_hide"), 1, 1, new LootCondition[0], "horse_hide_entry");
+			LootPool horse_hide_pool = new LootPool(new LootEntry[] {horse_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "horse_hide_pool");
+			
+			event.getTable().addPool(horse_hide_pool);
 			event.getTable().addPool(animal_bones_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_WOLF))
+		{
+			LootEntry wolf_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/wolf/wolf_hide"), 1, 1, new LootCondition[0], "wolf_hide_entry");
+			LootPool wolf_hide_pool = new LootPool(new LootEntry[] {wolf_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "wolf_hide_pool");
+			
+			event.getTable().addPool(wolf_hide_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_POLAR_BEAR))
 		{
+			LootEntry polar_bear_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/polar_bear/polar_bear_hide"), 1, 1, new LootCondition[0], "polar_bear_hide_entry");
+			LootPool polar_bear_hide_pool = new LootPool(new LootEntry[] {polar_bear_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "polar_bear_hide_pool");
+			
+			event.getTable().addPool(polar_bear_hide_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_SQUID))

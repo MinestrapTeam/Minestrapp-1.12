@@ -689,11 +689,39 @@ item.gem_soul.name=Soul Gem
 item.m_natural_item_0.name=Grass Fibers
 item.m_natural_item_1.name=Mana Leaf
 item.m_natural_item_2.name=Clutchthorn Fibers
+item.sawdust.name=Sawdust
 
 ## Mob Loot ##
 item.m_mob_loot_0.name=Animal Bones
 item.m_mob_loot_1.name=Tallow
 item.m_mob_loot_2.name=Wing Sinew
+item.m_mob_loot_3.name=Horse Hide
+item.m_mob_loot_4.name=Pig Skin
+item.m_mob_loot_5.name=Wolf Hide
+item.m_mob_loot_6.name=Polar Bear Pelt
+
+## Leather ##
+item.m_leather_0.name=Cured Rabbit Hide
+item.m_leather_1.name=Cured Cow Hide
+item.m_leather_2.name=Cured Horse Hide
+item.m_leather_3.name=Cured Pig Skin
+item.m_leather_4.name=Cured Wolf Hide
+item.m_leather_5.name=Cured Flesh
+item.m_leather_6.name=Cured Rotten Flesh
+item.m_leather_7.name=Poorly Scudded Hide
+item.m_leather_8.name=Small Scudded Hide
+item.m_leather_9.name=Scudded Hide
+item.m_leather_10.name=Large Scudded Hide
+item.m_leather_11.name=Botched Leather
+item.m_leather_12.name=Suede
+item.m_leather_13.name=Leather
+item.m_leather_14.name=Fine Leather
+item.m_leather_15.name=Cured Polar Bear Pelt
+
+## Tannic ##
+item.tannic_0.name=Poor Tannic
+item.tannic_1.name=Tannic
+item.tannic_2.name=Fine Tannic
 
 ##Bricks
 item.m_bricks_0.name=Mud Brick
@@ -920,6 +948,13 @@ item.salted_rabbit.name=Salted Rabbit
 item.salted_mutton.name=Salted Mutton
 item.salted_steak.name=Salted Steak
 item.salted_porkchop.name=Salted Porkchop
+item.chicken_jerky.name=Chicken Jerky
+item.rabbit_jerky.name=Rabbit Jerky
+item.mutton_jerky.name=Mutton Jerky
+item.beef_jerky.name=Beef Jerky
+item.pork_jerky.name=Pork Jerky
+item.cod_jerky.name=Cod Jerky
+item.salmon_jerky.name=Salmon Jerky
 item.squid_tentacle.name=Squid Tentacle
 item.calamari.name=Calamari
 item.sushi.name=Sushi
@@ -962,6 +997,9 @@ itemGroup.UtilityBlocks=Minestrapp Utility Blocks
 itemGroup.Tools=Minestrapp Tools
 itemGroup.Combat=Minestrapp Combat
 
+
+##### Vanilla #####
+item.leather.name=Cow Hide
 item.brick.name=Clay Brick
 item.cauldron.name=Iron Cauldron
 tile.brick.name=Clay Bricks

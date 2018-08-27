@@ -1,0 +1,29 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "tannin",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "tanninNormal"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "tanninNormal"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "tanninNormal"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "tanninNormal"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:tannic",
+         "data": 2
+     }  
+}

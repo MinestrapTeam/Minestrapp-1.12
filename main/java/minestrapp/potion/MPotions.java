@@ -36,11 +36,12 @@ public class MPotions {
 	private static PotionType  harmonyType = new PotionType("harmony", new PotionEffect(harmony, 1800));
 	
 	public static void addBrewingRecipe() {
-		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MBlocks.infected_mushroom).getItem(), infectionType);
+		PotionHelper.addMix(PotionTypes.AWKWARD, new ItemStack(MBlocks.infected_mushroom).getItem(), infectionType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MBlocks.blue_glowshroom).getItem(), hydrophobiaType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.glow_paste).getItem(), climbingType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.mob_loot, 1, 3).getItem(), restorationType);
 		PotionHelper.addMix(PotionTypes.WATER, new ItemStack(MItems.bread_voidberry_salad).getItem(), aggressionType);
+		PotionHelper.addMix(PotionTypes.AWKWARD, new ItemStack(MItems.mob_loot, 1, 3).getItem(), harmonyType);
 		
 		PotionHelper.addMix(hydrophobiaType, Items.GLOWSTONE_DUST, hydrophobiaStrongType);
 	}
