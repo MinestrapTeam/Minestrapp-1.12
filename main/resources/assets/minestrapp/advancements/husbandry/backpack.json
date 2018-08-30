@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:backpack"
+        },
+        "title": {
+            "translate": "advancements.husbandry.backpack.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.backpack.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/fine_leather",
+    "criteria": {
+        "backpack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:backpack"
+                    }
+                ]
+            }
+        }
+    }
+}

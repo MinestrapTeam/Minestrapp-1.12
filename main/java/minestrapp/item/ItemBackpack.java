@@ -36,9 +36,9 @@ public class ItemBackpack extends ItemBase{
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-		ItemBackpack item = (ItemBackpack) player.getHeldItem(hand).getItem();
-
-		if (!world.isRemote) {
+		//ItemBackpack item = (ItemBackpack) player.getHeldItem(hand).getItem();
+		
+		if (!world.isRemote && hand != EnumHand.OFF_HAND) {
 			if (!player.isSneaking()) {
 					player.openGui(Minestrapp5.instance, MGuiHandler.BACKPACK, world, (int) player.posX, (int) player.posY, (int) player.posZ);
 			} else {

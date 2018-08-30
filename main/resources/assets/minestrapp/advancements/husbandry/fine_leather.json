@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:m_leather",
+            "data": 14
+        },
+        "title": {
+            "translate": "advancements.husbandry.fine_leather.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.fine_leather.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/tanning_rack",
+    "criteria": {
+        "leather": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_leather",
+                        "data": 14
+                    }
+                ]
+            }
+        }
+    }
+}

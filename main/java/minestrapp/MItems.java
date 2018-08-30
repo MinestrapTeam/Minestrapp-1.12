@@ -61,6 +61,7 @@ public class MItems
 	public static Item natural_ingredients;
 	public static Item sawdust;
 	public static Item mob_loot;
+	public static Item effervexcense;
 	public static Item leather;
 	public static Item tannic;
 	
@@ -329,8 +330,9 @@ public class MItems
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setCreativeTab(MTabs.ingredients));
-		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide
-		register(mob_loot = new ItemMetaBase("m_mob_loot", 7).setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 9).setCreativeTab(MTabs.ingredients));
+		register(effervexcense = new ItemBase("effervexcense").setCreativeTab(MTabs.ingredients));
 		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
 		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
 		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic

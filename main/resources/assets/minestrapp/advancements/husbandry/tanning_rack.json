@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:tanning_rack"
+        },
+        "title": {
+            "translate": "advancements.husbandry.tanning.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.tanning.description"
+        }
+    },
+    "parent": "minecraft:husbandry/breed_an_animal",
+    "criteria": {
+        "tanning_rack": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:tanning_rack"
+                    }
+                ]
+            }
+        }
+    }
+}

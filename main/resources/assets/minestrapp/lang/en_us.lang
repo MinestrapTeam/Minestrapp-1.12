@@ -699,6 +699,9 @@ item.m_mob_loot_3.name=Horse Hide
 item.m_mob_loot_4.name=Pig Skin
 item.m_mob_loot_5.name=Wolf Hide
 item.m_mob_loot_6.name=Polar Bear Pelt
+item.m_mob_loot_7.name=Sheep Hoof
+item.m_mob_loot_8.name=Spider Leg
+item.effervexcense.name=Effervexcense
 
 ## Leather ##
 item.m_leather_0.name=Cured Rabbit Hide
@@ -1116,6 +1119,14 @@ advancements.foraging.obtain_bushes.description=Collect every type of bush. EVER
 
 advancements.husbandry.salted_meat.title=Y So Salty
 advancements.husbandry.salted_meat.description=Alloy some raw meat with salt to enhance its flavor.
+advancements.husbandry.tanning.title=A Nice Rack
+advancements.husbandry.tanning.description=Craft a tanning rack to turn raw hides into fine leathers.
+advancements.husbandry.jerky.title=What a Jerk!
+advancements.husbandry.jerky.description=Salt & dry some meat into saturating jerky.
+advancements.husbandry.fine_leather.title=A Rockin' Tan
+advancements.husbandry.fine_leather.description=Successfully tan a piece of fine leather.
+advancements.husbandry.backpack.title=Too Many Items
+advancements.husbandry.backpack.description=Craft a backpack to further enable your own hoarding problem.
 advancements.husbandry.tallow.title=Artisinal Lard
 advancements.husbandry.tallow.description=Smelt some fat into tallow.
 advancements.husbandry.candle.title=Setting the Mood

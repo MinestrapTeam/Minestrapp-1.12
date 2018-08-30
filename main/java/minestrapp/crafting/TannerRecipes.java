@@ -23,13 +23,13 @@ public class TannerRecipes {
 	public TannerRecipes()
 	{
 		//Jerky
-		this.addRecipe(new ItemStack(Items.CHICKEN), new ItemStack(MItems.chicken_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.RABBIT), new ItemStack(MItems.rabbit_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.MUTTON), new ItemStack(MItems.mutton_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.BEEF), new ItemStack(MItems.beef_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.PORKCHOP), new ItemStack(MItems.pork_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.FISH, 1, 0), new ItemStack(MItems.cod_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
-		this.addRecipe(new ItemStack(Items.FISH, 1, 1), new ItemStack(MItems.salmon_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.CHICKEN), new ItemStack(MItems.chicken_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.RABBIT), new ItemStack(MItems.rabbit_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.MUTTON), new ItemStack(MItems.mutton_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.BEEF), new ItemStack(MItems.beef_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.PORKCHOP), new ItemStack(MItems.pork_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.FISH, 1, 0), new ItemStack(MItems.cod_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(Items.FISH, 1, 1), new ItemStack(MItems.salmon_jerky), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, true, Item.getIdFromItem(MItems.salt), 0);
 		
 		//Curing
 		this.addRecipe(new ItemStack(Items.RABBIT_HIDE), new ItemStack(MItems.leather, 1, 0), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);

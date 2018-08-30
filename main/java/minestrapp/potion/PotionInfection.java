@@ -31,11 +31,17 @@ public class PotionInfection extends MPotion{
 		if(blockBelow == Blocks.GRASS.getDefaultState()) {
 			float mushroomSpawnChance = rand.nextFloat();
 			float mushroomTypeChance = rand.nextFloat();
-			if(mushroomSpawnChance >= 0.7F) {
-				if(mushroomTypeChance >= 0.6F) {
+			if(mushroomSpawnChance >= 0.75F) {
+				if(mushroomTypeChance >= 0.65F) {
 					world.setBlockState(living.getPosition(), Blocks.RED_MUSHROOM.getDefaultState());
-				} else if(mushroomTypeChance <= 0.4){
+				} else if(mushroomTypeChance >= 0.3F){
 					world.setBlockState(living.getPosition(), Blocks.BROWN_MUSHROOM.getDefaultState());
+				} else if(mushroomTypeChance >= 0.22F){
+					world.setBlockState(living.getPosition(), MBlocks.blue_glowshroom.getDefaultState());
+				} else if(mushroomTypeChance >= 0.14F){
+					world.setBlockState(living.getPosition(), MBlocks.purple_glowshroom.getDefaultState());
+				} else if(mushroomTypeChance >= 0.06F){
+					world.setBlockState(living.getPosition(), MBlocks.green_glowshroom.getDefaultState());
 				} else {
 					world.setBlockState(living.getPosition(), MBlocks.infected_mushroom.getDefaultState());
 				}

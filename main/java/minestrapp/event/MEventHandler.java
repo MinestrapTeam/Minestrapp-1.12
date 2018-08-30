@@ -55,7 +55,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class MEventHandler
 {
 	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
@@ -376,6 +376,10 @@ public class MEventHandler
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_SHEEP))
 		{
+			LootEntry sheep_hoof_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/sheep/sheep_hoof"), 1, 1, new LootCondition[0], "sheep_hoof_entry");
+			LootPool sheep_hoof_pool = new LootPool(new LootEntry[] {sheep_hoof_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sheep_hoof_pool");
+			
+			event.getTable().addPool(sheep_hoof_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE) || event.getName().equals(LootTableList.ENTITIES_LLAMA))
@@ -410,6 +414,13 @@ public class MEventHandler
 
 			event.getTable().addPool(tentacle_pool);
 		}
+		else if(event.getName().equals(LootTableList.ENTITIES_SPIDER) || event.getName().equals(LootTableList.ENTITIES_CAVE_SPIDER))
+		{
+			LootEntry spider_leg_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/spider/spider_leg"), 1, 1, new LootCondition[0], "spider_leg_entry");
+			LootPool spider_leg_pool = new LootPool(new LootEntry[] {spider_leg_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "spider_leg_pool");
+			
+			event.getTable().addPool(spider_leg_pool);
+		}
 		else if(event.getName().equals(LootTableList.ENTITIES_VILLAGER) || event.getName().equals(LootTableList.ENTITIES_VINDICATION_ILLAGER) || event.getName().equals(LootTableList.ENTITIES_EVOCATION_ILLAGER))
 		{
 			event.getTable().addPool(flesh_pool);
@@ -435,6 +446,13 @@ public class MEventHandler
 			LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
 			
 			event.getTable().addPool(sinew_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_VEX))
+		{
+			LootEntry effervexcense_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/vex/effervexcense"), 1, 1, new LootCondition[0], "effervexcense_entry");
+			LootPool effervexcense_pool = new LootPool(new LootEntry[] {effervexcense_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "effervexcense_pool");
+			
+			event.getTable().addPool(effervexcense_pool);
 		}
 		
 		if(calendar.get(2) + 1 == 10 && calendar.get(5) >= 15 && calendar.get(5) <= 31)

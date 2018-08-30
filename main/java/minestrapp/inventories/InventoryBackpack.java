@@ -2,9 +2,12 @@ package minestrapp.inventories;
 
 import minestrapp.MItems;
 import minestrapp.item.ItemBackpack;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.ItemShulkerBox;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -79,7 +82,7 @@ public class InventoryBackpack implements IInventory {
 
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack itemstack) {
-		return itemstack.getItem() != MItems.backpack;
+		return itemstack.getItem() instanceof ItemBackpack == false && itemstack.getItem() instanceof ItemShulkerBox == false;
 	}
 
 	public void readFromNBT(NBTTagCompound compound) {

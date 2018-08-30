@@ -13,11 +13,15 @@ public class GuiBackpack extends GuiContainer{
 	private static final ResourceLocation textureBackpack = new ResourceLocation(Minestrapp5.MODID, "textures/gui/backpack.png");
 	private static final ResourceLocation textureSatchel = new ResourceLocation(Minestrapp5.MODID, "textures/gui/satchel.png");
 	private InventoryBackpack backpack;
+	private int rows;
 
 	public GuiBackpack(ContainerBackpack backpack) {
 		super(backpack);
 		this.backpack = backpack.inventory;
-		this.ySize = 186;
+		this.rows = 1;
+		if(this.backpack.type == 1)
+			this.rows = 2;
+		this.ySize = 115 + (this.rows * 18);
 	}
 	
 	@Override

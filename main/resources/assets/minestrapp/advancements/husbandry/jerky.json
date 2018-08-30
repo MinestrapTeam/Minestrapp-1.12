@@ -1,0 +1,97 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:beef_jerky"
+        },
+        "title": {
+            "translate": "advancements.husbandry.jerky.title"
+        },
+        "description": {
+            "translate": "advancements.husbandry.jerky.description"
+        }
+    },
+    "parent": "minestrapp:husbandry/tanning_rack",
+    "criteria": {
+        "chicken": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:chicken_jerky"
+                    }
+                ]
+            }
+        },
+        "mutton": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mutton_jerky"
+                    }
+                ]
+            }
+        },
+        "rabbit": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:rabbit_jerky"
+                    }
+                ]
+            }
+        },
+        "steak": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:beef_jerky"
+                    }
+                ]
+            }
+        },
+        "porkchop": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:pork_jerky"
+                    }
+                ]
+            }
+        },
+        "cod": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:cod_jerky"
+                    }
+                ]
+            }
+        },
+        "salmon": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:salmon_jerky"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "chicken",
+            "mutton",
+            "rabbit",
+            "steak",
+            "porkchop",
+            "cod",
+            "salmon"
+        ]
+    ]
+}
