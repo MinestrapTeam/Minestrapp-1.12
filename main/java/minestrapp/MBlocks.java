@@ -455,6 +455,7 @@ public class MBlocks
 		register(blue_glowshroom = new BlockGlowshroom("blue_glowshroom").setLightLevel(0.6F));
 		register(green_glowshroom = new BlockGlowshroom("green_glowshroom").setLightLevel(0.8F));
 		register(purple_glowshroom = new BlockGlowshroom("purple_glowshroom").setLightLevel(0.7F));
+		register(infected_mushroom = new BlockInfectedMushroom("infected_mushroom").setLightLevel(0.5F));
 		register(blue_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.BLUE, blue_glowshroom, "blue_glowshroom_block").setHardness(0.2F).setLightLevel(0.6F));
 		register(green_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.LIME, green_glowshroom, "green_glowshroom_block").setHardness(0.2F).setLightLevel(0.8F));
 		register(purple_glowshroom_block = new BlockMHugeMushroom(Material.WOOD, MapColor.PURPLE, purple_glowshroom, "purple_glowshroom_block").setHardness(0.2F).setLightLevel(0.7F));
@@ -473,7 +474,6 @@ public class MBlocks
 		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));
 		register(mite_hive_honeyed = new BlockEndermiteHiveHusk("mite_hive_honeyed", true).setLightLevel(0.5F));
 		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setCreativeTab(MTabs.environment));
-		register(infected_mushroom = new BlockInfectedMushroom("infected_mushroom"));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));

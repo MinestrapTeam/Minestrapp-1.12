@@ -67,12 +67,12 @@ public class BlockLightPaste extends BlockBase
 	@Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
-        return NULL_AABB;
+        return new AxisAlignedBB(0D, 0D, 0D, 0D, 0D, 0D);
     }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
-        return NULL_AABB;
+        return new AxisAlignedBB(0D, 0D, 0D, 0D, 0D, 0D);
     }
 	
 	public boolean isOpaqueCube(IBlockState state)

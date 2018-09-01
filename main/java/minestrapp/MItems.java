@@ -329,7 +329,7 @@ public class MItems
 		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
-		register(sawdust = new ItemBase("sawdust").setCreativeTab(MTabs.ingredients));
+		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg
 		register(mob_loot = new ItemMetaBase("m_mob_loot", 9).setCreativeTab(MTabs.ingredients));
 		register(effervexcense = new ItemBase("effervexcense").setCreativeTab(MTabs.ingredients));
@@ -357,7 +357,6 @@ public class MItems
 		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
 		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
-		//register(glow_paste = new ItemBase("glow_paste").setCreativeTab(MTabs.ingredients).setContainerItem(Items.GLASS_BOTTLE));
 		
 		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
@@ -609,7 +608,10 @@ public class MItems
 		((BlockMDoor) MBlocks.door_charwood).setDoorItem(door_charwood);
 		
 		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.plate_weave)).setBurnTime(100);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.basket)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.rope)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.tanning_rack)).setBurnTime(200);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.blackberry_bush)).setBurnTime(100);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.blueberry_bush)).setBurnTime(100);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.raspberry_bush)).setBurnTime(100);
@@ -623,6 +625,15 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.mossy_m_planks)).setBurnTime(400);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.fence)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.wood_slab_1)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.oak_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spruce_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.birch_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.jungle_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.acacia_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.dark_oak_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_plank_stairs)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_plank_stairs)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_plank_stairs)).setBurnTime(300);

@@ -24,14 +24,17 @@ public class TESRCrusher extends TileEntitySpecialRenderer<TileEntityCrusher>{
 		EntityItem item = new EntityItem(te.getWorld(), 0, 0, 0, renderItem);
 		item.hoverStart = 0;
 		GL11.glPushMatrix();
+		//North
 		if(te.itemAngel == 0) {
 			GlStateManager.translate(x+.5, y+.2,  z+.16);
-		} else if(te.itemAngel == 90) {
-			GlStateManager.translate(x+1, y+.2,  z+.5);
+		}
+		//South
+		else if(te.itemAngel == 90) {
+			GlStateManager.translate(x+.85, y+.2,  z+.49);
 		} else if(te.itemAngel == 180) {
-			GlStateManager.translate(x+.55, y+.2,  z+.85);
+			GlStateManager.translate(x+.51, y+.2,  z+.85);
 		} else if(te.itemAngel == 270) {
-			GlStateManager.translate(x+.1, y+.2,  z+.5);
+			GlStateManager.translate(x+.14, y+.2,  z+.5);
 		}
 		GlStateManager.rotate(90, 1, 0, 0);
 		GlStateManager.rotate(te.itemAngel, 0, 0, 1);

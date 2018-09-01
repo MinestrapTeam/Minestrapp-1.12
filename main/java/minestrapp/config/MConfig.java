@@ -57,6 +57,7 @@ public class MConfig
 	public static boolean generateBerryBushes;
 	public static boolean generateManaBushes;
 	public static boolean generateGlowshrooms;
+	public static boolean generateInfectedShrooms;
 	public static boolean generateGlowMoss;
 	public static boolean generateClutchthorn;
 	public static boolean generateTerracreep;
@@ -168,6 +169,8 @@ public class MConfig
 		registerProperty(propertyManaBushGen, CATEGORY_WORLDGEN, "generate_mana_bushes");
 		Property propertyGlowshroomGen = config.get(CATEGORY_WORLDGEN, "generate_glowshrooms", true);
 		registerProperty(propertyGlowshroomGen, CATEGORY_WORLDGEN, "generate_glowshrooms");
+		Property propertyInfectedShroomGen = config.get(CATEGORY_WORLDGEN, "generate_infected_shrooms", true);
+		registerProperty(propertyInfectedShroomGen, CATEGORY_WORLDGEN, "generate_infected_shrooms");
 		Property propertyGlowMossGen = config.get(CATEGORY_WORLDGEN, "generate_glow_moss", true);
 		registerProperty(propertyGlowMossGen, CATEGORY_WORLDGEN, "generate_glow_moss");
 		Property propertyClutchthornGen = config.get(CATEGORY_WORLDGEN, "generate_clutchthorn", true);
@@ -225,6 +228,7 @@ public class MConfig
 			generateBerryBushes = propertyBerryBushGen.getBoolean();
 			generateManaBushes = propertyManaBushGen.getBoolean();
 			generateGlowshrooms = propertyGlowshroomGen.getBoolean();
+			generateInfectedShrooms = propertyInfectedShroomGen.getBoolean();
 			generateGlowMoss = propertyGlowMossGen.getBoolean();
 			generateClutchthorn = propertyClutchthornGen.getBoolean();
 			generateTerracreep = propertyTerracreepGen.getBoolean();
@@ -267,6 +271,7 @@ public class MConfig
 		propertyBerryBushGen.set(generateBerryBushes);
 		propertyManaBushGen.set(generateManaBushes);
 		propertyGlowshroomGen.set(generateGlowshrooms);
+		propertyInfectedShroomGen.set(generateInfectedShrooms);
 		propertyGlowMossGen.set(generateGlowMoss);
 		propertyClutchthornGen.set(generateClutchthorn);
 		propertyTerracreepGen.set(generateTerracreep);

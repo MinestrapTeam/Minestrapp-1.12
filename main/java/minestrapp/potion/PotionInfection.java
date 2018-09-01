@@ -28,7 +28,7 @@ public class PotionInfection extends MPotion{
 		BlockPos blockPosBelow = living.getPosition().down();
 		IBlockState blockBelow = world.getBlockState(blockPosBelow);
 		
-		if(blockBelow == Blocks.GRASS.getDefaultState()) {
+		if(!world.isRemote && blockBelow == Blocks.GRASS.getDefaultState()) {
 			float mushroomSpawnChance = rand.nextFloat();
 			float mushroomTypeChance = rand.nextFloat();
 			if(mushroomSpawnChance >= 0.75F) {

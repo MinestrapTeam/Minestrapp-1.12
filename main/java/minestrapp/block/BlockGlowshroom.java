@@ -11,12 +11,15 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenBigMushroom;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockGlowshroom extends BlockBush implements IGrowable
 {
@@ -48,7 +51,7 @@ public class BlockGlowshroom extends BlockBush implements IGrowable
 	
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
-        if (pos.getY() >= 0 && pos.getY() < 256)
+        if (pos.getY() > 0 && pos.getY() < 256)
         {
             IBlockState iblockstate = worldIn.getBlockState(pos.down());
 

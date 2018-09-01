@@ -421,17 +421,19 @@ public class MWorldDecorator
 						}
 					}
 				}
-				
-				for(int i = 0 ; i < 5 ; i++) {
-					int posX = random.nextInt(16)+8;
-					int posY = 78 - random.nextInt(60);
-					int posZ = random.nextInt(16)+8;
-					
-					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-					if(MBlocks.infected_mushroom.canPlaceBlockAt(world, mossPos))
-					{
-						WorldGenBush infectedMushroomGen = new WorldGenBush((BlockBush)MBlocks.infected_mushroom);
-						infectedMushroomGen.generate(world, random, mossPos);
+				if(MConfig.generateInfectedShrooms)
+				{
+					for(int i = 0 ; i < 5 ; i++) {
+						int posX = random.nextInt(16)+8;
+						int posY = 100 - random.nextInt(40);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos infectedPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						if(MBlocks.infected_mushroom.canPlaceBlockAt(world, infectedPos))
+						{
+							WorldGenBush infectedMushroomGen = new WorldGenBush((BlockBush)MBlocks.infected_mushroom);
+							infectedMushroomGen.generate(world, random, infectedPos);
+						}
 					}
 				}
 			}

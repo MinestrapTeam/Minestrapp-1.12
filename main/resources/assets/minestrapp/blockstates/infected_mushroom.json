@@ -1,7 +1,11 @@
 {
     "variants": {
         "normal": [
-            { "model": "minestrapp:infected_mushroom" }
+            { "model": "minestrapp:infected_mushroom" },
+            { "model": "minestrapp:infected_mushroom_2" },
+            { "model": "minestrapp:infected_mushroom_3" },
+            { "model": "minestrapp:infected_mushroom_4" },
+            { "model": "minestrapp:infected_mushroom_5" }
         ]
     }
 }
