@@ -18,6 +18,10 @@ import minestrapp.crafting.FurnaceRecipes;
 import minestrapp.crafting.OreDictRegistry;
 import minestrapp.event.MEventHandler;
 import minestrapp.gui.MGuiHandler;
+import minestrapp.magic.MagicEventHandler;
+import minestrapp.magic.capability.MagicCapabilityManager;
+import minestrapp.magic.spells.SpellRegistry;
+import minestrapp.network.MagicUpdateMessage;
 import minestrapp.potion.MPotions;
 import minestrapp.worldgen.MOreGen;
 import net.minecraft.util.ResourceLocation;
@@ -27,14 +31,20 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class CommonProxy
 {
+	public static SimpleNetworkWrapper network;
+
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		MBlocks.init();
 		MItems.init();
+		SpellRegistry.init();
+		MagicCapabilityManager.preInit();
 		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
@@ -60,6 +70,10 @@ public class CommonProxy
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_library"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_blacksmith"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_woodland_mansion"));
+		
+		network = NetworkRegistry.INSTANCE.newSimpleChannel(Minestrapp5.MODID);
+		network.registerMessage(MagicUpdateMessage.CapsMessageHolder.class, MagicUpdateMessage.class, 1, Side.CLIENT);
+
 	}
 	
 	public void init(FMLInitializationEvent event)
@@ -82,6 +96,9 @@ public class CommonProxy
 		
 		MinecraftForge.EVENT_BUS.register(new MEventHandler());
 		MinecraftForge.EVENT_BUS.register(new MPotions());
+		//Magic stuff
+		MinecraftForge.EVENT_BUS.register(new MagicEventHandler());
+		MinecraftForge.EVENT_BUS.register(new MagicCapabilityManager());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

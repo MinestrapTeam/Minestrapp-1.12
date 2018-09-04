@@ -22,6 +22,8 @@ import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
+import minestrapp.item.magic.ItemManaPotion;
+import minestrapp.item.magic.ItemSpellCaster;
 import minestrapp.item.tools.MAxe;
 import minestrapp.item.tools.MDagger;
 import minestrapp.item.tools.MHoe;
@@ -37,7 +39,6 @@ import minestrapp.item.util.MItemsFood;
 import minestrapp.item.util.MItemsSeedFood;
 import minestrapp.item.util.MItemsSeeds;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -304,6 +305,10 @@ public class MItems
 	
 	public static Item backpack;
 	public static Item satchel;
+	
+	//Magic
+	public static Item caster;
+	public static Item mana_potion;
 	
 	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17);
 	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13);
@@ -591,6 +596,10 @@ public class MItems
 		
 		register(backpack = new ItemBackpack("backpack", 1));
 		register(satchel = new ItemBackpack("satchel", 2));
+		
+		//Magic 
+		register(caster = new ItemSpellCaster("caster"));
+		register(mana_potion = new ItemManaPotion("mana_potion"));
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockStoneBase) MBlocks.ore_salt).setDropsItem(new ItemStack(MItems.salt, 1), 1, 0, 2, true, true, false);
