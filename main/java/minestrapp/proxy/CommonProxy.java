@@ -38,14 +38,6 @@ public class CommonProxy
 		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/bat/wing_sinew"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/flesh"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/husk/salt"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/squid/squid_tentacle"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/witch/wand"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/candy"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_basic_dungeon"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_abandoned_mineshaft"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_desert_temple"));

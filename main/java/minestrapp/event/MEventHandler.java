@@ -8,6 +8,7 @@ import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
+import minestrapp.entity.mob.EntityBurfalaunt;
 import minestrapp.mobs.models.ModelSheetGhost;
 import minestrapp.utils.EntityUtil;
 import minestrapp.worldgen.MWorldDecorator;
@@ -380,6 +381,14 @@ public class MEventHandler
 			LootPool sheep_hoof_pool = new LootPool(new LootEntry[] {sheep_hoof_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sheep_hoof_pool");
 			
 			event.getTable().addPool(sheep_hoof_pool);
+			event.getTable().addPool(animal_bones_pool);
+		}
+		else if(event.getName().equals(EntityBurfalaunt.LOOT_TABLE))
+		{
+			LootEntry burfalaunt_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/burfalaunt/burfalaunt"), 1, 1, new LootCondition[0], "burfalaunt_entry");
+			LootPool burfalaunt_pool = new LootPool(new LootEntry[] {burfalaunt_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "burfalaunt_pool");
+			
+			event.getTable().addPool(burfalaunt_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE) || event.getName().equals(LootTableList.ENTITIES_LLAMA))

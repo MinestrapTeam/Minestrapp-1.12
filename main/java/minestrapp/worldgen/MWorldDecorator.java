@@ -320,6 +320,18 @@ public class MWorldDecorator
 			
 			Biome biome = world.getBiome(new BlockPos(chunkX * 16, 0, chunkZ * 16));
 			
+			if(biome instanceof BiomeSavanna ){
+				int chance = random.nextInt(100);
+				if(chance<=10){
+					int posX = random.nextInt(16)+8;
+					int posY = 64 - random.nextInt(6);
+					int posZ = random.nextInt(16)+8;
+					BlockPos burfalaunt = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenBurfalaunt burfalauntGen = new MGenBurfalaunt();
+					burfalauntGen.generate(world, random, burfalaunt);
+				}
+				
+			}
 			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
 			{
 				if(MConfig.generateMud)

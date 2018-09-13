@@ -11,6 +11,9 @@ import minestrapp.mobs.renderers.RenderLumpGoat;
 import minestrapp.mobs.renderers.RenderSheetGhost;
 import minestrapp.mobs.renderers.RenderTheInfected;
 import minestrapp.Minestrapp5;
+import minestrapp.entity.mob.EntityBurfalaunt;
+import minestrapp.entity.model.ModelBurfalaunt;
+import minestrapp.entity.render.RenderBurfalaunt;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.passive.EntityRabbit;
@@ -32,10 +35,13 @@ public class MobRegistry
 	public static void registerRender()
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityTheInfected.class, new RenderTheInfected.Factory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBurfalaunt.class, m -> new RenderBurfalaunt(m, new ModelBurfalaunt(), 0.7F));
+
 	}
 	
 	public static void registerEntity()
 	{
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "Burfalaunt"), EntityBurfalaunt.class, "Burfalaunt", 452, Minestrapp5.instance, 64, 1, true, 0xffff62, 0x40f03f);
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "TheInfected"), EntityTheInfected.class, "TheInfected", 453, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
 	}
 }

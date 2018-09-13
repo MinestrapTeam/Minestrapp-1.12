@@ -1,0 +1,5 @@
+{
+ "mob.burfalaunt.hurt": { "category": "neutral", "sounds": [ "minestrapp:mobs/burfalaunt/burfalaunt_hurt"] },
+ "mob.burfalaunt.living": { "category": "neutral", "sounds": [ "minestrapp:mobs/burfalaunt/burfalaunt_living"] },
+ "mob.burfalaunt.death": { "category": "neutral", "sounds": [ "minestrapp:mobs/burfalaunt/burfalaunt_death"] }
+}
