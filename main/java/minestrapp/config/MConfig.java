@@ -66,6 +66,8 @@ public class MConfig
 	public static boolean generateMiteHive;
 	
 	public static boolean removeVanillaRecipes;
+	public static int startingHealth;
+	public static int maxHealth;
 	
 	public static void preInit()
 	{
@@ -189,6 +191,10 @@ public class MConfig
 		
 		Property propertyRemoveVanillaRecipes = config.get(CATEGORY_VANILLA_TWEAKS, "remove_vanilla_recipes", true);
 		registerProperty(propertyRemoveVanillaRecipes, CATEGORY_VANILLA_TWEAKS, "remove_vanilla_recipes", true, true);
+		Property propertyStartingHealth = config.get(CATEGORY_VANILLA_TWEAKS, "starting_health", 10);
+		registerProperty(propertyStartingHealth, CATEGORY_VANILLA_TWEAKS, "starting_health", true, true);
+		Property propertyMaxHealth = config.get(CATEGORY_VANILLA_TWEAKS, "max_health", 40);
+		registerProperty(propertyMaxHealth, CATEGORY_VANILLA_TWEAKS, "max_health", true, true);
 		
 		List<String> propertyOrderVanillaTweaks = new ArrayList<String>();
 		//propertyOrderVanillaTweaks.add(propertyMinableGlacialInvincium.getName());
@@ -237,6 +243,8 @@ public class MConfig
 			generateMiteHive = propertyMiteHiveGen.getBoolean();
 			
 			removeVanillaRecipes = propertyRemoveVanillaRecipes.getBoolean();
+			startingHealth = propertyStartingHealth.getInt();
+			maxHealth = propertyStartingHealth.getInt();
 		}
 		
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
@@ -280,6 +288,8 @@ public class MConfig
 		propertyMiteHiveGen.set(generateMiteHive);
 		
 		propertyRemoveVanillaRecipes.set(removeVanillaRecipes);
+		propertyStartingHealth.set(startingHealth);
+		propertyStartingHealth.set(maxHealth);
 		
 		if(config.hasChanged())
 		{

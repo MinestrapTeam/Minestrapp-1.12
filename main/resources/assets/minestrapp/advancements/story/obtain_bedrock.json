@@ -1,0 +1,27 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:bedrock"
+        },
+        "title": {
+            "translate": "advancements.story.obtain_bedrock.title"
+        },
+        "description": {
+            "translate": "advancements.story.obtain_bedrock.description"
+        },
+        "frame": "goal"
+    },
+    "parent": "minestrapp:story/obtain_titanium",
+    "criteria": {
+        "torite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:bedrock"
+                    }
+                ]
+            }
+        }
+    }
+}

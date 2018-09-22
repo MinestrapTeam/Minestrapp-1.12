@@ -31,12 +31,6 @@ public class BlockInfectedMushroom extends BlockGlowshroom
 		super(name);
 	}
 	
-	@Nullable
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-    {
-        return NULL_AABB;
-    }
-	
 	@Override
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity)
 	{

@@ -332,6 +332,7 @@ public class MWorldDecorator
 				}
 				
 			}
+			
 			if(biome instanceof BiomeRiver || biome instanceof BiomeSwamp)
 			{
 				if(MConfig.generateMud)

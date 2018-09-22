@@ -744,6 +744,8 @@ item.m_tech_component_3.name=Inert Chip
 item.m_tech_component_4.name=Technological Doodad
 item.m_tech_component_5.name=Advanced Tech Doodad
 item.m_tech_component_6.name=Magnet
+item.heart_piece.name=Heart Piece
+item.heart_container.name=Heart Container
 tile.glow_paste.name=Glow Paste
 
 ## Misc Tools ##
@@ -1101,6 +1103,8 @@ advancements.story.titanium_armor.title=Invincible
 advancements.story.titanium_armor.description=Obtain a full set of titanium armor, then cry when you realize how long that took.
 advancements.story.crusher.title=Crushin' It
 advancements.story.crusher.description=Craft a crusher and double your ore output!
+advancements.story.obtain_bedrock.title=Yabadabadoo!
+advancements.story.obtain_bedrock.description=Mine a block of unbreakable bedrock.
 
 advancements.foraging.root.title=Foraging
 advancements.foraging.root.description=If you can find it, you can utilize it.
@@ -1141,6 +1145,8 @@ advancements.husbandry.buns.title=The Best Thing Since...
 advancements.husbandry.buns.description=Alloy dough and pepper seeds together to bake some tasty buns.
 advancements.husbandry.sandwich.title=The Philosophy of Sandwich
 advancements.husbandry.sandwich.description=What is a sandwich, really?
+advancements.husbandry.tannoholism.title=what is wrong with you
+advancements.husbandry.tannoholism.description=seriously why would you ever drink this what did you expect
 
 advancements.adventure.smelling_salts.title=Saved by the Smell
 advancements.adventure.smelling_salts.description=Use some smelling salts to cure all your ailments.
@@ -1311,3 +1317,11 @@ gui.config.category.vanilla_tweaks.title.tooltip=Determine which Vanilla feature
 gui.config.vanilla_tweaks.remove_vanilla_recipes.name=Remove Vanilla Recipes
 gui.config.vanilla_tweaks.remove_vanilla_recipes.comment=Determines whether all Vanilla recipes replaced by Minestrapp ones will be removed on launch. Does not disable Minestrapp replacement recipes from being added.
 gui.config.vanilla_tweaks.remove_vanilla_recipes.name.tooltip=Determines whether all Vanilla recipes replaced by Minestrapp ones will be removed on launch. Does not disable Minestrapp replacement recipes from being added.
+
+gui.config.vanilla_tweaks.starting_health.name=Starting Health
+gui.config.vanilla_tweaks.starting_health.comment=Determines how much health players start with in survival.
+gui.config.vanilla_tweaks.starting_health.name.tooltip=Determines how much health players start with in survival.
+
+gui.config.vanilla_tweaks.max_health.name=Maximum Health
+gui.config.vanilla_tweaks.max_health.comment=Determines the maximum amount of health players can reach using Heart Containers.
+gui.config.vanilla_tweaks.max_health.name.tooltip=Determines the maximum amount of health players can reach using Heart Containers.

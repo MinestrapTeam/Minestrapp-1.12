@@ -11,6 +11,7 @@ import minestrapp.crafting.FreezingRecipes;
 import minestrapp.entity.mob.EntityBurfalaunt;
 import minestrapp.mobs.models.ModelSheetGhost;
 import minestrapp.utils.EntityUtil;
+import minestrapp.utils.NBTUtil;
 import minestrapp.worldgen.MWorldDecorator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFrostedIce;
@@ -22,13 +23,17 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
@@ -47,6 +52,7 @@ import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
@@ -61,6 +67,23 @@ public class MEventHandler
 {
 	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
 	private static final FreezingRecipes freezingRecipes = FreezingRecipes.instance();
+	
+	@SubscribeEvent
+	public static void onPlayerJoin (EntityJoinWorldEvent event)
+	{
+		if (event.getEntity() instanceof EntityPlayer)
+		{
+			EntityPlayer player = (EntityPlayer) event.getEntity();
+			NBTTagCompound nbt = NBTUtil.getPersistedPlayerTag(player);
+			
+			player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(MConfig.startingHealth);
+
+			if (nbt.hasKey("health"))
+			{
+				player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(nbt.getDouble("health"));
+			}
+		}
+	}
 	
 	@SubscribeEvent
     public static void populateChunks (PopulateChunkEvent.Post event)
@@ -296,6 +319,11 @@ public class MEventHandler
 			tool = event.getHarvester().getHeldItem(EnumHand.MAIN_HAND).getItem();
 		ItemStack smeltStack = furnaceRecipes.getSmeltingResult(new ItemStack(event.getState().getBlock(), 1, event.getState().getBlock().getMetaFromState(event.getState())));
 		ItemStack freezeStack = freezingRecipes.getFreezingResult(new ItemStack(event.getState().getBlock(), 1, event.getState().getBlock().getMetaFromState(event.getState())), "light");
+		if(event.getState().getBlock() == Blocks.BEDROCK && tool != null && tool instanceof ItemTool)
+		{
+			event.getHarvester().getHeldItem(EnumHand.MAIN_HAND).damageItem(4000, event.getHarvester());
+			event.getDrops().add(new ItemStack(Blocks.BEDROCK));
+		}
 		if(tool != null && (tool == MItems.fire_axe || tool == MItems.fire_dagger || tool == MItems.fire_hoe || tool == MItems.fire_pickaxe || tool == MItems.fire_shovel || tool == MItems.fire_sword) && smeltStack != ItemStack.EMPTY && event.getDrops().size() > 0 && smeltStack.getItem() != event.getDrops().get(0).getItem())
 		{
 			event.getDrops().clear();

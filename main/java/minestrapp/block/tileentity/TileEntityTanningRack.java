@@ -32,7 +32,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	@Override
 	public void update()
 	{
-			if(this.hide.get(0).isEmpty())
+			if(this.hide.get(0).copy().isEmpty())
 				this.isTanning = false;
 			if(this.isTanning)
 			{
@@ -113,15 +113,16 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 				zOffset = 0D;
 			else
 				xOffset = 1D;
-			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + xOffset, this.getPos().getY() + 0.25D, this.getPos().getZ() + zOffset, this.hide.get(0)));
+			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + xOffset, this.getPos().getY() + 0.25D, this.getPos().getZ() + zOffset, this.hide.get(0).copy()));
 			this.isTanning = false;
 		}
 		this.hide.set(0, ItemStack.EMPTY);
+		this.markDirty();
 	}
 	
 	public boolean isHoldingItem()
 	{
-		return !this.hide.get(0).isEmpty();
+		return !this.hide.get(0).copy().isEmpty();
 	}
 	
 	public TannerRecipe getRecipe(ItemStack tool)
@@ -129,7 +130,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
         for(Map.Entry<ItemStack, TannerRecipe> entry: TannerRecipes.instance.recipes.entrySet())
         {
             TannerRecipe recipe = entry.getValue();
-            if(ItemStack.areItemStacksEqual(this.hide.get(0), recipe.input) && tool != null && ItemStack.areItemStacksEqual(recipe.tool, new ItemStack(tool.getItem(), 1, tool.getMetadata())))
+            if(ItemStack.areItemStacksEqual(this.hide.get(0).copy(), recipe.input) && tool != null && ItemStack.areItemStacksEqual(recipe.tool, new ItemStack(tool.getItem(), 1, tool.getMetadata())))
             {
                 return recipe;
             }

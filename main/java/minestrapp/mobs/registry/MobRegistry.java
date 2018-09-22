@@ -36,12 +36,12 @@ public class MobRegistry
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityTheInfected.class, new RenderTheInfected.Factory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBurfalaunt.class, m -> new RenderBurfalaunt(m, new ModelBurfalaunt(), 0.7F));
-
 	}
 	
 	public static void registerEntity()
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "Burfalaunt"), EntityBurfalaunt.class, "Burfalaunt", 452, Minestrapp5.instance, 64, 1, true, 0xffff62, 0x40f03f);
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "TheInfected"), EntityTheInfected.class, "TheInfected", 453, Minestrapp5.instance, 64, 1, true, 0x002222, 0x40ffff);
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "Burfalaunt"), EntityBurfalaunt.class, "Burfalaunt", 452, Minestrapp5.instance, 64, 1, true, 0xffff62, 0x40f03f);
+		
 	}
 }

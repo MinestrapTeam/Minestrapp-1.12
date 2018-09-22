@@ -765,6 +765,8 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
 		ForgeRegistries.BLOCKS.register(crop_tomato = new TomatoPlant("crop_tomato"));
 		ForgeRegistries.BLOCKS.register(crop_corn = new CornPlant("crop_corn"));
+		
+		Blocks.BEDROCK.setHardness(100F).setHarvestLevel("pickaxe", 4);
 	}
 	
 	public static void register(Block block)

@@ -14,12 +14,14 @@ import minestrapp.item.ItemCandy;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemHangGlider;
+import minestrapp.item.ItemHeartContainer;
 import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
 import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
+import minestrapp.item.ItemTannic;
 import minestrapp.item.MItemHealthCrystal;
 import minestrapp.item.armor.MArmor;
 import minestrapp.item.tools.MAxe;
@@ -77,6 +79,8 @@ public class MItems
 	public static Item bricks;
 	public static Item tech_components;
 	public static Item glow_paste;
+	public static Item heart_piece;
+	public static Item heart_container;
 	
 	public static Item copper_pickaxe;
 	public static Item copper_axe;
@@ -336,7 +340,7 @@ public class MItems
 		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
 		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
 		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic
-		register(tannic = new ItemMetaBase("tannic", 3).setCreativeTab(MTabs.ingredients));
+		register(tannic = new ItemTannic().setAlwaysEdible().setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
@@ -357,6 +361,8 @@ public class MItems
 		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
 		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
 		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
+		register(heart_piece = new ItemBase("heart_piece").setCreativeTab(MTabs.ingredients));
+		register(heart_container = new ItemHeartContainer());
 		
 		register(smelling_salts = new ItemSmellingSalts());
 		register(health_crystal = new MItemHealthCrystal("health_crystal"));
