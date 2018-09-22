@@ -11,6 +11,7 @@ import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.BlockAlloy;
 import minestrapp.block.BlockAxel;
 import minestrapp.block.BlockBarrel;
+import minestrapp.block.BlockCrate;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
 import minestrapp.block.BlockCharwoodLimb;
@@ -436,6 +437,7 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
+	public static Block crate;
 	
 	//Crops
 	public static Block crop_withered;
@@ -751,6 +753,7 @@ public class MBlocks
 		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
 		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
 		register(glow_paste = new BlockLightPaste(), new ItemBlockContainer(glow_paste, new ItemStack(Items.GLASS_BOTTLE)));
+		register(crate = new BlockCrate());
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));

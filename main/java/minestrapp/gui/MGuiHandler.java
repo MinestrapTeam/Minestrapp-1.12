@@ -2,12 +2,14 @@ package minestrapp.gui;
 
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityBarrel;
+import minestrapp.block.tileentity.TileEntityCrate;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityPipe;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.container.ContainerAlloy;
 import minestrapp.container.ContainerBackpack;
 import minestrapp.container.ContainerBarrel;
+import minestrapp.container.ContainerCrate;
 import minestrapp.container.ContainerCrusher;
 import minestrapp.container.ContainerPipe;
 import minestrapp.container.ContainerSorter;
@@ -25,7 +27,7 @@ public class MGuiHandler implements IGuiHandler {
 	public static final int PIPE = 3;
 	public static final int SORTER = 4;
 	public static final int BACKPACK = 5;
-	
+	public static final int CRATE = 6;
 	@Override
 	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
@@ -42,6 +44,8 @@ public class MGuiHandler implements IGuiHandler {
 				return new ContainerSorter(player.inventory, ((TileEntitySorter)world.getTileEntity(new BlockPos(x, y, z))), player);
 			case BACKPACK:
 				return new ContainerBackpack(player.inventory, new InventoryBackpack(player.getHeldItemMainhand()));
+			case CRATE:
+				return new ContainerCrate(player.inventory, ((TileEntityCrate)world.getTileEntity(new BlockPos(x, y, z))), player);
 			default:
 				return null;
 		}
@@ -63,6 +67,8 @@ public class MGuiHandler implements IGuiHandler {
 				return new GuiSorter(player.inventory, ((TileEntitySorter)world.getTileEntity(new BlockPos(x, y, z))));
 			case BACKPACK:
 				return new GuiBackpack(new ContainerBackpack(player.inventory, new InventoryBackpack(player.getHeldItemMainhand())));
+			case CRATE:
+				return new GuiCrate(player.inventory, ((TileEntityCrate)world.getTileEntity(new BlockPos(x, y, z))));
 			default:
 				return null;
 		}

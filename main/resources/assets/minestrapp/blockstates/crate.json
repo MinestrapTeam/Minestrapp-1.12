@@ -1,0 +1,7 @@
+{
+  "variants": {
+        "axis=y":  { "model": "minestrapp:crate" },
+        "axis=z":   { "model": "minestrapp:crate", "x": 90 },
+        "axis=x":   { "model": "minestrapp:crate", "x": 90, "y": 90 }
+  }
+}

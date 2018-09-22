@@ -641,7 +641,7 @@ tile.covered_pipe_reefstone.name=Covered Pipe
 tile.sorter.name=Sorter
 tile.creative_engine.name=Creative Engine
 tile.axel_wood.name=Wooden Axel
-
+tile.crate.name=Crate
 
 ##### Items #####
 
@@ -982,7 +982,7 @@ item.smelling_salts.name=Smelling Salts
 #####Mobs#####
 entity.SheetGhost.name=Sheet Ghost
 entity.LumpGoat.name=Lump Goat
-
+entity.Burfalaunt.name=Burfalaunt
 
 ##### Creative Tabs #####
 
