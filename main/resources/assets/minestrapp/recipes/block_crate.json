@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ppp",
+        "s s",
+        "ppp"
+    ],
+    "key": {        
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "slabWood"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        }
+     },
+     "result": {
+        "item": "minestrapp:crate"
+     }  
+}

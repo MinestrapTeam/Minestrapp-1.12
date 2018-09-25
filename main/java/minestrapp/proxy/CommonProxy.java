@@ -1,6 +1,7 @@
 package minestrapp.proxy;
 
 import minestrapp.MBlocks;
+import minestrapp.MFluids;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
@@ -33,6 +34,7 @@ public class CommonProxy
 {
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		MFluids.init();
 		MBlocks.init();
 		MItems.init();
 		MPotions.addBrewingRecipe();

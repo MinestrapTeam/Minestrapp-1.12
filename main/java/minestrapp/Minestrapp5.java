@@ -5,6 +5,7 @@ import minestrapp.proxy.CommonProxy;
 
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -29,6 +30,7 @@ public class Minestrapp5
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+    	FluidRegistry.enableUniversalBucket();
     	proxy.preInit(event);
     	MConfig.preInit();
     	MConfig.clientPreInit();

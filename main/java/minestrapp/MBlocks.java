@@ -112,6 +112,7 @@ import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.item.ItemBlockPanel;
 import minestrapp.block.item.MItemBlock;
+import minestrapp.block.liquid.LiquidCrystalfloe;
 import minestrapp.block.magnetpiston.BlockMagnetPistonBase;
 import minestrapp.block.magnetpiston.BlockMagnetPistonExtension;
 import minestrapp.block.magnetpiston.BlockMagnetPistonMoving;
@@ -450,6 +451,9 @@ public class MBlocks
 	public static Block crop_tomato;
 	public static Block crop_corn;
 	
+	//Liquids
+	public static Block liquid_crystalfloe;
+	
 	public static void init()
 	{
 		//Plant
@@ -765,6 +769,8 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(crop_peanuts = new PeanutsPlant("crop_peanuts"));
 		ForgeRegistries.BLOCKS.register(crop_tomato = new TomatoPlant("crop_tomato"));
 		ForgeRegistries.BLOCKS.register(crop_corn = new CornPlant("crop_corn"));
+		
+		ForgeRegistries.BLOCKS.register(liquid_crystalfloe = new LiquidCrystalfloe(MFluids.crystalfloe, MMaterials.CRYSTALFLOE).setUnlocalizedName("crystalfloe").setRegistryName("crystalfloe"));
 		
 		Blocks.BEDROCK.setHardness(100F).setHarvestLevel("pickaxe", 4);
 	}
