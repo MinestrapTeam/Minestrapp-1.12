@@ -211,6 +211,15 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.portar, 1, 4), new ItemStack(MBlocks.portal_dust, 1, 0), new ItemStack(MItems.gems, 1, 0), 75, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.portar, 1, 5), new ItemStack(MBlocks.portal_dust, 1, 0), new ItemStack(Items.GLOWSTONE_DUST), 75, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.portar, 1, 6), new ItemStack(MBlocks.portal_dust, 1, 0), new ItemStack(Items.PRISMARINE_CRYSTALS), 75, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 0), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 2), new ItemStack(MBlocks.shimmerstone, 1, 3), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 3), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 4), new ItemStack(MBlocks.shimmerstone, 1, 3), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 5), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 6), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 7), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.blue_glowshroom), 20, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 8), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.purple_glowshroom), 20, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 9), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.green_glowshroom), 20, 0.05F);
 		
 		//Ores
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_salt, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.salt, 3, 0), new ItemStack(MItems.gems, 1, 2), 5, 0.1F);

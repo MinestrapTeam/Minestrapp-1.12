@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "seamless=false,variant=shimmerstone_bricks": [
+            { "model": "minestrapp:shimmerstone_bricks" }
+        ],
+        "seamless=true,variant=shimmerstone_bricks": [
+            { "model": "minestrapp:shimmerstone_bricks" }
+        ]
+    }
+}

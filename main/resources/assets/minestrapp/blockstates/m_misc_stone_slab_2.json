@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=bottom,variant=shimmerstone_bricks": [
+            { "model": "minestrapp:half_slab_shimmerstone_bricks" }
+        ],
+        "half=top,variant=shimmerstone_bricks": [
+            { "model": "minestrapp:upper_slab_shimmerstone_bricks" }
+        ]
+    }
+}

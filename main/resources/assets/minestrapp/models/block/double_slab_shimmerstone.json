@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestrapp:blocks/stone/shimmerstone_slab_top",
+        "side": "minestrapp:blocks/stone/shimmerstone_slab_side"
+    }
+}

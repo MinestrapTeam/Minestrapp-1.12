@@ -1,0 +1,22 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " x ",
+        "xgx",
+        " x "
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:shimmerstone",
+            "data": 6
+        },
+        "g": {
+            "item": "minestrapp:purple_glowshroom_block"
+        }
+     },
+     "result": {
+        "item": "minestrapp:shimmerstone",
+        "count": 4,
+        "data": 8
+     }  
+}

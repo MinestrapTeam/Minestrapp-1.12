@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_shimmerstone_brick_panel"
+    ]
+  },
+  "criteria": {
+    "has_shimmerstone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:shimmerstone",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_shimmerstone_brick_panel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_shimmerstone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

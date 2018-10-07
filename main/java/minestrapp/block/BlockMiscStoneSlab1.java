@@ -171,7 +171,9 @@ public abstract class BlockMiscStoneSlab1 extends BlockSlab implements IMetaBloc
         DIORITE_BRICKS(2, MapColor.QUARTZ, "diorite_bricks", false),
         ANDESITE_BRICKS(3, MapColor.STONE, "andesite_bricks", false),
     	SLATE_BRICKS(4, MapColor.GRAY, "slate_bricks", false),
-    	PORTAR(5, MapColor.PURPLE, "portar", false);
+    	PORTAR(5, MapColor.PURPLE, "portar", false),
+    	SHIMMERSTONE(6, MapColor.SNOW, "shimmerstone", false),
+    	SHIMMERSTONE_COBBLED(7, MapColor.SNOW, "shimmerstone_cobbled", false);
 
         private static final BlockMiscStoneSlab1.EnumType[] META_LOOKUP = new BlockMiscStoneSlab1.EnumType[values().length];
         private final int meta;

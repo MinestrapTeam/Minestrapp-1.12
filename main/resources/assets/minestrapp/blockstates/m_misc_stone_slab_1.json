@@ -35,6 +35,18 @@
         ],
         "half=top,variant=portar": [
             { "model": "minestrapp:upper_slab_portar" }
+        ],
+        "half=bottom,variant=shimmerstone": [
+            { "model": "minestrapp:half_slab_shimmerstone" }
+        ],
+        "half=top,variant=shimmerstone": [
+            { "model": "minestrapp:upper_slab_shimmerstone" }
+        ],
+        "half=bottom,variant=shimmerstone_cobbled": [
+            { "model": "minestrapp:half_slab_shimmerstone_cobbled" }
+        ],
+        "half=top,variant=shimmerstone_cobbled": [
+            { "model": "minestrapp:upper_slab_shimmerstone_cobbled" }
         ]
     }
 }

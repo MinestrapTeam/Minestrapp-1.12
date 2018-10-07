@@ -61,6 +61,8 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MItems.grease, new ItemStack(MItems.mob_loot, 1, 1), 0.45F);
 		GameRegistry.addSmelting(MItems.squid_tentacle, new ItemStack(MItems.calamari), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.portal_dust, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.bricks, 1, 1), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.shimmerstone, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.shimmerstone, 1, 2), new ItemStack(MBlocks.shimmerstone, 1, 3), 0.1F);
 		
 		for(int i = 0 ; i < EnumStoneTypeMOnly.values().length ; i++)
 		{

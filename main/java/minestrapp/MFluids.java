@@ -14,7 +14,7 @@ public class MFluids
 	
 	public static void init()
 	{
-		register(crystalfloe = (FluidBase) new FluidBase("crystalfloe", new ResourceLocation(Minestrapp5.MODID, "blocks/liquid/crystalfloe_still"), new ResourceLocation(Minestrapp5.MODID, "blocks/liquid/crystalfloe_flow")).setHasBucket(true).setDensity(1100).setGaseous(false).setLuminosity(9).setViscosity(25000).setTemperature(300));
+		register(crystalfloe = (FluidBase) new FluidBase("crystalfloe", new ResourceLocation(Minestrapp5.MODID, "blocks/liquid/crystalfloe_still"), new ResourceLocation(Minestrapp5.MODID, "blocks/liquid/crystalfloe_flow")).setHasBucket(true).setDensity(40).setGaseous(false).setLuminosity(12).setViscosity(1000).setTemperature(500));
 	}
     
     public static void register(FluidBase fluid)

@@ -14,6 +14,8 @@ import minestrapp.block.BlockBarrel;
 import minestrapp.block.BlockCrate;
 import minestrapp.block.BlockBlazium;
 import minestrapp.block.BlockCandle;
+import minestrapp.block.BlockChandelier;
+import minestrapp.block.BlockChandelierHalloween;
 import minestrapp.block.BlockCharwoodLimb;
 import minestrapp.block.BlockClutchthorn;
 import minestrapp.block.BlockCobblestoneWall;
@@ -24,6 +26,7 @@ import minestrapp.block.BlockDecorativeStones;
 import minestrapp.block.BlockDimensium;
 import minestrapp.block.BlockDimensiumRope;
 import minestrapp.block.BlockDoubleMiscStoneSlab1;
+import minestrapp.block.BlockDoubleMiscStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab1;
 import minestrapp.block.BlockDoubleStoneSlab2;
 import minestrapp.block.BlockDoubleStoneSlab3;
@@ -40,6 +43,7 @@ import minestrapp.block.BlockGlacierite;
 import minestrapp.block.BlockGlowshroom;
 import minestrapp.block.BlockGodstone;
 import minestrapp.block.BlockHalfMiscStoneSlab1;
+import minestrapp.block.BlockHalfMiscStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab1;
 import minestrapp.block.BlockHalfStoneSlab2;
 import minestrapp.block.BlockHalfStoneSlab3;
@@ -66,6 +70,7 @@ import minestrapp.block.BlockMLog;
 import minestrapp.block.BlockMPath;
 import minestrapp.block.BlockMPlanks;
 import minestrapp.block.BlockMiscStoneSlab1;
+import minestrapp.block.BlockMiscStoneSlab2;
 import minestrapp.block.BlockMiteEggsack;
 import minestrapp.block.BlockMiteHoney;
 import minestrapp.block.BlockMoss;
@@ -78,6 +83,7 @@ import minestrapp.block.BlockPortar;
 import minestrapp.block.BlockRedstoneOre;
 import minestrapp.block.BlockRope;
 import minestrapp.block.BlockSavannaGrass;
+import minestrapp.block.BlockShimmerstone;
 import minestrapp.block.BlockSilverfishStone;
 import minestrapp.block.BlockSorter;
 import minestrapp.block.BlockSoulEyes;
@@ -225,6 +231,7 @@ public class MBlocks
 	public static Block mossy_stone_bricks;
 	public static Block cracked_stone_bricks;
 	public static Block chiseled_stone;
+	public static Block shimmerstone;
 	public static Block soul_glass;
 	public static Block blazed_soul_glass;
 	public static Block purpur;
@@ -233,6 +240,8 @@ public class MBlocks
 	public static Block glacial_invincium;
 	public static BlockSlab misc_stone_slab_1;
 	public static BlockDoubleMiscStoneSlab1 double_misc_stone_slab_1;
+	public static BlockSlab misc_stone_slab_2;
+	public static BlockDoubleMiscStoneSlab2 double_misc_stone_slab_2;
 	public static BlockSlab stone_slab_1;
 	public static BlockDoubleStoneSlab1 double_stone_slab_1;
 	public static BlockSlab stone_slab_2;
@@ -281,6 +290,9 @@ public class MBlocks
 	public static BlockPanelBase deep_oceanstone_brick_panel;
 	public static BlockPanelBase nether_brick_panel;
 	public static BlockPanelBase nether_quartz_panel;
+	public static BlockPanelBase shimmerstone_panel;
+	public static BlockPanelBase cobbled_shimmerstone_panel;
+	public static BlockPanelBase shimmerstone_brick_panel;
 	public static BlockPanelBase portar_panel;
 	public static BlockPanelBase purpur_panel;
 	public static Block granite_brick_stairs;
@@ -305,6 +317,8 @@ public class MBlocks
 	public static Block glacierrock_brick_stairs;
 	public static Block oceanstone_brick_stairs;
 	public static Block deep_oceanstone_brick_stairs;
+	public static Block cobbled_shimmerstone_stairs;
+	public static Block shimmerstone_brick_stairs;
 	public static Block portar_stairs;
 	public static Block silverfish_stone;
 	public static Block silverfish_cobblestone;
@@ -374,6 +388,9 @@ public class MBlocks
 	public static Block candle;
 	public static Block candle_fire;
 	public static Block candle_ender;
+	public static Block chandelier_halloween;
+	public static Block chandelier_halloween_fire;
+	public static Block chandelier_halloween_ender;
 	public static BlockJackOLantern pumpkin_normie;
 	public static Block pumpkin_normie_fire;
 	public static Block pumpkin_normie_ender;
@@ -531,6 +548,7 @@ public class MBlocks
 		register(mossy_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_mossy", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_stone_bricks));
 		register(cracked_stone_bricks = new BlockStoneBaseMOnly("m_stone_bricks_cracked", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cracked_stone_bricks));
 		register(chiseled_stone = new BlockStoneBaseMOnly("m_chiseled_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(chiseled_stone));
+		register(shimmerstone = new BlockShimmerstone(), new ItemBlockMultistate(shimmerstone));
 		register(soul_glass = new BlockSoulGlass("soul_glass", MapColor.BROWN).setCreativeTab(MTabs.stone), new ItemBlockMultistate(soul_glass));
 		register(blazed_soul_glass = new BlockSoulGlass("blazed_soul_glass", MapColor.ADOBE).setCreativeTab(MTabs.stone).setLightLevel(0.3F), new ItemBlockMultistate(blazed_soul_glass));
 		register(purpur = new BlockBase("m_purpur", Material.ROCK, MapColor.MAGENTA, SoundType.STONE, 1.5F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone));
@@ -540,6 +558,8 @@ public class MBlocks
 		
 		register(double_misc_stone_slab_1 = new BlockDoubleMiscStoneSlab1("m_misc_stone_slab_1"));
 		register(misc_stone_slab_1 = new BlockHalfMiscStoneSlab1("m_misc_stone_slab_1"), new ItemBlockMSlab(misc_stone_slab_1, misc_stone_slab_1, double_misc_stone_slab_1));
+		register(double_misc_stone_slab_2 = new BlockDoubleMiscStoneSlab2("m_misc_stone_slab_2"));
+		register(misc_stone_slab_2 = new BlockHalfMiscStoneSlab2("m_misc_stone_slab_2"), new ItemBlockMSlab(misc_stone_slab_2, misc_stone_slab_2, double_misc_stone_slab_2));
 		register(double_stone_slab_1 = new BlockDoubleStoneSlab1("m_stone_slab_1"));
 		register(stone_slab_1 = new BlockHalfStoneSlab1("m_stone_slab_1"), new ItemBlockMSlab(stone_slab_1, stone_slab_1, double_stone_slab_1));
 		register(double_stone_slab_2 = new BlockDoubleStoneSlab2("m_stone_slab_2"));
@@ -589,6 +609,9 @@ public class MBlocks
 		register(deep_oceanstone_brick_panel = new BlockPanelBase(stone_bricks, MTabs.stone, 8, "reefstone"), new ItemBlockPanel(deep_oceanstone_brick_panel));
 		register(nether_brick_panel = new BlockPanelBase(Blocks.NETHER_BRICK, MTabs.stone), new ItemBlockPanel(nether_brick_panel));
 		register(nether_quartz_panel = new BlockPanelBase(Blocks.QUARTZ_BLOCK, MTabs.stone), new ItemBlockPanel(nether_quartz_panel));
+		register(shimmerstone_panel = new BlockPanelBase(misc_stone_slab_1, MTabs.stone, 6, "shimmerstone"), new ItemBlockPanel(shimmerstone_panel));
+		register(cobbled_shimmerstone_panel = new BlockPanelBase(shimmerstone, MTabs.stone, 1, "cobblestone"), new ItemBlockPanel(cobbled_shimmerstone_panel));
+		register(shimmerstone_brick_panel = new BlockPanelBase(shimmerstone, MTabs.stone, 2, "bricks"), new ItemBlockPanel(shimmerstone_brick_panel));
 		register(purpur_panel = new BlockPanelBase(Blocks.PURPUR_BLOCK, MTabs.stone), new ItemBlockPanel(purpur_panel));
 		register(portar_panel = new BlockPanelBase(portar, MTabs.stone, 0, "slabbed"), new ItemBlockPanel(portar_panel));
 		
@@ -615,6 +638,8 @@ public class MBlocks
 		register(glacierrock_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.GLACIERROCK), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.GLACIERROCK.getUnlocalizedName()));
 		register(oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.OCEANSTONE.getUnlocalizedName()));
 		register(deep_oceanstone_brick_stairs = new BlockStairBase(stone_bricks.getDefaultState().withProperty(BlockStoneBaseMOnly.VARIANT, EnumStoneTypeMOnly.DEEP_OCEANSTONE), stone_bricks.getUnlocalizedName() + "_" + EnumStoneTypeMOnly.DEEP_OCEANSTONE.getUnlocalizedName()));
+		register(cobbled_shimmerstone_stairs = new BlockStairBase(shimmerstone.getDefaultState().withProperty(BlockShimmerstone.VARIANT, BlockShimmerstone.ShimmerstoneType.COBBLESTONE), shimmerstone.getUnlocalizedName() + "_" + BlockShimmerstone.ShimmerstoneType.COBBLESTONE.getUnlocalizedName()));
+		register(shimmerstone_brick_stairs = new BlockStairBase(shimmerstone.getDefaultState().withProperty(BlockShimmerstone.VARIANT, BlockShimmerstone.ShimmerstoneType.BRICKS), shimmerstone.getUnlocalizedName() + "_" + BlockShimmerstone.ShimmerstoneType.BRICKS.getUnlocalizedName()));
 		register(portar_stairs = new BlockStairBase(portar.getDefaultState().withProperty(BlockPortar.VARIANT, BlockPortar.PortarType.SLABBED), portar.getUnlocalizedName() + "_" + BlockPortar.PortarType.SLABBED.getUnlocalizedName()));
 		
 		register(silverfish_stone = new BlockSilverfishStone("m_silverfish_stone", stone), new ItemBlockMultistate(silverfish_stone));
@@ -690,8 +715,14 @@ public class MBlocks
 		register(cobblestone_wall = new BlockCobblestoneWall(cobblestone, "m_cobblestone_wall"), new ItemBlockMultistate(cobblestone_wall));
 		register(mossy_cobblestone_wall = new BlockCobblestoneWall(mossy_cobblestone, "m_mossy_cobblestone_wall"), new ItemBlockMultistate(mossy_cobblestone_wall));
 		register(candle = new BlockCandle("candle", "unlit"), new ItemBlockMultistate(candle));
-		register(candle_fire = new BlockCandle("candle_fire", "fire"));
-		register(candle_ender = new BlockCandle("candle_ender", "ender"));
+		ForgeRegistries.BLOCKS.register(candle_fire = new BlockCandle("candle_fire", "fire"));
+		ForgeRegistries.BLOCKS.register(candle_ender = new BlockCandle("candle_ender", "ender"));
+		register(chandelier_halloween = new BlockChandelierHalloween("halloween_chandelier", "unlit"), new ItemBlockMultistate(chandelier_halloween));
+		ForgeRegistries.BLOCKS.register(chandelier_halloween_fire = new BlockChandelierHalloween("halloween_chandelier_fire", "fire"));
+		ForgeRegistries.BLOCKS.register(chandelier_halloween_ender = new BlockChandelierHalloween("halloween_chandelier_ender", "ender"));
+		((BlockChandelier) chandelier_halloween).setFireBlock(chandelier_halloween_fire).setEnderBlock(chandelier_halloween_ender);
+		((BlockChandelier) chandelier_halloween_fire).setUnlitBlock(chandelier_halloween);
+		((BlockChandelier) chandelier_halloween_ender).setUnlitBlock(chandelier_halloween);
 		register(pumpkin_normie = new BlockJackOLantern("pumpkin_normie", "unlit", pumpkin_normie_fire, pumpkin_normie_ender), new ItemBlockMultistate(pumpkin_normie));
 		register(pumpkin_normie_fire = new BlockJackOLantern("pumpkin_normie_fire", "fire", pumpkin_normie, pumpkin_normie_ender));
 		register(pumpkin_normie_ender = new BlockJackOLantern("pumpkin_normie_ender", "ender", pumpkin_normie, pumpkin_normie_fire));
@@ -729,9 +760,9 @@ public class MBlocks
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(godstone = new BlockGodstone());
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
-		register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
-		register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));
-		register(magnet_piston_4 = new BlockMagnetPistonBase(4).setRegistryName("magnet_piston4").setUnlocalizedName("magnet_piston"));
+		ForgeRegistries.BLOCKS.register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
+		ForgeRegistries.BLOCKS.register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));
+		ForgeRegistries.BLOCKS.register(magnet_piston_4 = new BlockMagnetPistonBase(4).setRegistryName("magnet_piston4").setUnlocalizedName("magnet_piston"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_head = new BlockMagnetPistonExtension().setRegistryName("magnet_piston_head"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
@@ -747,8 +778,8 @@ public class MBlocks
 		register(covered_pipe_oceanstone = new BlockPipe("covered_pipe_oceanstone", true, false));
 		register(covered_pipe_reefstone = new BlockPipe("covered_pipe_reefstone", true, false));
 		register(sorter = new BlockSorter("sorter"));
-		register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
-		register(creative_engine = new BlockCreativeEngine());
+		//register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
+		//register(creative_engine = new BlockCreativeEngine());
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
@@ -770,7 +801,7 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(crop_tomato = new TomatoPlant("crop_tomato"));
 		ForgeRegistries.BLOCKS.register(crop_corn = new CornPlant("crop_corn"));
 		
-		ForgeRegistries.BLOCKS.register(liquid_crystalfloe = new LiquidCrystalfloe(MFluids.crystalfloe, MMaterials.CRYSTALFLOE).setUnlocalizedName("crystalfloe").setRegistryName("crystalfloe"));
+		register(liquid_crystalfloe = new LiquidCrystalfloe(MFluids.crystalfloe, MMaterials.CRYSTALFLOE).setUnlocalizedName("crystalfloe").setRegistryName("crystalfloe"));
 		
 		Blocks.BEDROCK.setHardness(100F).setHarvestLevel("pickaxe", 4);
 	}
@@ -873,6 +904,10 @@ public class MBlocks
 			initModel(ore_torite, i, "ore_torite_" + EnumStoneType.values()[i].getName());
 			initModel(ore_titanium, i, "ore_titanium_" + EnumStoneType.values()[i].getName());
 		}
+		for(int i = 0 ; i < BlockShimmerstone.ShimmerstoneType.values().length ; i++)
+		{
+			initModel(shimmerstone, i, "shimmerstone_" + BlockShimmerstone.ShimmerstoneType.values()[i].getName());
+		}
 		for(int i = 0 ; i < 3 ; i++)
 		{
 			initModel(soul_glass, i, "soul_glass_" + BlockSoulGlass.EnumType.values()[i].toString());
@@ -886,12 +921,13 @@ public class MBlocks
 		{
 			initModel(wood_slab_1, i, "m_wood_slab_1_" + BlockWoodSlab1.EnumType.values()[i].getName());
 		}
-		for(int i = 0 ; i < BlockMiscStoneSlab1.EnumType.values().length ; i++)
+		for(int i = 0 ; i < BlockMiscStoneSlab2.EnumType.values().length ; i++)
 		{
-			initModel(misc_stone_slab_1, i, "m_misc_stone_slab_1_" + BlockMiscStoneSlab1.EnumType.values()[i].getName());
+			initModel(misc_stone_slab_2, i, "m_misc_stone_slab_2_" + BlockMiscStoneSlab2.EnumType.values()[i].getName());
 		}
 		for(int i = 0 ; i < 8 ; i++)
 		{
+			initModel(misc_stone_slab_1, i, "m_misc_stone_slab_1_" + BlockMiscStoneSlab1.EnumType.values()[i].getName());
 			initModel(stone_slab_1, i, "m_stone_slab_1_" + BlockStoneSlab1.EnumType.values()[i].getName());
 			initModel(stone_slab_2, i, "m_stone_slab_2_" + BlockStoneSlab2.EnumType.values()[i].getName());
 			initModel(stone_slab_3, i, "m_stone_slab_3_" + BlockStoneSlab3.EnumType.values()[i].getName());
@@ -903,6 +939,10 @@ public class MBlocks
 		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
 		{
 			initModel(candle, i, "candle_" + EnumDyeColor.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockChandelierHalloween.EnumColor.values().length ; i++)
+		{
+			initModel(chandelier_halloween, i, "chandelier_halloween_" + BlockChandelierHalloween.EnumColor.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockJackOLantern.EnumFaceType.values().length ; i++)
 		{

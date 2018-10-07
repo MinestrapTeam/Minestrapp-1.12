@@ -35,6 +35,18 @@
         ],
         "seamless=true,variant=portar": [
             { "model": "minestrapp:slabbed_portar" }
+        ],
+        "seamless=false,variant=shimmerstone": [
+            { "model": "minestrapp:double_slab_shimmerstone" }
+        ],
+        "seamless=true,variant=shimmerstone": [
+            { "model": "minestrapp:smooth_double_slab_shimmerstone" }
+        ],
+        "seamless=false,variant=shimmerstone_cobbled": [
+            { "model": "minestrapp:cobbled_shimmerstone" }
+        ],
+        "seamless=true,variant=shimmerstone_cobbled": [
+            { "model": "minestrapp:cobbled_shimmerstone" }
         ]
     }
 }

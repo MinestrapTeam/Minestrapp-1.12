@@ -1,0 +1,49 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_bat",
+		"texture": "minestrapp:blocks/decor/holiday/skull_bat"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 5.5, 0, 7 ],
+			"to": [ 9.5, 4, 11 ],
+			"rotation": { "origin": [ 5.5, 0, 7 ], "axis": "y", "angle": 22.5 },
+			"faces": {
+				"down": { "uv": [ 4, 8, 8, 12 ], "texture": "#texture" },
+				"up": { "uv": [ 4, 0, 8, 4 ], "texture": "#texture" },
+				"north": { "uv": [ 4, 4, 8, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 12, 4, 16, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 4, 12, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 4, 4, 8 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 5.5, 4, 8 ],
+			"to": [ 6.5, 6, 9 ],
+			"rotation": { "origin": [ 5.5, 0, 7 ], "axis": "y", "angle": 22.5 },
+			"faces": {
+				"up": { "uv": [ 0, 0, 1, 1 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 8.5, 4, 8 ],
+			"to": [ 9.5, 6, 9 ],
+			"rotation": { "origin": [ 5.5, 0, 7 ], "axis": "y", "angle": 22.5 },
+			"faces": {
+				"up": { "uv": [ 0, 0, 1, 1 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 1, 2 ], "texture": "#texture" }
+			}
+		}
+	]
+}

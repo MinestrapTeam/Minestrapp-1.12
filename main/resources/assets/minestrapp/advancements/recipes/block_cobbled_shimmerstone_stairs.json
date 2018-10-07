@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_cobbled_shimmerstone_stairs"
+    ]
+  },
+  "criteria": {
+    "has_cobbled_shimmerstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:shimmerstone",
+            "data": 1
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_cobbled_shimmerstone_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cobbled_shimmerstone",
+      "has_the_recipe"
+    ]
+  ]
+}

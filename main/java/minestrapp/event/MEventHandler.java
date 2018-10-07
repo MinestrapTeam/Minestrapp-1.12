@@ -1,10 +1,14 @@
 package minestrapp.event;
 
+import java.awt.Color;
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import minestrapp.MMaterials;
 import minestrapp.Minestrapp5;
 import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
@@ -49,6 +53,8 @@ import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
+import net.minecraftforge.client.event.EntityViewRenderEvent.FogDensity;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -59,7 +65,13 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @EventBusSubscriber
@@ -628,6 +640,67 @@ public class MEventHandler
 	    
 	    //Command for spawning test chests w/ loot tables: /setblock ~ ~ ~ minecraft:chest 2 replace {LootTable:"chests/simple_dungeon"}*/
 	}
+	
+	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
+    public void onEvent(PlayerTickEvent event)
+    {
+        if (event.phase == TickEvent.Phase.START && event.player.world.isRemote) // only proceed if START phase otherwise, will execute twice per tick
+        {
+            EntityPlayer thePlayer = event.player;
+            Minestrapp5.proxy.handleMaterialAcceleration(thePlayer, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());           
+        }
+    }
+	
+	@SubscribeEvent(priority=EventPriority.LOWEST, receiveCanceled=true)
+	public void onEvent(WorldTickEvent event)
+	{
+	    if (event.phase == TickEvent.Phase.END) // only proceed if START phase otherwise, will execute twice per tick
+		{
+		    return;
+		}   
+		
+	    if(event.world.loadedEntityList != null && !event.world.loadedEntityList.isEmpty())
+	    {
+			List entityList = event.world.loadedEntityList;
+			Iterator<Entity> iterator = entityList.iterator();
+			
+			while(iterator.hasNext())
+			{
+				Entity theEntity = iterator.next();
+			   
+				/* 
+				 * Update all motion of all entities except players that may be inside your fluid
+				 */
+				Minestrapp5.proxy.handleMaterialAcceleration(theEntity, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
+			}
+	    }
+	}
+	
+	@SideOnly(Side.CLIENT)
+    @SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
+    public void onEvent(FogDensity event)
+    {
+		 if (event.getEntity().isInsideOfMaterial(MMaterials.CRYSTALFLOE))
+		 {
+			 event.setDensity(0.8F);
+		 }
+		  
+		 //event.setCanceled(true); // must cancel event for event handler to take effect
+    }
+		
+		    
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
+    public void onEvent(FogColors event)
+    {
+		 if (event.getEntity().isInsideOfMaterial(MMaterials.CRYSTALFLOE))
+		 {
+			 event.setRed(188);
+			 event.setGreen(213);
+			 event.setBlue(202);
+		 }
+    }
+
 	
 	public static NBTTagList getEnchantments(ItemStack stack)
     {

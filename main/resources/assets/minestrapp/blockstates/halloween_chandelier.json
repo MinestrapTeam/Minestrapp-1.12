@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "color=black": [
+            { "model": "minestrapp:halloween_chandelier_black" },
+            { "model": "minestrapp:halloween_chandelier_black", "y": 90 },
+            { "model": "minestrapp:halloween_chandelier_black", "y": 180 },
+            { "model": "minestrapp:halloween_chandelier_black", "y": 270 }
+        ],
+        "color=orange": [
+            { "model": "minestrapp:halloween_chandelier_orange" },
+            { "model": "minestrapp:halloween_chandelier_orange", "y": 90 },
+            { "model": "minestrapp:halloween_chandelier_orange", "y": 180 },
+            { "model": "minestrapp:halloween_chandelier_orange", "y": 270 }
+        ],
+        "color=lime": [
+            { "model": "minestrapp:halloween_chandelier_lime" },
+            { "model": "minestrapp:halloween_chandelier_lime", "y": 90 },
+            { "model": "minestrapp:halloween_chandelier_lime", "y": 180 },
+            { "model": "minestrapp:halloween_chandelier_lime", "y": 270 }
+        ],
+        "color=purple": [
+            { "model": "minestrapp:halloween_chandelier_purple" },
+            { "model": "minestrapp:halloween_chandelier_purple", "y": 90 },
+            { "model": "minestrapp:halloween_chandelier_purple", "y": 180 },
+            { "model": "minestrapp:halloween_chandelier_purple", "y": 270 }
+        ]
+    }
+}

@@ -3418,6 +3418,199 @@
                     }
                 ]
             }
+        },
+        "shimmerstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "cobbled_shimmerstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 1
+                    }
+                ]
+            }
+        },
+        "shimmerstone_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 2
+                    }
+                ]
+            }
+        },
+        "shimmerstone_cracked_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 3
+                    }
+                ]
+            }
+        },
+        "shimmerstone_mossy_bricks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 4
+                    }
+                ]
+            }
+        },
+        "shimmerstone_tiles": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 5
+                    }
+                ]
+            }
+        },
+        "shimmerstone_chiseled": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "shimmerstone_lamp_blue": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "shimmerstone_lamp_purple": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 8
+                    }
+                ]
+            }
+        },
+        "shimmerstone_lamp_green": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone",
+                        "data": 9
+                    }
+                ]
+            }
+        },
+        "shimmerstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 6
+                    }
+                ]
+            }
+        },
+        "cobbled_shimmerstone_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_1",
+                        "data": 7
+                    }
+                ]
+            }
+        },
+        "shimmerstone_brick_slab": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:m_misc_stone_slab_2",
+                        "data": 0
+                    }
+                ]
+            }
+        },
+        "shimmerstone_panel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:panel_m_misc_stone_slab_1_shimmerstone"
+                    }
+                ]
+            }
+        },
+        "cobbled_shimmerstone_panel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:panel_shimmerstone_cobblestone"
+                    }
+                ]
+            }
+        },
+        "shimmerstone_brick_panel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:panel_shimmerstone_bricks"
+                    }
+                ]
+            }
+        },
+        "cobbled_shimmerstone_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone_cobblestone_stairs"
+                    }
+                ]
+            }
+        },
+        "shimmerstone_brick_stairs": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:shimmerstone_bricks_stairs"
+                    }
+                ]
+            }
         }
     }
 }

@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/cobbled_shimmerstone",
+        "top": "minestrapp:blocks/stone/cobbled_shimmerstone",
+        "side": "minestrapp:blocks/stone/cobbled_shimmerstone"
+    }
+}

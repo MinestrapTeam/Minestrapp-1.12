@@ -1,0 +1,34 @@
+{
+    "variants": {
+        "variant=stone": [
+            { "model": "minestrapp:shimmerstone" }
+        ],
+        "variant=cobblestone": [
+            { "model": "minestrapp:cobbled_shimmerstone" }
+        ],
+        "variant=bricks": [
+            { "model": "minestrapp:shimmerstone_bricks" }
+        ],
+        "variant=bricks_cracked": [
+            { "model": "minestrapp:shimmerstone_bricks_cracked" }
+        ],
+        "variant=bricks_mossy": [
+            { "model": "minestrapp:shimmerstone_bricks_mossy" }
+        ],
+        "variant=tiles": [
+            { "model": "minestrapp:shimmerstone_tiles" }
+        ],
+        "variant=chiseled": [
+            { "model": "minestrapp:chiseled_shimmerstone" }
+        ],
+        "variant=lamp_blue": [
+            { "model": "minestrapp:shimmerstone_lamp_blue" }
+        ],
+        "variant=lamp_purple": [
+            { "model": "minestrapp:shimmerstone_lamp_purple" }
+        ],
+        "variant=lamp_green": [
+            { "model": "minestrapp:shimmerstone_lamp_green" }
+        ]
+    }
+}
