@@ -162,5 +162,26 @@ public class OreDictRegistry
 		OreDictionary.registerOre("tanninFine", new ItemStack(Items.POISONOUS_POTATO));
 		OreDictionary.registerOre("tanninNormal", new ItemStack(MItems.peanuts));
 		OreDictionary.registerOre("tanninFine", new ItemStack(MItems.sawdust));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_bat));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_parrot));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_chicken));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_rabbit));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_pig));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_sheep));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_cow));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_llama));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_horse));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_ocelot));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_wolf));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_polar_bear));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_squid));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_villager));
+		OreDictionary.registerOre("skull", new ItemStack(Items.SKULL, 1, 0));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_husk));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_stray));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_creeper));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_guardian));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_enderman));
+		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_shulker));
 	}
 }

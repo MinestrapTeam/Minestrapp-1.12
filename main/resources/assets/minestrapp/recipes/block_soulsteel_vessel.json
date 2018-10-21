@@ -1,8 +1,8 @@
 {    
     "type": "forge:ore_shaped",
     "pattern": [
-        "b b",
-        "gsg",
+        "bgb",
+        "isi",
         "iii"
     ],
     "key": {        
@@ -15,12 +15,11 @@
             "ore": "ingotSteel"
         },
         "g": {
-            "type": "forge:ore_dict",
-            "ore": "gemSoul"
+            "item": "minestrapp:soul_eyes"
         },
         "s": {
-            "item": "minecraft:skull",
-            "data": 0
+            "type": "forge:ore_dict",
+            "ore": "skull"
         }
      },
      "result": {

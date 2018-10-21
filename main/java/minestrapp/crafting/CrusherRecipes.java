@@ -304,6 +304,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_titanium, 1, 9), new ItemStack(MItems.chunks, 2, 12), new ItemStack(MItems.chunks, 1, 1), 40, 0.4F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_ORE), new ItemStack(Items.QUARTZ, 3), new ItemStack(Items.GHAST_TEAR), 12, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_blazium), new ItemStack(MItems.gems, 6, 5), new ItemStack(Items.BLAZE_POWDER), 35, 0.25F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.ore_shimmering), new ItemStack(MItems.chunks, 2, 14), new ItemStack(MItems.chunks, 1, 5), 40, 0.6F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_soul), new ItemStack(MItems.gem_soul, 2), new ItemStack(Items.QUARTZ), 45, 0.5F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_dimensium), new ItemStack(MItems.chunks, 2, 13), new ItemStack(MItems.chunks, 1, 6), 40, 0.3F);
 		

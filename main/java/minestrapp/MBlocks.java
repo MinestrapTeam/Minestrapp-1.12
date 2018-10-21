@@ -3,106 +3,8 @@ package minestrapp;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import minestrapp.block.BlockBasket;
-import minestrapp.block.BlockBauble;
-import minestrapp.block.BlockBiomeRedstone;
-import minestrapp.block.BlockBiomeRedstoneWire;
-import minestrapp.block.BlockAlloy;
-import minestrapp.block.BlockAxel;
-import minestrapp.block.BlockBarrel;
-import minestrapp.block.BlockCrate;
-import minestrapp.block.BlockBlazium;
-import minestrapp.block.BlockCandle;
-import minestrapp.block.BlockChandelier;
-import minestrapp.block.BlockChandelierHalloween;
-import minestrapp.block.BlockCharwoodLimb;
-import minestrapp.block.BlockClutchthorn;
-import minestrapp.block.BlockCobblestoneWall;
-import minestrapp.block.BlockColdSand;
-import minestrapp.block.BlockCreativeEngine;
-import minestrapp.block.BlockCrusher;
-import minestrapp.block.BlockDecorativeStones;
-import minestrapp.block.BlockDimensium;
-import minestrapp.block.BlockDimensiumRope;
-import minestrapp.block.BlockDoubleMiscStoneSlab1;
-import minestrapp.block.BlockDoubleMiscStoneSlab2;
-import minestrapp.block.BlockDoubleStoneSlab1;
-import minestrapp.block.BlockDoubleStoneSlab2;
-import minestrapp.block.BlockDoubleStoneSlab3;
-import minestrapp.block.BlockDoubleStoneSlab4;
-import minestrapp.block.BlockDoubleWoodSlab1;
-import minestrapp.block.BlockDriedMud;
-import minestrapp.block.BlockEndermiteHiveHusk;
-import minestrapp.block.BlockFargrowth;
-import minestrapp.block.BlockFargrowthPath;
-import minestrapp.block.BlockGlacialInvincium;
-import minestrapp.block.BlockGlaciericIce;
-import minestrapp.block.BlockGlaciericIceDeposit;
-import minestrapp.block.BlockGlacierite;
-import minestrapp.block.BlockGlowshroom;
-import minestrapp.block.BlockGodstone;
-import minestrapp.block.BlockHalfMiscStoneSlab1;
-import minestrapp.block.BlockHalfMiscStoneSlab2;
-import minestrapp.block.BlockHalfStoneSlab1;
-import minestrapp.block.BlockHalfStoneSlab2;
-import minestrapp.block.BlockHalfStoneSlab3;
-import minestrapp.block.BlockHalfStoneSlab4;
-import minestrapp.block.BlockHalfWoodSlab1;
-import minestrapp.block.BlockHangingMoss;
-import minestrapp.block.BlockInfectedMushroom;
-import minestrapp.block.BlockInvincium;
-import minestrapp.block.BlockIrradiantSunstone;
-import minestrapp.block.BlockIrradium;
-import minestrapp.block.BlockIrradiumOre;
-import minestrapp.block.BlockJackOLantern;
-import minestrapp.block.BlockJackOLanternSmashed;
-import minestrapp.block.BlockLavaSponge;
-import minestrapp.block.BlockLightPaste;
-import minestrapp.block.BlockMDirt;
-import minestrapp.block.BlockMDoor;
-import minestrapp.block.BlockMFarmland;
-import minestrapp.block.BlockMFence;
-import minestrapp.block.BlockMFenceGate;
-import minestrapp.block.BlockMGrass;
-import minestrapp.block.BlockMHugeMushroom;
-import minestrapp.block.BlockMLog;
-import minestrapp.block.BlockMPath;
-import minestrapp.block.BlockMPlanks;
-import minestrapp.block.BlockMiscStoneSlab1;
-import minestrapp.block.BlockMiscStoneSlab2;
-import minestrapp.block.BlockMiteEggsack;
-import minestrapp.block.BlockMiteHoney;
-import minestrapp.block.BlockMoss;
-import minestrapp.block.BlockMud;
-import minestrapp.block.BlockPipe;
-import minestrapp.block.BlockPlate;
-import minestrapp.block.BlockPlateMetal;
-import minestrapp.block.BlockPortalDust;
-import minestrapp.block.BlockPortar;
-import minestrapp.block.BlockRedstoneOre;
-import minestrapp.block.BlockRope;
-import minestrapp.block.BlockSavannaGrass;
-import minestrapp.block.BlockShimmerstone;
-import minestrapp.block.BlockSilverfishStone;
-import minestrapp.block.BlockSorter;
-import minestrapp.block.BlockSoulEyes;
-import minestrapp.block.BlockSoulGlass;
-import minestrapp.block.BlockSoulOre;
-import minestrapp.block.BlockSoulsteelVessel;
-import minestrapp.block.BlockStoneCutter;
-import minestrapp.block.BlockStoneSlab1;
-import minestrapp.block.BlockStoneSlab2;
-import minestrapp.block.BlockStoneSlab3;
-import minestrapp.block.BlockStoneSlab4;
-import minestrapp.block.BlockSunstoneDeposit;
-import minestrapp.block.BlockTanningRack;
-import minestrapp.block.BlockTerracreep;
-import minestrapp.block.BlockTundraGrass;
-import minestrapp.block.BlockWoodSlab1;
-import minestrapp.block.EnumStoneType;
-import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.CropWithered;
+import minestrapp.block.*;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.crops.BlockVoidberryBush;
 import minestrapp.block.crops.CabbagePlant;
@@ -114,6 +16,7 @@ import minestrapp.block.crops.PeanutsPlant;
 import minestrapp.block.crops.PepperPlant;
 import minestrapp.block.crops.TomatoPlant;
 import minestrapp.block.item.ItemBlockContainer;
+import minestrapp.block.item.ItemBlockMSkull;
 import minestrapp.block.item.ItemBlockMSlab;
 import minestrapp.block.item.ItemBlockMultistate;
 import minestrapp.block.item.ItemBlockPanel;
@@ -347,8 +250,11 @@ public class MBlocks
 	public static Block ore_emerald;
 	public static Block ore_titanium;
 	public static Block ore_blazium;
+	public static Block ore_shimmering;
 	public static Block ore_soul;
 	public static Block ore_dimensium;
+	public static Block geode_shimmerstone_clear;
+	public static Block geode_shimmerstone_dark;
 	
 	//Resource
 	public static Block block_salt;
@@ -409,6 +315,26 @@ public class MBlocks
 	public static Block pumpkin_smashed;
 	public static Block pumpkin_smashed_fire;
 	public static Block pumpkin_smashed_ender;
+	public static BlockMSkull skull_bat;
+	public static BlockMSkull skull_parrot;
+	public static BlockMSkull skull_chicken;
+	public static BlockMSkull skull_rabbit;
+	public static BlockMSkull skull_pig;
+	public static BlockMSkull skull_sheep;
+	public static BlockMSkull skull_cow;
+	public static BlockMSkull skull_llama;
+	public static BlockMSkull skull_horse;
+	public static BlockMSkull skull_ocelot;
+	public static BlockMSkull skull_wolf;
+	public static BlockMSkull skull_polar_bear;
+	public static BlockMSkull skull_squid;
+	public static BlockMSkull skull_villager;
+	public static BlockMSkull skull_husk;
+	public static BlockMSkull skull_stray;
+	public static BlockMSkull skull_creeper;
+	public static BlockMSkull skull_guardian;
+	public static BlockMSkull skull_enderman;
+	public static BlockMSkull skull_shulker;
 	public static Block plate_weave;
 	public static Block plate_slate;
 	public static Block plate_metal;
@@ -418,6 +344,7 @@ public class MBlocks
 	public static Block dimensium_rope;
 	public static Block door_charwood;
 	public static Block basket;
+	public static Block crate;
 	public static Block barrel;
 	public static Block tanning_rack;
 	public static Block glacieric_ice;
@@ -455,7 +382,6 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
-	public static Block crate;
 	
 	//Crops
 	public static Block crop_withered;
@@ -669,8 +595,11 @@ public class MBlocks
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
 		register(ore_blazium = new BlockBase("ore_blazium", Material.ROCK, MapColor.NETHERRACK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setLightLevel(0.675F).setCreativeTab(MTabs.ore));
+		register(ore_shimmering = new BlockShimmeringOre());
 		register(ore_soul = new BlockSoulOre());
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
+		register(geode_shimmerstone_clear = new BlockGeode("geode_shimmerstone_clear", Material.ROCK, MapColor.SNOW, SoundType.STONE, 20F, "pickaxe", 4).setLightLevel(0.7F).setCreativeTab(MTabs.ore));
+		register(geode_shimmerstone_dark = new BlockGeode("geode_shimmerstone_dark", Material.ROCK, MapColor.SNOW, SoundType.STONE, 20F, "pickaxe", 4).setLightLevel(0.7F).setCreativeTab(MTabs.ore));
 		
 		//Resource
 		register(block_salt = new BlockBase("block_salt", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.STONE, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
@@ -746,12 +675,33 @@ public class MBlocks
 		register(pumpkin_smashed = new BlockJackOLanternSmashed("pumpkin_smashed", "unlit", pumpkin_smashed_fire, pumpkin_smashed_ender));
 		register(pumpkin_smashed_fire = new BlockJackOLanternSmashed("pumpkin_smashed_fire", "fire", pumpkin_smashed, pumpkin_smashed_ender));
 		register(pumpkin_smashed_ender = new BlockJackOLanternSmashed("pumpkin_smashed_ender", "ender", pumpkin_smashed, pumpkin_smashed_fire));
+		register(skull_bat = new BlockMSkull("skull_bat", 4, 4, 0));
+		register(skull_parrot = new BlockMSkull("skull_parrot", 4, 4, 0));
+		register(skull_chicken = new BlockMSkull("skull_chicken", 4, 6, 0));
+		register(skull_rabbit = new BlockMSkull("skull_rabbit", 5, 10, 3));
+		register(skull_pig = new BlockMSkull("skull_pig", 8, 8, 0));
+		register(skull_sheep = new BlockMSkull("skull_sheep", 8, 6, 0));
+		register(skull_cow = new BlockMSkull("skull_cow", 8, 8, 0));
+		register(skull_llama = new BlockMSkull("skull_llama", 8, 18, 1));
+		register(skull_horse = new BlockMSkull("skull_horse", 7, 5, 2));
+		register(skull_ocelot = new BlockMSkull("skull_ocelot", 5, 4, 0));
+		register(skull_wolf = new BlockMSkull("skull_wolf", 6, 6, 0));
+		register(skull_polar_bear = new BlockMSkull("skull_polar_bear", 7, 7, 0));
+		register(skull_squid = new BlockMSkull("skull_squid", 12, 16, 0));
+		register(skull_villager = new BlockMSkull("skull_villager", 8, 10, 0));
+		register(skull_husk = new BlockMSkull("skull_husk", 8, 8, 0));
+		register(skull_stray = new BlockMSkull("skull_stray", 8, 8, 0));
+		register(skull_creeper = new BlockMSkull("skull_creeper", 8, 8, 0));
+		register(skull_guardian = new BlockMSkull("skull_guardian", 16, 16, 0));
+		register(skull_enderman = new BlockMSkull("skull_enderman", 8, 13, 0));
+		register(skull_shulker = new BlockMSkull("skull_shulker", 6, 6, 0));
 		register(plate_weave = new BlockPlate("plate_weave", Material.CLOTH, MapColor.SAND, SoundType.CLOTH, 0.6F, 2, 3));
 		register(plate_slate = new BlockPlate("plate_slate", Material.ROCK, MapColor.GRAY, SoundType.STONE, 0.75F, 1, 1, "pickaxe", 0));
 		register(plate_metal = new BlockPlateMetal(), new ItemBlockMultistate(plate_metal));
 		
 		//Utility
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
+		register(crate = new BlockCrate());
 		register(barrel = new BlockBarrel());
 		register(tanning_rack = new BlockTanningRack());
 		register(glacieric_ice = new BlockGlaciericIce());
@@ -788,7 +738,6 @@ public class MBlocks
 		register(redstone_icy = new BlockBiomeRedstoneWire("redstone_icy", 159F, 30F, 198F));
 		register(redstone_briny = new BlockBiomeRedstoneWire("redstone_briny", 172F, 150F, 27F));
 		register(glow_paste = new BlockLightPaste(), new ItemBlockContainer(glow_paste, new ItemStack(Items.GLASS_BOTTLE)));
-		register(crate = new BlockCrate());
 		
 		//Crops
 		ForgeRegistries.BLOCKS.register(crop_withered = new CropWithered("crop_withered"));
@@ -810,6 +759,13 @@ public class MBlocks
 	{
 		ForgeRegistries.BLOCKS.register(block);
 		ForgeRegistries.ITEMS.register(new MItemBlock(block).setRegistryName(block.getRegistryName()));
+		blockList.add(block);
+	}
+	
+	public static void register(BlockMSkull block)
+	{
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(new ItemBlockMSkull(block).setRegistryName(block.getRegistryName()));
 		blockList.add(block);
 	}
 	

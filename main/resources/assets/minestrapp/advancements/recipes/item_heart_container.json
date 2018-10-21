@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_heart_container"
+    ]
+  },
+  "criteria": {
+    "has_piece": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:heart_piece"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_heart_container"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_piece",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -6,12 +6,13 @@
     ]
   },
   "criteria": {
-    "has_soul_gem": {
+    "has_steel": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "minestrapp:gem_soul"
+            "item": "minestrapp:m_ingot",
+            "data": 3
           }
         ]
       }
@@ -25,7 +26,7 @@
   },
   "requirements": [
     [
-      "has_soul_gem",
+      "has_steel",
       "has_the_recipe"
     ]
   ]

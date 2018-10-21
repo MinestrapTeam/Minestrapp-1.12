@@ -44,16 +44,16 @@ public class ItemHeartContainer extends ItemBase
     {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
         
-        //if(playerIn.getMaxHealth() < MConfig.maxHealth)
-        //{
+        if(playerIn.getMaxHealth() < MConfig.maxHealth)
+        {
             playerIn.setActiveHand(handIn);
             worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BREATH, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
             return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-        //}
-        //else
-        //{
-        //    return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
-        //}
+        }
+        else
+        {
+            return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        }
     }
 	
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)

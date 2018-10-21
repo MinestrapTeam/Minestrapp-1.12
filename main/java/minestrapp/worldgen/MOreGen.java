@@ -186,6 +186,19 @@ public class MOreGen implements IWorldGenerator
 		{
 			if(MConfig.generateBlazium)
 				this.runGenerator(blazium, world, random, chunkX, chunkZ, 12, 0, 128, false);
+			if(MConfig.generateShimmeringOre)
+			{
+				for(int i = 0 ; i < 30 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 60 - random.nextInt(58);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos shimmeringPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenShimmeringOre shimmeringGen = new MGenShimmeringOre();
+					shimmeringGen.generate(world, random, shimmeringPos);
+				}
+			}
 			if(MConfig.generateSoulOre)
 				this.runGenerator(soul, world, random, chunkX, chunkZ, 40, 20, 100, false);
 		}

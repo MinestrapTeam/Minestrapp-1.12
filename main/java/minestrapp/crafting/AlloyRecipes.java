@@ -8,7 +8,9 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
 
 import minestrapp.MBlocks;
+import minestrapp.MFluids;
 import minestrapp.MItems;
+import minestrapp.fluid.FluidBase;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -18,6 +20,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class AlloyRecipes {
@@ -50,6 +54,8 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
 		this.addAlloyRecipe(new ItemStack(Items.QUARTZ), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
 		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 5), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.blazed_soul_glass, 2, 0), 0.4F);
+		this.addAlloyRecipe(new ItemStack(MItems.chunks, 1, 14), new ItemStack(Items.BUCKET), FluidUtil.getFilledBucket(new FluidStack(MFluids.crystalfloe, FluidBase.BUCKET_VOLUME)), 4F);
+		this.addAlloyRecipe(new ItemStack(MBlocks.ore_shimmering), new ItemStack(Items.BUCKET), FluidUtil.getFilledBucket(new FluidStack(MFluids.crystalfloe, FluidBase.BUCKET_VOLUME)), 4F);
 		this.addAlloyRecipe(new ItemStack(MItems.corn_on_the_cob), new ItemStack(MItems.fat), new ItemStack(MItems.grilled_corn), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.BOWL), new ItemStack(MItems.bread_bowl), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.SUGAR), new ItemStack(MItems.sugar_cookie, 8), 0.35F);

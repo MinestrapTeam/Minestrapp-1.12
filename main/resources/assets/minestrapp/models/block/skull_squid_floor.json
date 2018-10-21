@@ -1,0 +1,63 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"parent": "block/cube",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_squid_front",
+		"texture": "minestrapp:blocks/decor/holiday/skull_squid_front",
+		"texture1": "minestrapp:blocks/decor/holiday/skull_squid_left",
+		"texture2": "minestrapp:blocks/decor/holiday/skull_squid_right",
+		"texture3": "minestrapp:blocks/decor/holiday/skull_squid_back",
+		"texture4": "minestrapp:blocks/decor/holiday/skull_squid_top",
+		"texture5": "minestrapp:blocks/decor/holiday/skull_squid_bottom"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 2, 0, 2 ],
+			"to": [ 14, 16, 14 ],
+			"faces": {
+				"down": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture5" },
+				"up": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture4" },
+				"north": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture3" },
+				"west": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture2" }
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"firstperson_righthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"firstperson_lefthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"head": {
+			"translation":  [ 0, 2.75, 0 ],
+			"scale":  [ 1.25, 1.25, 1.25 ]
+		},
+		"ground": {
+			"translation":  [ 0, 3, 0 ],
+			"scale":  [ 0.25, 0.25, 0.25 ]
+		},
+		"fixed": {
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}

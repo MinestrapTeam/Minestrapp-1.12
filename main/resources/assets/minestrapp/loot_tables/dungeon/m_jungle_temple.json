@@ -1,6 +1,30 @@
 {
     "pools": [
         {
+            "name": "rare",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minestrapp:heart_piece",
+                    "weight": 50,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 50
+                }
+            ]
+        },
+        {
             "name": "main",
             "rolls": {
                 "min": 2,

@@ -1,0 +1,232 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:skull",
+            "data": 0
+        },
+        "title": {
+            "translate": "advancements.adventure.skol.title"
+        },
+        "description": {
+            "translate": "advancements.adventure.skol.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "minecraft:adventure/kill_all_mobs",
+    "rewards": {
+        "experience": 10000
+    },
+    "criteria": {
+        "bat": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_bat"
+                    }
+                ]
+            }
+        },
+        "parrot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_parrot"
+                    }
+                ]
+            }
+        },
+        "chicken": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_chicken"
+                    }
+                ]
+            }
+        },
+        "rabbit": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_rabbit"
+                    }
+                ]
+            }
+        },
+        "pig": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_pig"
+                    }
+                ]
+            }
+        },
+        "sheep": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_sheep"
+                    }
+                ]
+            }
+        },
+        "cow": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_cow"
+                    }
+                ]
+            }
+        },
+        "llama": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_llama"
+                    }
+                ]
+            }
+        },
+        "horse": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_horse"
+                    }
+                ]
+            }
+        },
+        "ocelot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_ocelot"
+                    }
+                ]
+            }
+        },
+        "squid": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_squid"
+                    }
+                ]
+            }
+        },
+        "wolf": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_wolf"
+                    }
+                ]
+            }
+        },
+        "polar_bear": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_polar_bear"
+                    }
+                ]
+            }
+        },
+        "villager": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_villager"
+                    }
+                ]
+            }
+        },
+        "husk": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_husk"
+                    }
+                ]
+            }
+        },
+        "stray": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_stray"
+                    }
+                ]
+            }
+        },
+        "creeper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_creeper"
+                    }
+                ]
+            }
+        },
+        "guardian": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_guardian"
+                    }
+                ]
+            }
+        },
+        "enderman": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_enderman"
+                    }
+                ]
+            }
+        },
+        "shulker": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:skull_shulker"
+                    }
+                ]
+            }
+        },
+        "skeleton": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:skull",
+                        "data": 0
+                    }
+                ]
+            }
+        }
+    }
+}

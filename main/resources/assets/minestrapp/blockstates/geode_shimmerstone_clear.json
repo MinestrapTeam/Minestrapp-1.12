@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:geode_shimmerstone_whole" }
+        ]
+    }
+}

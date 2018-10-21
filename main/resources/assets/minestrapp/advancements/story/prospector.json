@@ -548,6 +548,36 @@
                     }
                 ]
             }
+        },
+        "shimmering_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:ore_shimmering"
+                    }
+                ]
+            }
+        },
+        "shimmerstone_geode_clear": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:geode_shimmerstone_clear"
+                    }
+                ]
+            }
+        },
+        "shimmerstone_geode_dark": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:geode_shimmerstone_dark"
+                    }
+                ]
+            }
         }
     },
     "requirements": [
@@ -650,6 +680,15 @@
         ],
         [
             "dimensium_ore"
+        ],
+        [
+            "shimmering_ore"
+        ],
+        [
+            "shimmerstone_geode_clear"
+        ],
+        [
+            "shimmerstone_geode_dark"
         ]
     ]
 }

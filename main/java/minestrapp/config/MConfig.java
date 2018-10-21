@@ -37,6 +37,7 @@ public class MConfig
 	public static boolean generateIceMounds;
 	public static boolean generateTitanium;
 	public static boolean generateBlazium;
+	public static boolean generateShimmeringOre;
 	public static boolean generateSoulOre;
 	public static boolean generateDimensium;
 	
@@ -133,6 +134,8 @@ public class MConfig
 		registerProperty(propertyTitaniumGen, CATEGORY_WORLDGEN, "generate_titanium");
 		Property propertyBlaziumGen = config.get(CATEGORY_WORLDGEN, "generate_blazium", true);
 		registerProperty(propertyBlaziumGen, CATEGORY_WORLDGEN, "generate_blazium");
+		Property propertyShimmeringGen = config.get(CATEGORY_WORLDGEN, "generate_shimmering_ore", true);
+		registerProperty(propertyShimmeringGen, CATEGORY_WORLDGEN, "generate_shimmering_ore");
 		Property propertySoulOreGen = config.get(CATEGORY_WORLDGEN, "generate_soul_ore", true);
 		registerProperty(propertySoulOreGen, CATEGORY_WORLDGEN, "generate_soul_ore");
 		Property propertyDimensiumGen = config.get(CATEGORY_WORLDGEN, "generate_dimensium", true);
@@ -214,6 +217,7 @@ public class MConfig
 			generateIceMounds = propertyIceMoundGen.getBoolean();
 			generateTitanium = propertyTitaniumGen.getBoolean();
 			generateBlazium = propertyBlaziumGen.getBoolean();
+			generateShimmeringOre = propertyShimmeringGen.getBoolean();
 			generateSoulOre = propertySoulOreGen.getBoolean();
 			generateDimensium = propertyDimensiumGen.getBoolean();
 			
@@ -244,7 +248,7 @@ public class MConfig
 			
 			removeVanillaRecipes = propertyRemoveVanillaRecipes.getBoolean();
 			startingHealth = propertyStartingHealth.getInt();
-			maxHealth = propertyStartingHealth.getInt();
+			maxHealth = propertyMaxHealth.getInt();
 		}
 		
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
@@ -259,6 +263,7 @@ public class MConfig
 		propertyIceMoundGen.set(generateIceMounds);
 		propertyTitaniumGen.set(generateTitanium);
 		propertyBlaziumGen.set(generateBlazium);
+		propertyShimmeringGen.set(generateShimmeringOre);
 		propertySoulOreGen.set(generateSoulOre);
 		propertyDimensiumGen.set(generateDimensium);
 		
@@ -289,7 +294,7 @@ public class MConfig
 		
 		propertyRemoveVanillaRecipes.set(removeVanillaRecipes);
 		propertyStartingHealth.set(startingHealth);
-		propertyStartingHealth.set(maxHealth);
+		propertyMaxHealth.set(maxHealth);
 		
 		if(config.hasChanged())
 		{

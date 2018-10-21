@@ -531,7 +531,11 @@ tile.ore_titanium_stone.name=Titanium Ore
 
 tile.ore_blazium.name=Blazium Ore
 tile.ore_soul.name=Soul Ore
+tile.ore_shimmering.name=Shimmering Ore
 tile.ore_dimensium.name=Dimensium Ore
+
+tile.geode_shimmerstone_clear.name=Strange Boulder
+tile.geode_shimmerstone_dark.name=Strange Boulder
 
 ## Resource ##
 
@@ -631,6 +635,25 @@ tile.plate_metal_bronze.name=Bronze Plate
 tile.plate_metal_steel.name=Steel Plate
 tile.plate_metal_gold.name=Golden Plate
 tile.skull_bat.name=Bat Skull
+tile.skull_chicken.name=Chicken Skull
+tile.skull_cow.name=Cow Skull
+tile.skull_horse.name=Horse Skull
+tile.skull_ocelot.name=Ocelot Skull
+tile.skull_parrot.name=Parrot Skull
+tile.skull_pig.name=Pig Skull
+tile.skull_rabbit.name=Rabbit Skull
+tile.skull_sheep.name=Sheep Skull
+tile.skull_squid.name=Squid Skull...?
+tile.skull_villager.name=Villager Skull
+tile.skull_llama.name=Llama Skull
+tile.skull_polar_bear.name=Polar Bear Skull
+tile.skull_wolf.name=Wolf Skull
+tile.skull_enderman.name=Enderman Skull
+tile.skull_creeper.name=Creeper Skull
+tile.skull_guardian.name=Guardian Skull
+tile.skull_husk.name=Husk Skull
+tile.skull_stray.name=Stray Skull
+tile.skull_shulker.name=Shulker Skull
 
 ## Utility ##
 
@@ -689,6 +712,7 @@ item.m_chunks_10.name=Gold Chunk
 item.m_chunks_11.name=Torite Chunk
 item.m_chunks_12.name=Titanium Chunk
 item.m_chunks_13.name=Dimensium Chunk
+item.m_chunks_14.name=Shimmering Chunk
 item.irradium.name=Irradium
 item.m_ingot_0.name=Copper Ingot
 item.m_ingot_1.name=Tin Ingot
@@ -1035,6 +1059,7 @@ itemGroup.Combat=Minestrapp Combat
 item.leather.name=Cow Hide
 item.brick.name=Clay Brick
 item.cauldron.name=Iron Cauldron
+item.skull.skeleton.name=Human Skull
 tile.brick.name=Clay Bricks
 tile.cauldron.name=Iron Cauldron
 tile.monsterStoneEgg.chiseledbrick.name=Chiseled Stone Monster Egg
@@ -1182,6 +1207,8 @@ advancements.adventure.hang_glider.title=On the Wings of a Bat
 advancements.adventure.hang_glider.description=Craft a hang glider and soar through the skies.
 advancements.adventure.reinforced_hang_glider.title=Flying in Style
 advancements.adventure.reinforced_hang_glider.description=Reinforce your hang glider for a faster, longer flight.
+advancements.adventure.skol.title=Bonehead
+advancements.adventure.skol.description=Find every type of mob skull.
 
 advancements.automation.root.title=Automation
 advancements.automation.root.description=Work smarter, not harder.
@@ -1263,6 +1290,9 @@ gui.config.worldgen.generate_titanium.name.tooltip=Determines whether Titanium O
 gui.config.worldgen.generate_blazium.name=Generate Blazium Ore
 gui.config.worldgen.generate_blazium.comment=Determines whether Blazium Ore will generate in the Nether.
 gui.config.worldgen.generate_blazium.name.tooltip=Determines whether Blazium Ore will generate in the Nether.
+gui.config.worldgen.generate_shimmering_ore.name=Generate Shimmering Ore
+gui.config.worldgen.generate_shimmering_ore.comment=Determines whether Shimmering Ore will generate below the Lava in the Nether.
+gui.config.worldgen.generate_shimmering_ore.name.tooltip=Determines whether Shimmering Ore will generate below the Lava in the Nether.
 gui.config.worldgen.generate_soul_ore.name=Generate Soul Ore
 gui.config.worldgen.generate_soul_ore.comment=Determines whether Soul Ore will generate in the Nether.
 gui.config.worldgen.generate_soul_ore.name.tooltip=Determines whether Soul Ore will generate in the Nether.

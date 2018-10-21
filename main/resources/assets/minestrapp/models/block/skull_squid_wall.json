@@ -1,0 +1,27 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_squid_front",
+		"texture": "minestrapp:blocks/decor/holiday/skull_squid_front",
+		"texture1": "minestrapp:blocks/decor/holiday/skull_squid_left",
+		"texture2": "minestrapp:blocks/decor/holiday/skull_squid_right",
+		"texture3": "minestrapp:blocks/decor/holiday/skull_squid_back",
+		"texture4": "minestrapp:blocks/decor/holiday/skull_squid_top",
+		"texture5": "minestrapp:blocks/decor/holiday/skull_squid_bottom"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 2, 0, 4 ],
+			"to": [ 14, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture5" },
+				"up": { "uv": [ 2, 2, 14, 14 ], "texture": "#texture4" },
+				"north": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture3" },
+				"west": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 2, 0, 14, 16 ], "texture": "#texture2" }
+			}
+		}
+	]
+}

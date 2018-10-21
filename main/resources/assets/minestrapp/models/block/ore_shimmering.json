@@ -1,0 +1,96 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube_all",
+	"textures": {
+		"particle": "minestrapp:blocks/ore/ore_shimmering",
+		"texture": "minestrapp:blocks/ore/ore_shimmering",
+		"texture1": "minecraft:blocks/netherrack"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 4, 15.5, 5 ],
+			"to": [ 6, 16.5, 7 ],
+			"faces": {
+				"up": { "uv": [ 4, 5, 6, 7 ], "texture": "#texture" },
+				"north": { "uv": [ 6, 5, 4, 6 ], "texture": "#texture" },
+				"south": { "uv": [ 4, 6, 6, 7 ], "texture": "#texture" },
+				"west": { "uv": [ 4, 5, 5, 7 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 5, 5, 6, 7 ], "texture": "#texture", "rotation": 90 }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 7, 15.5, 3 ],
+			"to": [ 9, 16.5, 5 ],
+			"faces": {
+				"up": { "uv": [ 7, 3, 9, 5 ], "texture": "#texture" },
+				"north": { "uv": [ 9, 3, 7, 4 ], "texture": "#texture" },
+				"south": { "uv": [ 7, 4, 9, 5 ], "texture": "#texture" },
+				"west": { "uv": [ 7, 3, 8, 5 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 8, 3, 9, 5 ], "texture": "#texture", "rotation": 90 }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 8, 15.5, 10 ],
+			"to": [ 10, 16.5, 12 ],
+			"faces": {
+				"up": { "uv": [ 8, 10, 10, 12 ], "texture": "#texture" },
+				"north": { "uv": [ 10, 10, 8, 11 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 11, 10, 12 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 10, 9, 12 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 9, 10, 10, 12 ], "texture": "#texture", "rotation": 90 }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 6, 15.5, 9 ],
+			"to": [ 7, 16.5, 10 ],
+			"faces": {
+				"up": { "uv": [ 6, 9, 7, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 6, 9, 7, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 6, 9, 7, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 9, 7, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 6, 9, 7, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 9, 16, 5 ],
+			"to": [ 13, 17, 9 ],
+			"faces": {
+				"up": { "uv": [ 9, 5, 13, 9 ], "texture": "#texture" },
+				"north": { "uv": [ 13, 5, 9, 6 ], "texture": "#texture" },
+				"south": { "uv": [ 9, 8, 13, 9 ], "texture": "#texture" },
+				"west": { "uv": [ 9, 5, 10, 9 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 12, 5, 13, 9 ], "texture": "#texture", "rotation": 90 }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 3, 16, 10 ],
+			"to": [ 6, 17, 13 ],
+			"faces": {
+				"up": { "uv": [ 3, 10, 6, 13 ], "texture": "#texture" },
+				"north": { "uv": [ 6, 10, 3, 11 ], "texture": "#texture" },
+				"south": { "uv": [ 3, 12, 6, 13 ], "texture": "#texture" },
+				"west": { "uv": [ 3, 10, 4, 13 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 5, 10, 6, 13 ], "texture": "#texture", "rotation": 90 }
+			}
+		}
+	]
+}

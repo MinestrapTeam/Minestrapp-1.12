@@ -3,6 +3,7 @@ package minestrapp.block.liquid;
 import javax.annotation.Nonnull;
 
 import minestrapp.MBlocks;
+import minestrapp.Minestrapp5;
 import minestrapp.block.BlockShimmerstone;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -11,9 +12,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
@@ -97,9 +104,9 @@ public class LiquidCrystalfloe extends BlockFluidClassic
             if (worldIn.getBlockState(pos.offset(enumfacing)).getMaterial() == Material.LAVA)
             {
             	if(enumfacing != EnumFacing.DOWN)
-            		flag = 1;
+            		flag = 3;
             	else
-            		flag = 2;
+            		flag = 4;
                 break;
             }
         }
@@ -112,7 +119,10 @@ public class LiquidCrystalfloe extends BlockFluidClassic
         	{
         		if (integer.intValue() == 0)
                 {
-                    worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, Blocks.OBSIDIAN.getDefaultState()));
+        			if(flag == 1)
+        				worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_clear.getDefaultState()));
+        			else
+        				worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_dark.getDefaultState()));
                     this.triggerMixEffects(worldIn, pos);
                     return true;
                 }
@@ -158,20 +168,20 @@ public class LiquidCrystalfloe extends BlockFluidClassic
      pushesEntity = parPushesEntity;
     }
 
-    @Override
+   /* @Override
     public Vec3d modifyAcceleration(World worldIn, BlockPos pos, Entity entityIn, Vec3d motion)
        {
 //        // DEBUG
 //        System.out.println("modifyAcceleration for "+entityIn+" with isPushedByWater() = "+entityIn.isPushedByWater());
         
-        if (getPushesEntity())
+        /*if (getPushesEntity())
         {
          Vec3d flowAdder = getFlow(worldIn, pos, worldIn.getBlockState(pos));
 
 //         // DEBUG
 //         System.out.println("may push entity with motion adder = "+flowAdder);
          
-      return motion.add(flowAdder);
+         return motion.add(flowAdder);
         }
         else
         {
@@ -180,7 +190,19 @@ public class LiquidCrystalfloe extends BlockFluidClassic
          
          return motion;
         }
-       }
+    	
+    	return motion;
+       }*/
+    
+	    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+	    {
+	    	Minestrapp5.proxy.handleMaterialAcceleration(entityIn, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
+	    	
+	    	if(entityIn instanceof EntityLiving)
+	    		((EntityLiving)entityIn).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20));
+	    	else if(entityIn instanceof EntityPlayer)
+	    		((EntityPlayer)entityIn).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20));
+	    }
 
        protected Vec3d getFlow(IBlockAccess worldIn, BlockPos pos, IBlockState state)
        {

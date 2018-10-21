@@ -344,8 +344,8 @@ public class MItems
 		
 		//TODO: Add projectile effect.
 		register(mud_ball = new ItemBase("mud_ball").setCreativeTab(MTabs.minerals));
-		//0=Red Rock, 1=Stone, 2=Coldstone, 3=Icestone, 4=Oceanstone, 5=Netherrack, 6=Endstone, 7=Copper, 8=Tin, 9=Iron, 10=Gold, 11=Torite, 12=Titanium, 13=Dimensium
-		register(chunks = new ItemMetaBase("m_chunks", 14).setCreativeTab(MTabs.minerals));
+		//0=Red Rock, 1=Stone, 2=Coldstone, 3=Icestone, 4=Oceanstone, 5=Netherrack, 6=Endstone, 7=Copper, 8=Tin, 9=Iron, 10=Gold, 11=Torite, 12=Titanium, 13=Dimensium 14=Shimmering
+		register(chunks = new ItemMetaBase("m_chunks", 15).setCreativeTab(MTabs.minerals));
 		register(irradium = new ItemBase("irradium").setBurnTime(25600).setCreativeTab(MTabs.minerals));
 		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));

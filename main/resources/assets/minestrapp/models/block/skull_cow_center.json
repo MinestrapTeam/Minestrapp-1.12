@@ -1,0 +1,85 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"parent": "block/cube",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_cow_1",
+		"texture": "minestrapp:blocks/decor/holiday/skull_cow_1",
+		"texture1": "minestrapp:blocks/decor/holiday/skull_cow_2"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 4, 4, 5 ],
+			"to": [ 12, 12, 11 ],
+			"faces": {
+				"down": { "uv": [ 0, 6, 8, 12 ], "texture": "#texture1" },
+				"up": { "uv": [ 0, 0, 8, 6 ], "texture": "#texture1" },
+				"north": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 0, 16, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 8, 12, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 8, 6, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 12, 10, 7 ],
+			"to": [ 13, 13, 8 ],
+			"faces": {
+				"down": { "uv": [ 8, 2, 9, 3 ], "texture": "#texture1" },
+				"up": { "uv": [ 8, 0, 9, 1 ], "texture": "#texture1" },
+				"north": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"south": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"west": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"east": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 3, 10, 7 ],
+			"to": [ 4, 13, 8 ],
+			"faces": {
+				"down": { "uv": [ 8, 2, 9, 3 ], "texture": "#texture1" },
+				"up": { "uv": [ 8, 0, 9, 1 ], "texture": "#texture1" },
+				"north": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"south": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"west": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" },
+				"east": { "uv": [ 8, 0, 9, 3 ], "texture": "#texture1" }
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"firstperson_righthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"firstperson_lefthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"head": {
+			"translation":  [ 0, 0, -2.125 ],
+			"scale":  [ 1.75, 1.75, 1.75 ]
+		},
+		"ground": {
+			"translation":  [ 0, 3, 0 ],
+			"scale":  [ 0.25, 0.25, 0.25 ]
+		},
+		"fixed": {
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}

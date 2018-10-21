@@ -1,0 +1,94 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"parent": "block/cube",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_ocelot",
+		"texture": "minestrapp:blocks/decor/holiday/skull_ocelot"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 5.5, 6, 5.5 ],
+			"to": [ 10.5, 10, 10.5 ],
+			"faces": {
+				"down": { "uv": [ 5, 4, 10, 9 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 4, 5, 9 ], "texture": "#texture" },
+				"north": { "uv": [ 5, 0, 10, 4 ], "texture": "#texture" },
+				"south": { "uv": [ 5, 9, 10, 13 ], "texture": "#texture" },
+				"west": { "uv": [ 10, 0, 15, 4 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 5, 4 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 6.5, 6, 4.5 ],
+			"to": [ 9.5, 8, 5.5 ],
+			"faces": {
+				"down": { "uv": [ 10, 5, 13, 6 ], "texture": "#texture" },
+				"up": { "uv": [ 10, 4, 13, 5 ], "texture": "#texture" },
+				"north": { "uv": [ 10, 4, 13, 6 ], "texture": "#texture" },
+				"west": { "uv": [ 12, 4, 13, 6 ], "texture": "#texture" },
+				"east": { "uv": [ 10, 4, 11, 6 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box3",
+			"from": [ 6, 10, 8.5 ],
+			"to": [ 7, 11, 10.5 ],
+			"faces": {
+				"up": { "uv": [ 10, 6, 11, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 10, 6, 11, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 10, 7, 11, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 10, 8, 11, 6 ], "texture": "#texture", "rotation": 90 },
+				"east": { "uv": [ 10, 6, 11, 8 ], "texture": "#texture", "rotation": 270 }
+			}
+		},
+		{
+			"__comment": "Box3",
+			"from": [ 9, 10, 8.5 ],
+			"to": [ 10, 11, 10.5 ],
+			"faces": {
+				"up": { "uv": [ 11, 6, 12, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 11, 6, 12, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 11, 7, 12, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 11, 8, 12, 6 ], "texture": "#texture", "rotation": 90 },
+				"east": { "uv": [ 11, 6, 12, 8 ], "texture": "#texture", "rotation": 270 }
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 75, 45, 0 ],
+			"translation":  [ 0, 2.5, 0 ],
+			"scale":  [ 0.375, 0.375, 0.375 ]
+		},
+		"firstperson_righthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"firstperson_lefthand": {
+			"rotation":  [ 0, 45, 0 ],
+			"scale":  [ 0.4, 0.4, 0.4 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"head": {
+			"translation":  [ 0, 9.25, 0 ],
+			"scale":  [ 1.75, 1.75, 1.75 ]
+		},
+		"ground": {
+			"translation":  [ 0, 3, 0 ],
+			"scale":  [ 0.25, 0.25, 0.25 ]
+		},
+		"fixed": {
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}

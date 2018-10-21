@@ -399,6 +399,14 @@ public class MEventHandler
 		LootPool flesh_pool = new LootPool(new LootEntry[] {flesh_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "flesh_pool");
 		LootEntry candy_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/candy"), 1, 1, new LootCondition[0], "candy_entry");
 		LootPool candy_pool = new LootPool(new LootEntry[] {candy_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "candy_pool");
+		LootEntry villager_skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/villager/skull_rare"), 1, 1, new LootCondition[0], "villager_skull_entry");
+		LootPool villager_skull_pool = new LootPool(new LootEntry[] {villager_skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "villager_skull_pool");
+		LootEntry human_skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/skeleton/skull_rare"), 1, 1, new LootCondition[0], "human_skull_entry");
+		LootPool human_skull_pool = new LootPool(new LootEntry[] {human_skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "human_skull_pool");
+		LootEntry pig_skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/skull_rare"), 1, 1, new LootCondition[0], "pig_skull_entry");
+		LootPool pig_skull_pool = new LootPool(new LootEntry[] {pig_skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "pig_skull_pool");
+		LootEntry heart_piece_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/heart_piece"), 1, 1, new LootCondition[0], "heart_piece_entry");
+		LootPool heart_piece_pool = new LootPool(new LootEntry[] {heart_piece_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "heart_piece_pool");
 		
 		if(event.getName().equals(LootTableList.ENTITIES_PIG))
 		{
@@ -406,20 +414,32 @@ public class MEventHandler
 			LootPool fat_pool = new LootPool(new LootEntry[] {fat_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "fat_pool");
 			LootEntry pig_skin_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/pig_skin"), 1, 1, new LootCondition[0], "pig_skin_entry");
 			LootPool pig_skin_pool = new LootPool(new LootEntry[] {pig_skin_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "pig_skin_pool");
-
+			
+			event.getTable().addPool(pig_skull_pool);
 			event.getTable().addPool(fat_pool);
 			event.getTable().addPool(pig_skin_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE_PIGMAN))
+		{
+			event.getTable().addPool(pig_skull_pool);
+		}
 		else if(event.getName().equals(LootTableList.ENTITIES_COW) || event.getName().equals(LootTableList.ENTITIES_MUSHROOM_COW))
 		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/cow/skull_rare"), 1, 1, new LootCondition[0], "cow_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "cow_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_SHEEP))
 		{
 			LootEntry sheep_hoof_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/sheep/sheep_hoof"), 1, 1, new LootCondition[0], "sheep_hoof_entry");
 			LootPool sheep_hoof_pool = new LootPool(new LootEntry[] {sheep_hoof_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sheep_hoof_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/sheep/skull_rare"), 1, 1, new LootCondition[0], "sheep_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sheep_skull_pool");
 			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(sheep_hoof_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
@@ -431,28 +451,47 @@ public class MEventHandler
 			event.getTable().addPool(burfalaunt_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
-		else if(event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE) || event.getName().equals(LootTableList.ENTITIES_LLAMA))
+		else if(event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE))
 		{
 			event.getTable().removePool("main");
 			
 			LootEntry horse_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/horse/horse_hide"), 1, 1, new LootCondition[0], "horse_hide_entry");
 			LootPool horse_hide_pool = new LootPool(new LootEntry[] {horse_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "horse_hide_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/horse/skull_rare"), 1, 1, new LootCondition[0], "horse_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "horse_skull_pool");
 			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(horse_hide_pool);
+			event.getTable().addPool(animal_bones_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_LLAMA))
+		{
+			event.getTable().removePool("main");
+			
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/llama/skull_rare"), 1, 1, new LootCondition[0], "llama_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "llama_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_WOLF))
 		{
 			LootEntry wolf_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/wolf/wolf_hide"), 1, 1, new LootCondition[0], "wolf_hide_entry");
 			LootPool wolf_hide_pool = new LootPool(new LootEntry[] {wolf_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "wolf_hide_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/wolf/skull_rare"), 1, 1, new LootCondition[0], "wolf_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "wolf_skull_pool");
 			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(wolf_hide_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_POLAR_BEAR))
 		{
 			LootEntry polar_bear_hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/polar_bear/polar_bear_hide"), 1, 1, new LootCondition[0], "polar_bear_hide_entry");
 			LootPool polar_bear_hide_pool = new LootPool(new LootEntry[] {polar_bear_hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "polar_bear_hide_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/polar_bear/skull_rare"), 1, 1, new LootCondition[0], "polar_bear_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "polar_bear_skull_pool");
 			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(polar_bear_hide_pool);
 			event.getTable().addPool(animal_bones_pool);
 		}
@@ -460,7 +499,10 @@ public class MEventHandler
 		{
 			LootEntry tentacle_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/squid/squid_tentacle"), 1, 1, new LootCondition[0], "tentacle_entry");
 			LootPool tentacle_pool = new LootPool(new LootEntry[] {tentacle_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "tentacle_pool");
-
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/squid/skull_rare"), 1, 1, new LootCondition[0], "squid_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "squid_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(tentacle_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_SPIDER) || event.getName().equals(LootTableList.ENTITIES_CAVE_SPIDER))
@@ -470,31 +512,49 @@ public class MEventHandler
 			
 			event.getTable().addPool(spider_leg_pool);
 		}
-		else if(event.getName().equals(LootTableList.ENTITIES_VILLAGER) || event.getName().equals(LootTableList.ENTITIES_VINDICATION_ILLAGER) || event.getName().equals(LootTableList.ENTITIES_EVOCATION_ILLAGER))
+		else if(event.getName().equals(LootTableList.ENTITIES_VILLAGER) || event.getName().equals(LootTableList.ENTITIES_VINDICATION_ILLAGER))
 		{
+			event.getTable().addPool(villager_skull_pool);
 			event.getTable().addPool(flesh_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_EVOCATION_ILLAGER))
+		{
+			event.getTable().addPool(villager_skull_pool);
+			event.getTable().addPool(flesh_pool);
+			event.getTable().addPool(heart_piece_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_WITCH))
 		{
 			LootEntry wand_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/witch/wand"), 1, 1, new LootCondition[0], "wand_entry");
 			LootPool wand_pool = new LootPool(new LootEntry[] {wand_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "wand_pool");
 			
+			event.getTable().addPool(villager_skull_pool);
 			event.getTable().addPool(wand_pool);
 			event.getTable().addPool(flesh_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE_VILLAGER))
+		{
+			event.getTable().addPool(villager_skull_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_HUSK))
 		{
 			LootEntry salt_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/husk/salt"), 1, 1, new LootCondition[0], "salt_entry");
 			LootPool salt_pool = new LootPool(new LootEntry[] {salt_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "salt_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/husk/skull_rare"), 1, 1, new LootCondition[0], "husk_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "husk_skull_pool");
 			
+			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(salt_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_BAT))
 		{
 			LootEntry sinew_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/wing_sinew"), 1, 1, new LootCondition[0], "sinew_entry");
 			LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/skull_rare"), 1, 1, new LootCondition[0], "bat_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "bat_skull_pool");
 			
 			event.getTable().addPool(sinew_pool);
+			event.getTable().addPool(skull_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_VEX))
 		{
@@ -503,12 +563,239 @@ public class MEventHandler
 			
 			event.getTable().addPool(effervexcense_pool);
 		}
+		else if(event.getName().equals(LootTableList.ENTITIES_PARROT))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/parrot/skull_rare"), 1, 1, new LootCondition[0], "parrot_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "parrot_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_CHICKEN))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/chicken/skull_rare"), 1, 1, new LootCondition[0], "chicken_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "chicken_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_RABBIT))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/rabbit/skull_rare"), 1, 1, new LootCondition[0], "rabbit_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "rabbit_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_OCELOT))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/ocelot/skull_rare"), 1, 1, new LootCondition[0], "ocelot_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "ocelot_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_STRAY))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/stray/skull_rare"), 1, 1, new LootCondition[0], "stray_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "stray_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_CREEPER))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/creeper/skull_rare"), 1, 1, new LootCondition[0], "creeper_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "creeper_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_GUARDIAN))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/guardian/skull_rare"), 1, 1, new LootCondition[0], "guardian_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "guardian_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ENDERMAN))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/enderman/skull_rare"), 1, 1, new LootCondition[0], "enderman_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "enderman_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_SHULKER))
+		{
+			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/shulker/skull_rare"), 1, 1, new LootCondition[0], "shulker_skull_entry");
+			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "shulker_skull_pool");
+			
+			event.getTable().addPool(skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE) || event.getName().equals(LootTableList.ENTITIES_SKELETON))
+		{
+			event.getTable().addPool(human_skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ELDER_GUARDIAN))
+		{
+			event.getTable().addPool(heart_piece_pool);
+		}
 		
-		if(calendar.get(2) + 1 == 10 && calendar.get(5) >= 15 && calendar.get(5) <= 31)
+		//Halloween
+		if(calendar.get(2) + 1 == 10 && calendar.get(5) >= 10 && calendar.get(5) <= 31)
 		{
 			if(event.getName().equals(LootTableList.ENTITIES_BAT) || event.getName().equals(LootTableList.ENTITIES_CAVE_SPIDER) || event.getName().equals(LootTableList.ENTITIES_HUSK) || event.getName().equals(LootTableList.ENTITIES_SKELETON) || event.getName().equals(LootTableList.ENTITIES_SKELETON_HORSE) || event.getName().equals(LootTableList.ENTITIES_SPIDER) || event.getName().equals(LootTableList.ENTITIES_STRAY) || event.getName().equals(LootTableList.ENTITIES_WITCH) || event.getName().equals(LootTableList.ENTITIES_WITHER_SKELETON) || event.getName().equals(LootTableList.ENTITIES_ZOMBIE) || event.getName().equals(LootTableList.ENTITIES_ZOMBIE_HORSE) || event.getName().equals(LootTableList.ENTITIES_ZOMBIE_VILLAGER))
 			{
 				event.getTable().addPool(candy_pool);
+			}
+			
+			if(event.getName().getResourcePath().startsWith("chests/"))
+			{
+				LootEntry halloween_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/halloween"), 1, 1, new LootCondition[0], "halloween_chest_loot");
+		    	LootPool halloween_pool = new LootPool(new LootEntry[] {halloween_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "halloween_chest_pool");
+
+		    	event.getTable().addPool(halloween_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_BAT))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/skull_event"), 1, 1, new LootCondition[0], "bat_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "bat_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_PARROT))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/parrot/skull_event"), 1, 1, new LootCondition[0], "parrot_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "parrot_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_CHICKEN))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/chicken/skull_event"), 1, 1, new LootCondition[0], "chicken_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "chicken_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_RABBIT))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/rabbit/skull_event"), 1, 1, new LootCondition[0], "rabbit_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "rabbit_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_PIG) || event.getName().equals(LootTableList.ENTITIES_ZOMBIE_PIGMAN))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/skull_event"), 1, 1, new LootCondition[0], "pig_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "pig_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_SHEEP))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/sheep/skull_event"), 1, 1, new LootCondition[0], "sheep_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sheep_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_COW) || event.getName().equals(LootTableList.ENTITIES_MUSHROOM_COW))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/cow/skull_event"), 1, 1, new LootCondition[0], "cow_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "cow_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_LLAMA))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/llama/skull_event"), 1, 1, new LootCondition[0], "llama_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "llama_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_HORSE) || event.getName().equals(LootTableList.ENTITIES_MULE) || event.getName().equals(LootTableList.ENTITIES_DONKEY) || event.getName().equals(LootTableList.ENTITIES_SKELETON_HORSE))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/horse/skull_event"), 1, 1, new LootCondition[0], "horse_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "horse_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_OCELOT))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/ocelot/skull_event"), 1, 1, new LootCondition[0], "ocelot_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "ocelot_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_WOLF))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/wolf/skull_event"), 1, 1, new LootCondition[0], "wolf_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "wolf_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_SQUID))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/squid/skull_event"), 1, 1, new LootCondition[0], "squid_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "squid_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_POLAR_BEAR))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/polar_bear/skull_event"), 1, 1, new LootCondition[0], "polar_bear_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "polar_bear_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_VILLAGER) || event.getName().equals(LootTableList.ENTITIES_VINDICATION_ILLAGER) || event.getName().equals(LootTableList.ENTITIES_EVOCATION_ILLAGER) || event.getName().equals(LootTableList.ENTITIES_WITCH) || event.getName().equals(LootTableList.ENTITIES_ZOMBIE_VILLAGER))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/villager/skull_event"), 1, 1, new LootCondition[0], "villager_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "villager_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE) || event.getName().equals(LootTableList.ENTITIES_SKELETON))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/skeleton/skull_event"), 1, 1, new LootCondition[0], "skeleton_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "skeleton_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_HUSK))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/husk/skull_event"), 1, 1, new LootCondition[0], "husk_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "husk_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_STRAY))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/stray/skull_event"), 1, 1, new LootCondition[0], "stray_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "stray_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_CREEPER))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/creeper/skull_event"), 1, 1, new LootCondition[0], "creeper_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "creeper_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_GUARDIAN))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/guardian/skull_event"), 1, 1, new LootCondition[0], "guardian_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "guardian_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_ENDERMAN))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/enderman/skull_event"), 1, 1, new LootCondition[0], "enderman_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "enderman_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
+			}
+			else if(event.getName().equals(LootTableList.ENTITIES_SHULKER))
+			{
+				LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/shulker/skull_event"), 1, 1, new LootCondition[0], "shulker_event_skull_entry");
+				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "shulker_event_skull_pool");
+				
+				event.getTable().addPool(skull_pool);
 			}
 		}
 			
@@ -641,9 +928,10 @@ public class MEventHandler
 	    //Command for spawning test chests w/ loot tables: /setblock ~ ~ ~ minecraft:chest 2 replace {LootTable:"chests/simple_dungeon"}*/
 	}
 	
-	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
+	/*@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
     public void onEvent(PlayerTickEvent event)
     {
+		
         if (event.phase == TickEvent.Phase.START && event.player.world.isRemote) // only proceed if START phase otherwise, will execute twice per tick
         {
             EntityPlayer thePlayer = event.player;
@@ -656,25 +944,23 @@ public class MEventHandler
 	{
 	    if (event.phase == TickEvent.Phase.END) // only proceed if START phase otherwise, will execute twice per tick
 		{
-		    return;
-		}   
-		
-	    if(event.world.loadedEntityList != null && !event.world.loadedEntityList.isEmpty())
-	    {
-			List entityList = event.world.loadedEntityList;
-			Iterator<Entity> iterator = entityList.iterator();
-			
-			while(iterator.hasNext())
-			{
-				Entity theEntity = iterator.next();
-			   
-				/* 
-				 * Update all motion of all entities except players that may be inside your fluid
-				 */
-				Minestrapp5.proxy.handleMaterialAcceleration(theEntity, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
-			}
-	    }
-	}
+		    if(event.world.loadedEntityList != null && !event.world.loadedEntityList.isEmpty())
+		    {
+				List entityList = event.world.loadedEntityList;
+				Iterator<Entity> iterator = entityList.iterator();
+				
+				while(iterator.hasNext())
+				{
+					Entity theEntity = iterator.next();
+				   
+					/* 
+					 * Update all motion of all entities except players that may be inside your fluid
+					 *
+					Minestrapp5.proxy.handleMaterialAcceleration(theEntity, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
+				}
+		    }
+		}
+	}*/
 	
 	@SideOnly(Side.CLIENT)
     @SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)

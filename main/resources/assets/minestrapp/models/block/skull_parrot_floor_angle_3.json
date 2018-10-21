@@ -1,0 +1,71 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/decor/holiday/skull_parrot",
+		"texture": "minestrapp:blocks/decor/holiday/skull_parrot"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 7, 0, 8 ],
+			"to": [ 9, 3, 10 ],
+			"faces": {
+				"down": { "uv": [ 10, 0, 12, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 10, 0, 12, 2 ], "texture": "#texture" },
+				"north": { "uv": [ 4, 0, 6, 3 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 0, 10, 3 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 0, 8, 3 ], "texture": "#texture" },
+				"east": { "uv": [ 2, 0, 4, 3 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 7, 3, 6 ],
+			"to": [ 9, 4, 10 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 2, 4 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 2, 4 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 2, 1 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 3, 2, 4 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 1, 4 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 1, 4, 2, 0 ], "texture": "#texture", "rotation": 270 }
+			}
+		},
+		{
+			"__comment": "Box3",
+			"from": [ 7.5, 1, 7 ],
+			"to": [ 8.5, 3, 8 ],
+			"faces": {
+				"down": { "uv": [ 12, 1, 13, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 12, 0, 13, 1 ], "texture": "#texture" },
+				"north": { "uv": [ 12, 0, 13, 2 ], "texture": "#texture" },
+				"south": { "uv": [ 12, 0, 13, 2 ], "texture": "#texture" },
+				"west": { "uv": [ 12, 0, 13, 2 ], "texture": "#texture" },
+				"east": { "uv": [ 12, 0, 13, 2 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box4",
+			"from": [ 7.5, 1.5, 6 ],
+			"to": [ 8.5, 3, 7 ],
+			"faces": {
+				"down": { "uv": [ 13, 1, 14, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 13, 0, 14, 1 ], "texture": "#texture" },
+				"north": { "uv": [ 13, 0, 14, 1.5 ], "texture": "#texture" },
+				"south": { "uv": [ 13, 0, 14, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 13, 0, 14, 1.5 ], "texture": "#texture" },
+				"east": { "uv": [ 13, 0, 14, 1.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "PlaneX5",
+			"from": [ 8, 4, 7 ],
+			"to": [ 8.001, 5, 8 ],
+			"rotation": { "origin": [ 8, 4, 7 ], "axis": "x", "angle": 22.5 },
+			"faces": {
+				"west": { "uv": [ 12, 1, 13, 2 ], "texture": "#texture" },
+				"east": { "uv": [ 12, 1, 13, 2 ], "texture": "#texture" }
+			}
+		}
+	]
+}

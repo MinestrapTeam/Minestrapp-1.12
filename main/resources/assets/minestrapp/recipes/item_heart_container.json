@@ -1,0 +1,15 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "pp",
+        "pp"
+    ],
+    "key": {
+        "p": {
+            "item": "minestrapp:heart_piece"
+        }
+     },
+     "result": {
+        "item": "minestrapp:heart_container"
+     }
+}

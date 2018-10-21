@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:ore_shimmering" },
+            { "model": "minestrapp:ore_shimmering", "y": 90 },
+            { "model": "minestrapp:ore_shimmering", "y": 180 },
+            { "model": "minestrapp:ore_shimmering", "y": 270 }
+        ]
+    }
+}
