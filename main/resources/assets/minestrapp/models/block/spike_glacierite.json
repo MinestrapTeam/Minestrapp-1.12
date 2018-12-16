@@ -1,0 +1,8 @@
+{
+    "parent": "minestrapp:block/spike_base_complex",
+    "textures": {
+        "bottom": "minestrapp:blocks/utility/spike/glacierite_spike_bottom",
+        "side": "minestrapp:blocks/utility/spike/glacierite_spike_side",
+		"top": "minestrapp:blocks/utility/spike/glacierite_spike_top"
+    }
+}

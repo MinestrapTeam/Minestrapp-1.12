@@ -23,7 +23,7 @@
         },
         "t": {
             "type": "forge:ore_dict",
-            "ore": "ingotTitanium"
+            "ore": "ingotArchantine"
         }
      },
      "result": {

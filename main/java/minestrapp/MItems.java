@@ -70,6 +70,7 @@ public class MItems
 	public static Item mud_ball;
 	public static Item chunks;
 	public static Item irradium;
+	public static Item nuggets;
 	public static Item ingots;
 	public static Item plating;
 	public static Item salt;
@@ -347,10 +348,12 @@ public class MItems
 		//0=Red Rock, 1=Stone, 2=Coldstone, 3=Icestone, 4=Oceanstone, 5=Netherrack, 6=Endstone, 7=Copper, 8=Tin, 9=Iron, 10=Gold, 11=Torite, 12=Titanium, 13=Dimensium 14=Shimmering
 		register(chunks = new ItemMetaBase("m_chunks", 15).setCreativeTab(MTabs.minerals));
 		register(irradium = new ItemBase("irradium").setBurnTime(25600).setCreativeTab(MTabs.minerals));
-		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Titanium, 6=Glacierite, 7=Blazium, 8=Dimensium
+		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Glacierite, 6=Blazium, 7=Archantine, 8=Dimensium
+		register(nuggets = new ItemMetaBase("m_nugget", 9).setBurnTime(480, 6).setCreativeTab(MTabs.minerals));
+		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Archantine, 6=Glacierite, 7=Blazium, 8=Dimensium
 		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
-		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite, 4=Copper, 5=Gold
-		register(plating = new ItemMetaBase("m_plating", 6).setCreativeTab(MTabs.ingredients));
+		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite, 4=Copper, 5=Gold, 6=Iron, 7=Torite, 8=Glacierite, 9=Blazium, 10=Diamond, 11=Archantine, 12=Dimensium
+		register(plating = new ItemMetaBase("m_plating", 13).setCreativeTab(MTabs.ingredients));
 		register(salt = new ItemBase("salt").setCreativeTab(MTabs.food));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard

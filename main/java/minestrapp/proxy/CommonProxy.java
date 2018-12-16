@@ -7,6 +7,7 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityAxel;
 import minestrapp.block.tileentity.TileEntityBarrel;
+import minestrapp.block.tileentity.TileEntityCrate;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityMSkull;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
@@ -81,6 +82,7 @@ public class CommonProxy
 		
 		GameRegistry.registerTileEntity(TileEntityAxel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityAxel"));
 		GameRegistry.registerTileEntity(TileEntityVessel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityVessel"));
+		GameRegistry.registerTileEntity(TileEntityCrate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityCrate"));
 		GameRegistry.registerTileEntity(TileEntityBarrel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityBarrel"));
 		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityStoneCutter"));
 		GameRegistry.registerTileEntity(TileEntityAlloy.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityAlloy"));

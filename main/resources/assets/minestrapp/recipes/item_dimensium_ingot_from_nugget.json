@@ -1,0 +1,46 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_ingot",
+        "count": 1,
+        "data": 8
+     }  
+}

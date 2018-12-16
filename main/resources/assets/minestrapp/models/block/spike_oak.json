@@ -1,0 +1,7 @@
+{
+    "parent": "minestrapp:block/spike_base",
+    "textures": {
+        "side": "minestrapp:blocks/utility/spike/oak_spike_side",
+		"top": "blocks/log_oak_top"
+    }
+}

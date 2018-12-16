@@ -1,0 +1,25 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "blocks/decor/holiday/ghast_skull/skull_ghast_matte",
+		"Front": "blocks/decor/holiday/ghast_skull/skull_ghast_front_tl",
+		"Right": "blocks/decor/holiday/ghast_skull/skull_ghast_right_tr",
+		"Matte": "blocks/decor/holiday/ghast_skull/skull_ghast_matte",
+		"Top": "blocks/decor/holiday/ghast_skull/skull_ghast_top_bl"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 8 ],
+			"to": [ 8, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 8, 0, 16, 8 ], "texture": "#Matte" },
+				"up": { "uv": [ 2, 10, 6, 14 ], "texture": "#Top", "rotation": 180 },
+				"north": { "uv": [ 2, 0, 6, 8 ], "texture": "#Front" },
+				"south": { "uv": [ 8, 0, 16, 16 ], "texture": "#Matte" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#Matte" },
+				"east": { "uv": [ 10, 0, 14, 8 ], "texture": "#Right" }
+			}
+		}
+	]
+}
