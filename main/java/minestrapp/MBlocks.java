@@ -367,6 +367,19 @@ public class MBlocks
 	public static Block spike_redwood_wood;
 	public static Block spike_frozen_oak_wood;
 	public static Block spike_charwood_wood;
+	public static Block spike_copper;
+	public static Block spike_tin;
+	public static Block spike_iron;
+	public static Block spike_bronze;
+	public static Block spike_steel;
+	public static Block spike_gold;
+	public static Block spike_meurodite;
+	public static Block spike_torite;
+	public static Block spike_diamond;
+	public static Block spike_archantine;
+	public static Block spike_glacierite;
+	public static Block spike_blazium;
+	public static Block spike_dimensium;
 	public static Block magnet_piston_1;
 	public static Block magnet_piston_2;
 	public static Block magnet_piston_3;
@@ -626,7 +639,7 @@ public class MBlocks
 		register(block_irradium = new BlockIrradium("block_irradium", Material.ROCK, MapColor.LIME, SoundType.STONE, 5F, false).setCreativeTab(MTabs.resource));
 		register(block_sunstone = new BlockBase("block_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setLightLevel(0.95F).setCreativeTab(MTabs.resource));
 		register(block_torite = new BlockBase("block_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2).setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setBeaconBase().setResistance(6000000.0F).setCreativeTab(MTabs.resource));
+		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setGlowing().setRenderLayer(BlockRenderLayer.CUTOUT).setBeaconBase().setResistance(6000000.0F).setLightLevel(0.2F).setCreativeTab(MTabs.resource));
 		register(block_glacierite = new BlockGlacierite());
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setPushReaction(EnumPushReaction.NORMAL).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
 		register(block_mite_honey = new BlockMiteHoney());
@@ -721,6 +734,19 @@ public class MBlocks
 		register(spike_redwood_wood = new BlockSpike("spike_redwood", Material.WOOD, BlockMPlanks.EnumType.REDWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
 		register(spike_frozen_oak_wood = new BlockSpike("spike_frozen_oak", Material.WOOD, BlockMPlanks.EnumType.FROZEN_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
 		register(spike_charwood_wood = new BlockSpike("spike_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
+		register(spike_copper = new BlockSpike("spike_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0, MItems.COPPER).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_tin = new BlockSpike("spike_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0, MItems.COPPER).setResistance(5F).setCreativeTab(MTabs.utility));
+		register(spike_iron = new BlockSpike("spike_iron", Material.IRON, MapColor.IRON, SoundType.METAL, 5F, "pickaxe", 1, ToolMaterial.IRON).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_bronze = new BlockSpike("spike_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1, MItems.BRONZE).setResistance(15F).setCreativeTab(MTabs.utility));
+		register(spike_steel = new BlockSpike("spike_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 1, MItems.STEEL).setResistance(12F).setCreativeTab(MTabs.utility));
+		register(spike_gold = new BlockSpike("spike_gold", Material.IRON, MapColor.GOLD, SoundType.METAL, 3F, "pickaxe", 2, ToolMaterial.GOLD).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_meurodite = new BlockSpike("spike_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2, MItems.MEURODITE).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_torite = new BlockSpike("spike_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2, MItems.TORITE).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_diamond = new BlockSpike("spike_diamond", Material.IRON, MapColor.DIAMOND, SoundType.METAL, 5F, "pickaxe", 2, ToolMaterial.DIAMOND).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_archantine = new BlockSpike("spike_archantine", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3, MItems.TITANIUM).setResistance(6000000.0F).setCreativeTab(MTabs.utility));
+		register(spike_glacierite = new BlockSpike("spike_glacierite", Material.IRON, MapColor.LAPIS, SoundType.METAL, 5F, "pickaxe", 2, MItems.GLACIERITE).setResistance(10F).setCreativeTab(MTabs.utility));
+		register(spike_blazium = new BlockSpike("spike_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2, MItems.BLAZIUM).setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.utility));
+		
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		ForgeRegistries.BLOCKS.register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));

@@ -2,6 +2,7 @@ package minestrapp.block.util;
 
 import java.util.Random;
 
+import minestrapp.block.BlockBauble;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
@@ -12,10 +13,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBase extends Block
 {
@@ -35,6 +39,8 @@ public class BlockBase extends Block
 	private boolean fortune;
 	private boolean customPushLogic;
 	private EnumPushReaction pushReaction;
+	private BlockRenderLayer layer = BlockRenderLayer.SOLID;
+	private boolean glowing = false;
 
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
@@ -225,5 +231,32 @@ public class BlockBase extends Block
 			return this.pushReaction;
 		else
 			return super.getMobilityFlag(state);
+    }
+	
+	public BlockBase setRenderLayer(BlockRenderLayer layer)
+	{
+		this.layer = layer;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer()
+    {
+        return this.layer;
+    }
+	
+	public BlockBase setGlowing()
+	{
+		this.glowing = true;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+		if(this.glowing)
+			return 15728880;
+		else
+			return super.getPackedLightmapCoords(state, source, pos);
     }
 }

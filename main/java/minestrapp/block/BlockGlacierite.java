@@ -31,6 +31,7 @@ public class BlockGlacierite extends BlockBase
 	public BlockGlacierite()
 	{
 		super("block_glacierite", Material.IRON, MapColor.LAPIS, SoundType.METAL, 5F, "pickaxe", 2);
+		this.setResistance(10F);
 		this.setBeaconBase();
 		this.setCreativeTab(MTabs.resource);
 		this.setTickRandomly(true);

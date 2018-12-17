@@ -1,6 +1,7 @@
 {
 "__comment": "Designed by Delocuro with BDcraft Cubik PRO 0.93 Beta - http://bdcraft.net",
 "parent": "block/cube",
+"ambientocclusion": false,
 "textures": {
     "particle": "minestrapp:blocks/utility/godstone",
     "texture": "minestrapp:blocks/utility/godstone",

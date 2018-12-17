@@ -51,18 +51,6 @@ public class BlockBauble extends BlockBase
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
 	
-	public BlockBauble setRenderLayer(BlockRenderLayer layer)
-	{
-		this.layer = layer;
-		return this;
-	}
-	
-	@SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
-    {
-        return this.layer;
-    }
-	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
         if(blockState.getValue(FACING) == EnumFacing.UP)

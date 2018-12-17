@@ -1,7 +1,7 @@
 {
     "variants": {
         "normal": [
-            { "model": "minestrapp:block_titanium" }
+            { "model": "minestrapp:block_archantine" }
         ]
     }
 }
