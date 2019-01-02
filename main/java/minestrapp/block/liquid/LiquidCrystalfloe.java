@@ -111,7 +111,7 @@ public class LiquidCrystalfloe extends BlockFluidClassic
             }
         }
 
-        if (flag > 0)
+        if (!worldIn.isRemote && flag > 0)
         {
         	Integer integer = (Integer)state.getValue(LEVEL);
         	
@@ -120,23 +120,27 @@ public class LiquidCrystalfloe extends BlockFluidClassic
         		if (integer.intValue() == 0)
                 {
         			if(flag == 1)
-        				worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_clear.getDefaultState()));
+        				//worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_clear.getDefaultState()));
+        				worldIn.setBlockState(pos, MBlocks.geode_shimmerstone_clear.getDefaultState());
         			else
-        				worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_dark.getDefaultState()));
+        				//worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.geode_shimmerstone_dark.getDefaultState()));
+        				worldIn.setBlockState(pos, MBlocks.geode_shimmerstone_dark.getDefaultState());
                     this.triggerMixEffects(worldIn, pos);
                     return true;
                 }
 
         		if (integer.intValue() <= 4)
                 {
-                    worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.shimmerstone.getDefaultState().withProperty(BlockShimmerstone.VARIANT, BlockShimmerstone.ShimmerstoneType.COBBLESTONE)));
-                    this.triggerMixEffects(worldIn, pos);
+                    //worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, MBlocks.shimmerstone.getDefaultState().withProperty(BlockShimmerstone.VARIANT, BlockShimmerstone.ShimmerstoneType.COBBLESTONE)));
+        			worldIn.setBlockState(pos, MBlocks.shimmerstone.getDefaultState().withProperty(BlockShimmerstone.VARIANT, BlockShimmerstone.ShimmerstoneType.COBBLESTONE));
+        			this.triggerMixEffects(worldIn, pos);
                     return true;
                 }
         	}
         	else if(flag == 2 || flag == 4)
         	{
-        		worldIn.setBlockState(pos.down(), net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos.down(), pos, MBlocks.shimmerstone.getDefaultState()));
+        		//worldIn.setBlockState(pos.down(), net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos.down(), pos, MBlocks.shimmerstone.getDefaultState()));
+        		worldIn.setBlockState(pos.down(), MBlocks.shimmerstone.getDefaultState());
                 this.triggerMixEffects(worldIn, pos.down());
                 return true;
         	}

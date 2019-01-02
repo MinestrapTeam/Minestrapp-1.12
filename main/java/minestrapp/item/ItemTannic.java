@@ -45,7 +45,7 @@ public class ItemTannic extends MItemBowlFood implements IItemVariants
 	@Override
 	public void getSubItems(CreativeTabs tabs, NonNullList<ItemStack> tab)
 	{
-		for(int i = 0 ; i < 3 ; i++)
+		for(int i = 0 ; i < 4 ; i++)
 		{
 			if (this.isInCreativeTab(tabs))
 	        {
@@ -63,6 +63,6 @@ public class ItemTannic extends MItemBowlFood implements IItemVariants
 	@Override
 	public int getMaxVariants()
 	{
-		return 3;
+		return 4;
 	}
 }

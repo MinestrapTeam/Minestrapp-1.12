@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "hph",
+        "hhh",
+        "hah"
+    ],
+    "key": {        
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
+        },
+        "h": {
+            "item": "minestrapp:mite_comb"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetArchantine"
+        }
+     },
+     "result": {
+        "item": "minestrapp:honeycomb_steel",
+        "count": 16
+     }  
+}

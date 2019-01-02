@@ -81,7 +81,11 @@ tile.m_fence_charwood.name=Charwood Fence
 tile.redwood_fence_gate.name=Redwood Fence Gate
 tile.frozen_oak_fence_gate.name=Frozen Oak Fence Gate
 tile.charwood_fence_gate.name=Charwood Fence Gate
-tile.charwood_limb.name=Charwood Limb
+item.charroot.name=Charroot
+
+## Ice ##
+tile.glacieric_ice.name=Glacieric Ice
+tile.glacieric_ice_branch_0.name=Glacieric Icicle
 
 ## Misc. Stone##
 tile.mud_bricks.name=Mud Bricks
@@ -559,11 +563,15 @@ tile.block_torite.name=Block of Torite
 tile.block_titanium.name=Block of Archantine
 tile.block_glacierite.name=Block of Glacierite
 tile.block_blazium.name=Block of Blazium
+tile.block_soul.name=Soul Gem Block
 tile.block_mite_honey.name=Block of Mite Honey
 tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
+tile.honeycomb_bronze.name=Bronze Honeycomb
+tile.honeycomb_steel.name=Steel Honeycomb
+tile.honeycomb_meurodite.name=Meurodite Honeycomb
 tile.rope.name=Rope
 tile.dimensium_rope.name=Dimensional Rope
 tile.door_charwood.name=Charwood Door
@@ -608,6 +616,10 @@ tile.candle_light_blue.name=Light Blue Candle
 tile.candle_blue.name=Blue Candle
 tile.candle_purple.name=Purple Candle
 tile.candle_magenta.name=Magenta Candle
+tile.new_year_chandelier_gray.name=Resolute Gray Chandelier
+tile.new_year_chandelier_red.name=Resolute Red Chandelier
+tile.new_year_chandelier_cyan.name=Resolute Cyan Chandelier
+tile.new_year_chandelier_purple.name=Resolute Purple Chandelier
 tile.halloween_chandelier_black.name=Spooky Black Chandelier
 tile.halloween_chandelier_orange.name=Spooky Orange Chandelier
 tile.halloween_chandelier_lime.name=Spooky Lime Chandelier
@@ -659,7 +671,6 @@ tile.skull_shulker.name=Shulker Skull
 
 tile.crate.name=Crate
 tile.basket.name=Basket
-tile.glacieric_ice.name=Glacieric Ice
 tile.block_irradiant_sunstone.name=Irradiant Sunstone
 tile.godstone.name=Godstone
 tile.lava_sponge_dry.name=Lava Sponge
@@ -674,15 +685,10 @@ tile.spike_redwood.name=Redwood Spike
 tile.spike_frozen_oak.name=Frozen Oak Spike
 tile.spike_charwood.name=Charwood Spike
 tile.spike_red_rock.name=Red Rock Spike
-tile.spike_deep_red_rock.name=Deep Red Rock Spike
 tile.spike_stone.name=Stone Spike
-tile.spike_deepstone.name=Deepstone Spike
 tile.spike_coldstone.name=Coldstone Spike
-tile.spike_deep_coldstone.name=Deep Coldstone Spike
 tile.spike_icestone.name=Icestone Spike
-tile.spike_glacierrock.name=Glacierrock Spike
 tile.spike_oceanstone.name=Oceanstone Spike
-tile.spike_reefstone.name=Reefstone Spike
 tile.spike_copper.name=Copper Spike
 tile.spike_tin.name=Tin Spike
 tile.spike_iron.name=Iron Spike
@@ -697,9 +703,10 @@ tile.spike_diamond.name=Diamond Spike
 tile.spike_archantine.name=Archantine Spike
 tile.spike_dimensium.name=Dimensium Spike
 tile.spike_bedrock.name=Bedrock Spike
-
 tile.magnet_piston.name=Magnet Piston
 tile.block_irradium_insulated.name=Insulated Block of Irradium
+tile.block_dimensium_stabilized_inactive.name=Stabilized Block of Dimensium
+tile.block_dimensium_stabilized_active.name=Stabilized Block of Dimensium
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter
@@ -817,6 +824,7 @@ item.m_leather_15.name=Cured Polar Bear Pelt
 item.tannic_0.name=Poor Tannic
 item.tannic_1.name=Tannic
 item.tannic_2.name=Fine Tannic
+item.tannic_3.name=Tanning Solvent
 
 ##Bricks
 item.m_bricks_0.name=Mud Brick
@@ -924,6 +932,10 @@ item.ice_pickaxe.name=Glacierite Pickaxe
 item.ice_axe.name=Glacierite Axe
 item.ice_shovel.name=Glacierite Shovel
 item.ice_hoe.name=Glacierite Hoe
+item.bedrock_pickaxe.name=Bedrock Pickaxe
+item.bedrock_axe.name=Bedrock Axe
+item.bedrock_shovel.name=Bedrock Shovel
+item.bedrock_hoe.name=Bedrock Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
@@ -1274,6 +1286,10 @@ advancements.automation.piston.title=So Pushy
 advancements.automation.piston.description=Craft a piston.
 advancements.automation.magnet_piston.title=A Very Attractive Block
 advancements.automation.magnet_piston.description=Craft a magnet piston.
+advancements.automation.spike.title=How do you like my spikes?!
+advancements.automation.spike.description=Break blocks using a spike and a piston.
+advancements.automation.spike_dimensium.title=DELETED!!
+advancements.automation.spike_dimensium.description=Eviscerate any block or mob from this mortal coil using a dimensium spike.
 
 advancements.nether.soul_gem.title=Souls to Go
 advancements.nether.soul_gem.description=Obtain a soul gem, then consume it to gain its power.
@@ -1331,6 +1347,9 @@ gui.config.worldgen.generate_irradium.name.tooltip=Determines whether Irradium O
 gui.config.worldgen.generate_sunstone.name=Generate Sunstone Deposits
 gui.config.worldgen.generate_sunstone.comment=Determines whether Sunstone Deposits will generate in the overworld and the End.
 gui.config.worldgen.generate_sunstone.name.tooltip=Determines whether Sunstone Deposits will generate in the overworld and the End.
+gui.config.worldgen.generate_icicles.name=Generate Icicles
+gui.config.worldgen.generate_icicles.comment=Determines whether Glacieric Icicles will generate in cold caves.
+gui.config.worldgen.generate_icicles.name.tooltip=Determines whether Glacieric Icicles will generate in cold caves.
 gui.config.worldgen.generate_ice_mounds.name=Generate Glacieric Ice Mounds
 gui.config.worldgen.generate_ice_mounds.comment=Determines whether Glacieric Ice Mounds will generate in snow biomes.
 gui.config.worldgen.generate_ice_mounds.name.tooltip=Determines whether Glacieric Ice Mounds will generate in snow biomes.

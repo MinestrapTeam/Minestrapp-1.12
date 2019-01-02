@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:spike_dimensium"
+        },
+        "title": {
+            "translate": "advancements.automation.spike_dimensium.title"
+        },
+        "description": {
+            "translate": "advancements.automation.spike_dimensium.description"
+        }
+    },
+    "parent": "minestrapp:automation/spike",
+    "criteria": {
+        "spike": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_dimensium"
+                    }
+                ]
+            }
+        }
+    }
+}

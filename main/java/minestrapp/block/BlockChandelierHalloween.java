@@ -82,7 +82,6 @@ public class BlockChandelierHalloween extends BlockChandelier
 	
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-		System.out.println("activated");
 		ItemStack itemstack = playerIn.getHeldItem(hand);
 		
 		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))

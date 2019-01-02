@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " i ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {        
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateIron"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "blockIron"
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_iron"
+     }  
+}

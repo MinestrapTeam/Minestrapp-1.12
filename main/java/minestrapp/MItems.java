@@ -11,6 +11,7 @@ import minestrapp.block.util.BlockStoneBase;
 import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.item.ItemBackpack;
 import minestrapp.item.ItemCandy;
+import minestrapp.item.ItemCharroot;
 import minestrapp.item.ItemDrySpaghetti;
 import minestrapp.item.ItemGlowshroomStew;
 import minestrapp.item.ItemHangGlider;
@@ -115,6 +116,10 @@ public class MItems
 	public static Item ice_axe;
 	public static Item ice_shovel;
 	public static Item ice_hoe;
+	public static Item bedrock_pickaxe;
+	public static Item bedrock_axe;
+	public static Item bedrock_shovel;
+	public static Item bedrock_hoe;
 	
 	public static Item gold_dagger;
 	public static Item gold_mace;
@@ -212,6 +217,7 @@ public class MItems
 	public static Item corn;
 	public static Item corn_on_the_cob;
 	public static Item grilled_corn;
+	public static Item charroot;
 	
 	public static Item corn_meal;
 	public static Item corn_bread;
@@ -318,6 +324,7 @@ public class MItems
 	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5);
 	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":blazium", 2, 960, 7.5F, 3F, 22);
 	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":glacierite", 3, 1400, 8F, 4F, 34);
+	public static final ToolMaterial BEDROCK = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bedrock", 4, 6244, 6F, 1.5F, 6);
 	
 	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
 	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
@@ -407,6 +414,10 @@ public class MItems
 		register(ice_axe = new MAxe(GLACIERITE, "ice_axe", 11.0F, -3.4F));
 		register(ice_shovel = new MShovel(GLACIERITE, "ice_shovel"));
 		register(ice_hoe = new MHoe(GLACIERITE, "ice_hoe"));
+		register(bedrock_pickaxe = new MPickaxe(BEDROCK, "bedrock_pickaxe"));
+		register(bedrock_axe = new MAxe(BEDROCK, "bedrock_axe", 8.0F, -3.15F));
+		register(bedrock_shovel = new MShovel(BEDROCK, "bedrock_shovel"));
+		register(bedrock_hoe = new MHoe(BEDROCK, "bedrock_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
 		register(gold_mace = new MMace(Item.ToolMaterial.GOLD, "gold_mace"));
@@ -499,6 +510,7 @@ public class MItems
 		register(corn = new MItemsSeeds(MBlocks.crop_corn, Blocks.FARMLAND, "corn"));
 		register(corn_on_the_cob = new MItemsFood(4, 0.4F, false, "corn_on_the_cob").setDroppedItem(new ItemStack(Items.STICK)));
 		register(grilled_corn = new MItemsFood(6, 0.7F, false, "grilled_corn").setDroppedItem(new ItemStack(Items.STICK)));
+		register(charroot = new ItemCharroot().setBurnTime(200).setPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 100), 1F));
 		
 		register(corn_meal = new MItemsFood(1, 0.1F, false, "corn_meal"));
 		register(corn_bread = new MItemsFood(4, 1F, false, "corn_bread"));
@@ -615,6 +627,14 @@ public class MItems
 		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
 		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
 		((BlockMDoor) MBlocks.door_charwood).setDoorItem(door_charwood);
+		MBlocks.glacieric_ice_branch_0.setDropsItem(new ItemStack(MItems.gems, 0, 6), 0, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_1.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_2.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_3.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_4.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_5.setDropsItem(new ItemStack(MItems.gems, 1, 6), 0, 0, 0, true, false);
+		MBlocks.glacieric_ice_branch_6.setDropsItem(new ItemStack(MItems.gems, 1, 6), 0, 0, 0, true, true);
+		MBlocks.glacieric_ice_branch_7.setDropsItem(new ItemStack(MItems.gems, 1, 6), 1, 0, 0, true, true);
 		
 		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.plate_weave)).setBurnTime(100);
@@ -631,6 +651,7 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.moss)).setBurnTime(800);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.savanna_grass)).setBurnTime(50);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.planks)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.log)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.mossy_m_planks)).setBurnTime(400);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.fence)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.wood_slab_1)).setBurnTime(300);
@@ -649,6 +670,13 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_fence_gate)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_fence_gate)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_fence_gate)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.block_mite_honey)).setBurnTime(12000);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_oak_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_spruce_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_birch_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_jungle_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_acacia_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_dark_oak_wood)).setBurnTime(300);
 		
 		
 		COPPER.setRepairItem(new ItemStack(ingots, 1, 0));
@@ -659,6 +687,7 @@ public class MItems
 		TITANIUM.setRepairItem(new ItemStack(ingots, 1, 5));
 		BLAZIUM.setRepairItem(new ItemStack(ingots, 1, 7));
 		GLACIERITE.setRepairItem(new ItemStack(ingots, 1, 6));
+		BEDROCK.setRepairItem(new ItemStack(Blocks.BEDROCK));
 		
 		ARMOR_TIN.setRepairItem(new ItemStack(ingots, 1, 1));
 		ARMOR_BRONZE.setRepairItem(new ItemStack(ingots, 1, 2));

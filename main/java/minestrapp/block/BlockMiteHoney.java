@@ -28,6 +28,7 @@ public class BlockMiteHoney extends BlockBase
 		this.setSlipperiness(0.9F);
 		this.setCreativeTab(MTabs.resource);
 		this.setLightLevel(0.65F);
+		this.setFlammable(20, 100);
 	}
 	
 	@Nullable

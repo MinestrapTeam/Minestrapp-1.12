@@ -3611,6 +3611,56 @@
                     }
                 ]
             }
+        },
+        "spike_red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_red_rock"
+                    }
+                ]
+            }
+        },
+        "spike_stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_stone"
+                    }
+                ]
+            }
+        },
+        "spike_coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_coldstone"
+                    }
+                ]
+            }
+        },
+        "spike_icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_icestone"
+                    }
+                ]
+            }
+        },
+        "spike_oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_oceanstone"
+                    }
+                ]
+            }
         }
     }
 }

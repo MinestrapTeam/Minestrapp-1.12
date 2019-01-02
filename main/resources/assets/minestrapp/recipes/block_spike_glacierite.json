@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " i ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {        
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotGlacierite"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateGlacierite"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "blockGlacierite"
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_glacierite"
+     }  
+}

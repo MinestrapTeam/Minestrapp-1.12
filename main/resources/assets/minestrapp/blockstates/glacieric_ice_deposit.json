@@ -1,10 +1,10 @@
 {
     "variants": {
-       "age=0": { "model": "minestrapp:glacieric_ice_deposit_0" },
-	  "age=1": { "model": "minestrapp:glacieric_ice_deposit_0" },
-       "age=2": { "model": "minestrapp:glacieric_ice_deposit_1" },
-       "age=3": { "model": "minestrapp:glacieric_ice_deposit_1" },
-       "age=4": { "model": "minestrapp:glacieric_ice_deposit_2" },
-       "age=5": { "model": "minestrapp:glacieric_ice_deposit_3" }
+       "age=0": { "model": "minestrapp:glacieric_ice_deposit_base" },
+	  "age=1": { "model": "minestrapp:glacieric_ice_deposit_base" },
+       "age=2": { "model": "minestrapp:glacieric_ice_deposit_base" },
+       "age=3": { "model": "minestrapp:glacieric_ice_deposit_base" },
+       "age=4": { "model": "minestrapp:glacieric_ice_deposit_base" },
+       "age=5": { "model": "minestrapp:glacieric_ice_deposit_base" }
     }
 }

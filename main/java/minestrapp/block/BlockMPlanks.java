@@ -31,6 +31,7 @@ public class BlockMPlanks extends BlockBase implements IMetaBlockName
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockMPlanks.EnumType.REDWOOD));
 		this.setResistance(5F);
 		this.setCreativeTab(MTabs.wood);
+		this.setFlammable(20, 5, 0).setFlammable(20, 5, 1);
 	}
 
 	public int damageDropped(IBlockState state)

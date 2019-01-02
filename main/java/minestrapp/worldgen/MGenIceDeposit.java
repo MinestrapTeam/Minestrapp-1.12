@@ -36,7 +36,9 @@ public class MGenIceDeposit extends WorldGenerator
 		                }
 					}
 					
-					worldIn.setBlockState(position.offset(EnumFacing.UP, radius), MBlocks.glacieric_ice_deposit.getDefaultState().withProperty(BlockGlaciericIceDeposit.AGE, 5));
+					worldIn.setBlockState(position.offset(EnumFacing.UP, radius), MBlocks.glacieric_ice_deposit.getDefaultState().withProperty(BlockGlaciericIceDeposit.AGE, 5), 1);
+					if(worldIn.getBlockState(position.offset(EnumFacing.UP, radius)).getBlock() == MBlocks.glacieric_ice_deposit)
+						((BlockGlaciericIceDeposit)worldIn.getBlockState(position.offset(EnumFacing.UP, radius)).getBlock()).updateTick(worldIn, position.offset(EnumFacing.UP, radius), worldIn.getBlockState(position.offset(EnumFacing.UP, radius)), rand);
 					int down = 1;
 					int shorten = 1;
 					int newRadius = radius;

@@ -1,0 +1,28 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "www",
+        "rmb",
+        "www"
+    ],
+    "key": {
+        "w": {
+            "item": "minecraft:potion",
+            "data": 0
+        },
+        "r": {
+            "item": "minecraft:red_mushroom"
+        },
+        "b": {
+            "item": "minecraft:brown_mushroom"
+        },
+        "m": {
+            "item": "minestrapp:moss"
+        }
+     },
+     "result": {
+        "item": "minestrapp:tannic",
+        "count": 6,
+        "data": 3
+     }  
+}

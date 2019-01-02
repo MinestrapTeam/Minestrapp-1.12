@@ -4,10 +4,8 @@ import java.util.List;
 
 import minestrapp.MBlocks;
 import minestrapp.block.util.BlockBase;
+import minestrapp.crafting.FreezingRecipes;
 import minestrapp.utils.BlockUtil;
-import net.minecraft.block.BlockLog.EnumAxis;
-import net.minecraft.block.BlockPistonBase;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -19,10 +17,15 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -36,6 +39,9 @@ public class BlockSpike extends BlockBase
 {
 	private int harvestLevel;
 	private float baseDamage;
+	
+	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
+	private static final FreezingRecipes freezingRecipes = FreezingRecipes.instance();
 	
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	
@@ -148,10 +154,43 @@ public class BlockSpike extends BlockBase
         return BlockFaceShape.UNDEFINED;
     }
     
+    public void triggerSpecialEffects (Entity entityIn, float multiplier)
+    {
+    	if(this == MBlocks.spike_blazium)
+			entityIn.setFire(Math.round(10 * multiplier));
+		else if(this == MBlocks.spike_glacierite)
+		{
+			if(entityIn instanceof EntityLiving)
+				((EntityLiving) entityIn).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, Math.round(100 * multiplier), Math.round(1 + multiplier)));
+			else if(entityIn instanceof EntityPlayer)
+				((EntityPlayer) entityIn).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, Math.round(100 * multiplier), Math.round(1 + multiplier)));
+		}
+    }
+    
+    public void tryDeleteEntity(Entity entityIn)
+    {
+    	if(entityIn instanceof EntityPlayer)
+			entityIn.attackEntityFrom(DamageSource.OUT_OF_WORLD, 9999F);
+    	else if(entityIn.isNonBoss())
+    	{
+    		entityIn.setDropItemsWhenDead(false);
+    		entityIn.setDead();
+    	}
+    	else
+    		entityIn.attackEntityFrom(DamageSource.OUT_OF_WORLD, 20F);
+    }
+    
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {
     	if(worldIn.getBlockState(pos).getValue(this.FACING) == EnumFacing.UP)
-    		entityIn.fall(fallDistance + this.baseDamage, 1.5F);
+    	{
+    		triggerSpecialEffects(entityIn, 1F);
+    		
+    		if(this != MBlocks.spike_dimensium)
+    			entityIn.fall(fallDistance + this.baseDamage, 1.5F);
+    		else if(!(entityIn instanceof EntityItem))
+    			tryDeleteEntity(entityIn);
+    	}
     	else
     		super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
     }
@@ -159,7 +198,14 @@ public class BlockSpike extends BlockBase
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
     	if(!(entityIn instanceof EntityItem))
-    		entityIn.attackEntityFrom(DamageSource.CACTUS, this.baseDamage / 2);
+    	{
+    		triggerSpecialEffects(entityIn, 0.4F);
+    		
+    		if(this != MBlocks.spike_dimensium)
+    			entityIn.attackEntityFrom(DamageSource.CACTUS, this.baseDamage / 2);
+    		else
+    			tryDeleteEntity(entityIn);
+    	}
     }
     
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
@@ -172,8 +218,39 @@ public class BlockSpike extends BlockBase
     		
     		if(behind.getBlock() == Blocks.PISTON_EXTENSION || behind.getBlock() == MBlocks.magnet_piston_extension)
     		{
-    			if(toBreak.getBlockHardness(worldIn, pos.offset(state.getValue(this.FACING))) >= 0 && toBreak.getBlock().getHarvestLevel(toBreak) <= this.harvestLevel && toBreak.getBlock() != Blocks.AIR && !(toBreak.getBlock() instanceof BlockSpike))
-    				worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    			if(!toBreak.getBlock().isReplaceable(worldIn, pos.offset(state.getValue(this.FACING))) && (toBreak.getBlockHardness(worldIn, pos.offset(state.getValue(this.FACING))) >= 0 || toBreak.getBlock() == MBlocks.honeycomb_steel) && toBreak.getBlock().getHarvestLevel(toBreak) <= this.harvestLevel && toBreak.getBlock() != Blocks.AIR && !(toBreak.getBlock() instanceof BlockSpike) && toBreak.getBlock() != MBlocks.honeycomb_meurodite && this != MBlocks.spike_dimensium)
+    			{
+    				if(this != MBlocks.spike_blazium && this != MBlocks.spike_glacierite)
+    					worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    				else if(this == MBlocks.spike_blazium)
+    				{
+    					ItemStack smeltStack = furnaceRecipes.getSmeltingResult(new ItemStack(toBreak.getBlock(), 1, toBreak.getBlock().getMetaFromState(toBreak)));
+    					
+    					if(smeltStack != null && smeltStack != ItemStack.EMPTY)
+    					{
+    						worldIn.setBlockToAir(pos.offset(state.getValue(this.FACING)));
+    						worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, smeltStack.copy()));
+    					}
+    					else
+    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    				}
+    				else if(this == MBlocks.spike_glacierite)
+    				{
+    					ItemStack freezeStack = freezingRecipes.getFreezingResult(new ItemStack(toBreak.getBlock(), 1, toBreak.getBlock().getMetaFromState(toBreak)), "light");
+    					
+    					if(freezeStack != null && freezeStack != ItemStack.EMPTY)
+    					{
+    						worldIn.setBlockToAir(pos.offset(state.getValue(this.FACING)));
+    						worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, freezeStack.copy()));
+    					}
+    					else
+    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    				}
+    			}
+    			else if(this == MBlocks.spike_dimensium)
+    			{
+    				worldIn.setBlockToAir(pos.offset(state.getValue(this.FACING)));
+    			}
     			
     			int x = pos.getX();
     			int y = pos.getY();
@@ -183,11 +260,21 @@ public class BlockSpike extends BlockBase
     			
     			for(EntityLiving living : entities)
     			{
-    				living.attackEntityFrom(DamageSource.CACTUS, this.baseDamage * 2.5F);
+    				triggerSpecialEffects(living, 2F);
+    				
+    				if(this != MBlocks.spike_dimensium)
+    					living.attackEntityFrom(DamageSource.CACTUS, this.baseDamage * 2.5F);
+    				else
+    					tryDeleteEntity(living);
     			}
     			for(EntityPlayer player : players)
     			{
-    				player.attackEntityFrom(DamageSource.CACTUS, this.baseDamage * 2.5F);
+    				triggerSpecialEffects(player, 2F);
+    				
+    				if(this != MBlocks.spike_dimensium)
+    					player.attackEntityFrom(DamageSource.CACTUS, this.baseDamage * 2.5F);
+    				else
+    					tryDeleteEntity(player);
     			}
     			
     			break;

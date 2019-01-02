@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " i ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {        
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotArchantine"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateArchantine"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "blockArchantine"
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_archantine"
+     }  
+}

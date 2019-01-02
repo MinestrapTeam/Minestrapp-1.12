@@ -389,6 +389,36 @@ public class MWorldDecorator
 				}
 			}
 			
+			// Moss Gen
+			if(biome.getDefaultTemperature() < 0.3)
+			{
+				if(MConfig.generateIcicles)
+				{
+					int boost = 0;
+					
+					if(biome.getDefaultTemperature() < 0)
+						boost = 3;
+					else if(biome.getDefaultTemperature() < 0.2)
+						boost = 2;
+					else if(biome.getDefaultTemperature() < 0.25)
+						boost = 1;
+					
+					for(int i = 0 ; i < boost * 2 ; i++)
+					{
+						int posX = random.nextInt(16)+8;
+						int posY = 60 - random.nextInt(55);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos icePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						if(!world.canSeeSky(icePos))
+						{
+							MGenIcicle iceGen = new MGenIcicle(boost);
+							iceGen.generate(world, random, icePos);
+						}
+					}
+				}
+			}
+			
 			// IceMound Gen
 			if(biome == Biomes.ICE_PLAINS)
 			{

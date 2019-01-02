@@ -3,7 +3,8 @@
     "group": "tannin",
     "ingredients": [
         {
-            "item": "minecraft:glass_bottle"
+            "item": "minestrapp:tannic",
+            "data": 3
         },
         {
             "type": "forge:ore_dict",

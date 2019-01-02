@@ -1,0 +1,29 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " t ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {
+        "t": {
+            "item": "m_tech_component",
+            "data": 5
+        },
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotDimensium"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateDimensium"
+        },
+        "b": {
+            "item": "block_dimensium_stabilized_inactive"
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_dimensium"
+     }  
+}

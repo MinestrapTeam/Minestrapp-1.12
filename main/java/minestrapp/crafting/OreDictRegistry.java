@@ -52,7 +52,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("oreTorite", new ItemStack(MBlocks.ore_torite, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreDiamond", new ItemStack(MBlocks.ore_diamond, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreEmerald", new ItemStack(MBlocks.ore_emerald, 1, OreDictionary.WILDCARD_VALUE));
-		OreDictionary.registerOre("oreTitanium", new ItemStack(MBlocks.ore_titanium, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("oreArchantine", new ItemStack(MBlocks.ore_titanium, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("oreBlazium", new ItemStack(MBlocks.ore_blazium));
 		OreDictionary.registerOre("oreSoul", new ItemStack(MBlocks.ore_soul));
 		OreDictionary.registerOre("oreDimensium", new ItemStack(MBlocks.ore_dimensium));
@@ -66,8 +66,9 @@ public class OreDictRegistry
 		OreDictionary.registerOre("blockTorite", MBlocks.block_torite);
 		OreDictionary.registerOre("blockIrradium", MBlocks.block_irradium);
 		OreDictionary.registerOre("blockGlacierite", MBlocks.block_glacierite);
-		OreDictionary.registerOre("blockTitanium", MBlocks.block_titanium);
+		OreDictionary.registerOre("blockArchantine", MBlocks.block_titanium);
 		OreDictionary.registerOre("blockBlazium", MBlocks.block_blazium);
+		OreDictionary.registerOre("blockSoulGem", MBlocks.block_soul);
 		OreDictionary.registerOre("blockDimensium", MBlocks.block_dimensium);
 		OreDictionary.registerOre("blockRedstone", MBlocks.block_redstone_briny_lit);
 		OreDictionary.registerOre("blockRedstone", MBlocks.block_redstone_sandy_lit);
@@ -77,12 +78,14 @@ public class OreDictRegistry
 		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_frosted);
 		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_icy);
 		OreDictionary.registerOre("dustRedstone", MBlocks.redstone_briny);
+		OreDictionary.registerOre("stickWood", MItems.charroot);
+		OreDictionary.registerOre("dustWood", MItems.sawdust);
 		OreDictionary.registerOre("dustCopper", new ItemStack(MItems.chunks, 1, 7));
 		OreDictionary.registerOre("dustTin", new ItemStack(MItems.chunks, 1, 8));
 		OreDictionary.registerOre("dustIron", new ItemStack(MItems.chunks, 1, 9));
 		OreDictionary.registerOre("dustGold", new ItemStack(MItems.chunks, 1, 10));
 		OreDictionary.registerOre("dustTorite", new ItemStack(MItems.chunks, 1, 11));
-		OreDictionary.registerOre("dustTitanium", new ItemStack(MItems.chunks, 1, 12));
+		OreDictionary.registerOre("dustArchantine", new ItemStack(MItems.chunks, 1, 12));
 		OreDictionary.registerOre("dustDimensium", new ItemStack(MItems.chunks, 1, 13));
 		OreDictionary.registerOre("dustIrradium", MItems.irradium);
 		OreDictionary.registerOre("nuggetCopper", new ItemStack(MItems.nuggets, 1, 0));

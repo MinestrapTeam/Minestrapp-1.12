@@ -39,6 +39,26 @@ public class BlockUtil {
 		return new AxisAlignedBB(corner1, bottom, corner1, corner2, top, corner2);
 	}
 	
+	public static AxisAlignedBB createBoundingBoxColumnNS(double width, double height, double yoffset)
+	{
+		double corner1 = (8 - (width / 2)) / 16;
+		double corner2 = (8 + (width / 2)) / 16;
+		double bottom = yoffset / 16;
+		double top = (yoffset + height) / 16;
+		
+		return new AxisAlignedBB(corner1, corner1, bottom, corner2, corner2, top);
+	}
+	
+	public static AxisAlignedBB createBoundingBoxColumnEW(double width, double height, double yoffset)
+	{
+		double corner1 = (8 - (width / 2)) / 16;
+		double corner2 = (8 + (width / 2)) / 16;
+		double bottom = yoffset / 16;
+		double top = (yoffset + height) / 16;
+		
+		return new AxisAlignedBB(bottom, corner1, corner1, top, corner2, corner2);
+	}
+	
 	/**Rotates the AABB 90 degrees a specified number of times along the specified axis (looking from the positive end of the axis).**/
 	/*
 	public static AxisAlignedBB rotateBoundingBox(AxisAlignedBB aabb, EnumAxis axis, int rotations)

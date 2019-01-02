@@ -601,4 +601,16 @@ public class BlockPanelBase extends BlockBase
 	{
 		return false;
 	}
+    
+    public BlockPanelBase setFlammable(int flammability, int fireSpread, int meta)
+	{
+		super.setFlammable(flammability, fireSpread, meta);
+		return this;
+	}
+    
+    public BlockPanelBase setFlammable(int flammability, int fireSpread)
+	{
+		super.setFlammable(flammability, fireSpread);
+		return this;
+	}
 }

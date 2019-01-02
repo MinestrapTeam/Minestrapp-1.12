@@ -17,7 +17,7 @@ public class PotionHydrophobia extends MPotion{
 	@Override
 	public void performEffect(EntityLivingBase living, int amplifier) {
 		if(living.isWet()) {
-			float amount = 1F * (2F * amplifier);
+			float amount = 1F + (2F * amplifier);
 			living.attackEntityFrom(DamageSource.DROWN, amount);
 		}
     }

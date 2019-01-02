@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_dimensium_plating"
+    ]
+  },
+  "criteria": {
+    "has_dimensium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_ingot",
+            "data": 8 
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_dimensium_plating"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dimensium_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

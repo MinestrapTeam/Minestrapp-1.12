@@ -285,4 +285,14 @@ public class BlockVoidberryBush extends BlockBush implements IGrowable
     	else
     		return 0;
     }
+    
+    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 20;
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+        return 5;
+    }
 }

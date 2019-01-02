@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "power=0": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=1": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=2": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=3": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=4": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=5": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=6": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=7": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=8": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=9": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=10": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=11": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=12": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=13": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=14": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    },
+    "power=15": {
+      "model": "minestrapp:stabilized_dimensium_active"
+    }
+  }
+}  

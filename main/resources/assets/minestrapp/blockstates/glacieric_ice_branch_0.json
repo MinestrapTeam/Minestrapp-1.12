@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "base=false,facing=up":    { "model": "minestrapp:glacieric_ice_deposit_branch_0" },
+        "base=false,facing=down":  { "model": "minestrapp:glacieric_ice_deposit_branch_0", "x": 180 },
+        "base=false,facing=east":  { "model": "minestrapp:glacieric_ice_deposit_branch_0", "x": 90, "y": 90 },
+        "base=false,facing=west":  { "model": "minestrapp:glacieric_ice_deposit_branch_0", "x": 90, "y": 270 },
+        "base=false,facing=south": { "model": "minestrapp:glacieric_ice_deposit_branch_0", "x": 90, "y": 180 },
+        "base=false,facing=north": { "model": "minestrapp:glacieric_ice_deposit_branch_0", "x": 90 },
+        "base=true,facing=up":    { "model": "minestrapp:glacieric_ice_deposit_base_0" },
+        "base=true,facing=down":  { "model": "minestrapp:glacieric_ice_deposit_base_0", "x": 180 },
+        "base=true,facing=east":  { "model": "minestrapp:glacieric_ice_deposit_base_0", "x": 90, "y": 90 },
+        "base=true,facing=west":  { "model": "minestrapp:glacieric_ice_deposit_base_0", "x": 90, "y": 270 },
+        "base=true,facing=south": { "model": "minestrapp:glacieric_ice_deposit_base_0", "x": 90, "y": 180 },
+        "base=true,facing=north": { "model": "minestrapp:glacieric_ice_deposit_base_0", "x": 90 }
+    }
+}

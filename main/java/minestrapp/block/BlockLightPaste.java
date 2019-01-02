@@ -67,7 +67,7 @@ public class BlockLightPaste extends BlockBase
 	@Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
-        return new AxisAlignedBB(0D, 0D, 0D, 0D, 0D, 0D);
+        return NULL_AABB;
     }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
@@ -228,4 +228,14 @@ public class BlockLightPaste extends BlockBase
 	{
 		return false;
 	}
+    
+    public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
+    {
+    	return true;
+    }
+    
+    public boolean canSpawnInBlock()
+    {
+        return true;
+    }
 }

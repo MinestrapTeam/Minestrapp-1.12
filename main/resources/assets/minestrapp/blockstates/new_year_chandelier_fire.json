@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "color=gray": [
+            { "model": "minestrapp:new_year_chandelier_gray" },
+            { "model": "minestrapp:new_year_chandelier_gray", "y": 90 },
+            { "model": "minestrapp:new_year_chandelier_gray", "y": 180 },
+            { "model": "minestrapp:new_year_chandelier_gray", "y": 270 }
+        ],
+        "color=red": [
+            { "model": "minestrapp:new_year_chandelier_red" },
+            { "model": "minestrapp:new_year_chandelier_red", "y": 90 },
+            { "model": "minestrapp:new_year_chandelier_red", "y": 180 },
+            { "model": "minestrapp:new_year_chandelier_red", "y": 270 }
+        ],
+        "color=cyan": [
+            { "model": "minestrapp:new_year_chandelier_cyan" },
+            { "model": "minestrapp:new_year_chandelier_cyan", "y": 90 },
+            { "model": "minestrapp:new_year_chandelier_cyan", "y": 180 },
+            { "model": "minestrapp:new_year_chandelier_cyan", "y": 270 }
+        ],
+        "color=purple": [
+            { "model": "minestrapp:new_year_chandelier_purple" },
+            { "model": "minestrapp:new_year_chandelier_purple", "y": 90 },
+            { "model": "minestrapp:new_year_chandelier_purple", "y": 180 },
+            { "model": "minestrapp:new_year_chandelier_purple", "y": 270 }
+        ]
+    }
+}

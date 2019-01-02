@@ -43,6 +43,7 @@ public static final PropertyEnum<EnumStoneType> VARIANT = PropertyEnum.<EnumSton
 	public boolean silkHarvest;
 	public boolean fortune;
 	public boolean matchMeta;
+	private boolean glowing = false;
 
 	public BlockStoneBase(String name, Material material, SoundType soundType, float hardness, String tool, int harvestLevel)
 	{
@@ -238,5 +239,20 @@ public static final PropertyEnum<EnumStoneType> VARIANT = PropertyEnum.<EnumSton
             }
         }
         return ret;
+    }
+	
+	public BlockStoneBase setGlowing()
+	{
+		this.glowing = true;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+		if(this.glowing)
+			return 15728880;
+		else
+			return super.getPackedLightmapCoords(state, source, pos);
     }
 }

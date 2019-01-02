@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_honeycomb_meurodite"
+    ]
+  },
+  "criteria": {
+    "has_comb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:mite_comb"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_honeycomb_meurodite"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_comb",
+      "has_the_recipe"
+    ]
+  ]
+}

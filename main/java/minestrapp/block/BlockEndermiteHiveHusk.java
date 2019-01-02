@@ -39,6 +39,7 @@ public class BlockEndermiteHiveHusk extends BlockBase
 		this.setCreativeTab(MTabs.environment);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockEndermiteHiveHusk.EnumType.ALL_OUTSIDE));
 		this.honeyed = honeyed;
+		this.setFlammable(20, 5);
 	}
 
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)

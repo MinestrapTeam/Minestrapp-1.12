@@ -1,0 +1,8 @@
+{
+    "parent": "minestrapp:block/spike_base_complex",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/chiseled_glacierrock",
+        "side": "minestrapp:blocks/utility/spike/icestone_spike_side",
+		"top": "minestrapp:blocks/utility/spike/icestone_spike_top"
+    }
+}

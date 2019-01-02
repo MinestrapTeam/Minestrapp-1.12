@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " i ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {        
+        "i": {
+            "item": "minestrapp:m_chunks",
+            "data": 0
+        },
+        "p": {
+            "item": "minestrapp:m_stone",
+            "data": 0
+        },
+        "b": {
+            "item": "minestrapp:m_chiseled_stone",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_red_rock"
+     }  
+}

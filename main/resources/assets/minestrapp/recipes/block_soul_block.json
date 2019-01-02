@@ -1,0 +1,18 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "gemSoul"
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_soul",
+        "data": 0
+     }  
+}

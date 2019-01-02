@@ -1,0 +1,17 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict", 
+            "ore": "ingotDimensium"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_plating",
+        "data": 12
+     }  
+}

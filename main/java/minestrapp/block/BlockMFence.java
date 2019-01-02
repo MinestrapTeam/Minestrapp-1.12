@@ -272,4 +272,20 @@ public class BlockMFence extends BlockFence implements IMetaBlockName
 	{
 		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(world.getBlockState(pos)));
 	}
+	
+	public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		if(world.getBlockState(pos) instanceof BlockMFence && world.getBlockState(pos).getValue(VARIANT) != BlockMPlanks.EnumType.CHARWOOD)
+			return 20;
+		else
+			return super.getFlammability(world, pos, face);
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		if(world.getBlockState(pos) instanceof BlockMFence && world.getBlockState(pos).getValue(VARIANT) != BlockMPlanks.EnumType.CHARWOOD)
+			return 5;
+		else
+			return super.getFireSpreadSpeed(world, pos, face);
+    }
 }

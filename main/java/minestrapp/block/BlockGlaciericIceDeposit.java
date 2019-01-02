@@ -18,6 +18,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -37,7 +38,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockGlaciericIceDeposit extends BlockBase
 {
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 5);
-	protected static final AxisAlignedBB GLACIERIC_ICE_AABB = new AxisAlignedBB(0.25D, 0D, 0.25D, 0.75D, 0.5D, 0.75D);
 	
 	public BlockGlaciericIceDeposit()
 	{
@@ -50,6 +50,7 @@ public class BlockGlaciericIceDeposit extends BlockBase
 		this.setPushReaction(EnumPushReaction.BLOCK);
 		this.setSlipperiness(1F);
 		this.setTickRandomly(true);
+		this.setDropsItem(new ItemStack(MItems.gems, 5, 6), 5, 10, 20, false, false);
 	}
 	
 	public IBlockState getStateFromMeta(int meta)
@@ -69,7 +70,7 @@ public class BlockGlaciericIceDeposit extends BlockBase
 	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
-		return GLACIERIC_ICE_AABB;
+		return FULL_BLOCK_AABB;
     }
 	
 	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
@@ -86,6 +87,16 @@ public class BlockGlaciericIceDeposit extends BlockBase
     {
         return false;
     }
+    
+    public int tickRate(World worldIn)
+    {
+        return 30;
+    }
+	
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	{
+		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
+	}
     
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
@@ -141,6 +152,17 @@ public class BlockGlaciericIceDeposit extends BlockBase
         return ((Integer)state.getValue(this.getAgeProperty())).intValue() >= this.getMaxAge();
     }
     
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+        if(!worldIn.isRemote && playerIn.getHeldItem(hand).getItem() == Items.SNOWBALL)
+        {
+        	if(worldIn.rand.nextInt(5) == 1)
+        		this.updateTick(worldIn, pos, state, worldIn.rand);
+        	return true;
+        }
+        return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+    }
+    
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
     	int chance = 5;
@@ -150,21 +172,127 @@ public class BlockGlaciericIceDeposit extends BlockBase
     		chance -= 1;
     	if(rand.nextInt(chance) == 0 && this.getAge(state) < this.getMaxAge())
     		worldIn.setBlockState(pos, state.withProperty(AGE, this.getAge(state) + 1));
+    	if(this.getAge(state) == this.getMaxAge())
+    	{
+    		growBranch(worldIn, pos.up(), rand, EnumFacing.UP);
+    		worldIn.setBlockState(pos, state.withProperty(AGE, 0));
+    	}
     }
     
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    public void growBranch(World worldIn, BlockPos pos, Random rand, EnumFacing facing)
     {
-    	Item heldItem = playerIn.getHeldItem(hand).getItem();
-    	if(!worldIn.isRemote && this.getAge(state) == this.getMaxAge() && heldItem instanceof ItemPickaxe && ToolMaterial.valueOf(((ItemPickaxe) heldItem).getToolMaterialName()).getHarvestLevel() >= 2)
+    	IBlockState state = worldIn.getBlockState(pos);
+    	
+    	if(state.getBlock() instanceof BlockGlaciericIceBranch)
     	{
-    		worldIn.playSound(playerIn, pos, SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.BLOCKS, 1, 1);
-    		playerIn.getHeldItem(hand).damageItem(1, playerIn);
-    		EntityItem item = new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, new ItemStack(MItems.gems, 1, 6));
-    		worldIn.spawnEntity(item);
-    		worldIn.setBlockState(pos, state.withProperty(AGE, 0));
-    		return true;
+    		int stage = ((BlockGlaciericIceBranch)state.getBlock()).getStage();
+    		
+    		if(stage < 7 && (worldIn.getBlockState(pos.offset(facing.getOpposite())).getBlock() == MBlocks.glacieric_ice_deposit || (worldIn.getBlockState(pos.offset(facing.getOpposite())).getBlock() instanceof BlockGlaciericIceBranch && ((BlockGlaciericIceBranch)worldIn.getBlockState(pos.offset(facing.getOpposite())).getBlock()).getStage() > stage + 1)))
+    		{
+    			state = BlockGlaciericIceBranch.getBranchBlock(stage + 1).getDefaultState().withProperty(BlockGlaciericIceBranch.FACING, facing);
+    			worldIn.setBlockState(pos, state);
+    			stage++;
+    		}
+    		
+    		if(stage > 0)
+    		{
+	    		if((worldIn.getBlockState(pos.offset(facing)).getBlock() instanceof BlockGlaciericIceBranch && worldIn.getBlockState(pos.offset(facing)).getValue(BlockGlaciericIceBranch.FACING) == facing) || worldIn.getBlockState(pos.offset(facing)).getBlock().isReplaceable(worldIn, pos.offset(facing)))
+	    		{
+	    			growBranch(worldIn, pos.offset(facing), rand, facing);
+	    		}
+	    		
+	    		int horizontalSplitChance = 10;
+	    		int verticalSplitChance = 30;
+	    		boolean horizontalSplit = false;
+	    		boolean verticalSplit = false;
+	    		
+	    		if(worldIn.isRaining())
+	    		{
+	    			horizontalSplitChance -= 3;
+	    			verticalSplitChance -= 6;
+	    		}
+	    		if(!worldIn.isDaytime())
+	    		{
+	    			horizontalSplitChance -= 1;
+	    			verticalSplitChance -= 2;
+	    		}
+	    		
+	    		if(rand.nextInt(horizontalSplitChance) == 1)
+	    			horizontalSplit = true;
+	    		if(rand.nextInt(verticalSplitChance) == 1)
+	    			verticalSplit = true;
+	    		
+	    		if(facing.getAxis().isVertical())
+	    		{
+	    			boolean alreadySplit = false;
+	    			
+	    			for(EnumFacing horizFacing : EnumFacing.HORIZONTALS)
+	    			{
+	    				if(worldIn.getBlockState(pos.offset(horizFacing)).getBlock() instanceof BlockGlaciericIceBranch && worldIn.getBlockState(pos.offset(horizFacing)).getValue(BlockGlaciericIceBranch.FACING) == horizFacing)
+	    					alreadySplit = true;
+	    			}
+	    			
+	    			if(alreadySplit)
+	    			{
+	    				for(EnumFacing horizFacing : EnumFacing.HORIZONTALS)
+	        			{
+	    					if(worldIn.getBlockState(pos.offset(horizFacing)).getBlock() instanceof BlockGlaciericIceBranch && worldIn.getBlockState(pos.offset(horizFacing)).getValue(BlockGlaciericIceBranch.FACING) == horizFacing)
+		    					growBranch(worldIn, pos.offset(horizFacing), rand, horizFacing);
+	        			}
+	    			}
+	    			else if(horizontalSplit || verticalSplit)
+	    			{
+	    				for(EnumFacing horizFacing : EnumFacing.HORIZONTALS)
+	        			{
+	    					if(worldIn.getBlockState(pos.offset(horizFacing)).getBlock().isReplaceable(worldIn, pos.offset(horizFacing)))
+	    						growBranch(worldIn, pos.offset(horizFacing), rand, horizFacing);
+	        			}
+	    			}
+	    		}
+	    		else
+	    		{
+	    			boolean alreadySplit = false;
+	    			EnumFacing checkFacing = EnumFacing.UP;
+	    			
+	    			for(int i = 0 ; i < 4 ; i++)
+	    			{
+	    				checkFacing = checkFacing.rotateAround(facing.getAxis());
+	    				if(worldIn.getBlockState(pos.offset(checkFacing)).getBlock() instanceof BlockGlaciericIceBranch && worldIn.getBlockState(pos.offset(checkFacing)).getValue(BlockGlaciericIceBranch.FACING) == checkFacing)
+	    					alreadySplit = true;
+	    			}
+	    			
+	    			if(alreadySplit)
+	    			{
+	    				for(int i = 0 ; i < 4 ; i++)
+	        			{
+	        				checkFacing = checkFacing.rotateAround(facing.getAxis());
+	        				if(worldIn.getBlockState(pos.offset(checkFacing)).getBlock() instanceof BlockGlaciericIceBranch && worldIn.getBlockState(pos.offset(checkFacing)).getValue(BlockGlaciericIceBranch.FACING) == checkFacing)
+	        					growBranch(worldIn, pos.offset(checkFacing), rand, checkFacing);
+	        			}
+	    			}
+	    			else
+	    			{
+	    				if(horizontalSplit)
+	    				{
+	    					if(worldIn.getBlockState(pos.offset(facing.rotateY())).getBlock().isReplaceable(worldIn, pos.offset(facing.rotateY())))
+	    						growBranch(worldIn, pos.offset(facing.rotateY()), rand, facing.rotateY());
+	    					if(worldIn.getBlockState(pos.offset(facing.rotateYCCW())).getBlock().isReplaceable(worldIn, pos.offset(facing.rotateYCCW())))
+	    						growBranch(worldIn, pos.offset(facing.rotateYCCW()), rand, facing.rotateYCCW());
+	    				}
+	    				if(verticalSplit)
+	    				{
+	    					if(worldIn.getBlockState(pos.up()).getBlock().isReplaceable(worldIn, pos.up()))
+	    						growBranch(worldIn, pos.up(), rand, EnumFacing.UP);
+	    					if(worldIn.getBlockState(pos.down()).getBlock().isReplaceable(worldIn, pos.down()))
+	    						growBranch(worldIn, pos.down(), rand, EnumFacing.DOWN);
+	    				}
+	    			}
+	    		}
+    		}
     	}
     	else
-    		return false;
+    	{
+    		worldIn.setBlockState(pos, MBlocks.glacieric_ice_branch_0.getDefaultState().withProperty(BlockGlaciericIceBranch.FACING, facing));
+    	}
     }
 }

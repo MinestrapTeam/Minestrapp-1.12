@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xx",
+        "i ",
+        "i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "item": "minecraft:bedrock"
+        }
+     },
+     "result": {
+        "item": "minestrapp:bedrock_hoe",
+        "data": 0
+     }  
+}

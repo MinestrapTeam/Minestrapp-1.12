@@ -2,6 +2,7 @@ package minestrapp.block;
 
 import javax.annotation.Nullable;
 
+import minestrapp.MItems;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
@@ -43,7 +44,7 @@ public class BlockCharwoodLimb extends BlockBase
 	{
 		super("charwood_limb", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), SoundType.WOOD, 0.8F, "axe", 0);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-		this.setDropsItem(new ItemStack(Items.STICK), 2, 0, 0, false, true);
+		this.setDropsItem(new ItemStack(MItems.charroot), 0, 0, 0, false, false);
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

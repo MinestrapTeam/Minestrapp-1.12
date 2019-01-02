@@ -34,6 +34,7 @@ public class MConfig
 	public static boolean generateTorite;
 	public static boolean generateIrradium;
 	public static boolean generateSunstone;
+	public static boolean generateIcicles;
 	public static boolean generateIceMounds;
 	public static boolean generateTitanium;
 	public static boolean generateBlazium;
@@ -63,7 +64,6 @@ public class MConfig
 	public static boolean generateClutchthorn;
 	public static boolean generateTerracreep;
 	public static boolean generateLavaSponge;
-	
 	public static boolean generateMiteHive;
 	
 	public static boolean removeVanillaRecipes;
@@ -128,6 +128,8 @@ public class MConfig
 		registerProperty(propertyIrradiumGen, CATEGORY_WORLDGEN, "generate_irradium");
 		Property propertySunstoneGen = config.get(CATEGORY_WORLDGEN, "generate_sunstone", true);
 		registerProperty(propertySunstoneGen, CATEGORY_WORLDGEN, "generate_sunstone");
+		Property propertyIcicleGen = config.get(CATEGORY_WORLDGEN, "generate_icicles", true);
+		registerProperty(propertyIcicleGen, CATEGORY_WORLDGEN, "generate_icicles");
 		Property propertyIceMoundGen = config.get(CATEGORY_WORLDGEN, "generate_ice_mounds", true);
 		registerProperty(propertyIceMoundGen, CATEGORY_WORLDGEN, "generate_ice_mounds");
 		Property propertyTitaniumGen = config.get(CATEGORY_WORLDGEN, "generate_titanium", true);
@@ -214,6 +216,7 @@ public class MConfig
 			generateTorite = propertyToriteGen.getBoolean();
 			generateIrradium = propertyIrradiumGen.getBoolean();
 			generateSunstone = propertySunstoneGen.getBoolean();
+			generateIcicles = propertyIcicleGen.getBoolean();
 			generateIceMounds = propertyIceMoundGen.getBoolean();
 			generateTitanium = propertyTitaniumGen.getBoolean();
 			generateBlazium = propertyBlaziumGen.getBoolean();
@@ -260,6 +263,7 @@ public class MConfig
 		propertyToriteGen.set(generateTorite);
 		propertyIrradiumGen.set(generateIrradium);
 		propertySunstoneGen.set(generateSunstone);
+		propertyIcicleGen.set(generateIcicles);
 		propertyIceMoundGen.set(generateIceMounds);
 		propertyTitaniumGen.set(generateTitanium);
 		propertyBlaziumGen.set(generateBlazium);

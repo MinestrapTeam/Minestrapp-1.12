@@ -1,0 +1,8 @@
+{
+    "parent": "minestrapp:block/spike_base_complex",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/chiseled_deep_coldstone",
+        "side": "minestrapp:blocks/utility/spike/coldstone_spike_side",
+		"top": "minestrapp:blocks/utility/spike/coldstone_spike_top"
+    }
+}

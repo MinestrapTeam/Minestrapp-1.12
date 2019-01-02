@@ -1,0 +1,317 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:spike_oak"
+        },
+        "title": {
+            "translate": "advancements.automation.spike.title"
+        },
+        "description": {
+            "translate": "advancements.automation.spike.description"
+        }
+    },
+    "parent": "minestrapp:automation/piston",
+    "criteria": {
+        "oak": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_oak"
+                    }
+                ]
+            }
+        },
+        "spruce": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_spruce"
+                    }
+                ]
+            }
+        },
+        "birch": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_birch"
+                    }
+                ]
+            }
+        },
+        "jungle": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_jungle"
+                    }
+                ]
+            }
+        },
+        "acacia": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_acacia"
+                    }
+                ]
+            }
+        },
+        "dark_oak": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_dark_oak"
+                    }
+                ]
+            }
+        },
+        "redwood": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_redwood"
+                    }
+                ]
+            }
+        },
+        "frozen_oak": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_frozen_oak"
+                    }
+                ]
+            }
+        },
+        "charwood": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_charwood"
+                    }
+                ]
+            }
+        },
+        "red_rock": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_red_rock"
+                    }
+                ]
+            }
+        },
+        "stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_stone"
+                    }
+                ]
+            }
+        },
+        "coldstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_coldstone"
+                    }
+                ]
+            }
+        },
+        "icestone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_icestone"
+                    }
+                ]
+            }
+        },
+        "oceanstone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_oceanstone"
+                    }
+                ]
+            }
+        },
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_copper"
+                    }
+                ]
+            }
+        },
+        "tin": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_tin"
+                    }
+                ]
+            }
+        },
+        "iron": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_iron"
+                    }
+                ]
+            }
+        },
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_bronze"
+                    }
+                ]
+            }
+        },
+        "steel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_steel"
+                    }
+                ]
+            }
+        },
+        "gold": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_gold"
+                    }
+                ]
+            }
+        },
+        "meurodite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_meurodite"
+                    }
+                ]
+            }
+        },
+        "torite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_torite"
+                    }
+                ]
+            }
+        },
+        "diamond": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_diamond"
+                    }
+                ]
+            }
+        },
+        "archantine": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_archantine"
+                    }
+                ]
+            }
+        },
+        "glacierite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_glacierite"
+                    }
+                ]
+            }
+        },
+        "blazium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_blazium"
+                    }
+                ]
+            }
+        },
+        "dimensium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:spike_dimensium"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "oak",
+            "spruce",
+            "birch",
+            "jungle",
+            "acacia",
+            "dark_oak",
+            "redwood",
+            "frozen_oak",
+            "charwood",
+            "red_rock",
+            "stone",
+            "coldstone",
+            "icestone",
+            "oceanstone",
+            "copper",
+            "tin",
+            "iron",
+            "bronze",
+            "steel",
+            "gold",
+            "meurodite",
+            "torite",
+            "diamond",
+            "archantine",
+            "glacierite",
+            "blazium",
+            "dimensium"
+        ]
+    ]
+}

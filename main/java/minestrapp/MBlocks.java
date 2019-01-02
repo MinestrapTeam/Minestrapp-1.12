@@ -238,6 +238,14 @@ public class MBlocks
 	public static Block ore_irradium;
 	public static Block sunstone_deposit;
 	public static Block glacieric_ice_deposit;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_0;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_1;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_2;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_3;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_4;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_5;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_6;
+	public static BlockGlaciericIceBranch glacieric_ice_branch_7;
 	public static Block soul_eyes;
 	public static Block ore_torite;
 	public static Block ore_diamond;
@@ -271,11 +279,15 @@ public class MBlocks
 	public static Block block_titanium;
 	public static Block block_glacierite;
 	public static Block block_blazium;
+	public static Block block_soul;
 	public static Block block_mite_honey;
 	public static Block block_dimensium;
 	public static Block block_dimensium_destabilized;
 	
 	//Decor
+	public static Block honeycomb_bronze;
+	public static Block honeycomb_steel;
+	public static Block honeycomb_meurodite;
 	public static Block bauble_ice;
 	public static Block bauble_sunstone;
 	public static Block bauble_glowstone;
@@ -291,6 +303,9 @@ public class MBlocks
 	public static Block chandelier_halloween;
 	public static Block chandelier_halloween_fire;
 	public static Block chandelier_halloween_ender;
+	public static Block chandelier_new_year;
+	public static Block chandelier_new_year_fire;
+	public static Block chandelier_new_year_ender;
 	public static BlockJackOLantern pumpkin_normie;
 	public static Block pumpkin_normie_fire;
 	public static Block pumpkin_normie_ender;
@@ -367,6 +382,11 @@ public class MBlocks
 	public static Block spike_redwood_wood;
 	public static Block spike_frozen_oak_wood;
 	public static Block spike_charwood_wood;
+	public static Block spike_red_rock;
+	public static Block spike_stone;
+	public static Block spike_coldstone;
+	public static Block spike_icestone;
+	public static Block spike_oceanstone;
 	public static Block spike_copper;
 	public static Block spike_tin;
 	public static Block spike_iron;
@@ -389,6 +409,8 @@ public class MBlocks
 	public static Block block_irradiant_sunstone;
 	public static Block godstone;
 	public static Block block_irradium_insulated;
+	public static Block block_dimensium_stabilized_inactive;
+	public static Block block_dimensium_stabilized_active;
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
 	public static Block alloy;
@@ -438,7 +460,7 @@ public class MBlocks
 		register(melon_bricks = new BlockBase("melon_bricks", Material.GOURD, MapColor.LIME, SoundType.WOOD, 1F, "axe", 0).setDropsItem(new ItemStack(Items.MELON, 3), 6, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setCreativeTab(MTabs.plant));
 		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));
 		register(mite_hive_honeyed = new BlockEndermiteHiveHusk("mite_hive_honeyed", true).setLightLevel(0.5F));
-		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setCreativeTab(MTabs.environment));
+		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setFlammable(20, 5).setCreativeTab(MTabs.environment));
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -462,23 +484,23 @@ public class MBlocks
 		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
 		register(double_wood_slab_1 = new BlockDoubleWoodSlab1("m_wood_slab_1"));
 		register(wood_slab_1 = new BlockHalfWoodSlab1("m_wood_slab_1"), new ItemBlockMSlab(wood_slab_1, wood_slab_1, double_wood_slab_1));
-		register(oak_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 0, "oak"), new ItemBlockPanel(oak_plank_panel));
-		register(spruce_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 1, "spruce"), new ItemBlockPanel(spruce_plank_panel));
-		register(birch_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 2, "birch"), new ItemBlockPanel(birch_plank_panel));
-		register(jungle_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 3, "jungle"), new ItemBlockPanel(jungle_plank_panel));
-		register(acacia_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 4, "acacia"), new ItemBlockPanel(acacia_plank_panel));
-		register(dark_oak_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 5, "dark_oak"), new ItemBlockPanel(dark_oak_plank_panel));
-		register(redwood_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 0, "redwood"), new ItemBlockPanel(redwood_plank_panel));
-		register(frozen_oak_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 1, "frozen_oak"), new ItemBlockPanel(frozen_oak_plank_panel));
+		register(oak_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 0, "oak").setFlammable(20, 5), new ItemBlockPanel(oak_plank_panel));
+		register(spruce_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 1, "spruce").setFlammable(20, 5), new ItemBlockPanel(spruce_plank_panel));
+		register(birch_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 2, "birch").setFlammable(20, 5), new ItemBlockPanel(birch_plank_panel));
+		register(jungle_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 3, "jungle").setFlammable(20, 5), new ItemBlockPanel(jungle_plank_panel));
+		register(acacia_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 4, "acacia").setFlammable(20, 5), new ItemBlockPanel(acacia_plank_panel));
+		register(dark_oak_plank_panel = new BlockPanelBase(Blocks.PLANKS, MTabs.wood , 5, "dark_oak").setFlammable(20, 5), new ItemBlockPanel(dark_oak_plank_panel));
+		register(redwood_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 0, "redwood").setFlammable(20, 5), new ItemBlockPanel(redwood_plank_panel));
+		register(frozen_oak_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 1, "frozen_oak").setFlammable(20, 5), new ItemBlockPanel(frozen_oak_plank_panel));
 		register(charwood_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 2, "charwood"), new ItemBlockPanel(charwood_plank_panel));
-		register(redwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.REDWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.REDWOOD.getUnlocalizedName()));
-		register(frozen_oak_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.FROZEN_OAK), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.FROZEN_OAK.getUnlocalizedName()));
+		register(redwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.REDWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.REDWOOD.getUnlocalizedName()).setFlammable(20, 5));
+		register(frozen_oak_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.FROZEN_OAK), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.FROZEN_OAK.getUnlocalizedName()).setFlammable(20, 5));
 		register(charwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.CHARWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.CHARWOOD.getUnlocalizedName()));
 		register(fence = new BlockMFence(), new ItemBlockMultistate(fence));
 		register(redwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.REDWOOD));
 		register(frozen_oak_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.FROZEN_OAK));
 		register(charwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.CHARWOOD));
-		register(charwood_limb = new BlockCharwoodLimb());
+		ForgeRegistries.BLOCKS.register(charwood_limb = new BlockCharwoodLimb());
 		
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
@@ -606,10 +628,18 @@ public class MBlocks
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
 		register(sunstone_deposit = new BlockSunstoneDeposit("sunstone_deposit"));
 		register(glacieric_ice_deposit = new BlockGlaciericIceDeposit());
+		register(glacieric_ice_branch_0 = new BlockGlaciericIceBranch(0));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_1 = new BlockGlaciericIceBranch(1));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_2 = new BlockGlaciericIceBranch(2));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_3 = new BlockGlaciericIceBranch(3));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_4 = new BlockGlaciericIceBranch(4));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_5 = new BlockGlaciericIceBranch(5));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_6 = new BlockGlaciericIceBranch(6));
+		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_7 = new BlockGlaciericIceBranch(7));
 		register(soul_eyes = new BlockSoulEyes("soul_eyes"));
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
-		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
+		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setGlowing().setLightLevel(0.2F).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
 		register(ore_blazium = new BlockBase("ore_blazium", Material.ROCK, MapColor.NETHERRACK, SoundType.STONE, 3F, "pickaxe", 2).setResistance(5F).setLightLevel(0.675F).setCreativeTab(MTabs.ore));
 		register(ore_shimmering = new BlockShimmeringOre());
 		register(ore_soul = new BlockSoulOre());
@@ -642,11 +672,15 @@ public class MBlocks
 		register(block_titanium = new BlockBase("block_titanium", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3).setGlowing().setRenderLayer(BlockRenderLayer.CUTOUT).setBeaconBase().setResistance(6000000.0F).setLightLevel(0.2F).setCreativeTab(MTabs.resource));
 		register(block_glacierite = new BlockGlacierite());
 		register(block_blazium = new BlockBlazium("block_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setPushReaction(EnumPushReaction.NORMAL).setBeaconBase().setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.resource));
+		register(block_soul = new BlockBase("block_soul", Material.IRON, MapColor.DIAMOND, SoundType.GLASS, 5F, "pickaxe", 3).setGlowing().setBeaconBase().setLightLevel(0.7F).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_mite_honey = new BlockMiteHoney());
 		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Decor
+		register(honeycomb_bronze = new BlockBase("honeycomb_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 20F, "pickaxe", 2).setResistance(6000000.0F).setCreativeTab(MTabs.decor));
+		register(honeycomb_steel = new BlockBase("honeycomb_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, -1F, "pickaxe", 2).setBlockUnbreakable().setResistance(15F).setCreativeTab(MTabs.decor));
+		register(honeycomb_meurodite = new BlockBase("honeycomb_meurodite", Material.IRON, MapColor.BLACK_STAINED_HARDENED_CLAY, SoundType.METAL, 20F, "pickaxe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(15F).setCreativeTab(MTabs.decor));
 		register(rope = new BlockRope());
 		register(dimensium_rope = new BlockDimensiumRope());
 		ForgeRegistries.BLOCKS.register(door_charwood = new BlockMDoor("door_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor()));
@@ -668,6 +702,12 @@ public class MBlocks
 		((BlockChandelier) chandelier_halloween).setFireBlock(chandelier_halloween_fire).setEnderBlock(chandelier_halloween_ender);
 		((BlockChandelier) chandelier_halloween_fire).setUnlitBlock(chandelier_halloween);
 		((BlockChandelier) chandelier_halloween_ender).setUnlitBlock(chandelier_halloween);
+		register(chandelier_new_year = new BlockChandelierNewYear("new_year_chandelier", "unlit"), new ItemBlockMultistate(chandelier_new_year));
+		ForgeRegistries.BLOCKS.register(chandelier_new_year_fire = new BlockChandelierNewYear("new_year_chandelier_fire", "fire"));
+		ForgeRegistries.BLOCKS.register(chandelier_new_year_ender = new BlockChandelierNewYear("new_year_chandelier_ender", "ender"));
+		((BlockChandelier) chandelier_new_year).setFireBlock(chandelier_new_year_fire).setEnderBlock(chandelier_new_year_ender);
+		((BlockChandelier) chandelier_new_year_fire).setUnlitBlock(chandelier_new_year);
+		((BlockChandelier) chandelier_new_year_ender).setUnlitBlock(chandelier_new_year);
 		register(pumpkin_normie = new BlockJackOLantern("pumpkin_normie", "unlit", pumpkin_normie_fire, pumpkin_normie_ender), new ItemBlockMultistate(pumpkin_normie));
 		register(pumpkin_normie_fire = new BlockJackOLantern("pumpkin_normie_fire", "fire", pumpkin_normie, pumpkin_normie_ender));
 		register(pumpkin_normie_ender = new BlockJackOLantern("pumpkin_normie_ender", "ender", pumpkin_normie, pumpkin_normie_fire));
@@ -725,15 +765,20 @@ public class MBlocks
 		register(mite_eggsack = new BlockMiteEggsack());
 		register(block_irradiant_sunstone = new BlockIrradiantSunstone().setLightLevel(1F).setCreativeTab(MTabs.utility));
 		register(godstone = new BlockGodstone());
-		register(spike_oak_wood = new BlockSpike("spike_oak", Material.WOOD, BlockPlanks.EnumType.OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_spruce_wood = new BlockSpike("spike_spruce", Material.WOOD, BlockPlanks.EnumType.SPRUCE.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_birch_wood = new BlockSpike("spike_birch", Material.WOOD, BlockPlanks.EnumType.BIRCH.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_jungle_wood = new BlockSpike("spike_jungle", Material.WOOD, BlockPlanks.EnumType.JUNGLE.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_acacia_wood = new BlockSpike("spike_acacia", Material.WOOD, BlockPlanks.EnumType.ACACIA.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_dark_oak_wood = new BlockSpike("spike_dark_oak", Material.WOOD, BlockPlanks.EnumType.DARK_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_redwood_wood = new BlockSpike("spike_redwood", Material.WOOD, BlockMPlanks.EnumType.REDWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
-		register(spike_frozen_oak_wood = new BlockSpike("spike_frozen_oak", Material.WOOD, BlockMPlanks.EnumType.FROZEN_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
+		register(spike_oak_wood = new BlockSpike("spike_oak", Material.WOOD, BlockPlanks.EnumType.OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_spruce_wood = new BlockSpike("spike_spruce", Material.WOOD, BlockPlanks.EnumType.SPRUCE.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_birch_wood = new BlockSpike("spike_birch", Material.WOOD, BlockPlanks.EnumType.BIRCH.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_jungle_wood = new BlockSpike("spike_jungle", Material.WOOD, BlockPlanks.EnumType.JUNGLE.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_acacia_wood = new BlockSpike("spike_acacia", Material.WOOD, BlockPlanks.EnumType.ACACIA.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_dark_oak_wood = new BlockSpike("spike_dark_oak", Material.WOOD, BlockPlanks.EnumType.DARK_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_redwood_wood = new BlockSpike("spike_redwood", Material.WOOD, BlockMPlanks.EnumType.REDWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
+		register(spike_frozen_oak_wood = new BlockSpike("spike_frozen_oak", Material.WOOD, BlockMPlanks.EnumType.FROZEN_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
 		register(spike_charwood_wood = new BlockSpike("spike_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
+		register(spike_red_rock = new BlockSpike("spike_red_rock", Material.ROCK, EnumStoneType.RED_ROCK.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
+		register(spike_stone = new BlockSpike("spike_stone", Material.ROCK, EnumStoneType.STONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
+		register(spike_coldstone = new BlockSpike("spike_coldstone", Material.ROCK, EnumStoneType.COLDSTONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
+		register(spike_icestone = new BlockSpike("spike_icestone", Material.ROCK, EnumStoneType.ICESTONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
+		register(spike_oceanstone = new BlockSpike("spike_oceanstone", Material.ROCK, EnumStoneType.OCEANSTONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
 		register(spike_copper = new BlockSpike("spike_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0, MItems.COPPER).setResistance(10F).setCreativeTab(MTabs.utility));
 		register(spike_tin = new BlockSpike("spike_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0, MItems.COPPER).setResistance(5F).setCreativeTab(MTabs.utility));
 		register(spike_iron = new BlockSpike("spike_iron", Material.IRON, MapColor.IRON, SoundType.METAL, 5F, "pickaxe", 1, ToolMaterial.IRON).setResistance(10F).setCreativeTab(MTabs.utility));
@@ -743,10 +788,10 @@ public class MBlocks
 		register(spike_meurodite = new BlockSpike("spike_meurodite", Material.IRON, MapColor.BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 5F, "pickaxe", 2, MItems.MEURODITE).setResistance(10F).setCreativeTab(MTabs.utility));
 		register(spike_torite = new BlockSpike("spike_torite", Material.IRON, MapColor.FOLIAGE, SoundType.METAL, 5F, "pickaxe", 2, MItems.TORITE).setResistance(10F).setCreativeTab(MTabs.utility));
 		register(spike_diamond = new BlockSpike("spike_diamond", Material.IRON, MapColor.DIAMOND, SoundType.METAL, 5F, "pickaxe", 2, ToolMaterial.DIAMOND).setResistance(10F).setCreativeTab(MTabs.utility));
-		register(spike_archantine = new BlockSpike("spike_archantine", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3, MItems.TITANIUM).setResistance(6000000.0F).setCreativeTab(MTabs.utility));
+		register(spike_archantine = new BlockSpike("spike_archantine", Material.IRON, MapColor.BLACK, SoundType.METAL, 10F, "pickaxe", 3, MItems.TITANIUM).setGlowing().setLightLevel(0.2F).setResistance(6000000.0F).setCreativeTab(MTabs.utility));
 		register(spike_glacierite = new BlockSpike("spike_glacierite", Material.IRON, MapColor.LAPIS, SoundType.METAL, 5F, "pickaxe", 2, MItems.GLACIERITE).setResistance(10F).setCreativeTab(MTabs.utility));
 		register(spike_blazium = new BlockSpike("spike_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2, MItems.BLAZIUM).setResistance(10F).setLightLevel(0.8F).setCreativeTab(MTabs.utility));
-		
+		register(spike_dimensium = new BlockSpike("spike_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, MItems.TITANIUM).setLightLevel(0.5F).setResistance(10F).setCreativeTab(MTabs.utility));
 		register(magnet_piston_1 = new BlockMagnetPistonBase(1).setRegistryName("magnet_piston1").setUnlocalizedName("magnet_piston").setCreativeTab(MTabs.utility));
 		ForgeRegistries.BLOCKS.register(magnet_piston_2 = new BlockMagnetPistonBase(2).setRegistryName("magnet_piston2").setUnlocalizedName("magnet_piston"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_3 = new BlockMagnetPistonBase(3).setRegistryName("magnet_piston3").setUnlocalizedName("magnet_piston"));
@@ -754,6 +799,8 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(magnet_piston_head = new BlockMagnetPistonExtension().setRegistryName("magnet_piston_head"));
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
+		register(block_dimensium_stabilized_inactive = new BlockStabilizedDimensium("block_dimensium_stabilized_inactive", false).setBeaconBase().setLightLevel(0.5F).setCreativeTab(MTabs.utility));
+		ForgeRegistries.BLOCKS.register(block_dimensium_stabilized_active = new BlockStabilizedDimensium("block_dimensium_stabilized_active", true));
 		register(pipe = new BlockPipe("pipe", false, false));
 		register(covered_pipe_red_rock = new BlockPipe("covered_pipe_red_rock", true, false));
 		register(covered_pipe_deep_red_rock = new BlockPipe("covered_pipe_deep_red_rock", true, false));
@@ -937,6 +984,10 @@ public class MBlocks
 		for(int i = 0 ; i < BlockChandelierHalloween.EnumColor.values().length ; i++)
 		{
 			initModel(chandelier_halloween, i, "chandelier_halloween_" + BlockChandelierHalloween.EnumColor.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockChandelierNewYear.EnumColor.values().length ; i++)
+		{
+			initModel(chandelier_new_year, i, "chandelier_new_year_" + BlockChandelierNewYear.EnumColor.values()[i].getName());
 		}
 		for(int i = 0 ; i < BlockJackOLantern.EnumFaceType.values().length ; i++)
 		{

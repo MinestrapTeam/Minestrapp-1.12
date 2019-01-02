@@ -14,7 +14,8 @@
         "minestrapp:item_tannin_fine_6",
         "minestrapp:item_tannin_fine_7",
         "minestrapp:item_tannin_fine_8",
-        "minestrapp:item_tannin_fine_9"
+        "minestrapp:item_tannin_fine_9",
+        "minestrapp:item_tanning_solvent"
     ]
   },
   "criteria": {

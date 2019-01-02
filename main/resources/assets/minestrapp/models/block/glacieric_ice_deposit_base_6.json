@@ -1,0 +1,22 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/ice/glacieric_ice_deposit",
+		"texture": "minestrapp:blocks/ice/glacieric_ice_deposit",
+		"texture1": "minestrapp:blocks/ice/glacieric_ice_deposit_top"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 1, 0, 1 ],
+			"to": [ 15, 15, 15 ],
+			"faces": {
+				"up": { "uv": [ 1, 1, 15, 15 ], "texture": "#texture1" },
+				"north": { "uv": [ 1, 1, 15, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 1, 1, 15, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 1, 1, 15, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 1, 1, 15, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+}

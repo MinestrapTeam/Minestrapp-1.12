@@ -1,5 +1,9 @@
 package minestrapp.block.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import minestrapp.block.BlockBauble;
@@ -14,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
@@ -41,6 +46,8 @@ public class BlockBase extends Block
 	private EnumPushReaction pushReaction;
 	private BlockRenderLayer layer = BlockRenderLayer.SOLID;
 	private boolean glowing = false;
+	private List<Integer> flammability = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
+	private List<Integer> firespread = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
 
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
@@ -258,5 +265,44 @@ public class BlockBase extends Block
 			return 15728880;
 		else
 			return super.getPackedLightmapCoords(state, source, pos);
+    }
+	
+	public BlockBase setFlammable(int flammability, int fireSpread)
+	{
+		for(int i = 0 ; i < 16 ; i++)
+		{
+			this.flammability.set(i, flammability);
+			this.firespread.set(i, fireSpread);
+		}
+		
+		return this;
+	}
+	
+	public BlockBase setFlammable(int flammability, int fireSpread, int meta)
+	{
+		this.flammability.set(meta, flammability);
+		this.firespread.set(meta, fireSpread);
+		
+		return this;
+	}
+	
+	public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		int index = world.getBlockState(pos).getBlock().getMetaFromState(world.getBlockState(pos));
+		
+		if(this.flammability.get(index) > 0)
+			return this.flammability.get(index);
+		else
+			return super.getFlammability(world, pos, face);
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		int index = world.getBlockState(pos).getBlock().getMetaFromState(world.getBlockState(pos));
+		
+		if(this.firespread.get(index) > 0)
+			return this.firespread.get(index);
+		else
+			return super.getFireSpreadSpeed(world, pos, face);
     }
 }

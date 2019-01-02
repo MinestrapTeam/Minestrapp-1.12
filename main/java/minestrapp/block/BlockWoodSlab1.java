@@ -17,6 +17,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -217,5 +218,21 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
     {
         Block block = state.getBlock();
         return block == MBlocks.stone_slab_1;
+    }
+    
+    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		if(world.getBlockState(pos) instanceof BlockWoodSlab1 && world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
+			return 20;
+		else
+			return super.getFlammability(world, pos, face);
+    }
+	
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		if(world.getBlockState(pos) instanceof BlockWoodSlab1 && world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
+			return 5;
+		else
+			return super.getFireSpreadSpeed(world, pos, face);
     }
 }

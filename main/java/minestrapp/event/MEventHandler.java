@@ -405,6 +405,8 @@ public class MEventHandler
 		LootPool human_skull_pool = new LootPool(new LootEntry[] {human_skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "human_skull_pool");
 		LootEntry pig_skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/pig/skull_rare"), 1, 1, new LootCondition[0], "pig_skull_entry");
 		LootPool pig_skull_pool = new LootPool(new LootEntry[] {pig_skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "pig_skull_pool");
+		LootEntry sinew_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/wing_sinew"), 1, 1, new LootCondition[0], "sinew_entry");
+		LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
 		LootEntry heart_piece_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/heart_piece"), 1, 1, new LootCondition[0], "heart_piece_entry");
 		LootPool heart_piece_pool = new LootPool(new LootEntry[] {heart_piece_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "heart_piece_pool");
 		
@@ -548,8 +550,6 @@ public class MEventHandler
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_BAT))
 		{
-			LootEntry sinew_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/wing_sinew"), 1, 1, new LootCondition[0], "sinew_entry");
-			LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
 			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/bat/skull_rare"), 1, 1, new LootCondition[0], "bat_skull_entry");
 			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "bat_skull_pool");
 			
@@ -569,6 +569,7 @@ public class MEventHandler
 			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "parrot_skull_pool");
 			
 			event.getTable().addPool(skull_pool);
+			event.getTable().addPool(sinew_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_CHICKEN))
 		{
@@ -633,6 +634,13 @@ public class MEventHandler
 		else if(event.getName().equals(LootTableList.ENTITIES_ELDER_GUARDIAN))
 		{
 			event.getTable().addPool(heart_piece_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_ENDERMITE))
+		{
+			LootEntry honey_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/endermite/mite_honey"), 1, 1, new LootCondition[0], "honey_entry");
+			LootPool honey_pool = new LootPool(new LootEntry[] {honey_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "honey_pool");
+			
+			event.getTable().addPool(honey_pool);
 		}
 		
 		//Halloween
@@ -796,6 +804,17 @@ public class MEventHandler
 				LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "shulker_event_skull_pool");
 				
 				event.getTable().addPool(skull_pool);
+			}
+		}
+		//New Year
+		if((calendar.get(2) + 1 == 12 && calendar.get(5) >= 26 && calendar.get(5) <= 31) || (calendar.get(2) + 1 == 1 && calendar.get(5) >= 0 && calendar.get(5) <= 7))
+		{
+			if(event.getName().getResourcePath().startsWith("chests/"))
+			{
+				LootEntry new_year_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":dungeon/new_year"), 1, 1, new LootCondition[0], "new_year_chest_loot");
+		    	LootPool new_year_pool = new LootPool(new LootEntry[] {new_year_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "new_year_chest_pool");
+
+		    	event.getTable().addPool(new_year_pool);
 			}
 		}
 			

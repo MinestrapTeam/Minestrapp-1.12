@@ -1,0 +1,33 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "prp",
+        "hdh",
+        "ptp"
+    ],
+    "key": {        
+        "p": {
+            "item": "minestrapp:m_bricks",
+            "data": 1
+        },
+        "h": {
+            "item": "minestrapp:mite_honey"
+        },
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "dustRedstone"
+        },
+        "d": {
+            "type": "forge:ore_dict",
+            "ore": "blockDimensium"
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 4
+        }
+     },
+     "result": {
+        "item": "minestrapp:block_dimensium_stabilized_inactive",
+         "count": 4
+     }  
+}

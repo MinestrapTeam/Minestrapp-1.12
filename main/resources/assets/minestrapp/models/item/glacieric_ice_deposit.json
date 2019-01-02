@@ -1,3 +1,6 @@
 {
-    "parent": "minestrapp:block/glacieric_ice_deposit_3"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "minestrapp:items/decor/glacieric_ice_deposit"
+    }
 }
