@@ -52,6 +52,8 @@ public class CommonProxy
 		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
+		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "sieve/clay_soil_0"));
+		/*
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/bat/wing_sinew"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
@@ -74,6 +76,7 @@ public class CommonProxy
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_library"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_blacksmith"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_woodland_mansion"));
+		*/
 	}
 	
 	public void init(FMLInitializationEvent event)

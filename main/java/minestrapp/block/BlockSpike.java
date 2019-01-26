@@ -4,6 +4,7 @@ import java.util.List;
 
 import minestrapp.MBlocks;
 import minestrapp.block.util.BlockBase;
+import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
 import minestrapp.utils.BlockUtil;
 import net.minecraft.block.SoundType;
@@ -220,8 +221,13 @@ public class BlockSpike extends BlockBase
     		{
     			if(!toBreak.getBlock().isReplaceable(worldIn, pos.offset(state.getValue(this.FACING))) && (toBreak.getBlockHardness(worldIn, pos.offset(state.getValue(this.FACING))) >= 0 || toBreak.getBlock() == MBlocks.honeycomb_steel) && toBreak.getBlock().getHarvestLevel(toBreak) <= this.harvestLevel && toBreak.getBlock() != Blocks.AIR && !(toBreak.getBlock() instanceof BlockSpike) && toBreak.getBlock() != MBlocks.honeycomb_meurodite && this != MBlocks.spike_dimensium)
     			{
-    				if(this != MBlocks.spike_blazium && this != MBlocks.spike_glacierite)
-    					worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    				boolean dropItem = true;
+					
+					if(worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos.getX()-5, pos.getY()-5, pos.getZ()-5, pos.getX()+5, pos.getY()+5, pos.getZ()+5)).size() >= MConfig.spikeItemLimit)
+						dropItem = false;
+					
+    				if(this != MBlocks.spike_blazium && this != MBlocks.spike_glacierite)	
+    					worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), dropItem);
     				else if(this == MBlocks.spike_blazium)
     				{
     					ItemStack smeltStack = furnaceRecipes.getSmeltingResult(new ItemStack(toBreak.getBlock(), 1, toBreak.getBlock().getMetaFromState(toBreak)));
@@ -229,10 +235,11 @@ public class BlockSpike extends BlockBase
     					if(smeltStack != null && smeltStack != ItemStack.EMPTY)
     					{
     						worldIn.setBlockToAir(pos.offset(state.getValue(this.FACING)));
-    						worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, smeltStack.copy()));
+    						if(dropItem)
+    							worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, smeltStack.copy()));
     					}
     					else
-    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), dropItem);
     				}
     				else if(this == MBlocks.spike_glacierite)
     				{
@@ -241,10 +248,11 @@ public class BlockSpike extends BlockBase
     					if(freezeStack != null && freezeStack != ItemStack.EMPTY)
     					{
     						worldIn.setBlockToAir(pos.offset(state.getValue(this.FACING)));
-    						worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, freezeStack.copy()));
+    						if(dropItem)
+    							worldIn.spawnEntity(new EntityItem(worldIn, pos.offset(state.getValue(this.FACING)).getX() + 0.5, pos.offset(state.getValue(this.FACING)).getY() + 0.5, pos.offset(state.getValue(this.FACING)).getZ() + 0.5, freezeStack.copy()));
     					}
     					else
-    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), true);
+    						worldIn.destroyBlock(pos.offset(state.getValue(this.FACING)), dropItem);
     				}
     			}
     			else if(this == MBlocks.spike_dimensium)

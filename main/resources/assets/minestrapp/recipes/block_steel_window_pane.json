@@ -1,0 +1,16 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ggg",
+        "ggg"
+    ],
+    "key": {        
+        "g": {
+            "item": "minestrapp:reinforced_glass"
+        }
+     },
+     "result": {
+        "item": "minestrapp:reinforced_glass_pane",
+        "count": 16
+     }  
+}

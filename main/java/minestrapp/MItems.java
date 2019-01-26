@@ -20,6 +20,7 @@ import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
+import minestrapp.item.ItemSieve;
 import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
 import minestrapp.item.ItemTannic;
@@ -194,6 +195,12 @@ public class MItems
 	public static Item boat_redwood;
 	public static Item boat_frozen_oak;
 	public static Item boat_charwood;
+	public static Item sieve_copper;
+	public static Item sieve_iron;
+	public static Item sieve_bronze;
+	public static Item sieve_archantine;
+	public static Item sieve_archantine_broken;
+	public static Item sieve_adamantium;
 	public static Item hang_glider_wood;
 	public static Item hang_glider_steel;
 
@@ -347,7 +354,7 @@ public class MItems
 		register(effervexcense = new ItemBase("effervexcense").setCreativeTab(MTabs.ingredients));
 		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
 		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
-		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic
+		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic 3=Tanning Solution
 		register(tannic = new ItemTannic().setAlwaysEdible().setCreativeTab(MTabs.ingredients));
 		
 		//TODO: Add projectile effect.
@@ -369,8 +376,8 @@ public class MItems
 		
 		//0=Mud Brick, 1=Portar
 		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
-		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet
-		register(tech_components = new ItemMetaBase("m_tech_component", 7).setCreativeTab(MTabs.ingredients));
+		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet, 7=Grass Weave
+		register(tech_components = new ItemMetaBase("m_tech_component", 8).setCreativeTab(MTabs.ingredients));
 		register(heart_piece = new ItemBase("heart_piece").setCreativeTab(MTabs.ingredients));
 		register(heart_container = new ItemHeartContainer());
 		
@@ -379,6 +386,12 @@ public class MItems
 		register(boat_redwood = new ItemMBoat(EntityMBoat.Type.REDWOOD));
 		register(boat_frozen_oak = new ItemMBoat(EntityMBoat.Type.FROZEN_OAK));
 		register(boat_charwood = new ItemMBoat(EntityMBoat.Type.CHARWOOD));
+		register(sieve_copper = new ItemSieve("copper_sieve", 32, new ItemStack(ingots, 1, 0)));
+		register(sieve_iron = new ItemSieve("iron_sieve", 64, new ItemStack(Items.IRON_INGOT)));
+		register(sieve_bronze = new ItemSieve("bronze_sieve", 128, new ItemStack(ingots, 1, 2)));
+		register(sieve_archantine_broken = new ItemBase("archantine_sieve_broken").setCreativeTab(MTabs.tools));
+		register(sieve_archantine = new ItemSieve("archantine_sieve", 512, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
+		register(sieve_adamantium = new ItemSieve("adamantium_sieve").setCreativeTab(MTabs.tools));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
 

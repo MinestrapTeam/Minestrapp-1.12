@@ -71,6 +71,11 @@ public class FurnaceRecipes
 			GameRegistry.addSmelting(new ItemStack(MBlocks.stone_bricks, 1, i), new ItemStack(MBlocks.cracked_stone_bricks, 1, i), 0.1F);
 		}
 		
+		GameRegistry.addSmelting(MItems.sieve_copper, new ItemStack(MItems.nuggets, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MItems.sieve_iron, new ItemStack(Items.IRON_NUGGET, 1, 0), 0.1F);
+		GameRegistry.addSmelting(MItems.sieve_bronze, new ItemStack(MItems.nuggets, 1, 2), 0.1F);
+		GameRegistry.addSmelting(MItems.sieve_archantine, new ItemStack(MItems.nuggets, 1, 7), 0.1F);
+		
 		GameRegistry.addSmelting(MItems.copper_axe, new ItemStack(MItems.nuggets, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MItems.copper_dagger, new ItemStack(MItems.nuggets, 1, 0), 0.1F);
 		GameRegistry.addSmelting(MItems.copper_hoe, new ItemStack(MItems.nuggets, 1, 0), 0.1F);

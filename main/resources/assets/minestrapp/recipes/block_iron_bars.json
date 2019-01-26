@@ -1,0 +1,17 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetIron"
+        }
+     },
+     "result": {
+        "item": "minecraft:iron_bars",
+        "count": 2
+     }  
+}

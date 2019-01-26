@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_archantine_sieve_repair"
+    ]
+  },
+  "criteria": {
+    "has_broken_sieve": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:archantine_sieve_broken"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_archantine_sieve_repair"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_broken_sieve",
+      "has_the_recipe"
+    ]
+  ]
+}

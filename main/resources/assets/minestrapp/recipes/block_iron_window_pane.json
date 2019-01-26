@@ -1,0 +1,16 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ggg",
+        "ggg"
+    ],
+    "key": {        
+        "g": {
+            "item": "minestrapp:iron_window"
+        }
+     },
+     "result": {
+        "item": "minestrapp:iron_window_pane",
+        "count": 16
+     }  
+}

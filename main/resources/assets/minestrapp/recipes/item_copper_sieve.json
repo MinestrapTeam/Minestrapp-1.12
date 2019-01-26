@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " x ",
+        "xhx",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "ingotCopper"
+        },
+        "h": {
+            "item": "minestrapp:m_tech_component",
+            "data": 7
+        }
+     },
+     "result": {
+        "item": "minestrapp:copper_sieve",
+        "data": 0
+     }  
+}

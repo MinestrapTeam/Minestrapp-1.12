@@ -25,6 +25,7 @@ public class MConfig
 	public static final String CATEGORY_WORLDGEN = "worldgen";
 	public static final String CATEGORY_VANILLA_TWEAKS = "vanilla_tweaks";
 	
+	public static int spikeItemLimit;
 	public static boolean minableGlacialInvincium;
 	
 	public static boolean generateSalt;
@@ -107,6 +108,8 @@ public class MConfig
 		if(loadFromConfigFile)
 			config.load();
 		
+		Property propertySpikeItemLimit = config.get(CATEGORY_BLOCKS, "spike_item_limit", 30);
+		registerProperty(propertySpikeItemLimit, CATEGORY_BLOCKS, "spike_item_limit", true, true);
 		Property propertyMinableGlacialInvincium = config.get(CATEGORY_BLOCKS, "minable_glacial_invincium", false);
 		registerProperty(propertyMinableGlacialInvincium, CATEGORY_BLOCKS, "minable_glacial_invincium", true, true);
 		
@@ -207,6 +210,7 @@ public class MConfig
 		
 		if(readFieldsFromConfig)
 		{
+			spikeItemLimit = propertySpikeItemLimit.getInt();
 			minableGlacialInvincium = propertyMinableGlacialInvincium.getBoolean();
 			
 			generateSalt = propertySaltGen.getBoolean();
@@ -254,6 +258,7 @@ public class MConfig
 			maxHealth = propertyMaxHealth.getInt();
 		}
 		
+		propertySpikeItemLimit.set(spikeItemLimit);
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
 		
 		propertySaltGen.set(generateSalt);

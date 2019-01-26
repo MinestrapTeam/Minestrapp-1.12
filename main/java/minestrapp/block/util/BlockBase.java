@@ -15,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -45,6 +46,8 @@ public class BlockBase extends Block
 	private boolean customPushLogic;
 	private EnumPushReaction pushReaction;
 	private BlockRenderLayer layer = BlockRenderLayer.SOLID;
+	private boolean isSolidBlock = true;
+	private boolean ignoreSimilarity = false;
 	private boolean glowing = false;
 	private List<Integer> flammability = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
 	private List<Integer> firespread = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
@@ -250,6 +253,49 @@ public class BlockBase extends Block
     public BlockRenderLayer getBlockLayer()
     {
         return this.layer;
+    }
+	
+	public BlockBase setNonSolid()
+	{
+		this.isSolidBlock = false;
+		return this;
+	}
+	
+	public boolean isFullCube(IBlockState state)
+    {
+        return this.isSolidBlock;
+    }
+	
+	public boolean isOpaqueCube(IBlockState state)
+    {
+        return this.isSolidBlock;
+    }
+	
+	public BlockBase setIgnoresSimilarity()
+	{
+		this.ignoreSimilarity = true;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    {
+        IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
+        Block block = iblockstate.getBlock();
+
+        if(this.ignoreSimilarity)
+        {
+        	if (blockState != iblockstate)
+                return true;
+
+            if (block == this)
+                return false;
+            
+            return !this.ignoreSimilarity && block == this ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+        }
+        
+        else
+        	return super.shouldSideBeRendered(iblockstate, blockAccess, pos, side);
     }
 	
 	public BlockBase setGlowing()

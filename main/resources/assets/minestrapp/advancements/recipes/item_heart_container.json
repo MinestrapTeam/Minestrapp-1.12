@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minestrapp:block_heart_container"
+        "recipe": "minestrapp:item_heart_container"
       }
     }
   },

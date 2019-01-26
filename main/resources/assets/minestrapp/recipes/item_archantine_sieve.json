@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "archantine_sieve",
+    "pattern": [
+        " x ",
+        "xhx",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "ingotArchantine"
+        },
+        "h": {
+            "item": "minestrapp:steel_mesh"
+        }
+     },
+     "result": {
+        "item": "minestrapp:archantine_sieve",
+        "data": 0
+     }  
+}

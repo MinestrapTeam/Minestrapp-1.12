@@ -285,6 +285,16 @@ public class MBlocks
 	public static Block block_dimensium_destabilized;
 	
 	//Decor
+	public static Block glass_tiles;
+	public static Block glass_bricks;
+	public static Block wooden_window;
+	public static Block iron_window;
+	public static Block reinforced_glass;
+	public static Block glass_tile_pane;
+	public static Block glass_brick_pane;
+	public static Block wooden_window_pane;
+	public static Block iron_window_pane;
+	public static Block reinforced_glass_pane;
 	public static Block honeycomb_bronze;
 	public static Block honeycomb_steel;
 	public static Block honeycomb_meurodite;
@@ -297,6 +307,7 @@ public class MBlocks
 	public static Block bauble_blazium;
 	public static Block cobblestone_wall;
 	public static Block mossy_cobblestone_wall;
+	public static Block steel_mesh;
 	public static Block candle;
 	public static Block candle_fire;
 	public static Block candle_ender;
@@ -678,6 +689,17 @@ public class MBlocks
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Decor
+		register(glass_tiles = new BlockBase("glass_tiles", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
+		register(glass_bricks = new BlockBase("glass_bricks", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
+		register(wooden_window = new BlockBase("wooden_window", Material.WOOD, MapColor.WOOD, SoundType.GLASS, 1F, "axe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(3F).setCreativeTab(MTabs.decor));
+		register(iron_window = new BlockBase("iron_window", Material.IRON, MapColor.IRON, SoundType.GLASS, 2F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(5F).setCreativeTab(MTabs.decor));
+		register(reinforced_glass = new BlockBase("reinforced_glass", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.GLASS, 4F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(10F).setCreativeTab(MTabs.decor));
+		register(glass_tile_pane = new BlockMPane("glass_tile_pane", Material.GLASS, false, MapColor.AIR, SoundType.GLASS).setHardness(0.3F));
+		register(glass_brick_pane = new BlockMPane("glass_brick_pane", Material.GLASS, false, MapColor.AIR, SoundType.GLASS).setHardness(0.3F));
+		register(wooden_window_pane = new BlockMPane("wooden_window_pane", Material.WOOD, true, MapColor.WOOD, SoundType.GLASS, "axe", 0).setHardness(1F).setResistance(3F));
+		register(iron_window_pane = new BlockMPane("iron_window_pane", Material.IRON, true, MapColor.IRON, SoundType.GLASS, "pickaxe", 0).setHardness(2F).setResistance(5F));
+		register(reinforced_glass_pane = new BlockMPane("reinforced_glass_pane", Material.IRON, true, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.GLASS, "pickaxe", 0).setHardness(4F).setResistance(10F));
+		register(steel_mesh = new BlockMPane("steel_mesh", Material.IRON, true, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, "pickaxe", 1).setHardness(5.0F).setResistance(12.0F));
 		register(honeycomb_bronze = new BlockBase("honeycomb_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 20F, "pickaxe", 2).setResistance(6000000.0F).setCreativeTab(MTabs.decor));
 		register(honeycomb_steel = new BlockBase("honeycomb_steel", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, -1F, "pickaxe", 2).setBlockUnbreakable().setResistance(15F).setCreativeTab(MTabs.decor));
 		register(honeycomb_meurodite = new BlockBase("honeycomb_meurodite", Material.IRON, MapColor.BLACK_STAINED_HARDENED_CLAY, SoundType.METAL, 20F, "pickaxe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(15F).setCreativeTab(MTabs.decor));

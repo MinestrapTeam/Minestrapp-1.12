@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gbg",
+        "bgb",
+        "gbg"
+    ],
+    "key": {        
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "blockGlassColorless"
+        },
+        "b": {
+            "item": "minecraft:iron_bars"
+        }
+     },
+     "result": {
+        "item": "minestrapp:iron_window",
+        "count": 5
+     }  
+}

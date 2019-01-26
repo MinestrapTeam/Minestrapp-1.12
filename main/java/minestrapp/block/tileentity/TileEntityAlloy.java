@@ -294,7 +294,7 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
 		else
 		{
 			int burnTime = net.minecraftforge.event.ForgeEventFactory.getItemBurnTime(fuel);
-            if (burnTime >= 0) return burnTime;
+            if (burnTime >= 0) return Math.round(burnTime * FUELMULT);
 			Item item = fuel.getItem();
 
 			if (item == Item.getItemFromBlock(Blocks.WOODEN_SLAB))

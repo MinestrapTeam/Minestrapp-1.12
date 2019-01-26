@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gbg",
+        "bgb",
+        "gbg"
+    ],
+    "key": {        
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "blockGlassColorless"
+        },
+        "b": {
+            "item": "minestrapp:steel_mesh"
+        }
+     },
+     "result": {
+        "item": "minestrapp:reinforced_glass",
+        "count": 5
+     }  
+}

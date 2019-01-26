@@ -1,0 +1,17 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "xxx",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetSteel"
+        }
+     },
+     "result": {
+        "item": "minestrapp:steel_mesh",
+        "count": 2
+     }  
+}

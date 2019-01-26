@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minestrapp:minecraft:diamond_block"
+            "item": "minecraft:diamond_block"
           }
         ]
       }

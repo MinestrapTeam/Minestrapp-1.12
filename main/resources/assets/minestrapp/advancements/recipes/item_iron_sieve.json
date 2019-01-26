@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_iron_sieve"
+    ]
+  },
+  "criteria": {
+    "has_steel_mesh": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:steel_mesh"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_iron_sieve"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_steel_mesh",
+      "has_the_recipe"
+    ]
+  ]
+}

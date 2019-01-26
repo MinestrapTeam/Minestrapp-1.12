@@ -1,0 +1,20 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "archantine_sieve",
+    "ingredients": [
+        {
+            "item": "minestrapp:archantine_sieve_broken"
+        },
+        {
+            "item": "minestrapp:steel_mesh"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "nuggetArchantine"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:archantine_sieve",
+        "data": 0
+     }  
+}

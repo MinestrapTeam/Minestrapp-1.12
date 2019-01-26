@@ -135,6 +135,7 @@ public class MEventHandler
 	    	ResourceLocation leatherBoots = new ResourceLocation("minecraft:leather_boots");
 	    	ResourceLocation itemFrame = new ResourceLocation("minecraft:item_frame");
 	    	ResourceLocation book = new ResourceLocation("minecraft:book");
+	    	ResourceLocation iron_bars = new ResourceLocation("minecraft:iron_bars");
 	
 	    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 	        
@@ -165,6 +166,7 @@ public class MEventHandler
 	        modRegistry.remove(leatherBoots);
 	        modRegistry.remove(itemFrame);
 	        modRegistry.remove(book);
+	        modRegistry.remove(iron_bars);
 		}
     }
 	

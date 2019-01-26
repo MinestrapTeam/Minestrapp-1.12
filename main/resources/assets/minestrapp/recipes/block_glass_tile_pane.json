@@ -1,0 +1,16 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ggg",
+        "ggg"
+    ],
+    "key": {        
+        "g": {
+            "item": "minestrapp:glass_tiles"
+        }
+     },
+     "result": {
+        "item": "minestrapp:glass_tile_pane",
+        "count": 16
+     }  
+}

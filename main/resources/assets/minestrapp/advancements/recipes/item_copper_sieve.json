@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_copper_sieve"
+    ]
+  },
+  "criteria": {
+    "has_grass_weave": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 7
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_copper_sieve"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grass_weave",
+      "has_the_recipe"
+    ]
+  ]
+}

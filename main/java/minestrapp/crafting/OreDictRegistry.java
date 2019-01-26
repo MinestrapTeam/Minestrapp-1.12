@@ -202,5 +202,9 @@ public class OreDictRegistry
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_guardian));
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_enderman));
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_shulker));
+		OreDictionary.registerOre("blockGlassColorless", new ItemStack(MBlocks.glass_tiles));
+		OreDictionary.registerOre("blockGlassColorless", new ItemStack(MBlocks.glass_bricks));
+		OreDictionary.registerOre("paneGlassColorless", new ItemStack(MBlocks.glass_tile_pane));
+		OreDictionary.registerOre("paneGlassColorless", new ItemStack(MBlocks.glass_brick_pane));
 	}
 }

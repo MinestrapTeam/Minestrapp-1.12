@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_wooden_window"
+    ]
+  },
+  "criteria": {
+    "has_reinforced_stick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_wooden_window"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_reinforced_stick",
+      "has_the_recipe"
+    ]
+  ]
+}

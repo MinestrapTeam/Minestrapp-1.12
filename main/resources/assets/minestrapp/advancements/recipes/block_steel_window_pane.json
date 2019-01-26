@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_steel_window_pane"
+    ]
+  },
+  "criteria": {
+    "has_pane_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:reinforced_glass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_steel_window_pane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pane_block",
+      "has_the_recipe"
+    ]
+  ]
+}

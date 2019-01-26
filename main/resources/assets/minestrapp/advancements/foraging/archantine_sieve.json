@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:archantine_sieve"
+        },
+        "title": {
+            "translate": "advancements.foraging.archantine_sieve.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.archantine_sieve.description"
+        }
+    },
+    "parent": "minestrapp:foraging/sieve",
+    "criteria": {
+        "sieve": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:archantine_sieve"
+                    }
+                ]
+            }
+        }
+    }
+}

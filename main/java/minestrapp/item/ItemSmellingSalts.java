@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import minestrapp.MItems;
 import minestrapp.MTabs;
+import minestrapp.potion.MPotions;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -77,6 +78,9 @@ public class ItemSmellingSalts extends Item
 	            entityplayer.removePotionEffect(MobEffects.UNLUCK);
 	            entityplayer.removePotionEffect(MobEffects.WEAKNESS);
 	            entityplayer.removePotionEffect(MobEffects.WITHER);
+	            entityplayer.removePotionEffect(MPotions.infection);
+	            entityplayer.removePotionEffect(MPotions.aggression);
+	            entityplayer.removePotionEffect(MPotions.hydrophobia);
             }
             
             entityplayer.addStat(StatList.getObjectUseStats(this));

@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -102,12 +103,19 @@ public class BlockMiteEggsack extends BlockBase
 	
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-		if(worldIn.isAirBlock(pos.down()) && rand.nextInt(100) <= 18)
+		if(rand.nextInt(100) <= 18)
 		{
-			EntityEndermite endermite = new EntityEndermite(worldIn);
-			endermite.setPosition(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-			endermite.setSpawnedByPlayer(true);
-			worldIn.spawnEntity(endermite);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			
+			if(worldIn.isAirBlock(pos.down()) && !worldIn.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(x-32, y-32, z-32, x+32, y+32, z+32)).isEmpty() && worldIn.getEntitiesWithinAABB(EntityEndermite.class, new AxisAlignedBB(x-8, y-8, z-8, x+8, y+8, z+8)).size() <= 16)
+			{
+				EntityEndermite endermite = new EntityEndermite(worldIn);
+				endermite.setPosition(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+				endermite.setSpawnedByPlayer(true);
+				worldIn.spawnEntity(endermite);
+			}
 		}
 		
 		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));

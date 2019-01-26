@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_post",
+    "textures": {
+        "edge": "minestrapp:blocks/glass/wooden_window",
+        "pane": "minestrapp:blocks/glass/wooden_window"
+    }
+}

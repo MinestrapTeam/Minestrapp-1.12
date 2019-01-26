@@ -1,0 +1,64 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:copper_sieve"
+        },
+        "title": {
+            "translate": "advancements.foraging.sieve.title"
+        },
+        "description": {
+            "translate": "advancements.foraging.sieve.description"
+        }
+    },
+    "parent": "minestrapp:foraging/obtain_soil",
+    "criteria": {
+        "copper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:copper_sieve"
+                    }
+                ]
+            }
+        },
+        "iron": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:iron_sieve"
+                    }
+                ]
+            }
+        },
+        "bronze": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:bronze_sieve"
+                    }
+                ]
+            }
+        },
+        "archantine": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:archantine_sieve"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "copper",
+            "iron",
+            "bronze",
+            "archantine"
+        ]
+    ]
+}

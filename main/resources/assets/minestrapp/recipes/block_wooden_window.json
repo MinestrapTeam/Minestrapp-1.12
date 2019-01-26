@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gsg",
+        "srs",
+        "gsg"
+    ],
+    "key": {        
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "blockGlassColorless"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "r": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:wooden_window",
+        "count": 4
+     }  
+}

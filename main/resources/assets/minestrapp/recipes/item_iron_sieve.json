@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " x ",
+        "xhx",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        },
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "h": {
+            "item": "minestrapp:steel_mesh"
+        }
+     },
+     "result": {
+        "item": "minestrapp:iron_sieve",
+        "data": 0
+     }  
+}

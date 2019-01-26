@@ -569,6 +569,17 @@ tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
 
 ## Decor ##
+tile.glass_tiles.name=Tiled Glass
+tile.glass_bricks.name=Bricked Glass
+tile.wooden_window.name=Wooden Window
+tile.iron_window.name=Iron Window
+tile.reinforced_glass.name=Steel Window
+tile.glass_tile_pane.name=Tiled Glass Pane
+tile.glass_brick_pane.name=Bricked Glass Pane
+tile.wooden_window_pane.name=Wooden Window Pane
+tile.iron_window_pane.name=Iron Window Pane
+tile.reinforced_glass_pane.name=Steel Window Pane
+tile.steel_mesh.name=Steel Mesh
 tile.honeycomb_bronze.name=Bronze Honeycomb
 tile.honeycomb_steel.name=Steel Honeycomb
 tile.honeycomb_meurodite.name=Meurodite Honeycomb
@@ -851,6 +862,7 @@ item.m_tech_component_3.name=Inert Chip
 item.m_tech_component_4.name=Technological Doodad
 item.m_tech_component_5.name=Advanced Tech Doodad
 item.m_tech_component_6.name=Magnet
+item.m_tech_component_7.name=Grass Weave
 item.heart_piece.name=Heart Piece
 item.heart_container.name=Heart Container
 tile.glow_paste.name=Glow Paste
@@ -862,6 +874,12 @@ item.boat_frozen_oak.name=Frozen Oak Boat
 item.boat_charwood.name=Charwood Boat
 item.satchel.name=Satchel
 item.backpack.name=Backpack
+item.copper_sieve.name=Copper Mining Sieve
+item.iron_sieve.name=Iron Mining Sieve
+item.bronze_sieve.name=Bronze Mining Sieve
+item.archantine_sieve.name=Archantine Mining Sieve
+item.archantine_sieve_broken.name=Broken Archantine Mining Sieve
+item.adamantium_sieve.name=Adamantium Mining Sieve
 item.hang_glider_wood.name=Wooden Hang Glider
 item.hang_glider_steel.name=Reinforced Hang Glider
 
@@ -1144,6 +1162,7 @@ tile.woodSlab.jungle.name=Jungle Plank Slab
 tile.woodSlab.oak.name=Oak Plank Slab
 tile.woodSlab.spruce.name=Spruce Plank Slab
 tile.litpumpkin.name=Glowpumpkin
+item.wheat_seeds.name=Wheat Seeds
 
 
 
@@ -1235,6 +1254,10 @@ advancements.foraging.basket.title=A Tisket, a Tasket
 advancements.foraging.basket.description=Craft yourself a basket.
 advancements.foraging.obtain_bushes.title=Bring Me a Shrubbery
 advancements.foraging.obtain_bushes.description=Collect every type of bush. EVERY type.
+advancements.foraging.sieve.title=Eh, Sieve!
+advancements.foraging.sieve.description=Craft a sieve to find buried valuables.
+advancements.foraging.archantine_sieve.title=Infinite Value
+advancements.foraging.archantine_sieve.description=Craft a reusable archantine sieve.
 
 advancements.husbandry.salted_meat.title=Y So Salty
 advancements.husbandry.salted_meat.description=Alloy some raw meat with salt to enhance its flavor.
@@ -1319,6 +1342,9 @@ gui.config.main.title=Minestrapp Configuration
 gui.config.category.blocks.title=Blocks
 gui.config.category.blocks.title.tooltip=Alter various Minestrapp block properties.
 
+gui.config.blocks.spike_item_limit.name=Spike Item Entity Limit
+gui.config.blocks.spike_item_limit.comment=Limits how many item entities can be generated within a 5x5 area by any Spikes.
+gui.config.blocks.spike_item_limit.name.tooltip=Limits how many item entities can be generated within a 5x5 area by any Spikes.
 gui.config.blocks.minable_glacial_invincium.name=Is Glacial Invincium Minable
 gui.config.blocks.minable_glacial_invincium.comment=Determines whether Glacial Invincium be harvested with a Pickaxe.
 gui.config.blocks.minable_glacial_invincium.name.tooltip=Determines whether Glacial Invincium be harvested with a Pickaxe.
