@@ -1,0 +1,40 @@
+{
+    "multipart": [
+        {   "when": {"soil": "none"},
+            "apply": { "model": "minestrapp:road_oceanstone" }
+        },
+        {
+            "when": { "OR": [
+                {"soil": "grass_path"},
+                {"soil": "clay_grass_path"},
+                {"soil": "lichen_path"},
+                {"soil": "fargrowth_path"},
+                {"soil": "farmland"},
+                {"soil": "clay_farmland"},
+                {"soil": "frozen_farmland"}
+            ]},
+            "apply": { "model": "minestrapp:road_oceanstone_path"}
+        },
+        {   "when": { "soil": "grass_path" },
+            "apply": { "model": "minecraft:grass_path" }
+        },
+        {   "when": { "soil": "clay_grass_path" },
+            "apply": { "model": "minestrapp:clay_grass_path" }
+        },
+        {   "when": { "soil": "lichen_path" },
+            "apply": { "model": "minestrapp:lichen_path" }
+        },
+        {   "when": { "soil": "fargrowth_path" },
+            "apply": { "model": "minestrapp:fargrowth_path" }
+        },
+        {   "when": { "soil": "farmland" },
+            "apply": { "model": "minecraft:farmland_moist" }
+        },
+        {   "when": { "soil": "clay_farmland" },
+            "apply": { "model": "minestrapp:clay_farmland_moist" }
+        },
+        {   "when": { "soil": "frozen_farmland" },
+            "apply": { "model": "minestrapp:permafrost_farmland" }
+        }
+    ]
+}

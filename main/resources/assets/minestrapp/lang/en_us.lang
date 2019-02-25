@@ -680,6 +680,13 @@ tile.skull_shulker.name=Shulker Skull
 
 ## Utility ##
 
+tile.red_rock_road.name=Red Rock Pavers
+tile.stone_road.name=Stone Pavers
+tile.coldstone_road.name=Coldstone Pavers
+tile.icestone_road.name=Icestone Pavers
+tile.oceanstone_road.name=Oceanstone Pavers
+tile.netherrack_road.name=Netherrack Pavers
+tile.end_stone_road.name=End Stone Pavers
 tile.crate.name=Crate
 tile.basket.name=Basket
 tile.block_irradiant_sunstone.name=Irradiant Sunstone
@@ -1379,9 +1386,9 @@ gui.config.worldgen.generate_icicles.name.tooltip=Determines whether Glacieric I
 gui.config.worldgen.generate_ice_mounds.name=Generate Glacieric Ice Mounds
 gui.config.worldgen.generate_ice_mounds.comment=Determines whether Glacieric Ice Mounds will generate in snow biomes.
 gui.config.worldgen.generate_ice_mounds.name.tooltip=Determines whether Glacieric Ice Mounds will generate in snow biomes.
-gui.config.worldgen.generate_titanium.name=Generate Titanium Ore
-gui.config.worldgen.generate_titanium.comment=Determines whether Titanium Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Titanium as-is...
-gui.config.worldgen.generate_titanium.name.tooltip=Determines whether Titanium Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Titanium as-is...
+gui.config.worldgen.generate_titanium.name=Generate Archantine Ore
+gui.config.worldgen.generate_titanium.comment=Determines whether Archantine Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Archantine as-is...
+gui.config.worldgen.generate_titanium.name.tooltip=Determines whether Archantine Ore will generate. Dunno why you'd even bother turning this one off though, seeing as it's nigh impossible to find Archantine as-is...
 gui.config.worldgen.generate_blazium.name=Generate Blazium Ore
 gui.config.worldgen.generate_blazium.comment=Determines whether Blazium Ore will generate in the Nether.
 gui.config.worldgen.generate_blazium.name.tooltip=Determines whether Blazium Ore will generate in the Nether.

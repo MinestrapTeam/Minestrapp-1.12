@@ -360,6 +360,13 @@ public class MBlocks
 	public static Block plate_metal;
 	
 	//Utility
+	public static Block red_rock_road;
+	public static Block stone_road;
+	public static Block coldstone_road;
+	public static Block icestone_road;
+	public static Block oceanstone_road;
+	public static Block netherrack_road;
+	public static Block end_stone_road;
 	public static Block rope;
 	public static Block dimensium_rope;
 	public static Block door_charwood;
@@ -778,6 +785,13 @@ public class MBlocks
 		register(plate_metal = new BlockPlateMetal(), new ItemBlockMultistate(plate_metal));
 		
 		//Utility
+		register(red_rock_road = new BlockRoad("red_rock_road", 0.2F, 1.4D));
+		register(stone_road = new BlockRoad("stone_road", 0.2F, 1.4D));
+		register(coldstone_road = new BlockRoad("coldstone_road", 0.2F, 1.4D));
+		register(icestone_road = new BlockRoad("icestone_road", 0.2F, 1.4D));
+		register(oceanstone_road = new BlockRoad("oceanstone_road", 0.2F, 1.4D));
+		register(netherrack_road = new BlockRoad("netherrack_road", 0.2F, 1.6D));
+		register(end_stone_road = new BlockRoad("end_stone_road", 0.2F, 1.8D));
 		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
 		register(crate = new BlockCrate());
 		register(barrel = new BlockBarrel());

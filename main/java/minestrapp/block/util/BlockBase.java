@@ -12,6 +12,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -269,6 +270,14 @@ public class BlockBase extends Block
 	public boolean isOpaqueCube(IBlockState state)
     {
         return this.isSolidBlock;
+    }
+	
+	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
+    {
+		if(!this.isSolidBlock)
+			return BlockFaceShape.UNDEFINED;
+		else
+			return super.getBlockFaceShape(world, state, pos, facing);
     }
 	
 	public BlockBase setIgnoresSimilarity()
