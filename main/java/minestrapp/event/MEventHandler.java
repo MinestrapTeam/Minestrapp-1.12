@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import org.lwjgl.input.Mouse;
+
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.MMaterials;
@@ -13,6 +15,7 @@ import minestrapp.Minestrapp5;
 import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
 import minestrapp.entity.mob.EntityBurfalaunt;
+import minestrapp.item.ItemSeedBag;
 import minestrapp.mobs.models.ModelSheetGhost;
 import minestrapp.utils.EntityUtil;
 import minestrapp.utils.NBTUtil;
@@ -24,6 +27,7 @@ import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -33,6 +37,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
@@ -55,6 +60,7 @@ import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogDensity;
+import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -989,7 +995,8 @@ public class MEventHandler
     {
 		 if (event.getEntity().isInsideOfMaterial(MMaterials.CRYSTALFLOE))
 		 {
-			 event.setDensity(0.8F);
+			 event.setCanceled(true);
+			 event.setDensity(200F);
 		 }
 		  
 		 //event.setCanceled(true); // must cancel event for event handler to take effect
@@ -1007,7 +1014,6 @@ public class MEventHandler
 			 event.setBlue(202);
 		 }
     }
-
 	
 	public static NBTTagList getEnchantments(ItemStack stack)
     {

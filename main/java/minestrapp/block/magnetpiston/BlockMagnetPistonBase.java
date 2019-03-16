@@ -209,7 +209,7 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 		{
 			return false;
 		}
-		else if (!world.getWorldBorder().contains(pos))
+		else if (!world.getWorldBorder().contains(pos) || !world.isBlockLoaded(pos))
 		{
 			return false;
 		}

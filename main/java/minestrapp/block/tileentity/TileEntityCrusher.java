@@ -275,7 +275,11 @@ public class TileEntityCrusher extends TileEntityLockable implements ISidedInven
 				if((!output.isEmpty() && !output.isItemEqual(result)) || (!bonus.isEmpty() && !bonus.isItemEqual(bonusDrop)))
 					return false;
 				int resOut = output.getCount() + result.getCount();
-				int resBonus = bonus.getCount() + bonusDrop.getCount();
+				int resBonus = 0;
+				if(bonusDrop != null)
+					resBonus = bonus.getCount() + bonusDrop.getCount();
+				else
+					resBonus = bonus.getCount();
 				return resOut <= getInventoryStackLimit() && resOut <= output.getMaxStackSize() && resBonus <= getInventoryStackLimit() && resBonus <= bonus.getMaxStackSize();
 			}
 		}
