@@ -389,7 +389,7 @@ public class MWorldDecorator
 				}
 			}
 			
-			// Moss Gen
+			// Icicle Gen
 			if(biome.getDefaultTemperature() < 0.3)
 			{
 				if(MConfig.generateIcicles)

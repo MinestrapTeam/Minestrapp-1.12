@@ -725,6 +725,7 @@ tile.magnet_piston.name=Magnet Piston
 tile.block_irradium_insulated.name=Insulated Block of Irradium
 tile.block_dimensium_stabilized_inactive.name=Stabilized Block of Dimensium
 tile.block_dimensium_stabilized_active.name=Stabilized Block of Dimensium
+tile.stasis_field.name=Axial Stasis Field
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
 tile.stonecutter.name=Stone Cutter

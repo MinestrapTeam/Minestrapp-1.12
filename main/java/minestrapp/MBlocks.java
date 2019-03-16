@@ -429,6 +429,7 @@ public class MBlocks
 	public static Block block_irradium_insulated;
 	public static Block block_dimensium_stabilized_inactive;
 	public static Block block_dimensium_stabilized_active;
+	public static Block stasis_field;
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
 	public static Block alloy;
@@ -837,6 +838,7 @@ public class MBlocks
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
 		register(block_dimensium_stabilized_inactive = new BlockStabilizedDimensium("block_dimensium_stabilized_inactive", false).setBeaconBase().setLightLevel(0.5F).setCreativeTab(MTabs.utility));
 		ForgeRegistries.BLOCKS.register(block_dimensium_stabilized_active = new BlockStabilizedDimensium("block_dimensium_stabilized_active", true));
+		register(stasis_field = new BlockStasisField());
 		register(pipe = new BlockPipe("pipe", false, false));
 		register(covered_pipe_red_rock = new BlockPipe("covered_pipe_red_rock", true, false));
 		register(covered_pipe_deep_red_rock = new BlockPipe("covered_pipe_deep_red_rock", true, false));

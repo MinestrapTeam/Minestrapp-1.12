@@ -57,6 +57,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
         this.dirt = dirt;
         this.biomecolored = biome;
         this.minLight = 9;
+        this.setLightOpacity(255);
 	}
 	
 	public void setMinLight(int light)
@@ -74,6 +75,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
     {
         if (!worldIn.isRemote)
         {
+        	if (!worldIn.isAreaLoaded(pos, 3)) return;
             if (worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2)
             {
                 worldIn.setBlockState(pos, this.dirt.getDefaultState());

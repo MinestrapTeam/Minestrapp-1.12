@@ -1,0 +1,10 @@
+{
+  "variants": {
+        "axis=y,powered=false":   { "model": "minestrapp:stasis_field_inactive" },
+        "axis=z,powered=false":   { "model": "minestrapp:stasis_field_inactive", "x": 90 },
+        "axis=x,powered=false":   { "model": "minestrapp:stasis_field_inactive", "x": 90, "y": 90 },
+        "axis=y,powered=true":   { "model": "minestrapp:stasis_field_active" },
+        "axis=z,powered=true":   { "model": "minestrapp:stasis_field_active", "x": 90 },
+        "axis=x,powered=true":   { "model": "minestrapp:stasis_field_active", "x": 90, "y": 90 }
+  }
+}
