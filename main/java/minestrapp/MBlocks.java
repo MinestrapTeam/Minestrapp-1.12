@@ -121,6 +121,7 @@ public class MBlocks
 	public static Block mud_bricks;
 	public static Block mud_brick_stairs;
 	public static Block decor_stone;
+	public static Block desert_quartz;
 	public static Block stone;
 	public static Block cobblestone;
 	public static Block mossy_cobblestone;
@@ -225,6 +226,7 @@ public class MBlocks
 	public static Block silverfish_chiseled_stone;
 	
 	//Ore
+	public static Block desert_quartz_deposit;
 	public static Block ore_salt;
 	public static Block ore_coal;
 	public static Block ore_copper;
@@ -524,6 +526,7 @@ public class MBlocks
 		//Stone
 		register(mud_bricks = new BlockBase("mud_bricks", Material.ROCK, MapColor.WOOD, SoundType.STONE, 0.85F, "pickaxe", 0).setCreativeTab(MTabs.stone));
 		register(decor_stone = new BlockDecorativeStones(), new ItemBlockMultistate(decor_stone));
+		register(desert_quartz = new BlockMQuartz("desert_quartz", MapColor.SILVER_STAINED_HARDENED_CLAY), new ItemBlockMultistate(desert_quartz));
 		register(cobblestone = new BlockStoneBaseMOnly("m_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(cobblestone));
 		register(mossy_cobblestone = new BlockStoneBaseMOnly("m_mossy_cobblestone", Material.ROCK, SoundType.STONE, 2F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(mossy_cobblestone));
 		register(stone = new BlockStoneBaseMOnly("m_stone", Material.ROCK, SoundType.STONE, 1.5F, "pickaxe", 0).setDropsItem(new ItemStack(Item.getItemFromBlock(MBlocks.cobblestone)), 0, 0, 0, true, false, true).setResistance(10F).setCreativeTab(MTabs.stone), new ItemBlockMultistate(stone));
@@ -633,6 +636,7 @@ public class MBlocks
 		register(silverfish_chiseled_stone = new BlockSilverfishStone("m_silverfish_chiseled_stone", chiseled_stone), new ItemBlockMultistate(silverfish_chiseled_stone));
 		
 		//Ore
+		register(desert_quartz_deposit = new BlockDesertQuartzDeposit(), new ItemBlockMultistate(desert_quartz_deposit));
 		register(ore_salt = new BlockStoneBase("ore_salt", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_salt));
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
@@ -989,6 +993,7 @@ public class MBlocks
 		}
 		for(int i = 0 ; i < 3 ; i++)
 		{
+			initModel(desert_quartz, i, "desert_quartz_" + BlockMQuartz.EnumType.values()[i].toString());
 			initModel(soul_glass, i, "soul_glass_" + BlockSoulGlass.EnumType.values()[i].toString());
 			initModel(blazed_soul_glass, i, "blazed_soul_glass_" + BlockSoulGlass.EnumType.values()[i].toString());
 		}
@@ -1038,6 +1043,10 @@ public class MBlocks
 		for(int i = 0 ; i < BlockPlateMetal.EnumType.values().length ; i++)
 		{
 			initModel(plate_metal, i, "plate_metal_" + BlockPlateMetal.EnumType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockDesertQuartzDeposit.DepositType.values().length ; i++)
+		{
+			initModel(desert_quartz_deposit, i, "desert_quartz_deposit_" + BlockDesertQuartzDeposit.DepositType.values()[i].getUnlocalizedName());
 		}
 	}
 	

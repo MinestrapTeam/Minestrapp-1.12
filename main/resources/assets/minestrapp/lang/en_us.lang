@@ -101,6 +101,12 @@ tile.decor_stone_slate.name=Slate
 tile.decor_stone_polished_slate.name=Polished Slate
 tile.decor_stone_slate_bricks.name=Slate Bricks
 tile.decor_stone_slate_tiles.name=Slate Tiles
+tile.desert_quartz_polished.name=Polished Desert Quartz
+tile.desert_quartz_chiseled.name=Chiseled Desert Quartz
+tile.desert_quartz_pillar.name=Desert Quartz Pillar
+tile.irradiant_quartz_polished.name=Polished Irradiant Quartz
+tile.irradiant_quartz_chiseled.name=Chiseled Irradiant Quartz
+tile.irradiant_quartz_pillar.name=Irradiant Quartz Pillar
 
 ## Biome Stone ##
 tile.m_stone_red_rock.name=Red Rock
@@ -211,6 +217,8 @@ tile.m_misc_stone_slab_1_shimmerstone.name=Shimmerstone Slab
 tile.m_misc_stone_slab_1_shimmerstone_cobbled.name=Cobbled Shimmerstone Slab
 
 tile.m_misc_stone_slab_2_shimmerstone_bricks.name=Shimmerstone Brick Slab
+tile.m_misc_stone_slab_2_desert_quartz.name=Desert Quartz Slab
+tile.m_misc_stone_slab_2_irradiant_quartz.name=Irradiant Quartz Slab
 
 tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
 tile.m_stone_slab_1_deep_red_rock_smooth.name=Deep Red Rock Slab
@@ -251,6 +259,8 @@ tile.panel_decor_stone_slate_bricks.name=Slate Brick Panel
 tile.panel_brick.name=Clay Brick Panel
 tile.panel_sandStone.name=Sandstone Panel
 tile.panel_redSandStone.name=Red Sandstone Panel
+tile.panel_desert_quartz_polished.name=Desert Quartz Panel
+tile.panel_irradiant_quartz_polished.name=Irradiant Quartz Panel
 
 tile.panel_m_cobblestone_red_rock.name=Red Cobblestone Panel
 tile.panel_m_cobblestone_deep_red_rock.name=Deep Red Cobblestone Panel
@@ -297,6 +307,8 @@ tile.decor_stone_granite_bricks_stairs.name=Granite Brick Stairs
 tile.decor_stone_diorite_bricks_stairs.name=Diorite Brick Stairs
 tile.decor_stone_andesite_bricks_stairs.name=Andesite Brick Stairs
 tile.decor_stone_slate_bricks_stairs.name=Slate Brick Stairs
+tile.desert_quartz_polished_stairs.name=Desert Quartz Stairs
+tile.irradiant_quartz_polished_stairs.name=Irradiant Quartz Stairs
 
 tile.m_cobblestone_red_rock_stairs.name=Red Cobblestone Stairs
 tile.m_cobblestone_deep_red_rock_stairs.name=Deep Red Cobblestone Stairs
@@ -381,6 +393,12 @@ tile.m_silverfish_chiseled_stone_oceanstone.name=Chiseled Oceanstone Monster Egg
 tile.m_silverfish_chiseled_stone_deep_oceanstone.name=Chiseled Reefstone Monster Egg
 
 ## Ores ##
+
+tile.desert_quartz_deposit_default.name=Desert Quartz Deposit
+tile.desert_quartz_deposit_sand.name=Sandy Desert Quartz Deposit
+tile.desert_quartz_deposit_cold_sand.name=Cold Sandy Desert Quartz Deposit
+tile.desert_quartz_deposit_red_sand.name=Red Sandy Desert Quartz Deposit
+tile.desert_quartz_deposit_cold_red_sand.name=Cold Red Sandy Desert Quartz Deposit
 
 tile.ore_salt_red_rock.name=Salt Ore
 tile.ore_salt_deep_red_rock.name=Salt Ore
@@ -880,6 +898,8 @@ item.health_crystal.name='Health Crystal'
 item.boat_redwood.name=Redwood Boat
 item.boat_frozen_oak.name=Frozen Oak Boat
 item.boat_charwood.name=Charwood Boat
+item.seed_bag_empty.name=Empty Seed Pouch
+item.seed_bag_filled.name=Seed Pouch
 item.satchel.name=Satchel
 item.backpack.name=Backpack
 item.copper_sieve.name=Copper Mining Sieve
@@ -1171,6 +1191,12 @@ tile.woodSlab.oak.name=Oak Plank Slab
 tile.woodSlab.spruce.name=Spruce Plank Slab
 tile.litpumpkin.name=Glowpumpkin
 item.wheat_seeds.name=Wheat Seeds
+tile.quartzBlock.name=Polished Nether Quartz
+tile.quartzBlock.default.name=Polished Nether Quartz
+tile.quartzBlock.chiseled.name=Chiseled Nether Quartz
+tile.quartzBlock.lines.name=Nether Quartz Pillar
+tile.stoneSlab.quartz.name=Nether Quartz Slab
+tile.stairsQuartz.name=Nether Quartz Stairs
 
 
 

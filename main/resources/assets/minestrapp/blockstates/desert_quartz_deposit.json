@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "variant=default": [
+            { "model": "minestrapp:ore_desert_quartz" }
+        ],
+        "variant=sand": [
+            { "model": "minestrapp:ore_desert_quartz_sand" }
+        ],
+        "variant=cold_sand": [
+            { "model": "minestrapp:ore_desert_quartz_cold_sand" }
+        ],
+        "variant=red_sand": [
+            { "model": "minestrapp:ore_desert_quartz_red_sand" }
+        ],
+        "variant=cold_red_sand": [
+            { "model": "minestrapp:ore_desert_quartz_cold_red_sand" }
+        ]
+    }
+}

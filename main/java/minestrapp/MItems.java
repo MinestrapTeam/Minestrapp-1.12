@@ -20,6 +20,7 @@ import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
+import minestrapp.item.ItemSeedBag;
 import minestrapp.item.ItemSieve;
 import minestrapp.item.ItemSmellingSalts;
 import minestrapp.item.ItemSoulGem;
@@ -195,6 +196,8 @@ public class MItems
 	public static Item boat_redwood;
 	public static Item boat_frozen_oak;
 	public static Item boat_charwood;
+	public static Item seed_bag_empty;
+	public static Item seed_bag_filled;
 	public static Item sieve_copper;
 	public static Item sieve_iron;
 	public static Item sieve_bronze;
@@ -386,6 +389,8 @@ public class MItems
 		register(boat_redwood = new ItemMBoat(EntityMBoat.Type.REDWOOD));
 		register(boat_frozen_oak = new ItemMBoat(EntityMBoat.Type.FROZEN_OAK));
 		register(boat_charwood = new ItemMBoat(EntityMBoat.Type.CHARWOOD));
+		register(seed_bag_empty = new ItemSeedBag("seed_bag_empty", false));
+		register(seed_bag_filled = new ItemSeedBag("seed_bag_filled", true));
 		register(sieve_copper = new ItemSieve("copper_sieve", 32, new ItemStack(ingots, 1, 0)));
 		register(sieve_iron = new ItemSieve("iron_sieve", 64, new ItemStack(Items.IRON_INGOT)));
 		register(sieve_bronze = new ItemSieve("bronze_sieve", 128, new ItemStack(ingots, 1, 2)));

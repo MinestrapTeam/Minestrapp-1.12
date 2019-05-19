@@ -1,0 +1,38 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "blocks/plant/clover_head_3",
+		"texture": "blocks/plant/clover_head_3",
+		"texture1": "blocks/plant/clover_stem"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "PlaneY1",
+			"from": [ 0, 12.5, 0 ],
+			"to": [ 16, 12.501, 16 ],
+			"rotation": { "origin": [ 0, 12.5, 0 ], "axis": "x", "angle": -22.5 },
+			"faces": {
+				"down": { "uv": [ 0, 16, 16, 0 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "PlaneX2",
+			"from": [ 8, 0, 6 ],
+			"to": [ 8.001, 15, 10 ],
+			"faces": {
+				"west": { "uv": [ 10, 1, 6, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 6, 1, 10, 16 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "PlaneX2",
+			"from": [ 6, 0, 7.999 ],
+			"to": [ 10, 15, 8 ],
+			"faces": {
+				"north": { "uv": [ 6, 1, 10, 16 ], "texture": "#texture1" },
+				"south": { "uv": [ 10, 1, 6, 16 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

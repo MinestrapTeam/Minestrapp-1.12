@@ -1,34 +1,28 @@
 package minestrapp.inventories;
 
-import minestrapp.MItems;
 import minestrapp.item.ItemBackpack;
 import minestrapp.item.ItemSeedBag;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemShulkerBox;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraftforge.common.util.Constants;
 
-public class InventoryBackpack implements IInventory {
-	private String name = "Backpack Inventory";
+public class InventorySeedBag implements IInventory
+{
+	private String name = "Seed Bag Inventory";
 
-	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(36, ItemStack.EMPTY);
+	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
 	public final ItemStack invStack;
-	
-	public int type;
 
-	public InventoryBackpack(ItemStack stack) {
+	public InventorySeedBag(ItemStack stack)
+	{
 		this.invStack = stack;
-		ItemBackpack item = (ItemBackpack) stack.getItem();
-		this.type = item.getType();
+		ItemSeedBag item = (ItemSeedBag) stack.getItem();
 		if (!this.invStack.hasTagCompound()) {
 			this.invStack.setTagCompound(new NBTTagCompound());
 		}
@@ -73,7 +67,7 @@ public class InventoryBackpack implements IInventory {
 
 	@Override
 	public int getInventoryStackLimit() {
-		return 64;
+		return 576;
 	}
 
 	@Override

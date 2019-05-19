@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "minestrapp:blocks/stone/irradiant_quartz_pillar_top",
+        "side": "minestrapp:blocks/stone/irradiant_quartz_pillar_side"
+    }
+}

@@ -16,6 +16,7 @@ import minestrapp.config.MConfig;
 import minestrapp.crafting.FreezingRecipes;
 import minestrapp.entity.mob.EntityBurfalaunt;
 import minestrapp.item.ItemSeedBag;
+import minestrapp.item.util.MItemsSeedFood;
 import minestrapp.mobs.models.ModelSheetGhost;
 import minestrapp.utils.EntityUtil;
 import minestrapp.utils.NBTUtil;
@@ -39,8 +40,11 @@ import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSeedFood;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -67,6 +71,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -1014,6 +1019,104 @@ public class MEventHandler
 			 event.setBlue(202);
 		 }
     }
+    
+    @SubscribeEvent
+	public static void onPickUp(EntityItemPickupEvent event)
+	{
+		if (!event.isCanceled() && (event.getItem().getItem().getItem() instanceof ItemSeeds || event.getItem().getItem().getItem() == MItems.peanuts || (event.getItem().getItem().getItem() == Items.DYE && event.getItem().getItem().getMetadata() == EnumDyeColor.BROWN.getDyeDamage())))
+		{
+			boolean setSlot = false;
+			EntityPlayer player = event.getEntityPlayer();
+			ItemStack eventStack = event.getItem().getItem();
+			boolean tryFill = true;
+			
+			for (int i = 0; i < player.inventory.getSizeInventory(); i++)
+			{
+				ItemStack stack = player.inventory.getStackInSlot(i);
+
+				if (stack.getItem() == eventStack.getItem() && stack.getMetadata() == eventStack.getMetadata() && stack.getCount() < stack.getMaxStackSize())
+				{
+					tryFill = false;
+					break;
+				}
+			}
+			
+			if(tryFill)
+			{
+				for (int i = 0; i < player.inventory.getSizeInventory(); i++)
+				{
+					ItemStack stack = player.inventory.getStackInSlot(i);
+	
+					if (stack.getItem() == MItems.seed_bag_empty)
+					{
+						player.inventory.setInventorySlotContents(i, new ItemStack(MItems.seed_bag_filled));
+						event.getItem().setDead();
+						event.setCanceled(true);
+						break;
+						/*ItemBagOfHoldingProvider handler = ItemBagOfHoldingProvider.GetFromStack(stack);
+						
+						// Only auto-pickup if this bag is set to open and the stack is valid for the bag of holding.
+						if (handler.opened && BagOfHoldingContainer.validForContainer(eventStack))
+						{
+							int firstEmptySlot = -1;
+	
+							for (int j = 0; j < handler.getSlots(); j++)
+							{
+								ItemStack pouchStack = handler.getStackInSlot(j);
+	
+								if (pouchStack.isEmpty() && firstEmptySlot == -1)
+								{
+									// Found an empty slot, maybe use this later.
+									firstEmptySlot = j;
+								}
+	
+								if (!pouchStack.isEmpty())
+								{
+									// This has an item in it of some kind, determine if they are the same.
+									if (pouchStack.areItemsEqual(pouchStack, eventStack))
+									{
+										int updatedSize = pouchStack.getCount() + eventStack.getCount();
+	
+										// Make sure we don't go above the stack limit for this slot.
+										// If there is too much, just move onto the next slot.
+										if (updatedSize <= handler.getSlotLimit(j))
+										{
+											setSlot = true;
+											pouchStack.setCount(updatedSize);
+											handler.setStackInSlot(j, pouchStack);
+											break;
+										}
+									}
+								}
+							}
+	
+							if (!setSlot && firstEmptySlot != -1)
+							{
+								// There was not a matching stack, place it in the first empty slot.
+								handler.setStackInSlot(firstEmptySlot, eventStack);
+								setSlot = true;
+							}
+	
+							if (setSlot)
+							{
+								// We set an inventory slot, set this event to canceled and break out of the loop.
+								player.onItemPickup(event.getItem(), event.getItem().getItem().getCount());
+								player.addStat(StatList.getObjectsPickedUpStats(event.getItem().getItem().getItem()),
+									event.getItem().getItem().getCount());
+								event.getItem().setDead();
+								event.setCanceled(true);
+								
+								handler.UpdateStack(stack);
+								ItemBagOfHolding.RefreshItemStack(player, stack);
+								break;
+							}
+						}*/
+					}
+				}
+			}
+		}
+	}
+
 	
 	public static NBTTagList getEnchantments(ItemStack stack)
     {

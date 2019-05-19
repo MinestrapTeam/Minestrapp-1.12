@@ -433,6 +433,23 @@ public class MWorldDecorator
 					iceGen.generate(world, random, icePos);
 				}
 			}
+			
+			//Desert Quartz Gen
+			if(biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS || biome == Biomes.MUTATED_DESERT || biome == Biomes.MESA || biome == Biomes.MESA_CLEAR_ROCK || biome == Biomes.MESA_ROCK || biome == Biomes.MUTATED_MESA || biome == Biomes.MUTATED_MESA_CLEAR_ROCK || biome == Biomes.MUTATED_MESA_ROCK)
+			{
+				for(int i = 0 ; i < 3 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 80 - random.nextInt(20);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos quartzPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					MGenDesertQuartz quartzGen = new MGenDesertQuartz();
+					quartzGen.generate(world, random, quartzPos);
+				}
+			}
+			
+			//Mushroom Island Gen
 			if(biome instanceof BiomeMushroomIsland)
 			{
 				if(MConfig.generateGlowshrooms)
@@ -482,6 +499,7 @@ public class MWorldDecorator
 				}
 			}
 		}
+		//Nether Gen
 		else if(world.provider.getDimension() == -1)
 		{
 			if(MConfig.generateInvincium)

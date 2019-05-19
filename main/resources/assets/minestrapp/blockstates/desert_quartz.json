@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "variant=polished": [
+            { "model": "minestrapp:polished_desert_quartz" }
+        ],
+        "variant=chiseled": [
+            { "model": "minestrapp:chiseled_desert_quartz" }
+        ],
+        "variant=lines_y": [
+            { "model": "minestrapp:desert_quartz_pillar" }
+        ],
+        "variant=lines_z": [
+            { "model": "minestrapp:desert_quartz_pillar", "x": 90 }
+        ],
+        "variant=lines_x": [
+            { "model": "minestrapp:desert_quartz_pillar", "x": 90, "y": 90 }
+        ]
+    }
+}
