@@ -41,7 +41,7 @@ public class BlockBasket extends BlockBase
 		this.setFlammable(60, 30);
 	}
 
-	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+	/*public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
 		if(entityIn instanceof EntityItem)
 		{
@@ -51,7 +51,7 @@ public class BlockBasket extends BlockBase
 				//System.out.println(entityIn.getName() + " Preserved");
 			}
 		}
-    }
+    }*/
 	
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)
     {

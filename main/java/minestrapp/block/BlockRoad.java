@@ -8,6 +8,7 @@ import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.block.item.IMetaBlockName;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockBaseNonSolid;
 import minestrapp.utils.BlockUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
@@ -38,7 +39,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRoad extends BlockBase
+public class BlockRoad extends BlockBaseNonSolid
 {
 	private double speed;
 	
@@ -48,7 +49,6 @@ public class BlockRoad extends BlockBase
 	{
 		super(name, Material.GROUND, MapColor.BLACK, SoundType.STONE, hardness, null, 0);
 		this.setCreativeTab(MTabs.utility);
-		this.setNonSolid();
 		this.speed = speed;
 	}
 	

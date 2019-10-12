@@ -9,6 +9,7 @@ import javax.swing.text.html.parser.Entity;
 import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockBaseNonSolid;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -31,7 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockStasisField extends BlockBase
+public class BlockStasisField extends BlockBaseNonSolid
 {
 	public static final PropertyBool POWERED = PropertyBool.create("powered");
 	public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.<EnumFacing.Axis>create("axis", EnumFacing.Axis.class);
@@ -39,7 +40,6 @@ public class BlockStasisField extends BlockBase
 	public BlockStasisField()
 	{
 		super("stasis_field", Material.IRON, MapColor.PURPLE, SoundType.METAL, 5F, "pickaxe", 2);
-		this.setNonSolid();
 		this.setDefaultState(this.blockState.getBaseState().withProperty(POWERED, false).withProperty(AXIS, EnumFacing.Axis.Y));
 		this.setCreativeTab(MTabs.utility);
 	}
@@ -186,14 +186,18 @@ public class BlockStasisField extends BlockBase
 				for(net.minecraft.entity.Entity entity : entities)
 				{
 					if(axis == EnumFacing.Axis.X)
-						entity.motionX = 0;
+					{
+						entity.motionX *= 0;
+					}
 					else if(axis == EnumFacing.Axis.Y)
 					{
-						entity.motionY = 0;
+						entity.motionY *= 0;
 						entity.fallDistance = 0;
 					}
 					else if(axis == EnumFacing.Axis.Z)
-						entity.motionZ = 0;
+					{
+						entity.motionZ *= 0;
+					}
 					
 					entity.velocityChanged = true;
 				}
@@ -283,6 +287,6 @@ public class BlockStasisField extends BlockBase
 	
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(AXIS, facing.getAxis());
+        return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(AXIS, EnumFacing.Axis.Y);
     }
 }

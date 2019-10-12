@@ -1,0 +1,37 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "rsb",
+        "bpr",
+        "dtd"
+    ],
+    "key": {
+        "r": {
+            "item": "minestrapp:m_tech_component",
+            "data": 8
+        },
+        "b": {
+            "item": "minestrapp:m_tech_component",
+            "data": 10
+        },
+        "s": {
+            "item": "minestrapp:m_bricks",
+            "data": 1
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateDimensium"
+        },
+        "d": {
+            "item": "minestrapp:dimensium_rope"
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 11
+     }  
+}

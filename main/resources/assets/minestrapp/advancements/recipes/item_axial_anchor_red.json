@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_axial_anchor_red"
+    ]
+  },
+  "criteria": {
+    "has_dimensium_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_nugget",
+            "data": 8
+          }
+        ]
+      }
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_axial_anchor_red"
+      }
+    }
+  },
+    "requirements": [
+        [
+          "has_dimensium_nugget",
+          "has_recipe"
+        ]
+    ]
+}

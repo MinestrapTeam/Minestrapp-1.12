@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_dimensium_glider_frame"
+    ]
+  },
+  "criteria": {
+    "has_red_anchor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 8
+          }
+        ]
+      }
+    },
+    "has_blue_anchor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_tech_component",
+            "data": 10
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_dimensium_glider_frame"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_red_anchor",
+      "has_blue_anchor",
+      "has_the_recipe"
+    ]
+  ]
+}

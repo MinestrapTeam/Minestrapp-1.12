@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "minestrapp:blocks/utility/activator/activator_side_inactive",
+        "down": "minestrapp:blocks/utility/activator/activator_side_inactive",
+        "up": "minestrapp:blocks/utility/activator/activator_front_inactive",
+        "north": "minestrapp:blocks/utility/activator/activator_side_inactive",
+        "east": "minestrapp:blocks/utility/activator/activator_side_inactive",
+        "south": "minestrapp:blocks/utility/activator/activator_side_inactive",
+        "west": "minestrapp:blocks/utility/activator/activator_side_inactive"
+    }
+}

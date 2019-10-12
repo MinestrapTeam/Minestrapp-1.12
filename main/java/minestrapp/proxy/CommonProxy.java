@@ -4,6 +4,7 @@ import minestrapp.MBlocks;
 import minestrapp.MFluids;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
+import minestrapp.block.tileentity.TileEntityActivator;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityAxel;
 import minestrapp.block.tileentity.TileEntityBarrel;
@@ -52,7 +53,7 @@ public class CommonProxy
 		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "sieve/clay_soil_0"));
+		//LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "sieve/clay_soil_0"));
 		/*
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
 		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/bat/wing_sinew"));
@@ -96,6 +97,7 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityTanningRack.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityTanningRack"));
 		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPlate"));
 		GameRegistry.registerTileEntity(TileEntityMSkull.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityMSkull"));
+		GameRegistry.registerTileEntity(TileEntityActivator.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityActivator"));
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

@@ -206,6 +206,7 @@ public class MItems
 	public static Item sieve_adamantium;
 	public static Item hang_glider_wood;
 	public static Item hang_glider_steel;
+	public static Item hang_glider_dimensium;
 
 	public static Item pepper_seeds;
 	public static Item cabbage_seeds;
@@ -379,8 +380,8 @@ public class MItems
 		
 		//0=Mud Brick, 1=Portar
 		register(bricks = new ItemMetaBase("m_bricks", 2).setCreativeTab(MTabs.ingredients));
-		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet, 7=Grass Weave
-		register(tech_components = new ItemMetaBase("m_tech_component", 8).setCreativeTab(MTabs.ingredients));
+		//0=Reinforced Stick, 1=Wing Segment, 2=Propeller, 3=Inert Chip, 4=Technological Doodad, 5=Adv. Technological Doodad, 6=Magnet, 7=Grass Weave, 8=Red Axial Anchor, 9=Green Axial Anchor, 10=Blue Axial Anchor, 11=Dimensium Glider Frame
+		register(tech_components = new ItemMetaBase("m_tech_component", 12).setCreativeTab(MTabs.ingredients));
 		register(heart_piece = new ItemBase("heart_piece").setCreativeTab(MTabs.ingredients));
 		register(heart_container = new ItemHeartContainer());
 		

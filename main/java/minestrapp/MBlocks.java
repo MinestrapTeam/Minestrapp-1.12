@@ -26,6 +26,7 @@ import minestrapp.block.magnetpiston.BlockMagnetPistonBase;
 import minestrapp.block.magnetpiston.BlockMagnetPistonExtension;
 import minestrapp.block.magnetpiston.BlockMagnetPistonMoving;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockBaseNonSolid;
 import minestrapp.block.util.BlockPanelBase;
 import minestrapp.block.util.BlockStairBase;
 import minestrapp.block.util.BlockStoneBase;
@@ -262,6 +263,7 @@ public class MBlocks
 	
 	//Resource
 	public static Block block_salt;
+	public static Block block_rock_crystal;
 	public static Block block_copper;
 	public static Block block_tin;
 	public static Block block_bronze;
@@ -391,6 +393,7 @@ public class MBlocks
 	public static Block covered_pipe_oceanstone;
 	public static Block covered_pipe_reefstone;
 	public static Block sorter;
+	public static Block activator;
 	public static Block wooden_axel;
 	public static Block creative_engine;
 	public static Block spike_oak_wood;
@@ -672,6 +675,7 @@ public class MBlocks
 		
 		//Resource
 		register(block_salt = new BlockBase("block_salt", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.STONE, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
+		register(block_salt = new BlockBaseNonSolid("block_rock_crystal", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.GLASS, 2F, "pickaxe", 0).setDropsItem(new ItemStack(MItems.gems, 2, 2), 2, 0, 0, true, false).setBeaconBase().setRenderLayer(BlockRenderLayer.TRANSLUCENT).setResistance(2F).setCreativeTab(MTabs.resource).setLightOpacity(0).setLightLevel(0.1F));
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));
@@ -701,11 +705,11 @@ public class MBlocks
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
 		//Decor
-		register(glass_tiles = new BlockBase("glass_tiles", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
-		register(glass_bricks = new BlockBase("glass_bricks", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
-		register(wooden_window = new BlockBase("wooden_window", Material.WOOD, MapColor.WOOD, SoundType.GLASS, 1F, "axe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(3F).setCreativeTab(MTabs.decor));
-		register(iron_window = new BlockBase("iron_window", Material.IRON, MapColor.IRON, SoundType.GLASS, 2F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(5F).setCreativeTab(MTabs.decor));
-		register(reinforced_glass = new BlockBase("reinforced_glass", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.GLASS, 4F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setNonSolid().setIgnoresSimilarity().setLightOpacity(0).setResistance(10F).setCreativeTab(MTabs.decor));
+		register(glass_tiles = new BlockBaseNonSolid("glass_tiles", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
+		register(glass_bricks = new BlockBaseNonSolid("glass_bricks", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
+		register(wooden_window = new BlockBaseNonSolid("wooden_window", Material.WOOD, MapColor.WOOD, SoundType.GLASS, 1F, "axe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setResistance(3F).setCreativeTab(MTabs.decor));
+		register(iron_window = new BlockBaseNonSolid("iron_window", Material.IRON, MapColor.IRON, SoundType.GLASS, 2F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setResistance(5F).setCreativeTab(MTabs.decor));
+		register(reinforced_glass = new BlockBaseNonSolid("reinforced_glass", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.GLASS, 4F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setResistance(10F).setCreativeTab(MTabs.decor));
 		register(glass_tile_pane = new BlockMPane("glass_tile_pane", Material.GLASS, false, MapColor.AIR, SoundType.GLASS).setHardness(0.3F));
 		register(glass_brick_pane = new BlockMPane("glass_brick_pane", Material.GLASS, false, MapColor.AIR, SoundType.GLASS).setHardness(0.3F));
 		register(wooden_window_pane = new BlockMPane("wooden_window_pane", Material.WOOD, true, MapColor.WOOD, SoundType.GLASS, "axe", 0).setHardness(1F).setResistance(3F));
@@ -855,6 +859,7 @@ public class MBlocks
 		register(covered_pipe_oceanstone = new BlockPipe("covered_pipe_oceanstone", true, false));
 		register(covered_pipe_reefstone = new BlockPipe("covered_pipe_reefstone", true, false));
 		register(sorter = new BlockSorter("sorter"));
+		register(activator = new BlockActivator("activator"));
 		//register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
 		//register(creative_engine = new BlockCreativeEngine());
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));

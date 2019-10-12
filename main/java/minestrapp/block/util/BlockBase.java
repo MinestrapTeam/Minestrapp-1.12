@@ -47,7 +47,6 @@ public class BlockBase extends Block
 	private boolean customPushLogic;
 	private EnumPushReaction pushReaction;
 	private BlockRenderLayer layer = BlockRenderLayer.SOLID;
-	private boolean isSolidBlock = true;
 	private boolean ignoreSimilarity = false;
 	private boolean glowing = false;
 	private List<Integer> flammability = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
@@ -254,30 +253,6 @@ public class BlockBase extends Block
     public BlockRenderLayer getBlockLayer()
     {
         return this.layer;
-    }
-	
-	public BlockBase setNonSolid()
-	{
-		this.isSolidBlock = false;
-		return this;
-	}
-	
-	public boolean isFullCube(IBlockState state)
-    {
-        return this.isSolidBlock;
-    }
-	
-	public boolean isOpaqueCube(IBlockState state)
-    {
-        return this.isSolidBlock;
-    }
-	
-	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
-    {
-		if(!this.isSolidBlock)
-			return BlockFaceShape.UNDEFINED;
-		else
-			return super.getBlockFaceShape(world, state, pos, facing);
     }
 	
 	public BlockBase setIgnoresSimilarity()

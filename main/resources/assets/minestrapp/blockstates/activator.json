@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=south,triggered=false": { "model": "minestrapp:activator", "x": 90, "y": 180, "uvlock": true },
+		"facing=north,triggered=false": { "model": "minestrapp:activator", "x": 90, "y": 0, "uvlock": true },
+		"facing=west,triggered=false": { "model": "minestrapp:activator", "x": 90, "y": 270, "uvlock": true },
+		"facing=east,triggered=false": { "model": "minestrapp:activator", "x": 90, "y": 90, "uvlock": true },
+        "facing=up,triggered=false": { "model": "minestrapp:activator", "y": 90, "uvlock": true },
+        "facing=down,triggered=false": { "model": "minestrapp:activator", "x": 180, "y": 90, "uvlock": true },
+        "facing=south,triggered=true": { "model": "minestrapp:activator", "x": 90, "y": 180, "uvlock": true },
+		"facing=north,triggered=true": { "model": "minestrapp:activator", "x": 90, "y": 0, "uvlock": true },
+		"facing=west,triggered=true": { "model": "minestrapp:activator", "x": 90, "y": 270, "uvlock": true },
+		"facing=east,triggered=true": { "model": "minestrapp:activator", "x": 90, "y": 90, "uvlock": true },
+        "facing=up,triggered=true": { "model": "minestrapp:activator", "y": 90, "uvlock": true },
+        "facing=down,triggered=true": { "model": "minestrapp:activator", "x": 180, "y": 90, "uvlock": true }
+    }
+}

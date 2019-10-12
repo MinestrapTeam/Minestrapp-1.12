@@ -1,0 +1,32 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "cgc",
+        "dmd",
+        "crc"
+    ],
+    "key": {
+        "m": {
+            "type": "forge:ore_dict",
+            "ore": "magnet"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "gemCrystal"
+        },
+        "d": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetDimensium"
+        },
+        "g": {
+            "item": "minestrapp:bauble_glowshroom_blue"
+        },
+        "r": {
+            "item": "minestrapp:redstone_icy"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 10
+     }  
+}
