@@ -1,0 +1,14 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "blockRockCrystal"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_gem",
+        "count": 9,
+        "data": 2
+     }  
+}

@@ -239,6 +239,7 @@ public class MBlocks
 	public static Block ore_redstone_lit;
 	public static Block ore_lapis;
 	public static Block ore_irradium;
+	public static Block rock_crystal_deposit;
 	public static Block sunstone_deposit;
 	public static Block glacieric_ice_deposit;
 	public static BlockGlaciericIceBranch glacieric_ice_branch_0;
@@ -640,6 +641,7 @@ public class MBlocks
 		
 		//Ore
 		register(desert_quartz_deposit = new BlockDesertQuartzDeposit(), new ItemBlockMultistate(desert_quartz_deposit));
+		register(rock_crystal_deposit = new BlockOreDeposit("rock_crystal_deposit", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.GLASS, 1F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setPushReaction(EnumPushReaction.DESTROY).setCreativeTab(MTabs.environment));
 		register(ore_salt = new BlockStoneBase("ore_salt", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_salt));
 		register(ore_coal = new BlockStoneBaseMOnly("ore_coal", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setDropsItem(new ItemStack(Items.COAL, 1, 0), 0, 0, 2, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_coal));
 		register(ore_copper = new BlockStoneBase("ore_copper", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_copper));
@@ -652,7 +654,7 @@ public class MBlocks
 		register(ore_redstone_lit = new BlockRedstoneOre("ore_redstone", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2, true).setResistance(5F).setLightLevel(0.625F));
 		register(ore_irradium = new BlockIrradiumOre().setResistance(5F).setLightLevel(0.2F), new ItemBlockMultistate(ore_irradium));
 		register(ore_torite = new BlockStoneBase("ore_torite", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_torite));
-		register(sunstone_deposit = new BlockSunstoneDeposit("sunstone_deposit"));
+		register(sunstone_deposit = new BlockOreDeposit("sunstone_deposit", Material.ROCK, MapColor.SAND, SoundType.GLASS, 1.2F, "pickaxe", 1).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.75F).setCreativeTab(MTabs.environment));
 		register(glacieric_ice_deposit = new BlockGlaciericIceDeposit());
 		register(glacieric_ice_branch_0 = new BlockGlaciericIceBranch(0));
 		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_1 = new BlockGlaciericIceBranch(1));
@@ -662,7 +664,7 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_5 = new BlockGlaciericIceBranch(5));
 		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_6 = new BlockGlaciericIceBranch(6));
 		ForgeRegistries.BLOCKS.register(glacieric_ice_branch_7 = new BlockGlaciericIceBranch(7));
-		register(soul_eyes = new BlockSoulEyes("soul_eyes"));
+		register(soul_eyes = new BlockOreDeposit("soul_eyes", Material.ROCK, MapColor.CYAN, SoundType.GLASS, 1.2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setGlowing().setLightLevel(0.3F).setCreativeTab(MTabs.environment));
 		register(ore_diamond = new BlockStoneBaseMOnly("ore_diamond", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.DIAMOND, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_diamond));
 		register(ore_emerald = new BlockStoneBaseMOnly("ore_emerald", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 2).setDropsItem(new ItemStack(Items.EMERALD, 1, 0), 0, 3, 7, true, true, false).setResistance(5F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_emerald));
 		register(ore_titanium = new BlockStoneBase("ore_titanium", Material.ROCK, SoundType.STONE, 3F, "pickaxe", 0).setGlowing().setLightLevel(0.2F).setResistance(100F).setCreativeTab(MTabs.ore), new ItemBlockMultistate(ore_titanium));
@@ -675,7 +677,7 @@ public class MBlocks
 		
 		//Resource
 		register(block_salt = new BlockBase("block_salt", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.STONE, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
-		register(block_salt = new BlockBaseNonSolid("block_rock_crystal", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.GLASS, 2F, "pickaxe", 0).setDropsItem(new ItemStack(MItems.gems, 2, 2), 2, 0, 0, true, false).setBeaconBase().setRenderLayer(BlockRenderLayer.TRANSLUCENT).setResistance(2F).setCreativeTab(MTabs.resource).setLightOpacity(0).setLightLevel(0.1F));
+		register(block_rock_crystal = new BlockBaseNonSolid("block_rock_crystal", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.GLASS, 2F, "pickaxe", 0).setGlowing().setBeaconBase().setRenderLayer(BlockRenderLayer.TRANSLUCENT).setResistance(2F).setCreativeTab(MTabs.resource).setLightOpacity(0).setLightLevel(0.1F));
 		register(block_copper = new BlockBase("block_copper", Material.IRON, MapColor.ADOBE, SoundType.METAL, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_tin = new BlockBase("block_tin", Material.IRON, MapColor.CLOTH, SoundType.METAL, 4F, "pickaxe", 0).setResistance(5F).setCreativeTab(MTabs.resource));
 		register(block_bronze = new BlockBase("block_bronze", Material.IRON, MapColor.YELLOW_STAINED_HARDENED_CLAY, SoundType.METAL, 6F, "pickaxe", 1).setBeaconBase().setResistance(15F).setCreativeTab(MTabs.resource));

@@ -3,7 +3,7 @@ package minestrapp.worldgen;
 import java.util.Random;
 
 import minestrapp.MBlocks;
-import minestrapp.block.BlockSunstoneDeposit;
+import minestrapp.block.BlockOreDeposit;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -47,9 +47,9 @@ public class MGenSunstone extends WorldGenerator
 	                        	for(int q = 0 ; q < EnumFacing.VALUES.length ; q++)
 	                        	{
 
-	                        		if(BlockSunstoneDeposit.canGenerateBlock(worldIn, blockpos, EnumFacing.getFront(q)))
+	                        		if(BlockOreDeposit.canGenerateBlock(worldIn, blockpos, EnumFacing.getFront(q)))
 	                        		{
-	                        			worldIn.setBlockState(blockpos, MBlocks.sunstone_deposit.getDefaultState().withProperty(BlockSunstoneDeposit.FACING, EnumFacing.getFront(q)), 2);
+	                        			worldIn.setBlockState(blockpos, MBlocks.sunstone_deposit.getDefaultState().withProperty(BlockOreDeposit.FACING, EnumFacing.getFront(q)), 2);
 	                        			break;
 	                        		}
 	                        	}

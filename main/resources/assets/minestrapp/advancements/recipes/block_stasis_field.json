@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_stasis_field"
+    ]
+  },
+  "criteria": {
+    "has_stabilized_dimensium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:block_dimensium_stabilized_inactive"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_stasis_field"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stabilized_dimensium",
+      "has_the_recipe"
+    ]
+  ]
+}

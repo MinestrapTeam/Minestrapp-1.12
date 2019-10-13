@@ -58,6 +58,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("oreDimensium", new ItemStack(MBlocks.ore_dimensium));
 		OreDictionary.registerOre("blockSunstone", MBlocks.block_sunstone);
 		OreDictionary.registerOre("blockSalt", MBlocks.block_salt);
+		OreDictionary.registerOre("blockRockCrystal", MBlocks.block_rock_crystal);
 		OreDictionary.registerOre("blockCopper", MBlocks.block_copper);
 		OreDictionary.registerOre("blockTin", MBlocks.block_tin);
 		OreDictionary.registerOre("blockBronze", MBlocks.block_bronze);

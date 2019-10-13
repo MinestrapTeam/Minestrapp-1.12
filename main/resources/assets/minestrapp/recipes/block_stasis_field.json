@@ -1,0 +1,29 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "rar",
+        "dtd",
+        "rar"
+    ],
+    "key": {        
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "gemIrradiantQuartz"
+        },
+        "a": {
+            "item": "minestrapp:m_tech_component",
+            "data": 9
+        },
+        "d": {
+            "item": "minestrapp:block_dimensium_stabilized_inactive"
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 5
+        }
+     },
+     "result": {
+        "item": "minestrapp:stasis_field",
+        "count": 2
+     }  
+}

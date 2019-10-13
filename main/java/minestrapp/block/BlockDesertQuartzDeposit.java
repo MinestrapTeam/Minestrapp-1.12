@@ -1,5 +1,8 @@
 package minestrapp.block;
 
+import java.util.Random;
+
+import minestrapp.MItems;
 import minestrapp.MTabs;
 import minestrapp.block.item.IMetaBlockName;
 import minestrapp.block.util.BlockBase;
@@ -12,6 +15,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
@@ -31,7 +35,7 @@ public class BlockDesertQuartzDeposit extends BlockBase implements IMetaBlockNam
 	{
 		super("desert_quartz_deposit", Material.ROCK, MapColor.STONE, SoundType.STONE, 3F, "pickaxe", 0);
 		this.setResistance(5F);
-		this.setCreativeTab(MTabs.stone);
+		this.setCreativeTab(MTabs.ore);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockDesertQuartzDeposit.DepositType.DEFAULT));
 	}
 	
@@ -80,6 +84,31 @@ public class BlockDesertQuartzDeposit extends BlockBase implements IMetaBlockNam
 	{
 		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(world.getBlockState(pos)));
 	}
+	
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        Random rand = world instanceof World ? ((World)world).rand : RANDOM;
+
+        if(state.getValue(VARIANT) == BlockDesertQuartzDeposit.DepositType.DEFAULT || rand.nextBoolean() == true)
+        {
+        	int count = quantityDropped(state, fortune, rand);
+        	
+	        for (int i = 0; i < count; i++)
+	        {
+	            Item item = this.getItemDropped(state, rand, fortune);
+	            if (item != Items.AIR)
+	            {
+	                drops.add(new ItemStack(MItems.gems, 1, 1));
+	            }
+	        }
+        }
+        else
+        {
+        	drops.add(new ItemStack(MItems.salt, rand.nextInt(fortune) + 1));
+        }
+        
+    }
 	
 	public static enum DepositType implements IStringSerializable
     {

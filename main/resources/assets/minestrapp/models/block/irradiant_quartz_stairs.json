@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/polished_irradiant_quartz",
+        "top": "minestrapp:blocks/stone/polished_irradiant_quartz",
+        "side": "minestrapp:blocks/stone/polished_irradiant_quartz"
+    }
+}

@@ -5,6 +5,18 @@
         ],
         "half=top,variant=shimmerstone_bricks": [
             { "model": "minestrapp:upper_slab_shimmerstone_bricks" }
+        ],
+        "half=bottom,variant=desert_quartz": [
+            { "model": "minestrapp:half_slab_desert_quartz" }
+        ],
+        "half=top,variant=desert_quartz": [
+            { "model": "minestrapp:upper_slab_desert_quartz" }
+        ],
+        "half=bottom,variant=irradiant_quartz": [
+            { "model": "minestrapp:half_slab_irradiant_quartz" }
+        ],
+        "half=top,variant=irradiant_quartz": [
+            { "model": "minestrapp:upper_slab_irradiant_quartz" }
         ]
     }
 }

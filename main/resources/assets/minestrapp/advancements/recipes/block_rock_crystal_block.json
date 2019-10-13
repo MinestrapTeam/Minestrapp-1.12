@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_rock_crystal_block"
+    ]
+  },
+  "criteria": {
+    "has_rock crystals": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_gem",
+            "count": {
+                "min": 9
+            },
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_rock_crystal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rock_crystals",
+      "has_the_recipe"
+    ]
+  ]
+}

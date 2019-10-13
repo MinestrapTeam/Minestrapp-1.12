@@ -5,6 +5,18 @@
         ],
         "seamless=true,variant=shimmerstone_bricks": [
             { "model": "minestrapp:shimmerstone_bricks" }
+        ],
+        "seamless=false,variant=desert_quartz": [
+            { "model": "minestrapp:polished_desert_quartz" }
+        ],
+        "seamless=true,variant=desert_quartz": [
+            { "model": "minestrapp:polished_desert_quartz" }
+        ],
+        "seamless=false,variant=irradiant_quartz": [
+            { "model": "minestrapp:polished_irradiant_quartz" }
+        ],
+        "seamless=true,variant=irradiant_quartz": [
+            { "model": "minestrapp:polished_irradiant_quartz" }
         ]
     }
 }

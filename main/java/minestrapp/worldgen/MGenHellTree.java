@@ -6,7 +6,7 @@ import minestrapp.MBlocks;
 import minestrapp.block.BlockCharwoodLimb;
 import minestrapp.block.BlockMLog;
 import minestrapp.block.BlockMPlanks;
-import minestrapp.block.BlockSoulEyes;
+import minestrapp.block.BlockOreDeposit;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.state.IBlockState;
@@ -120,6 +120,6 @@ public class MGenHellTree extends WorldGenerator
 			}
 		}
 		
-		world.setBlockState(pos.offset(EnumFacing.UP, height - 1).offset(this.facing), MBlocks.soul_eyes.getDefaultState().withProperty(BlockSoulEyes.FACING, this.facing));
+		world.setBlockState(pos.offset(EnumFacing.UP, height - 1).offset(this.facing), MBlocks.soul_eyes.getDefaultState().withProperty(BlockOreDeposit.FACING, this.facing));
 	}
 }
