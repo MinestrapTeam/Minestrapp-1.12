@@ -1,0 +1,18 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "x  ",
+        "xx ",
+        "xxx"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "blockIrradiantQuartz"
+        }
+     },
+     "result": {
+        "item": "minestrapp:irradiant_quartz_polished_stairs",
+        "count": 4
+     }  
+}

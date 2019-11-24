@@ -120,6 +120,11 @@ public class ItemMBoat extends Item
         }
     }
     
+    public EntityMBoat.Type getBoatType()
+    {
+    	return type;
+    }
+    
     public int getItemBurnTime(ItemStack itemStack)
     {
 		return 400;

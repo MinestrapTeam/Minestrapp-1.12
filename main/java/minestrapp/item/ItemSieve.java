@@ -70,6 +70,10 @@ public class ItemSieve extends ItemBase
 			tooltip.add("Creative-only. Unbreakable.");
     }
 	
+	public boolean isUnbreakable() {return this.unbreakable;}
+	
+	public ItemStack getBreakItem() {return this.breakItem;}
+	
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
 		ItemStack itemstack = player.getHeldItem(hand);

@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "rrr",
+        "qqq",
+        "www"
+    ],
+    "key": {        
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "gemCrystal"
+        },
+        "q": {
+            "type": "forge:ore_dict",
+            "ore": "gemQuartz"
+        },
+        "w": {
+            "type": "forge:ore_dict",
+            "ore": "slabWood"
+        }
+     },
+     "result": {
+        "item": "minecraft:daylight_detector"
+     }  
+}

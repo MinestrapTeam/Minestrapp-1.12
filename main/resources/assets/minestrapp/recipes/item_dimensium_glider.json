@@ -1,0 +1,34 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ltl",
+        "hfh",
+        "ese"
+    ],
+    "key": {        
+        "l": {
+            "type": "forge:ore_dict",
+            "ore": "leatherLegendary"
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 5
+        },
+        "h": {
+            "item": "minestrapp:hang_glider_wood"
+        },
+        "f": {
+            "item": "minestrapp:m_tech_component",
+            "data": 11
+        },
+        "s": {
+            "item": "minestrapp:stasis_field"
+        },
+        "e": {
+            "item": "minestrapp:effervexcense"
+        }
+     },
+     "result": {
+        "item": "minestrapp:hang_glider_dimensium"
+     }  
+}

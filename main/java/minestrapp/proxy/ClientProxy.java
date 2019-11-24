@@ -32,6 +32,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -76,6 +77,11 @@ public class ClientProxy extends CommonProxy
 			return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
 		};
 		
+		final IBlockColor mFoliageColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
+		{
+			return worldIn != null && pos != null ? BiomeColorHelper.getFoliageColorAtPos(worldIn, pos) : ColorizerFoliage.getFoliageColor(0.5D, 1.0D);
+		};
+		
 		final IBlockColor sandyRedstoneColorHandler = (IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) -> 
 		{
 			return BlockBiomeRedstoneWire.colorMultiplier(worldIn.getBlockState(pos).getValue(BlockBiomeRedstoneWire.POWER).intValue(), MBlocks.redstone_sandy);
@@ -97,6 +103,7 @@ public class ClientProxy extends CommonProxy
 		};
 		
 		blockcolors.registerBlockColorHandler(mGrassColorHandler, MBlocks.clay_grass);
+		blockcolors.registerBlockColorHandler(mFoliageColorHandler, MBlocks.leaves);
 		blockcolors.registerBlockColorHandler(sandyRedstoneColorHandler, MBlocks.redstone_sandy);
 		blockcolors.registerBlockColorHandler(frostedRedstoneColorHandler, MBlocks.redstone_frosted);
 		blockcolors.registerBlockColorHandler(icyRedstoneColorHandler, MBlocks.redstone_icy);

@@ -27,6 +27,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -154,12 +155,18 @@ public class BlockGlaciericIceDeposit extends BlockBase
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if(!worldIn.isRemote && playerIn.getHeldItem(hand).getItem() == Items.SNOWBALL)
-        {
-        	if(worldIn.rand.nextInt(5) == 1)
-        		this.updateTick(worldIn, pos, state, worldIn.rand);
-        	return true;
-        }
+    	if(playerIn.getHeldItem(hand).getItem() == Items.SNOWBALL)
+    	{
+    		spawnParticles(worldIn, pos, worldIn.rand);
+    		
+    		if(!worldIn.isRemote)
+	        {
+	        	if(worldIn.rand.nextInt(5) == 1)
+	        		this.updateTick(worldIn, pos, state, worldIn.rand);
+	        	return true;
+	        }
+    	}
+        
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
     }
     
@@ -295,4 +302,12 @@ public class BlockGlaciericIceDeposit extends BlockBase
     		worldIn.setBlockState(pos, MBlocks.glacieric_ice_branch_0.getDefaultState().withProperty(BlockGlaciericIceBranch.FACING, facing));
     	}
     }
+    
+	public void spawnParticles (World worldIn, BlockPos pos, Random rand)
+	{
+    	for(int i = 0; i < 20 ; i++)
+		{
+			worldIn.spawnParticle(EnumParticleTypes.SNOW_SHOVEL, pos.getX() + rand.nextDouble(), pos.getY() + 1D, pos.getZ() + rand.nextDouble(), 0.5D - rand.nextDouble(), rand.nextDouble(), 0.5D - rand.nextDouble(), null);
+		}
+	}
 }

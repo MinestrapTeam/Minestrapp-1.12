@@ -40,6 +40,12 @@ public class TannerRecipes {
 		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 6), new ItemStack(MItems.leather, 1, 15), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
 		this.addRecipe(new ItemStack(MItems.flesh), new ItemStack(MItems.leather, 1, 5), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
 		this.addRecipe(new ItemStack(Items.ROTTEN_FLESH), new ItemStack(MItems.leather, 1, 6), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 9), new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 11), new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.salt), 30, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.salt), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 6), new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.smelling_salts), 45, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.smelling_salts), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 9), new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.smelling_salts), 45, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.smelling_salts), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 10), new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.smelling_salts), 45, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.smelling_salts), 0);
+		this.addRecipe(new ItemStack(MItems.mob_loot, 1, 11), new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.smelling_salts), 45, true, SoundEvents.BLOCK_SAND_BREAK, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.smelling_salts), 0);
 		
 		//Scudding
 		this.addRecipe(new ItemStack(MItems.leather, 1, 0), new ItemStack(MItems.leather, 1, 7), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather), 0);
@@ -90,6 +96,42 @@ public class TannerRecipes {
 		this.addRecipe(new ItemStack(MItems.leather, 1, 15), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather), 15);
 		this.addRecipe(new ItemStack(MItems.leather, 1, 15), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather), 15);
 		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.leather, 1, 7), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 0);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.leather, 1, 8), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 0);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.leather, 1, 9), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 0);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 0);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 0), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 0);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 1);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 1);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 1);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 1);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 1), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 1);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 2);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 2);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 2);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 2);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 2), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 2);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.leather, 1, 8), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 3);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.leather, 1, 9), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 3);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 3);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 3);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 3), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 3);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.leather, 1, 9), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 4);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 4);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 4);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 4);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 4), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 4);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.wooden_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 5);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.stone_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 5);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.iron_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 5);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.diamond_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 5);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 5), new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.titanium_dagger), 0, false, SoundEvents.ENTITY_ARMORSTAND_HIT, EnumParticleTypes.ITEM_CRACK, false, Item.getIdFromItem(MItems.leather2), 5);
+		
 		//Tanning
 		this.addRecipe(new ItemStack(MItems.leather, 1, 7), new ItemStack(MItems.leather, 1, 11), new ItemStack(MItems.tannic, 1, 0), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
 		this.addRecipe(new ItemStack(MItems.leather, 1, 7), new ItemStack(MItems.leather, 1, 11), new ItemStack(MItems.tannic, 1, 1), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
@@ -106,6 +148,18 @@ public class TannerRecipes {
 		this.addRecipe(new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.leather, 1, 13), new ItemStack(MItems.tannic, 1, 0), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
 		this.addRecipe(new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.leather, 1, 14), new ItemStack(MItems.tannic, 1, 1), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
 		this.addRecipe(new ItemStack(MItems.leather, 1, 10), new ItemStack(MItems.leather, 1, 14), new ItemStack(MItems.tannic, 1, 2), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.leather, 1, 12), new ItemStack(MItems.tannic, 1, 0), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.leather, 1, 13), new ItemStack(MItems.tannic, 1, 1), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.leather, 1, 14), new ItemStack(MItems.tannic, 1, 2), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.leather2, 1, 8), new ItemStack(MItems.void_jam), 75, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 6), new ItemStack(MItems.leather2, 1, 9), new ItemStack(MBlocks.glow_paste), 75, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.leather, 1, 13), new ItemStack(MItems.tannic, 1, 0), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.leather, 1, 14), new ItemStack(MItems.tannic, 1, 1), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.leather2, 1, 8), new ItemStack(MItems.tannic, 1, 2), 60, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.leather2, 1, 9), new ItemStack(MItems.void_jam), 75, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
+		this.addRecipe(new ItemStack(MItems.leather2, 1, 7), new ItemStack(MItems.leather2, 1, 9), new ItemStack(MBlocks.glow_paste), 75, true, SoundEvents.BLOCK_BREWING_STAND_BREW, EnumParticleTypes.DRIP_WATER, true, null);
 	}
 	
 	

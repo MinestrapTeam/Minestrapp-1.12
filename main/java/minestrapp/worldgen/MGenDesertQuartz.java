@@ -120,6 +120,9 @@ public class MGenDesertQuartz extends WorldGenerator
 						}
 		            }
 				}
+				
+				MGenRockCrystal crystalGen = new MGenRockCrystal(maxHeight / 2);
+				crystalGen.generate(world, rand, pos);
 			}
 		}
 		

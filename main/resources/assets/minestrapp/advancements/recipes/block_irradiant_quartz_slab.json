@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_irradiant_quartz_slab"
+    ]
+  },
+  "criteria": {
+    "has_irradiant_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:irradiant_quartz"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_irradiant_quartz_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_irradiant_quartz",
+      "has_the_recipe"
+    ]
+  ]
+}

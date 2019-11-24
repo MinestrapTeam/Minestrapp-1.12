@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minestrapp:voidberry"
+            "item": "minestrapp:mite_honey"
         },
         {
             "item": "minestrapp:voidberry"

@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:snowball"
+        },
+        {
+            "item": "minestrapp:m_stone_bricks",
+            "data": 5
+        }              
+    ],
+    "result": {
+        "item": "minestrapp:m_stone_bricks_mossy",
+        "data": 5
+    }   
+}

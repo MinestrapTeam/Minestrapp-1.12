@@ -1,0 +1,16 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:snowball"
+        },
+        {
+            "item": "minestrapp:m_cobblestone",
+            "data": 5
+        }              
+    ],
+    "result": {
+        "item": "minestrapp:m_mossy_cobblestone",
+        "data": 5
+    }   
+}

@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_rock crystals": {
+    "has_rock_crystals": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

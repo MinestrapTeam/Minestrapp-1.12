@@ -166,7 +166,9 @@ public abstract class BlockMiscStoneSlab2 extends BlockSlab implements IMetaBloc
     
     public static enum EnumType implements IStringSerializable
     {
-        SHIMMERSTONE_BRICKS(0, MapColor.SNOW, "shimmerstone_bricks", false);
+        SHIMMERSTONE_BRICKS(0, MapColor.SNOW, "shimmerstone_bricks", false),
+        DESERT_QUARTZ(1, MapColor.SILVER_STAINED_HARDENED_CLAY, "desert_quartz", false),
+    	IRRADIANT_QUARTZ(2, MapColor.PINK, "irradiant_quartz", false);
 
         private static final BlockMiscStoneSlab2.EnumType[] META_LOOKUP = new BlockMiscStoneSlab2.EnumType[values().length];
         private final int meta;

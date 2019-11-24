@@ -1,0 +1,18 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:irradiant_quartz",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:irradiant_quartz",
+        "count": 2,
+        "data": 2
+     }  
+}

@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        "mmm",
+        "ggg"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:m_chunks",
+            "data": 0
+        },
+        "m": {
+            "item": "minecraft:clay_ball"
+        },
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "sandNormal"
+        }
+     },
+     "result": {
+        "item": "minestrapp:red_rock_road",
+        "count": 3
+     }  
+}

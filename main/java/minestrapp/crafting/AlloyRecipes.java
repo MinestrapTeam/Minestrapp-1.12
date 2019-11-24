@@ -99,6 +99,7 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(Items.SPECKLED_MELON, 4), new ItemStack(MItems.candy_red), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MItems.natural_ingredients, 4, 1), new ItemStack(MItems.candy_blue), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MBlocks.hanging_glow_moss, 4), new ItemStack(MItems.candy_yellow), 0.8F);
+		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 4), new ItemStack(Blocks.PUMPKIN), new ItemStack(Blocks.LIT_PUMPKIN), 0.35F);
 	}
 	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {
 		this.alloySmelting.put(input1, input2, result);

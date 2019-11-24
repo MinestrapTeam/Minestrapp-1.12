@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import minestrapp.MBlocks;
 import minestrapp.block.BlockPipe;
 import minestrapp.container.ContainerActivator;
 import minestrapp.container.ContainerCrate;
 import minestrapp.container.ContainerPipe;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -124,5 +126,11 @@ public class TileEntityActivator extends TileEntityLockableLoot
 	protected NonNullList<ItemStack> getItems()
 	{
 		return this.activatorContents;
+	}
+	
+	@Override
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState)
+	{
+		return oldState.getBlock() == MBlocks.activator && newState.getBlock() == MBlocks.activator ? false : true;
 	}
 }

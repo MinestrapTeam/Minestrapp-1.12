@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        "mmm",
+        "ggg"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:m_chunks",
+            "data": 3
+        },
+        "m": {
+            "item": "minecraft:snowball"
+        },
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "sandCold"
+        }
+     },
+     "result": {
+        "item": "minestrapp:icestone_road",
+        "count": 3
+     }  
+}

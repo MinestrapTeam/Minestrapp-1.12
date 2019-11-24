@@ -84,6 +84,17 @@ public class BlockJackOLanternSmashed extends BlockJackOLantern
 		return new ItemStack(Item.getItemFromBlock(this.base), 1, 0);
 	}
 	
+	public boolean isLit()
+    {
+    	return this.type != "unlit";
+    }
+    
+    public Block getUnlit() {return this.base;}
+    
+    public Block getFire() {return this.fire;}
+    
+    public Block getEnder() {return this.ender;}
+	
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
 		ItemStack itemstack = playerIn.getHeldItem(hand);

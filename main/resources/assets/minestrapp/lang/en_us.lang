@@ -19,6 +19,8 @@ tile.blackberry_bush.name=Blackberry Bush
 tile.raspberry_bush.name=Raspberry Bush
 tile.strawberry_bush.name=Strawberry Bush
 tile.mana_bush.name=Mana Bush
+tile.m_leaves_redwood.name=Redwood Leaves
+tile.m_leaves_frozen_oak.name=Frozen Oak Leaves
 tile.clutchthorn.name=Clutchthorn
 tile.voidberry_bush.name=Voidberry Bush
 tile.terracreep.name=Terracreep Spore
@@ -840,6 +842,9 @@ item.m_mob_loot_5.name=Wolf Hide
 item.m_mob_loot_6.name=Polar Bear Pelt
 item.m_mob_loot_7.name=Sheep Hoof
 item.m_mob_loot_8.name=Spider Leg
+item.m_mob_loot_9.name=Mooshroom Hide
+item.m_mob_loot_10.name=Creeper Carapace
+item.m_mob_loot_11.name=Ghast Hide
 item.effervexcense.name=Effervexcense
 
 ## Leather ##
@@ -859,6 +864,16 @@ item.m_leather_12.name=Suede
 item.m_leather_13.name=Leather
 item.m_leather_14.name=Fine Leather
 item.m_leather_15.name=Cured Polar Bear Pelt
+item.m_leather2_0.name=Cured Mooshroom Hide
+item.m_leather2_1.name=Cured Ghast Hide
+item.m_leather2_2.name=Mana-Cured Polar Bear Pelt
+item.m_leather2_3.name=Mana-Cured Mooshroom Hide
+item.m_leather2_4.name=Mana-Cured Creeper Carapace
+item.m_leather2_5.name=Mana-Cured Ghast Hide
+item.m_leather2_6.name=Mystic Scudded Hide
+item.m_leather2_7.name=Legendary Scudded Hide
+item.m_leather2_8.name=Mystic Leather
+item.m_leather2_9.name=Legendary Leather
 
 ## Tannic ##
 item.tannic_0.name=Poor Tannic
@@ -917,6 +932,7 @@ item.archantine_sieve_broken.name=Broken Archantine Mining Sieve
 item.adamantium_sieve.name=Adamantium Mining Sieve
 item.hang_glider_wood.name=Wooden Hang Glider
 item.hang_glider_steel.name=Reinforced Hang Glider
+item.hang_glider_dimensium.name=Axial Hang Glider
 
 ## Armor ##
 item.tin_helm.name=Tin Helmet
@@ -1152,6 +1168,7 @@ fluid.crystalfloe=Crystalfloe
 entity.SheetGhost.name=Sheet Ghost
 entity.LumpGoat.name=Lump Goat
 entity.Burfalaunt.name=Burfalaunt
+entity.TheInfected.name=Infected Zombie
 
 ##### Creative Tabs #####
 

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_icestone_chunk_from_block"
+    ]
+  },
+  "criteria": {
+    "has_cobblestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_cobblestone",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_icestone_chunk_from_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cobblestone",
+      "has_the_recipe"
+    ]
+  ]
+}

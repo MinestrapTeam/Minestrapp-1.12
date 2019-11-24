@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        "rrq",
+        "ccc"
+    ],
+    "key": {        
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "dustRedstone"
+        },
+        "q": {
+            "type": "forge:ore_dict",
+            "ore": "gemQuartz"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "cobblestone"
+        }
+     },
+     "result": {
+        "item": "minecraft:observer"
+     }  
+}

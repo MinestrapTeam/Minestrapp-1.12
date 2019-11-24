@@ -14,7 +14,8 @@
             "item": "minestrapp:glowshroom_stew"
         },
         {
-            "item": "minestrapp:mite_honey"
+            "type": "forge:ore_dict",
+            "ore": "gemCrystal"
         },
         {
             "type": "forge:ore_dict",

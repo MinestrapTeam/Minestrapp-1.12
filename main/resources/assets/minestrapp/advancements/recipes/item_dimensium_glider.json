@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_dimensium_glider"
+    ]
+  },
+  "criteria": {
+    "has_stasis_field": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:stasis_field"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_dimensium_glider"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stasis_field",
+      "has_the_recipe"
+    ]
+  ]
+}

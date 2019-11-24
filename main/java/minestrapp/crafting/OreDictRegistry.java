@@ -14,6 +14,8 @@ public class OreDictRegistry
 		OreDictionary.registerOre("glowMoss", MBlocks.hanging_glow_moss);
 		OreDictionary.registerOre("candle", new ItemStack(MBlocks.candle, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("sand", new ItemStack(MBlocks.cold_sand, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("sandNormal", new ItemStack(Blocks.SAND, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("sandCold", new ItemStack(MBlocks.cold_sand, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("dirt", MBlocks.clay_soil);
 		OreDictionary.registerOre("grass", MBlocks.clay_grass);
 		OreDictionary.registerOre("dirt", MBlocks.permafrost);
@@ -27,6 +29,10 @@ public class OreDictRegistry
 		OreDictionary.registerOre("soilDry", MBlocks.dried_mud);
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.mossy_m_planks, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("slabWood", new ItemStack(MBlocks.wood_slab_1, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("stairWood", new ItemStack(MBlocks.redwood_plank_stairs, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("stairWood", new ItemStack(MBlocks.frozen_oak_plank_stairs, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("stairWood", new ItemStack(MBlocks.charwood_plank_stairs, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("stone", new ItemStack(MBlocks.stone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("cobblestone", new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("cobblestoneDeep", new ItemStack(MBlocks.cobblestone, 1, 1));
@@ -59,6 +65,10 @@ public class OreDictRegistry
 		OreDictionary.registerOre("blockSunstone", MBlocks.block_sunstone);
 		OreDictionary.registerOre("blockSalt", MBlocks.block_salt);
 		OreDictionary.registerOre("blockRockCrystal", MBlocks.block_rock_crystal);
+		OreDictionary.registerOre("blockQuartz", MBlocks.desert_quartz);
+		OreDictionary.registerOre("blockQuartz", MBlocks.irradiant_quartz);
+		OreDictionary.registerOre("blockDesertQuartz", new ItemStack(MBlocks.desert_quartz, 1, OreDictionary.WILDCARD_VALUE));
+		OreDictionary.registerOre("blockIrradiantQuartz", new ItemStack(MBlocks.irradiant_quartz, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("blockCopper", MBlocks.block_copper);
 		OreDictionary.registerOre("blockTin", MBlocks.block_tin);
 		OreDictionary.registerOre("blockBronze", MBlocks.block_bronze);
@@ -148,12 +158,24 @@ public class OreDictRegistry
 		OreDictionary.registerOre("leatherBotched", new ItemStack(MItems.leather, 1, 12));
 		OreDictionary.registerOre("leatherBotched", new ItemStack(MItems.leather, 1, 13));
 		OreDictionary.registerOre("leatherBotched", new ItemStack(MItems.leather, 1, 14));
+		OreDictionary.registerOre("leatherBotched", new ItemStack(MItems.leather2, 1, 8));
+		OreDictionary.registerOre("leatherBotched", new ItemStack(MItems.leather2, 1, 9));
 		OreDictionary.registerOre("leatherSuede", new ItemStack(MItems.leather, 1, 12));
 		OreDictionary.registerOre("leatherSuede", new ItemStack(MItems.leather, 1, 13));
 		OreDictionary.registerOre("leatherSuede", new ItemStack(MItems.leather, 1, 14));
+		OreDictionary.registerOre("leatherSuede", new ItemStack(MItems.leather2, 1, 8));
+		OreDictionary.registerOre("leatherSuede", new ItemStack(MItems.leather2, 1, 9));
 		OreDictionary.registerOre("leatherNormal", new ItemStack(MItems.leather, 1, 13));
 		OreDictionary.registerOre("leatherNormal", new ItemStack(MItems.leather, 1, 14));
+		OreDictionary.registerOre("leatherNormal", new ItemStack(MItems.leather2, 1, 8));
+		OreDictionary.registerOre("leatherNormal", new ItemStack(MItems.leather2, 1, 9));
 		OreDictionary.registerOre("leatherFine", new ItemStack(MItems.leather, 1, 14));
+		OreDictionary.registerOre("leatherFine", new ItemStack(MItems.leather2, 1, 8));
+		OreDictionary.registerOre("leatherFine", new ItemStack(MItems.leather2, 1, 9));
+		OreDictionary.registerOre("leatherMystic", new ItemStack(MItems.leather2, 1, 8));
+		OreDictionary.registerOre("leatherMystic", new ItemStack(MItems.leather2, 1, 9));
+		OreDictionary.registerOre("leatherLegendary", new ItemStack(MItems.leather2, 1, 9));
+		
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.CARROT));
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.MELON));
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.WHEAT));

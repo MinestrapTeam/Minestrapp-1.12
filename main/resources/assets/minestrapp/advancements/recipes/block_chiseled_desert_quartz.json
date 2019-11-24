@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_chiseled_desert_quartz"
+    ]
+  },
+  "criteria": {
+    "has_desert_quartz_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_misc_stone_slab_2",
+            "data": 1
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_chiseled_desert_quartz"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_desert_quartz_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

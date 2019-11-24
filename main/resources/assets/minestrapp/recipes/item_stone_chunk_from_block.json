@@ -1,0 +1,13 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:cobblestone"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_chunks",
+        "count": 4,
+        "data": 1
+     }  
+}

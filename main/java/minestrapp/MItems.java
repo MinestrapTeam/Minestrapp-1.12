@@ -68,6 +68,7 @@ public class MItems
 	public static Item mob_loot;
 	public static Item effervexcense;
 	public static Item leather;
+	public static Item leather2;
 	public static Item tannic;
 	
 	public static Item mud_ball;
@@ -82,7 +83,6 @@ public class MItems
 	
 	public static Item bricks;
 	public static Item tech_components;
-	public static Item glow_paste;
 	public static Item heart_piece;
 	public static Item heart_container;
 	
@@ -353,11 +353,13 @@ public class MItems
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
-		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg
-		register(mob_loot = new ItemMetaBase("m_mob_loot", 9).setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 12).setCreativeTab(MTabs.ingredients));
 		register(effervexcense = new ItemBase("effervexcense").setCreativeTab(MTabs.ingredients));
 		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
 		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
+		//0=Cured Mooshroom Hide, 1=Cured Ghast Hide, 2=Mana Cured Polar Bear Hide 3=Mana Cured Mooshroom Hide, 4=Mana Cured Creeper Carapace, 5=Mana Cured Ghast Hide, 6=Mystic Scudded Hide, 7=Legendary Scudded Hide, 8=Mystic Leather, 9=Legendary Leather
+		register(leather2 = new ItemMetaBase("m_leather2", 10).setCreativeTab(MTabs.ingredients));
 		//0=Poor Tannic, 1=Tannic, 2=Fine Tannic 3=Tanning Solution
 		register(tannic = new ItemTannic().setAlwaysEdible().setCreativeTab(MTabs.ingredients));
 		
@@ -400,7 +402,8 @@ public class MItems
 		register(sieve_adamantium = new ItemSieve("adamantium_sieve").setCreativeTab(MTabs.tools));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
-
+		register(hang_glider_dimensium = new ItemHangGlider("hang_glider_dimensium", 500, -0.5D, 0D, 1D, 1D).setCreativeTab(MTabs.tools));
+		
 		register(copper_pickaxe = new MPickaxe(COPPER, "copper_pickaxe"));
 		register(copper_axe = new MAxe(COPPER, "copper_axe", 8.0F, -3.15F));
 		register(copper_shovel = new MShovel(COPPER, "copper_shovel"));

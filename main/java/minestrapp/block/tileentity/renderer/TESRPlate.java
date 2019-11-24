@@ -24,16 +24,16 @@ public class TESRPlate extends TileEntitySpecialRenderer<TileEntityPlate>
 		
 		GL11.glPushMatrix();
 		if(te.angle == 0){
-			GlStateManager.translate(x+.5, y + height,  z);
+			GlStateManager.translate(x+.5, y + height + 0.0125,  z);
 		}
 		if(te.angle == 90){
-			GlStateManager.translate(x+1, y + height,  z+0.5);
+			GlStateManager.translate(x+1, y + height + 0.0125,  z+0.5);
 		}
 		if(te.angle == 180){
-			GlStateManager.translate(x+.5, y + height,  z+1);
+			GlStateManager.translate(x+.5, y + height + 0.0125,  z+1);
 		}
 		if(te.angle == 270){
-			GlStateManager.translate(x, y + height,  z+0.5);
+			GlStateManager.translate(x, y + height + 0.0125,  z+0.5);
 		}
 		
 		GlStateManager.rotate(90, 1, 0, 0);

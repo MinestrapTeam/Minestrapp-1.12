@@ -147,6 +147,10 @@ public class MEventHandler
 	    	ResourceLocation itemFrame = new ResourceLocation("minecraft:item_frame");
 	    	ResourceLocation book = new ResourceLocation("minecraft:book");
 	    	ResourceLocation iron_bars = new ResourceLocation("minecraft:iron_bars");
+	    	ResourceLocation comparator = new ResourceLocation("minecraft:comparator");
+	    	ResourceLocation observer = new ResourceLocation("minecraft:observer");
+	    	ResourceLocation cake = new ResourceLocation("minecraft:cake");
+	    	ResourceLocation leather = new ResourceLocation("minecraft:leather");
 	
 	    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 	        
@@ -178,6 +182,10 @@ public class MEventHandler
 	        modRegistry.remove(itemFrame);
 	        modRegistry.remove(book);
 	        modRegistry.remove(iron_bars);
+	        modRegistry.remove(comparator);
+	        modRegistry.remove(observer);
+	        modRegistry.remove(cake);
+	        modRegistry.remove(leather);
 		}
     }
 	
@@ -221,6 +229,10 @@ public class MEventHandler
 	{
 		EntityLivingBase living = event.getEntityLiving();
 		
+			if(living.getHeldItemMainhand().getItem() == MItems.hang_glider_dimensium || living.getHeldItemOffhand().getItem() == MItems.hang_glider_dimensium)
+			{
+				living.motionY = 0;
+			}
 			if(EntityUtil.isWearingArmor(event.getEntityLiving(), MItems.torite_helm, MItems.torite_chest, MItems.torite_legs, MItems.torite_feet))
 			{
 				if(living.getActivePotionEffect(MobEffects.REGENERATION) == null)

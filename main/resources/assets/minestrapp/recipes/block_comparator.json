@@ -1,0 +1,24 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " r ",
+        "rqr",
+        "sss"
+    ],
+    "key": {        
+        "r": {
+            "item": "minecraft:redstone_torch"
+        },
+        "q": {
+            "type": "forge:ore_dict",
+            "ore": "gemQuartz"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "stone"
+        }
+     },
+     "result": {
+        "item": "minecraft:comparator"
+     }  
+}

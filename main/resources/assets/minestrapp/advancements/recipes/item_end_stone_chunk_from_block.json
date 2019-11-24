@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_end_stone_chunk_from_block"
+    ]
+  },
+  "criteria": {
+    "has_cobblestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:end_stone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_end_stone_chunk_from_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cobblestone",
+      "has_the_recipe"
+    ]
+  ]
+}

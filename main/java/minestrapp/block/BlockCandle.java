@@ -60,6 +60,8 @@ public class BlockCandle extends BlockBase implements IMetaBlockName
 			this.setDropsItem(new ItemStack(MBlocks.candle), 0, 0, 0, false, false);
 	}
 	
+	public boolean isLit() {return this.type != "unlit";}
+	
 	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
 		return AABB_CANDLE;

@@ -61,6 +61,8 @@ public class BlockBerryBush extends BlockBush implements IGrowable
 		return this;
 	}
 	
+	public ItemStack getDrop() {return this.dropStack.copy();}
+	
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {

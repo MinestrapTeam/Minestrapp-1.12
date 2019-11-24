@@ -369,6 +369,17 @@ public class BlockJackOLantern extends BlockBase implements IMetaBlockName
     {
         return this.getSnowmanBasePattern().match(worldIn, pos) != null || this.getGolemBasePattern().match(worldIn, pos) != null;
     }
+    
+    public boolean isLit()
+    {
+    	return this.type != "unlit";
+    }
+    
+    public Block getUnlit() {return this.base;}
+    
+    public Block getFire() {return this.fire;}
+    
+    public Block getEnder() {return this.ender;}
 
     private void trySpawnGolem(World worldIn, BlockPos pos)
     {

@@ -10,6 +10,7 @@ import com.google.common.collect.Maps;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.block.EnumStoneTypeMOnly;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
@@ -61,6 +62,10 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.blue_glowshroom_block), new ItemStack(MBlocks.blue_glowshroom), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.green_glowshroom_block), new ItemStack(MBlocks.green_glowshroom), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.purple_glowshroom_block), new ItemStack(MBlocks.purple_glowshroom), null, 0, 0.05F);
+		for(int i = 0 ; i < BlockPlanks.EnumType.values().length ; i++)
+		{
+			this.addCrusherRecipe(new ItemStack(Blocks.SAPLING, 1, i), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
+		}
 		this.addCrusherRecipe(new ItemStack(MBlocks.blueberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.strawberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.blackberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
@@ -120,6 +125,12 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 0), new ItemStack(Blocks.SAND, 1, 1), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 1), new ItemStack(Blocks.RED_SANDSTONE, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 2), new ItemStack(Blocks.RED_SANDSTONE, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 0), new ItemStack(MItems.gems, 3, 1), new ItemStack(MItems.gems, 1, 1), 70, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 1), new ItemStack(MBlocks.desert_quartz, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 2), new ItemStack(MBlocks.desert_quartz, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.irradiant_quartz, 1, 0), new ItemStack(MItems.gems, 3, 3), new ItemStack(MItems.gems, 1, 3), 70, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.irradiant_quartz, 1, 1), new ItemStack(MBlocks.irradiant_quartz, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.irradiant_quartz, 1, 2), new ItemStack(MBlocks.irradiant_quartz, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(Items.BRICK, 3), new ItemStack(Items.BRICK), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 1), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(MItems.gems, 1, 1), 12, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 2), new ItemStack(Blocks.STONE, 1, 1), null, 0, 0.05F);
@@ -133,6 +144,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 3), new ItemStack(Blocks.STONE, 1, 3), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 4), new ItemStack(Blocks.STONE, 1, 5), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 5), new ItemStack(Blocks.STONE, 1, 5), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 6), new ItemStack(Blocks.CLAY), new ItemStack(MItems.gems, 1, 1), 3, 0.05F);
 		for(int i = 0 ; i < 3 ; i++)
 		{
 			this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 7 + i), new ItemStack(MBlocks.decor_stone, 1, 6), null, 0, 0.05F);
@@ -195,6 +207,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.NETHER_BRICK), new ItemStack(Blocks.NETHERRACK), new ItemStack(MItems.chunks, 1, 5), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_NETHER_BRICK), new ItemStack(Blocks.NETHERRACK), new ItemStack(MItems.chunks, 1, 5), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.MAGMA), new ItemStack(Items.MAGMA_CREAM, 2), new ItemStack(MItems.chunks, 1, 5), 30, 0.12F);
+		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), new ItemStack(Items.QUARTZ, 3), new ItemStack(Items.QUARTZ), 70, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 1), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 2), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.soul_glass, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SOUL_SAND), new ItemStack(MItems.gems, 1, 1), 20, 0.05F);

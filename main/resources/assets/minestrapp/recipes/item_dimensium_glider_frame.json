@@ -15,8 +15,7 @@
             "data": 10
         },
         "s": {
-            "item": "minestrapp:m_bricks",
-            "data": 1
+            "item": "minecraft:nether_star"
         },
         "p": {
             "type": "forge:ore_dict",

@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ccc",
+        "mmm",
+        "ggg"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:m_chunks",
+            "data": 6
+        },
+        "m": {
+            "item": "minestrapp:mite_honey"
+        },
+        "g": {
+            "item": "minestrapp:portal_dust",
+            "data": 1
+        }
+     },
+     "result": {
+        "item": "minestrapp:end_stone_road",
+        "count": 3
+     }  
+}

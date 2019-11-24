@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "check_decay=false,decayable=false,variant=redwood": [
+            { "model": "minestrapp:redwood_leaves" }
+        ],
+        "check_decay=false,decayable=true,variant=redwood": [
+            { "model": "minestrapp:redwood_leaves" }
+        ],
+        "check_decay=true,decayable=false,variant=redwood": [
+            { "model": "minestrapp:redwood_leaves" }
+        ],
+        "check_decay=true,decayable=true,variant=redwood": [
+            { "model": "minestrapp:redwood_leaves" }
+        ],
+        "check_decay=false,decayable=false,variant=frozen_oak": [
+            { "model": "minestrapp:frozen_oak_leaves" }
+        ],
+        "check_decay=false,decayable=true,variant=frozen_oak": [
+            { "model": "minestrapp:frozen_oak_leaves" }
+        ],
+        "check_decay=true,decayable=false,variant=frozen_oak": [
+            { "model": "minestrapp:frozen_oak_leaves" }
+        ],
+        "check_decay=true,decayable=true,variant=frozen_oak": [
+            { "model": "minestrapp:frozen_oak_leaves" }
+        ]
+    }
+}

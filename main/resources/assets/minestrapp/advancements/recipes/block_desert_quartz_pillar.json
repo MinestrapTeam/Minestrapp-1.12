@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_desert_quartz_pillar"
+    ]
+  },
+  "criteria": {
+    "has_desert_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:desert_quartz"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_desert_quartz_pillar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_desert_quartz",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "blockDesertQuartz"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_desert_quartz_polished",
+        "count": 6
+     }  
+}
