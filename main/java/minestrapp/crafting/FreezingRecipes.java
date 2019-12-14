@@ -154,6 +154,8 @@ public class FreezingRecipes
 		this.addLightFreezingRecipe(new ItemStack(Blocks.ICE), new ItemStack(Blocks.PACKED_ICE));
 		this.addLightFreezingRecipe(new ItemStack(Blocks.SAND, 1, 0), new ItemStack(MBlocks.cold_sand, 1, 0));
 		this.addLightFreezingRecipe(new ItemStack(Blocks.SAND, 1, 1), new ItemStack(MBlocks.cold_sand, 1, 1));
+		this.addLightFreezingRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 1), new ItemStack(MBlocks.desert_quartz_deposit, 1, 3));
+		this.addLightFreezingRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 2), new ItemStack(MBlocks.desert_quartz_deposit, 1, 4));
 		this.addLightFreezingRecipe(new ItemStack(Blocks.SNOW_LAYER, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SNOW));
 		this.addLightFreezingRecipe(new ItemStack(Blocks.SNOW), new ItemStack(Blocks.ICE));
 		this.addLightFreezingRecipe(new ItemStack(Blocks.MAGMA), new ItemStack(MBlocks.stone, 1, 1));

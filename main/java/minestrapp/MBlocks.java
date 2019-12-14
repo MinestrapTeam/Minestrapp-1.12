@@ -267,6 +267,7 @@ public class MBlocks
 	public static Block ore_dimensium;
 	public static Block geode_shimmerstone_clear;
 	public static Block geode_shimmerstone_dark;
+	public static Block heart_spot;
 	
 	//Resource
 	public static Block block_salt;
@@ -686,6 +687,7 @@ public class MBlocks
 		register(ore_dimensium = new BlockBase("ore_dimensium", Material.ROCK, MapColor.SAND, SoundType.STONE, 6.0F, "pickaxe", 4).setEntityInvulnerability("dragon").setLightLevel(0.5F).setCreativeTab(MTabs.ore));
 		register(geode_shimmerstone_clear = new BlockGeode("geode_shimmerstone_clear", Material.ROCK, MapColor.SNOW, SoundType.STONE, 20F, "pickaxe", 4).setLightLevel(0.7F).setCreativeTab(MTabs.ore));
 		register(geode_shimmerstone_dark = new BlockGeode("geode_shimmerstone_dark", Material.ROCK, MapColor.SNOW, SoundType.STONE, 20F, "pickaxe", 4).setLightLevel(0.7F).setCreativeTab(MTabs.ore));
+		register(heart_spot = new BlockHeartSpot());
 		
 		//Resource
 		register(block_salt = new BlockBase("block_salt", Material.ROCK, MapColor.WHITE_STAINED_HARDENED_CLAY, SoundType.STONE, 4F, "pickaxe", 0).setResistance(10F).setCreativeTab(MTabs.resource));

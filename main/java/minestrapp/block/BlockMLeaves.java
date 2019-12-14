@@ -62,7 +62,7 @@ public class BlockMLeaves extends BlockBaseNonSolid implements IShearable, IMeta
     {
         super("m_leaves", Material.LEAVES, MapColor.FOLIAGE, SoundType.PLANT, 0.2F);
         this.setTickRandomly(true);
-        this.setCreativeTab(MTabs.plant);
+        //this.setCreativeTab(MTabs.plant);
         this.setLightOpacity(1);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockMPlanks.EnumType.REDWOOD).withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
     }

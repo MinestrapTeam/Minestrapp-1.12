@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "ctc",
+        "tdt",
+        "ctc"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:m_tech_component",
+            "data": 3
+        },
+        "t": {
+            "item": "minestrapp:m_tech_component",
+            "data": 4
+        },
+        "d": {
+            "type": "forge:ore_dict",
+            "ore": "gemDiamond"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 5
+     }  
+}

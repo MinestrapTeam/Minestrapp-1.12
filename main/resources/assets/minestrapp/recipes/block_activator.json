@@ -1,0 +1,29 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "bab",
+        "lpl",
+        "bdb"
+    ],
+    "key": {        
+        "b": {
+            "item": "minecraft:bedrock"
+        },
+        "a": {
+            "item": "minestrapp:reanimated_arm"
+        },
+        "p": {
+            "item": "minecraft:piston"
+        },
+        "l": {
+            "type": "forge:ore_dict",
+            "ore": "leatherMystic"
+        },
+        "d": {
+            "item": "minecraft:dispenser"
+        }
+     },
+     "result": {
+        "item": "minestrapp:activator"
+     }  
+}

@@ -1,0 +1,40 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " h ",
+        "rib",
+        "sgd"
+    ],
+    "key": {        
+        "h": {
+            "item": "minestrapp:m_mob_loot",
+            "data": 12
+        },
+        "r": {
+            "item": "minestrapp:m_tech_component",
+            "data": 8
+        },
+        "g": {
+            "item": "minestrapp:m_tech_component",
+            "data": 9
+        },
+        "b": {
+            "item": "minestrapp:m_tech_component",
+            "data": 10
+        },
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "bone"
+        },
+        "s": {
+            "item": "minestrapp:rope"
+        },
+        "d": {
+            "item": "minestrapp:m_tech_component",
+            "data": 5
+        }
+     },
+     "result": {
+        "item": "minestrapp:reanimated_arm"
+     }  
+}

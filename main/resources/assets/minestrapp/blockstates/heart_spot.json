@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:heart_spot" }
+        ]
+    }
+}

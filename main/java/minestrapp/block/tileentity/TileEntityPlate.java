@@ -1,5 +1,8 @@
 package minestrapp.block.tileentity;
 
+import com.jcraft.jorbis.Block;
+
+import minestrapp.MItems;
 import minestrapp.block.BlockPlate;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,6 +10,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -22,8 +26,15 @@ public class TileEntityPlate extends TileEntity{
 	private int height;
 	public int angle;
 	
-	public boolean tryToAddItem(ItemStack item) {
-		if(this.inventory.get(0).isEmpty()) {
+	public boolean isEmpty()
+	{
+		return this.inventory.get(0).isEmpty() || this.inventory.get(0).getItem() == MItems.nothing;
+	}
+	
+	public boolean tryToAddItem(ItemStack item)
+	{
+		if(this.isEmpty())
+		{
 			ItemStack temp = item.copy();
 			temp.setCount(1);
 			this.inventory.set(0,temp);
@@ -45,7 +56,7 @@ public class TileEntityPlate extends TileEntity{
 	}
 	
 	public void takeItem() {
-		if(!this.getWorld().isRemote && !this.inventory.get(0).isEmpty()) {
+		if(!this.getWorld().isRemote && !this.isEmpty()) {
 			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + 0.5D, this.getPos().getY() + 0.5D, this.getPos().getZ() + 0.5D, this.inventory.get(0)));
 		}
 		this.inventory.set(0, ItemStack.EMPTY);
@@ -55,7 +66,7 @@ public class TileEntityPlate extends TileEntity{
 	
 	public void eatOffPlate(EntityPlayer player) {
 		ItemStack stack = this.inventory.get(0);
-		if(!stack.isEmpty() && stack.getItem() instanceof ItemFood) {
+		if(!this.isEmpty() && stack.getItem() instanceof ItemFood) {
 			ItemFood food = (ItemFood)stack.getItem();
 			player.getFoodStats().addStats(food, stack);
 			this.inventory.set(0, ItemStack.EMPTY);
@@ -111,23 +122,21 @@ public class TileEntityPlate extends TileEntity{
 		else if(facing == EnumFacing.WEST)
     		this.angle = 90;
 		
-		if(this.inventory.get(0).isEmpty() && item instanceof ItemFood)
+		if(this.isEmpty() && item instanceof ItemFood)
 		{
 			ItemStack temp = stack.copy();
 			temp.setCount(1);
 			this.inventory.set(0, temp);
 			this.markDirty();
-			System.out.println("true");
 			this.world.scheduleBlockUpdate(this.pos, this.world.getBlockState(this.pos).getBlock(), 0, 0);
 			return true;
 		}
 		else
 		{
-			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + 0.5D, this.getPos().getY() + 0.5D, this.getPos().getZ() + 0.5D, this.inventory.get(0).copy()));
-			this.inventory.set(0, ItemStack.EMPTY);
-			this.sendUpdates();
+			if(!this.isEmpty())
+				this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + 0.5D, this.getPos().getY() + 0.5D, this.getPos().getZ() + 0.5D, this.inventory.get(0).copy()));
+			this.inventory.set(0, new ItemStack(MItems.nothing));
 			this.markDirty();
-			System.out.println("false");
 			return false;
 		}
 	}

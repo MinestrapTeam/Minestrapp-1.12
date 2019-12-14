@@ -147,6 +147,7 @@ public class MEventHandler
 	    	ResourceLocation itemFrame = new ResourceLocation("minecraft:item_frame");
 	    	ResourceLocation book = new ResourceLocation("minecraft:book");
 	    	ResourceLocation iron_bars = new ResourceLocation("minecraft:iron_bars");
+	    	ResourceLocation daylight_detector = new ResourceLocation("minecraft:daylight_detector");
 	    	ResourceLocation comparator = new ResourceLocation("minecraft:comparator");
 	    	ResourceLocation observer = new ResourceLocation("minecraft:observer");
 	    	ResourceLocation cake = new ResourceLocation("minecraft:cake");
@@ -182,6 +183,7 @@ public class MEventHandler
 	        modRegistry.remove(itemFrame);
 	        modRegistry.remove(book);
 	        modRegistry.remove(iron_bars);
+	        modRegistry.remove(daylight_detector);
 	        modRegistry.remove(comparator);
 	        modRegistry.remove(observer);
 	        modRegistry.remove(cake);
@@ -434,6 +436,8 @@ public class MEventHandler
 		LootPool sinew_pool = new LootPool(new LootEntry[] {sinew_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "sinew_pool");
 		LootEntry heart_piece_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/heart_piece"), 1, 1, new LootCondition[0], "heart_piece_entry");
 		LootPool heart_piece_pool = new LootPool(new LootEntry[] {heart_piece_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "heart_piece_pool");
+		LootEntry skeletal_hand_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/skeleton/skeletal_hand"), 1, 1, new LootCondition[0], "skeletal_hand_entry");
+		LootPool skeletal_hand_pool = new LootPool(new LootEntry[] {skeletal_hand_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "skeletal_hand_pool");
 		
 		if(event.getName().equals(LootTableList.ENTITIES_PIG))
 		{
@@ -458,6 +462,19 @@ public class MEventHandler
 			
 			event.getTable().addPool(skull_pool);
 			event.getTable().addPool(animal_bones_pool);
+			
+			if(event.getName().equals(LootTableList.ENTITIES_MUSHROOM_COW))
+			{
+				event.getTable().removePool("main");
+				
+				LootEntry hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/mooshroom/mooshroom_hide"), 1, 1, new LootCondition[0], "mooshroom_hide_entry");
+				LootPool hide_pool = new LootPool(new LootEntry[] {hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "mooshroom_hide_pool");
+				LootEntry beef_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/mooshroom/raw_beef"), 1, 1, new LootCondition[0], "mooshroom_beef_entry");
+				LootPool beef_pool = new LootPool(new LootEntry[] {beef_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "mooshroom_beef_pool");
+				
+				event.getTable().addPool(hide_pool);
+				//event.getTable().addPool(beef_pool);
+			}
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_SHEEP))
 		{
@@ -623,13 +640,17 @@ public class MEventHandler
 			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "stray_skull_pool");
 			
 			event.getTable().addPool(skull_pool);
+			event.getTable().addPool(skeletal_hand_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_CREEPER))
 		{
 			LootEntry skull_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/creeper/skull_rare"), 1, 1, new LootCondition[0], "creeper_skull_entry");
 			LootPool skull_pool = new LootPool(new LootEntry[] {skull_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "creeper_skull_pool");
+			LootEntry hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/creeper/creeper_carapace"), 1, 1, new LootCondition[0], "creeper_carapace_entry");
+			LootPool hide_pool = new LootPool(new LootEntry[] {hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "creeper_carapace_pool");
 			
 			event.getTable().addPool(skull_pool);
+			event.getTable().addPool(hide_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_GUARDIAN))
 		{
@@ -652,9 +673,18 @@ public class MEventHandler
 			
 			event.getTable().addPool(skull_pool);
 		}
-		else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE) || event.getName().equals(LootTableList.ENTITIES_SKELETON))
+		else if(event.getName().equals(LootTableList.ENTITIES_ZOMBIE))
 		{
 			event.getTable().addPool(human_skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_SKELETON))
+		{
+			event.getTable().addPool(skeletal_hand_pool);
+			event.getTable().addPool(human_skull_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_WITHER_SKELETON))
+		{
+			event.getTable().addPool(skeletal_hand_pool);
 		}
 		else if(event.getName().equals(LootTableList.ENTITIES_ELDER_GUARDIAN))
 		{
@@ -666,6 +696,13 @@ public class MEventHandler
 			LootPool honey_pool = new LootPool(new LootEntry[] {honey_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "honey_pool");
 			
 			event.getTable().addPool(honey_pool);
+		}
+		else if(event.getName().equals(LootTableList.ENTITIES_GHAST))
+		{
+			LootEntry hide_entry = new LootEntryTable(new ResourceLocation(Minestrapp5.MODID + ":mob/ghast/ghast_hide"), 1, 1, new LootCondition[0], "ghast_hide_entry");
+			LootPool hide_pool = new LootPool(new LootEntry[] {hide_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "ghast_hide_pool");
+			
+			event.getTable().addPool(hide_pool);
 		}
 		
 		//Halloween

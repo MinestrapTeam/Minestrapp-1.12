@@ -3,7 +3,9 @@ package minestrapp.block.crops;
 import java.util.Random;
 
 import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.MTabs;
+import minestrapp.block.BlockDesertQuartzDeposit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -16,10 +18,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -243,6 +248,18 @@ public class BlockBerryBush extends BlockBush implements IGrowable
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {AGE});
+    }
+    
+    @Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        Random rand = world instanceof World ? ((World)world).rand : RANDOM;
+
+        if(state.getValue(AGE) == 5)
+        {
+        	drops.add(this.dropStack);
+        }
+        drops.add(new ItemStack(Item.getItemFromBlock(this)));
     }
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)

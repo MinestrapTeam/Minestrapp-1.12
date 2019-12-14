@@ -28,6 +28,7 @@ public class MConfig
 	public static int spikeItemLimit;
 	public static boolean minableGlacialInvincium;
 	
+	public static boolean generateDesertQuartz;
 	public static boolean generateSalt;
 	public static boolean generateCopper;
 	public static boolean generateTin;
@@ -42,6 +43,7 @@ public class MConfig
 	public static boolean generateShimmeringOre;
 	public static boolean generateSoulOre;
 	public static boolean generateDimensium;
+	public static boolean generateHeartSpots;
 	
 	public static boolean generateClaySoil;
 	public static boolean generatePermafrost;
@@ -117,6 +119,8 @@ public class MConfig
 		//propertyOrderBlocks.add(propertyMinableGlacialInvincium.getName());
 		config.setCategoryPropertyOrder(CATEGORY_BLOCKS, propertyOrderBlocks);
 		
+		Property propertyDesertQuartzGen = config.get(CATEGORY_WORLDGEN, "generate_desert_quartz", true);
+		registerProperty(propertyDesertQuartzGen, CATEGORY_WORLDGEN, "generate_desert_quartz");
 		Property propertySaltGen = config.get(CATEGORY_WORLDGEN, "generate_salt", true);
 		registerProperty(propertySaltGen, CATEGORY_WORLDGEN, "generate_salt");
 		Property propertyCopperGen = config.get(CATEGORY_WORLDGEN, "generate_copper", true);
@@ -145,6 +149,8 @@ public class MConfig
 		registerProperty(propertySoulOreGen, CATEGORY_WORLDGEN, "generate_soul_ore");
 		Property propertyDimensiumGen = config.get(CATEGORY_WORLDGEN, "generate_dimensium", true);
 		registerProperty(propertyDimensiumGen, CATEGORY_WORLDGEN, "generate_dimensium");
+		Property propertyHeartSpotGen = config.get(CATEGORY_WORLDGEN, "generate_heart_spots", true);
+		registerProperty(propertyHeartSpotGen, CATEGORY_WORLDGEN, "generate_heart_spots");
 		
 		Property propertyClaySoilGen = config.get(CATEGORY_WORLDGEN, "generate_clay_soil", true);
 		registerProperty(propertyClaySoilGen, CATEGORY_WORLDGEN, "generate_clay_soil");
@@ -213,6 +219,7 @@ public class MConfig
 			spikeItemLimit = propertySpikeItemLimit.getInt();
 			minableGlacialInvincium = propertyMinableGlacialInvincium.getBoolean();
 			
+			generateDesertQuartz = propertyDesertQuartzGen.getBoolean();
 			generateSalt = propertySaltGen.getBoolean();
 			generateCopper = propertyCopperGen.getBoolean();
 			generateTin = propertyTinGen.getBoolean();
@@ -227,6 +234,7 @@ public class MConfig
 			generateShimmeringOre = propertyShimmeringGen.getBoolean();
 			generateSoulOre = propertySoulOreGen.getBoolean();
 			generateDimensium = propertyDimensiumGen.getBoolean();
+			generateHeartSpots = propertyHeartSpotGen.getBoolean();
 			
 			generateClaySoil = propertyClaySoilGen.getBoolean();
 			generatePermafrost = propertyPermafrostGen.getBoolean();
@@ -261,6 +269,7 @@ public class MConfig
 		propertySpikeItemLimit.set(spikeItemLimit);
 		propertyMinableGlacialInvincium.set(minableGlacialInvincium);
 		
+		propertyDesertQuartzGen.set(generateDesertQuartz);
 		propertySaltGen.set(generateSalt);
 		propertyCopperGen.set(generateCopper);
 		propertyTinGen.set(generateTin);
@@ -275,6 +284,7 @@ public class MConfig
 		propertyShimmeringGen.set(generateShimmeringOre);
 		propertySoulOreGen.set(generateSoulOre);
 		propertyDimensiumGen.set(generateDimensium);
+		propertyHeartSpotGen.set(generateHeartSpots);
 		
 		propertyClaySoilGen.set(generateClaySoil);
 		propertyPermafrostGen.set(generatePermafrost);

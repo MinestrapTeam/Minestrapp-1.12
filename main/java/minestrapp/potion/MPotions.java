@@ -3,6 +3,7 @@ package minestrapp.potion;
 import minestrapp.MBlocks;
 import minestrapp.MItems;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -10,6 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionHelper;
 import net.minecraft.potion.PotionType;
+import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -41,6 +43,14 @@ public class MPotions {
 	private static PotionType  harmonyType = new PotionType("harmony", new PotionEffect(harmony, 1800));
 	private static PotionType  harmonyLongType = new PotionType("harmony", new PotionEffect(harmony, 4800));
 	
+	private static PotionType hasteType = new PotionType("haste", new PotionEffect(MobEffects.HASTE, 3600));
+	private static PotionType hasteLongType = new PotionType("haste", new PotionEffect(MobEffects.HASTE, 9600));
+	private static PotionType hasteStrongType = new PotionType("haste", new PotionEffect(MobEffects.HASTE, 1800, 1));
+	
+	private static PotionType fatigueType = new PotionType("fatigue", new PotionEffect(MobEffects.MINING_FATIGUE, 1800));
+	private static PotionType fatigueLongType = new PotionType("fatigue", new PotionEffect(MobEffects.MINING_FATIGUE, 4800));
+	private static PotionType fatigueStrongType = new PotionType("fatigue", new PotionEffect(MobEffects.MINING_FATIGUE, 400, 1));
+	
 	public static void addBrewingRecipe() {
 		PotionHelper.addMix(PotionTypes.AWKWARD, new ItemStack(MBlocks.infected_mushroom).getItem(), infectionType);
 		PotionHelper.addMix(infectionType, Items.REDSTONE, infectionLongType);
@@ -61,6 +71,15 @@ public class MPotions {
 		PotionHelper.addMix(harmonyType, Items.FERMENTED_SPIDER_EYE, aggressionType);
 		PotionHelper.addMix(harmonyLongType, Items.FERMENTED_SPIDER_EYE, aggressionLongType);
 		PotionHelper.addMix(aggressionType, Items.REDSTONE, aggressionLongType);
+		
+		PotionHelper.addMix(PotionTypes.AWKWARD, Ingredient.fromStacks(new ItemStack(MItems.mob_loot, 1, 12)), hasteType);
+		PotionHelper.addMix(hasteType, Items.REDSTONE, hasteLongType);
+		PotionHelper.addMix(hasteType, Items.GLOWSTONE_DUST, hasteStrongType);
+		PotionHelper.addMix(hasteType, Items.FERMENTED_SPIDER_EYE, fatigueType);
+		PotionHelper.addMix(hasteLongType, Items.FERMENTED_SPIDER_EYE, fatigueLongType);
+		PotionHelper.addMix(hasteStrongType, Items.FERMENTED_SPIDER_EYE, fatigueStrongType);
+		PotionHelper.addMix(fatigueType, Items.REDSTONE, fatigueLongType);
+		PotionHelper.addMix(fatigueType, Items.GLOWSTONE_DUST, fatigueStrongType);
 	}
 	
     @SubscribeEvent
@@ -87,5 +106,11 @@ public class MPotions {
         event.getRegistry().register(aggressionLongType.setRegistryName("aggression_long"));
         event.getRegistry().register(harmonyType.setRegistryName("harmony"));
         event.getRegistry().register(harmonyLongType.setRegistryName("harmony_long"));
+        event.getRegistry().register(hasteType.setRegistryName("haste"));
+        event.getRegistry().register(hasteLongType.setRegistryName("haste_long"));
+        event.getRegistry().register(hasteStrongType.setRegistryName("haste_strong"));
+        event.getRegistry().register(fatigueType.setRegistryName("fatigue"));
+        event.getRegistry().register(fatigueLongType.setRegistryName("fatigue_long"));
+        event.getRegistry().register(fatigueStrongType.setRegistryName("fatigue_strong"));
     }
 }

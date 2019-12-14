@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_inert_chip"
+    ]
+  },
+  "criteria": {
+    "has_plating": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_plating",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_inert_chip"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_plating",
+      "has_the_recipe"
+    ]
+  ]
+}

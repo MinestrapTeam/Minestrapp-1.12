@@ -1,0 +1,39 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/ore/heart_spot_base",
+		"texture": "minestrapp:blocks/ore/heart_spot_base",
+		"texture1": "minestrapp:blocks/ore/heart_spot_aura"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "PlaneY1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 0.001, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "PlaneX2",
+			"from": [ 8, 0, 0 ],
+			"to": [ 8.001, 32, 16 ],
+			"rotation": { "origin": [ 8, 0, 8 ], "axis": "y", "angle": -45 },
+			"faces": {
+				"west": { "uv": [ 4, 0, 12, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 4, 0, 12, 16 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "PlaneX2",
+			"from": [ 8, 0, 0 ],
+			"to": [ 8.001, 32, 16 ],
+			"rotation": { "origin": [ 8, 0, 8 ], "axis": "y", "angle": 45 },
+			"faces": {
+				"west": { "uv": [ 4, 0, 12, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 4, 0, 12, 16 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

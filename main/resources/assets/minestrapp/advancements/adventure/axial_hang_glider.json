@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:hang_glider_dimensium"
+        },
+        "title": {
+            "translate": "advancements.adventure.axial_hang_glider.title"
+        },
+        "description": {
+            "translate": "advancements.adventure.axial_hang_glider.description"
+        }
+    },
+    "parent": "minestrapp:adventure/reinforced_hang_glider",
+    "criteria": {
+        "hang_glider_dimensium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:hang_glider_dimensium"
+                    }
+                ]
+            }
+        }
+    }
+}

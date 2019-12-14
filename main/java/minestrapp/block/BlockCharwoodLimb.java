@@ -44,7 +44,6 @@ public class BlockCharwoodLimb extends BlockBase
 	{
 		super("charwood_limb", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), SoundType.WOOD, 0.8F, "axe", 0);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-		this.setDropsItem(new ItemStack(MItems.charroot), 0, 0, 0, false, false);
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

@@ -20,6 +20,7 @@ import minestrapp.item.ItemJamBottle;
 import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
+import minestrapp.item.ItemReanimatedArm;
 import minestrapp.item.ItemSeedBag;
 import minestrapp.item.ItemSieve;
 import minestrapp.item.ItemSmellingSalts;
@@ -61,11 +62,14 @@ public class MItems
 {
 	static List<Item> itemList = new ArrayList<Item>();
 	
+	public static Item nothing;
+	
 	public static Item door_charwood;
 	
 	public static Item natural_ingredients;
 	public static Item sawdust;
 	public static Item mob_loot;
+	public static Item reanimated_arm;
 	public static Item effervexcense;
 	public static Item leather;
 	public static Item leather2;
@@ -348,13 +352,16 @@ public class MItems
 	
 	public static void init()
 	{
+		register(nothing = new ItemBase("nothing").addDescription("Literally nothing. If you have this, you probably broke reality somehow."));
+		
 		register(door_charwood = new ItemMDoor(MBlocks.door_charwood).setCreativeTab(MTabs.utility));
 		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
-		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide
-		register(mob_loot = new ItemMetaBase("m_mob_loot", 12).setCreativeTab(MTabs.ingredients));
+		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide, 12=Skeletal Hand
+		register(mob_loot = new ItemMetaBase("m_mob_loot", 13).setCreativeTab(MTabs.ingredients));
+		register(reanimated_arm = new ItemReanimatedArm());
 		register(effervexcense = new ItemBase("effervexcense").setCreativeTab(MTabs.ingredients));
 		//0=Cured Rabbit Hide, 1=Cured Cow Hide, 2=Cured Horse Hide, 3=Cured Pig Hide, 4=Cured Wolf Hide, 5=Cured Flesh, 6=Cured Rotten Flesh, 7=Poor Scudded Hide, 8=Small Scudded Hide, 9=Scudded Hide, 10=Large Scudded Hide, 11=Botched Leather, 12=Suede, 13=Leather, 14=Fine Leather, 15=Cured Polar Bear Hide
 		register(leather = new ItemMetaBase("m_leather", 16).setCreativeTab(MTabs.ingredients));
@@ -662,6 +669,8 @@ public class MItems
 		MBlocks.glacieric_ice_branch_5.setDropsItem(new ItemStack(MItems.gems, 1, 6), 0, 0, 0, true, false);
 		MBlocks.glacieric_ice_branch_6.setDropsItem(new ItemStack(MItems.gems, 1, 6), 0, 0, 0, true, true);
 		MBlocks.glacieric_ice_branch_7.setDropsItem(new ItemStack(MItems.gems, 1, 6), 1, 0, 0, true, true);
+		((BlockBase) MBlocks.heart_spot).setDropsItem(new ItemStack(heart_piece), 0, 10, 30, false, false);
+		((BlockBase) MBlocks.charwood_limb).setDropsItem(new ItemStack(MItems.charroot), 0, 0, 0, false, false);
 		
 		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.plate_weave)).setBurnTime(100);

@@ -12,9 +12,11 @@ import minestrapp.MTabs;
 import minestrapp.Minestrapp5;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.crops.BlockVoidberryBush;
+import minestrapp.block.magnetpiston.BlockMagnetPistonBase;
 import minestrapp.block.tileentity.TileEntityActivator;
+import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityPlate;
-import minestrapp.block.tileentity.renderer.TESRPlate;
+import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.crafting.SieveRecipes;
 import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.gui.MGuiHandler;
@@ -58,6 +60,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockPattern;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityHanging;
 import net.minecraft.entity.EntityLiving;
@@ -82,7 +85,6 @@ import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityEgg;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.entity.projectile.EntitySnowball;
@@ -94,7 +96,6 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -119,10 +120,8 @@ import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemSplashPotion;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionUtils;
-import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.MobSpawnerBaseLogic;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityBanner;
@@ -157,11 +156,12 @@ public class BlockActivator extends BlockContainer
 {
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	public static final PropertyBool TRIGGERED = PropertyBool.create("triggered");
+	public static final PropertyBool POWERED = PropertyBool.create("powered");
 	
 	public BlockActivator(String name)
 	{
 		super(Material.IRON);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TRIGGERED, Boolean.valueOf(false)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TRIGGERED, Boolean.valueOf(false)).withProperty(POWERED, Boolean.valueOf(false)));
 		this.setSoundType(SoundType.METAL);
 		this.setHardness(3.0F);
 		this.setHarvestLevel("pickaxe", 0);
@@ -170,6 +170,29 @@ public class BlockActivator extends BlockContainer
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 	}
+	
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+    {
+		if(Minecraft.getMinecraft().world.isBlockIndirectlyGettingPowered(pos) > 0)
+			return state.withProperty(POWERED, true);
+		else
+			return state.withProperty(POWERED, false);
+    }
+	
+	public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
+	
+	public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+	
+	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
+    {
+		return BlockFaceShape.UNDEFINED;
+    }
 	
 	public int tickRate(World worldIn)
     {
@@ -190,6 +213,14 @@ public class BlockActivator extends BlockContainer
     {
         super.onBlockAdded(worldIn, pos, state);
         this.setDefaultDirection(worldIn, pos, state);
+    }
+	
+	public int getLightValue(IBlockState state)
+    {
+    	if(state.getValue(POWERED).booleanValue() == true)
+    		return 8;
+    	else
+    		return 0;
     }
 
     private void setDefaultDirection(World worldIn, BlockPos pos, IBlockState state)
@@ -307,11 +338,32 @@ public class BlockActivator extends BlockContainer
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {FACING, TRIGGERED});
+        return new BlockStateContainer(this, new IProperty[] {FACING, TRIGGERED, POWERED});
     }
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
+    	TileEntityActivator tea = (TileEntityActivator)worldIn.getTileEntity(pos);
+		EnumFacing face = (EnumFacing)state.getValue(FACING);
+		if(face == EnumFacing.NORTH) {
+			tea.setAngle(0);
+		}
+		else if(face == EnumFacing.EAST) {
+			tea.setAngle(1);
+		}
+		else if(face == EnumFacing.SOUTH) {
+			tea.setAngle(2);
+		}
+		else if(face == EnumFacing.WEST) {
+			tea.setAngle(3);
+		}
+		else if(face == EnumFacing.UP) {
+			tea.setAngle(10);
+		}
+		else if(face == EnumFacing.DOWN) {
+			tea.setAngle(11);
+		}
+    	
         if (worldIn.isRemote)
         {
             return true;
@@ -381,11 +433,6 @@ public class BlockActivator extends BlockContainer
         return Container.calcRedstoneFromInventory(this.getLockableContainer(worldIn, pos));
     }
 	
-	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
-    {
-        return BlockFaceShape.SOLID;
-    }
-	
 	public boolean checkPlacability (World worldIn, BlockPos pos1, BlockPos pos2, EnumFacing facing, ItemStack stack, Item item, EntityLiving placer)
 	{
 		if(worldIn.getBlockState(pos1).getBlock().isReplaceable(worldIn, pos1) && (!worldIn.isAirBlock(pos1) || !worldIn.isAirBlock(pos2)) && (((!worldIn.isAirBlock(pos1) || !worldIn.getBlockState(pos2).getBlock().isReplaceable(worldIn, pos2)) && Block.getBlockFromItem(item).canPlaceBlockAt(worldIn, pos1)) || (worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock().isReplaceable(worldIn, pos2) && Block.getBlockFromItem(item).canPlaceBlockAt(worldIn, pos2))) && !Block.getBlockFromItem(item).hasTileEntity(Block.getBlockFromItem(item).getStateForPlacement(worldIn, pos1, facing.getOpposite(), 0.5F, 0.5F, 0.5F, stack.getMetadata(), placer, EnumHand.MAIN_HAND)))
@@ -426,29 +473,30 @@ public class BlockActivator extends BlockContainer
 				if(tep != null)
 				{
 					if(tep.processActivatorInteract(pos, facing))
-					{
 						te.decrStackSize(0, 1);
-					}
 					
 					tep.sendUpdates();
 				}
-				/*{
-					if(!stack.isEmpty() && item instanceof ItemFood && tep.tryToAddItem(stack))
+				
+				continueCheck = false;
+			}
+	        
+	        if(continueCheck && (worldIn.getBlockState(pos1).getBlock() instanceof BlockTanningRack || (worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock() instanceof BlockTanningRack)))
+			{
+				BlockPos rackPos = pos1;
+				
+				if(worldIn.isAirBlock(pos1))
+					rackPos = pos2;
+				
+				TileEntityTanningRack ter = (TileEntityTanningRack)worldIn.getTileEntity(rackPos);
+				
+				if(ter != null)
+				{
+					if(ter.processActivatorInteract(pos, facing))
 						te.decrStackSize(0, 1);
-					else
-						tep.takeItem();
-				
-					if(facing == EnumFacing.NORTH)
-			    		tep.angle = 180;
-					else if(facing == EnumFacing.SOUTH)
-			    		tep.angle = 0;
-					else if(facing == EnumFacing.EAST)
-			    		tep.angle = 270;
-					else if(facing == EnumFacing.WEST)
-			    		tep.angle = 90;
-				}*/
-				
-				//tep.markDirty();
+					
+					ter.sendUpdates();
+				}
 				
 				continueCheck = false;
 			}
@@ -693,6 +741,17 @@ public class BlockActivator extends BlockContainer
 				}
 				
 				continueCheck = false;
+			}
+			
+			if(continueCheck && (worldIn.getBlockState(pos1).getBlock() instanceof BlockMagnetPistonBase || (worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock() instanceof BlockMagnetPistonBase)))
+			{
+				BlockPos pistonPos = pos1;
+				
+				if(worldIn.isAirBlock(pos1))
+					pistonPos = pos2;
+
+				if(((BlockMagnetPistonBase)worldIn.getBlockState(pistonPos).getBlock()).onBlockActivated(worldIn, pistonPos, worldIn.getBlockState(pistonPos), null, EnumHand.MAIN_HAND, worldIn.getBlockState(pos).getValue(FACING).getOpposite(), 0.5F, 0.5F, 0.5F))
+					continueCheck = false;
 			}
 			
 			if(continueCheck && item instanceof ItemSieve)
@@ -2949,6 +3008,8 @@ public class BlockActivator extends BlockContainer
 					}
 				}
 			}
+
+			te.markDirty();
 		}
     }
 	

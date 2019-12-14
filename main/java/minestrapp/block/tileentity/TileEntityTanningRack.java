@@ -1,11 +1,18 @@
 package minestrapp.block.tileentity;
 
 import java.util.Map;
+import java.util.Set;
 
+import minestrapp.MBlocks;
+import minestrapp.MItems;
+import minestrapp.block.BlockActivator;
+import minestrapp.block.BlockTanningRack;
 import minestrapp.crafting.TannerRecipes;
 import minestrapp.crafting.TannerRecipes.TannerRecipe;
+import minestrapp.item.tools.MDagger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,10 +20,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumSkyBlock;
+import net.minecraft.world.World;
 
 public class TileEntityTanningRack extends TileEntity implements ITickable{
 
@@ -32,7 +42,7 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	@Override
 	public void update()
 	{
-			if(this.hide.get(0).copy().isEmpty())
+			if(this.isEmpty())
 				this.isTanning = false;
 			if(this.isTanning)
 			{
@@ -61,6 +71,11 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 					}
 				}
 			}	
+	}
+	
+	public boolean isEmpty()
+	{
+		return this.hide.get(0).copy().isEmpty() || this.hide.get(0).copy().getItem() == MItems.nothing;
 	}
 	
 	//Stolen from the vanilla daylight sensor
@@ -116,13 +131,13 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 			this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + xOffset, this.getPos().getY() + 0.25D, this.getPos().getZ() + zOffset, this.hide.get(0).copy()));
 			this.isTanning = false;
 		}
-		this.hide.set(0, ItemStack.EMPTY);
+		this.hide.set(0, new ItemStack(MItems.nothing));
 		this.markDirty();
 	}
 	
 	public boolean isHoldingItem()
 	{
-		return !this.hide.get(0).copy().isEmpty();
+		return !this.isEmpty();
 	}
 	
 	public TannerRecipe getRecipe(ItemStack tool)
@@ -183,5 +198,123 @@ public class TileEntityTanningRack extends TileEntity implements ITickable{
 	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) 
 	{
 	    this.readFromNBT(packet.getNbtCompound());
+	}
+	
+	public boolean processActivatorInteract(BlockPos pos, EnumFacing facing)
+	{
+		TileEntityActivator tea = (TileEntityActivator)this.world.getTileEntity(pos);
+		ItemStack stack = tea.getStackInSlot(0);
+		int angle = ((BlockTanningRack) world.getBlockState(this.pos).getBlock()).getMetaFromState(world.getBlockState(this.pos)) * 90;
+		
+		if(!this.isHoldingItem() && this.tryToAddItem(stack, angle))
+		{
+				return true;
+		}
+		else
+		{
+			ItemStack tool = stack.copy();
+			
+			if(tool.getItem() instanceof MDagger)
+			{
+				if(((MDagger)tool.getItem()).getToolMaterialHarvestLevel() == 0)
+				{
+					tool = new ItemStack(MItems.wooden_dagger);
+				}
+				else if(((MDagger)tool.getItem()).getToolMaterialHarvestLevel() == 1)
+				{
+					tool = new ItemStack(MItems.stone_dagger);
+				}
+				else if(((MDagger)tool.getItem()).getToolMaterialHarvestLevel() == 2)
+				{
+					tool = new ItemStack(MItems.iron_dagger);
+				}
+				else if(((MDagger)tool.getItem()).getToolMaterialHarvestLevel() == 3)
+				{
+					tool = new ItemStack(MItems.diamond_dagger);
+				}
+				else if(((MDagger)tool.getItem()).getToolMaterialHarvestLevel() == 4)
+				{
+					tool = new ItemStack(MItems.titanium_dagger);
+				}
+			}
+			
+			if(this.getRecipe(tool) == null || this.getRecipe(tool).tool == null || this.isTanning)
+			{
+				this.takeItem();
+				return false;
+			}
+			else
+			{
+				boolean isTool = false;
+				
+				
+				TannerRecipe recipe = this.getRecipe(tool);
+	
+				if(ItemStack.areItemsEqual(tool, recipe.tool))
+					isTool = true;
+				else
+				{
+					Set<String> recipeToolClasses  = recipe.tool.getItem().getToolClasses(recipe.tool);
+					Set<String> heldToolClasses  = tool.getItem().getToolClasses(tool);
+					
+					for(String toolClass : recipeToolClasses) {
+						if(heldToolClasses.contains(toolClass)){
+							isTool = true;
+							break;
+						}
+					}
+				}
+
+				if(isTool && this.isTanning == false)
+				{
+					boolean consume = false;
+					this.lastToolUsed = tool.copy();
+					
+					if(recipe.time == 0)
+						this.tryToAddItem(recipe.output, angle);
+					else
+						this.isTanning = true;
+					
+					if(recipe.consumeItem)
+					{
+						consume = true;
+						
+						if((tool.getItem() == MItems.tannic || tool.getItem() == Item.getItemFromBlock(MBlocks.glow_paste)) && !world.isRemote)
+						{
+							double xOffset = 0.5D;
+							double zOffset = 0.5D;
+							
+							if(this.angle == 0)
+								zOffset = 1D;
+							else if(this.angle == 90)
+								xOffset = 0D;
+							else if(this.angle == 180)
+								zOffset = 0D;
+							else
+								xOffset = 1D;
+							
+							this.world.spawnEntity(new EntityItem(this.world, this.getPos().getX() + xOffset, this.getPos().getY() + 0.25D, this.getPos().getZ() + zOffset, new ItemStack(Items.GLASS_BOTTLE)));
+						}
+					}
+					else if(stack.getItem() instanceof MDagger)
+						stack.attemptDamageItem(1, world.rand, null);
+					
+					return consume;
+				}
+				else
+				{
+					this.takeItem();
+					return false;
+				}
+			}
+		}
+	}
+	
+	public void sendUpdates()
+	{
+		world.markBlockRangeForRenderUpdate(pos, pos);
+		world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+		world.scheduleBlockUpdate(pos, this.getBlockType(), 0, 0);
+		markDirty();
 	}
 }

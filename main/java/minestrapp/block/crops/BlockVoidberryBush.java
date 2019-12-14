@@ -22,9 +22,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -294,5 +296,15 @@ public class BlockVoidberryBush extends BlockBush implements IGrowable
 	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
     {
         return 5;
+    }
+	
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        if(state.getValue(AGE) == 5 && state.getValue(STEM).booleanValue() == false)
+        {
+        	drops.add(new ItemStack(MItems.voidberry));
+        }
+        drops.add(new ItemStack(Item.getItemFromBlock(this)));
     }
 }

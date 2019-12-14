@@ -7,8 +7,7 @@
     ],
     "key": {
         "w": {
-            "item": "minecraft:potion",
-            "data": 0
+            "item": "minecraft:glass_bottle"
         },
         "r": {
             "item": "minecraft:red_mushroom"

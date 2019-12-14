@@ -77,6 +77,9 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_hive), new ItemStack(MItems.mite_honey), new ItemStack(MItems.mite_honey), 20, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_comb), new ItemStack(MItems.mite_honey), new ItemStack(MItems.mite_honey), 20, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_hive_honeyed), new ItemStack(MItems.mite_honey, 2), new ItemStack(MItems.mite_honey), 50, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.honeycomb_bronze), new ItemStack(MItems.mite_honey), new ItemStack(MItems.nuggets, 3, 2), 80, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.honeycomb_steel), new ItemStack(MItems.mite_honey), new ItemStack(MItems.nuggets, 3, 3), 80, 0.15F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.honeycomb_meurodite), new ItemStack(MItems.mite_honey), new ItemStack(MItems.gems, 1, 4), 20, 0.15F);
 		
 		//Soil
 		this.addCrusherRecipe(new ItemStack(Blocks.DIRT, 1, 1), new ItemStack(Blocks.DIRT, 1, 0), new ItemStack(Items.FLINT), 12, 0.05F);
@@ -182,7 +185,27 @@ public class CrusherRecipes {
 			this.addCrusherRecipe(new ItemStack(MBlocks.cracked_stone_bricks, 1, i), new ItemStack(MBlocks.cobblestone, 1, i), null, 0, 0.05F);
 			this.addCrusherRecipe(new ItemStack(MBlocks.chiseled_stone, 1, i), new ItemStack(MBlocks.cobblestone, 1, i), null, 0, 0.05F);
 		}
-		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.chunks, 5, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 0), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 1), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 0), new ItemStack(MItems.chunks, 1, 0), new ItemStack(MItems.chunks, 1, 0), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 1), new ItemStack(MItems.chunks, 1, 0), new ItemStack(MItems.chunks, 1, 0), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 2), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 3), new ItemStack(MItems.chunks, 1, 2), new ItemStack(MItems.chunks, 1, 2), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 4), new ItemStack(MItems.chunks, 1, 2), new ItemStack(MItems.chunks, 1, 2), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 5), new ItemStack(MItems.chunks, 1, 3), new ItemStack(MItems.chunks, 1, 3), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 6), new ItemStack(MItems.chunks, 1, 3), new ItemStack(MItems.chunks, 1, 3), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 7), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.cobblestone_wall, 1, 8), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 0), new ItemStack(MItems.chunks, 1, 0), new ItemStack(MItems.chunks, 1, 0), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 1), new ItemStack(MItems.chunks, 1, 0), new ItemStack(MItems.chunks, 1, 0), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 2), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MItems.chunks, 1, 1), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 3), new ItemStack(MItems.chunks, 1, 2), new ItemStack(MItems.chunks, 1, 2), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 4), new ItemStack(MItems.chunks, 1, 2), new ItemStack(MItems.chunks, 1, 2), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 5), new ItemStack(MItems.chunks, 1, 3), new ItemStack(MItems.chunks, 1, 3), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 6), new ItemStack(MItems.chunks, 1, 3), new ItemStack(MItems.chunks, 1, 3), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 7), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 8), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 1), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MBlocks.moss), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.WHITE_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SILVER_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
@@ -235,6 +258,11 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 9), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.green_glowshroom), 20, 0.05F);
 		
 		//Ores
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 0), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.gems, 1, 2), 5, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 1), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.salt), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 2), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.salt), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 3), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.salt), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 4), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.salt), 50, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_salt, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.salt, 3, 0), new ItemStack(MItems.gems, 1, 2), 5, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Blocks.COAL_ORE), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 1), 40, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_coal, 1, 0), new ItemStack(Items.COAL, 2, 0), new ItemStack(MItems.chunks, 1, 0), 40, 0.1F);
@@ -301,6 +329,8 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_irradium, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 5, 0.25F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_torite, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.chunks, 2, 11), new ItemStack(MItems.chunks, 1, 10), 12, 0.25F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.sunstone_deposit), new ItemStack(MItems.gems, 3, 0), new ItemStack(MItems.gems, 1, 0), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.rock_crystal_deposit), new ItemStack(MItems.gems, 3, 2), new ItemStack(MItems.gems, 1, 2), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glacieric_ice_branch_0), new ItemStack(Items.SNOWBALL, 1), new ItemStack(MItems.gems, 1, 6), 40, 0.2F);
 		this.addCrusherRecipe(new ItemStack(Blocks.DIAMOND_ORE), new ItemStack(Items.DIAMOND, 2), new ItemStack(Items.EMERALD), 15, 0.3F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_diamond, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.DIAMOND, 2), new ItemStack(Items.EMERALD), 15, 0.3F);
 		this.addCrusherRecipe(new ItemStack(Blocks.EMERALD_ORE), new ItemStack(Items.EMERALD, 2), new ItemStack(Items.DIAMOND), 15, 0.3F);
@@ -319,6 +349,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_blazium), new ItemStack(MItems.gems, 6, 5), new ItemStack(Items.BLAZE_POWDER), 35, 0.25F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_shimmering), new ItemStack(MItems.chunks, 2, 14), new ItemStack(MItems.chunks, 1, 5), 40, 0.6F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_soul), new ItemStack(MItems.gem_soul, 2), new ItemStack(Items.QUARTZ), 45, 0.5F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.soul_eyes), new ItemStack(MItems.gem_soul, 2), null, 0, 0.5F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_dimensium), new ItemStack(MItems.chunks, 2, 13), new ItemStack(MItems.chunks, 1, 6), 40, 0.3F);
 		
 		//Dyeables
@@ -330,11 +361,22 @@ public class CrusherRecipes {
 		}
 		
 		//Misc Decor
+		this.addCrusherRecipe(new ItemStack(MBlocks.red_rock_road), new ItemStack(MItems.chunks, 0), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.stone_road), new ItemStack(MItems.chunks, 1), new ItemStack(MItems.mud_ball), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.coldstone_road), new ItemStack(MItems.chunks, 2), new ItemStack(MItems.mud_ball), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.icestone_road), new ItemStack(MItems.chunks, 3), new ItemStack(Items.SNOWBALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.oceanstone_road), new ItemStack(MItems.chunks, 4), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.netherrack_road), new ItemStack(MItems.chunks, 5), new ItemStack(Blocks.SOUL_SAND), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.end_stone_road), new ItemStack(MItems.chunks, 6), new ItemStack(MItems.mite_honey), 80, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.HAY_BLOCK), new ItemStack(Items.WHEAT, 8), new ItemStack(Items.WHEAT), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.BOOKSHELF), new ItemStack(Items.BOOK, 3), new ItemStack(Items.STICK), 65, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.ARMOR_STAND), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 35, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.LADDER), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.IRON_BARS), new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.IRON_NUGGET), 35, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.steel_mesh), new ItemStack(MItems.nuggets, 1, 3), new ItemStack(MItems.nuggets, 1, 3), 35, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.wooden_window), new ItemStack(Items.STICK), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.iron_window), new ItemStack(Items.IRON_NUGGET), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.reinforced_glass), new ItemStack(MItems.nuggets, 1, 3), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.WEB), new ItemStack(Items.STRING, 3), new ItemStack(Items.SPIDER_EYE, 1), 8, 0.15F);
 		this.addCrusherRecipe(new ItemStack(Blocks.BONE_BLOCK), new ItemStack(Items.DYE, 9, EnumDyeColor.WHITE.getDyeDamage()), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SLIME_BLOCK), new ItemStack(Items.SLIME_BALL, 9), null, 0, 0.05F);
@@ -373,6 +415,7 @@ public class CrusherRecipes {
 		
 		//Misc Items
 		this.addCrusherRecipe(new ItemStack(MItems.mob_loot, 1, 0), new ItemStack(Items.DYE, 2, EnumDyeColor.WHITE.getDyeDamage()), null, 0, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MItems.mob_loot, 1, 12), new ItemStack(Items.DYE, 2, EnumDyeColor.WHITE.getDyeDamage()), null, 0, 0.5F);
 		this.addCrusherRecipe(new ItemStack(Items.BONE), new ItemStack(Items.DYE, 5, EnumDyeColor.WHITE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.WHITE.getDyeDamage()), 35, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.BLAZE_ROD), new ItemStack(Items.BLAZE_POWDER, 4), new ItemStack(Items.DYE, 1, EnumDyeColor.WHITE.getDyeDamage()), 8, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Items.CHORUS_FRUIT_POPPED), new ItemStack(Items.DYE, 1, EnumDyeColor.PURPLE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.PURPLE.getDyeDamage()), 15, 0.05F);

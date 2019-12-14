@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import minestrapp.MBlocks;
+import minestrapp.block.BlockActivator;
 import minestrapp.block.BlockPipe;
 import minestrapp.container.ContainerActivator;
 import minestrapp.container.ContainerCrate;
@@ -38,14 +39,17 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityActivator extends TileEntityLockableLoot
 {
-	private NonNullList<ItemStack> activatorContents = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+	private int angle;
+	
+	public NonNullList<ItemStack> activatorContents = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
-	private ItemStackHandler inventory = new ItemStackHandler(1);
-
+	public ItemStackHandler inventory = new ItemStackHandler(1);
+	
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound)
     {
         super.writeToNBT(compound);
+        compound.setInteger("angle", this.angle);
 
         if (!this.checkLootAndWrite(compound))
         {
@@ -64,6 +68,7 @@ public class TileEntityActivator extends TileEntityLockableLoot
 	public void readFromNBT(NBTTagCompound compound)
 	{
 		super.readFromNBT(compound);
+		this.angle = compound.getInteger("angle");
         this.activatorContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 
         if (!this.checkLootAndRead(compound))
@@ -82,13 +87,24 @@ public class TileEntityActivator extends TileEntityLockableLoot
 	{
 		return this.hasCustomName() ? this.customName : "Autonomous Activator";
 	}
+	
+	public int getAngle()
+	{
+		return this.angle;
+	}
+	
+	public void setAngle(int angle)
+	{
+		this.angle = angle;
+		this.markDirty();
+	}
 
 	@Override
 	public int getSizeInventory()
 	{
 		return 1;
 	}
-
+	
 	@Override
 	public boolean isEmpty()
 	{

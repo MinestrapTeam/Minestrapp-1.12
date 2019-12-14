@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "minestrapp:activator"
+        },
+        "title": {
+            "translate": "advancements.automation.activator.title"
+        },
+        "description": {
+            "translate": "advancements.automation.activator.description"
+        }
+    },
+    "parent": "minestrapp:automation/spike",
+    "criteria": {
+        "hopper": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:activator"
+                    }
+                ]
+            }
+        }
+    }
+}

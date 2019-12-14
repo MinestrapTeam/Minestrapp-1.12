@@ -7,6 +7,7 @@ import minestrapp.MBlocks;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockGlowshroom;
 import minestrapp.block.BlockMDirt;
+import minestrapp.block.BlockMGrass;
 import minestrapp.block.BlockTerracreep;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.crops.BlockBerryBush;
@@ -26,6 +27,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -503,6 +505,20 @@ public class MWorldDecorator
 					}
 				}
 			}
+			
+			if(MConfig.generateHeartSpots)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = 250 - random.nextInt(240);
+				int posZ = random.nextInt(16)+8;
+				
+				BlockPos heartPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				Block ground = world.getBlockState(heartPos.down()).getBlock();
+				if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && !world.containsAnyLiquid(new AxisAlignedBB(heartPos)) && ground == Blocks.DIRT || ground == Blocks.GRASS || ground == Blocks.MYCELIUM || ground == Blocks.SAND || ground instanceof BlockMDirt || ground instanceof BlockMGrass || ground == MBlocks.mud || ground == MBlocks.cold_sand || ground == Blocks.GRAVEL)
+				{
+					world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
+				}
+			}
 		}
 		//Nether Gen
 		else if(world.provider.getDimension() == -1)
@@ -598,6 +614,23 @@ public class MWorldDecorator
 				if(treeGen.canGenerateTree(world, treePos) >= 5)
 				{
 					treeGen.generate(world, random, treePos);
+				}
+			}
+			
+			if(MConfig.generateHeartSpots)
+			{
+				for(int i = 0 ; i < 15 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 120 - random.nextInt(100);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos heartPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					Block ground = world.getBlockState(heartPos.down()).getBlock();
+					if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && ground == Blocks.SOUL_SAND || ground == Blocks.GRAVEL || ground == MBlocks.log)
+					{
+						world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
+					}
 				}
 			}
 		}
@@ -723,6 +756,22 @@ public class MWorldDecorator
 					if(world.isAirBlock(creepPos) && ((world.getBlockState(creepPos.up()).isFullBlock() && world.getBlockState(creepPos.up()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.down()).isFullBlock() && world.getBlockState(creepPos.down()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.north()).isFullBlock() && world.getBlockState(creepPos.north()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.east()).isFullBlock() && world.getBlockState(creepPos.east()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.south()).isFullBlock() && world.getBlockState(creepPos.south()).getMaterial() == Material.ROCK) || (world.getBlockState(creepPos.west()).isFullBlock() && world.getBlockState(creepPos.west()).getMaterial() == Material.ROCK)))
 					{
 						world.setBlockState(creepPos, MBlocks.terracreep.getDefaultState());
+					}
+				}
+				if(MConfig.generateHeartSpots)
+				{
+					for(int i = 0 ; i < 2 ; i++)
+					{
+						int posX = random.nextInt(16)+8;
+						int posY = 90 - random.nextInt(50);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos heartPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						Block ground = world.getBlockState(heartPos.down()).getBlock();
+						if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && ground == MBlocks.portal_dust || ground == MBlocks.fargrowth)
+						{
+							world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
+						}
 					}
 				}
 			}

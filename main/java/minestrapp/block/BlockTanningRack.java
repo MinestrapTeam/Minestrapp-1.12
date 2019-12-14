@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
+import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.MTabs;
 import minestrapp.block.tileentity.TileEntityCrusher;
@@ -171,7 +172,7 @@ public class BlockTanningRack extends BlockBase implements ITileEntityProvider
 					
 					if(recipe.consumeItem) {
 						heldItem.shrink(1);
-						if(tool.getItem() == MItems.tannic && !world.isRemote)
+						if((tool.getItem() == MItems.tannic || tool.getItem() == Item.getItemFromBlock(MBlocks.glow_paste)) && !world.isRemote)
 							world.spawnEntity(new EntityItem(world, player.posX, player.posY, player.posZ, new ItemStack(Items.GLASS_BOTTLE)));
 					}
 					else if(heldItem.getItem() instanceof MDagger)

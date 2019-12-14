@@ -6,10 +6,12 @@ import minestrapp.MBlocks;
 import minestrapp.MItems;
 import minestrapp.Minestrapp5;
 import minestrapp.block.BlockBiomeRedstoneWire;
+import minestrapp.block.tileentity.TileEntityActivator;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
+import minestrapp.block.tileentity.renderer.TESRActivator;
 import minestrapp.block.tileentity.renderer.TESRCrusher;
 import minestrapp.block.tileentity.renderer.TESRPlate;
 import minestrapp.block.tileentity.renderer.TESRTanningRack;
@@ -116,6 +118,7 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrusher.class, new TESRCrusher());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTanningRack.class, new TESRTanningRack());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPlate.class, new TESRPlate());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityActivator.class, new TESRActivator());
 		registerEntityRenderer(EntityMBoat.class, RenderMBoat.class);
 	}
 	

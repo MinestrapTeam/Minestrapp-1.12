@@ -562,6 +562,8 @@ tile.ore_dimensium.name=Dimensium Ore
 tile.geode_shimmerstone_clear.name=Strange Boulder
 tile.geode_shimmerstone_dark.name=Strange Boulder
 
+tile.heart_spot.name=Buried Heart Piece
+
 ## Resource ##
 
 tile.block_salt.name=Block of Salt
@@ -776,6 +778,8 @@ tile.axel_wood.name=Wooden Axel
 
 ##### Items #####
 
+item.nothing.name=Nothing
+
 ## Decor ##
 item.door_charwood.name=Charwood Door
 
@@ -845,6 +849,8 @@ item.m_mob_loot_8.name=Spider Leg
 item.m_mob_loot_9.name=Mooshroom Hide
 item.m_mob_loot_10.name=Creeper Carapace
 item.m_mob_loot_11.name=Ghast Hide
+item.m_mob_loot_12.name=Skeletal Hand
+item.reanimated_arm.name=Reanimated Arm
 item.effervexcense.name=Effervexcense
 
 ## Leather ##
@@ -1231,18 +1237,24 @@ potion.effect.climbing=Potion of Grip
 potion.effect.restoration=Potion of Restoration
 potion.effect.agression=Potion of Angst
 potion.effect.harmony=Potion of Calm
+potion.effect.haste=Potion of Efficiency
+potion.effect.fatigue=Potion of Lethargy
 splash_potion.effect.infection=Splash Potion of Infection
 splash_potion.effect.hydrophobia=Splash Potion of Water Aversion
 splash_potion.effect.climbing=Splash Potion of Grip
 splash_potion.effect.restoration=Splash Potion of Restoration
 splash_potion.effect.agression=Splash Potion of Angst
 splash_potion.effect.harmony=Splash Potion of Calm
+splash_potion.effect.haste=Splash Potion of Efficiency
+splash_potion.effect.fatigue=Splash Potion of Lethargy
 lingering_potion.effect.infection=Lingering Potion of Infection
 lingering_potion.effect.hydrophobia=Lingering Potion of Water Aversion
 lingering_potion.effect.climbing=Lingering Potion of Grip
 lingering_potion.effect.restoration=Lingering Potion of Restoration
 lingering_potion.effect.agression=Lingering Potion of Angst
 lingering_potion.effect.harmony=Lingering Potion of Calm
+lingering_potion.effect.haste=Lingering Potion of Efficiency
+lingering_potion.effect.fatigue=Lingering Potion of Lethargy
 
 
 ##### Advancements #####
@@ -1350,6 +1362,8 @@ advancements.adventure.hang_glider.title=On the Wings of a Bat
 advancements.adventure.hang_glider.description=Craft a hang glider and soar through the skies.
 advancements.adventure.reinforced_hang_glider.title=Flying in Style
 advancements.adventure.reinforced_hang_glider.description=Reinforce your hang glider for a faster, longer flight.
+advancements.adventure.axial_hang_glider.title=Lost in Translation
+advancements.adventure.axial_hang_glider.description=Translate across the skies indefinitely using an axial hang glider.
 advancements.adventure.skol.title=Bonehead
 advancements.adventure.skol.description=Find every type of mob skull.
 
@@ -1371,6 +1385,8 @@ advancements.automation.spike.title=How do you like my spikes?!
 advancements.automation.spike.description=Break blocks using a spike and a piston.
 advancements.automation.spike_dimensium.title=DELETED!!
 advancements.automation.spike_dimensium.description=Eviscerate any block or mob from this mortal coil using a dimensium spike.
+advancements.automation.activator.title=An Extra Set of Hands
+advancements.automation.activator.description=Enlist the help of an autonomous activator to do all the hard work for you.
 
 advancements.nether.soul_gem.title=Souls to Go
 advancements.nether.soul_gem.description=Obtain a soul gem, then consume it to gain its power.
@@ -1410,6 +1426,9 @@ gui.config.blocks.minable_glacial_invincium.name.tooltip=Determines whether Glac
 gui.config.category.worldgen.title=World Generation
 gui.config.category.worldgen.title.tooltip=Toggle aspects of Minestrapp's custom world generation.
 
+gui.config.worldgen.generate_desert_quartz.name=Generate Desert Quartz Deposits
+gui.config.worldgen.generate_desert_quartz.comment=Determines whether Desert Quartz deposits will generate in Desert & Mesa biomes.
+gui.config.worldgen.generate_desert_quartz.name.tooltip=Determines whether Desert Quartz deposits will generate in Desert & Mesa biomes.
 gui.config.worldgen.generate_salt.name=Generate Salt Ore
 gui.config.worldgen.generate_salt.comment=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
 gui.config.worldgen.generate_salt.name.tooltip=Determines whether Salt Ore will generate in Ocean & Mushroom biomes.
@@ -1452,6 +1471,9 @@ gui.config.worldgen.generate_soul_ore.name.tooltip=Determines whether Soul Ore w
 gui.config.worldgen.generate_dimensium.name=Generate Dimensium Ore
 gui.config.worldgen.generate_dimensium.comment=Determines whether Dimensium Ore will generate in the End.
 gui.config.worldgen.generate_dimensium.name.tooltip=Determines whether Dimensium Ore will generate in the End.
+gui.config.worldgen.generate_heart_spots.name=Generate Buried Heart Pieces
+gui.config.worldgen.generate_heart_spots.comment=Determines whether Buried Heart Pieces generate in the Overworld, Nether, and End.
+gui.config.worldgen.generate_heart_spots.name.tooltip=Determines whether Buried Heart Pieces generate in the Overworld, Nether, and End.
 
 gui.config.worldgen.generate_clay_soil.name=Generate Clay Soil
 gui.config.worldgen.generate_clay_soil.comment=Determines whether Clay Soil replaces all Dirt in jungles, swamps, and warm biomes.

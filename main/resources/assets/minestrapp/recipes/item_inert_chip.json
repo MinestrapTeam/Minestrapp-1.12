@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "rcr",
+        "csc",
+        "rcr"
+    ],
+    "key": {        
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetCopper"
+        },
+        "r": {
+            "type": "forge:ore_dict",
+            "ore": "dustRedstone"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "plateSteel"
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_tech_component",
+        "data": 3
+     }  
+}

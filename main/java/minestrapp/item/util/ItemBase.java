@@ -1,8 +1,14 @@
 package minestrapp.item.util;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import minestrapp.MTabs;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -13,6 +19,7 @@ public class ItemBase extends Item
 	private int burnTime;
 	private int burnMeta;
 	private boolean beaconFuel;
+	private String desc = null;
 	
 	public ItemBase(String name)
 	{
@@ -68,5 +75,18 @@ public class ItemBase extends Item
 			return this.burnTime;
 		else
 			return 0;
+    }
+	
+	public ItemBase addDescription(String desc)
+	{
+		this.desc = desc;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+		if(this.desc != null)
+			tooltip.add(desc);
     }
 }
