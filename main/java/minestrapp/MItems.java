@@ -67,6 +67,7 @@ public class MItems
 	public static Item door_charwood;
 	
 	public static Item natural_ingredients;
+	public static Item dye;
 	public static Item sawdust;
 	public static Item mob_loot;
 	public static Item reanimated_arm;
@@ -359,6 +360,8 @@ public class MItems
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
+		//0=White, 1=Magenta, 2=Red, 3=Orange, 4=Gold, 5=Green, 6=Cyan, 7=Blue, 8=Purple
+		register(dye = new ItemMetaBase("m_dye", 9).setCreativeTab(MTabs.ingredients));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide, 12=Skeletal Hand
 		register(mob_loot = new ItemMetaBase("m_mob_loot", 13).setCreativeTab(MTabs.ingredients));
 		register(reanimated_arm = new ItemReanimatedArm());

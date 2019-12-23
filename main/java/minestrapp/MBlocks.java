@@ -68,6 +68,8 @@ public class MBlocks
 	public static Block raspberry_bush;
 	public static Block strawberry_bush;
 	public static Block mana_bush;
+	public static Block carpet_glow_moss;
+	public static Block creeping_glow_moss;
 	public static Block hanging_glow_moss;
 	public static Block clutchthorn;
 	public static Block voidberry_bush;
@@ -489,6 +491,8 @@ public class MBlocks
 		register(clutchthorn = new BlockClutchthorn());
 		register(voidberry_bush = new BlockVoidberryBush("voidberry_bush"));
 		register(terracreep = new BlockTerracreep());
+		register(carpet_glow_moss = new BlockCarpetGlowMoss().setPushReaction(EnumPushReaction.DESTROY));
+		register(creeping_glow_moss = new BlockCreepingGlowMoss().setPushReaction(EnumPushReaction.DESTROY));
 		register(hanging_glow_moss = new BlockHangingMoss("hanging_glow_moss").setLightLevel(0.8F));
 		register(melon_bricks = new BlockBase("melon_bricks", Material.GOURD, MapColor.LIME, SoundType.WOOD, 1F, "axe", 0).setDropsItem(new ItemStack(Items.MELON, 3), 6, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setCreativeTab(MTabs.plant));
 		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));

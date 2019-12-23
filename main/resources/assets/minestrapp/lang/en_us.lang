@@ -3,6 +3,8 @@
 ## Plant ##
 tile.moss.name=Moss Lump
 tile.hanging_moss.name=Hanging Moss
+tile.carpet_glow_moss.name=Carpet Glow Moss
+tile.creeping_glow_moss.name=Creeping Glow Moss
 tile.hanging_glow_moss.name=Hanging Glow Moss
 tile.melon_bricks.name=Melon Bricks
 tile.blue_glowshroom.name=Glowshroom
@@ -835,6 +837,17 @@ item.m_natural_item_0.name=Grass Fibers
 item.m_natural_item_1.name=Mana Leaf
 item.m_natural_item_2.name=Clutchthorn Fibers
 item.sawdust.name=Sawdust
+
+## Dye ##
+item.m_dye_0.name=Glowing White Dye
+item.m_dye_1.name=Glowing Magenta Dye
+item.m_dye_2.name=Glowing Red Dye
+item.m_dye_3.name=Glowing Orange Dye
+item.m_dye_4.name=Glowing Gold Dye
+item.m_dye_5.name=Glowing Green Dye
+item.m_dye_6.name=Glowing Cyan Dye
+item.m_dye_7.name=Glowing Blue Dye
+item.m_dye_8.name=Glowing Purple Dye
 
 ## Mob Loot ##
 item.m_mob_loot_0.name=Animal Bones

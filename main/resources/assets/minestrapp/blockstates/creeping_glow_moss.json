@@ -1,0 +1,30 @@
+{
+    "multipart": [
+        {   
+            "apply": [
+                { "model": "minestrapp:creeping_glow_moss_short"},
+                { "model": "minestrapp:creeping_glow_moss_med"},
+                { "model": "minestrapp:creeping_glow_moss_long"}
+            ]
+        },
+        {
+            "apply": { "model": "minestrapp:creeping_glow_moss_face" }
+        },
+        {   
+            "when": { "south": "true" },
+            "apply": { "model": "minestrapp:creeping_glow_moss_side", "y": 180 }
+        },
+        {   
+            "when": { "north": "true" },
+            "apply": { "model": "minestrapp:creeping_glow_moss_side" }
+        },
+        {   
+            "when": { "west": "true" },
+            "apply": { "model": "minestrapp:creeping_glow_moss_side", "y": 270 }
+        },
+        {   
+            "when": { "east": "true" },
+            "apply": { "model": "minestrapp:creeping_glow_moss_side", "y": 90 }
+        }  
+    ]
+}

@@ -19,6 +19,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -27,16 +28,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockMoss extends BlockBase
+public class BlockCarpetGlowMoss extends BlockBase
 {
 	protected static final AxisAlignedBB MOSS_AABB = new AxisAlignedBB(0, 0, 0, 1, 0.0625, 1);
 			
-	public BlockMoss()
+	public BlockCarpetGlowMoss()
 	{
-		super("moss", Material.SNOW, MapColor.GREEN_STAINED_HARDENED_CLAY, SoundType.CLOTH, 0.4F);
+		super("carpet_glow_moss", Material.SNOW, MapColor.MAGENTA, SoundType.CLOTH, 0.4F);
 		this.setHarvestLevel("shovel", 0);
 		this.setCreativeTab(MTabs.plant);
 		this.setTickRandomly(true);
+		this.setLightLevel(0.4F);
+		this.setGlowing();
+		this.setRenderLayer(BlockRenderLayer.CUTOUT);
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -66,15 +70,7 @@ public class BlockMoss extends BlockBase
 
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-        IBlockState iblockstate = worldIn.getBlockState(pos.down());
-
-        if (iblockstate.getMaterial() == Material.CLAY || iblockstate.getMaterial() == Material.GRASS || iblockstate.getMaterial() == Material.GROUND || iblockstate.getMaterial() == Material.ROCK || iblockstate.getMaterial() == Material.WOOD)
-        {
-            BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP);
-            return blockfaceshape == BlockFaceShape.SOLID && (worldIn.provider.getDimension() == 1 || worldIn.provider.getDimension() == -1 || !worldIn.canSeeSky(pos)) && worldIn.getLight(pos) < 15;
-        }
-        else
-            return false;
+        return this.canBlockStay(worldIn, pos, this.getDefaultState());
     }
     
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
@@ -117,7 +113,7 @@ public class BlockMoss extends BlockBase
     {
         if (rand.nextInt(20) == 0)
         {
-            int i = 9;
+            int i = 6;
 
             for (BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, -1, -4), pos.add(4, 1, 4)))
             {
@@ -151,26 +147,16 @@ public class BlockMoss extends BlockBase
     
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
-        if (pos.getY() >= 0 && pos.getY() < 256)
+        if (pos.getY() > 0 && pos.getY() < 256)
         {
             IBlockState iblockstate = worldIn.getBlockState(pos.down());
 
-            if (iblockstate.getBlock() == Blocks.MYCELIUM)
-            {
+            if (iblockstate.getBlock() == Blocks.MYCELIUM || (iblockstate.getBlock() == Blocks.DIRT && iblockstate.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.PODZOL) || (iblockstate.getBlock() instanceof BlockMDirt && iblockstate.getValue(BlockMDirt.VARIANT) == BlockMDirt.DirtType.PODZOL))
                 return true;
-            }
-            else if (iblockstate.getBlock() == Blocks.DIRT && iblockstate.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.PODZOL)
-            {
-                return true;
-            }
             else
-            {
-                return worldIn.getLight(pos) < 15 && this.canPlaceBlockAt(worldIn, pos);
-            }
+                return iblockstate.isFullBlock() && worldIn.getLight(pos) < 8 && (worldIn.provider.getDimension() == 1 || worldIn.provider.getDimension() == -1 || !worldIn.canSeeSky(pos));
         }
-        else
-        {
-            return false;
-        }
+        
+        return false;
     }
 }

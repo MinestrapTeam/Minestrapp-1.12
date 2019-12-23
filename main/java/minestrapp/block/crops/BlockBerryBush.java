@@ -257,7 +257,7 @@ public class BlockBerryBush extends BlockBush implements IGrowable
 
         if(state.getValue(AGE) == 5)
         {
-        	drops.add(this.dropStack);
+        	drops.add(this.dropStack.copy());
         }
         drops.add(new ItemStack(Item.getItemFromBlock(this)));
     }

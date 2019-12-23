@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "minestrapp:carpet_glow_moss_0" },
+            { "model": "minestrapp:carpet_glow_moss_0", "y": 90 },
+            { "model": "minestrapp:carpet_glow_moss_0", "y": 180 },
+            { "model": "minestrapp:carpet_glow_moss_0", "y": 270 },
+            { "model": "minestrapp:carpet_glow_moss_1" },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 90 },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 180 },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 270 },
+            { "model": "minestrapp:carpet_glow_moss_1" },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 90 },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 180 },
+            { "model": "minestrapp:carpet_glow_moss_1", "y": 270 }
+        ]
+    }
+}
