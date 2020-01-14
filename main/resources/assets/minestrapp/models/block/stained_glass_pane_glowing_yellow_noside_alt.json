@@ -1,0 +1,6 @@
+{
+    "parent": "block/pane_noside_alt",
+    "textures": {
+        "pane": "minestrapp:blocks/dye/glass_glowing_yellow"
+    }
+}

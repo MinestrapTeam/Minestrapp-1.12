@@ -768,8 +768,8 @@ public class BlockActivator extends BlockContainer
 					IBlockState iblockstate = worldIn.getBlockState(sievePos);
 		            Block block = iblockstate.getBlock();
 		            LootTable table = LootTable.EMPTY_LOOT_TABLE;
-		            if(!worldIn.isRemote && SieveRecipes.instance().getSieveResult(iblockstate, worldIn) != null)
-		            	table = worldIn.getLootTableManager().getLootTableFromLocation(SieveRecipes.instance().getSieveResult(iblockstate, worldIn));
+		            if(!worldIn.isRemote && SieveRecipes.instance().getSieveResult(iblockstate) != null)
+		            	table = worldIn.getLootTableManager().getLootTableFromLocation(SieveRecipes.instance().getSieveResult(iblockstate));
 		            
 		            if(table != null && table != LootTable.EMPTY_LOOT_TABLE)
 		            {
@@ -2600,16 +2600,22 @@ public class BlockActivator extends BlockContainer
 					boolean damage = false;
 					BlockPos interactPos = null;
 					
-					if(worldIn.getBlockState(pos1).getBlock() == MBlocks.candle || (worldIn.getBlockState(pos1).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos1).getBlock()).isLit()) || worldIn.getBlockState(pos1).getBlock() instanceof BlockTNT)
+					if(worldIn.getBlockState(pos1).getBlock() == MBlocks.candle || worldIn.getBlockState(pos1).getBlock() == MBlocks.candle2 || (worldIn.getBlockState(pos1).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos1).getBlock()).isLit()) || worldIn.getBlockState(pos1).getBlock() instanceof BlockTNT)
 						interactPos = pos1;
-					else if(worldIn.isAirBlock(pos1) && (worldIn.getBlockState(pos2).getBlock() == MBlocks.candle || (worldIn.getBlockState(pos2).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos2).getBlock()).isLit()) || worldIn.getBlockState(pos2).getBlock() instanceof BlockTNT))
+					else if(worldIn.isAirBlock(pos1) && (worldIn.getBlockState(pos2).getBlock() == MBlocks.candle || worldIn.getBlockState(pos2).getBlock() == MBlocks.candle2 || (worldIn.getBlockState(pos2).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos2).getBlock()).isLit()) || worldIn.getBlockState(pos2).getBlock() instanceof BlockTNT))
 						interactPos = pos2;
 					
 					if(interactPos != null)
 					{
 						if(worldIn.getBlockState(interactPos).getBlock() == MBlocks.candle)
 						{
-							worldIn.setBlockState(interactPos, MBlocks.candle_fire.getDefaultState().withProperty(BlockCandle.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandle.COLOR)));
+							worldIn.setBlockState(interactPos, MBlocks.candle_fire.getDefaultState().withProperty(BlockCandleNormal.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleNormal.COLOR)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							damage = true;
+						}
+						if(worldIn.getBlockState(interactPos).getBlock() == MBlocks.candle2)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.candle2_fire.getDefaultState().withProperty(BlockCandleGlowing.GLOWCOLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleGlowing.GLOWCOLOR)));
 							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
 							damage = true;
 						}
@@ -2856,19 +2862,45 @@ public class BlockActivator extends BlockContainer
 				else if(item == Items.DRAGON_BREATH)
 				{
 					BlockPos interactPos = null;
+					boolean decr = false;
 					
-					if(worldIn.getBlockState(pos1).getBlock() == MBlocks.candle)
+					if(worldIn.getBlockState(pos1).getBlock() == MBlocks.candle || worldIn.getBlockState(pos1).getBlock() == MBlocks.candle2 || (worldIn.getBlockState(pos1).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos1).getBlock()).isLit()))
 						interactPos = pos1;
-					else if(worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock() == MBlocks.candle)
+					else if(worldIn.isAirBlock(pos1) && (worldIn.getBlockState(pos2).getBlock() == MBlocks.candle || worldIn.getBlockState(pos2).getBlock() == MBlocks.candle2 || (worldIn.getBlockState(pos2).getBlock() instanceof BlockJackOLantern && !((BlockJackOLantern)worldIn.getBlockState(pos2).getBlock()).isLit())))
 						interactPos = pos2;
 					
 					if(interactPos != null)
 					{
-						worldIn.setBlockState(interactPos, MBlocks.candle_ender.getDefaultState().withProperty(BlockCandle.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandle.COLOR)));
-						worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
-						worldIn.spawnEntity(new EntityItem(worldIn, interactPos.getX() + 0.5D, interactPos.getY() + 0.5D, interactPos.getZ() + 0.5D, new ItemStack(Items.GLASS_BOTTLE)));
+						if(worldIn.getBlockState(interactPos).getBlock() == MBlocks.candle)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.candle_ender.getDefaultState().withProperty(BlockCandleNormal.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleNormal.COLOR)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						if(worldIn.getBlockState(interactPos).getBlock() == MBlocks.candle2)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.candle2_ender.getDefaultState().withProperty(BlockCandleGlowing.GLOWCOLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleGlowing.GLOWCOLOR)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						else if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockJackOLanternSmashed)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.pumpkin_smashed_ender.getDefaultState().withProperty(BlockJackOLanternSmashed.FACING, worldIn.getBlockState(interactPos).getValue(BlockJackOLanternSmashed.FACING)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						else if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockJackOLantern)
+						{
+							worldIn.setBlockState(interactPos, ((BlockJackOLantern)worldIn.getBlockState(interactPos).getBlock()).getEnder().getDefaultState().withProperty(BlockJackOLantern.FACING, worldIn.getBlockState(interactPos).getValue(BlockJackOLantern.FACING)).withProperty(BlockJackOLantern.VARIANT, worldIn.getBlockState(interactPos).getValue(BlockJackOLantern.VARIANT)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
 						
-						te.decrStackSize(0, 1);
+						if(decr)
+						{
+							worldIn.spawnEntity(new EntityItem(worldIn, interactPos.getX() + 0.5D, interactPos.getY() + 0.5D, interactPos.getZ() + 0.5D, new ItemStack(Items.GLASS_BOTTLE)));
+							te.decrStackSize(0, 1);
+						}
 					}
 				}
 				else if(item instanceof ItemSplashPotion || item instanceof ItemLingeringPotion)
@@ -2928,19 +2960,45 @@ public class BlockActivator extends BlockContainer
 				else if(item instanceof ItemPotion)
 				{
 					BlockPos interactPos = null;
+					boolean decr = false;
 					
-					if(worldIn.getBlockState(pos1).getBlock() instanceof BlockCandle && ((BlockCandle)worldIn.getBlockState(pos1).getBlock()).isLit())
+					if((worldIn.getBlockState(interactPos).getBlock() instanceof BlockCandleBase && !((BlockCandleBase)worldIn.getBlockState(interactPos).getBlock()).isLit()) || (worldIn.getBlockState(pos1).getBlock() instanceof BlockJackOLantern && ((BlockJackOLantern)worldIn.getBlockState(pos1).getBlock()).isLit()))
 						interactPos = pos1;
-					else if(worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock() instanceof BlockCandle && ((BlockCandle)worldIn.getBlockState(pos2).getBlock()).isLit())
+					else if(worldIn.isAirBlock(pos1) && ((worldIn.getBlockState(interactPos).getBlock() instanceof BlockCandleBase && !((BlockCandleBase)worldIn.getBlockState(interactPos).getBlock()).isLit()) || (worldIn.getBlockState(pos2).getBlock() instanceof BlockJackOLantern && ((BlockJackOLantern)worldIn.getBlockState(pos2).getBlock()).isLit())))
 						interactPos = pos2;
 					
 					if(interactPos != null)
 					{
-						worldIn.setBlockState(interactPos, MBlocks.candle.getDefaultState().withProperty(BlockCandle.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandle.COLOR)));
-						worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
-						worldIn.spawnEntity(new EntityItem(worldIn, interactPos.getX() + 0.5D, interactPos.getY() + 0.5D, interactPos.getZ() + 0.5D, new ItemStack(Items.GLASS_BOTTLE)));
+						if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockCandleNormal)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.candle.getDefaultState().withProperty(BlockCandleNormal.COLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleNormal.COLOR)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockCandleGlowing)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.candle2.getDefaultState().withProperty(BlockCandleGlowing.GLOWCOLOR, worldIn.getBlockState(interactPos).getValue(BlockCandleGlowing.GLOWCOLOR)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						else if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockJackOLanternSmashed)
+						{
+							worldIn.setBlockState(interactPos, MBlocks.pumpkin_smashed_ender.getDefaultState().withProperty(BlockJackOLanternSmashed.FACING, worldIn.getBlockState(interactPos).getValue(BlockJackOLanternSmashed.FACING)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
+						else if(worldIn.getBlockState(interactPos).getBlock() instanceof BlockJackOLantern)
+						{
+							worldIn.setBlockState(interactPos, ((BlockJackOLantern)worldIn.getBlockState(interactPos).getBlock()).getEnder().getDefaultState().withProperty(BlockJackOLantern.FACING, worldIn.getBlockState(interactPos).getValue(BlockJackOLantern.FACING)).withProperty(BlockJackOLantern.VARIANT, worldIn.getBlockState(interactPos).getValue(BlockJackOLantern.VARIANT)));
+							worldIn.playSound((EntityPlayer)null, interactPos, SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 1.0F, worldIn.rand.nextFloat() * 0.4F + 0.8F);
+							decr = true;
+						}
 						
-						te.decrStackSize(0, 1);
+						if(decr)
+						{
+							worldIn.spawnEntity(new EntityItem(worldIn, interactPos.getX() + 0.5D, interactPos.getY() + 0.5D, interactPos.getZ() + 0.5D, new ItemStack(Items.GLASS_BOTTLE)));
+							te.decrStackSize(0, 1);
+						}
 					}
 				}
 				else if(item == MItems.pepper_seeds || item == MItems.cabbage_seeds || item == MItems.celery_seeds || item == MItems.tomato_seeds || item == MItems.corn || item == MItems.onion || item == MItems.peanuts || item == MItems.lettuce)

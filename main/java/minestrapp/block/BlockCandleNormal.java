@@ -38,49 +38,23 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCandle extends BlockBase implements IMetaBlockName
+public class BlockCandleNormal extends BlockCandleBase implements IMetaBlockName
 {
 	private String type;
 	
-	protected static final AxisAlignedBB AABB_CANDLE = new AxisAlignedBB(0.25D, 0D, 0.25D, 0.75D, 0.5D, 0.75D);
 	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.<EnumDyeColor>create("color", EnumDyeColor.class);
 	
-	public BlockCandle(String name, String type)
+	public BlockCandleNormal(String name, String type)
 	{
-		super(name, Material.CORAL, MapColor.SNOW, SoundType.WOOD, 0.2F);
+		super(name, type);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
-		if(type == "unlit")
-			this.setCreativeTab(MTabs.decor);
-		else if(type == "fire")
-			this.setLightLevel(0.85F);
-		else if(type == "ender")
-			this.setLightLevel(0.6F);
+		this.setGlowing();
 		this.type = type;
 		if(type != "unlit")
 			this.setDropsItem(new ItemStack(MBlocks.candle), 0, 0, 0, false, false);
+		else
+			this.setLightLevel(0.3F);
 	}
-	
-	public boolean isLit() {return this.type != "unlit";}
-	
-	public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-    {
-		return AABB_CANDLE;
-    }
-	
-	public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
-    }
-
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-    
-    public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
-    {
-        return BlockFaceShape.UNDEFINED;
-    }
 	
 	public int damageDropped(IBlockState state)
     {
@@ -120,25 +94,6 @@ public class BlockCandle extends BlockBase implements IMetaBlockName
 	{
 		return new ItemStack(MBlocks.candle, 1, getMetaFromState(world.getBlockState(pos)));
 	}
-	
-	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-    {
-		Block block = worldIn.getBlockState(pos.down()).getBlock();
-		
-		if(worldIn.isSideSolid(pos.down(), EnumFacing.UP) || block.getBlockFaceShape(worldIn, worldIn.getBlockState(pos.down()), pos, EnumFacing.UP) == BlockFaceShape.CENTER || block.getBlockFaceShape(worldIn, worldIn.getBlockState(pos.down()), pos, EnumFacing.UP) == BlockFaceShape.CENTER_BIG)
-			return true;
-		
-		return false;
-    }
-	
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
-    {
-        if(!worldIn.isRemote && !this.canPlaceBlockAt(worldIn, pos))
-        {
-        	this.dropBlockAsItem(worldIn, pos, state, 0);
-        	worldIn.setBlockToAir(pos);
-        }
-    }
 	
 	@Override
 	public String getSpecialName(ItemStack stack)

@@ -1,0 +1,247 @@
+{
+    "multipart": [
+        {   "when": { "color": "glowing_white" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_post" }
+        },
+        {   "when": { "color": "glowing_white", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_side" }
+        },
+        {   "when": { "color": "glowing_white", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_white", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_side_alt" }
+        },
+        {   "when": { "color": "glowing_white", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_white", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_noside" }
+        },
+        {   "when": { "color": "glowing_white", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_noside_alt" }
+        },
+        {   "when": { "color": "glowing_white", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_white", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_white_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_magenta" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_post" }
+        },
+        {   "when": { "color": "glowing_magenta", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_side" }
+        },
+        {   "when": { "color": "glowing_magenta", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_magenta", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_side_alt" }
+        },
+        {   "when": { "color": "glowing_magenta", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_magenta", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_noside" }
+        },
+        {   "when": { "color": "glowing_magenta", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_noside_alt" }
+        },
+        {   "when": { "color": "glowing_magenta", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_magenta", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_magenta_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_red" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_post" }
+        },
+        {   "when": { "color": "glowing_red", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_side" }
+        },
+        {   "when": { "color": "glowing_red", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_red", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_side_alt" }
+        },
+        {   "when": { "color": "glowing_red", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_red", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_noside" }
+        },
+        {   "when": { "color": "glowing_red", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_noside_alt" }
+        },
+        {   "when": { "color": "glowing_red", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_red", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_red_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_orange" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_post" }
+        },
+        {   "when": { "color": "glowing_orange", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_side" }
+        },
+        {   "when": { "color": "glowing_orange", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_orange", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_side_alt" }
+        },
+        {   "when": { "color": "glowing_orange", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_orange", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_noside" }
+        },
+        {   "when": { "color": "glowing_orange", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_noside_alt" }
+        },
+        {   "when": { "color": "glowing_orange", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_orange", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_orange_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_yellow" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_post" }
+        },
+        {   "when": { "color": "glowing_yellow", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_side" }
+        },
+        {   "when": { "color": "glowing_yellow", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_yellow", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_side_alt" }
+        },
+        {   "when": { "color": "glowing_yellow", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_yellow", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_noside" }
+        },
+        {   "when": { "color": "glowing_yellow", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_noside_alt" }
+        },
+        {   "when": { "color": "glowing_yellow", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_yellow", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_yellow_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_green" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_post" }
+        },
+        {   "when": { "color": "glowing_green", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_side" }
+        },
+        {   "when": { "color": "glowing_green", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_green", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_side_alt" }
+        },
+        {   "when": { "color": "glowing_green", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_green", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_noside" }
+        },
+        {   "when": { "color": "glowing_green", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_noside_alt" }
+        },
+        {   "when": { "color": "glowing_green", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_green", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_green_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_cyan" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_post" }
+        },
+        {   "when": { "color": "glowing_cyan", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_side" }
+        },
+        {   "when": { "color": "glowing_cyan", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_cyan", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_side_alt" }
+        },
+        {   "when": { "color": "glowing_cyan", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_cyan", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_noside" }
+        },
+        {   "when": { "color": "glowing_cyan", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_noside_alt" }
+        },
+        {   "when": { "color": "glowing_cyan", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_cyan", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_cyan_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_blue" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_post" }
+        },
+        {   "when": { "color": "glowing_blue", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_side" }
+        },
+        {   "when": { "color": "glowing_blue", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_blue", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_side_alt" }
+        },
+        {   "when": { "color": "glowing_blue", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_blue", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_noside" }
+        },
+        {   "when": { "color": "glowing_blue", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_noside_alt" }
+        },
+        {   "when": { "color": "glowing_blue", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_blue", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_blue_noside", "y": 270 }
+        },
+        {   "when": { "color": "glowing_purple" },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_post" }
+        },
+        {   "when": { "color": "glowing_purple", "north": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_side" }
+        },
+        {   "when": { "color": "glowing_purple", "east": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_side", "y": 90 }
+        },
+        {   "when": { "color": "glowing_purple", "south": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_side_alt" }
+        },
+        {   "when": { "color": "glowing_purple", "west": true },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_side_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_purple", "north": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_noside" }
+        },
+        {   "when": { "color": "glowing_purple", "east": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_noside_alt" }
+        },
+        {   "when": { "color": "glowing_purple", "south": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_noside_alt", "y": 90 }
+        },
+        {   "when": { "color": "glowing_purple", "west": false },
+            "apply": { "model": "minestrapp:stained_glass_pane_glowing_purple_noside", "y": 270 }
+        }
+    ]
+}

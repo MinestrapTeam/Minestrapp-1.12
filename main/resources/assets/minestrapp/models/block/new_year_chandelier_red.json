@@ -3,7 +3,7 @@
 	"textures": {
 		"particle": "minestrapp:blocks/decor/holiday/new_year_chandelier",
 		"texture": "minestrapp:blocks/decor/holiday/new_year_chandelier",
-		"texture1": "minestrapp:blocks/decor/wax_red",
+		"texture1": "minestrapp:blocks/dye/wax_red",
 		"texture2": "minestrapp:blocks/utility/rope_side"
 	},
 	"elements": [ 	 

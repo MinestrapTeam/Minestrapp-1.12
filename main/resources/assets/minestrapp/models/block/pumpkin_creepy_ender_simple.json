@@ -6,7 +6,7 @@
     "texture": "minestrapp:blocks/decor/pumpkin/pumpkin_side",
     "pumpkin_inside_end": "minestrapp:blocks/decor/pumpkin/pumpkin_inside_end",
     "pumpkin_rim_end": "minestrapp:blocks/decor/pumpkin/pumpkin_rim_end",
-    "wax": "minestrapp:blocks/decor/wax_magenta",
+    "wax": "minestrapp:blocks/dye/wax_magenta",
     "pumpkin_bottom": "minestrapp:blocks/decor/pumpkin/pumpkin_bottom",
     "pumpkin_top": "minestrapp:blocks/decor/pumpkin/pumpkin_top",
     "pumpkin_face_creepy_1": "minestrapp:blocks/decor/pumpkin/pumpkin_face_creepy_1_end"

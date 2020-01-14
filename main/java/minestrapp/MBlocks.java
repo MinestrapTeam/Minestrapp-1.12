@@ -298,6 +298,24 @@ public class MBlocks
 	public static Block block_dimensium;
 	public static Block block_dimensium_destabilized;
 	
+	//Dyeables
+	public static Block glow_wool;
+	public static Block glow_carpet;
+	public static Block glow_stained_glass;
+	public static Block glow_stained_glass_pane;
+	public static Block glow_concrete_powder;
+	public static Block glow_concrete;
+	public static Block glow_terracotta;
+	public static Block glow_glazed_terracotta_white;
+	public static Block glow_glazed_terracotta_magenta;
+	public static Block glow_glazed_terracotta_red;
+	public static Block glow_glazed_terracotta_orange;
+	public static Block glow_glazed_terracotta_yellow;
+	public static Block glow_glazed_terracotta_green;
+	public static Block glow_glazed_terracotta_cyan;
+	public static Block glow_glazed_terracotta_blue;
+	public static Block glow_glazed_terracotta_purple;
+	
 	//Decor
 	public static Block glass_tiles;
 	public static Block glass_bricks;
@@ -325,6 +343,9 @@ public class MBlocks
 	public static Block candle;
 	public static Block candle_fire;
 	public static Block candle_ender;
+	public static Block candle2;
+	public static Block candle2_fire;
+	public static Block candle2_ender;
 	public static Block chandelier_halloween;
 	public static Block chandelier_halloween_fire;
 	public static Block chandelier_halloween_ender;
@@ -454,6 +475,10 @@ public class MBlocks
 	public static BlockBiomeRedstoneWire redstone_icy;
 	public static BlockBiomeRedstoneWire redstone_briny;
 	public static Block glow_paste;
+	
+	public static Block hacky_jei_fix_light_freezing;
+	public static Block hacky_jei_fix_deep_freezing;
+	public static Block hacky_jei_fix_sieving;
 	
 	//Crops
 	public static Block crop_withered;
@@ -724,6 +749,24 @@ public class MBlocks
 		register(block_dimensium = new BlockDimensium("block_dimensium", Material.IRON, MapColor.MAGENTA, SoundType.METAL, 5F, "pickaxe", 2, false).setEntityInvulnerability("dragon").setBeaconBase().setResistance(10F).setCreativeTab(MTabs.resource));
 		register(block_dimensium_destabilized = new BlockDimensium("block_dimensium_destabilized", Material.IRON, MapColor.MAGENTA, SoundType.METAL, -1F, "pickaxe", 999, true).setEntityInvulnerability("all").setPushReaction(EnumPushReaction.BLOCK).setBlockUnbreakable().setResistance(6000000.0F));
 		
+		//Dyeables
+		register(glow_wool = new BlockMGlowDyed("m_wool", Material.CLOTH, MapColor.CLOTH, SoundType.CLOTH, 0.8F), new ItemBlockMultistate(glow_wool));
+		register(glow_carpet = new BlockMCarpet(), new ItemBlockMultistate(glow_carpet));
+		register(glow_stained_glass = new BlockMStainedGlass(), new ItemBlockMultistate(glow_stained_glass));
+		register(glow_stained_glass_pane = new BlockMStainedGlassPane(), new ItemBlockMultistate(glow_stained_glass_pane));
+		register(glow_concrete_powder = new BlockMConcretePowder(), new ItemBlockMultistate(glow_concrete_powder));
+		register(glow_concrete = new BlockMGlowDyed("m_concrete", Material.ROCK, MapColor.SNOW, SoundType.STONE, 1.8F, "pickaxe", 0), new ItemBlockMultistate(glow_concrete));
+		register(glow_terracotta = new BlockMGlowDyed("m_terracotta", Material.ROCK, MapColor.ADOBE, SoundType.STONE, 1.25F, "pickaxe", 0).setResistance(7F), new ItemBlockMultistate(glow_terracotta));
+		register(glow_glazed_terracotta_white = new BlockMGlazedTerracotta("glowing_white", BlockMGlowDyed.EnumGlowDye.WHITE.getMapColor()));
+		register(glow_glazed_terracotta_magenta = new BlockMGlazedTerracotta("glowing_magenta", BlockMGlowDyed.EnumGlowDye.MAGENTA.getMapColor()));
+		register(glow_glazed_terracotta_red = new BlockMGlazedTerracotta("glowing_red", BlockMGlowDyed.EnumGlowDye.RED.getMapColor()));
+		register(glow_glazed_terracotta_orange = new BlockMGlazedTerracotta("glowing_orange", BlockMGlowDyed.EnumGlowDye.ORANGE.getMapColor()));
+		register(glow_glazed_terracotta_yellow = new BlockMGlazedTerracotta("glowing_yellow", BlockMGlowDyed.EnumGlowDye.YELLOW.getMapColor()));
+		register(glow_glazed_terracotta_green = new BlockMGlazedTerracotta("glowing_green", BlockMGlowDyed.EnumGlowDye.GREEN.getMapColor()));
+		register(glow_glazed_terracotta_cyan = new BlockMGlazedTerracotta("glowing_cyan", BlockMGlowDyed.EnumGlowDye.CYAN.getMapColor()));
+		register(glow_glazed_terracotta_blue = new BlockMGlazedTerracotta("glowing_blue", BlockMGlowDyed.EnumGlowDye.BLUE.getMapColor()));
+		register(glow_glazed_terracotta_purple = new BlockMGlazedTerracotta("glowing_purple", BlockMGlowDyed.EnumGlowDye.PURPLE.getMapColor()));
+		
 		//Decor
 		register(glass_tiles = new BlockBaseNonSolid("glass_tiles", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
 		register(glass_bricks = new BlockBaseNonSolid("glass_bricks", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F).setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false).setRenderLayer(BlockRenderLayer.CUTOUT).setIgnoresSimilarity().setLightOpacity(0).setCreativeTab(MTabs.decor));
@@ -751,9 +794,12 @@ public class MBlocks
 		register(bauble_blazium = new BlockBauble("bauble_blazium", Material.IRON, MapColor.ADOBE, SoundType.METAL, 5F, "pickaxe", 2).setLightLevel(0.7F).setResistance(5F).setCreativeTab(MTabs.decor));
 		register(cobblestone_wall = new BlockCobblestoneWall(cobblestone, "m_cobblestone_wall"), new ItemBlockMultistate(cobblestone_wall));
 		register(mossy_cobblestone_wall = new BlockCobblestoneWall(mossy_cobblestone, "m_mossy_cobblestone_wall"), new ItemBlockMultistate(mossy_cobblestone_wall));
-		register(candle = new BlockCandle("candle", "unlit"), new ItemBlockMultistate(candle));
-		ForgeRegistries.BLOCKS.register(candle_fire = new BlockCandle("candle_fire", "fire"));
-		ForgeRegistries.BLOCKS.register(candle_ender = new BlockCandle("candle_ender", "ender"));
+		register(candle = new BlockCandleNormal("candle", "unlit"), new ItemBlockMultistate(candle));
+		ForgeRegistries.BLOCKS.register(candle_fire = new BlockCandleNormal("candle_fire", "fire"));
+		ForgeRegistries.BLOCKS.register(candle_ender = new BlockCandleNormal("candle_ender", "ender"));
+		register(candle2 = new BlockCandleGlowing("candle_2", "unlit"), new ItemBlockMultistate(candle2));
+		ForgeRegistries.BLOCKS.register(candle2_fire = new BlockCandleGlowing("candle_2_fire", "fire"));
+		ForgeRegistries.BLOCKS.register(candle2_ender = new BlockCandleGlowing("candle_2_ender", "ender"));
 		register(chandelier_halloween = new BlockChandelierHalloween("halloween_chandelier", "unlit"), new ItemBlockMultistate(chandelier_halloween));
 		ForgeRegistries.BLOCKS.register(chandelier_halloween_fire = new BlockChandelierHalloween("halloween_chandelier_fire", "fire"));
 		ForgeRegistries.BLOCKS.register(chandelier_halloween_ender = new BlockChandelierHalloween("halloween_chandelier_ender", "ender"));
@@ -904,7 +950,12 @@ public class MBlocks
 		
 		register(liquid_crystalfloe = new LiquidCrystalfloe(MFluids.crystalfloe, MMaterials.CRYSTALFLOE).setUnlocalizedName("crystalfloe").setRegistryName("crystalfloe"));
 		
-		Blocks.BEDROCK.setHardness(100F).setHarvestLevel("pickaxe", 4);
+		Blocks.BEDROCK.setHardness(100F).setResistance(160000F).setHarvestLevel("pickaxe", 4);
+		Blocks.CHORUS_FLOWER.setLightLevel(0.7F);
+		
+		register(hacky_jei_fix_light_freezing = new BlockBase("hacky_jei_fix_light_freezing").setTooltip("Glacierite Tools & Armor"));
+		register(hacky_jei_fix_deep_freezing = new BlockBase("hacky_jei_fix_deep_freezing").setTooltip("Frost-Walker Glacierite Boots"));
+		register(hacky_jei_fix_sieving = new BlockBase("hacky_jei_fix_sieving"));
 	}
 	
 	public static void register(Block block)
@@ -1047,6 +1098,17 @@ public class MBlocks
 		for(int i = 0 ; i < BlockStoneSlab4.EnumType.values().length ; i++)
 		{
 			initModel(stone_slab_4, i, "m_stone_slab_4_" + BlockStoneSlab4.EnumType.values()[i].getName());
+		}
+		for(int i = 0 ; i < BlockMGlowDyed.EnumGlowDye.values().length ; i++)
+		{
+			initModel(glow_wool, i, "m_wool_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_carpet, i, "m_carpet_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_stained_glass, i, "m_stained_glass_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_stained_glass_pane, i, "m_stained_glass_pane_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_terracotta, i, "m_terracotta_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_concrete_powder, i, "m_concrete_powder_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(glow_concrete, i, "m_concrete_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
+			initModel(candle2, i, "candle_2_" + BlockMGlowDyed.EnumGlowDye.values()[i].getName());
 		}
 		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
 		{

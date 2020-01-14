@@ -57,6 +57,8 @@ public class MConfig
 	public static boolean generatePortalDust;
 	
 	public static boolean generateMoss;
+	public static boolean generateCarpetGlowMoss;
+	public static boolean generateCreepingGlowMoss;
 	public static boolean generateSavannaGrass;
 	public static boolean generateTundraGrass;
 	public static boolean generateBerryBushes;
@@ -175,6 +177,10 @@ public class MConfig
 		
 		Property propertyMossGen = config.get(CATEGORY_WORLDGEN, "generate_moss", true);
 		registerProperty(propertyMossGen, CATEGORY_WORLDGEN, "generate_moss");
+		Property propertyCarpetGlowMossGen = config.get(CATEGORY_WORLDGEN, "generate_carpet_glow_moss", true);
+		registerProperty(propertyCarpetGlowMossGen, CATEGORY_WORLDGEN, "generate_carpet_glow_moss");
+		Property propertyCreepingGlowMossGen = config.get(CATEGORY_WORLDGEN, "generate_creeping_glow_moss", true);
+		registerProperty(propertyCreepingGlowMossGen, CATEGORY_WORLDGEN, "generate_creeping_glow_moss");
 		Property propertySavannaGrassGen = config.get(CATEGORY_WORLDGEN, "generate_savanna_grass", true);
 		registerProperty(propertySavannaGrassGen, CATEGORY_WORLDGEN, "generate_savanna_grass");
 		Property propertyTundraGrassGen = config.get(CATEGORY_WORLDGEN, "generate_tundra_grass", true);
@@ -248,6 +254,8 @@ public class MConfig
 			generatePortalDust = propertyPortalDustGen.getBoolean();
 			
 			generateMoss = propertyMossGen.getBoolean();
+			generateCarpetGlowMoss = propertyCarpetGlowMossGen.getBoolean();
+			generateCreepingGlowMoss = propertyCreepingGlowMossGen.getBoolean();
 			generateSavannaGrass = propertySavannaGrassGen.getBoolean();
 			generateTundraGrass = propertyTundraGrassGen.getBoolean();
 			generateBerryBushes = propertyBerryBushGen.getBoolean();
@@ -298,6 +306,8 @@ public class MConfig
 		propertyPortalDustGen.set(generatePortalDust);
 		
 		propertyMossGen.set(generateMoss);
+		propertyCarpetGlowMossGen.set(generateCarpetGlowMoss);
+		propertyCreepingGlowMossGen.set(generateCreepingGlowMoss);
 		propertySavannaGrassGen.set(generateSavannaGrass);
 		propertyTundraGrassGen.set(generateTundraGrass);
 		propertyBerryBushGen.set(generateBerryBushes);

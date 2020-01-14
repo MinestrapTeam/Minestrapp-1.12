@@ -362,6 +362,68 @@ public class MWorldDecorator
 				bushGen.generate(world, random, berryPos);
 			}
 			
+			if(MConfig.generateCarpetGlowMoss)
+			{
+				int chance = 1;
+				int size = 10;
+				
+				if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
+				{
+					chance = 3;
+					size = 20;
+				}
+				else if(biome == Biomes.MUSHROOM_ISLAND || biome == Biomes.MUSHROOM_ISLAND_SHORE)
+				{
+					chance = 10;
+					size = 80;
+				}
+				
+				for(int i = 0 ; i < chance ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 60 - random.nextInt(58);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.carpet_glow_moss.canPlaceBlockAt(world, mossPos))
+					{
+						MGenMoss mossGen = new MGenMoss(size, MBlocks.carpet_glow_moss);
+						mossGen.generate(world, random, mossPos);
+					}
+				}
+			}
+			
+			if(MConfig.generateCreepingGlowMoss)
+			{
+				int chance = 1;
+				int size = 32;
+				
+				if(biome == Biomes.ROOFED_FOREST || biome == Biomes.MUTATED_ROOFED_FOREST)
+				{
+					chance = 3;
+					size = 64;
+				}
+				else if(biome == Biomes.MUSHROOM_ISLAND || biome == Biomes.MUSHROOM_ISLAND_SHORE)
+				{
+					chance = 10;
+					size = 128;
+				}
+				
+				for(int i = 0 ; i < chance ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 48 - random.nextInt(46);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.creeping_glow_moss.canPlaceBlockAt(world, mossPos))
+					{
+						MGenMoss mossGen = new MGenMoss(size, MBlocks.creeping_glow_moss);
+						mossGen.generate(world, random, mossPos);
+					}
+				}
+			}
+			
 			// Moss Gen
 			if(!(biome.getTempCategory() == TempCategory.OCEAN || biome.getDefaultTemperature() < 0.2F))
 			{
@@ -384,7 +446,7 @@ public class MWorldDecorator
 						BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 						if(MBlocks.moss.canPlaceBlockAt(world, mossPos))
 						{
-							MGenMoss mossGen = new MGenMoss();
+							MGenMoss mossGen = new MGenMoss(32, MBlocks.moss);
 							mossGen.generate(world, random, mossPos);
 						}
 					}
@@ -506,7 +568,7 @@ public class MWorldDecorator
 				}
 			}
 			
-			if(MConfig.generateHeartSpots)
+			if(MConfig.generateHeartSpots && random.nextInt(3) == 1)
 			{
 				int posX = random.nextInt(16)+8;
 				int posY = 250 - random.nextInt(240);
@@ -536,6 +598,22 @@ public class MWorldDecorator
 					}
 				}
 			}
+			if(MConfig.generateCreepingGlowMoss)
+			{
+				for(int i = 0 ; i < 5 ; i++)
+				{
+					int posX = random.nextInt(16)+8;
+					int posY = 128 - random.nextInt(100);
+					int posZ = random.nextInt(16)+8;
+					
+					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(MBlocks.creeping_glow_moss.canPlaceBlockAt(world, mossPos))
+					{
+						MGenMoss mossGen = new MGenMoss(60, MBlocks.creeping_glow_moss);
+						mossGen.generate(world, random, mossPos);
+					}
+				}
+			}
 			if(MConfig.generateGlowMoss)
 			{
 				for(int i = 0 ; i < 10 ; i++)
@@ -547,7 +625,7 @@ public class MWorldDecorator
 					BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 					if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
 					{
-						MGenHangingMoss mossGen = new MGenHangingMoss(40);
+						MGenHangingMoss mossGen = new MGenHangingMoss(40, MBlocks.hanging_glow_moss);
 						mossGen.generate(world, random, mossPos);
 					}
 				}
@@ -619,7 +697,7 @@ public class MWorldDecorator
 			
 			if(MConfig.generateHeartSpots)
 			{
-				for(int i = 0 ; i < 15 ; i++)
+				for(int i = 0 ; i < 8 ; i++)
 				{
 					int posX = random.nextInt(16)+8;
 					int posY = 120 - random.nextInt(100);
@@ -729,6 +807,22 @@ public class MWorldDecorator
 						}
 					}
 				}
+				if(MConfig.generateCarpetGlowMoss)
+				{
+					for(int i = 0 ; i < 5 ; i++)
+					{
+						int posX = random.nextInt(16)+8;
+						int posY = 90 - random.nextInt(80);
+						int posZ = random.nextInt(16)+8;
+						
+						BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+						if(MBlocks.carpet_glow_moss.canPlaceBlockAt(world, mossPos))
+						{
+							MGenMoss mossGen = new MGenMoss(20, MBlocks.carpet_glow_moss);
+							mossGen.generate(world, random, mossPos);
+						}
+					}
+				}
 				if(MConfig.generateGlowMoss)
 				{
 					for(int i = 0 ; i < 15 ; i++)
@@ -740,7 +834,7 @@ public class MWorldDecorator
 						BlockPos mossPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
 						if(MBlocks.hanging_glow_moss.canPlaceBlockAt(world, mossPos))
 						{
-							MGenHangingMoss mossGen = new MGenHangingMoss(36);
+							MGenHangingMoss mossGen = new MGenHangingMoss(36, MBlocks.hanging_glow_moss);
 							mossGen.generate(world, random, mossPos);
 						}
 					}
@@ -760,18 +854,15 @@ public class MWorldDecorator
 				}
 				if(MConfig.generateHeartSpots)
 				{
-					for(int i = 0 ; i < 2 ; i++)
-					{
-						int posX = random.nextInt(16)+8;
-						int posY = 90 - random.nextInt(50);
-						int posZ = random.nextInt(16)+8;
+					int posX = random.nextInt(16)+8;
+					int posY = 90 - random.nextInt(50);
+					int posZ = random.nextInt(16)+8;
 						
-						BlockPos heartPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
-						Block ground = world.getBlockState(heartPos.down()).getBlock();
-						if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && ground == MBlocks.portal_dust || ground == MBlocks.fargrowth)
-						{
-							world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
-						}
+					BlockPos heartPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					Block ground = world.getBlockState(heartPos.down()).getBlock();
+					if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && ground == MBlocks.portal_dust || ground == MBlocks.fargrowth)
+					{
+						world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
 					}
 				}
 			}

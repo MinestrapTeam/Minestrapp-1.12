@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_post",
+    "textures": {
+        "edge": "minestrapp:blocks/dye/glass_pane_glowing_red",
+        "pane": "minestrapp:blocks/dye/glass_pane_glowing_red"
+    }
+}

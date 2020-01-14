@@ -1,0 +1,13 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "glowing_magenta_dye",
+    "ingredients": [
+        {
+            "item": "minestrapp:carpet_glow_moss"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_dye",
+        "data": 1
+    }   
+}

@@ -2,6 +2,7 @@ package minestrapp.crafting;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import minestrapp.block.BlockMGlowDyed;
 import minestrapp.block.EnumStoneTypeMOnly;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -157,5 +158,14 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(MItems.iron_mace, new ItemStack(Items.IRON_NUGGET), 0.1F);
 		GameRegistry.addSmelting(MItems.gold_dagger, new ItemStack(Items.GOLD_NUGGET), 0.1F);
 		GameRegistry.addSmelting(MItems.gold_mace, new ItemStack(Items.GOLD_NUGGET), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 0), new ItemStack(MBlocks.glow_glazed_terracotta_white), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 1), new ItemStack(MBlocks.glow_glazed_terracotta_magenta), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 2), new ItemStack(MBlocks.glow_glazed_terracotta_red), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 3), new ItemStack(MBlocks.glow_glazed_terracotta_orange), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 4), new ItemStack(MBlocks.glow_glazed_terracotta_yellow), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 5), new ItemStack(MBlocks.glow_glazed_terracotta_green), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 6), new ItemStack(MBlocks.glow_glazed_terracotta_cyan), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 7), new ItemStack(MBlocks.glow_glazed_terracotta_blue), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 8), new ItemStack(MBlocks.glow_glazed_terracotta_purple), 0.1F);
 	}
 }

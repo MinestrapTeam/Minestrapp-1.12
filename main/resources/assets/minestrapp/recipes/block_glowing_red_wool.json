@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "wool",
+    "ingredients": [
+        {
+            "item": "minecraft:wool",
+            "data": 0
+        },
+        {
+            "item": "minestrapp:m_dye",
+            "data": 2
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_wool",
+        "data": 2
+    }   
+}

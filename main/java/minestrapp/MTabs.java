@@ -98,6 +98,21 @@ public class MTabs
 		}
 	};
 	
+	public static CreativeTabs dye = new CreativeTabs("Dyeables")
+	{
+		@Override
+		public String getTabLabel()
+		{
+			return "Dyeables";
+		}
+		@Override
+		@SideOnly(Side.CLIENT)
+		public ItemStack getTabIconItem()
+		{
+			return new ItemStack(MItems.dye, 1, 3);
+		}
+	};
+	
 	public static CreativeTabs decor = new CreativeTabs("DecorBlocks")
 	{
 		@Override
@@ -109,7 +124,7 @@ public class MTabs
 		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem()
 		{
-			return new ItemStack(Item.getItemFromBlock(MBlocks.candle), 1, 0);
+			return new ItemStack(Item.getItemFromBlock(MBlocks.wooden_window), 1, 0);
 		}
 	};
 	

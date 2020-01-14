@@ -567,7 +567,6 @@ tile.geode_shimmerstone_dark.name=Strange Boulder
 tile.heart_spot.name=Buried Heart Piece
 
 ## Resource ##
-
 tile.block_salt.name=Block of Salt
 tile.block_rock_crystal.name=Block of Rock Crystal
 tile.block_copper.name=Block of Copper
@@ -593,6 +592,113 @@ tile.block_soul.name=Soul Gem Block
 tile.block_mite_honey.name=Block of Mite Honey
 tile.block_dimensium.name=Block of Dimensium
 tile.block_dimensium_destabilized.name=Destabilized Block of Dimensium
+
+## Dyables ##
+tile.m_wool_glowing_white.name=Glowing White Wool
+tile.m_wool_glowing_magenta.name=Glowing Magenta Wool
+tile.m_wool_glowing_red.name=Glowing Red Wool
+tile.m_wool_glowing_orange.name=Glowing Orange Wool
+tile.m_wool_glowing_yellow.name=Glowing Gold Wool
+tile.m_wool_glowing_green.name=Glowing Green Wool
+tile.m_wool_glowing_cyan.name=Glowing Cyan Wool
+tile.m_wool_glowing_blue.name=Glowing Blue Wool
+tile.m_wool_glowing_purple.name=Glowing Purple Wool
+
+tile.m_carpet_glowing_white.name=Glowing White Carpet
+tile.m_carpet_glowing_magenta.name=Glowing Magenta Carpet
+tile.m_carpet_glowing_red.name=Glowing Red Carpet
+tile.m_carpet_glowing_orange.name=Glowing Orange Carpet
+tile.m_carpet_glowing_yellow.name=Glowing Gold Carpet
+tile.m_carpet_glowing_green.name=Glowing Green Carpet
+tile.m_carpet_glowing_cyan.name=Glowing Cyan Carpet
+tile.m_carpet_glowing_blue.name=Glowing Blue Carpet
+tile.m_carpet_glowing_purple.name=Glowing Purple Carpet
+
+tile.m_stained_glass_glowing_white.name=Glowing White Stained Glass
+tile.m_stained_glass_glowing_magenta.name=Glowing Magenta Stained Glass
+tile.m_stained_glass_glowing_red.name=Glowing Red Stained Glass
+tile.m_stained_glass_glowing_orange.name=Glowing Orange Stained Glass
+tile.m_stained_glass_glowing_yellow.name=Glowing Gold Stained Glass
+tile.m_stained_glass_glowing_green.name=Glowing Green Stained Glass
+tile.m_stained_glass_glowing_cyan.name=Glowing Cyan Stained Glass
+tile.m_stained_glass_glowing_blue.name=Glowing Blue Stained Glass
+tile.m_stained_glass_glowing_purple.name=Glowing Purple Stained Glass
+
+tile.m_stained_glass_pane_glowing_white.name=Glowing White Stained Glass Pane
+tile.m_stained_glass_pane_glowing_magenta.name=Glowing Magenta Stained Glass Pane
+tile.m_stained_glass_pane_glowing_red.name=Glowing Red Stained Glass Pane
+tile.m_stained_glass_pane_glowing_orange.name=Glowing Orange Stained Glass Pane
+tile.m_stained_glass_pane_glowing_yellow.name=Glowing Gold Stained Glass Pane
+tile.m_stained_glass_pane_glowing_green.name=Glowing Green Stained Glass Pane
+tile.m_stained_glass_pane_glowing_cyan.name=Glowing Cyan Stained Glass Pane
+tile.m_stained_glass_pane_glowing_blue.name=Glowing Blue Stained Glass Pane
+tile.m_stained_glass_pane_glowing_purple.name=Glowing Purple Stained Glass Pane
+
+tile.m_terracotta_glowing_white.name=Glowing White Terracotta
+tile.m_terracotta_glowing_magenta.name=Glowing Magenta Terracotta
+tile.m_terracotta_glowing_red.name=Glowing Red Terracotta
+tile.m_terracotta_glowing_orange.name=Glowing Orange Terracotta
+tile.m_terracotta_glowing_yellow.name=Glowing Gold Terracotta
+tile.m_terracotta_glowing_green.name=Glowing Green Terracotta
+tile.m_terracotta_glowing_cyan.name=Glowing Cyan Terracotta
+tile.m_terracotta_glowing_blue.name=Glowing Blue Terracotta
+tile.m_terracotta_glowing_purple.name=Glowing Purple Terracotta
+
+tile.m_glazed_terracotta_glowing_white.name=Glowing White Glazed Terracotta
+tile.m_glazed_terracotta_glowing_magenta.name=Glowing Magenta Glazed Terracotta
+tile.m_glazed_terracotta_glowing_red.name=Glowing Red Glazed Terracotta
+tile.m_glazed_terracotta_glowing_orange.name=Glowing Orange Glazed Terracotta
+tile.m_glazed_terracotta_glowing_yellow.name=Glowing Gold Glazed Terracotta
+tile.m_glazed_terracotta_glowing_green.name=Glowing Green Glazed Terracotta
+tile.m_glazed_terracotta_glowing_cyan.name=Glowing Cyan Glazed Terracotta
+tile.m_glazed_terracotta_glowing_blue.name=Glowing Blue Glazed Terracotta
+tile.m_glazed_terracotta_glowing_purple.name=Glowing Purple Glazed Terracotta
+
+tile.m_concrete_powder_glowing_white.name=Glowing White Concrete Powder
+tile.m_concrete_powder_glowing_magenta.name=Glowing Magenta Concrete Powder
+tile.m_concrete_powder_glowing_red.name=Glowing Red Concrete Powder
+tile.m_concrete_powder_glowing_orange.name=Glowing Orange Concrete Powder
+tile.m_concrete_powder_glowing_yellow.name=Glowing Gold Concrete Powder
+tile.m_concrete_powder_glowing_green.name=Glowing Green Concrete Powder
+tile.m_concrete_powder_glowing_cyan.name=Glowing Cyan Concrete Powder
+tile.m_concrete_powder_glowing_blue.name=Glowing Blue Concrete Powder
+tile.m_concrete_powder_glowing_purple.name=Glowing Purple Concrete Powder
+
+tile.m_concrete_glowing_white.name=Glowing White Concrete
+tile.m_concrete_glowing_magenta.name=Glowing Magenta Concrete
+tile.m_concrete_glowing_red.name=Glowing Red Concrete
+tile.m_concrete_glowing_orange.name=Glowing Orange Concrete
+tile.m_concrete_glowing_yellow.name=Glowing Gold Concrete
+tile.m_concrete_glowing_green.name=Glowing Green Concrete
+tile.m_concrete_glowing_cyan.name=Glowing Cyan Concrete
+tile.m_concrete_glowing_blue.name=Glowing Blue Concrete
+tile.m_concrete_glowing_purple.name=Glowing Purple Concrete
+
+tile.candle_white.name=Candle
+tile.candle_silver.name=Light Gray Candle
+tile.candle_gray.name=Gray Candle
+tile.candle_black.name=Black Candle
+tile.candle_brown.name=Brown Candle
+tile.candle_pink.name=Pink Candle
+tile.candle_red.name=Red Candle
+tile.candle_orange.name=Orange Candle
+tile.candle_yellow.name=Yellow Candle
+tile.candle_lime.name=Lime Candle
+tile.candle_green.name=Green Candle
+tile.candle_cyan.name=Cyan Candle
+tile.candle_light_blue.name=Light Blue Candle
+tile.candle_blue.name=Blue Candle
+tile.candle_purple.name=Purple Candle
+tile.candle_magenta.name=Magenta Candle
+tile.candle_2_glowing_white.name=Glowing White Candle
+tile.candle_2_glowing_magenta.name=Glowing Magenta Candle
+tile.candle_2_glowing_red.name=Glowing Red Candle
+tile.candle_2_glowing_orange.name=Glowing Orange Candle
+tile.candle_2_glowing_yellow.name=Glowing Yellow Candle
+tile.candle_2_glowing_green.name=Glowing Green Candle
+tile.candle_2_glowing_cyan.name=Glowing Cyan Candle
+tile.candle_2_glowing_blue.name=Glowing Blue Candle
+tile.candle_2_glowing_purple.name=Glowing Purple Candle
 
 ## Decor ##
 tile.glass_tiles.name=Tiled Glass
@@ -637,22 +743,6 @@ tile.m_mossy_cobblestone_wall_icestone.name=Snowy Cracked Icestone Wall
 tile.m_mossy_cobblestone_wall_glacierrock.name=Snowy Cracked Glacierrock Wall
 tile.m_mossy_cobblestone_wall_oceanstone.name=Mossy Cobbled Oceanstone Wall
 tile.m_mossy_cobblestone_wall_deep_oceanstone.name=Mossy Cobbled Reefstone Wall
-tile.candle_white.name=Candle
-tile.candle_silver.name=Light Gray Candle
-tile.candle_gray.name=Gray Candle
-tile.candle_black.name=Black Candle
-tile.candle_brown.name=Brown Candle
-tile.candle_pink.name=Pink Candle
-tile.candle_red.name=Red Candle
-tile.candle_orange.name=Orange Candle
-tile.candle_yellow.name=Yellow Candle
-tile.candle_lime.name=Lime Candle
-tile.candle_green.name=Green Candle
-tile.candle_cyan.name=Cyan Candle
-tile.candle_light_blue.name=Light Blue Candle
-tile.candle_blue.name=Blue Candle
-tile.candle_purple.name=Purple Candle
-tile.candle_magenta.name=Magenta Candle
 tile.new_year_chandelier_gray.name=Resolute Gray Chandelier
 tile.new_year_chandelier_red.name=Resolute Red Chandelier
 tile.new_year_chandelier_cyan.name=Resolute Cyan Chandelier
@@ -705,7 +795,6 @@ tile.skull_stray.name=Stray Skull
 tile.skull_shulker.name=Shulker Skull
 
 ## Utility ##
-
 tile.red_rock_road.name=Red Rock Pavers
 tile.stone_road.name=Stone Pavers
 tile.coldstone_road.name=Coldstone Pavers
@@ -836,6 +925,7 @@ item.gem_soul.name=Soul Gem
 item.m_natural_item_0.name=Grass Fibers
 item.m_natural_item_1.name=Mana Leaf
 item.m_natural_item_2.name=Clutchthorn Fibers
+item.m_natural_item_3.name=Clutchthorn Petal
 item.sawdust.name=Sawdust
 
 ## Dye ##
@@ -1200,6 +1290,7 @@ itemGroup.ResourceBlocks=Minestrapp Resource Blocks
 itemGroup.Minerals=Minestrapp Minerals
 itemGroup.Ingredients=Minestrapp Crafting Ingredients
 itemGroup.Food=Minestrapp Food
+itemGroup.Dyeables=Minestrapp Dyeables
 itemGroup.DecorBlocks=Minestrapp Decorative Blocks
 itemGroup.UtilityBlocks=Minestrapp Utility Blocks
 itemGroup.Tools=Minestrapp Tools
@@ -1522,6 +1613,12 @@ gui.config.worldgen.generate_portal_dust.name.tooltip=Determines whether Portal 
 gui.config.worldgen.generate_moss.name=Generate Moss
 gui.config.worldgen.generate_moss.comment=Determines whether Moss generates in the overworld.
 gui.config.worldgen.generate_moss.name.tooltip=Determines whether Moss generates in the overworld.
+gui.config.worldgen.generate_carpet_glow_moss.name=Generate Carpet Glow Moss
+gui.config.worldgen.generate_carpet_glow_moss.comment=Determines whether Carpet Glow Moss generates in the overworld and End.
+gui.config.worldgen.generate_carpet_glow_moss.name.tooltip=Determines whether Carpet Glow Moss generates in the overworld and End.
+gui.config.worldgen.generate_creeping_glow_moss.name=Generate Creeping Glow Moss
+gui.config.worldgen.generate_creeping_glow_moss.comment=Determines whether Creeping Glow Moss generates in the overworld and Nether.
+gui.config.worldgen.generate_creeping_glow_moss.name.tooltip=Determines whether Creeping Glow Moss generates in the overworld and End.
 gui.config.worldgen.generate_savanna_grass.name=Generate Savanna Grass
 gui.config.worldgen.generate_savanna_grass.comment=Determines whether Savanna Grass replaces all Tall Grass in savannas.
 gui.config.worldgen.generate_savanna_grass.name.tooltip=Determines whether Savanna Grass replaces all Tall Grass in savannas.
@@ -1540,7 +1637,7 @@ gui.config.worldgen.generate_glowshrooms.name.tooltip=Determines whether Glowshr
 gui.config.worldgen.generate_infected_shrooms.name=Generate Infectious Mushrooms
 gui.config.worldgen.generate_infected_shrooms.comment=Determines whether Infectious Mushrooms generate on Mushroom Islands.
 gui.config.worldgen.generate_infected_shrooms.name.tooltip=Determines whether Infectious Mushrooms generate on Mushroom Islands.
-gui.config.worldgen.generate_glow_moss.name=Generate Glow Moss
+gui.config.worldgen.generate_glow_moss.name=Generate Hanging Glow Moss
 gui.config.worldgen.generate_glow_moss.comment=Determines whether Hanging Glow Moss generates in the Nether and the End.
 gui.config.worldgen.generate_glow_moss.name.tooltip=Determines whether Hanging Glow Moss generates in the Nether and the End.
 gui.config.worldgen.generate_clutchthorn.name=Generate Clutchthorn
@@ -1571,3 +1668,11 @@ gui.config.vanilla_tweaks.starting_health.name.tooltip=Determines how much healt
 gui.config.vanilla_tweaks.max_health.name=Maximum Health
 gui.config.vanilla_tweaks.max_health.comment=Determines the maximum amount of health players can reach using Heart Containers.
 gui.config.vanilla_tweaks.max_health.name.tooltip=Determines the maximum amount of health players can reach using Heart Containers.
+
+tile.hacky_jei_fix_light_freezing.name=Light Freezing
+tile.hacky_jei_fix_deep_freezing.name=Deep Freezing
+tile.hacky_jei_fix_sieving.name=Sieving
+
+jei.freezing.name=Light Freezing
+jei.deep_freezing.name=Deep Freezing
+jei.sieve.name=Sieving

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glowing_purple_dye_from_glowshroom"
+    ]
+  },
+  "criteria": {
+    "has_glowshroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:purple_glowshroom"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glowing_purple_dye_from_glowshroom"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glowshroom",
+      "has_the_recipe"
+    ]
+  ]
+}

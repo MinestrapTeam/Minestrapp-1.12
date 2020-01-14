@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "glowing_magenta_dye",
+    "ingredients": [
+        {
+            "item": "minestrapp:m_dye",
+            "data": 0
+        },
+        {
+            "item": "minecraft:dye",
+            "data": 13
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_dye",
+        "data": 1
+    }   
+}

@@ -1,0 +1,31 @@
+{
+    "variants": {
+        "color=glowing_white": [
+            { "model": "minestrapp:concrete_powder_glowing_white" }
+        ],
+        "color=glowing_magenta": [
+            { "model": "minestrapp:concrete_powder_glowing_magenta" }
+        ],
+        "color=glowing_red": [
+            { "model": "minestrapp:concrete_powder_glowing_red" }
+        ],
+        "color=glowing_orange": [
+            { "model": "minestrapp:concrete_powder_glowing_orange" }
+        ],
+        "color=glowing_yellow": [
+            { "model": "minestrapp:concrete_powder_glowing_yellow" }
+        ],
+        "color=glowing_green": [
+            { "model": "minestrapp:concrete_powder_glowing_green" }
+        ],
+        "color=glowing_cyan": [
+            { "model": "minestrapp:concrete_powder_glowing_cyan" }
+        ],
+        "color=glowing_blue": [
+            { "model": "minestrapp:concrete_powder_glowing_blue" }
+        ],
+        "color=glowing_purple": [
+            { "model": "minestrapp:concrete_powder_glowing_purple" }
+        ]
+    }
+}

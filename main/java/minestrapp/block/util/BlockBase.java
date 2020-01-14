@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import minestrapp.block.BlockBauble;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -14,6 +16,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -51,7 +54,8 @@ public class BlockBase extends Block
 	private boolean glowing = false;
 	private List<Integer> flammability = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
 	private List<Integer> firespread = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
-
+	private String tooltip = null;
+	
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(material);
@@ -76,6 +80,11 @@ public class BlockBase extends Block
 	{
 		this(name, material, mapColor, soundType, hardness);
 		this.setHarvestLevel(tool, harvestLevel);
+	}
+	
+	public BlockBase(String name)
+	{
+		this(name, Material.AIR, MapColor.AIR, SoundType.STONE, 0F);
 	}
 	
 	public BlockBase setDropsItem(ItemStack itemDrop, int variance, int xpMin, int xpMax, boolean silkHarvest, boolean fortune)
@@ -334,5 +343,20 @@ public class BlockBase extends Block
 			return this.firespread.get(index);
 		else
 			return super.getFireSpreadSpeed(world, pos, face);
+    }
+	
+	public BlockBase setTooltip(String tooltip)
+	{
+		this.tooltip = tooltip;
+		return this;
+	}
+	
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+		if(this.tooltip != null)
+			tooltip.add(this.tooltip);
+		else
+			super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }

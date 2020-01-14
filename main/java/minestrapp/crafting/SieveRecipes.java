@@ -23,7 +23,7 @@ import net.minecraft.world.storage.loot.LootTable;
 public class SieveRecipes
 {
 	private static final SieveRecipes SIEVE = new SieveRecipes();
-	private final List<IBlockState> sieving = new ArrayList<IBlockState>();
+	public final List<IBlockState> sieving = new ArrayList<IBlockState>();
 	
 	public static SieveRecipes instance()
 	{
@@ -109,13 +109,11 @@ public class SieveRecipes
 		this.sieving.add(state);
 	}
 	
-	public ResourceLocation getSieveResult(IBlockState state, World worldIn)
+	public ResourceLocation getSieveResult(IBlockState state)
     {
 		if(this.sieving.contains(state))
 		{
 			ResourceLocation location = new ResourceLocation(Minestrapp5.MODID, "sieve/" + state.getBlock().getUnlocalizedName().substring(5) + "_" + state.getBlock().getMetaFromState(state));
-			System.out.println(location.toString());
-			//LootTable table = worldIn.getLootTableManager().getLootTableFromLocation(location);
 			return location;
 		}
 		else

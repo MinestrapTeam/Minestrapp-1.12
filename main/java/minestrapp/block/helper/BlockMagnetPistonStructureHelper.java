@@ -117,13 +117,13 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 			}
 			else
 			{
-				while (true) // while (block == Blocks.SLIME_BLOCK)
+				for(int j = 0 ; j < this.strength ; j++) // while (block == Blocks.SLIME_BLOCK)
 				{
 					BlockPos blockpos = origin.offset(this.moveDirection.getOpposite(), i);
 					state = this.world.getBlockState(blockpos);
 					block = state.getBlock();
 
-					if (state.getBlock().isAir(state, this.world, blockpos) || !BlockMagnetPistonBase.canPush(state, this.world, blockpos, this.moveDirection, false, this.moveDirection.getOpposite()) || blockpos.equals(this.pistonPos))
+					if ((state.getBlock().isAir(state, this.world, blockpos) && this.extending) || !BlockMagnetPistonBase.canPush(state, this.world, blockpos, this.moveDirection, false, this.moveDirection.getOpposite()) || blockpos.equals(this.pistonPos))
 					{
 						break;
 					}
@@ -137,8 +137,12 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 				}
 
 				int i1 = 0;
+				
+				int pullLength = this.strength - 1;
+				if(i - 1 < this.strength - 1)
+					pullLength = i - 1;
 
-				for (int j = (this.extending ? i - 1 : this.strength - 1); j >= 0; --j)
+				for (int j = (this.extending ? i - 1 : pullLength); j >= 0; --j)
 				{
 					this.toMove.add(origin.offset(this.moveDirection.getOpposite(), j));
 					++i1;
@@ -217,7 +221,7 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 	{
 		for (EnumFacing enumfacing : EnumFacing.values())
 		{
-			if (enumfacing.getAxis() != this.moveDirection.getAxis() && !this.addBlockLine(pos.offset(enumfacing), enumfacing))
+			if (enumfacing.getAxis() != this.moveDirection.getAxis() && !this.addBlockLine(pos.offset(enumfacing), this.moveDirection))
 			{
 				return false;
 			}

@@ -1,0 +1,57 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glowing_white_dye_from_rggp"
+    ]
+  },
+  "criteria": {
+    "has_r": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_dye",
+            "data": 2
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glowing_white_dye_from_rggp"
+      }
+    },
+    "has_g": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_dye",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_p": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_dye",
+            "data": 8
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_r",
+      "has_the_recipe",
+      "has_g",
+      "has_p"
+    ]
+  ]
+}

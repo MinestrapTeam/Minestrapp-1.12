@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.MTabs;
 import minestrapp.item.tools.MDagger;
 import net.minecraft.block.Block;
@@ -24,6 +25,7 @@ import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -33,6 +35,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -126,6 +129,19 @@ public class BlockClutchthorn extends BlockBush implements IGrowable
 	public int quantityDropped(Random random)
     {
 		return 0;
+    }
+	
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        Random rand = world instanceof World ? ((World)world).rand : RANDOM;
+
+        if(world.getBlockState(pos.down()).getBlock() == MBlocks.clutchthorn && world.getBlockState(pos.down().down()) == MBlocks.portal_dust.getDefaultState().withProperty(BlockPortalDust.VARIANT, BlockMDirt.DirtType.PODZOL))
+        {
+        	drops.add(new ItemStack(MItems.natural_ingredients, 1, 3));
+        }
+        else
+        	super.getDrops(drops, world, pos, state, fortune);
     }
 	
 	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)

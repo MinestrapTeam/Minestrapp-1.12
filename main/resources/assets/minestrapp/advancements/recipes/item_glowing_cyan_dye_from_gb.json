@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glowing_cyan_dye_from_gb"
+    ]
+  },
+  "criteria": {
+    "has_g": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_dye",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glowing_cyan_dye_from_gb"
+      }
+    },
+    "has_b": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_dye",
+            "data": 7
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_g",
+      "has_the_recipe",
+      "has_b"
+    ]
+  ]
+}

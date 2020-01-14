@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_hardened_clay",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:hardened_clay"
+    },
+    "X": {
+      "item": "minestrapp:m_dye",
+      "data": 5
+    }
+  },
+  "result": {
+    "item": "minestrapp:m_terracotta",
+    "data": 5,
+    "count": 8
+  }
+}

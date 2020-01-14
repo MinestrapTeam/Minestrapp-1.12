@@ -16,7 +16,9 @@ import minestrapp.block.tileentity.renderer.TESRCrusher;
 import minestrapp.block.tileentity.renderer.TESRPlate;
 import minestrapp.block.tileentity.renderer.TESRTanningRack;
 import minestrapp.block.tileentity.renderer.TileEntityMagnetPistonRenderer;
+import minestrapp.entity.block.EntityMFallingBlock;
 import minestrapp.entity.render.RenderMBoat;
+import minestrapp.entity.render.RenderMFallingBlock;
 import minestrapp.entity.vehicle.EntityMBoat;
 import minestrapp.mobs.registry.MobRegistry;
 import net.minecraft.block.Block;
@@ -27,6 +29,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderFallingBlock;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -120,11 +123,13 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPlate.class, new TESRPlate());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityActivator.class, new TESRActivator());
 		registerEntityRenderer(EntityMBoat.class, RenderMBoat.class);
+		registerEntityRenderer(EntityMFallingBlock.class, RenderMFallingBlock.class);
 	}
 	
 	public static void registerEntities()
 	{
 		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "m_boat"), EntityMBoat.class, "m_boat", 500, Minestrapp5.instance, 64, 1, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "m_falling_block"), EntityMFallingBlock.class, "m_falling_block", 501, Minestrapp5.instance, 64, 1, true);
 	}
 
 	private static <E extends Entity> void registerEntityRenderer(Class<E> entityClass, Class<? extends Render<E>> renderClass)

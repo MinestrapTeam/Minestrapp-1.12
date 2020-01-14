@@ -9,6 +9,7 @@ import com.google.common.collect.Maps;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import minestrapp.block.BlockMGlowDyed;
 import minestrapp.block.EnumStoneTypeMOnly;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Blocks;
@@ -53,15 +54,15 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.MELON_BLOCK), new ItemStack(Items.MELON, 7), new ItemStack(Items.MELON_SEEDS), 65, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.melon_bricks), new ItemStack(Items.MELON, 7), new ItemStack(Items.MELON_SEEDS), 65, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.PUMPKIN), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(Items.PUMPKIN_SEEDS), 55, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.LIT_PUMPKIN), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(Items.PUMPKIN_SEEDS), 55, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.purple_glowshroom), new ItemStack(Items.DYE, 1, 5), null, 0, 0.1F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.green_glowshroom), new ItemStack(Items.DYE, 1, 10), null, 0, 0.1F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.blue_glowshroom), new ItemStack(Items.DYE, 1, 12), null, 0, 0.1F);
+		this.addCrusherRecipe(new ItemStack(Blocks.LIT_PUMPKIN), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(MItems.dye, 1, 8), 55, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.purple_glowshroom), new ItemStack(MItems.dye, 2, 8), new ItemStack(MItems.dye, 1, 8), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.green_glowshroom), new ItemStack(MItems.dye, 2, 5), new ItemStack(MItems.dye, 1, 5), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.blue_glowshroom), new ItemStack(MItems.dye, 2, 6), new ItemStack(MItems.dye, 1, 6), 20, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_MUSHROOM_BLOCK), new ItemStack(Blocks.RED_MUSHROOM), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.BROWN_MUSHROOM_BLOCK), new ItemStack(Blocks.BROWN_MUSHROOM), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.blue_glowshroom_block), new ItemStack(MBlocks.blue_glowshroom), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.green_glowshroom_block), new ItemStack(MBlocks.green_glowshroom), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.purple_glowshroom_block), new ItemStack(MBlocks.purple_glowshroom), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.blue_glowshroom_block), new ItemStack(MBlocks.blue_glowshroom), new ItemStack(MItems.dye, 1, 6), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.green_glowshroom_block), new ItemStack(MBlocks.green_glowshroom), new ItemStack(MItems.dye, 1, 5), 50, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.purple_glowshroom_block), new ItemStack(MBlocks.purple_glowshroom), new ItemStack(MItems.dye, 1, 8), 50, 0.1F);
 		for(int i = 0 ; i < BlockPlanks.EnumType.values().length ; i++)
 		{
 			this.addCrusherRecipe(new ItemStack(Blocks.SAPLING, 1, i), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
@@ -72,8 +73,11 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.raspberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mana_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.voidberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.clutchthorn), new ItemStack(MItems.natural_ingredients, 1, 2), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.CHORUS_FLOWER), new ItemStack(Items.DYE, 3, EnumDyeColor.PURPLE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.PURPLE.getDyeDamage()), 15, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.carpet_glow_moss), new ItemStack(MItems.dye, 1, 1), new ItemStack(MItems.dye, 1, 2), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.creeping_glow_moss), new ItemStack(MItems.dye, 1, 7), new ItemStack(MItems.dye, 1, 7), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.hanging_glow_moss), new ItemStack(MItems.dye, 1, 4), new ItemStack(MItems.dye, 1, 4), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.clutchthorn), new ItemStack(MItems.natural_ingredients, 1, 2), new ItemStack(MItems.dye, 1, 0), 10, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.CHORUS_FLOWER), new ItemStack(MItems.dye, 3, 8), new ItemStack(MItems.dye, 1, 0), 25, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_hive), new ItemStack(MItems.mite_honey), new ItemStack(MItems.mite_honey), 20, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_comb), new ItemStack(MItems.mite_honey), new ItemStack(MItems.mite_honey), 20, 0.15F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_hive_honeyed), new ItemStack(MItems.mite_honey, 2), new ItemStack(MItems.mite_honey), 50, 0.15F);
@@ -207,6 +211,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 8), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 1), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MBlocks.moss), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_terracotta, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.WHITE_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SILVER_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.GRAY_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
@@ -223,6 +228,15 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.PURPLE_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.MAGENTA_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.PINK_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_white), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_magenta), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_red), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_orange), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_yellow), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_green), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_cyan), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_blue), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_glazed_terracotta_purple), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.PRISMARINE, 1, 0), new ItemStack(Items.PRISMARINE_SHARD, 3), new ItemStack(Items.PRISMARINE_SHARD), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.PRISMARINE, 1, 1), new ItemStack(Blocks.PRISMARINE, 1, 0), new ItemStack(Items.PRISMARINE_SHARD), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.PRISMARINE, 1, 2), new ItemStack(Blocks.PRISMARINE, 1, 0), new ItemStack(Items.PRISMARINE_SHARD), 30, 0.05F);
@@ -253,9 +267,9 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 4), new ItemStack(MBlocks.shimmerstone, 1, 3), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 5), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 6), new ItemStack(MBlocks.shimmerstone, 1, 1), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 7), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.blue_glowshroom), 20, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 8), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.purple_glowshroom), 20, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 9), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MBlocks.green_glowshroom), 20, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 7), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MItems.dye, 1, 6), 20, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 8), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MItems.dye, 1, 8), 20, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.shimmerstone, 1, 9), new ItemStack(MBlocks.shimmerstone, 1, 1), new ItemStack(MItems.dye, 1, 5), 20, 0.05F);
 		
 		//Ores
 		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz_deposit, 1, 0), new ItemStack(MItems.gems, 2, 1), new ItemStack(MItems.gems, 1, 2), 5, 0.1F);
@@ -354,10 +368,16 @@ public class CrusherRecipes {
 		
 		//Dyeables
 		this.addCrusherRecipe(new ItemStack(Blocks.CARPET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.STRING), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.glow_carpet, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.STRING), null, 0, 0.05F);
 		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
 		{
 			this.addCrusherRecipe(new ItemStack(Blocks.WOOL, 1, i), new ItemStack(Blocks.CARPET, 4, i), new ItemStack(Items.STRING), 15, 0.05F);
 			this.addCrusherRecipe(new ItemStack(Blocks.CONCRETE, 1, i), new ItemStack(Blocks.CONCRETE_POWDER, 1, i), null, 0, 0.05F);
+		}
+		for(int i = 0 ; i < BlockMGlowDyed.EnumGlowDye.values().length ; i++)
+		{
+			this.addCrusherRecipe(new ItemStack(MBlocks.glow_wool, 1, i), new ItemStack(MBlocks.glow_carpet, 4, i), new ItemStack(Items.STRING), 15, 0.05F);
+			this.addCrusherRecipe(new ItemStack(MBlocks.glow_concrete, 1, i), new ItemStack(MBlocks.glow_concrete_powder, 1, i), null, 0, 0.05F);
 		}
 		
 		//Misc Decor
@@ -388,11 +408,12 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.SEA_LANTERN), new ItemStack(Items.PRISMARINE_CRYSTALS, 5), new ItemStack(Items.PRISMARINE_SHARD), 65, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.GLOWSTONE), new ItemStack(Items.GLOWSTONE_DUST, 4), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowstone), new ItemStack(Items.GLOWSTONE_DUST), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_purple), new ItemStack(Items.DYE, 1, 5), null, 0, 0.1F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_green), new ItemStack(Items.DYE, 1, 10), null, 0, 0.1F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_blue), new ItemStack(Items.DYE, 1, 12), null, 0, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_purple), new ItemStack(MItems.dye, 2, 8), new ItemStack(MItems.dye, 1, 8), 30, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_green), new ItemStack(MItems.dye, 2, 5), new ItemStack(MItems.dye, 1, 5), 30, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_glowshroom_blue), new ItemStack(MItems.dye, 2, 6), new ItemStack(MItems.dye, 1, 6), 30, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.bauble_blazium), new ItemStack(MItems.gems, 1, 5), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.candle, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.mob_loot, 1, 1), new ItemStack(MBlocks.rope), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.candle2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.mob_loot, 1, 1), new ItemStack(MBlocks.rope), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.pumpkin_normie, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(MItems.mob_loot, 1, 1), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.pumpkin_grumpy, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(MItems.mob_loot, 1, 1), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.pumpkin_creepy, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.PUMPKIN_SEEDS, 8), new ItemStack(MItems.mob_loot, 1, 1), 55, 0.05F);
@@ -435,6 +456,8 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MItems.corn), new ItemStack(MItems.corn_meal), null, 0, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Items.MELON), new ItemStack(Items.MELON_SEEDS, 2), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.SPECKLED_MELON), new ItemStack(Items.MELON_SEEDS, 2), new ItemStack(Items.GOLD_NUGGET), 55, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MItems.voidberry), new ItemStack(MItems.dye, 1, 0), new ItemStack(MItems.dye, 1, 0), 25, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MItems.natural_ingredients, 1, 3), new ItemStack(MItems.dye, 2, 0), new ItemStack(MItems.dye, 1, 0), 40, 0.1F);
 	}
 	public void addCrusherRecipe(ItemStack input1, ItemStack result, ItemStack extra, Integer chance, float experience) {
 		this.crushing.put(input1, result);

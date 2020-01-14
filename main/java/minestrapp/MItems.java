@@ -357,11 +357,11 @@ public class MItems
 		
 		register(door_charwood = new ItemMDoor(MBlocks.door_charwood).setCreativeTab(MTabs.utility));
 		
-		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers
-		register(natural_ingredients = new ItemMetaBase("m_natural_item", 3).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
+		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers, 3=Clutchthorn Petal
+		register(natural_ingredients = new ItemMetaBase("m_natural_item", 4).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
 		//0=White, 1=Magenta, 2=Red, 3=Orange, 4=Gold, 5=Green, 6=Cyan, 7=Blue, 8=Purple
-		register(dye = new ItemMetaBase("m_dye", 9).setCreativeTab(MTabs.ingredients));
+		register(dye = new ItemMetaBase("m_dye", 9).setCreativeTab(MTabs.dye));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide, 12=Skeletal Hand
 		register(mob_loot = new ItemMetaBase("m_mob_loot", 13).setCreativeTab(MTabs.ingredients));
 		register(reanimated_arm = new ItemReanimatedArm());
@@ -408,7 +408,7 @@ public class MItems
 		register(sieve_iron = new ItemSieve("iron_sieve", 64, new ItemStack(Items.IRON_INGOT)));
 		register(sieve_bronze = new ItemSieve("bronze_sieve", 128, new ItemStack(ingots, 1, 2)));
 		register(sieve_archantine_broken = new ItemBase("archantine_sieve_broken").setCreativeTab(MTabs.tools));
-		register(sieve_archantine = new ItemSieve("archantine_sieve", 512, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
+		register(sieve_archantine = new ItemSieve("archantine_sieve", /*512*/ 10, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
 		register(sieve_adamantium = new ItemSieve("adamantium_sieve").setCreativeTab(MTabs.tools));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));

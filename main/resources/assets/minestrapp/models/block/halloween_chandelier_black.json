@@ -3,7 +3,7 @@
 	"textures": {
 		"particle": "minestrapp:blocks/utility/soulsteel_vessel/soulsteel_vessel_back",
 		"texture": "minestrapp:blocks/decor/holiday/halloween_chandelier_main",
-		"Wax": "minestrapp:blocks/decor/wax_black",
+		"Wax": "minestrapp:blocks/dye/wax_black",
 		"Rope": "minestrapp:blocks/utility/rope_top",
 		"Copper": "minestrapp:blocks/decor/holiday/halloween_chandelier_copper"
 	},

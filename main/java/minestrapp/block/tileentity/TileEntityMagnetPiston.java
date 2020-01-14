@@ -329,7 +329,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 	@Override
 	public void clearPistonTileEntity()
 	{
-		System.out.println("clearPistonTileEntity");
+		//System.out.println("clearPistonTileEntity");
 
 		if (this.lastProgress < 1.0F && this.world != null)
 		{

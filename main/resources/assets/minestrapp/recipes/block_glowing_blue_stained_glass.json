@@ -1,0 +1,24 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "stained_glass",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlassColorless"
+    },
+    "X": {
+      "item": "minestrapp:m_dye",
+      "data": 7
+    }
+  },
+  "result": {
+    "item": "minestrapp:m_stained_glass",
+    "data": 7,
+    "count": 8
+  }
+}

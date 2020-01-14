@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "glowing_orange_dye",
+    "ingredients": [
+        {
+            "item": "minestrapp:m_dye",
+            "data": 0
+        },
+        {
+            "item": "minecraft:dye",
+            "data": 14
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_dye",
+        "data": 3
+    }   
+}

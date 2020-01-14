@@ -87,18 +87,17 @@ public class ItemSieve extends ItemBase
 			IBlockState iblockstate = worldIn.getBlockState(pos);
             Block block = iblockstate.getBlock();
             LootTable table = LootTable.EMPTY_LOOT_TABLE;
-            if(!worldIn.isRemote && SieveRecipes.instance().getSieveResult(iblockstate, worldIn) != null)
-            	table = worldIn.getLootTableManager().getLootTableFromLocation(SieveRecipes.instance().getSieveResult(iblockstate, worldIn));
+            if(!worldIn.isRemote && SieveRecipes.instance().getSieveResult(iblockstate) != null)
+            	table = worldIn.getLootTableManager().getLootTableFromLocation(SieveRecipes.instance().getSieveResult(iblockstate));
             
             if(table != null && table != LootTable.EMPTY_LOOT_TABLE)
             {
             	worldIn.destroyBlock(pos, false);
             	if(!this.unbreakable)
             	{
-	            	if(this.breakItem == ItemStack.EMPTY || itemstack.getItemDamage() < itemstack.getMaxDamage())
-	            		itemstack.damageItem(1, player);
-	            	else
-	            		player.setHeldItem(hand, this.breakItem);
+            		if(itemstack.getItemDamage() == itemstack.getMaxDamage() && this.breakItem != ItemStack.EMPTY)
+	            		worldIn.spawnEntity(new EntityItem(worldIn, player.posX, player.posY, player.posZ, this.breakItem.copy()));
+	            	itemstack.damageItem(1, player);
             	}
             	LootContext.Builder context = new LootContext.Builder((WorldServer) worldIn);
             	List<ItemStack> stackList = table.generateLootForPools(worldIn.rand, context.build());

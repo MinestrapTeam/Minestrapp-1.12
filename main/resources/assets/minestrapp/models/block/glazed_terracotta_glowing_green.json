@@ -1,0 +1,7 @@
+{
+    "parent": "block/glazed_terracotta",
+    "textures": {
+        "particle": "minestrapp:blocks/dye/glazed_terracotta_glowing_green",
+        "pattern": "minestrapp:blocks/dye/glazed_terracotta_glowing_green"
+    }
+}

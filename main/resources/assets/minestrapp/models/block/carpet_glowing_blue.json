@@ -1,0 +1,7 @@
+{
+    "parent": "block/carpet",
+    "textures": {
+        "particle": "minestrapp:blocks/dye/wool_glowing_blue",
+        "wool": "minestrapp:blocks/dye/wool_glowing_blue"
+    }
+}

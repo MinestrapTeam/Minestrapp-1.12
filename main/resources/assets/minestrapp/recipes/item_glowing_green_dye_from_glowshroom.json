@@ -1,0 +1,13 @@
+{    
+    "type": "minecraft:crafting_shapeless",
+    "group": "glowing_green_dye",
+    "ingredients": [
+        {
+            "item": "minestrapp:green_glowshroom"
+        }
+    ],
+    "result": {
+        "item": "minestrapp:m_dye",
+        "data": 5
+    }   
+}

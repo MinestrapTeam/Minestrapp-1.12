@@ -1,0 +1,47 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "concrete_powder",
+    "ingredients": [
+        {
+            "item": "minecraft:sand",
+            "data": 0
+        },
+        {
+            "item": "minecraft:sand",
+            "data": 0
+        },
+        {
+            "item": "minecraft:sand",
+            "data": 0
+        },
+        {
+            "item": "minecraft:sand",
+            "data": 0
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "gravel"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "gravel"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "gravel"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "gravel"
+        },
+        {
+            "item": "minestrapp:m_dye",
+            "data": 8
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_concrete_powder",
+        "count": 8,
+        "data": 8
+     }  
+}

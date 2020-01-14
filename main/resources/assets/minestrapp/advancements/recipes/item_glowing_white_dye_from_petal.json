@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glowing_white_dye_from_petal"
+    ]
+  },
+  "criteria": {
+    "has_petal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:m_natural_item",
+            "data": 3
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glowing_white_dye_from_petal"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_petal",
+      "has_the_recipe"
+    ]
+  ]
+}

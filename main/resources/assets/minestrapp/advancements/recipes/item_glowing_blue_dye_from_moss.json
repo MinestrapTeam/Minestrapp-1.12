@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_glowing_blue_dye_from_moss"
+    ]
+  },
+  "criteria": {
+    "has_moss": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:creeping_glow_moss"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_glowing_blue_dye_from_moss"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_moss",
+      "has_the_recipe"
+    ]
+  ]
+}

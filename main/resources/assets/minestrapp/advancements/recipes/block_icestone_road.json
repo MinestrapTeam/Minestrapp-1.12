@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minestrapp:block_icstone_road"
+      "minestrapp:block_icestone_road"
     ]
   },
   "criteria": {
@@ -20,7 +20,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minestrapp:block_icstone_road"
+        "recipe": "minestrapp:block_icestone_road"
       }
     }
   },

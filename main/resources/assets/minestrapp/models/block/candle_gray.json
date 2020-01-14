@@ -2,8 +2,8 @@
 "__comment": "Designed by Delocuro with BDcraft Cubik PRO 0.95 Beta - http://bdcraft.net",
 "parent": "block/cube_all",
 "textures": {
-    "particle": "minestrapp:blocks/decor/wax_gray",
-    "texture": "minestrapp:blocks/decor/wax_gray",
+    "particle": "minestrapp:blocks/dye/wax_gray",
+    "texture": "minestrapp:blocks/dye/wax_gray",
     "pumpkin_rim": "minestrapp:blocks/utility/rope_side"
 },
 "elements": [ 

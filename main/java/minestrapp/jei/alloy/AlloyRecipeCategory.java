@@ -16,7 +16,7 @@ public class AlloyRecipeCategory extends MinestrappRecipeCategory{
 	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/alloy_furnace.png");
 	
 	public AlloyRecipeCategory(IGuiHelper guiHelper) {
-		super(guiHelper.drawableBuilder(guiTexture, 36, 16, 100, 60).build(), "tile.alloy.name");
+		super(guiHelper.drawableBuilder(guiTexture, 36, 16, 101, 54).build(), "tile.alloy.name");
 	}
 	
 	private static final int input1 = 0;

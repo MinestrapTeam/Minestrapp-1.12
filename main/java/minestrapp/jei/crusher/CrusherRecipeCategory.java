@@ -17,7 +17,7 @@ public class CrusherRecipeCategory extends MinestrappRecipeCategory<CrusherRecip
 	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/crusher.png");
 	
 	public CrusherRecipeCategory(IGuiHelper guiHelper) {
-		super(guiHelper.drawableBuilder(guiTexture, 48, 16, 100, 60).build(), "tile.crusher.name");
+		super(guiHelper.drawableBuilder(guiTexture, 55, 16, 82, 54).build(), "tile.crusher.name");
 	}
 
 	private static final int input = 0;
@@ -32,9 +32,9 @@ public class CrusherRecipeCategory extends MinestrappRecipeCategory<CrusherRecip
 	@Override
 	public void setRecipe(IRecipeLayout recipeLayout, CrusherRecipeWrapper recipeWrapper, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
-		guiItemStacks.init(input, true, 7, 0);
-		guiItemStacks.init(output, false, 67, 8);
-		guiItemStacks.init(outputExtra, false, 67, 32);
+		guiItemStacks.init(input, true, 0, 0);
+		guiItemStacks.init(output, false, 60, 8);
+		guiItemStacks.init(outputExtra, false, 60, 32);
 		
 		guiItemStacks.set(output, ingredients.getOutputs(ItemStack.class).get(0));
 		guiItemStacks.set(outputExtra, ingredients.getOutputs(ItemStack.class).get(1));

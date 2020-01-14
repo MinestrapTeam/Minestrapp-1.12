@@ -36,7 +36,7 @@ public class BlockSorter extends BlockPipe
     });
 	protected static final AxisAlignedBB AABB_UP = new AxisAlignedBB(0.25D, 0D, 0.25D, 0.75D, 1D, 0.75D);
 	protected static final AxisAlignedBB AABB_SOUTH = new AxisAlignedBB(0.25D, 0D, 0.25D, 0.75D, 0.75D, 1D);
-	protected static final AxisAlignedBB AABB_WEST = new AxisAlignedBB(0D, 0.25D, 0D, 0.75D, 0.75D, 0.75D);
+	protected static final AxisAlignedBB AABB_WEST = new AxisAlignedBB(0D, 0D, 0.25D, 0.75D, 0.75D, 0.75D);
 	protected static final AxisAlignedBB AABB_NORTH = new AxisAlignedBB(0.25D, 0D, 0D, 0.75D, 0.75D, 0.75D);
 	protected static final AxisAlignedBB AABB_EAST = new AxisAlignedBB(0.25D, 0D, 0.25D, 1D, 0.75D, 0.75D);
 	

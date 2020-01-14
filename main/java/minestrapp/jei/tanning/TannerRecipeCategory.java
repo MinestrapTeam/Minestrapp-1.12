@@ -19,7 +19,7 @@ public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeW
 	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/tanning_rack.png");
 	
 	public TannerRecipeCategory(IGuiHelper guiHelper) {
-		super(guiHelper.drawableBuilder(guiTexture, 10, 10, 100, 60).build(), "tile.tanning_rack.name");
+		super(guiHelper.drawableBuilder(guiTexture, 26, 11, 73, 42).build(), "tile.tanning_rack.name");
 	}
 	
 	private static final int input = 0;
@@ -34,11 +34,11 @@ public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeW
 	@Override
 	public void setRecipe(IRecipeLayout recipeLayout, TannerRecipeWrapper recipeWrapper, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
-		guiItemStacks.init(input, true, 16, 25);
+		guiItemStacks.init(input, true, 0, 24);
 		guiItemStacks.set(input, ingredients.getInputs(ItemStack.class).get(0));
-		guiItemStacks.init(tool, true, 43, 1);
+		guiItemStacks.init(tool, true, 27, 0);
 		guiItemStacks.set(input, ingredients.getInputs(ItemStack.class).get(1));
-		guiItemStacks.init(output, false, 71, 25);
+		guiItemStacks.init(output, false, 55, 24);
 		
 		guiItemStacks.set(ingredients);
 	}

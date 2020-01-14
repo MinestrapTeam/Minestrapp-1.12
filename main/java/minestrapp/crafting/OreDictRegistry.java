@@ -174,8 +174,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("leatherFine", new ItemStack(MItems.leather2, 1, 9));
 		OreDictionary.registerOre("leatherMystic", new ItemStack(MItems.leather2, 1, 8));
 		OreDictionary.registerOre("leatherMystic", new ItemStack(MItems.leather2, 1, 9));
-		OreDictionary.registerOre("leatherLegendary", new ItemStack(MItems.leather2, 1, 9));
-		
+		OreDictionary.registerOre("leatherLegendary", new ItemStack(MItems.leather2, 1, 9));	
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.CARROT));
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.MELON));
 		OreDictionary.registerOre("tanninPoor", new ItemStack(Items.WHEAT));

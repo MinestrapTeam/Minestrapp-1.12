@@ -1,0 +1,58 @@
+{
+    "variants": {
+        "color=glowing_white": [
+            { "model": "minestrapp:candle_white" },
+            { "model": "minestrapp:candle_white", "y": 90 },
+            { "model": "minestrapp:candle_white", "y": 180 },
+            { "model": "minestrapp:candle_white", "y": 270 }
+        ],
+        "color=glowing_magenta": [
+            { "model": "minestrapp:candle_glowing_magenta" },
+            { "model": "minestrapp:candle_glowing_magenta", "y": 90 },
+            { "model": "minestrapp:candle_glowing_magenta", "y": 180 },
+            { "model": "minestrapp:candle_glowing_magenta", "y": 270 }
+        ],
+        "color=glowing_red": [
+            { "model": "minestrapp:candle_glowing_red" },
+            { "model": "minestrapp:candle_glowing_red", "y": 90 },
+            { "model": "minestrapp:candle_glowing_red", "y": 180 },
+            { "model": "minestrapp:candle_glowing_red", "y": 270 }
+        ],
+        "color=glowing_orange": [
+            { "model": "minestrapp:candle_glowing_orange" },
+            { "model": "minestrapp:candle_glowing_orange", "y": 90 },
+            { "model": "minestrapp:candle_glowing_orange", "y": 180 },
+            { "model": "minestrapp:candle_glowing_orange", "y": 270 }
+        ],
+        "color=glowing_yellow": [
+            { "model": "minestrapp:candle_glowing_yellow" },
+            { "model": "minestrapp:candle_glowing_yellow", "y": 90 },
+            { "model": "minestrapp:candle_glowing_yellow", "y": 180 },
+            { "model": "minestrapp:candle_glowing_yellow", "y": 270 }
+        ],
+        "color=glowing_green": [
+            { "model": "minestrapp:candle_glowing_green" },
+            { "model": "minestrapp:candle_glowing_green", "y": 90 },
+            { "model": "minestrapp:candle_glowing_green", "y": 180 },
+            { "model": "minestrapp:candle_glowing_green", "y": 270 }
+        ],
+        "color=glowing_cyan": [
+            { "model": "minestrapp:candle_glowing_cyan" },
+            { "model": "minestrapp:candle_glowing_cyan", "y": 90 },
+            { "model": "minestrapp:candle_glowing_cyan", "y": 180 },
+            { "model": "minestrapp:candle_glowing_cyan", "y": 270 }
+        ],
+        "color=glowing_blue": [
+            { "model": "minestrapp:candle_glowing_blue" },
+            { "model": "minestrapp:candle_glowing_blue", "y": 90 },
+            { "model": "minestrapp:candle_glowing_blue", "y": 180 },
+            { "model": "minestrapp:candle_glowing_blue", "y": 270 }
+        ],
+        "color=glowing_purple": [
+            { "model": "minestrapp:candle_glowing_purple" },
+            { "model": "minestrapp:candle_glowing_purple", "y": 90 },
+            { "model": "minestrapp:candle_glowing_purple", "y": 180 },
+            { "model": "minestrapp:candle_glowing_purple", "y": 270 }
+        ]
+    }
+}

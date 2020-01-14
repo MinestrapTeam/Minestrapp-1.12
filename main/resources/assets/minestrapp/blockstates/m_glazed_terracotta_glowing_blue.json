@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=south": { "model": "minestrapp:glazed_terracotta_glowing_blue" },
+        "facing=west": { "model": "minestrapp:glazed_terracotta_glowing_blue", "y": 90 },
+        "facing=north": { "model": "minestrapp:glazed_terracotta_glowing_blue", "y": 180 },
+        "facing=east": { "model": "minestrapp:glazed_terracotta_glowing_blue", "y": 270 }
+    }
+}
