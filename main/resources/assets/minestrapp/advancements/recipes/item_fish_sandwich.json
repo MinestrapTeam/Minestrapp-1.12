@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_fish_sandwich"
+    ]
+  },
+  "criteria": {
+    "has_cheese": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:cheese_slice"
+          }
+        ]
+      }
+    },
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_fish_sandwich"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cheese",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

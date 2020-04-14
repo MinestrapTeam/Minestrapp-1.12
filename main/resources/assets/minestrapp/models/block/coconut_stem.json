@@ -1,0 +1,19 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/plant/coconut_stem",
+		"texture": "minestrapp:blocks/plant/coconut_stem"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "PlaneX2",
+			"from": [ 16, 14, 0 ],
+			"to": [ 16.001, 25, 16 ],
+			"rotation": { "origin": [ 16, 14, 0 ], "axis": "y", "angle": -45 },
+			"faces": {
+				"west": { "uv": [ 16, 5, 0, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 5, 16, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+}

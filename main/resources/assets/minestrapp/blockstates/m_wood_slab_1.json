@@ -17,6 +17,12 @@
         ],
         "half=top,variant=charwood_planks": [
             { "model": "minestrapp:upper_slab_charwood_planks" }
+        ],
+        "half=bottom,variant=palm_planks": [
+            { "model": "minestrapp:half_slab_palm_planks" }
+        ],
+        "half=top,variant=palm_planks": [
+            { "model": "minestrapp:upper_slab_palm_planks" }
         ]
     }
 }

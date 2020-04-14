@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gmg",
+        "c c",
+        "g g"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:coconut_shell"
+        },
+        "g": {
+            "item": "minestrapp:m_natural_ingredient",
+            "data": 0
+        },
+        "m": {
+            "item": "minestrapp:m_tech_component",
+            "data": 7
+        }
+     },
+     "result": {
+        "item": "minestrapp:grass_legs",
+        "data": 0
+     }  
+}

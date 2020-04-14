@@ -167,5 +167,8 @@ public class FurnaceRecipes
 		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 6), new ItemStack(MBlocks.glow_glazed_terracotta_cyan), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 7), new ItemStack(MBlocks.glow_glazed_terracotta_blue), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(MBlocks.glow_terracotta, 1, 8), new ItemStack(MBlocks.glow_glazed_terracotta_purple), 0.1F);
+		GameRegistry.addSmelting(MItems.uncooked_pizza, new ItemStack(MBlocks.pizza), 0.5F);
+		GameRegistry.addSmelting(MItems.coconut_slice, new ItemStack(Items.COAL, 1, 1), 0.45F);
+		GameRegistry.addSmelting(MItems.coconut_shell, new ItemStack(Items.COAL, 1, 1), 0.45F);
 	}
 }

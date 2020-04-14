@@ -11,6 +11,10 @@
         "axis=y,variant=charwood":  { "model": "minestrapp:log_charwood" },
         "axis=z,variant=charwood":   { "model": "minestrapp:log_charwood", "x": 90 },
         "axis=x,variant=charwood":   { "model": "minestrapp:log_charwood", "x": 90, "y": 90 },
-        "axis=none,variant=charwood": { "model": "minestrapp:bark_charwood" }
+        "axis=none,variant=charwood": { "model": "minestrapp:bark_charwood" },
+        "axis=y,variant=palm":  { "model": "minestrapp:log_palm" },
+        "axis=z,variant=palm":   { "model": "minestrapp:log_palm", "x": 90 },
+        "axis=x,variant=palm":   { "model": "minestrapp:log_palm", "x": 90, "y": 90 },
+        "axis=none,variant=palm": { "model": "minestrapp:bark_palm" }
     }
 }

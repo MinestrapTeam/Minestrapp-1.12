@@ -1,0 +1,152 @@
+{
+    "multipart": [
+        {   "when": { "age": 0 },
+            "apply": [
+                { "model": "minestrapp:coconut_1" },
+                { "model": "minestrapp:coconut_1", "y": 90 },
+                { "model": "minestrapp:coconut_1", "y": 180 },
+                { "model": "minestrapp:coconut_1", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 1 },
+            "apply": [
+                { "model": "minestrapp:coconut_1" },
+                { "model": "minestrapp:coconut_1", "y": 90 },
+                { "model": "minestrapp:coconut_1", "y": 180 },
+                { "model": "minestrapp:coconut_1", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 2 },
+            "apply": [
+                { "model": "minestrapp:coconut_1" },
+                { "model": "minestrapp:coconut_1", "y": 90 },
+                { "model": "minestrapp:coconut_1", "y": 180 },
+                { "model": "minestrapp:coconut_1", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 3 },
+            "apply": [
+                { "model": "minestrapp:coconut_2" },
+                { "model": "minestrapp:coconut_2", "y": 90 },
+                { "model": "minestrapp:coconut_2", "y": 180 },
+                { "model": "minestrapp:coconut_2", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 4 },
+            "apply": [
+                { "model": "minestrapp:coconut_2" },
+                { "model": "minestrapp:coconut_2", "y": 90 },
+                { "model": "minestrapp:coconut_2", "y": 180 },
+                { "model": "minestrapp:coconut_2", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 5 },
+            "apply": [
+                { "model": "minestrapp:coconut_2" },
+                { "model": "minestrapp:coconut_2", "y": 90 },
+                { "model": "minestrapp:coconut_2", "y": 180 },
+                { "model": "minestrapp:coconut_2", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 6 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 7 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 8 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 9 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 10 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 11 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 12 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 13 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 14 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "age": 15 },
+            "apply": [
+                { "model": "minestrapp:coconut_3" },
+                { "model": "minestrapp:coconut_3", "y": 90 },
+                { "model": "minestrapp:coconut_3", "y": 180 },
+                { "model": "minestrapp:coconut_3", "y": 270 }
+            ]
+        },
+        {   "when": { "stem": "north" },
+            "apply": [
+                { "model": "minestrapp:coconut_stem" }
+            ]
+        },
+        {   "when": { "stem": "west" },
+            "apply": [
+                { "model": "minestrapp:coconut_stem", "y":270 }
+            ]
+        },
+        {   "when": { "stem": "south" },
+            "apply": [
+                { "model": "minestrapp:coconut_stem", "y":180 }
+            ]
+        },
+        {   "when": { "stem": "east" },
+            "apply": [
+                { "model": "minestrapp:coconut_stem", "y":90 }
+            ]
+        }
+    ]
+}

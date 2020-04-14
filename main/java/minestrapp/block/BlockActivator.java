@@ -23,9 +23,11 @@ import minestrapp.gui.MGuiHandler;
 import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemSieve;
+import minestrapp.item.tools.MDagger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAnvil;
 import net.minecraft.block.BlockButton;
+import net.minecraft.block.BlockCake;
 import net.minecraft.block.BlockCauldron;
 import net.minecraft.block.BlockCocoa;
 import net.minecraft.block.BlockContainer;
@@ -500,6 +502,114 @@ public class BlockActivator extends BlockContainer
 				
 				continueCheck = false;
 			}
+	        
+	        if(continueCheck && checkForBlock(worldIn, pos1, pos2, MBlocks.basket_cheesemaking))
+	        {
+	        	BlockPos basketPos = pos1;
+				
+				if(worldIn.isAirBlock(pos1))
+					basketPos = pos2;
+				
+				BlockBasketCheesemaking.EnumProgress progress = worldIn.getBlockState(basketPos).getValue(BlockBasketCheesemaking.PROGRESS);
+				
+				if(progress != null)
+				{
+					IBlockState basket = MBlocks.basket_cheesemaking.getDefaultState();
+					
+					if(progress == BlockBasketCheesemaking.EnumProgress.WAX && item == Items.MILK_BUCKET)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.MILK));
+						te.setInventorySlotContents(0, new ItemStack(Items.BUCKET));
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.MILK && item == MItems.tannic && stack.getMetadata() == 3)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.CULTURING_UNSEALED));
+						te.decrStackSize(0, 1);
+						worldIn.spawnEntity(new EntityItem(worldIn, basketPos.getX() + 0.5D, basketPos.getY() + 0.5D, basketPos.getZ() + 0.5D, new ItemStack(Items.GLASS_BOTTLE)));
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.CULTURING_UNSEALED && item == Item.getItemFromBlock(MBlocks.cork))
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.CULTURING_SEALED));
+						te.decrStackSize(0, 1);
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.CURDS_SEALED)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.CURDS_UNSEALED));
+						worldIn.spawnEntity(new EntityItem(worldIn, basketPos.getX() + 0.5D, basketPos.getY() + 0.5D, basketPos.getZ() + 0.5D, new ItemStack(MBlocks.cork)));
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.CURDS_UNSEALED && item == MItems.fat)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.FAT));
+						te.decrStackSize(0, 1);
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.FAT && item == MItems.salt)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.SALT));
+						te.decrStackSize(0, 1);
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.SALT && item == Item.getItemFromBlock(MBlocks.cork))
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.FORMING));
+						te.decrStackSize(0, 1);
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.DRAINING_4)
+					{
+						worldIn.setBlockState(basketPos, basket.withProperty(BlockBasketCheesemaking.PROGRESS, BlockBasketCheesemaking.EnumProgress.CHEESE));
+						worldIn.spawnEntity(new EntityItem(worldIn, basketPos.getX() + 0.5D, basketPos.getY() + 0.5D, basketPos.getZ() + 0.5D, new ItemStack(MBlocks.cork)));
+						continueCheck = false;
+					}
+					else if(progress == BlockBasketCheesemaking.EnumProgress.CHEESE)
+					{
+						worldIn.setBlockState(basketPos, MBlocks.basket.getDefaultState());
+						worldIn.spawnEntity(new EntityItem(worldIn, basketPos.getX() + 0.5D, basketPos.getY() + 0.5D, basketPos.getZ() + 0.5D, new ItemStack(MBlocks.block_cheese)));
+						continueCheck = false;
+					}
+				}
+	        }
+	        
+	        if(continueCheck && (worldIn.getBlockState(pos1).getBlock() instanceof BlockFoodSliceable || (worldIn.isAirBlock(pos1) && worldIn.getBlockState(pos2).getBlock() instanceof BlockFoodSliceable)) && item instanceof MDagger)
+	        {
+	        	BlockPos foodPos = pos1;
+				
+				if(worldIn.isAirBlock(pos1))
+					foodPos = pos2;
+				
+				te.getStackInSlot(0).attemptDamageItem(1, worldIn.rand, null);
+				if(((BlockFoodSliceable)worldIn.getBlockState(foodPos).getBlock()).getSlice() != null)
+					worldIn.spawnEntity(new EntityItem(worldIn, foodPos.getX() + 0.5D, foodPos.getY() + 0.5D, foodPos.getZ() + 0.5D, new ItemStack(((BlockFoodSliceable)worldIn.getBlockState(foodPos).getBlock()).getSlice())));
+	    		((BlockFoodSliceable)worldIn.getBlockState(foodPos).getBlock()).tryRemoveSlice(worldIn, foodPos, worldIn.getBlockState(foodPos));
+	    		
+	    		continueCheck = false;
+	        }
+	        
+	        if(continueCheck && checkForBlock(worldIn, pos1, pos2, Blocks.CAKE))
+	        {
+	        	BlockPos foodPos = pos1;
+	        	
+	        	if(worldIn.isAirBlock(pos1))
+	        		foodPos = pos2;
+	        	
+	        	te.getStackInSlot(0).attemptDamageItem(1, worldIn.rand, null);
+	        	
+	        	IBlockState state = worldIn.getBlockState(foodPos);
+	        	int slices = state.getValue(BlockCake.BITES).intValue();
+	        	
+	        	if(slices < 6)
+	        		worldIn.setBlockState(foodPos, state.withProperty(BlockCake.BITES, slices + 1));
+	        	else
+	        		worldIn.setBlockToAir(foodPos);
+	        	
+	        	worldIn.spawnEntity(new EntityItem(worldIn, foodPos.getX() + 0.5D, foodPos.getY() + 0.5D, foodPos.getZ() + 0.5D, new ItemStack(MItems.cake_slice)));
+	        	
+	        	continueCheck = false;
+	        }
 		}
 		
 		return continueCheck;
@@ -3064,6 +3174,16 @@ public class BlockActivator extends BlockContainer
 						
 						te.decrStackSize(0, 1);
 					}
+				}
+				else if(item == MItems.mob_loot && stack.getMetadata() == 1 && checkForBlock(worldIn, pos1, pos2, MBlocks.basket))
+				{
+					BlockPos basketPos = pos1;
+					
+					if(worldIn.isAirBlock(pos1))
+						basketPos = pos2;
+					
+					worldIn.setBlockState(basketPos, MBlocks.basket_cheesemaking.getDefaultState());
+					te.decrStackSize(0, 1);
 				}
 			}
 

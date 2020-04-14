@@ -1,0 +1,27 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodBun"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodBun"
+        },
+        {
+            "item": "minecraft:brown_mushroom_block"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodCheese"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:mushroom_burger"
+     }  
+}

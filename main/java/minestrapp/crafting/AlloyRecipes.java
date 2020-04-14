@@ -24,16 +24,21 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class AlloyRecipes {
+public class AlloyRecipes
+{
 	private static final AlloyRecipes SMELTING = new AlloyRecipes();
 	public final Table<ItemStack, ItemStack, ItemStack> alloySmelting = HashBasedTable.<ItemStack, ItemStack, ItemStack>create();
 	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
+	private final Map<ItemStack, Boolean> slot1ConsumeList = Maps.<ItemStack, Boolean>newHashMap();
+	private final Map<ItemStack, Boolean> slot2ConsumeList = Maps.<ItemStack, Boolean>newHashMap();
 
-	public static AlloyRecipes instance() {
+	public static AlloyRecipes instance()
+	{
 		return SMELTING;
 	}
 	
-	private AlloyRecipes() {
+	private AlloyRecipes()
+	{
 		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
 		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
 		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
@@ -57,11 +62,16 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.chunks, 1, 14), new ItemStack(Items.BUCKET), FluidUtil.getFilledBucket(new FluidStack(MFluids.crystalfloe, FluidBase.BUCKET_VOLUME)), 4F);
 		this.addAlloyRecipe(new ItemStack(MBlocks.ore_shimmering), new ItemStack(Items.BUCKET), FluidUtil.getFilledBucket(new FluidStack(MFluids.crystalfloe, FluidBase.BUCKET_VOLUME)), 4F);
 		this.addAlloyRecipe(new ItemStack(MItems.corn_on_the_cob), new ItemStack(MItems.fat), new ItemStack(MItems.grilled_corn), 0.35F);
-		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.BOWL), new ItemStack(MItems.bread_bowl), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.BOWL), new ItemStack(MItems.bread_bowl), 0.35F, true, false);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.SUGAR), new ItemStack(MItems.sugar_cookie, 8), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage()), new ItemStack(Items.COOKIE, 8), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(MItems.pepper_seeds), new ItemStack(MItems.bun, 2), 0.35F);
-		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(Blocks.IRON_BARS), new ItemStack(MItems.dry_spaghetti), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.dough), new ItemStack(MBlocks.steel_mesh), new ItemStack(MItems.dry_spaghetti), 0.35F, true, false);
+		this.addAlloyRecipe(new ItemStack(MItems.corn_meal), new ItemStack(Blocks.IRON_BARS), new ItemStack(MItems.tortilla, 2), 0.35F, true, false);
+		this.addAlloyRecipe(new ItemStack(MItems.tortilla, 2), new ItemStack(MItems.cheese, 3), new ItemStack(MBlocks.quesadilla), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.corn_meal), new ItemStack(MItems.grease), new ItemStack(MItems.tortilla_chips, 4), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.tortilla_chips), new ItemStack(MItems.cheese), new ItemStack(MItems.nachos), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.bun, 2), new ItemStack(MItems.cheese, 2), new ItemStack(MItems.grilled_cheese), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(Blocks.PUMPKIN), new ItemStack(Items.PUMPKIN_PIE), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(Items.APPLE), new ItemStack(MItems.apple_pie), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.pie_crust), new ItemStack(MItems.blueberry, 4), new ItemStack(MItems.blueberry_pie), 0.35F);
@@ -75,6 +85,10 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.bread_tomato_sauce), new ItemStack(MItems.fat), new ItemStack(MItems.bread_tomato_soup), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.tomato_sauce), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.spaghetti), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.bread_tomato_sauce), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.bread_spaghetti), 0.35F);
+		this.addAlloyRecipe(new ItemStack(Items.MUSHROOM_STEW), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.stroganoff), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.bread_mushroom_stew), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.bread_stroganoff), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.glowshroom_stew), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.glowganoff), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.bread_glowshroom_stew), new ItemStack(MItems.dry_spaghetti), new ItemStack(MItems.bread_glowganoff), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.corn), new ItemStack(Items.BOWL), new ItemStack(MItems.popcorn), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.corn), new ItemStack(MItems.bread_bowl), new ItemStack(MItems.bread_popcorn), 0.35F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
@@ -86,11 +100,12 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION), PotionTypes.REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION), PotionTypes.LONG_REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
 		this.addAlloyRecipe(new ItemStack(Items.ROTTEN_FLESH), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION), PotionTypes.STRONG_REGENERATION) , new ItemStack(MItems.flesh), 0.85F);
-		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.POTATO), new ItemStack(MItems.fries), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.POTATO), new ItemStack(MItems.fries, 2), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.POISONOUS_POTATO), new ItemStack(MItems.fries), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 0), new ItemStack(MItems.fried_fish), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.FISH, 1, 1), new ItemStack(MItems.fried_salmon), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.grease), new ItemStack(Items.PORKCHOP), new ItemStack(MItems.bacon), 0.35F);
+		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(MItems.peanuts, 2), new ItemStack(MItems.roasted_peanuts, 2), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.CHICKEN), new ItemStack(MItems.salted_chicken), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.RABBIT), new ItemStack(MItems.salted_rabbit), 0.35F);
 		this.addAlloyRecipe(new ItemStack(MItems.salt), new ItemStack(Items.MUTTON), new ItemStack(MItems.salted_mutton), 0.35F);
@@ -101,23 +116,41 @@ public class AlloyRecipes {
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MBlocks.hanging_glow_moss, 4), new ItemStack(MItems.candy_yellow), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 4), new ItemStack(Blocks.PUMPKIN), new ItemStack(Blocks.LIT_PUMPKIN), 0.35F);
 	}
-	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience) {
+	
+	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience)
+	{
 		this.alloySmelting.put(input1, input2, result);
 		this.experienceList.put(result, Float.valueOf(experience));
+		this.slot1ConsumeList.put(result, true);
+		this.slot2ConsumeList.put(result, true);
 	}
 	
-	public ItemStack getAlloyResult(ItemStack input1, ItemStack input2) {
-        for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
-            if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
+	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience, boolean consume1, boolean consume2)
+	{
+		this.alloySmelting.put(input1, input2, result);
+		this.experienceList.put(result, Float.valueOf(experience));
+		this.slot1ConsumeList.put(result, consume1);
+		this.slot2ConsumeList.put(result, consume2);
+	}
+	
+	public ItemStack getAlloyResult(ItemStack input1, ItemStack input2)
+	{
+        for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet())
+        {
+            if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey())))
+            {
                 return table.getValue();
             }
         }
         return ItemStack.EMPTY;
 	}
 	
-	public ItemStack getSlotOne(ItemStack input1, ItemStack input2) {
-		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
-			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
+	public ItemStack getSlotOne(ItemStack input1, ItemStack input2)
+	{
+		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet())
+		{
+			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey())))
+			 {
 	            if(this.compareItemStacks(input1, table.getRowKey())) {
 	            	return table.getRowKey();
 	            }
@@ -129,13 +162,18 @@ public class AlloyRecipes {
 	     return ItemStack.EMPTY;
 	}
 	
-	public ItemStack getSlotTwo(ItemStack input1, ItemStack input2) {
-		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet()) {
-			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey()))) {
-	            if(this.compareItemStacks(input2, table.getRowKey())) {
+	public ItemStack getSlotTwo(ItemStack input1, ItemStack input2)
+	{
+		for(Table.Cell<ItemStack, ItemStack, ItemStack> table : this.alloySmelting.cellSet())
+		{
+			 if((this.compareItemStacks(input1, table.getRowKey()) && this.compareItemStacks(input2, table.getColumnKey())) || (this.compareItemStacks(input2, table.getRowKey()) && this.compareItemStacks(input1, table.getColumnKey())))
+			 {
+	            if(this.compareItemStacks(input2, table.getRowKey()))
+	            {
 	            	return table.getRowKey();
 	            }
-	            if(this.compareItemStacks(input2, table.getColumnKey())) {
+	            if(this.compareItemStacks(input2, table.getColumnKey()))
+	            {
 	            	return table.getColumnKey();
 	            }
 	        }
@@ -143,20 +181,49 @@ public class AlloyRecipes {
 	     return ItemStack.EMPTY;
 	}
 	
-	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
+	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
+	{
 		return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 630 || stack2.getMetadata() == stack1.getMetadata());
 	}
 	
-	public Table<ItemStack, ItemStack, ItemStack> getAlloySmelting() {
+	public Table<ItemStack, ItemStack, ItemStack> getAlloySmelting()
+	{
 		return this.alloySmelting;
 	}
 	
-	public float getAlloyExperience(ItemStack stack) {
-		for (Entry<ItemStack, Float> entry : this.experienceList.entrySet()) {
-			if(this.compareItemStacks(stack, (ItemStack)entry.getKey())) {
+	public float getAlloyExperience(ItemStack stack)
+	{
+		for (Entry<ItemStack, Float> entry : this.experienceList.entrySet())
+		{
+			if(this.compareItemStacks(stack, (ItemStack)entry.getKey()))
+			{
 				return ((Float)entry.getValue()).floatValue();
 			}
 		}
 		return 0.0F;
+	}
+	
+	public boolean isSlot1Consumable(ItemStack stack)
+	{
+		for (Entry<ItemStack, Boolean> entry : this.slot1ConsumeList.entrySet())
+		{
+			if(this.compareItemStacks(stack, (ItemStack)entry.getKey()))
+			{
+				return ((Boolean)entry.getValue()).booleanValue();
+			}
+		}
+		return true;
+	}
+	
+	public boolean isSlot2Consumable(ItemStack stack)
+	{
+		for (Entry<ItemStack, Boolean> entry : this.slot2ConsumeList.entrySet())
+		{
+			if(this.compareItemStacks(stack, (ItemStack)entry.getKey()))
+			{
+				return ((Boolean)entry.getValue()).booleanValue();
+			}
+		}
+		return true;
 	}
 }

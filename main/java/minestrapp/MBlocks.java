@@ -80,6 +80,13 @@ public class MBlocks
 	public static Block mite_comb;
 	public static Block infected_mushroom;
 	public static Block leaves;
+	public static Block palm_fronds;
+	public static Block palm_fronds_dead;
+	
+	//Food
+	public static BlockFoodSliceable block_cheese;
+	public static BlockFoodSliceable quesadilla;
+	public static BlockFoodSliceable pizza;
 	
 	//Soil
 	public static Block cold_sand;
@@ -98,7 +105,11 @@ public class MBlocks
 	public static Block fargrowth_path;
 	
 	//Wood
+	public static Block cork;
 	public static Block log;
+	public static Block palm_crown;
+	public static Block palm_crown_dead;
+	public static Block coconut;
 	public static Block planks;
 	public static Block mossy_m_planks;
 	public static BlockSlab wood_slab_1;
@@ -112,13 +123,16 @@ public class MBlocks
 	public static BlockPanelBase redwood_plank_panel;
 	public static BlockPanelBase frozen_oak_plank_panel;
 	public static BlockPanelBase charwood_plank_panel;
+	public static BlockPanelBase palm_plank_panel;
 	public static Block redwood_plank_stairs;
 	public static Block frozen_oak_plank_stairs;
 	public static Block charwood_plank_stairs;
+	public static Block palm_plank_stairs;
 	public static Block fence;
 	public static Block redwood_fence_gate;
 	public static Block frozen_oak_fence_gate;
 	public static Block charwood_fence_gate;
+	public static Block palm_fence_gate;
 	public static Block charwood_limb;
 	
 	//Stone
@@ -406,6 +420,7 @@ public class MBlocks
 	public static Block dimensium_rope;
 	public static Block door_charwood;
 	public static Block basket;
+	public static Block basket_cheesemaking;
 	public static Block crate;
 	public static Block barrel;
 	public static Block tanning_rack;
@@ -436,6 +451,7 @@ public class MBlocks
 	public static Block spike_redwood_wood;
 	public static Block spike_frozen_oak_wood;
 	public static Block spike_charwood_wood;
+	public static Block spike_palm_wood;
 	public static Block spike_red_rock;
 	public static Block spike_stone;
 	public static Block spike_coldstone;
@@ -469,6 +485,7 @@ public class MBlocks
 	public static Block soulsteel_vessel;
 	public static Block stonecutter;
 	public static Block alloy;
+	public static Block pressurizer;
 	public static Block crusher;
 	public static BlockBiomeRedstoneWire redstone_sandy;
 	public static BlockBiomeRedstoneWire redstone_frosted;
@@ -513,6 +530,8 @@ public class MBlocks
 		register(strawberry_bush = new BlockBerryBush("strawberry_bush", MapColor.FOLIAGE, "plains"));
 		register(mana_bush = new BlockBerryBush("mana_bush", MapColor.LAPIS, "coast"));
 		register(leaves = new BlockMLeaves(), new ItemBlockMultistate(leaves));
+		register(palm_fronds = new BlockPalmFronds("palm_fronds", true));
+		register(palm_fronds_dead = new BlockPalmFronds("dead_palm_fronds", false));
 		register(clutchthorn = new BlockClutchthorn());
 		register(voidberry_bush = new BlockVoidberryBush("voidberry_bush"));
 		register(terracreep = new BlockTerracreep());
@@ -523,6 +542,11 @@ public class MBlocks
 		register(mite_hive = new BlockEndermiteHiveHusk("mite_hive", false));
 		register(mite_hive_honeyed = new BlockEndermiteHiveHusk("mite_hive_honeyed", true).setLightLevel(0.5F));
 		register(mite_comb = new BlockBase("mite_comb", Material.GOURD, MapColor.MAGENTA_STAINED_HARDENED_CLAY, SoundType.WOOD, 0.4F, "axe", 0).setFlammable(20, 5).setCreativeTab(MTabs.environment));
+		
+		//Food
+		register(block_cheese = new BlockCheese());
+		register(quesadilla = new BlockQuesadilla());
+		register(pizza = new BlockPizza());
 		
 		//Soil
 		register(cold_sand = new BlockColdSand("cold_sand", Material.SAND, SoundType.SAND, 0.7F, "shovel", 0).setCreativeTab(MTabs.environment), new ItemBlockMultistate(cold_sand));
@@ -541,7 +565,11 @@ public class MBlocks
 		register(fargrowth_path = new BlockFargrowthPath());
 		
 		//Wood
+		register(cork = new BlockBase("block_cork", Material.WOOD, MapColor.BROWN, SoundType.WOOD, 0.5F, "axe", 0).setFlammable(30, 8).setCreativeTab(MTabs.wood));
 		register(log = new BlockMLog().setCreativeTab(MTabs.wood), new ItemBlockMultistate(log));
+		register(palm_crown = new BlockPalmCrown("palm_crown", true));
+		register(palm_crown_dead = new BlockPalmCrown("dead_palm_crown", false));
+		register(coconut = new BlockCoconut());
 		register(planks = new BlockMPlanks("m_planks"), new ItemBlockMultistate(planks));
 		register(mossy_m_planks = new BlockMPlanks("m_planks_mossy"), new ItemBlockMultistate(mossy_m_planks));
 		register(double_wood_slab_1 = new BlockDoubleWoodSlab1("m_wood_slab_1"));
@@ -555,13 +583,16 @@ public class MBlocks
 		register(redwood_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 0, "redwood").setFlammable(20, 5), new ItemBlockPanel(redwood_plank_panel));
 		register(frozen_oak_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 1, "frozen_oak").setFlammable(20, 5), new ItemBlockPanel(frozen_oak_plank_panel));
 		register(charwood_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 2, "charwood"), new ItemBlockPanel(charwood_plank_panel));
+		register(palm_plank_panel = new BlockPanelBase(MBlocks.planks, MTabs.wood, 3, "palm").setFlammable(20, 5), new ItemBlockPanel(palm_plank_panel));
 		register(redwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.REDWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.REDWOOD.getUnlocalizedName()).setFlammable(20, 5));
 		register(frozen_oak_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.FROZEN_OAK), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.FROZEN_OAK.getUnlocalizedName()).setFlammable(20, 5));
 		register(charwood_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.CHARWOOD), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.CHARWOOD.getUnlocalizedName()));
+		register(palm_plank_stairs = new BlockStairBase(planks.getDefaultState().withProperty(BlockMPlanks.VARIANT, BlockMPlanks.EnumType.PALM), planks.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.PALM.getUnlocalizedName()).setFlammable(20, 5));
 		register(fence = new BlockMFence(), new ItemBlockMultistate(fence));
 		register(redwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.REDWOOD));
 		register(frozen_oak_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.FROZEN_OAK));
 		register(charwood_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.CHARWOOD));
+		register(palm_fence_gate = new BlockMFenceGate(BlockMPlanks.EnumType.PALM));
 		ForgeRegistries.BLOCKS.register(charwood_limb = new BlockCharwoodLimb());
 		
 		//Stone
@@ -867,7 +898,8 @@ public class MBlocks
 		register(oceanstone_road = new BlockRoad("oceanstone_road", 0.2F, 1.4D));
 		register(netherrack_road = new BlockRoad("netherrack_road", 0.2F, 1.6D));
 		register(end_stone_road = new BlockRoad("end_stone_road", 0.2F, 1.8D));
-		register(basket = new BlockBasket().setCreativeTab(MTabs.utility));
+		register(basket = new BlockBasket("basket").setCreativeTab(MTabs.utility));
+		register(basket_cheesemaking = new BlockBasketCheesemaking().setCreativeTab(MTabs.utility), new ItemBlockMultistate(basket_cheesemaking));
 		register(crate = new BlockCrate());
 		register(barrel = new BlockBarrel());
 		register(tanning_rack = new BlockTanningRack());
@@ -885,6 +917,7 @@ public class MBlocks
 		register(spike_redwood_wood = new BlockSpike("spike_redwood", Material.WOOD, BlockMPlanks.EnumType.REDWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
 		register(spike_frozen_oak_wood = new BlockSpike("spike_frozen_oak", Material.WOOD, BlockMPlanks.EnumType.FROZEN_OAK.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
 		register(spike_charwood_wood = new BlockSpike("spike_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setCreativeTab(MTabs.utility));
+		register(spike_palm_wood = new BlockSpike("spike_palm", Material.WOOD, BlockMPlanks.EnumType.PALM.getMapColor(), SoundType.WOOD, 2F, "axe", 0, ToolMaterial.WOOD).setFlammable(20, 5).setCreativeTab(MTabs.utility));
 		register(spike_red_rock = new BlockSpike("spike_red_rock", Material.ROCK, EnumStoneType.RED_ROCK.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
 		register(spike_stone = new BlockSpike("spike_stone", Material.ROCK, EnumStoneType.STONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
 		register(spike_coldstone = new BlockSpike("spike_coldstone", Material.ROCK, EnumStoneType.COLDSTONE.getMapColor(), SoundType.STONE, 1.5F, "pickaxe", 0, ToolMaterial.STONE).setCreativeTab(MTabs.utility));
@@ -929,6 +962,7 @@ public class MBlocks
 		//register(wooden_axel = new BlockAxel("axel_wood", Material.WOOD, MapColor.WOOD, SoundType.WOOD, 1.5F, "axe", 0));
 		//register(creative_engine = new BlockCreativeEngine());
 		register(alloy = new BlockAlloy().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
+		register(pressurizer = new BlockPressurizer().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(crusher = new BlockCrusher().setPushReaction(EnumPushReaction.BLOCK).setCreativeTab(MTabs.utility));
 		register(soulsteel_vessel = new BlockSoulsteelVessel().setHardness(3.0F).setCreativeTab(MTabs.utility));
 		register(redstone_sandy = new BlockBiomeRedstoneWire("redstone_sandy", 149F, 67F, 0F));
@@ -1137,6 +1171,10 @@ public class MBlocks
 		for(int i = 0 ; i < BlockDesertQuartzDeposit.DepositType.values().length ; i++)
 		{
 			initModel(desert_quartz_deposit, i, "desert_quartz_deposit_" + BlockDesertQuartzDeposit.DepositType.values()[i].getUnlocalizedName());
+		}
+		for(int i = 0 ; i < BlockBasketCheesemaking.EnumProgress.values().length ; i++)
+		{
+			initModel(basket_cheesemaking, i, "basket_cheesemaking_" + BlockBasketCheesemaking.EnumProgress.values()[i].getUnlocalizedName());
 		}
 	}
 	

@@ -51,6 +51,46 @@
                     }
                 ]
             }
+        },
+        "grilled_cheese": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:grilled_cheese"
+                    }
+                ]
+            }
+        },
+        "cheeseburger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:cheeseburger"
+                    }
+                ]
+            }
+        },
+        "fish_sandwich": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:fish_sandwich"
+                    }
+                ]
+            }
+        },
+        "mushroom_burger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minestrapp:mushroom_burger"
+                    }
+                ]
+            }
         }
     },
     "requirements": [
@@ -58,7 +98,11 @@
             "hamburger",
             "pbj",
             "salmon_burger",
-            "blt"
+            "blt",
+            "grilled_cheese",
+            "fish_sandwich",
+            "cheeseburger",
+            "mushroom_burger"
         ]
     ]
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_grass_helm"
+    ]
+  },
+  "criteria": {
+    "has_coconut": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:coconut_shell"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_grass_helm"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut",
+      "has_the_recipe"
+    ]
+  ]
+}

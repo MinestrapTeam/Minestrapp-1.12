@@ -1,0 +1,63 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube_all",
+	"textures": {
+		"particle": "minestrapp:blocks/utility/basket/basket_side",
+		"Side": "minestrapp:blocks/utility/basket/basket_side",
+		"Cork": "minestrapp:blocks/utility/basket/cheesemaking_cork",
+		"Bottom": "minestrapp:blocks/utility/basket/basket_bottom"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 1, 0, 1 ],
+			"to": [ 15, 16, 15 ],
+			"faces": {
+				"down": { "uv": [ 1, 1, 15, 15 ], "texture": "#Bottom" },
+				"up": { "uv": [ 1, 1, 15, 15 ], "texture": "#Bottom" },
+				"north": { "uv": [ 1, 0, 15, 16 ], "texture": "#Side" },
+				"south": { "uv": [ 1, 0, 15, 16 ], "texture": "#Side" },
+				"west": { "uv": [ 1, 0, 15, 16 ], "texture": "#Side" },
+				"east": { "uv": [ 1, 0, 15, 16 ], "texture": "#Side" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 1, 1, 0 ],
+			"to": [ 15, 15, 16 ],
+			"faces": {
+				"down": { "uv": [ 1, 0, 15, 16 ], "texture": "#Bottom" },
+				"up": { "uv": [ 1, 0, 15, 16 ], "texture": "#Bottom" },
+				"north": { "uv": [ 1, 1, 15, 15 ], "texture": "#Side" },
+				"south": { "uv": [ 1, 1, 15, 15 ], "texture": "#Side" },
+				"west": { "uv": [ 0, 1, 16, 15 ], "texture": "#Side" },
+				"east": { "uv": [ 0, 1, 16, 15 ], "texture": "#Side" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 0, 1, 1 ],
+			"to": [ 16, 15, 15 ],
+			"faces": {
+				"down": { "uv": [ 0, 1, 16, 15 ], "texture": "#Bottom" },
+				"up": { "uv": [ 0, 1, 16, 15 ], "texture": "#Bottom" },
+				"north": { "uv": [ 0, 1, 16, 15 ], "texture": "#Side" },
+				"south": { "uv": [ 0, 1, 16, 15 ], "texture": "#Side" },
+				"west": { "uv": [ 1, 1, 15, 15 ], "texture": "#Side" },
+				"east": { "uv": [ 1, 1, 15, 15 ], "texture": "#Side" }
+			}
+		},
+		{
+			"__comment": "Box10",
+			"from": [ 3, 16, 3 ],
+			"to": [ 13, 17, 13 ],
+			"faces": {
+				"up": { "uv": [ 3, 3, 13, 13 ], "texture": "#Cork" },
+				"north": { "uv": [ 3, 3, 13, 4 ], "texture": "#Cork" },
+				"south": { "uv": [ 3, 3, 13, 4 ], "texture": "#Cork" },
+				"west": { "uv": [ 3, 3, 13, 4 ], "texture": "#Cork" },
+				"east": { "uv": [ 3, 3, 13, 4 ], "texture": "#Cork" }
+			}
+		}
+	]
+}

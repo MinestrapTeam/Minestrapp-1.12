@@ -1,5 +1,6 @@
 package minestrapp.block.tileentity;
 
+import minestrapp.MBlocks;
 import minestrapp.block.BlockAlloy;
 import minestrapp.crafting.AlloyRecipes;
 import net.minecraft.block.Block;
@@ -36,9 +37,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TileEntityAlloy extends TileEntityLockable implements ISidedInventory, ITickable
 {
-	private static final int[] SLOTS_TOP = new int[] {0, 1};
+	private static final int[] SLOTS_TOP = new int[] {2};
     private static final int[] SLOTS_BOTTOM = new int[] {2, 3};
-    private static final int[] SLOTS_SIDES = new int[] {2};
+    private static final int[] SLOTS_LEFT = new int[] {0};
+    private static final int[] SLOTS_RIGHT = new int[] {1};
+    private static final int[] SLOTS_FRONT_BACK = new int[] {0, 1};
     
 	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	
@@ -282,8 +285,10 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
 			else if(output.getItem() == result.getItem())
 				output.grow(result.getCount());
 			
-			input1.shrink(AlloyRecipes.instance().getSlotOne(input1, input2).getCount());
-			input2.shrink(AlloyRecipes.instance().getSlotTwo(input1temp, input2).getCount());
+			if(AlloyRecipes.instance().isSlot1Consumable(result))
+				input1.shrink(AlloyRecipes.instance().getSlotOne(input1, input2).getCount());
+			if(AlloyRecipes.instance().isSlot2Consumable(result))
+				input2.shrink(AlloyRecipes.instance().getSlotTwo(input1temp, input2).getCount());
 		}
 	}
 	
@@ -371,9 +376,26 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
         {
             return SLOTS_BOTTOM;
         }
+        else if(side == EnumFacing.UP)
+        {
+            return SLOTS_TOP;
+        }
         else
         {
-            return side == EnumFacing.UP ? SLOTS_TOP : SLOTS_SIDES;
+        	EnumFacing blockFacing = EnumFacing.UP;
+        	
+        	if(world.getBlockState(pos).getBlock() instanceof BlockAlloy)
+        		blockFacing = world.getBlockState(pos).getValue(BlockAlloy.FACING);
+        	
+        	if(blockFacing != EnumFacing.UP)
+        	{
+        		if(side == blockFacing.rotateYCCW())
+        			return SLOTS_RIGHT;
+        		else if(side == blockFacing.rotateY())
+        			return SLOTS_LEFT;
+        	}
+        	
+        	return SLOTS_FRONT_BACK;
         }
     }
 	
@@ -453,7 +475,10 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
 	
 	net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.UP);
     net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.DOWN);
-    net.minecraftforge.items.IItemHandler handlerSide = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.WEST);
+    net.minecraftforge.items.IItemHandler handlerNorth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.NORTH);
+    net.minecraftforge.items.IItemHandler handlerEast = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.EAST);
+    net.minecraftforge.items.IItemHandler handlerSouth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.SOUTH);
+    net.minecraftforge.items.IItemHandler handlerWest = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.WEST);
 
     @SuppressWarnings("unchecked")
     @Override
@@ -464,8 +489,14 @@ public class TileEntityAlloy extends TileEntityLockable implements ISidedInvento
                 return (T) handlerBottom;
             else if (facing == EnumFacing.UP)
                 return (T) handlerTop;
-            else
-                return (T) handlerSide;
+            else if(facing == EnumFacing.NORTH)
+                return (T) handlerNorth;
+            else if(facing == EnumFacing.EAST)
+                return (T) handlerEast;
+            else if(facing == EnumFacing.SOUTH)
+                return (T) handlerSouth;
+            else if(facing == EnumFacing.WEST)
+                return (T) handlerWest;
         return super.getCapability(capability, facing);
     }
 }

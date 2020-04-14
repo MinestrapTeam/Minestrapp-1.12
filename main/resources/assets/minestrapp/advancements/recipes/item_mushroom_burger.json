@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_mushroom_burger"
+    ]
+  },
+  "criteria": {
+    "has_mushroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:brown_mushroom_block"
+          }
+        ]
+      }
+    },
+    "has_bun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bun"
+          }
+        ]
+      }
+    }, 
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_mushroom_burger"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mushroom",
+      "has_bun",
+      "has_the_recipe"
+    ]
+  ]
+}

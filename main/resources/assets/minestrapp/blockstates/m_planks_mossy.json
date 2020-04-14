@@ -11,6 +11,9 @@
             { "model": "minestrapp:planks_charwood_smoldering_1" },
             { "model": "minestrapp:planks_charwood_smoldering_2" },
             { "model": "minestrapp:planks_charwood_smoldering_3" }
+        ],
+        "variant=palm": [
+            { "model": "minestrapp:planks_palm_mossy" }
         ]
     }
 }

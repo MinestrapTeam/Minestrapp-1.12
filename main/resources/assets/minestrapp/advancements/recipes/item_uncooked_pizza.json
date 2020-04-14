@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_uncooked_pizza"
+    ]
+  },
+  "criteria": {
+    "has_cheese": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:cheese_slice"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_uncooked_pizza"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cheese",
+      "has_the_recipe"
+    ]
+  ]
+}

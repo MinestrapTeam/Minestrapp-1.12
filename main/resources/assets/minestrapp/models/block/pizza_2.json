@@ -1,0 +1,57 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/food/pizza_top",
+		"texture": "minestrapp:blocks/food/pizza_top",
+		"texture1": "minestrapp:blocks/food/pizza_side"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 3, 2 ],
+			"faces": {
+				"down": { "uv": [ 3, 1, 4, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 2 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 6, 16, 9 ], "texture": "#texture1" },
+				"south": { "uv": [ 0, 9, 16, 10 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 6, 2, 9 ], "texture": "#texture1" },
+				"east": { "uv": [ 14, 6, 16, 9 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 2 ],
+			"to": [ 2, 3, 8 ],
+			"faces": {
+				"down": { "uv": [ 3, 1, 4, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 2, 2, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 6, 2, 9 ], "texture": "#texture1" },
+				"west": { "uv": [ 2, 6, 8, 9 ], "texture": "#texture1" },
+				"east": { "uv": [ 8, 9, 14, 10 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 14, 0, 2 ],
+			"to": [ 16, 3, 8 ],
+			"faces": {
+				"down": { "uv": [ 3, 1, 4, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 14, 2, 16, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 14, 6, 16, 9 ], "texture": "#texture1" },
+				"west": { "uv": [ 2, 9, 8, 10 ], "texture": "#texture1" },
+				"east": { "uv": [ 2, 6, 14, 9 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 2, 0, 2 ],
+			"to": [ 14, 2, 8 ],
+			"faces": {
+				"down": { "uv": [ 3, 1, 4, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 2, 14, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 10, 14, 8 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

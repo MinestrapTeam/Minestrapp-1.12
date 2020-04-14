@@ -1,0 +1,46 @@
+{
+    "variants": {
+        "progress=wax": [
+            { "model": "minestrapp:basket_cheese_1" }
+        ],
+        "progress=milk": [
+            { "model": "minestrapp:basket_cheese_2" }
+        ],
+        "progress=culturing_unsealed": [
+            { "model": "minestrapp:basket_cheese_2" }
+        ],
+        "progress=culturing_sealed": [
+            { "model": "minestrapp:basket_corked_1" }
+        ],
+        "progress=curds_sealed": [
+            { "model": "minestrapp:basket_corked_1" }
+        ],
+        "progress=curds_unsealed": [
+            { "model": "minestrapp:basket_cheese_3" }
+        ],
+        "progress=fat": [
+            { "model": "minestrapp:basket_cheese_4" }
+        ],
+        "progress=salt": [
+            { "model": "minestrapp:basket_cheese_5" }
+        ],
+        "progress=forming": [
+            { "model": "minestrapp:basket_corked_1" }
+        ],
+        "progress=draining_1": [
+            { "model": "minestrapp:basket_corked_1" }
+        ],
+        "progress=draining_2": [
+            { "model": "minestrapp:basket_corked_2" }
+        ],
+        "progress=draining_3": [
+            { "model": "minestrapp:basket_corked_3" }
+        ],
+        "progress=draining_4": [
+            { "model": "minestrapp:basket_corked_4" }
+        ],
+        "progress=cheese": [
+            { "model": "minestrapp:basket_cheese_6" }
+        ]
+    }
+}

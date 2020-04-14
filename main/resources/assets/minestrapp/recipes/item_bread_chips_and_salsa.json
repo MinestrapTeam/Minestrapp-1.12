@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "tomato_sauce",
+    "pattern": [
+        "c",
+        "s",
+        "b"
+    ],
+    "key": {
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "foodTortillachips"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "foodSalsa"
+        },
+        "b": {
+            "item": "minestrapp:bread_bowl"
+        }
+     },
+     "result": {
+        "item": "minestrapp:bread_chips_and_salsa"
+     }  
+}

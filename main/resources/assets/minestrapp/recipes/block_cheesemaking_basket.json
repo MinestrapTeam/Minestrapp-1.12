@@ -1,0 +1,20 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "t",
+        "b"
+    ],
+    "key": {        
+        "b": {
+            "item": "minestrapp:basket"
+        },
+        "t": {
+            "type": "forge:ore_dict",
+            "ore": "tallow"
+        }
+     },
+     "result": {
+        "item": "minestrapp:basket_cheesemaking",
+        "data": 0
+     }  
+}

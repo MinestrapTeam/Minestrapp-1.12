@@ -11,7 +11,7 @@ public class ItemPBJ extends MItemsFood
 {
 	public ItemPBJ(int amount, float saturation, boolean isWolfFood, String string)
 	{
-		super(amount, saturation, isWolfFood, string);
+		super(amount, saturation, isWolfFood, string, 2F, 0);
 	}
 	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)

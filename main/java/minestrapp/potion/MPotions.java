@@ -2,6 +2,7 @@ package minestrapp.potion;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.PotionTypes;
@@ -51,6 +52,8 @@ public class MPotions {
 	private static PotionType fatigueLongType = new PotionType("fatigue", new PotionEffect(MobEffects.MINING_FATIGUE, 4800));
 	private static PotionType fatigueStrongType = new PotionType("fatigue", new PotionEffect(MobEffects.MINING_FATIGUE, 400, 1));
 	
+	public static final Potion wellFed = new PotionWellFed(false, 13412982, "Well-Fed", 6, 0).registerPotionAttributeModifier(SharedMonsterAttributes.MOVEMENT_SPEED, "2ECFE137-ACE8-2A3F-80E1-7D839C26CE2E", 0.19D, 2).registerPotionAttributeModifier(SharedMonsterAttributes.ATTACK_SPEED, "EDE4015F-164D-6371-D3C8-E26A5C5507EC", 0.18D, 2).registerPotionAttributeModifier(SharedMonsterAttributes.KNOCKBACK_RESISTANCE, "860C9E37-5326-B239-5004-9B1AE5B3B426", 0.12D, 0);
+	
 	public static void addBrewingRecipe() {
 		PotionHelper.addMix(PotionTypes.AWKWARD, new ItemStack(MBlocks.infected_mushroom).getItem(), infectionType);
 		PotionHelper.addMix(infectionType, Items.REDSTONE, infectionLongType);
@@ -90,6 +93,7 @@ public class MPotions {
     	event.getRegistry().register(restoration.setRegistryName("restoration"));
     	event.getRegistry().register(aggression.setRegistryName("aggression"));
     	event.getRegistry().register(harmony.setRegistryName("harmony"));
+    	event.getRegistry().register(wellFed.setRegistryName("well_fed"));
     }
 
     @SubscribeEvent

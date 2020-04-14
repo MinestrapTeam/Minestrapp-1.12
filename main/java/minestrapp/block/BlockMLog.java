@@ -59,6 +59,8 @@ public class BlockMLog extends BlockLog implements IMetaBlockName
                         return MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY;
                     case CHARWOOD:
                         return MapColor.BLACK_STAINED_HARDENED_CLAY;
+                    case PALM:
+                    	return MapColor.WHITE_STAINED_HARDENED_CLAY;
                 }
 
             case Y:
@@ -71,6 +73,7 @@ public class BlockMLog extends BlockLog implements IMetaBlockName
         items.add(new ItemStack(this, 1, BlockMPlanks.EnumType.REDWOOD.getMetadata()));
         items.add(new ItemStack(this, 1, BlockMPlanks.EnumType.FROZEN_OAK.getMetadata()));
         items.add(new ItemStack(this, 1, BlockMPlanks.EnumType.CHARWOOD.getMetadata()));
+        items.add(new ItemStack(this, 1, BlockMPlanks.EnumType.PALM.getMetadata()));
     }
 	
 	public IBlockState getStateFromMeta(int meta)

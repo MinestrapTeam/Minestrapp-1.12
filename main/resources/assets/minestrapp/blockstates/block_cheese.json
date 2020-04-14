@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "slices=0": { "model": "minestrapp:cheese_0" },
+        "slices=1": { "model": "minestrapp:cheese_1" },
+        "slices=2": { "model": "minestrapp:cheese_2" },
+        "slices=3": { "model": "minestrapp:cheese_3" },
+        "slices=4": { "model": "minestrapp:cheese_4" },
+        "slices=5": { "model": "minestrapp:cheese_5" },
+        "slices=6": { "model": "minestrapp:cheese_6" },
+        "slices=7": { "model": "minestrapp:cheese_7" },
+        "slices=8": { "model": "minestrapp:cheese_8" },
+        "slices=9": { "model": "minestrapp:cheese_9" },
+        "slices=10": { "model": "minestrapp:cheese_10" },
+        "slices=11": { "model": "minestrapp:cheese_11" },
+        "slices=12": { "model": "minestrapp:cheese_12" },
+        "slices=13": { "model": "minestrapp:cheese_13" },
+        "slices=14": { "model": "minestrapp:null" },
+        "slices=15": { "model": "minestrapp:null" }        
+    }
+}

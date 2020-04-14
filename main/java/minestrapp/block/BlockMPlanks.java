@@ -71,7 +71,8 @@ public class BlockMPlanks extends BlockBase implements IMetaBlockName
     {
         REDWOOD(0, "redwood", MapColor.RED_STAINED_HARDENED_CLAY),
         FROZEN_OAK(1, "frozen_oak", MapColor.LIGHT_BLUE),
-        CHARWOOD(2, "charwood", MapColor.GRAY_STAINED_HARDENED_CLAY);
+        CHARWOOD(2, "charwood", MapColor.GRAY_STAINED_HARDENED_CLAY),
+		PALM(3, "palm", MapColor.WHITE_STAINED_HARDENED_CLAY);
 
         private static final BlockMPlanks.EnumType[] META_LOOKUP = new BlockMPlanks.EnumType[values().length];
         private final int meta;

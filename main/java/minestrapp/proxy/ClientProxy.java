@@ -108,6 +108,9 @@ public class ClientProxy extends CommonProxy
 		};
 		
 		blockcolors.registerBlockColorHandler(mGrassColorHandler, MBlocks.clay_grass);
+		blockcolors.registerBlockColorHandler(mFoliageColorHandler, MBlocks.palm_fronds);
+		blockcolors.registerBlockColorHandler(mFoliageColorHandler, MBlocks.palm_crown);
+		blockcolors.registerBlockColorHandler(mFoliageColorHandler, MBlocks.palm_crown_dead);
 		blockcolors.registerBlockColorHandler(mFoliageColorHandler, MBlocks.leaves);
 		blockcolors.registerBlockColorHandler(sandyRedstoneColorHandler, MBlocks.redstone_sandy);
 		blockcolors.registerBlockColorHandler(frostedRedstoneColorHandler, MBlocks.redstone_frosted);

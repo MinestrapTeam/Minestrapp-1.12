@@ -6,6 +6,7 @@ import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.block.tileentity.TileEntityCrate;
 import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityPipe;
+import minestrapp.block.tileentity.TileEntityPressurizer;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.container.ContainerActivator;
 import minestrapp.container.ContainerAlloy;
@@ -14,6 +15,7 @@ import minestrapp.container.ContainerBarrel;
 import minestrapp.container.ContainerCrate;
 import minestrapp.container.ContainerCrusher;
 import minestrapp.container.ContainerPipe;
+import minestrapp.container.ContainerPressurizer;
 import minestrapp.container.ContainerSorter;
 import minestrapp.inventories.InventoryBackpack;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,6 +33,8 @@ public class MGuiHandler implements IGuiHandler {
 	public static final int BACKPACK = 5;
 	public static final int CRATE = 6;
 	public static final int ACTIVATOR = 7;
+	public static final int PRESSURIZER = 8;
+	
 	@Override
 	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
@@ -51,6 +55,8 @@ public class MGuiHandler implements IGuiHandler {
 				return new ContainerCrate(player.inventory, ((TileEntityCrate)world.getTileEntity(new BlockPos(x, y, z))), player);
 			case ACTIVATOR:
 				return new ContainerActivator(player.inventory, ((TileEntityActivator)world.getTileEntity(new BlockPos(x, y, z))), player);
+			case PRESSURIZER:
+				return new ContainerPressurizer(player.inventory, ((TileEntityPressurizer)world.getTileEntity(new BlockPos(x, y, z))));
 			default:
 				return null;
 		}
@@ -76,6 +82,8 @@ public class MGuiHandler implements IGuiHandler {
 				return new GuiCrate(player.inventory, ((TileEntityCrate)world.getTileEntity(new BlockPos(x, y, z))));
 			case ACTIVATOR:
 				return new GuiActivator(player.inventory, ((TileEntityActivator)world.getTileEntity(new BlockPos(x, y, z))));
+			case PRESSURIZER:
+				return new GuiPressurizer((ContainerPressurizer) getServerGuiElement(ID, player, world, x, y, z), ((ContainerPressurizer) getServerGuiElement(ID, player, world, x, y, z)).getTE(), player.inventory);
 			default:
 				return null;
 		}

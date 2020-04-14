@@ -1,0 +1,31 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodTortilla"
+        },
+        {
+            "item": "minecraft:cooked_chicken"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropLettuce"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropPepper"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodSalsa"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:chicken_burrito"
+     }  
+}

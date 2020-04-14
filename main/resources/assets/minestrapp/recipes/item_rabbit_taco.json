@@ -1,0 +1,27 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodTortilla"
+        },
+        {
+            "item": "minecraft:cooked_rabbit"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodCheese"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodSalsa"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:rabbit_taco"
+     }  
+}

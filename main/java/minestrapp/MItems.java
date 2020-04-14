@@ -163,6 +163,10 @@ public class MItems
 	public static Item ice_dagger;
 	public static Item ice_mace;
 	
+	public static Item grass_helm;
+	public static Item grass_chest;
+	public static Item grass_legs;
+	public static Item grass_feet;
 	public static Item tin_helm;
 	public static Item tin_chest;
 	public static Item tin_legs;
@@ -229,21 +233,41 @@ public class MItems
 	public static Item lettuce;
 	public static Item onion;
 	public static Item peanuts;
+	public static Item roasted_peanuts;
 	public static Item tomato;
 	public static Item corn;
 	public static Item corn_on_the_cob;
 	public static Item grilled_corn;
+	public static Item coconut_shell;
+	public static Item coconut_slice;
 	public static Item charroot;
 	
 	public static Item corn_meal;
+	public static Item tortilla;
+	public static Item tortilla_chips;
+	public static Item nachos;
 	public static Item corn_bread;
 	public static Item dough;
 	public static Item sugar_cookie;
+	public static MItemsFood quesadilla_slice;
+	public static MItemsFood pizza_slice;
+	public static Item uncooked_pizza;
 	public static Item bun;
 	public static Item pbj;
+	public static Item grilled_cheese;
 	public static Item blt;
 	public static Item salmon_burger;
 	public static Item hamburger;
+	public static Item cheeseburger;
+	public static Item fish_sandwich;
+	public static Item mushroom_burger;
+	public static Item beef_burrito;
+	public static Item chicken_burrito;
+	public static Item squid_burrito;
+	public static Item breakfast_burrito;
+	public static Item mutton_taco;
+	public static Item rabbit_taco;
+	public static Item fish_taco;
 	public static Item dry_spaghetti;
 	public static Item pie_crust;
 	public static Item apple_pie;
@@ -252,6 +276,7 @@ public class MItems
 	public static Item raspberry_pie;
 	public static Item strawberry_pie;
 	public static Item voidberry_pie;
+	public static Item cake_slice;
 	
 	public static Item bread_bowl;
 	public static Item bread_mushroom_stew;
@@ -267,8 +292,19 @@ public class MItems
 	public static Item bread_tomato_sauce;
 	public static Item tomato_soup;
 	public static Item bread_tomato_soup;
+	public static Item salsa;
+	public static Item bread_salsa;
+	public static Item chips_and_salsa;
+	public static Item bread_chips_and_salsa;
+	public static Item loaded_nachos;
+	public static Item bread_loaded_nachos;
+	public static Item stroganoff;
+	public static Item bread_stroganoff;
+	public static Item glowganoff;
+	public static Item bread_glowganoff;
 	public static Item spaghetti;
 	public static Item bread_spaghetti;
+	public static Item b_ball_pasta;
 	public static Item ice_cream;
 	public static Item bread_ice_cream;
 	public static Item popcorn;
@@ -298,6 +334,7 @@ public class MItems
 	public static Item hot_sauce;
 	public static Item mite_honey;
 	
+	public static MItemsFood cheese;
 	public static Item fat;
 	public static Item grease;
 	public static Item salted_chicken;
@@ -342,6 +379,7 @@ public class MItems
 	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":glacierite", 3, 1400, 8F, 4F, 34);
 	public static final ToolMaterial BEDROCK = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bedrock", 4, 6244, 6F, 1.5F, 6);
 	
+	public static final ArmorMaterial ARMOR_GRASS = EnumHelper.addArmorMaterial("grass", Minestrapp5.MODID + ":grass", 3, new int[]{2, 3, 3, 2}, 18, SoundEvents.ITEM_ARMOR_EQIIP_ELYTRA, 0F);
 	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
 	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	public static final ArmorMaterial ARMOR_STEEL = EnumHelper.addArmorMaterial("steel", Minestrapp5.MODID + ":steel", 18, new int[]{3, 6, 7, 3}, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
@@ -359,6 +397,7 @@ public class MItems
 		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers, 3=Clutchthorn Petal
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 4).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
+		register(coconut_shell = new ItemBase("coconut_shell").setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
 		//0=White, 1=Magenta, 2=Red, 3=Orange, 4=Gold, 5=Green, 6=Cyan, 7=Blue, 8=Purple
 		register(dye = new ItemMetaBase("m_dye", 9).setCreativeTab(MTabs.dye));
@@ -408,7 +447,7 @@ public class MItems
 		register(sieve_iron = new ItemSieve("iron_sieve", 64, new ItemStack(Items.IRON_INGOT)));
 		register(sieve_bronze = new ItemSieve("bronze_sieve", 128, new ItemStack(ingots, 1, 2)));
 		register(sieve_archantine_broken = new ItemBase("archantine_sieve_broken").setCreativeTab(MTabs.tools));
-		register(sieve_archantine = new ItemSieve("archantine_sieve", /*512*/ 10, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
+		register(sieve_archantine = new ItemSieve("archantine_sieve", 512, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
 		register(sieve_adamantium = new ItemSieve("adamantium_sieve").setCreativeTab(MTabs.tools));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
@@ -486,6 +525,10 @@ public class MItems
 		register(ice_dagger = new MDagger(GLACIERITE, "ice_dagger"));
 		register(ice_mace = new MMace(GLACIERITE, "ice_mace"));
 		
+		register(grass_helm = new MArmor(ARMOR_GRASS, 1, EntityEquipmentSlot.HEAD, "grass_helm"));
+		register(grass_chest = new MArmor(ARMOR_GRASS, 1, EntityEquipmentSlot.CHEST, "grass_chest"));
+		register(grass_legs = new MArmor(ARMOR_GRASS, 2, EntityEquipmentSlot.LEGS, "grass_legs"));
+		register(grass_feet = new MArmor(ARMOR_GRASS, 1, EntityEquipmentSlot.FEET, "grass_feet"));
 		register(tin_helm = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.HEAD, "tin_helm"));
 		register(tin_chest = new MArmor(ARMOR_TIN, 1, EntityEquipmentSlot.CHEST, "tin_chest"));
 		register(tin_legs = new MArmor(ARMOR_TIN, 2, EntityEquipmentSlot.LEGS, "tin_legs"));
@@ -537,53 +580,83 @@ public class MItems
 		register(celery = new MItemsFood(2, 1.5F, false, "celery"));
 		register(onion = new MItemsSeedFood(3, 0.8F, MBlocks.crop_onion, Blocks.FARMLAND, "onion").setPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 100), 0.7F));	
 		register(peanuts = new MItemsSeedFood(2, 2.4F, MBlocks.crop_peanuts, Blocks.FARMLAND, "peanuts"));
+		register(roasted_peanuts = new MItemsFood(4, 2.025F, false, "roasted_peanuts"));
 		register(lettuce = new MItemsSeedFood(4, 0.375F, MBlocks.crop_lettuce, Blocks.FARMLAND, "lettuce"));
 		register(tomato = new MItemsFood(4, 0.275F, false, "tomato"));
 		register(corn = new MItemsSeeds(MBlocks.crop_corn, Blocks.FARMLAND, "corn"));
 		register(corn_on_the_cob = new MItemsFood(4, 0.4F, false, "corn_on_the_cob").setDroppedItem(new ItemStack(Items.STICK)));
-		register(grilled_corn = new MItemsFood(6, 0.7F, false, "grilled_corn").setDroppedItem(new ItemStack(Items.STICK)));
+		register(grilled_corn = new MItemsFood(6, 0.7F, false, "grilled_corn", 0.5F, 0).setDroppedItem(new ItemStack(Items.STICK)));
+		register(coconut_slice = new MItemBowlFood(3, 0.5333F, false, "coconut_slice", new ItemStack(coconut_shell), true).setContainerItem(coconut_shell));
 		register(charroot = new ItemCharroot().setBurnTime(200).setPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 100), 1F));
 		
 		register(corn_meal = new MItemsFood(1, 0.1F, false, "corn_meal"));
+		register(tortilla = new MItemsFood(3, 0.5F, false, "tortilla"));
 		register(corn_bread = new MItemsFood(4, 1F, false, "corn_bread"));
 		register(dough = new MItemsFood(1, 0.15F, false, "dough"));
-		register(sugar_cookie = new MItemsFood(1, 0.4F, false, "sugar_cookie"));
+		register(quesadilla_slice = new MItemsFood(4, 0.625F, false, "quesadilla_slice"));
+		MBlocks.quesadilla.setSlice(quesadilla_slice);
+		register(uncooked_pizza = new MItemsFood(10, 0.5F, false, "uncooked_pizza").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 400), 0.55F));
+		register(pizza_slice = new MItemsFood(8, 0.46875F, false, "pizza_slice", 3, 0));
+		MBlocks.pizza.setSlice(pizza_slice);
 		register(bun = new MItemsFood(2, 0.75F, false, "bun"));
 		register(pbj = new ItemPBJ(12, 1.5F, false, "pbj"));
-		register(blt = new MItemsFood(18, 0.6667F, false, "blt"));
-		register(salmon_burger = new MItemsFood(17, 0.6529F, false, "salmon_burger"));
-		register(hamburger = new MItemsFood(19, 0.6F, false, "hamburger"));
+		register(grilled_cheese = new MItemsFood(10, 0.7F, false, "grilled_cheese"));
+		register(blt = new MItemsFood(18, 0.6667F, false, "blt", 5, 0));
+		register(fish_sandwich = new MItemsFood(16, 0.775F, false, "fish_sandwich", 3.75F, 1));
+		register(salmon_burger = new MItemsFood(17, 0.6529F, false, "salmon_burger", 5, 0));
+		register(hamburger = new MItemsFood(19, 0.6F, false, "hamburger", 5, 0));
+		register(cheeseburger = new MItemsFood(20, 0.62F, false, "cheeseburger", 5, 1));
+		register(mushroom_burger = new MItemsFood(17, 0.6588F, false, "mushroom_burger", 4.25F, 0));
+		register(mutton_taco = new MItemsFood(18, 0.6222F, false, "mutton_taco", 5, 0));
+		register(rabbit_taco = new MItemsFood(16, 0.64375F, false, "rabbit_taco", 4.5F, 0));
+		register(fish_taco = new MItemsFood(12, 0.775F, false, "fish_taco", 7.5F, 2).setPotionEffect(new PotionEffect(MobEffects.SPEED, 1200), 1));
+		register(beef_burrito = new MItemsFood(24, 0.5521F, false, "beef_burrito", 6, 1));
+		register(chicken_burrito = new MItemsFood(20, 0.555F, false, "chicken_burrito", 5.25F, 1));
+		register(squid_burrito = new MItemsFood(16, 0.65F, false, "squid_burrito", 7.5F, 0).setPotionEffect(new PotionEffect(MobEffects.SPEED, 600), 0.85F));
+		register(breakfast_burrito = new MItemsFood(30, 0.6666F, false, "breakfast_burrito", 8, 1).setPotionEffect(new PotionEffect(MobEffects.SPEED, 1200), 1F));
 		register(dry_spaghetti = new ItemDrySpaghetti(1, 0.1F, false, "dry_spaghetti"));
+		register(sugar_cookie = new MItemsFood(1, 0.4F, false, "sugar_cookie"));
 		register(pie_crust = new MItemsFood(2, 0.125F, false, "pie_crust"));
-		register(apple_pie = new MItemsFood(6, 0.3F, false, "apple_pie"));
-		register(blueberry_pie = new MItemsFood(6, 0.75F, false, "blueberry_pie").setPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 600), 0.85F));
-		register(blackberry_pie = new MItemsFood(10, 0.25F, false, "blackberry_pie").setPotionEffect(new PotionEffect(MobEffects.HASTE, 600), 0.85F));
-		register(raspberry_pie = new MItemsFood(6, 0.1667F, false, "raspberry_pie").setPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), 0.85F));
-		register(strawberry_pie = new MItemsFood(14, 0.15F, false, "strawberry_pie").setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 600), 0.85F));
-		register(voidberry_pie = new MItemsFood(10, 0.11F, false, "voidberry_pie").setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 600), 0.85F));
+		register(apple_pie = new MItemsFood(6, 0.3F, false, "apple_pie", 1.5F, 0));
+		register(blueberry_pie = new MItemsFood(6, 0.75F, false, "blueberry_pie", 1, 0).setPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 600), 0.85F));
+		register(blackberry_pie = new MItemsFood(10, 0.25F, false, "blackberry_pie", 1, 0).setPotionEffect(new PotionEffect(MobEffects.HASTE, 600), 0.85F));
+		register(raspberry_pie = new MItemsFood(6, 0.1667F, false, "raspberry_pie", 1, 0).setPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), 0.85F));
+		register(strawberry_pie = new MItemsFood(14, 0.15F, false, "strawberry_pie", 1, 0).setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 600), 0.85F));
+		register(voidberry_pie = new MItemsFood(10, 0.11F, false, "voidberry_pie", 1, 0).setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 600), 0.85F));
+		register(cake_slice = new MItemsFood(2, 0.1F, false, "cake_slice"));
 		
 		register(bread_bowl = new MItemsFood(2, 1F, false, "bread_bowl"));
 		register(bread_mushroom_stew = new MItemsFood(8, 0.5125F, false, "bread_mushroom_stew"));
 		register(bread_beetroot_soup = new MItemsFood(8, 0.5125F, false, "bread_beetroot_soup"));
-		register(bread_rabbit_stew = new MItemsFood(12, 0.5417F, false, "bread_rabbit_stew"));
+		register(bread_rabbit_stew = new MItemsFood(12, 0.5417F, false, "bread_rabbit_stew", 2, 0));
 		register(fried_egg = new MItemBowlFood(4, 0.625F, false, "fried_egg"));
-		register(bread_fried_egg = new MItemsFood(6, 0.5F, false, "bread_fried_egg"));
+		register(bread_fried_egg = new MItemsFood(6, 0.5F, false, "bread_fried_egg").setContainerItem(MItems.bread_bowl));
 		register(rice_bowl = new MItemBowlFood(4, 0.5F, false, "rice_bowl").setDroppedItem(new ItemStack(Items.STICK)));
 		register(bread_rice_bowl = new MItemsFood(6, 0.4167F, false, "bread_rice_bowl").setDroppedItem(new ItemStack(Items.STICK)));
-		register(stir_fry = new MItemBowlFood(16, 0.5625F, false, "stir_fry").setDroppedItem(new ItemStack(Items.STICK)).setIgnitesPlayer(10).setPotionEffect(new PotionEffect(MobEffects.SPEED, 440, 2), 0.55F));
-		register(bread_stir_fry = new MItemsFood(18, 0.5278F, false, "bread_stir_fry").setDroppedItem(new ItemStack(Items.STICK)).setIgnitesPlayer(10).setPotionEffect(new PotionEffect(MobEffects.SPEED, 440, 2), 0.55F));
+		register(stir_fry = new MItemBowlFood(16, 0.5625F, false, "stir_fry", 1, 0).setDroppedItem(new ItemStack(Items.STICK)).setIgnitesPlayer(10).setPotionEffect(new PotionEffect(MobEffects.SPEED, 440, 2), 0.55F));
+		register(bread_stir_fry = new MItemsFood(18, 0.5278F, false, "bread_stir_fry", 1, 0).setDroppedItem(new ItemStack(Items.STICK)).setIgnitesPlayer(10).setPotionEffect(new PotionEffect(MobEffects.SPEED, 440, 2), 0.55F));
 		register(tomato_sauce = new MItemBowlFood(5, 0.24F, false, "tomato_sauce"));
-		register(bread_tomato_sauce = new MItemsFood(7, 0.2429F, false, "bread_tomato_sauce"));
-		register(tomato_soup = new MItemBowlFood(8, 0.425F, false, "tomato_soup"));
-		register(bread_tomato_soup = new MItemsFood(10, 0.39F, false, "bread_tomato_soup"));
-		register(spaghetti = new MItemBowlFood(12, 0.5833F, false, "spaghetti"));
-		register(bread_spaghetti = new MItemsFood(14, 0.5357F, false, "bread_spaghetti"));
+		register(bread_tomato_sauce = new MItemsFood(7, 0.2429F, false, "bread_tomato_sauce").setContainerItem(MItems.bread_bowl));
+		register(salsa = new MItemBowlFood(7, 0.3429F, false, "salsa"));
+		register(bread_salsa = new MItemsFood(9, 0.3222F, false, "bread_salsa").setContainerItem(MItems.bread_bowl));
+		register(chips_and_salsa = new MItemBowlFood(9, 0.4167F, false, "chips_and_salsa", 1, 0));
+		register(bread_chips_and_salsa = new MItemsFood(11, 0.3864F, false, "bread_chips_and_salsa", 1, 0));
+		register(loaded_nachos = new MItemBowlFood(13, 0.4692F, false, "loaded_nachos", 2.25F, 0));
+		register(bread_loaded_nachos = new MItemsFood(15, 0.5F, false, "bread_loaded_nachos", 2.25F, 0));
+		register(tomato_soup = new MItemBowlFood(8, 0.425F, false, "tomato_soup", 1, 0));
+		register(bread_tomato_soup = new MItemsFood(10, 0.39F, false, "bread_tomato_soup", 1, 0));
+		register(spaghetti = new MItemBowlFood(12, 0.5833F, false, "spaghetti", 3, 0));
+		register(bread_spaghetti = new MItemsFood(14, 0.5357F, false, "bread_spaghetti", 3, 0));
+		register(stroganoff = new MItemBowlFood(14, 0.7214F, false, "stroganoff", 3.5F, 0));
+		register(bread_stroganoff = new MItemsFood(16, 0.6625F, false, "bread_stroganoff", 3.5F, 0));
+		register(glowganoff = new ItemGlowshroomStew(14, 0.7214F, false, "glowganoff", false).setFancyFood(3.5F, 0));
+		register(bread_glowganoff = new ItemGlowshroomStew(16, 0.6625F, false, "bread_glowganoff", true).setFancyFood(3.5F, 0));
 		register(popcorn= new MItemBowlFood(6, 0.0333F, false, "popcorn"));
 		register(bread_popcorn = new MItemsFood(8, 0.0875F, false, "bread_popcorn"));
 		register(ice_cream = new MItemBowlFood(10, 0.15F, false, "ice_cream").setIgnitesPlayer(-1).setCuresEffects());
 		register(bread_ice_cream = new MItemsFood(12, 0.1667F, false, "bread_ice_cream").setIgnitesPlayer(-1).setCuresEffects());
-		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false).setContainerItem(Items.BOWL));
-		register(bread_glowshroom_stew = new ItemGlowshroomStew(8, 0.5125F, false, "bread_glowshroom_stew", true));
+		register(glowshroom_stew = new ItemGlowshroomStew(6, 0.6F, false, "glowshroom_stew", false));
+		register(bread_glowshroom_stew = new ItemGlowshroomStew(8, 0.5125F, false, "bread_glowshroom_stew", true).setContainerItem(MItems.bread_bowl));
 		
 		register(salad = new MItemBowlFood(12, 0.375F, false, "salad"));
 		register(bread_salad = new MItemsFood(14, 0.3571F, false, "bread_salad"));
@@ -601,12 +674,14 @@ public class MItems
 		register(bread_voidberry_salad = new MItemsFood(13, 0.2808F, false, "bread_voidberry_salad").setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 240, 1), 1F));
 		
 		register(melonade = new MItemBowlFood(6, 0.3F, false, "melonade", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(-1).setAlwaysEdible());
-		register(jam = new ItemJamBottle(7, 0.2714F, false, "jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible());
+		register(jam = new ItemJamBottle(7, 0.2714F, false, "jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setContainerItem(Items.GLASS_BOTTLE));
 		register(void_jam = new MItemBowlFood(8, 0.075F, false, "void_jam", new ItemStack(Items.GLASS_BOTTLE), true).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.LEVITATION, 440), 0.8F));
-		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true));
-		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F));
+		register(peanut_butter = new MItemBowlFood(6, 1.1667F, false, "peanut_butter", new ItemStack(Items.GLASS_BOTTLE), true).setContainerItem(Items.GLASS_BOTTLE));
+		register(hot_sauce = new MItemBowlFood(4, 0.35F, false, "hot_sauce", new ItemStack(Items.GLASS_BOTTLE), true).setIgnitesPlayer(10).setAlwaysEdible().setPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 2), 1F).setContainerItem(Items.GLASS_BOTTLE));
 		register(mite_honey = new MItemsFood(2, 0.6F, false, "mite_honey").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.GLOWING, 300, 0), 1F));
 		
+		register(cheese = new MItemsFood(3, 0.6667F, true, "cheese_slice"));
+		MBlocks.block_cheese.setSlice(cheese);
 		register(fat = new MItemsFood(1, 2.5F, true, "fat").setBurnTime(1200).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 0), 0.55F));
 		register(grease = new ItemBase("grease").setBurnTime(2000).setCreativeTab(MTabs.food));
 		register(salted_chicken = new MItemsFood(8, 0.575F, true, "salted_chicken"));
@@ -626,26 +701,32 @@ public class MItems
 		
 		register(squid_tentacle = new MItemsFood(2, 0.075F, false, "squid_tentacle").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 240, 0), 0.4F));
 		register(calamari = new MItemsFood(5, 0.78F, false, "calamari"));
-		register(sushi = new MItemsFood(11, 0.7273F, false, "sushi"));
-		register(lucky_sushi = new MItemsFood(9, 0.7778F, false, "lucky_sushi").setPotionEffect(new PotionEffect(MobEffects.LUCK, 320, 0), 1F));
+		register(sushi = new MItemsFood(11, 0.7273F, false, "sushi", 2, 0));
+		register(lucky_sushi = new MItemsFood(9, 0.7778F, false, "lucky_sushi", 2, 0).setPotionEffect(new PotionEffect(MobEffects.LUCK, 320, 0), 1F));
 		register(onigiri = new MItemsFood(5, 0.43F, false, "onigiri"));
 		register(flesh = new MItemsFood(4, 0.2F, true, "flesh").setPotionEffect(new PotionEffect(MobEffects.HUNGER, 160, 0), 0.2F));
 		
 		//Fried Foods: hunger = 4 x raw food hunger value, sat. = 1.5 x cooked food effective sat. value.
+		register(tortilla_chips = new MItemsFood(2, 0.625F, false, "tortilla_chips"));
+		register(nachos = new MItemsFood(6, 0.5833F, false, "nachos"));
 		register(fries = new MItemsFood(4, 1.125F, false, "fries"));
 		register(fried_fish = new MItemsFood(8, 0.5625F, false, "fried_fish"));
 		register(fried_salmon = new MItemsFood(8, 0.9F, false, "fried_salmon"));
-		register(fish_and_chips = new MItemsFood(12, 0.75F, false, "fish_and_chips"));
+		register(fish_and_chips = new MItemsFood(12, 0.75F, false, "fish_and_chips", 2, 0));
 		register(bacon = new MItemsFood(12, 0.8F, true, "bacon"));
 		
 		register(candy_red = new ItemCandy("candy_red", new PotionEffect(MobEffects.HEALTH_BOOST, 600, 1), new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 1), new PotionEffect(MobEffects.REGENERATION, 600, 0)).setAlwaysEdible());
 		register(candy_blue = new ItemCandy("candy_blue", new PotionEffect(MobEffects.STRENGTH, 600, 0), new PotionEffect(MobEffects.INVISIBILITY, 600, 0), new PotionEffect(MobEffects.NIGHT_VISION, 600, 0)).setAlwaysEdible());
 		register(candy_yellow = new ItemCandy("candy_yellow", new PotionEffect(MobEffects.SPEED, 600, 1), new PotionEffect(MobEffects.LEVITATION, 600, 1), new PotionEffect(MobEffects.JUMP_BOOST, 700, 1)).setAlwaysEdible());
 		
+		register(b_ball_pasta = new MItemsFood(12, 0.5833F, false, "b-ball_pasta").setPotionEffect(new PotionEffect(MobEffects.INSTANT_DAMAGE, 1, 99), 1F));
+		
 		register(backpack = new ItemBackpack("backpack", 1));
 		register(satchel = new ItemBackpack("satchel", 2));
 		
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
+		((BlockBase) MBlocks.palm_fronds).setDropsItem(new ItemStack(MBlocks.palm_fronds_dead), 0, 0, 0, true, false);
+		((BlockBase) MBlocks.coconut).setDropsItem(new ItemStack(coconut_slice), 3, 0, 0, true, true);
 		((BlockBase) MBlocks.desert_quartz_deposit).setDropsItem(new ItemStack(gems, 1, 1), 2, 0, 2, true, true);
 		((BlockBase) MBlocks.rock_crystal_deposit).setDropsItem(new ItemStack(gems, 1, 2), 0, 1, 4, true, true);
 		((BlockBase) MBlocks.sunstone_deposit).setDropsItem(new ItemStack(gems, 1, 0), 1, 1, 4, true, true);
@@ -738,6 +819,12 @@ public class MItems
 		ARMOR_GLACIERITE.setRepairItem(new ItemStack(ingots, 1, 6));
 		
 		Items.WATER_BUCKET.setContainerItem(Items.BUCKET);
+		Item.getItemFromBlock(MBlocks.block_cheese).setMaxStackSize(1);
+		Item.getItemFromBlock(MBlocks.quesadilla).setMaxStackSize(1);
+		Item.getItemFromBlock(MBlocks.pizza).setMaxStackSize(1);
+		Item.getItemFromBlock(MBlocks.coconut).setMaxStackSize(16);
+		Item.getItemFromBlock(MBlocks.palm_crown).setMaxStackSize(16);
+		Item.getItemFromBlock(MBlocks.palm_crown_dead).setMaxStackSize(16);
 	}
 
 	

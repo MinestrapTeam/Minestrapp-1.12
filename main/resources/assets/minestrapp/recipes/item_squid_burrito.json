@@ -1,0 +1,32 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodTortilla"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodCalamari"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropLettuce"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropPepper"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "bottleHotsauce"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:squid_burrito"
+     }  
+}

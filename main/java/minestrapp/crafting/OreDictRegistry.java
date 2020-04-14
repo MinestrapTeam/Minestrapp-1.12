@@ -11,6 +11,22 @@ public class OreDictRegistry
 {
 	public static void register()
 	{
+		OreDictionary.registerOre("cropBlueberry", MItems.blueberry);
+		OreDictionary.registerOre("cropRaspberry", MItems.raspberry);
+		OreDictionary.registerOre("cropBlackberry", MItems.blackberry);
+		OreDictionary.registerOre("cropStrawberry", MItems.strawberry);
+		OreDictionary.registerOre("cropVoidberry", MItems.voidberry);
+		OreDictionary.registerOre("cropPepper", MItems.pepper);
+		OreDictionary.registerOre("cropCabbage", MItems.cabbage);
+		OreDictionary.registerOre("cropCelery", MItems.celery);
+		OreDictionary.registerOre("cropOnion", MItems.onion);
+		OreDictionary.registerOre("cropPeanut", MItems.peanuts);
+		OreDictionary.registerOre("cropLettuce", MItems.lettuce);
+		OreDictionary.registerOre("cropTomato", MItems.tomato);
+		OreDictionary.registerOre("cropCorn", MItems.corn);
+		OreDictionary.registerOre("moss", MBlocks.moss);
+		OreDictionary.registerOre("glowMoss", MBlocks.carpet_glow_moss);
+		OreDictionary.registerOre("glowMoss", MBlocks.creeping_glow_moss);
 		OreDictionary.registerOre("glowMoss", MBlocks.hanging_glow_moss);
 		OreDictionary.registerOre("candle", new ItemStack(MBlocks.candle, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("sand", new ItemStack(MBlocks.cold_sand, 1, OreDictionary.WILDCARD_VALUE));
@@ -228,5 +244,21 @@ public class OreDictRegistry
 		OreDictionary.registerOre("blockGlassColorless", new ItemStack(MBlocks.glass_bricks));
 		OreDictionary.registerOre("paneGlassColorless", new ItemStack(MBlocks.glass_tile_pane));
 		OreDictionary.registerOre("paneGlassColorless", new ItemStack(MBlocks.glass_brick_pane));
+		OreDictionary.registerOre("foodDough", MItems.dough);
+		OreDictionary.registerOre("foodTortilla", MItems.tortilla);
+		OreDictionary.registerOre("foodBun", MItems.bun);
+		OreDictionary.registerOre("foodTortillachips", MItems.tortilla_chips);
+		OreDictionary.registerOre("foodNachos", MItems.nachos);
+		OreDictionary.registerOre("foodCheese", MItems.cheese);
+		OreDictionary.registerOre("foodFriedegg", MItems.fried_egg);
+		OreDictionary.registerOre("foodFriedegg", MItems.bread_fried_egg);
+		OreDictionary.registerOre("foodCalamari", MItems.calamari);
+		OreDictionary.registerOre("foodFriedcod", MItems.fried_fish);
+		OreDictionary.registerOre("foodBacon", MItems.bacon);
+		OreDictionary.registerOre("foodTomatosauce", MItems.tomato_sauce);
+		OreDictionary.registerOre("foodTomatosauce", MItems.bread_tomato_sauce);
+		OreDictionary.registerOre("foodSalsa", MItems.salsa);
+		OreDictionary.registerOre("foodSalsa", MItems.bread_salsa);
+		OreDictionary.registerOre("bottleHotsauce", MItems.hot_sauce);
 	}
 }

@@ -1,0 +1,25 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "tomato_sauce",
+    "pattern": [
+        "c",
+        "s",
+        "b"
+    ],
+    "key": {
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "foodNachos"
+        },
+        "s": {
+            "type": "forge:ore_dict",
+            "ore": "foodSalsa"
+        },
+        "b": {
+            "item": "minecraft:bowl"
+        }
+     },
+     "result": {
+        "item": "minestrapp:loaded_nachos"
+     }  
+}

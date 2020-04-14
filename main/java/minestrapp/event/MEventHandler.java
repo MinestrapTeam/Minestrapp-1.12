@@ -18,6 +18,7 @@ import minestrapp.entity.mob.EntityBurfalaunt;
 import minestrapp.item.ItemSeedBag;
 import minestrapp.item.util.MItemsSeedFood;
 import minestrapp.mobs.models.ModelSheetGhost;
+import minestrapp.potion.MPotions;
 import minestrapp.utils.EntityUtil;
 import minestrapp.utils.NBTUtil;
 import minestrapp.worldgen.MWorldDecorator;
@@ -33,6 +34,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
@@ -69,7 +71,9 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
@@ -223,6 +227,22 @@ public class MEventHandler
 					event.getEntityLiving().getItemStackFromSlot(slot).damageItem(1, event.getEntityLiving());
 				}
 			}	
+		}
+	}
+	
+	@SubscribeEvent
+	public static void onPlayerEat (LivingEntityUseItemEvent.Finish event)
+	{
+		if(event.getEntityLiving() instanceof EntityPlayer && ((EntityPlayer)event.getEntityLiving()).getFoodStats().getFoodLevel() == 20)
+		{
+			if(event.getItem().getItem() == Items.PUMPKIN_PIE)
+			{
+				event.getEntityLiving().addPotionEffect(new PotionEffect(MPotions.wellFed, 1800, 0, true, false));
+			}
+			else if(event.getItem().getItem() == Items.RABBIT_STEW)
+			{
+				event.getEntityLiving().addPotionEffect(new PotionEffect(MPotions.wellFed, 2400, 0, true, false));
+			}
 		}
 	}
 	
@@ -1164,6 +1184,25 @@ public class MEventHandler
 				}
 			}
 		}
+	}
+    
+    @SubscribeEvent
+	public static void onLightningStrike(EntityStruckByLightningEvent event)
+	{
+    	Entity entity = event.getEntity();
+    	World world = entity.getEntityWorld();
+    	
+    	if(entity instanceof EntityItem)
+    	{
+    		ItemStack stack = ((EntityItem)entity).getItem();
+    		if(stack.getItem() == MItems.spaghetti && !world.isRemote)
+    		{
+    			EntityItem newEntity = new EntityItem(world, entity.posX, entity.posY + 2, entity.posZ, new ItemStack(MItems.b_ball_pasta));
+    			newEntity.setEntityInvulnerable(true);
+    			//newEntity.setVelocity(world.rand.nextInt(20) - world.rand.nextInt(20), 10, world.rand.nextInt(20) - world.rand.nextInt(20));
+    			world.spawnEntity(newEntity);
+    		}
+    	}
 	}
 
 	

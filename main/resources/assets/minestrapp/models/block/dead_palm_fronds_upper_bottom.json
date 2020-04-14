@@ -1,0 +1,89 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/plant/palm_fronds_dead",
+		"overlay": "minestrapp:blocks/plant/palm_fronds_dead"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "PlaneY1",
+			"from": [ -4, -0.0011, -0.0001 ],
+			"to": [ 16, -0.0001, 15.9999 ],
+			"rotation": { "origin": [ 16, 0, 16 ], "axis": "x", "angle": 22.5 },
+			"faces": {
+				"down": { "uv": [ 12, 13, 4, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 },
+				"up": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ 0, 0, -4.0001 ],
+			"to": [ 16, 0.000999451, 15.9999 ],
+			"rotation": { "origin": [ 16, 0, 16 ], "axis": "z", "angle": -22.5 },
+			"faces": {
+				"down": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 },
+				"up": { "uv": [ 4, 3, 12, 13 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -8, 1.9989, -4.0001 ],
+			"to": [ 12, 1.9999, 11.9999 ],
+			"rotation": { "origin": [ 12, 2, 12 ], "axis": "x", "angle": 22.5 },
+			"faces": {
+				"down": { "uv": [ 12, 13, 4, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 },
+				"up": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -4, 2, -8.0001 ],
+			"to": [ 12, 2.000999, 11.9999 ],
+			"rotation": { "origin": [ 12, 2, 12 ], "axis": "z", "angle": -22.5 },
+			"faces": {
+				"down": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 },
+				"up": { "uv": [ 4, 3, 12, 13 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -12, 3.9989, -8.0001 ],
+			"to": [ 8, 3.9999, 7.9999 ],
+			"rotation": { "origin": [ 8, 4, 8 ], "axis": "x", "angle": 22.5 },
+			"faces": {
+				"down": { "uv": [ 12, 13, 4, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 },
+				"up": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -8, 4, -12.0001 ],
+			"to": [ 8, 4.000999, 7.9999 ],
+			"rotation": { "origin": [ 8, 4, 8 ], "axis": "z", "angle": -22.5 },
+			"faces": {
+				"down": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 },
+				"up": { "uv": [ 4, 3, 12, 13 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -16, 5.9989, -12.0001 ],
+			"to": [ 4, 5.9999, 3.9999 ],
+			"rotation": { "origin": [ 4, 6, 4 ], "axis": "x", "angle": 22.5 },
+			"faces": {
+				"down": { "uv": [ 12, 13, 4, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 },
+				"up": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 270, "tintindex": 0 }
+			}
+		},
+		{
+			"__comment": "PlaneY1",
+			"from": [ -9.656899, 6.3431, -16 ],
+			"to": [ 6.343101, 6.3441, 4 ],
+			"rotation": { "origin": [ 4, 12, 4 ], "axis": "z", "angle": -22.5 },
+			"faces": {
+				"down": { "uv": [ 4, 13, 12, 3 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 },
+				"up": { "uv": [ 4, 3, 12, 13 ], "texture": "#overlay", "rotation": 180, "tintindex": 0 }
+			}
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{    
+    "type": "forge:ore_shapeless",
+    "group": "salsa",
+    "ingredients": [
+        {
+            "item": "minecraft:bowl"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodTomatosauce"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropPepper"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "bottleHotsauce"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:salsa"
+     }  
+}

@@ -1,0 +1,28 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodBun"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodBun"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodFriedcod"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropLettuce"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodCheese"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:fish_sandwich"
+     }  
+}

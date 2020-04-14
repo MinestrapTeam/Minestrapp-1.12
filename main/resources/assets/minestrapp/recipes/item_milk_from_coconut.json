@@ -1,0 +1,20 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:coconut_shell"
+        },
+        {
+            "item": "minestrapp:coconut_shell"
+        },
+        {
+            "item": "minestrapp:coconut_shell"
+        },
+        {
+            "item": "minecraft:bucket"
+        }
+     ],
+     "result": {
+        "item": "minecraft:milk_bucket"
+     }  
+}

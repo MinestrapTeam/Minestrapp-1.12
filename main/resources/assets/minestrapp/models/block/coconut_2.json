@@ -1,0 +1,24 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/plant/coconut_med_side",
+		"texture": "minestrapp:blocks/plant/coconut_med_side",
+		"texture1": "minestrapp:blocks/plant/coconut_med_face",
+		"texture2": "minestrapp:blocks/plant/coconut_med_top"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 3, 4, 3 ],
+			"to": [ 13, 14, 13 ],
+			"faces": {
+				"down": { "uv": [ 3, 3, 13, 13 ], "texture": "#texture2" },
+				"up": { "uv": [ 3, 3, 13, 13 ], "texture": "#texture2" },
+				"north": { "uv": [ 3, 2, 13, 12 ], "texture": "#texture1" },
+				"south": { "uv": [ 3, 2, 13, 12 ], "texture": "#texture" },
+				"west": { "uv": [ 3, 2, 13, 12 ], "texture": "#texture" },
+				"east": { "uv": [ 3, 2, 13, 12 ], "texture": "#texture" }
+			}
+		}
+	]
+}

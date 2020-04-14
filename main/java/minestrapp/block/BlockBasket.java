@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import minestrapp.MBlocks;
+import minestrapp.MItems;
 import minestrapp.block.util.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -14,11 +16,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -34,9 +38,9 @@ public class BlockBasket extends BlockBase
     protected static final AxisAlignedBB AABB_WALL_EAST = new AxisAlignedBB(0.8125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
     protected static final AxisAlignedBB AABB_WALL_WEST = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
 	
-	public BlockBasket()
+	public BlockBasket(String name)
 	{
-		super("basket", Material.CLOTH, MapColor.SAND, SoundType.CLOTH, 0.6F);
+		super(name, Material.CLOTH, MapColor.SAND, SoundType.CLOTH, 0.6F);
 		this.setLightOpacity(0);
 		this.setFlammable(60, 30);
 	}
@@ -81,6 +85,20 @@ public class BlockBasket extends BlockBase
     public boolean isFullCube(IBlockState state)
     {
         return false;
+    }
+    
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+    	ItemStack stack = playerIn.getHeldItem(hand);
+    	
+    	if(stack.getItem() == MItems.mob_loot && stack.getMetadata() == 1)
+    	{
+    		stack.shrink(1);
+    		worldIn.setBlockState(pos, MBlocks.basket_cheesemaking.getDefaultState());
+    		playerIn.playSound(SoundEvents.BLOCK_SLIME_PLACE, 0.5F, 0.3F);
+    		return true;
+    	}
+    	return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
     }
     
     public BlockFaceShape func_193383_a(IBlockAccess p_193383_1_, IBlockState p_193383_2_, BlockPos p_193383_3_, EnumFacing p_193383_4_)

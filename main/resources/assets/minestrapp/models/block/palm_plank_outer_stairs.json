@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "minestrapp:blocks/wood/planks_palm",
+        "top": "minestrapp:blocks/wood/planks_palm",
+        "side": "minestrapp:blocks/wood/planks_palm"
+    }
+}

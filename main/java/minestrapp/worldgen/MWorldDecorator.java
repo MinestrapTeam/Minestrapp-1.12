@@ -568,6 +568,24 @@ public class MWorldDecorator
 				}
 			}
 			
+			//Palm Tree Gen
+			if(biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS || biome == Biomes.MUTATED_DESERT || biome == Biomes.BEACH || biome == Biomes.OCEAN || biome == Biomes.DEEP_OCEAN)
+			{
+				for(int i = 0 ; i < 20 ; i++)
+				{
+					int posX = random.nextInt(16) + 8;
+					int posY = 62 + random.nextInt(40);
+					int posZ = random.nextInt(16) + 8;
+					
+					BlockPos treePos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+					if(world.getBlockState(treePos).getBlock() == Blocks.SAND && world.isAirBlock(treePos.up()))
+					{
+						MGenPalmTree palmGen = new MGenPalmTree();
+						palmGen.generate(world, random, treePos.up());
+					}
+				}
+			}
+			
 			if(MConfig.generateHeartSpots && random.nextInt(3) == 1)
 			{
 				int posX = random.nextInt(16)+8;

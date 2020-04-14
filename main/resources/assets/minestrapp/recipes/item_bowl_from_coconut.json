@@ -1,0 +1,11 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:coconut_shell"
+        }
+     ],
+     "result": {
+        "item": "minecraft:bowl"
+     }  
+}

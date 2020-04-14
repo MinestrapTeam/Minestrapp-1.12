@@ -1,0 +1,71 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minestrapp:dead_palm_fronds_top"
+    },
+    "facing=south,top=false,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_bottom",
+      "y": 180
+    },
+    "facing=north,top=false,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_bottom",
+      "y": 0
+    },
+    "facing=west,top=false,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_bottom",
+      "y": 270
+    },
+    "facing=east,top=false,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_bottom",
+      "y": 90
+    },    
+    "facing=south,top=true,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_top",
+      "y": 180
+    },
+    "facing=north,top=true,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_top",
+      "y": 0
+    },
+    "facing=west,top=true,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_top",
+      "y": 270
+    },
+    "facing=east,top=true,upward=false": {
+      "model": "minestrapp:dead_palm_fronds_top",
+      "y": 90
+    },
+    "facing=south,top=false,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_bottom",
+      "y": 0
+    },
+    "facing=north,top=false,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_bottom",
+      "y": 180
+    },
+    "facing=west,top=false,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_bottom",
+      "y": 90
+    },
+    "facing=east,top=false,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_bottom",
+      "y": 270
+    },    
+    "facing=south,top=true,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_top",
+      "y": 0
+    },
+    "facing=north,top=true,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_top",
+      "y": 180
+    },
+    "facing=west,top=true,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_top",
+      "y": 90
+    },
+    "facing=east,top=true,upward=true": {
+      "model": "minestrapp:dead_palm_fronds_upper_top",
+      "y": 270
+    }
+  }
+}  

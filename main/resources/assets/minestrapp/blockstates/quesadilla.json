@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "slices=0": { "model": "minestrapp:quesadilla_0" },
+        "slices=1": { "model": "minestrapp:quesadilla_1" },
+        "slices=2": { "model": "minestrapp:quesadilla_2" },
+        "slices=3": { "model": "minestrapp:quesadilla_3" },
+        "slices=4": { "model": "minestrapp:null" },
+        "slices=5": { "model": "minestrapp:null" },
+        "slices=6": { "model": "minestrapp:null" },
+        "slices=7": { "model": "minestrapp:null" },
+        "slices=8": { "model": "minestrapp:null" },
+        "slices=9": { "model": "minestrapp:null" },
+        "slices=10": { "model": "minestrapp:null" },
+        "slices=11": { "model": "minestrapp:null" },
+        "slices=12": { "model": "minestrapp:null" },
+        "slices=13": { "model": "minestrapp:null" },
+        "slices=14": { "model": "minestrapp:null" },
+        "slices=15": { "model": "minestrapp:null" }        
+    }
+}

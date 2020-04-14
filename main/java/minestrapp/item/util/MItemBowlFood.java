@@ -11,6 +11,11 @@ public class MItemBowlFood extends MItemsFood
 {
 	private final ItemStack container;
 	
+	public MItemBowlFood(int amount, float saturation, boolean isWolfFood, String string)
+	{
+		this(amount, saturation, isWolfFood, string, new ItemStack(Items.BOWL), false);
+	}
+	
 	public MItemBowlFood(int amount, float saturation, boolean isWolfFood, String string, ItemStack container, boolean stackable)
 	{
 		super(amount, saturation, isWolfFood, string);
@@ -19,9 +24,16 @@ public class MItemBowlFood extends MItemsFood
 			this.setMaxStackSize(1);
 	}
 	
-	public MItemBowlFood(int amount, float saturation, boolean isWolfFood, String string)
+	public MItemBowlFood(int amount, float saturation, boolean isWolfFood, String string, float wellFed, int modifier)
 	{
 		this(amount, saturation, isWolfFood, string, new ItemStack(Items.BOWL), false);
+		this.setFancyFood(wellFed, modifier);
+	}
+	
+	public MItemBowlFood(int amount, float saturation, boolean isWolfFood, String string, ItemStack container, boolean stackable, float wellFed, int modifier)
+	{
+		this(amount, saturation, isWolfFood, string, container, stackable);
+		this.setFancyFood(wellFed, modifier);
 	}
 	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)

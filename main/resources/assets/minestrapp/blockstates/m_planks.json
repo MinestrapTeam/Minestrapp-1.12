@@ -8,6 +8,9 @@
         ],
         "variant=charwood": [
             { "model": "minestrapp:planks_charwood" }
+        ],
+        "variant=palm": [
+            { "model": "minestrapp:planks_palm" }
         ]
     }
 }

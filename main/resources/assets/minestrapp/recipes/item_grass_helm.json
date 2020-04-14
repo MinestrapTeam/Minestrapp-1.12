@@ -1,0 +1,23 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gcg",
+        "r r"
+    ],
+    "key": {        
+        "c": {
+            "item": "minestrapp:coconut_shell"
+        },
+        "g": {
+            "item": "minestrapp:m_natural_ingredient",
+            "data": 0
+        },
+        "r": {
+            "item": "minestrapp:rope"
+        }
+     },
+     "result": {
+        "item": "minestrapp:grass_helm",
+        "data": 0
+     }  
+}

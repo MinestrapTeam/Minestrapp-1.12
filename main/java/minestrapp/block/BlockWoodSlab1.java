@@ -153,7 +153,8 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
     {
         REDWOOD(0, BlockMPlanks.EnumType.REDWOOD.getMapColor(), "redwood_planks"),
         FROZEN_OAK(1, BlockMPlanks.EnumType.FROZEN_OAK.getMapColor(), "frozen_oak_planks"),
-        CHARWOOD(2, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), "charwood_planks");
+        CHARWOOD(2, BlockMPlanks.EnumType.CHARWOOD.getMapColor(), "charwood_planks"),
+        PALM(3, BlockMPlanks.EnumType.PALM.getMapColor(), "palm_planks");
 
         private static final BlockWoodSlab1.EnumType[] META_LOOKUP = new BlockWoodSlab1.EnumType[values().length];
         private final int meta;

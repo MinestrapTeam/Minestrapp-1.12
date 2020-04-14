@@ -1,6 +1,7 @@
 package minestrapp.item.util;
 
 import minestrapp.MTabs;
+import minestrapp.potion.MPotions;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,8 +30,12 @@ public class MItemsFood extends ItemFood
 	private boolean curesEffects;
 	private int burnTime;
 	private int burnMeta;
+	private boolean isFancyFood = false;
+	private float fedDuration = 0;
+	private int fedModifier = 0;
 	
-	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string) {
+	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string)
+	{
 		super(amount, saturation, isWolfFood);
         this.setUnlocalizedName(string);
         this.setRegistryName(string);
@@ -40,6 +45,14 @@ public class MItemsFood extends ItemFood
         this.curesEffects = false;
         this.burnTime = 0;
 		this.burnMeta = OreDictionary.WILDCARD_VALUE;
+	}
+	
+	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string, float wellFed, int modifier)
+	{
+		this(amount, saturation, isWolfFood, string);
+		this.isFancyFood = true;
+		this.fedDuration = wellFed;
+		this.fedModifier = modifier;
 	}
 	
 	public MItemsFood setDroppedItem(ItemStack stack)
@@ -84,6 +97,10 @@ public class MItemsFood extends ItemFood
                 player.dropItem(new ItemStack(dropstack.getItem(), 1, dropstack.getMetadata()), false);
             }
         }
+		if (this.isFancyFood && player.getFoodStats().getFoodLevel() == 20)
+		{
+			player.addPotionEffect(new PotionEffect(MPotions.wellFed, Math.round(this.fedDuration * 1200), this.fedModifier, true, false));
+		}
     }
 	
 	public MItemsFood setBurnTime(int time)
@@ -105,4 +122,12 @@ public class MItemsFood extends ItemFood
 		else
 			return 0;
     }
+	
+	public MItemsFood setFancyFood(float wellFed, int modifier)
+	{
+		this.isFancyFood = true;
+		this.fedDuration = wellFed;
+		this.fedModifier = modifier;
+		return this;
+	}
 }

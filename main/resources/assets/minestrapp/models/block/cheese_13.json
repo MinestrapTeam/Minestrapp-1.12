@@ -1,0 +1,23 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/food/cheese_inside",
+		"Outside": "minestrapp:blocks/food/cheese_outside",
+		"Inside": "minestrapp:blocks/food/cheese_inside"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 2, 0, 1 ],
+			"to": [ 16, 1, 15 ],
+			"faces": {
+				"down": { "uv": [ 1, 1, 15, 15 ], "texture": "#Inside", "rotation": 90 },
+				"up": { "uv": [ 15, 15, 1, 1 ], "texture": "#Inside", "rotation": 270 },
+				"north": { "uv": [ 15, 15, 14, 1 ], "texture": "#Outside", "rotation": 90 },
+				"south": { "uv": [ 2, 15, 1, 1 ], "texture": "#Outside", "rotation": 270 },
+				"west": { "uv": [ 2, 15, 1, 1 ], "texture": "#Outside", "rotation": 270 },
+				"east": { "uv": [ 1, 1, 2, 15 ], "texture": "#Outside", "rotation": 90 }
+			}
+		}
+	]
+}

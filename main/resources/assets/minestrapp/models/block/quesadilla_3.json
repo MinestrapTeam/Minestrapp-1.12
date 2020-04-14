@@ -1,0 +1,23 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/food/quesadilla_top",
+		"texture": "minestrapp:blocks/food/quesadilla_top",
+		"texture1": "minestrapp:blocks/food/quesadilla_side"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 1, 0, 1 ],
+			"to": [ 8, 3, 8 ],
+			"faces": {
+				"down": { "uv": [ 1, 8, 15, 15 ], "texture": "#texture" },
+				"up": { "uv": [ 1, 1, 8, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 8, 4, 15, 7 ], "texture": "#texture1" },
+				"south": { "uv": [ 1, 8, 8, 11 ], "texture": "#texture1" },
+				"west": { "uv": [ 1, 4, 8, 7 ], "texture": "#texture1" },
+				"east": { "uv": [ 8, 8, 15, 11 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

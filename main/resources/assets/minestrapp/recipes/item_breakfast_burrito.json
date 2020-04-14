@@ -1,0 +1,35 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodTortilla"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodFriedegg"
+        },
+        {
+            "item": "minecraft:baked_potato"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cropOnion"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodCheese"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "foodBacon"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "bottleHotsauce"
+        }
+     ],
+     "result": {
+        "item": "minestrapp:breakfast_burrito"
+     }  
+}

@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:item_bread_salsa"
+    ]
+  },
+  "criteria": {
+    "has_tomato_sauce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:tomato_sauce"
+          }
+        ]
+      }
+    },
+    "criteria": {
+    "has_bread_tomato_sauce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:bread_tomato_sauce"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:item_bread_salsa"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tomato_sauce",
+      "has_bread_tomato_sauce",
+      "has_the_recipe"
+    ]
+  ]
+}

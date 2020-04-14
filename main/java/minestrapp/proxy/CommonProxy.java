@@ -14,6 +14,7 @@ import minestrapp.block.tileentity.TileEntityMSkull;
 import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import minestrapp.block.tileentity.TileEntityPipe;
 import minestrapp.block.tileentity.TileEntityPlate;
+import minestrapp.block.tileentity.TileEntityPressurizer;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.block.tileentity.TileEntityTanningRack;
@@ -53,31 +54,6 @@ public class CommonProxy
 		MPotions.addBrewingRecipe();
 		OreDictRegistry.register();
 		FurnaceRecipes.register();
-		//LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "sieve/clay_soil_0"));
-		/*
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/animal_bones"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/bat/wing_sinew"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/pig/fat"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/flesh"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/husk/salt"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/squid/squid_tentacle"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/witch/wand"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "mob/candy"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_basic_dungeon"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_abandoned_mineshaft"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_desert_temple"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_end_city"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_igloo"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_jungle_temple"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_jungle_dispenser"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_nether_fortress"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_bonus_chest"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_corridor"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_crossing"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_stronghold_library"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_blacksmith"));
-		LootTableList.register(new ResourceLocation(Minestrapp5.MODID, "dungeon/m_woodland_mansion"));
-		*/
 	}
 	
 	public void init(FMLInitializationEvent event)
@@ -98,6 +74,7 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPlate"));
 		GameRegistry.registerTileEntity(TileEntityMSkull.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityMSkull"));
 		GameRegistry.registerTileEntity(TileEntityActivator.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityActivator"));
+		GameRegistry.registerTileEntity(TileEntityPressurizer.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPressurizer"));
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

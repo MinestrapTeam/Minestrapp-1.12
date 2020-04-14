@@ -7,12 +7,14 @@ import minestrapp.MTabs;
 import minestrapp.item.util.ItemBase;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCake;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -169,6 +171,25 @@ public class MDagger extends Item
     
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
+    	IBlockState state = worldIn.getBlockState(pos);
+    	
+    	if(state.getBlock() == Blocks.CAKE && super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ) == EnumActionResult.PASS)
+    	{
+    		int slices = state.getValue(BlockCake.BITES).intValue();
+    		
+    		if(slices < 6)
+    			worldIn.setBlockState(pos, state.withProperty(BlockCake.BITES, slices + 1));
+    		else
+    			worldIn.setBlockToAir(pos);
+    		
+    		if(!worldIn.isRemote)
+    		{
+    			worldIn.spawnEntity(new EntityItem(worldIn, player.posX, player.posY, player.posZ, new ItemStack(MItems.cake_slice)));
+    			player.getHeldItem(hand).damageItem(1, player);
+    		}
+    		
+    		return EnumActionResult.SUCCESS;
+    	}
     	if(this.material == MItems.BLAZIUM && super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ) == EnumActionResult.PASS)
     	{
 	        pos = pos.offset(facing);
