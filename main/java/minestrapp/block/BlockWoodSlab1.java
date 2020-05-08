@@ -223,7 +223,7 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
     
     public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face)
     {
-		if(world.getBlockState(pos) instanceof BlockWoodSlab1 && world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
+		if(world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
 			return 20;
 		else
 			return super.getFlammability(world, pos, face);
@@ -231,7 +231,7 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
 	
 	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face)
     {
-		if(world.getBlockState(pos) instanceof BlockWoodSlab1 && world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
+		if(world.getBlockState(pos).getValue(VARIANT) != BlockWoodSlab1.EnumType.CHARWOOD)
 			return 5;
 		else
 			return super.getFireSpreadSpeed(world, pos, face);

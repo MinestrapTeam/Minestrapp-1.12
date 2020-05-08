@@ -1,0 +1,346 @@
+{
+    "multipart": [
+        {   "when": { "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active" }
+        },
+        {   "when": { "facing": "up", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped" }
+        },
+        {   "when": { "facing": "up", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active" }
+        },
+        {   "when": { "facing": "up", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped" }
+        },
+        {   "when": { "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active", "x": 180 }
+        },
+        {   "when": { "facing": "down", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped", "x": 180 }
+        },
+        {   "when": { "facing": "down", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active", "x": 180 }
+        },
+        {   "when": { "facing": "down", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped", "x": 180 }
+        },
+        {   "when": { "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active", "x": 90 }
+        },
+        {   "when": { "facing": "north", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped", "x": 90 }
+        },
+        {   "when": { "facing": "north", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active", "x": 90 }
+        },
+        {   "when": { "facing": "north", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped", "x": 90 }
+        },
+        {   "when": { "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active", "x": 90, "y": 90 }
+        },
+        {   "when": { "facing": "east", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped", "x": 90, "y": 90 }
+        },
+        {   "when": { "facing": "east", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active", "x": 90, "y": 90 }
+        },
+        {   "when": { "facing": "east", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped", "x": 90, "y": 90 }
+        },
+        {   "when": { "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active", "x": 90, "y": 180 }
+        },
+        {   "when": { "facing": "south", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped", "x": 90, "y": 180 }
+        },
+        {   "when": { "facing": "south", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active", "x": 90, "y": 180 }
+        },
+        {   "when": { "facing": "south", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped", "x": 90, "y": 180 }
+        },
+        {   "when": { "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_active", "x": 90, "y": 270 }
+        },
+        {   "when": { "facing": "west", "powered": "true", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_powered_stopped", "x": 90, "y": 270 }
+        },
+        {   "when": { "facing": "west", "powered": "false", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_active", "x": 90, "y": 270 }
+        },
+        {   "when": { "facing": "west", "powered": "false", "stopped": "true" },
+            "apply": { "model": "minestrapp:sawmill_base_unpowered_stopped", "x": 90, "y": 270 }
+        },
+        {   "when": { "blade": "copper", "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper" }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "up", "powered": "false" },
+                {"blade": "copper", "facing": "up", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive" }
+        },
+        {   "when": { "blade": "copper", "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper", "x": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "down", "powered": "false" },
+                {"blade": "copper", "facing": "down", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive", "x": 180 }
+        },
+        {   "when": { "blade": "copper", "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper", "x": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "north", "powered": "false" },
+                {"blade": "copper", "facing": "north", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive", "x": 90 }
+        },
+        {   "when": { "blade": "copper", "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper", "x": 90, "y": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "east", "powered": "false" },
+                {"blade": "copper", "facing": "east", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive", "x": 90, "y": 90 }
+        },
+        {   "when": { "blade": "copper", "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper", "x": 90, "y": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "south", "powered": "false" },
+                {"blade": "copper", "facing": "south", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive", "x": 90, "y": 180 }
+        },
+        {   "when": { "blade": "copper", "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_copper", "x": 90, "y": 270 }
+        },
+        {   "when": { "OR": [
+                {"blade": "copper", "facing": "west", "powered": "false" },
+                {"blade": "copper", "facing": "west", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_copper_inactive", "x": 90, "y": 270 }
+        },
+        {   "when": { "blade": "iron", "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron" }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "up", "powered": "false" },
+                {"blade": "iron", "facing": "up", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive" }
+        },
+        {   "when": { "blade": "iron", "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron", "x": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "down", "powered": "false" },
+                {"blade": "iron", "facing": "down", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive", "x": 180 }
+        },
+        {   "when": { "blade": "iron", "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron", "x": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "north", "powered": "false" },
+                {"blade": "iron", "facing": "north", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive", "x": 90 }
+        },
+        {   "when": { "blade": "iron", "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron", "x": 90, "y": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "east", "powered": "false" },
+                {"blade": "iron", "facing": "east", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive", "x": 90, "y": 90 }
+        },
+        {   "when": { "blade": "iron", "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron", "x": 90, "y": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "south", "powered": "false" },
+                {"blade": "iron", "facing": "south", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive", "x": 90, "y": 180 }
+        },
+        {   "when": { "blade": "iron", "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_iron", "x": 90, "y": 270 }
+        },
+        {   "when": { "OR": [
+                {"blade": "iron", "facing": "west", "powered": "false" },
+                {"blade": "iron", "facing": "west", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_iron_inactive", "x": 90, "y": 270 }
+        },
+        {   "when": { "blade": "bronze", "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze" }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "up", "powered": "false" },
+                {"blade": "bronze", "facing": "up", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive" }
+        },
+        {   "when": { "blade": "bronze", "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze", "x": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "down", "powered": "false" },
+                {"blade": "bronze", "facing": "down", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive", "x": 180 }
+        },
+        {   "when": { "blade": "bronze", "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze", "x": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "north", "powered": "false" },
+                {"blade": "bronze", "facing": "north", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive", "x": 90 }
+        },
+        {   "when": { "blade": "bronze", "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze", "x": 90, "y": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "east", "powered": "false" },
+                {"blade": "bronze", "facing": "east", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive", "x": 90, "y": 90 }
+        },
+        {   "when": { "blade": "bronze", "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze", "x": 90, "y": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "south", "powered": "false" },
+                {"blade": "bronze", "facing": "south", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive", "x": 90, "y": 180 }
+        },
+        {   "when": { "blade": "bronze", "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_bronze", "x": 90, "y": 270 }
+        },
+        {   "when": { "OR": [
+                {"blade": "bronze", "facing": "west", "powered": "false" },
+                {"blade": "bronze", "facing": "west", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_bronze_inactive", "x": 90, "y": 270 }
+        },
+        {   "when": { "blade": "steel", "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel" }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "up", "powered": "false" },
+                {"blade": "steel", "facing": "up", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive" }
+        },
+        {   "when": { "blade": "steel", "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel", "x": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "down", "powered": "false" },
+                {"blade": "steel", "facing": "down", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive", "x": 180 }
+        },
+        {   "when": { "blade": "steel", "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel", "x": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "north", "powered": "false" },
+                {"blade": "steel", "facing": "north", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive", "x": 90 }
+        },
+        {   "when": { "blade": "steel", "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel", "x": 90, "y": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "east", "powered": "false" },
+                {"blade": "steel", "facing": "east", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive", "x": 90, "y": 90 }
+        },
+        {   "when": { "blade": "steel", "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel", "x": 90, "y": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "south", "powered": "false" },
+                {"blade": "steel", "facing": "south", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive", "x": 90, "y": 180 }
+        },
+        {   "when": { "blade": "steel", "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_steel", "x": 90, "y": 270 }
+        },
+        {   "when": { "OR": [
+                {"blade": "steel", "facing": "west", "powered": "false" },
+                {"blade": "steel", "facing": "west", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_steel_inactive", "x": 90, "y": 270 }
+        },
+        {   "when": { "blade": "archantine", "facing": "up", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine" }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "up", "powered": "false" },
+                {"blade": "archantine", "facing": "up", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive" }
+        },
+        {   "when": { "blade": "archantine", "facing": "down", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine", "x": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "down", "powered": "false" },
+                {"blade": "archantine", "facing": "down", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive", "x": 180 }
+        },
+        {   "when": { "blade": "archantine", "facing": "north", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine", "x": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "north", "powered": "false" },
+                {"blade": "archantine", "facing": "north", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive", "x": 90 }
+        },
+        {   "when": { "blade": "archantine", "facing": "east", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine", "x": 90, "y": 90 }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "east", "powered": "false" },
+                {"blade": "archantine", "facing": "east", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive", "x": 90, "y": 90 }
+        },
+        {   "when": { "blade": "archantine", "facing": "south", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine", "x": 90, "y": 180 }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "south", "powered": "false" },
+                {"blade": "archantine", "facing": "south", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive", "x": 90, "y": 180 }
+        },
+        {   "when": { "blade": "archantine", "facing": "west", "powered": "true", "stopped": "false" },
+            "apply": { "model": "minestrapp:sawmill_blade_archantine", "x": 90, "y": 270 }
+        },
+        {   "when": { "OR": [
+                {"blade": "archantine", "facing": "west", "powered": "false" },
+                {"blade": "archantine", "facing": "west", "stopped": "true" }
+            ]},
+            "apply": { "model": "minestrapp:sawmill_blade_archantine_inactive", "x": 90, "y": 270 }
+        }
+    ]
+}

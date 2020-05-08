@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:gilded_stone",
+            "data": 0
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_gilded_stone_bricks",
+        "count": 6
+     }  
+}

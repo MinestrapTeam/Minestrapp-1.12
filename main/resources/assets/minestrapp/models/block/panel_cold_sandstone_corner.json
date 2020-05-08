@@ -1,0 +1,8 @@
+{
+    "parent": "minestrapp:block/panel_corner_sided",
+    "textures": {
+        "top": "minestrapp:blocks/stone/cold_sandstone_top",
+        "side": "minestrapp:blocks/stone/cold_sandstone_side",
+        "bottom": "minestrapp:blocks/stone/cold_sandstone_bottom"
+    }
+}

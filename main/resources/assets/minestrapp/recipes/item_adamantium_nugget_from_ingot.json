@@ -1,0 +1,14 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:m_ingot",
+            "data": 9
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_nugget",
+        "count": 9,
+        "data": 9
+     }  
+}

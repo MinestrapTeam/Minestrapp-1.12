@@ -6,6 +6,7 @@ import minestrapp.MBlocks;
 import minestrapp.MTabs;
 import minestrapp.block.util.BlockBase;
 import minestrapp.worldgen.MGenPalmTree;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -34,6 +35,7 @@ public class BlockPalmCrown extends BlockBase implements IGrowable
 			this.setCreativeTab(MTabs.plant);
 		this.setTickRandomly(live);
 		this.live = live;
+		this.setFlammable(5, 30);
 	}
 
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
@@ -110,5 +112,31 @@ public class BlockPalmCrown extends BlockBase implements IGrowable
     protected ItemStack getSilkTouchDrop(IBlockState state)
     {
     	return new ItemStack(MBlocks.palm_crown_dead);
+    }
+    
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+    	if(live)
+    	{
+	        for(int y = 0 ; y < 2 ; y++)
+	        {
+	        	for(int x = -3 ; x < 4 ; x++)
+	        	{
+	        		for(int z = -3 ; z < 4 ; z++)
+	        		{
+	        			BlockPos checkPos = new BlockPos(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
+	        			IBlockState checkState = worldIn.getBlockState(checkPos);
+	        			
+	        			if(checkState.getBlock() instanceof BlockPalmFronds)
+	        			{
+	        				worldIn.destroyBlock(checkPos, true);
+	        			}
+	        		}
+	        	}
+	        }
+	        super.breakBlock(worldIn, pos, state);
+    	}
+    	else
+    		super.breakBlock(worldIn, pos, state);
     }
 }

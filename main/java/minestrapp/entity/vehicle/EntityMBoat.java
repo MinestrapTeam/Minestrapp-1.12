@@ -966,7 +966,8 @@ public class EntityMBoat extends EntityBoat
     {
         REDWOOD(BlockMPlanks.EnumType.REDWOOD.getMetadata(), "redwood", Material.WATER),
         FROZEN_OAK(BlockMPlanks.EnumType.FROZEN_OAK.getMetadata(), "frozen_oak", Material.WATER),
-        CHARWOOD(BlockMPlanks.EnumType.CHARWOOD.getMetadata(), "charwood", Material.LAVA);
+        CHARWOOD(BlockMPlanks.EnumType.CHARWOOD.getMetadata(), "charwood", Material.LAVA),
+        PALM(BlockMPlanks.EnumType.PALM.getMetadata(), "palm", Material.WATER);
 
         private final String name;
         private final int metadata;

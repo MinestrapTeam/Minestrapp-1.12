@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "minestrapp:blocks/utility/sawmill/blade_archantine_inactive"
+    }
+}

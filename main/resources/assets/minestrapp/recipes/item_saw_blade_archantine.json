@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "nnn",
+        "npn",
+        "nnn"
+    ],
+    "key": {        
+        "n": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetArchantine"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateArchantine"
+        }
+     },
+     "result": {
+        "item": "minestrapp:saw_blade_archantine"
+     }  
+}

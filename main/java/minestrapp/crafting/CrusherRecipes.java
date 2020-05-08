@@ -73,7 +73,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.raspberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mana_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.voidberry_bush), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 60, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.carpet_glow_moss), new ItemStack(MItems.dye, 1, 1), new ItemStack(MItems.dye, 1, 2), 20, 0.1F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.carpet_glow_moss), new ItemStack(MItems.dye, 1, 1), new ItemStack(MItems.dye, 1, 1), 20, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.creeping_glow_moss), new ItemStack(MItems.dye, 1, 7), new ItemStack(MItems.dye, 1, 7), 20, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.hanging_glow_moss), new ItemStack(MItems.dye, 1, 4), new ItemStack(MItems.dye, 1, 4), 20, 0.1F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.clutchthorn), new ItemStack(MItems.natural_ingredients, 1, 2), new ItemStack(MItems.dye, 1, 0), 10, 0.05F);
@@ -114,9 +114,6 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.fargrowth), new ItemStack(MBlocks.portal_dust, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.fargrowth_path), new ItemStack(MBlocks.portal_dust, 1, 0), null, 0, 0.05F);
 		
-		//Wood
-		this.addCrusherRecipe(new ItemStack(Items.STICK), new ItemStack(MItems.sawdust), new ItemStack(MItems.sawdust), 10, 0.05F);
-		
 		//Snow & Ice
 		this.addCrusherRecipe(new ItemStack(Blocks.SNOW_LAYER), new ItemStack(Items.SNOWBALL, 1), new ItemStack(Items.SNOWBALL, 1), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.SNOW), new ItemStack(Blocks.SNOW_LAYER, 2), new ItemStack(Items.SNOWBALL, 1), 35, 0.05F);
@@ -132,6 +129,16 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 0), new ItemStack(Blocks.SAND, 1, 1), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 1), new ItemStack(Blocks.RED_SANDSTONE, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 2), new ItemStack(Blocks.RED_SANDSTONE, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 0), new ItemStack(Blocks.SANDSTONE, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 1), new ItemStack(Blocks.RED_SANDSTONE, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 2), new ItemStack(MBlocks.cold_sand, 1, 0), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 3), new ItemStack(MBlocks.sandstone, 1, 2), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 4), new ItemStack(MBlocks.sandstone, 1, 2), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 5), new ItemStack(MBlocks.sandstone, 1, 2), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 6), new ItemStack(MBlocks.cold_sand, 1, 1), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 7), new ItemStack(MBlocks.sandstone, 1, 6), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 8), new ItemStack(MBlocks.sandstone, 1, 6), null, 0, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.sandstone, 1, 9), new ItemStack(MBlocks.sandstone, 1, 6), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 0), new ItemStack(MItems.gems, 3, 1), new ItemStack(MItems.gems, 1, 1), 70, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 1), new ItemStack(MBlocks.desert_quartz, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.desert_quartz, 1, 2), new ItemStack(MBlocks.desert_quartz, 1, 0), null, 0, 0.05F);
@@ -141,9 +148,9 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(Items.BRICK, 3), new ItemStack(Items.BRICK), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 1), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(MItems.gems, 1, 1), 12, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 2), new ItemStack(Blocks.STONE, 1, 1), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.SAND, 1, 0), new ItemStack(MItems.gems, 1, 1), 6, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.SAND, 1, 0), new ItemStack(Items.QUARTZ), 6, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 4), new ItemStack(Blocks.STONE, 1, 3), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 5), new ItemStack(Blocks.GRAVEL), new ItemStack(MItems.gems, 1, 1), 3, 0.05F);
+		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 5), new ItemStack(Blocks.GRAVEL), new ItemStack(MItems.gems, 1, 2), 3, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STONE, 1, 6), new ItemStack(Blocks.STONE, 1, 5), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 0), new ItemStack(Blocks.STONE, 1, 1), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 1), new ItemStack(Blocks.STONE, 1, 1), null, 0, 0.05F);
@@ -151,7 +158,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 3), new ItemStack(Blocks.STONE, 1, 3), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 4), new ItemStack(Blocks.STONE, 1, 5), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 5), new ItemStack(Blocks.STONE, 1, 5), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 6), new ItemStack(Blocks.CLAY), new ItemStack(MItems.gems, 1, 1), 3, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 6), new ItemStack(Blocks.CLAY), new ItemStack(Items.FLINT), 3, 0.05F);
 		for(int i = 0 ; i < 3 ; i++)
 		{
 			this.addCrusherRecipe(new ItemStack(MBlocks.decor_stone, 1, 7 + i), new ItemStack(MBlocks.decor_stone, 1, 6), null, 0, 0.05F);
@@ -209,7 +216,6 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 6), new ItemStack(MItems.chunks, 1, 3), new ItemStack(MItems.chunks, 1, 3), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 7), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mossy_cobblestone_wall, 1, 8), new ItemStack(MItems.chunks, 1, 4), new ItemStack(MItems.chunks, 1, 4), 30, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.COBBLESTONE_WALL, 1, 1), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MBlocks.moss), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.glow_terracotta, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.WHITE_GLAZED_TERRACOTTA), new ItemStack(Blocks.SAND, 1, 1), new ItemStack(Items.CLAY_BALL), 25, 0.05F);
@@ -243,7 +249,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.NETHERRACK), new ItemStack(Blocks.SOUL_SAND), new ItemStack(MItems.chunks, 1, 5), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.NETHER_BRICK), new ItemStack(Blocks.NETHERRACK), new ItemStack(MItems.chunks, 1, 5), 30, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_NETHER_BRICK), new ItemStack(Blocks.NETHERRACK), new ItemStack(MItems.chunks, 1, 5), 30, 0.05F);
-		this.addCrusherRecipe(new ItemStack(Blocks.MAGMA), new ItemStack(Items.MAGMA_CREAM, 2), new ItemStack(MItems.chunks, 1, 5), 30, 0.12F);
+		this.addCrusherRecipe(new ItemStack(Blocks.MAGMA), new ItemStack(Items.MAGMA_CREAM, 1), new ItemStack(MItems.chunks, 1, 5), 30, 0.12F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), new ItemStack(Items.QUARTZ, 3), new ItemStack(Items.QUARTZ), 70, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 1), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.QUARTZ_BLOCK, 1, 2), new ItemStack(Blocks.QUARTZ_BLOCK, 1, 0), null, 0, 0.05F);
@@ -367,27 +373,23 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(MBlocks.ore_dimensium), new ItemStack(MItems.chunks, 2, 13), new ItemStack(MItems.chunks, 1, 6), 40, 0.3F);
 		
 		//Dyeables
-		this.addCrusherRecipe(new ItemStack(Blocks.CARPET, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.STRING), null, 0, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.glow_carpet, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.STRING), null, 0, 0.05F);
 		for(int i = 0 ; i < EnumDyeColor.values().length ; i++)
 		{
-			this.addCrusherRecipe(new ItemStack(Blocks.WOOL, 1, i), new ItemStack(Blocks.CARPET, 4, i), new ItemStack(Items.STRING), 15, 0.05F);
 			this.addCrusherRecipe(new ItemStack(Blocks.CONCRETE, 1, i), new ItemStack(Blocks.CONCRETE_POWDER, 1, i), null, 0, 0.05F);
 		}
 		for(int i = 0 ; i < BlockMGlowDyed.EnumGlowDye.values().length ; i++)
 		{
-			this.addCrusherRecipe(new ItemStack(MBlocks.glow_wool, 1, i), new ItemStack(MBlocks.glow_carpet, 4, i), new ItemStack(Items.STRING), 15, 0.05F);
 			this.addCrusherRecipe(new ItemStack(MBlocks.glow_concrete, 1, i), new ItemStack(MBlocks.glow_concrete_powder, 1, i), null, 0, 0.05F);
 		}
 		
 		//Misc Decor
-		this.addCrusherRecipe(new ItemStack(MBlocks.red_rock_road), new ItemStack(MItems.chunks, 0), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.stone_road), new ItemStack(MItems.chunks, 1), new ItemStack(MItems.mud_ball), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.coldstone_road), new ItemStack(MItems.chunks, 2), new ItemStack(MItems.mud_ball), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.icestone_road), new ItemStack(MItems.chunks, 3), new ItemStack(Items.SNOWBALL), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.oceanstone_road), new ItemStack(MItems.chunks, 4), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.netherrack_road), new ItemStack(MItems.chunks, 5), new ItemStack(Blocks.SOUL_SAND), 80, 0.05F);
-		this.addCrusherRecipe(new ItemStack(MBlocks.end_stone_road), new ItemStack(MItems.chunks, 6), new ItemStack(MItems.mite_honey), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.red_rock_road), new ItemStack(MItems.chunks, 1, 0), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.stone_road), new ItemStack(MItems.chunks, 1, 1), new ItemStack(MItems.mud_ball), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.coldstone_road), new ItemStack(MItems.chunks, 1, 2), new ItemStack(MItems.mud_ball), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.icestone_road), new ItemStack(MItems.chunks, 1, 3), new ItemStack(Items.SNOWBALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.oceanstone_road), new ItemStack(MItems.chunks, 1, 4), new ItemStack(Items.CLAY_BALL), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.netherrack_road), new ItemStack(MItems.chunks, 1, 5), new ItemStack(Blocks.SOUL_SAND), 80, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.end_stone_road), new ItemStack(MItems.chunks, 1, 6), new ItemStack(MItems.mite_honey), 80, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.HAY_BLOCK), new ItemStack(Items.WHEAT, 8), new ItemStack(Items.WHEAT), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.BOOKSHELF), new ItemStack(Items.BOOK, 3), new ItemStack(Items.STICK), 65, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.ARMOR_STAND), new ItemStack(Items.STICK, 5), new ItemStack(Items.STICK), 35, 0.05F);
@@ -431,6 +433,7 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.ANVIL, 1, 2), new ItemStack(Items.IRON_NUGGET, 48), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Items.CAULDRON), new ItemStack(Items.IRON_NUGGET, 32), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.NETHER_WART_BLOCK), new ItemStack(Items.NETHER_WART, 8), new ItemStack(Items.NETHER_WART), 55, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MItems.gems, 1, 5), new ItemStack(Items.BLAZE_POWDER), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.END_ROD), new ItemStack(Items.BLAZE_POWDER, 4), new ItemStack(Items.CHORUS_FRUIT_POPPED), 45, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.mite_eggsack), new ItemStack(MItems.mite_honey, 10), new ItemStack(MItems.mite_honey, 5), 50, 5F);
 		

@@ -569,9 +569,20 @@ public class MWorldDecorator
 			}
 			
 			//Palm Tree Gen
-			if(biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS || biome == Biomes.MUTATED_DESERT || biome == Biomes.BEACH || biome == Biomes.OCEAN || biome == Biomes.DEEP_OCEAN)
+			if(MConfig.generatePalmTrees && (biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS || biome == Biomes.MUTATED_DESERT || biome == Biomes.BEACH || biome == Biomes.OCEAN || biome == Biomes.DEEP_OCEAN))
 			{
-				for(int i = 0 ; i < 20 ; i++)
+				int tries = 3;
+				
+				if(biome == Biomes.MUTATED_DESERT)
+					tries = 20;
+				else if(biome == Biomes.DESERT_HILLS)
+					tries = 10;
+				else if(biome == Biomes.BEACH)
+					tries = 30;
+				else if(biome == Biomes.OCEAN || biome == Biomes.DEEP_OCEAN)
+					tries = 40;
+				
+				for(int i = 0 ; i < tries ; i++)
 				{
 					int posX = random.nextInt(16) + 8;
 					int posY = 62 + random.nextInt(40);
@@ -597,6 +608,20 @@ public class MWorldDecorator
 				if(world.getBlockState(heartPos).getBlock().isReplaceable(world, heartPos) && !world.containsAnyLiquid(new AxisAlignedBB(heartPos)) && ground == Blocks.DIRT || ground == Blocks.GRASS || ground == Blocks.MYCELIUM || ground == Blocks.SAND || ground instanceof BlockMDirt || ground instanceof BlockMGrass || ground == MBlocks.mud || ground == MBlocks.cold_sand || ground == Blocks.GRAVEL)
 				{
 					world.setBlockState(heartPos, MBlocks.heart_spot.getDefaultState());
+				}
+			}
+			
+			if(MConfig.generateAdamantiumVaults)
+			{
+				int posX = random.nextInt(16)+8;
+				int posY = random.nextInt(20)+7;
+				int posZ = random.nextInt(16)+8;
+				
+				BlockPos adamantiumPos = new BlockPos(chunkX * 16 + posX, posY, chunkZ * 16 + posZ);
+				if(random.nextInt(500) == 1)
+				{
+					MGenAdamantiumVault adamantiumGen = new MGenAdamantiumVault();
+					adamantiumGen.generate(world, random, adamantiumPos);
 				}
 			}
 		}

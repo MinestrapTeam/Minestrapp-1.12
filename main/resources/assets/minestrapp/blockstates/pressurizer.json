@@ -1,0 +1,39 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minestrapp:pressurizer_inactive"
+    },
+    "burning=false,facing=south": {
+      "model": "minestrapp:pressurizer_inactive",
+      "y": 180
+    },
+    "burning=false,facing=north": {
+      "model": "minestrapp:pressurizer_inactive",
+      "y": 0
+    },
+    "burning=false,facing=west": {
+      "model": "minestrapp:pressurizer_inactive",
+      "y": 270
+    },
+    "burning=false,facing=east": {
+      "model": "minestrapp:pressurizer_inactive",
+      "y": 90
+    },    
+    "burning=true,facing=south": {
+      "model": "minestrapp:pressurizer_active",
+      "y": 180
+    },
+    "burning=true,facing=north": {
+      "model": "minestrapp:pressurizer_active",
+      "y": 0
+    },
+    "burning=true,facing=west": {
+      "model": "minestrapp:pressurizer_active",
+      "y": 270
+    },
+    "burning=true,facing=east": {
+      "model": "minestrapp:pressurizer_active",
+      "y": 90
+    }
+  }
+}  

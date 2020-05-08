@@ -1,0 +1,36 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gbg",
+        "pwp",
+        "rmr"
+    ],
+    "key": {        
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "blockGlassColorless"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "ingotBronze"
+        },
+        "p": {
+            "item": "minecraft:piston"
+        },
+        "w": {
+            "item": "minecraft:water_bucket"
+        },
+        "r": {
+            "item": "minestrapp:m_stone",
+            "data": 8
+        },
+        "m": {
+            "type": "forge:ore_dict",
+            "ore": "plateMeurodite"
+        }
+     },
+     "result": {
+        "item": "minestrapp:pressurizer",
+        "data": 0
+     }  
+}

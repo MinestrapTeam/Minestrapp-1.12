@@ -2,13 +2,13 @@
     "type": "forge:ore_shapeless",
     "ingredients": [
         {
-            "item": "minestrapp:coconut_shell"
+            "item": "minestrapp:coconut_slice"
         },
         {
-            "item": "minestrapp:coconut_shell"
+            "item": "minestrapp:coconut_slice"
         },
         {
-            "item": "minestrapp:coconut_shell"
+            "item": "minestrapp:coconut_slice"
         },
         {
             "item": "minecraft:bucket"

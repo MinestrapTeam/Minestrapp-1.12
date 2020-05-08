@@ -12,7 +12,7 @@
         },
         "i": {
             "type": "forge:ore_dict",
-            "ore": "ingotTin"
+            "ore": "nuggetTin"
         }
      },
      "result": {

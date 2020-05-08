@@ -5,13 +5,16 @@
             "item": "minestrapp:void_jam"
         },
         {
-            "item": "minestrapp:hanging_glow_moss"
+            "item": "minestrapp:m_dye",
+            "data": 2
         },
         {
-            "item": "minestrapp:blue_glowshroom"
+            "item": "minestrapp:m_dye",
+            "data": 5
         },
         {
-            "item": "minestrapp:glowshroom_stew"
+            "item": "minestrapp:m_dye",
+            "data": 7
         },
         {
             "type": "forge:ore_dict",

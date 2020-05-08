@@ -39,22 +39,12 @@ public class AlloyRecipes
 	
 	private AlloyRecipes()
 	{
-		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
-		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
-		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 3), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.STONE, 1, 5), 0.1F);
-		this.addAlloyRecipe(new ItemStack(MBlocks.cobblestone, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Blocks.STONE, 1, 5), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.STONE, 1, 1), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.STONE, 1, 3), new ItemStack(Items.QUARTZ), new ItemStack(Blocks.STONE, 1, 1), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.CLAY, 1), new ItemStack(MItems.gems, 1, 1), new ItemStack(MBlocks.decor_stone, 1, 6), 0.1F);
-		this.addAlloyRecipe(new ItemStack(Blocks.CLAY, 1), new ItemStack(Items.QUARTZ), new ItemStack(MBlocks.decor_stone, 1, 6), 0.1F);
 		this.addAlloyRecipe(new ItemStack(MItems.ingots, 3, 0), new ItemStack(MItems.ingots, 3, 1), new ItemStack(MItems.ingots, 1, 2), 1.4F);
+		this.addAlloyRecipe(new ItemStack(MBlocks.block_copper, 3), new ItemStack(MBlocks.block_tin, 3), new ItemStack(MBlocks.block_bronze), 12.6F);
 		this.addAlloyRecipe(new ItemStack(Items.IRON_INGOT), new ItemStack(Items.COAL, 6, 0), new ItemStack(MItems.ingots, 1, 3), 1.4F);
+		this.addAlloyRecipe(new ItemStack(Blocks.IRON_BLOCK), new ItemStack(Blocks.COAL_BLOCK, 6), new ItemStack(MBlocks.block_steel), 12.6F);
 		this.addAlloyRecipe(new ItemStack(MItems.ingots, 1, 4), new ItemStack(MItems.gems, 4, 6), new ItemStack(MItems.ingots, 1, 6), 2F);
 		this.addAlloyRecipe(new ItemStack(Items.GOLD_INGOT), new ItemStack(MItems.gems, 4, 5), new ItemStack(MItems.ingots, 1, 7), 2F);
-		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
-		this.addAlloyRecipe(new ItemStack(Items.QUARTZ), new ItemStack(MItems.irradium, 3), new ItemStack(MItems.gems, 1, 3), 3F);
 		this.addAlloyRecipe(new ItemStack(MBlocks.block_sunstone), new ItemStack(MItems.irradium), new ItemStack(MBlocks.block_irradiant_sunstone, 1), 1.2F);
 		this.addAlloyRecipe(new ItemStack(MItems.gems, 1, 1), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
 		this.addAlloyRecipe(new ItemStack(Items.QUARTZ), new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(MBlocks.soul_glass, 2, 0), 0.4F);
@@ -115,6 +105,7 @@ public class AlloyRecipes
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MItems.natural_ingredients, 4, 1), new ItemStack(MItems.candy_blue), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 12), new ItemStack(MBlocks.hanging_glow_moss, 4), new ItemStack(MItems.candy_yellow), 0.8F);
 		this.addAlloyRecipe(new ItemStack(MItems.mite_honey, 4), new ItemStack(Blocks.PUMPKIN), new ItemStack(Blocks.LIT_PUMPKIN), 0.35F);
+		this.addAlloyRecipe(new ItemStack(Items.ENDER_PEARL), new ItemStack(Items.BLAZE_POWDER), new ItemStack(Items.ENDER_EYE), 0.5F);
 	}
 	
 	public void addAlloyRecipe(ItemStack input1, ItemStack input2, ItemStack result, float experience)

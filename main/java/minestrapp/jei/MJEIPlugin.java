@@ -17,6 +17,10 @@ import minestrapp.jei.deepFreezing.DeepFreezingRecipeCategory;
 import minestrapp.jei.deepFreezing.DeepFreezingRecipeMaker;
 import minestrapp.jei.freezing.FreezingRecipeCategory;
 import minestrapp.jei.freezing.FreezingRecipeMaker;
+import minestrapp.jei.pressurizer.PressurizerRecipeCategory;
+import minestrapp.jei.pressurizer.PressurizerRecipeMaker;
+import minestrapp.jei.sawmill.SawmillRecipeCategory;
+import minestrapp.jei.sawmill.SawmillRecipeMaker;
 import minestrapp.jei.tanning.TannerRecipeCategory;
 import minestrapp.jei.tanning.TannerRecipeMaker;
 import net.minecraft.item.ItemStack;
@@ -35,6 +39,8 @@ public class MJEIPlugin implements IModPlugin {
 		registry.addRecipeCategories(new TannerRecipeCategory(guiHelper));
 		registry.addRecipeCategories(new FreezingRecipeCategory(guiHelper));
 		registry.addRecipeCategories(new DeepFreezingRecipeCategory(guiHelper));
+		registry.addRecipeCategories(new PressurizerRecipeCategory(guiHelper));
+		registry.addRecipeCategories(new SawmillRecipeCategory(guiHelper));
 	}
 	
 	@Override
@@ -56,5 +62,11 @@ public class MJEIPlugin implements IModPlugin {
 
 		registry.addRecipes(DeepFreezingRecipeMaker.getDeepFreezingRecipes(jeiHelpers), "deep_freezing");
 		registry.addRecipeCatalyst(new ItemStack(MBlocks.hacky_jei_fix_deep_freezing), "deep_freezing");
+		
+		registry.addRecipes(PressurizerRecipeMaker.getPressurizerRecipes(jeiHelpers), "pressurizer");
+		registry.addRecipeCatalyst(new ItemStack(MBlocks.pressurizer), "pressurizer");
+		
+		registry.addRecipes(SawmillRecipeMaker.getSawmillRecipes(jeiHelpers), "sawmill");
+		registry.addRecipeCatalyst(new ItemStack(MBlocks.sawmill), "sawmill");
 	}
 }

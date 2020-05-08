@@ -1,0 +1,52 @@
+{
+    "variants": {
+        "variant=sandstone_bricks": [
+            { "model": "minestrapp:sandstone_bricks" }
+        ],
+        "variant=red_sandstone_bricks": [
+            { "model": "minestrapp:red_sandstone_bricks" }
+        ],
+        "variant=cold_sandstone": [
+            { "model": "minestrapp:cold_sandstone" },
+            { "model": "minestrapp:cold_sandstone", "y": 90 },
+            { "model": "minestrapp:cold_sandstone", "y": 180 },
+            { "model": "minestrapp:cold_sandstone", "y": 270 }
+        ],
+        "variant=polished_cold_sandstone": [
+            { "model": "minestrapp:polished_cold_sandstone" },
+            { "model": "minestrapp:polished_cold_sandstone", "y": 90 },
+            { "model": "minestrapp:polished_cold_sandstone", "y": 180 },
+            { "model": "minestrapp:polished_cold_sandstone", "y": 270 }
+        ],
+        "variant=chiseled_cold_sandstone": [
+            { "model": "minestrapp:chiseled_cold_sandstone" },
+            { "model": "minestrapp:chiseled_cold_sandstone", "y": 90 },
+            { "model": "minestrapp:chiseled_cold_sandstone", "y": 180 },
+            { "model": "minestrapp:chiseled_cold_sandstone", "y": 270 }
+        ],
+        "variant=cold_sandstone_bricks": [
+            { "model": "minestrapp:cold_sandstone_bricks" }
+        ],
+        "variant=cold_red_sandstone": [
+            { "model": "minestrapp:cold_red_sandstone" },
+            { "model": "minestrapp:cold_red_sandstone", "y": 90 },
+            { "model": "minestrapp:cold_red_sandstone", "y": 180 },
+            { "model": "minestrapp:cold_red_sandstone", "y": 270 }
+        ],
+        "variant=polished_cold_red_sandstone": [
+            { "model": "minestrapp:polished_cold_red_sandstone" },
+            { "model": "minestrapp:polished_cold_red_sandstone", "y": 90 },
+            { "model": "minestrapp:polished_cold_red_sandstone", "y": 180 },
+            { "model": "minestrapp:polished_cold_red_sandstone", "y": 270 }
+        ],
+        "variant=chiseled_cold_red_sandstone": [
+            { "model": "minestrapp:chiseled_cold_red_sandstone" },
+            { "model": "minestrapp:chiseled_cold_red_sandstone", "y": 90 },
+            { "model": "minestrapp:chiseled_cold_red_sandstone", "y": 180 },
+            { "model": "minestrapp:chiseled_cold_red_sandstone", "y": 270 }
+        ],
+        "variant=cold_red_sandstone_bricks": [
+            { "model": "minestrapp:cold_red_sandstone_bricks" }
+        ]
+    }
+}

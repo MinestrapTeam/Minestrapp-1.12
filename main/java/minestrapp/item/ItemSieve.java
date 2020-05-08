@@ -63,13 +63,6 @@ public class ItemSieve extends ItemBase
 			return false;
     }
 	
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-		if(this.unbreakable)
-			tooltip.add("Creative-only. Unbreakable.");
-    }
-	
 	public boolean isUnbreakable() {return this.unbreakable;}
 	
 	public ItemStack getBreakItem() {return this.breakItem;}

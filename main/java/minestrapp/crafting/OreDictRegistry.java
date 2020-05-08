@@ -16,6 +16,11 @@ public class OreDictRegistry
 		OreDictionary.registerOre("cropBlackberry", MItems.blackberry);
 		OreDictionary.registerOre("cropStrawberry", MItems.strawberry);
 		OreDictionary.registerOre("cropVoidberry", MItems.voidberry);
+		OreDictionary.registerOre("cropBerry", MItems.blueberry);
+		OreDictionary.registerOre("cropBerry", MItems.raspberry);
+		OreDictionary.registerOre("cropBerry", MItems.blackberry);
+		OreDictionary.registerOre("cropBerry", MItems.strawberry);
+		OreDictionary.registerOre("cropBerry", MItems.voidberry);
 		OreDictionary.registerOre("cropPepper", MItems.pepper);
 		OreDictionary.registerOre("cropCabbage", MItems.cabbage);
 		OreDictionary.registerOre("cropCelery", MItems.celery);
@@ -43,6 +48,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("soilDry", new ItemStack(MBlocks.clay_soil, 1, 0));
 		OreDictionary.registerOre("soilDry", new ItemStack(MBlocks.clay_soil, 1, 1));
 		OreDictionary.registerOre("soilDry", MBlocks.dried_mud);
+		OreDictionary.registerOre("logWood", new ItemStack(MBlocks.log, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("plankWood", new ItemStack(MBlocks.mossy_m_planks, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("slabWood", new ItemStack(MBlocks.wood_slab_1, 1, OreDictionary.WILDCARD_VALUE));
@@ -219,6 +225,7 @@ public class OreDictRegistry
 		OreDictionary.registerOre("tanninFine", new ItemStack(Items.POISONOUS_POTATO));
 		OreDictionary.registerOre("tanninNormal", new ItemStack(MItems.peanuts));
 		OreDictionary.registerOre("tanninFine", new ItemStack(MItems.sawdust));
+		OreDictionary.registerOre("tanninFine", new ItemStack(MItems.bark));
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_bat));
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_parrot));
 		OreDictionary.registerOre("skull", new ItemStack(MBlocks.skull_chicken));
@@ -260,5 +267,17 @@ public class OreDictRegistry
 		OreDictionary.registerOre("foodSalsa", MItems.salsa);
 		OreDictionary.registerOre("foodSalsa", MItems.bread_salsa);
 		OreDictionary.registerOre("bottleHotsauce", MItems.hot_sauce);
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 2));
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 3));
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 4));
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 6));
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 7));
+		OreDictionary.registerOre("sandstone",   new ItemStack(MBlocks.sandstone, 1, 8));
+		OreDictionary.registerOre("cold_sandstone",   new ItemStack(MBlocks.sandstone, 1, 2));
+		OreDictionary.registerOre("cold_sandstone",   new ItemStack(MBlocks.sandstone, 1, 3));
+		OreDictionary.registerOre("cold_sandstone",   new ItemStack(MBlocks.sandstone, 1, 4));
+		OreDictionary.registerOre("cold_red_sandstone",   new ItemStack(MBlocks.sandstone, 1, 6));
+		OreDictionary.registerOre("cold_red_sandstone",   new ItemStack(MBlocks.sandstone, 1, 7));
+		OreDictionary.registerOre("cold_red_sandstone",   new ItemStack(MBlocks.sandstone, 1, 8));
 	}
 }

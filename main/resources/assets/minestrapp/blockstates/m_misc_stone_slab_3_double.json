@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "seamless=false,variant=cold_red_sandstone_bricks": [
+            { "model": "minestrapp:cold_red_sandstone_bricks" }
+        ],
+        "seamless=true,variant=cold_red_sandstone_bricks": [
+            { "model": "minestrapp:cold_red_sandstone_bricks" }
+        ],
+        "seamless=false,variant=gilded_bricks": [
+            { "model": "minestrapp:gilded_bricks" }
+        ],
+        "seamless=true,variant=gilded_bricks": [
+            { "model": "minestrapp:gilded_bricks" }
+        ]
+    }
+}

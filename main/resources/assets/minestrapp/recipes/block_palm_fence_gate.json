@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "wooden_fence_gate",
+    "pattern": [
+        "ixi",
+        "ixi"
+    ],
+    "key": {
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "x": {
+            "item": "minestrapp:m_planks",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minestrapp:palm_fence_gate"
+     } 
+}

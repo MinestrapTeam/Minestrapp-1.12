@@ -17,6 +17,36 @@
         ],
         "seamless=true,variant=irradiant_quartz": [
             { "model": "minestrapp:polished_irradiant_quartz" }
+        ],
+        "seamless=false,variant=sandstone_bricks": [
+            { "model": "minestrapp:sandstone_bricks" }
+        ],
+        "seamless=true,variant=sandstone_bricks": [
+            { "model": "minestrapp:sandstone_bricks" }
+        ],
+        "seamless=false,variant=red_sandstone_bricks": [
+            { "model": "minestrapp:red_sandstone_bricks" }
+        ],
+        "seamless=true,variant=red_sandstone_bricks": [
+            { "model": "minestrapp:red_sandstone_bricks" }
+        ],
+        "seamless=false,variant=cold_sandstone": [
+            { "model": "minestrapp:cold_sandstone" }
+        ],
+        "seamless=true,variant=cold_sandstone": [
+            { "model": "minestrapp:smooth_cold_sandstone" }
+        ],
+        "seamless=false,variant=cold_red_sandstone": [
+            { "model": "minestrapp:cold_red_sandstone" }
+        ],
+        "seamless=true,variant=cold_red_sandstone": [
+            { "model": "minestrapp:smooth_cold_red_sandstone" }
+        ],
+        "seamless=false,variant=cold_sandstone_bricks": [
+            { "model": "minestrapp:cold_sandstone_bricks" }
+        ],
+        "seamless=true,variant=cold_sandstone_bricks": [
+            { "model": "minestrapp:cold_sandstone_bricks" }
         ]
     }
 }

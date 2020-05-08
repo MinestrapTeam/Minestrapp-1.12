@@ -1,0 +1,23 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "wooden_fence",
+    "pattern": [
+        "xix",
+        "xix"
+    ],
+    "key": {
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        },
+        "x": {
+            "item": "minestrapp:m_planks",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_fence",
+        "count": 3,
+        "data": 3
+     } 
+}

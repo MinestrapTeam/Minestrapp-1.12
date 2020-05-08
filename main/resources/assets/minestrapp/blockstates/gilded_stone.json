@@ -1,0 +1,25 @@
+{
+    "variants": {
+        "variant=bricks": [
+            { "model": "minestrapp:gilded_bricks" }
+        ],
+        "variant=tiles": [
+            { "model": "minestrapp:gilded_tiles" }
+        ],
+        "variant=pillar_cap_top": [
+            { "model": "minestrapp:gilded_pillar_cap_top" }
+        ],
+        "variant=pillar_cap_bottom": [
+            { "model": "minestrapp:gilded_pillar_cap_bottom" }
+        ],
+        "variant=lines_y": [
+            { "model": "minestrapp:gilded_pillar" }
+        ],
+        "variant=lines_z": [
+            { "model": "minestrapp:gilded_pillar", "x": 90 }
+        ],
+        "variant=lines_x": [
+            { "model": "minestrapp:gilded_pillar", "x": 90, "y": 90 }
+        ]
+    }
+}

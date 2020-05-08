@@ -1,13 +1,17 @@
 {    
     "type": "forge:ore_shaped",
     "pattern": [
-        "mmm",
+        "mbm",
         "ses",
         "ddd"
     ],
-    "key": {        
+    "key": {     
         "m": {
             "item": "minecraft:milk_bucket"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "cropBerry"
         },
         "s": {
             "item": "minecraft:sugar"

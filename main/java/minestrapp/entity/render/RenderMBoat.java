@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderMBoat extends Render<EntityMBoat>
 {
-    private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] {new ResourceLocation("minestrapp:textures/entity/boat/boat_redwood.png"), new ResourceLocation("minestrapp:textures/entity/boat/boat_frozen_oak.png"), new ResourceLocation("minestrapp:textures/entity/boat/boat_charwood.png")};
+    private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] {new ResourceLocation("minestrapp:textures/entity/boat/boat_redwood.png"), new ResourceLocation("minestrapp:textures/entity/boat/boat_frozen_oak.png"), new ResourceLocation("minestrapp:textures/entity/boat/boat_charwood.png"), new ResourceLocation("minestrapp:textures/entity/boat/boat_palm.png")};
     protected ModelBase modelMBoat = new ModelMBoat();
 
     public RenderMBoat(RenderManager renderManagerIn)

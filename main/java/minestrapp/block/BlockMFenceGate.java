@@ -25,6 +25,7 @@ public class BlockMFenceGate extends BlockFenceGate
 		this.setResistance(5F);
 		this.setSoundType(SoundType.WOOD);
 		this.setCreativeTab(MTabs.wood);
+		this.type = type;
 	}
 	
 	public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos)

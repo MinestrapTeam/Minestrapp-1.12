@@ -1,0 +1,18 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "x",
+        "x",
+        "x"
+    ],
+    "key": {        
+        "x": {
+            "type": "forge:ore_dict",
+            "ore": "cold_sandstone"
+        }
+     },
+     "result": {
+        "item": "minestrapp:panel_m_sandstone_cold_sandstone",
+        "count": 6
+     }  
+}

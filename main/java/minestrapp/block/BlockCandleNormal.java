@@ -48,12 +48,9 @@ public class BlockCandleNormal extends BlockCandleBase implements IMetaBlockName
 	{
 		super(name, type);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
-		this.setGlowing();
 		this.type = type;
 		if(type != "unlit")
 			this.setDropsItem(new ItemStack(MBlocks.candle), 0, 0, 0, false, false);
-		else
-			this.setLightLevel(0.3F);
 	}
 	
 	public int damageDropped(IBlockState state)

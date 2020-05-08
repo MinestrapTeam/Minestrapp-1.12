@@ -69,6 +69,12 @@ tile.m_log_palm.name=Palm Wood
 tile.palm_crown.name=Palm Crown
 tile.dead_palm_crown.name=Palm Crown
 tile.coconut.name=Coconut
+tile.m_planks_mossy_oak.name=Mossy Oak Wood Planks
+tile.m_planks_mossy_spruce.name=Mossy Spruce Wood Planks
+tile.m_planks_mossy_birch.name=Mossy Birch Wood Planks
+tile.m_planks_mossy_jungle.name=Mossy Jungle Wood Planks
+tile.m_planks_mossy_acacia.name=Mossy Acacia Wood Planks
+tile.m_planks_mossy_dark_oak.name=Mossy Dark Oak Wood Planks
 tile.m_planks_redwood.name=Redwood Planks
 tile.m_planks_mossy_redwood.name=Mossy Redwood Planks
 tile.m_planks_frozen_oak.name=Frozen Oak Wood Planks
@@ -123,6 +129,16 @@ tile.decor_stone_slate.name=Slate
 tile.decor_stone_polished_slate.name=Polished Slate
 tile.decor_stone_slate_bricks.name=Slate Bricks
 tile.decor_stone_slate_tiles.name=Slate Tiles
+tile.m_sandstone_sandstone_bricks.name=Sandstone Bricks
+tile.m_sandstone_red_sandstone_bricks.name=Red Sandstone Bricks
+tile.m_sandstone_cold_sandstone.name=Cold Sandstone
+tile.m_sandstone_polished_cold_sandstone.name=Polished Cold Sandstone
+tile.m_sandstone_chiseled_cold_sandstone.name=Chiseled Cold Sandstone
+tile.m_sandstone_cold_sandstone_bricks.name=Cold Sandstone Bricks
+tile.m_sandstone_cold_red_sandstone.name=Cold Red Sandstone
+tile.m_sandstone_polished_cold_red_sandstone.name=Polished Cold Red Sandstone
+tile.m_sandstone_chiseled_cold_red_sandstone.name=Chiseled Cold Red Sandstone
+tile.m_sandstone_cold_red_sandstone_bricks.name=Cold Red Sandstone Bricks
 tile.desert_quartz_polished.name=Polished Desert Quartz
 tile.desert_quartz_chiseled.name=Chiseled Desert Quartz
 tile.desert_quartz_pillar.name=Desert Quartz Pillar
@@ -229,6 +245,12 @@ tile.portar_lamp_sunstone.name=Portine Sunstone Lamp
 tile.portar_lamp_glowstone.name=Portine Glowstone Lamp
 tile.portar_lamp_sea.name=Portine Sea Lamp
 
+tile.gilded_stone_bricks.name=Gilded Bricks
+tile.gilded_stone_tiles.name=Gilded Tiles
+tile.gilded_stone_pillar.name=Gilded Pillar
+tile.gilded_stone_pillar_cap_top.name=Gilded Capital
+tile.gilded_stone_pillar_cap_bottom.name=Gilded Plinth
+
 tile.m_misc_stone_slab_1_mud_bricks.name=Mud Brick Slab
 tile.m_misc_stone_slab_1_granite_bricks.name=Granite Brick Slab
 tile.m_misc_stone_slab_1_diorite_bricks.name=Diorite Brick Slab
@@ -241,6 +263,14 @@ tile.m_misc_stone_slab_1_shimmerstone_cobbled.name=Cobbled Shimmerstone Slab
 tile.m_misc_stone_slab_2_shimmerstone_bricks.name=Shimmerstone Brick Slab
 tile.m_misc_stone_slab_2_desert_quartz.name=Desert Quartz Slab
 tile.m_misc_stone_slab_2_irradiant_quartz.name=Irradiant Quartz Slab
+tile.m_misc_stone_slab_2_sandstone_bricks.name=Sandstone Brick Slab
+tile.m_misc_stone_slab_2_red_sandstone_bricks.name=Red Sandstone Brick Slab
+tile.m_misc_stone_slab_2_cold_sandstone.name=Cold Sandstone Slab
+tile.m_misc_stone_slab_2_cold_red_sandstone.name=Cold Red Sandstone Slab
+tile.m_misc_stone_slab_2_cold_sandstone_bricks.name=Cold Sandstone Brick Slab
+
+tile.m_misc_stone_slab_3_cold_red_sandstone_bricks.name=Cold Red Sandstone Brick Slab
+tile.m_misc_stone_slab_3_gilded_bricks.name=Gilded Brick Slab
 
 tile.m_stone_slab_1_red_rock_smooth.name=Red Rock Slab
 tile.m_stone_slab_1_deep_red_rock_smooth.name=Deep Red Rock Slab
@@ -281,6 +311,12 @@ tile.panel_decor_stone_slate_bricks.name=Slate Brick Panel
 tile.panel_brick.name=Clay Brick Panel
 tile.panel_sandStone.name=Sandstone Panel
 tile.panel_redSandStone.name=Red Sandstone Panel
+tile.panel_m_sandstone_sandstone_bricks.name=Sandstone Brick Panel
+tile.panel_m_sandstone_red_sandstone_bricks.name=Red Sandstone Brick Panel
+tile.panel_m_sandstone_cold_sandstone.name=Cold Sandstone Panel
+tile.panel_m_sandstone_cold_red_sandstone.name=Cold Red Sandstone Panel
+tile.panel_m_sandstone_cold_sandstone_bricks.name=Cold Sandstone Brick Panel
+tile.panel_m_sandstone_cold_red_sandstone_bricks.name=Cold Red Sandstone Brick Panel
 tile.panel_desert_quartz_polished.name=Desert Quartz Panel
 tile.panel_irradiant_quartz_polished.name=Irradiant Quartz Panel
 
@@ -324,11 +360,18 @@ tile.panel_shimmerstone_cobblestone.name=Cobbled Shimmerstone Panel
 tile.panel_shimmerstone_bricks.name=Shimmerstone Brick Panel
 tile.panel_purpurBlock.name=Purpur Panel
 tile.panel_portar_slabbed.name=Slabbed Portar Panel
+tile.panel_gilded_stone_bricks.name=Gilded Brick Panel
 
 tile.decor_stone_granite_bricks_stairs.name=Granite Brick Stairs
 tile.decor_stone_diorite_bricks_stairs.name=Diorite Brick Stairs
 tile.decor_stone_andesite_bricks_stairs.name=Andesite Brick Stairs
 tile.decor_stone_slate_bricks_stairs.name=Slate Brick Stairs
+tile.m_sandstone_sandstone_bricks_stairs.name=Sandstone Brick Stairs
+tile.m_sandstone_red_sandstone_bricks_stairs.name=Red Sandstone Brick Stairs
+tile.m_sandstone_cold_sandstone_stairs.name=Cold Sandstone Stairs
+tile.m_sandstone_cold_red_sandstone_stairs.name=Cold Red Sandstone Stairs
+tile.m_sandstone_cold_sandstone_bricks_stairs.name=Cold Sandstone Brick Stairs
+tile.m_sandstone_cold_red_sandstone_bricks_stairs.name=Cold Red Sandstone Brick Stairs
 tile.desert_quartz_polished_stairs.name=Desert Quartz Stairs
 tile.irradiant_quartz_polished_stairs.name=Irradiant Quartz Stairs
 
@@ -355,6 +398,7 @@ tile.m_stone_bricks_deep_oceanstone_stairs.name=Reefstone Brick Stairs
 tile.shimmerstone_cobblestone_stairs.name=Cobbled Shimmerstone Stairs
 tile.shimmerstone_bricks_stairs.name=Shimmerstone Brick Stairs
 tile.portar_slabbed_stairs.name=Slabbed Portar Stairs
+tile.gilded_stone_bricks_stairs.name=Gilded Brick Stairs
 
 tile.invincium.name=Invincium
 tile.glacial_invincium.name=Glacial Invincium
@@ -850,7 +894,7 @@ tile.spike_dark_oak.name=Dark Oak Wood Spike
 tile.spike_redwood.name=Redwood Spike
 tile.spike_frozen_oak.name=Frozen Oak Spike
 tile.spike_charwood.name=Charwood Spike
-tile.spike_palm.name=Palm Wiid Spike
+tile.spike_palm.name=Palm Wood Spike
 tile.spike_red_rock.name=Red Rock Spike
 tile.spike_stone.name=Stone Spike
 tile.spike_coldstone.name=Coldstone Spike
@@ -877,9 +921,11 @@ tile.block_dimensium_stabilized_active.name=Stabilized Block of Dimensium
 tile.stasis_field.name=Axial Stasis Field
 tile.soulsteel_vessel.name=Soulsteel Vessel
 tile.barrel.name=Barrel
-tile.stonecutter.name=Stone Cutter
+tile.sawmill.name=Sawmill
+tile.stonecutter.name=Stonecutter
 tile.tanning_rack.name=Tanning Rack
 tile.alloy.name=Alloy Furnace
+tile.pressurizer.name=Pressurizer
 tile.crusher.name=Crusher
 tile.redstone_sandy.name=Sandy Redstone
 tile.redstone_frosted.name=Frosted Redstone
@@ -907,6 +953,7 @@ item.nothing.name=Nothing
 
 ## Decor ##
 item.door_charwood.name=Charwood Door
+item.door_palm.name=Palm Door
 
 ## Minerals ##
 item.mud_ball.name=Mud Ball
@@ -935,6 +982,7 @@ item.m_nugget_5.name=Glacierite Nugget
 item.m_nugget_6.name=Blazium Nugget
 item.m_nugget_7.name=Archantine Nugget
 item.m_nugget_8.name=Dimensium Nugget
+item.m_nugget_9.name=Adamantium Nugget
 item.m_ingot_0.name=Copper Ingot
 item.m_ingot_1.name=Tin Ingot
 item.m_ingot_2.name=Bronze Ingot
@@ -944,7 +992,7 @@ item.m_ingot_5.name=Archantine Ingot
 item.m_ingot_6.name=Glacierite Ingot
 item.m_ingot_7.name=Blazium Ingot
 item.m_ingot_8.name=Dimensium Ingot
-item.m_ingot_9.name=Conductive Copper Ingot
+item.m_ingot_9.name=Adamantium Ingot
 item.salt.name=Salt
 item.m_gem_0.name=Sunstone Shard
 item.m_gem_1.name=Desert Quartz
@@ -962,6 +1010,7 @@ item.m_natural_item_2.name=Clutchthorn Fibers
 item.m_natural_item_3.name=Clutchthorn Petal
 item.coconut_shell.name=Coconut Shell
 item.sawdust.name=Sawdust
+item.bark.name=Tree Bark
 
 ## Dye ##
 item.m_dye_0.name=Glowing White Dye
@@ -1064,6 +1113,7 @@ item.health_crystal.name='Health Crystal'
 item.boat_redwood.name=Redwood Boat
 item.boat_frozen_oak.name=Frozen Oak Boat
 item.boat_charwood.name=Charwood Boat
+item.boat_palm.name=Palm Boat
 item.seed_bag_empty.name=Empty Seed Pouch
 item.seed_bag_filled.name=Seed Pouch
 item.satchel.name=Satchel
@@ -1074,6 +1124,11 @@ item.bronze_sieve.name=Bronze Mining Sieve
 item.archantine_sieve.name=Archantine Mining Sieve
 item.archantine_sieve_broken.name=Broken Archantine Mining Sieve
 item.adamantium_sieve.name=Adamantium Mining Sieve
+item.saw_blade_copper.name=Copper Saw Blade
+item.saw_blade_iron.name=Iron Saw Blade
+item.saw_blade_bronze.name=Bronze Saw Blade
+item.saw_blade_steel.name=Steel Saw Blade
+item.saw_blade_archantine.name=Archantine Saw Blade
 item.hang_glider_wood.name=Wooden Hang Glider
 item.hang_glider_steel.name=Reinforced Hang Glider
 item.hang_glider_dimensium.name=Axial Hang Glider
@@ -1153,6 +1208,10 @@ item.bedrock_pickaxe.name=Bedrock Pickaxe
 item.bedrock_axe.name=Bedrock Axe
 item.bedrock_shovel.name=Bedrock Shovel
 item.bedrock_hoe.name=Bedrock Hoe
+item.adamantium_pickaxe.name=Adamantium Pickaxe
+item.adamantium_axe.name=Adamantium Axe
+item.adamantium_shovel.name=Adamantium Shovel
+item.adamantium_hoe.name=Adamantium Hoe
 
 ## Weapons ##
 item.gold_dagger.name=Gold Dagger
@@ -1189,6 +1248,9 @@ item.fire_mace.name=Blazium Mace
 item.ice_sword.name=Glacierite Sword
 item.ice_dagger.name=Glacierite Dagger
 item.ice_mace.name=Glacierite Mace
+item.adamantium_sword.name=Adamantium Sword
+item.adamantium_dagger.name=Adamantium Dagger
+item.adamantium_mace.name=Adamantium Mace
 
 ## Crops & Food ##
 item.blueberry.name=Blueberry
@@ -1345,6 +1407,9 @@ item.smelling_salts.name=Smelling Salts
 tile.crystalfloe.name=Crystalfloe
 fluid.crystalfloe=Crystalfloe
 
+##### Containers #####
+container.pressurizer=Pressurizer
+
 ##### Mobs #####
 entity.SheetGhost.name=Sheet Ghost
 entity.LumpGoat.name=Lump Goat
@@ -1431,6 +1496,14 @@ lingering_potion.effect.agression=Lingering Potion of Angst
 lingering_potion.effect.harmony=Lingering Potion of Calm
 lingering_potion.effect.haste=Lingering Potion of Efficiency
 lingering_potion.effect.fatigue=Lingering Potion of Lethargy
+tipped_arrow.effect.infection=Arrow of Infection
+tipped_arrow.effect.hydrophobia=Arrow of Water Aversion
+tipped_arrow.effect.climbing=Arrow of Grip
+tipped_arrow.effect.restoration=Arrow of Restoration
+tipped_arrow.effect.agression=Arrow of Angst
+tipped_arrow.effect.harmony=Arrow of Calm
+tipped_arrow.effect.haste=Arrow of Efficiency
+tipped_arrow.effect.fatigue=Arrow of Lethargy
 
 
 ##### Advancements #####
@@ -1744,7 +1817,15 @@ gui.config.vanilla_tweaks.max_health.name.tooltip=Determines the maximum amount 
 tile.hacky_jei_fix_light_freezing.name=Light Freezing
 tile.hacky_jei_fix_deep_freezing.name=Deep Freezing
 tile.hacky_jei_fix_sieving.name=Sieving
+tile.hacky_jei_fix_right-click.name=In-World Block Interactions
+tile.hacky_jei_fix_sawmill_all.name=Sawmill
+tile.hacky_jei_fix_sawmill_stone.name=Sawmill
 
+jei.alloy_smelting.name=Alloy Smelting
+jei.crushing.name=Crushing
 jei.freezing.name=Light Freezing
 jei.deep_freezing.name=Deep Freezing
 jei.sieve.name=Sieving
+jei.pressurizing.name=Pressurizing
+jei.right-click.name=In-World Block Interactions
+jei.sawmill.name=Milling

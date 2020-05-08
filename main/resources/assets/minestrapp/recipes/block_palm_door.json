@@ -1,0 +1,19 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "group": "wooden_door",
+    "pattern": [
+        "xx",
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_planks",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minestrapp:door_palm",
+        "count": 3
+     }  
+}

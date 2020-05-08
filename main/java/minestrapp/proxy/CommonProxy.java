@@ -15,6 +15,7 @@ import minestrapp.block.tileentity.TileEntityMagnetPiston;
 import minestrapp.block.tileentity.TileEntityPipe;
 import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityPressurizer;
+import minestrapp.block.tileentity.TileEntitySawmill;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.block.tileentity.TileEntityTanningRack;
@@ -75,6 +76,7 @@ public class CommonProxy
 		GameRegistry.registerTileEntity(TileEntityMSkull.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityMSkull"));
 		GameRegistry.registerTileEntity(TileEntityActivator.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityActivator"));
 		GameRegistry.registerTileEntity(TileEntityPressurizer.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPressurizer"));
+		GameRegistry.registerTileEntity(TileEntitySawmill.class, new ResourceLocation(Minestrapp5.MODID, "TileEntitySawmill"));
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
 		

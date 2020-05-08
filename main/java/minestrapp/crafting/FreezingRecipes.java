@@ -243,6 +243,14 @@ public class FreezingRecipes
 		this.addDeepFreezingRecipe(new ItemStack(Blocks.REDSTONE_BLOCK), new ItemStack(MBlocks.block_redstone_frosted_lit), true);
 		this.addDeepFreezingRecipe(new ItemStack(MBlocks.block_redstone_frosted_lit), new ItemStack(MBlocks.block_redstone_icy_lit), true);
 		this.addDeepFreezingRecipe(new ItemStack(MBlocks.block_redstone_frosted_unlit), new ItemStack(MBlocks.block_redstone_icy_unlit), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.SANDSTONE, 1, 0), new ItemStack(MBlocks.sandstone, 1, 2), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.SANDSTONE, 1, 1), new ItemStack(MBlocks.sandstone, 1, 4), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.SANDSTONE, 1, 2), new ItemStack(MBlocks.sandstone, 1, 3), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 0), new ItemStack(MBlocks.sandstone, 1, 6), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 1), new ItemStack(MBlocks.sandstone, 1, 8), true);
+		this.addDeepFreezingRecipe(new ItemStack(Blocks.RED_SANDSTONE, 1, 2), new ItemStack(MBlocks.sandstone, 1, 7), true);
+		this.addDeepFreezingRecipe(new ItemStack(MBlocks.sandstone, 1, 0), new ItemStack(MBlocks.sandstone, 1, 5), true);
+		this.addDeepFreezingRecipe(new ItemStack(MBlocks.sandstone, 1, 1), new ItemStack(MBlocks.sandstone, 1, 9), true);
 	}
 	
 	public void addPhysicalFreezingRecipe(ItemStack input1, ItemStack result)

@@ -17,6 +17,36 @@
         ],
         "half=top,variant=irradiant_quartz": [
             { "model": "minestrapp:upper_slab_irradiant_quartz" }
+        ],
+        "half=bottom,variant=sandstone_bricks": [
+            { "model": "minestrapp:half_slab_sandstone_bricks" }
+        ],
+        "half=top,variant=sandstone_bricks": [
+            { "model": "minestrapp:upper_slab_sandstone_bricks" }
+        ],
+        "half=bottom,variant=red_sandstone_bricks": [
+            { "model": "minestrapp:half_slab_red_sandstone_bricks" }
+        ],
+        "half=top,variant=red_sandstone_bricks": [
+            { "model": "minestrapp:upper_slab_red_sandstone_bricks" }
+        ],
+        "half=bottom,variant=cold_sandstone": [
+            { "model": "minestrapp:half_slab_cold_sandstone" }
+        ],
+        "half=top,variant=cold_sandstone": [
+            { "model": "minestrapp:upper_slab_cold_sandstone" }
+        ],
+        "half=bottom,variant=cold_red_sandstone": [
+            { "model": "minestrapp:half_slab_cold_red_sandstone" }
+        ],
+        "half=top,variant=cold_red_sandstone": [
+            { "model": "minestrapp:upper_slab_cold_red_sandstone" }
+        ],
+        "half=bottom,variant=cold_sandstone_bricks": [
+            { "model": "minestrapp:half_slab_cold_sandstone_bricks" }
+        ],
+        "half=top,variant=cold_sandstone_bricks": [
+            { "model": "minestrapp:upper_slab_cold_sandstone_bricks" }
         ]
     }
 }

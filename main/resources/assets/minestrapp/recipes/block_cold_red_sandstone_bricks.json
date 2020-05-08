@@ -1,0 +1,18 @@
+{    
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "xx",
+        "xx"
+    ],
+    "key": {        
+        "x": {
+            "item": "minestrapp:m_sandstone",
+            "data": 7
+        }
+     },
+     "result": {
+        "item": "minestrapp:m_sandstone",
+        "count": 4,
+         "data": 9
+     }  
+}

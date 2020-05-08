@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.block.BlockMDoor;
+import minestrapp.block.BlockSawmill;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.item.MItemBlock;
 import minestrapp.block.util.BlockBase;
@@ -21,6 +22,7 @@ import minestrapp.item.ItemMBoat;
 import minestrapp.item.ItemMDoor;
 import minestrapp.item.ItemPBJ;
 import minestrapp.item.ItemReanimatedArm;
+import minestrapp.item.ItemSawblade;
 import minestrapp.item.ItemSeedBag;
 import minestrapp.item.ItemSieve;
 import minestrapp.item.ItemSmellingSalts;
@@ -43,7 +45,6 @@ import minestrapp.item.util.MItemsFood;
 import minestrapp.item.util.MItemsSeedFood;
 import minestrapp.item.util.MItemsSeeds;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -65,10 +66,12 @@ public class MItems
 	public static Item nothing;
 	
 	public static Item door_charwood;
+	public static Item door_palm;
 	
 	public static Item natural_ingredients;
 	public static Item dye;
 	public static Item sawdust;
+	public static Item bark;
 	public static Item mob_loot;
 	public static Item reanimated_arm;
 	public static Item effervexcense;
@@ -127,6 +130,10 @@ public class MItems
 	public static Item bedrock_axe;
 	public static Item bedrock_shovel;
 	public static Item bedrock_hoe;
+	public static Item adamantium_pickaxe;
+	public static Item adamantium_axe;
+	public static Item adamantium_shovel;
+	public static Item adamantium_hoe;
 	
 	public static Item gold_dagger;
 	public static Item gold_mace;
@@ -162,6 +169,9 @@ public class MItems
 	public static Item ice_sword;
 	public static Item ice_dagger;
 	public static Item ice_mace;
+	public static Item adamantium_sword;
+	public static Item adamantium_dagger;
+	public static Item adamantium_mace;
 	
 	public static Item grass_helm;
 	public static Item grass_chest;
@@ -205,6 +215,7 @@ public class MItems
 	public static Item boat_redwood;
 	public static Item boat_frozen_oak;
 	public static Item boat_charwood;
+	public static Item boat_palm;
 	public static Item seed_bag_empty;
 	public static Item seed_bag_filled;
 	public static Item sieve_copper;
@@ -213,6 +224,11 @@ public class MItems
 	public static Item sieve_archantine;
 	public static Item sieve_archantine_broken;
 	public static Item sieve_adamantium;
+	public static ItemSawblade saw_blade_copper;
+	public static ItemSawblade saw_blade_iron;
+	public static ItemSawblade saw_blade_bronze;
+	public static ItemSawblade saw_blade_steel;
+	public static ItemSawblade saw_blade_archantine;
 	public static Item hang_glider_wood;
 	public static Item hang_glider_steel;
 	public static Item hang_glider_dimensium;
@@ -378,6 +394,7 @@ public class MItems
 	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":blazium", 2, 960, 7.5F, 3F, 22);
 	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":glacierite", 3, 1400, 8F, 4F, 34);
 	public static final ToolMaterial BEDROCK = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bedrock", 4, 6244, 6F, 1.5F, 6);
+	public static final ToolMaterial ADAMANTIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":adamantium", 10, -1, 20F, 10F, 50);
 	
 	public static final ArmorMaterial ARMOR_GRASS = EnumHelper.addArmorMaterial("grass", Minestrapp5.MODID + ":grass", 3, new int[]{2, 3, 3, 2}, 18, SoundEvents.ITEM_ARMOR_EQIIP_ELYTRA, 0F);
 	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
@@ -394,11 +411,13 @@ public class MItems
 		register(nothing = new ItemBase("nothing").addDescription("Literally nothing. If you have this, you probably broke reality somehow."));
 		
 		register(door_charwood = new ItemMDoor(MBlocks.door_charwood).setCreativeTab(MTabs.utility));
+		register(door_palm = new ItemMDoor(MBlocks.door_palm).setCreativeTab(MTabs.utility));
 		
 		//0=Grass Fibers, 1=Mana Leaf, 2=Clutchthorn Fibers, 3=Clutchthorn Petal
 		register(natural_ingredients = new ItemMetaBase("m_natural_item", 4).setBurnTime(100, 0).setCreativeTab(MTabs.ingredients));
-		register(coconut_shell = new ItemBase("coconut_shell").setCreativeTab(MTabs.ingredients));
+		register(coconut_shell = new ItemBase("coconut_shell").setBurnTime(150).setCreativeTab(MTabs.ingredients));
 		register(sawdust = new ItemBase("sawdust").setBurnTime(50).setCreativeTab(MTabs.ingredients));
+		register(bark = new ItemBase("bark").setBurnTime(150).setCreativeTab(MTabs.ingredients));
 		//0=White, 1=Magenta, 2=Red, 3=Orange, 4=Gold, 5=Green, 6=Cyan, 7=Blue, 8=Purple
 		register(dye = new ItemMetaBase("m_dye", 9).setCreativeTab(MTabs.dye));
 		//0=Animal Bones, 1=Tallow, 2=Wing Sinew, 3=Horse Hide, 4=Pig Hide, 5=Wolf Hide, 6=Polar Bear Hide, 7=Sheep Hoof, 8=Spider Leg, 9=Mooshroom Hide, 10=Creeper Carapace, 11=Ghast Hide, 12=Skeletal Hand
@@ -417,12 +436,12 @@ public class MItems
 		//0=Red Rock, 1=Stone, 2=Coldstone, 3=Icestone, 4=Oceanstone, 5=Netherrack, 6=Endstone, 7=Copper, 8=Tin, 9=Iron, 10=Gold, 11=Torite, 12=Titanium, 13=Dimensium 14=Shimmering
 		register(chunks = new ItemMetaBase("m_chunks", 15).setCreativeTab(MTabs.minerals));
 		register(irradium = new ItemBase("irradium").setBurnTime(25600).setCreativeTab(MTabs.minerals));
-		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Glacierite, 6=Blazium, 7=Archantine, 8=Dimensium
-		register(nuggets = new ItemMetaBase("m_nugget", 9).setBurnTime(480, 6).setCreativeTab(MTabs.minerals));
-		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Archantine, 6=Glacierite, 7=Blazium, 8=Dimensium
-		register(ingots = new ItemMetaBase("m_ingot", 9).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
+		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Glacierite, 6=Blazium, 7=Archantine, 8=Dimensium, 9=Adamantium
+		register(nuggets = new ItemMetaBase("m_nugget", 10).setBurnTime(480, 6).setCreativeTab(MTabs.minerals));
+		//0=Copper, 1=Tin, 2=Bronze, 3=Steel, 4=Torite, 5=Archantine, 6=Glacierite, 7=Blazium, 8=Dimensium, 9=Adamantium
+		register(ingots = new ItemMetaBase("m_ingot", 10).setBurnTime(4800, 7).setBeaconPayment().setCreativeTab(MTabs.minerals));
 		//0=Tin, 1=Bronze, 2=Steel, 3=Meurodite, 4=Copper, 5=Gold, 6=Iron, 7=Torite, 8=Glacierite, 9=Blazium, 10=Diamond, 11=Archantine, 12=Dimensium
-		register(plating = new ItemMetaBase("m_plating", 13).setCreativeTab(MTabs.ingredients));
+		register(plating = new ItemMetaBase("m_plating", 13).setBurnTime(31200, 9).setCreativeTab(MTabs.ingredients));
 		register(salt = new ItemBase("salt").setCreativeTab(MTabs.food));
 		//We, are the crystal MItems.gems
 		//0=Sunstone, 1=Desert Quartz, 2=Rock Crystal, 3=Radiant Quartz, 4=Meurodite, 5=Blaze Shard, 6=Glacieric Ice Shard
@@ -441,6 +460,7 @@ public class MItems
 		register(boat_redwood = new ItemMBoat(EntityMBoat.Type.REDWOOD));
 		register(boat_frozen_oak = new ItemMBoat(EntityMBoat.Type.FROZEN_OAK));
 		register(boat_charwood = new ItemMBoat(EntityMBoat.Type.CHARWOOD));
+		register(boat_palm = new ItemMBoat(EntityMBoat.Type.PALM));
 		register(seed_bag_empty = new ItemSeedBag("seed_bag_empty", false));
 		register(seed_bag_filled = new ItemSeedBag("seed_bag_filled", true));
 		register(sieve_copper = new ItemSieve("copper_sieve", 32, new ItemStack(ingots, 1, 0)));
@@ -449,6 +469,11 @@ public class MItems
 		register(sieve_archantine_broken = new ItemBase("archantine_sieve_broken").setCreativeTab(MTabs.tools));
 		register(sieve_archantine = new ItemSieve("archantine_sieve", 512, new ItemStack(ingots, 1, 5), new ItemStack(sieve_archantine_broken)));
 		register(sieve_adamantium = new ItemSieve("adamantium_sieve").setCreativeTab(MTabs.tools));
+		register(saw_blade_copper = new ItemSawblade(BlockSawmill.EnumBladeType.COPPER));
+		register(saw_blade_iron = new ItemSawblade(BlockSawmill.EnumBladeType.IRON));
+		register(saw_blade_bronze = new ItemSawblade(BlockSawmill.EnumBladeType.BRONZE));
+		register(saw_blade_steel = new ItemSawblade(BlockSawmill.EnumBladeType.STEEL));
+		register(saw_blade_archantine = new ItemSawblade(BlockSawmill.EnumBladeType.ARCHANTINE));
 		register(hang_glider_wood = new ItemHangGlider("hang_glider_wood", 150, 0.75D, 0.03D, 1D, 1.05D).setCreativeTab(MTabs.tools));
 		register(hang_glider_steel = new ItemHangGlider("hang_glider_steel", 250, 0.65D, 0.015D, 1.06D, 1.115D).setCreativeTab(MTabs.tools));
 		register(hang_glider_dimensium = new ItemHangGlider("hang_glider_dimensium", 500, -0.5D, 0D, 1D, 1D).setCreativeTab(MTabs.tools));
@@ -470,25 +495,29 @@ public class MItems
 		register(meurodite_shovel = new MShovel(MEURODITE, "meurodite_shovel"));
 		register(meurodite_hoe = new MHoe(MEURODITE, "meurodite_hoe"));
 		register(torite_pickaxe = new MPickaxe(TORITE, "torite_pickaxe"));
-		register(torite_axe = new MAxe(TORITE, "torite_axe", 9.0F, -3.2F));
+		register(torite_axe = new MAxe(TORITE, "torite_axe", 9.0F, -3.02F));
 		register(torite_shovel = new MShovel(TORITE, "torite_shovel"));
 		register(torite_hoe = new MHoe(TORITE, "torite_hoe"));
 		register(titanium_pickaxe = new MPickaxe(TITANIUM, "titanium_pickaxe"));
-		register(titanium_axe = new MAxe(TITANIUM, "titanium_axe", 16.0F, -3.9F));
+		register(titanium_axe = new MAxe(TITANIUM, "titanium_axe", 16.0F, -2.9F));
 		register(titanium_shovel = new MShovel(TITANIUM, "titanium_shovel"));
 		register(titanium_hoe = new MHoe(TITANIUM, "titanium_hoe"));
 		register(fire_pickaxe = new MPickaxe(BLAZIUM, "fire_pickaxe"));
-		register(fire_axe = new MAxe(BLAZIUM, "fire_axe", 9.0F, -3.2F));
+		register(fire_axe = new MAxe(BLAZIUM, "fire_axe", 9.0F, -3.02F));
 		register(fire_shovel = new MShovel(BLAZIUM, "fire_shovel"));
 		register(fire_hoe = new MHoe(BLAZIUM, "fire_hoe"));
 		register(ice_pickaxe = new MPickaxe(GLACIERITE, "ice_pickaxe"));
-		register(ice_axe = new MAxe(GLACIERITE, "ice_axe", 11.0F, -3.4F));
+		register(ice_axe = new MAxe(GLACIERITE, "ice_axe", 11.0F, -3.02F));
 		register(ice_shovel = new MShovel(GLACIERITE, "ice_shovel"));
 		register(ice_hoe = new MHoe(GLACIERITE, "ice_hoe"));
 		register(bedrock_pickaxe = new MPickaxe(BEDROCK, "bedrock_pickaxe"));
 		register(bedrock_axe = new MAxe(BEDROCK, "bedrock_axe", 8.0F, -3.15F));
 		register(bedrock_shovel = new MShovel(BEDROCK, "bedrock_shovel"));
 		register(bedrock_hoe = new MHoe(BEDROCK, "bedrock_hoe"));
+		register(adamantium_pickaxe = new MPickaxe(ADAMANTIUM, "adamantium_pickaxe"));
+		register(adamantium_axe = new MAxe(ADAMANTIUM, "adamantium_axe", 20F, -2.8F));
+		register(adamantium_shovel = new MShovel(ADAMANTIUM, "adamantium_shovel"));
+		register(adamantium_hoe = new MHoe(ADAMANTIUM, "adamantium_hoe"));
 		
 		register(gold_dagger = new MDagger(Item.ToolMaterial.GOLD, "gold_dagger"));
 		register(gold_mace = new MMace(Item.ToolMaterial.GOLD, "gold_mace"));
@@ -524,6 +553,9 @@ public class MItems
 		register(ice_sword = new MSword(GLACIERITE, "ice_sword"));
 		register(ice_dagger = new MDagger(GLACIERITE, "ice_dagger"));
 		register(ice_mace = new MMace(GLACIERITE, "ice_mace"));
+		register(adamantium_sword = new MSword(ADAMANTIUM, "adamantium_sword"));
+		register(adamantium_dagger = new MDagger(ADAMANTIUM, "adamantium_dagger"));
+		register(adamantium_mace = new MMace(ADAMANTIUM, "adamantium_mace"));
 		
 		register(grass_helm = new MArmor(ARMOR_GRASS, 1, EntityEquipmentSlot.HEAD, "grass_helm"));
 		register(grass_chest = new MArmor(ARMOR_GRASS, 1, EntityEquipmentSlot.CHEST, "grass_chest"));
@@ -755,6 +787,7 @@ public class MItems
 		MBlocks.glacieric_ice_branch_7.setDropsItem(new ItemStack(MItems.gems, 1, 6), 1, 0, 0, true, true);
 		((BlockBase) MBlocks.heart_spot).setDropsItem(new ItemStack(heart_piece), 0, 10, 30, false, false);
 		((BlockBase) MBlocks.charwood_limb).setDropsItem(new ItemStack(MItems.charroot), 0, 0, 0, false, false);
+		((BlockBase) MBlocks.adamantium_nugget).setDropsItem(new ItemStack(nuggets, 1, 9), 0, 50, 100, false, false);
 		
 		((MItemBlock) Item.getItemFromBlock(MBlocks.barrel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.plate_weave)).setBurnTime(100);
@@ -772,6 +805,10 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.savanna_grass)).setBurnTime(50);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.planks)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.log)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_crown)).setBurnTime(600);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_crown_dead)).setBurnTime(600);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_fronds)).setBurnTime(100);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_fronds_dead)).setBurnTime(200);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.mossy_m_planks)).setBurnTime(400);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.fence)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.wood_slab_1)).setBurnTime(300);
@@ -784,12 +821,15 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_plank_panel)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_plank_stairs)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_plank_stairs)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_plank_stairs)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_plank_stairs)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.redwood_fence_gate)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.frozen_oak_fence_gate)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.charwood_fence_gate)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_fence_gate)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.block_mite_honey)).setBurnTime(12000);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_oak_wood)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_spruce_wood)).setBurnTime(300);
@@ -797,6 +837,10 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_jungle_wood)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_acacia_wood)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_dark_oak_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_redwood_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_frozen_oak_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_charwood_wood)).setBurnTime(300);
+		((MItemBlock) Item.getItemFromBlock(MBlocks.spike_palm_wood)).setBurnTime(300);
 		
 		
 		COPPER.setRepairItem(new ItemStack(ingots, 1, 0));
@@ -809,6 +853,7 @@ public class MItems
 		GLACIERITE.setRepairItem(new ItemStack(ingots, 1, 6));
 		BEDROCK.setRepairItem(new ItemStack(Blocks.BEDROCK));
 		
+		ARMOR_GRASS.setRepairItem(new ItemStack(coconut_shell));
 		ARMOR_TIN.setRepairItem(new ItemStack(ingots, 1, 1));
 		ARMOR_BRONZE.setRepairItem(new ItemStack(ingots, 1, 2));
 		ARMOR_STEEL.setRepairItem(new ItemStack(ingots, 1, 3));

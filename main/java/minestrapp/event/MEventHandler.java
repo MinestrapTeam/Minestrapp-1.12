@@ -156,6 +156,11 @@ public class MEventHandler
 	    	ResourceLocation observer = new ResourceLocation("minecraft:observer");
 	    	ResourceLocation cake = new ResourceLocation("minecraft:cake");
 	    	ResourceLocation leather = new ResourceLocation("minecraft:leather");
+	    	ResourceLocation sandstone = new ResourceLocation("minecraft:sandstone");
+	    	ResourceLocation red_sandstone = new ResourceLocation("minecraft:red_sandstone");
+	    	ResourceLocation magma = new ResourceLocation("minecraft:magma");
+	    	ResourceLocation fire_charge = new ResourceLocation("minecraft:fire_charge");
+	    	ResourceLocation ender_eye = new ResourceLocation("minecraft:ender_eye");
 	
 	    	IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) event.getRegistry();
 	        
@@ -192,6 +197,11 @@ public class MEventHandler
 	        modRegistry.remove(observer);
 	        modRegistry.remove(cake);
 	        modRegistry.remove(leather);
+	        modRegistry.remove(sandstone);
+	        modRegistry.remove(red_sandstone);
+	        modRegistry.remove(magma);
+	        modRegistry.remove(fire_charge);
+	        modRegistry.remove(ender_eye);
 		}
     }
 	

@@ -1,0 +1,22 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "x",
+        "i",
+        "i"
+    ],
+    "key": {
+        "i": {
+            "item": "minestrapp:m_tech_component",
+            "data": 11
+        },
+        "x": {
+            "item": "minestrapp:m_ingot",
+            "data": 9
+        }
+     },
+     "result": {
+        "item": "minestrapp:adamantium_shovel",
+        "data": 0
+     }  
+}

@@ -1,0 +1,21 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "nnn",
+        "npn",
+        "nnn"
+    ],
+    "key": {        
+        "n": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetCopper"
+        },
+        "p": {
+            "type": "forge:ore_dict",
+            "ore": "plateCopper"
+        }
+     },
+     "result": {
+        "item": "minestrapp:saw_blade_copper"
+     }  
+}

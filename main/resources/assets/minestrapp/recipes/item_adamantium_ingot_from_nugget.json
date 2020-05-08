@@ -1,0 +1,45 @@
+{    
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        },
+        {
+            "item": "minestrapp:m_nugget",
+            "data": 9
+        }
+     ],
+     "result": {
+        "item": "minestrapp:m_ingot",
+        "data": 9
+     }  
+}

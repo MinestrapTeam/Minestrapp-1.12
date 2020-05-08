@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "half=bottom,variant=cold_red_sandstone_bricks": [
+            { "model": "minestrapp:half_slab_cold_red_sandstone_bricks" }
+        ],
+        "half=top,variant=cold_red_sandstone_bricks": [
+            { "model": "minestrapp:upper_slab_cold_red_sandstone_bricks" }
+        ],
+        "half=bottom,variant=gilded_bricks": [
+            { "model": "minestrapp:half_slab_gilded_bricks" }
+        ],
+        "half=top,variant=gilded_bricks": [
+            { "model": "minestrapp:upper_slab_gilded_bricks" }
+        ]
+    }
+}

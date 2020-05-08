@@ -60,6 +60,7 @@ public class BlockCoconut extends BlockBaseNonSolid implements IGrowable
 		this.setTickRandomly(true);
 		this.setCreativeTab(MTabs.plant);
 		this.setRenderLayer(BlockRenderLayer.CUTOUT);
+		this.setFlammable(2, 5);
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

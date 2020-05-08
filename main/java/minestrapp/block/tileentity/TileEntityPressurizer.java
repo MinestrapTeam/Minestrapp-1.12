@@ -18,6 +18,7 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBoat;
+import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
@@ -262,10 +263,10 @@ public class TileEntityPressurizer extends TileEntityLockable implements ISidedI
 	
 	public void pressurizeItem()
 	{
-		ItemStack slot1 = (ItemStack)this.inventory.get(0);
-		ItemStack slot2 = (ItemStack)this.inventory.get(1);
-		ItemStack slot3 = (ItemStack)this.inventory.get(2);
-		ItemStack slot4 = (ItemStack)this.inventory.get(3);
+		ItemStack slot1 = (ItemStack)this.inventory.get(0).copy();
+		ItemStack slot2 = (ItemStack)this.inventory.get(1).copy();
+		ItemStack slot3 = (ItemStack)this.inventory.get(2).copy();
+		ItemStack slot4 = (ItemStack)this.inventory.get(3).copy();
 		
 		ItemStack result = PressurizerRecipes.instance().getPressurizingResult(slot1, slot2, slot3, slot4);
 		ItemStack output = (ItemStack)this.inventory.get(5);
@@ -288,7 +289,10 @@ public class TileEntityPressurizer extends TileEntityLockable implements ISidedI
 					if(ItemUtil.compareStacks(((ItemStack)this.inventory.get(slot)), ingredient) && ((ItemStack)this.inventory.get(slot)).getCount() >= ingredient.getCount())
 					{
 						matchedItems.add(ingredIndex);
-						((ItemStack)this.inventory.get(slot)).shrink(ingredient.getCount());
+						if(((ItemStack)this.inventory.get(slot)).getItem() instanceof ItemBucket)
+							this.inventory.set(slot, new ItemStack(Items.BUCKET));
+						else
+							((ItemStack)this.inventory.get(slot)).shrink(ingredient.getCount());
 						break;
 					}
 				}

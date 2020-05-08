@@ -8,6 +8,7 @@ import minestrapp.Minestrapp5;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityPressurizer;
 import minestrapp.block.util.BlockBase;
+import minestrapp.block.util.BlockBaseNonSolid;
 import minestrapp.gui.MGuiHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
@@ -28,6 +29,7 @@ import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -40,7 +42,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockPressurizer extends BlockBase implements ITileEntityProvider
+public class BlockPressurizer extends BlockBaseNonSolid implements ITileEntityProvider
 {	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool BURNING = PropertyBool.create("burning");
@@ -49,12 +51,13 @@ public class BlockPressurizer extends BlockBase implements ITileEntityProvider
 	{
 		super("pressurizer", Material.IRON, MapColor.SILVER, SoundType.STONE, 3F);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, Boolean.valueOf(false)));
+		this.setRenderLayer(BlockRenderLayer.CUTOUT);
 	}
 	
 	@Deprecated
     public int getLightValue(IBlockState state)
     {
-        return ((Boolean)state.getValue(BURNING)).booleanValue() ? 15 : 0;
+        return ((Boolean)state.getValue(BURNING)).booleanValue() ? 5 : 0;
     }
 	
 	@Override
@@ -211,17 +214,35 @@ public class BlockPressurizer extends BlockBase implements ITileEntityProvider
     {
         if (stateIn.getValue(BURNING) == Boolean.valueOf(true))
         {
-            EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
+        	int dir = rand.nextInt(4);
+            EnumFacing enumfacing = EnumFacing.NORTH;
+            
+            if(dir == 1)
+            	enumfacing = EnumFacing.SOUTH;
+            else if(dir == 2)
+            	enumfacing = EnumFacing.EAST;
+            else if(dir == 3)
+            	enumfacing = EnumFacing.WEST;
+            
             double d0 = (double)pos.getX() + 0.5D;
-            double d1 = (double)pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
+            double d1 = (double)pos.getY() + rand.nextDouble() * 3D / 16.0D;
             double d2 = (double)pos.getZ() + 0.5D;
             double d3 = 0.52D;
-            double d4 = rand.nextDouble() * 0.6D - 0.3D;
+            double d4 = rand.nextDouble() - 0.5D;
 
             if (rand.nextDouble() < 0.1D)
             {
                 worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
+            
+            if(rand.nextInt(10) < 5)
+            	worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0 - 0.41D, pos.getY() + 1.06D, d2 - 0.41D, 0.0D, 0.07D, 0.0D);
+            if(rand.nextInt(10) < 5)
+            	worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0 - 0.41D, pos.getY() + 1.06D, d2 + 0.41D, 0.0D, 0.07D, 0.0D);
+            if(rand.nextInt(10) < 5)
+            	worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0 + 0.41D, pos.getY() + 1.06D, d2 - 0.41D, 0.0D, 0.07D, 0.0D);
+            if(rand.nextInt(10) < 5)
+            	worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0 + 0.41D, pos.getY() + 1.06D, d2 + 0.41D, 0.0D, 0.07D, 0.0D);
 
             switch (enumfacing)
             {
@@ -230,16 +251,16 @@ public class BlockPressurizer extends BlockBase implements ITileEntityProvider
                     worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case EAST:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.50D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.50D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case NORTH:
                     worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
                     worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
                     break;
                 case SOUTH:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + 0.50D, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + 0.50D, 0.0D, 0.0D, 0.0D);
             }
         }
     }

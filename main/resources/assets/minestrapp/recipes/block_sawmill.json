@@ -1,0 +1,32 @@
+{    
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "tot",
+        "ldl",
+        "tct"
+    ],
+    "key": {        
+        "t": {
+            "type": "forge:ore_dict",
+            "ore": "ingotTorite"
+        },
+        "o": {
+            "item": "minecraft:observer"
+        },
+        "d": {
+            "item": "minestrapp:m_tech_component",
+            "data": 4
+        },
+        "l": {
+            "type": "forge:ore_dict",
+            "ore": "logWood"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "cobblestoneDeep"
+        }
+     },
+     "result": {
+        "item": "minestrapp:sawmill"
+     }  
+}

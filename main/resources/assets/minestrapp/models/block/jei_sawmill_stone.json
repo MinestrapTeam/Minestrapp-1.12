@@ -1,0 +1,35 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+    "parent": "block/cube_all",
+	"textures": {
+		"particle": "minestrapp:blocks/utility/sawmill/sawmill_side",
+		"texture": "minestrapp:blocks/utility/sawmill/sawmill_top",
+		"texture1": "minestrapp:blocks/utility/sawmill/sawmill_side",
+		"texture2": "minestrapp:blocks/utility/sawmill/sawmill_back_unpowered_active",
+		"texture3": "minestrapp:blocks/utility/sawmill/jei_blades_stone"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture2" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "PlaneX2",
+			"from": [ 0, 8, 7.999 ],
+			"to": [ 16, 24, 8 ],
+			"faces": {
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture3" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture3" }
+			}
+		}
+	]
+}

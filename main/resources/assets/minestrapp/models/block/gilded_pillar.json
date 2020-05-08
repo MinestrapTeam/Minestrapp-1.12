@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/stone/gilded_pillar_inside",
+        "top": "minestrapp:blocks/stone/gilded_pillar_inside",
+        "side": "minestrapp:blocks/stone/gilded_pillar_side"
+    }
+}

@@ -7,6 +7,7 @@ import minestrapp.MTabs;
 import minestrapp.Minestrapp5;
 import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -168,7 +169,12 @@ public abstract class BlockMiscStoneSlab2 extends BlockSlab implements IMetaBloc
     {
         SHIMMERSTONE_BRICKS(0, MapColor.SNOW, "shimmerstone_bricks", false),
         DESERT_QUARTZ(1, MapColor.SILVER_STAINED_HARDENED_CLAY, "desert_quartz", false),
-    	IRRADIANT_QUARTZ(2, MapColor.PINK, "irradiant_quartz", false);
+    	IRRADIANT_QUARTZ(2, MapColor.PINK, "irradiant_quartz", false),
+    	SANDSTONE_BRICKS(3, BlockSand.EnumType.SAND.getMapColor(), "sandstone_bricks", false),
+    	RED_SANDSTONE_BRICKS(4, BlockSand.EnumType.RED_SAND.getMapColor(), "red_sandstone_bricks", false),
+    	COLD_SANDSTONE(5, BlockColdSand.EnumType.SAND.getMapColor(), "cold_sandstone", false),
+    	COLD_RED_SANDSTONE(6, BlockColdSand.EnumType.RED_SAND.getMapColor(), "cold_red_sandstone", false),
+    	COLD_SANDSTONE_BRICKS(7, BlockColdSand.EnumType.SAND.getMapColor(), "cold_sandstone_bricks", false);
 
         private static final BlockMiscStoneSlab2.EnumType[] META_LOOKUP = new BlockMiscStoneSlab2.EnumType[values().length];
         private final int meta;

@@ -122,6 +122,7 @@ public class BlockPalmFronds extends BlockBaseNonSolid implements IShearable
 		this.setRenderLayer(BlockRenderLayer.CUTOUT_MIPPED);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TOP, Boolean.valueOf(true)).withProperty(UPWARD, Boolean.valueOf(false)));
 		this.setCreativeTab(MTabs.plant);
+		this.setFlammable(60, 30);
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess worldIn, BlockPos pos)

@@ -44,6 +44,7 @@ public class MConfig
 	public static boolean generateSoulOre;
 	public static boolean generateDimensium;
 	public static boolean generateHeartSpots;
+	public static boolean generateAdamantiumVaults;
 	
 	public static boolean generateClaySoil;
 	public static boolean generatePermafrost;
@@ -63,6 +64,7 @@ public class MConfig
 	public static boolean generateTundraGrass;
 	public static boolean generateBerryBushes;
 	public static boolean generateManaBushes;
+	public static boolean generatePalmTrees;
 	public static boolean generateGlowshrooms;
 	public static boolean generateInfectedShrooms;
 	public static boolean generateGlowMoss;
@@ -153,6 +155,8 @@ public class MConfig
 		registerProperty(propertyDimensiumGen, CATEGORY_WORLDGEN, "generate_dimensium");
 		Property propertyHeartSpotGen = config.get(CATEGORY_WORLDGEN, "generate_heart_spots", true);
 		registerProperty(propertyHeartSpotGen, CATEGORY_WORLDGEN, "generate_heart_spots");
+		Property propertyAdamantiumGen = config.get(CATEGORY_WORLDGEN, "generate_adamantium_vaults", true);
+		registerProperty(propertyAdamantiumGen, CATEGORY_WORLDGEN, "generate_adamantium_vaults");
 		
 		Property propertyClaySoilGen = config.get(CATEGORY_WORLDGEN, "generate_clay_soil", true);
 		registerProperty(propertyClaySoilGen, CATEGORY_WORLDGEN, "generate_clay_soil");
@@ -189,6 +193,8 @@ public class MConfig
 		registerProperty(propertyBerryBushGen, CATEGORY_WORLDGEN, "generate_berry_bushes");
 		Property propertyManaBushGen = config.get(CATEGORY_WORLDGEN, "generate_mana_bushes", true);
 		registerProperty(propertyManaBushGen, CATEGORY_WORLDGEN, "generate_mana_bushes");
+		Property propertyPalmTreeGen = config.get(CATEGORY_WORLDGEN, "generate_palm_trees", true);
+		registerProperty(propertyPalmTreeGen, CATEGORY_WORLDGEN, "generate_palm_trees");
 		Property propertyGlowshroomGen = config.get(CATEGORY_WORLDGEN, "generate_glowshrooms", true);
 		registerProperty(propertyGlowshroomGen, CATEGORY_WORLDGEN, "generate_glowshrooms");
 		Property propertyInfectedShroomGen = config.get(CATEGORY_WORLDGEN, "generate_infected_shrooms", true);
@@ -241,6 +247,7 @@ public class MConfig
 			generateSoulOre = propertySoulOreGen.getBoolean();
 			generateDimensium = propertyDimensiumGen.getBoolean();
 			generateHeartSpots = propertyHeartSpotGen.getBoolean();
+			generateAdamantiumVaults = propertyAdamantiumGen.getBoolean();
 			
 			generateClaySoil = propertyClaySoilGen.getBoolean();
 			generatePermafrost = propertyPermafrostGen.getBoolean();
@@ -260,6 +267,7 @@ public class MConfig
 			generateTundraGrass = propertyTundraGrassGen.getBoolean();
 			generateBerryBushes = propertyBerryBushGen.getBoolean();
 			generateManaBushes = propertyManaBushGen.getBoolean();
+			generatePalmTrees = propertyPalmTreeGen.getBoolean();
 			generateGlowshrooms = propertyGlowshroomGen.getBoolean();
 			generateInfectedShrooms = propertyInfectedShroomGen.getBoolean();
 			generateGlowMoss = propertyGlowMossGen.getBoolean();
@@ -293,6 +301,7 @@ public class MConfig
 		propertySoulOreGen.set(generateSoulOre);
 		propertyDimensiumGen.set(generateDimensium);
 		propertyHeartSpotGen.set(generateHeartSpots);
+		propertyAdamantiumGen.set(generateAdamantiumVaults);
 		
 		propertyClaySoilGen.set(generateClaySoil);
 		propertyPermafrostGen.set(generatePermafrost);
@@ -312,6 +321,7 @@ public class MConfig
 		propertyTundraGrassGen.set(generateTundraGrass);
 		propertyBerryBushGen.set(generateBerryBushes);
 		propertyManaBushGen.set(generateManaBushes);
+		propertyAdamantiumGen.set(generateAdamantiumVaults);
 		propertyGlowshroomGen.set(generateGlowshrooms);
 		propertyInfectedShroomGen.set(generateInfectedShrooms);
 		propertyGlowMossGen.set(generateGlowMoss);

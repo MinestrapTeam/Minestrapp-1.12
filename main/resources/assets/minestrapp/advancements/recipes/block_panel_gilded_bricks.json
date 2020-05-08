@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minestrapp:block_panel_gilded_bricks"
+    ]
+  },
+  "criteria": {
+    "has_gilded_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minestrapp:gilded_stone",
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minestrapp:block_panel_gilded_bricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gilded_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

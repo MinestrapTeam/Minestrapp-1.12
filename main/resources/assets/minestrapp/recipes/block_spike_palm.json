@@ -1,0 +1,26 @@
+{    
+    "type": "forge:ore_shaped",
+    "group": "spike",
+    "pattern": [
+        " i ",
+        "ipi",
+        "pbp"
+    ],
+    "key": {        
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "dustWood"
+        },
+        "p": {
+            "item": "m_planks",
+            "data": 3
+        },
+        "b": {
+            "item": "m_log",
+            "data": 3
+        }
+     },
+     "result": {
+        "item": "minestrapp:spike_palm"
+     }  
+}
