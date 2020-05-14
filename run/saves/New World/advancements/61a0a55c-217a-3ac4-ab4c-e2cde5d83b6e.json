@@ -1,53 +1,7 @@
 {
-  "minestrapp:recipes/block_diorite_bricks": {
-    "criteria": {
-      "has_diorite": "2020-05-13 19:37:27 -0400"
-    },
-    "done": true
-  },
-  "minestrapp:recipes/block_chiseled_coldstone": {
-    "criteria": {
-      "has_coldstone": "2020-05-13 19:37:29 -0400"
-    },
-    "done": true
-  },
-  "minestrapp:recipes/block_coldstone_bricks": {
-    "criteria": {
-      "has_coldstone": "2020-05-13 19:37:29 -0400"
-    },
-    "done": true
-  },
-  "minestrapp:recipes/block_coldstone_slab": {
-    "criteria": {
-      "has_coldstone": "2020-05-13 19:37:29 -0400"
-    },
-    "done": true
-  },
-  "minestrapp:story/masonry": {
-    "criteria": {
-      "stone_coldstone": "2020-05-13 19:37:29 -0400",
-      "diorite": "2020-05-13 19:37:27 -0400"
-    },
-    "done": false
-  },
-  "minestrapp:recipes/block_panel_coldstone": {
-    "criteria": {
-      "has_block": "2020-05-13 19:37:29 -0400"
-    },
-    "done": true
-  },
-  "minestrapp:recipes/block_polished_diorite": {
-    "criteria": {
-      "has_diorite": "2020-05-13 19:37:27 -0400"
-    },
-    "done": true
-  },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "taiga": "2020-05-13 19:36:37 -0400",
-      "ocean": "2020-05-13 19:37:23 -0400",
-      "river": "2020-05-13 19:37:17 -0400",
-      "stone_beach": "2020-05-13 19:37:21 -0400"
+      "taiga": "2020-05-13 22:53:30 -0400"
     },
     "done": false
   }

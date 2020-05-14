@@ -1829,3 +1829,6 @@ jei.sieve.name=Sieving
 jei.pressurizing.name=Pressurizing
 jei.right-click.name=In-World Block Interactions
 jei.sawmill.name=Milling
+
+material.meurodite.name=Meurodite
+fluid.tconstruct.meurodite.name=Meurodite
