@@ -11,7 +11,7 @@ public class TraitMeurodite extends AbstractTrait
 {
     public TraitMeurodite()
     {
-        super("meurodite", TextFormatting.GRAY);
+        super("meurodite", TextFormatting.DARK_BLUE);
     }
 
     @Override
