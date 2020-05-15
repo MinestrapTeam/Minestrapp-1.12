@@ -1,12 +1,10 @@
 package minestrapp;
 
+import minestrapp.compat.CompatAbstract;
+import minestrapp.compat.MinestrappCompat;
 import minestrapp.config.MConfig;
 import minestrapp.proxy.CommonProxy;
 
-import minestrapp.tconstruct.TConstructCompat;
-import net.minecraft.init.Blocks;
-import net.minecraftforge.client.model.obj.OBJLoader;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -16,7 +14,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import java.util.ArrayList;
 
 @Mod(modid = Minestrapp5.MODID, name = Minestrapp5.NAME, version = Minestrapp5.VERSION, guiFactory = "minestrapp.config.MConfigGUIFactory", useMetadata = true)
 public class Minestrapp5
@@ -24,6 +23,8 @@ public class Minestrapp5
     public static final String MODID = "minestrapp";
     public static final String NAME = "Minestrappolation";
     public static final String VERSION = "5.7.0";
+
+    ArrayList<CompatAbstract> plugins;
     
     @SidedProxy(clientSide = "minestrapp.proxy.ClientProxy", serverSide = "minestrapp.proxy.CommonProxy")
     public static CommonProxy proxy;
@@ -42,20 +43,25 @@ public class Minestrapp5
     	proxy.preInit(event);
     	MConfig.preInit();
     	MConfig.clientPreInit();
-    	if(Loader.isModLoaded("tconstruct"))
-    	{
-            try
+        MinestrappCompat.registerPlugins();
+        plugins = MinestrappCompat.getPlugins();
+        for(CompatAbstract plugin : plugins)
+        {
+            if(Loader.isModLoaded(plugin.getModid()))
             {
-                TConstructCompat.preInit();
-            } catch (Exception e)
+                try
+                {
+                    plugin.preInit();
+                } catch (Exception e)
+                {
+                    //log
+                    e.printStackTrace();
+                }
+            }
+            else
             {
                 //log
-                e.printStackTrace();
             }
-        }
-    	else
-        {
-    	    //log
         }
     }
     
@@ -63,20 +69,23 @@ public class Minestrapp5
     public void init(FMLInitializationEvent event)
     {
     	proxy.init(event);
-        if(Loader.isModLoaded("tconstruct"))
+        for(CompatAbstract plugin : plugins)
         {
-            try
+            if(Loader.isModLoaded(plugin.getModid()))
             {
-                TConstructCompat.init();
-            } catch (Exception e)
+                try
+                {
+                    plugin.init();
+                } catch (Exception e)
+                {
+                    //log
+                    e.printStackTrace();
+                }
+            }
+            else
             {
                 //log
-                e.printStackTrace();
             }
-        }
-        else
-        {
-            //log
         }
     }
     
@@ -84,5 +93,23 @@ public class Minestrapp5
     public void postInit(FMLPostInitializationEvent event)
     {
     	proxy.postInit(event);
+        for(CompatAbstract plugin : plugins)
+        {
+            if(Loader.isModLoaded(plugin.getModid()))
+            {
+                try
+                {
+                    plugin.postInit();
+                } catch (Exception e)
+                {
+                    //log
+                    e.printStackTrace();
+                }
+            }
+            else
+            {
+                //log
+            }
+        }
     }
 }
