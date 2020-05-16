@@ -1,168 +1,405 @@
-[22:52:37] [main/INFO]: username: dom
-[22:52:37] [main/INFO]: Extra: []
-[22:52:37] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/dport/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --username, dom, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[22:52:37] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:52:37] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:52:37] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[22:52:37] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:52:37] [main/INFO]: Forge Mod Loader version 14.23.5.2847 for Minecraft 1.12.2 loading
-[22:52:37] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_181\jre
-[22:52:37] [main/ERROR]: Apache Maven library folder was not in the format expected. Using default libraries directory.
-[22:52:37] [main/ERROR]: Full: C:\Users\dport\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
-[22:52:37] [main/ERROR]: Trimmed: c:/users/dport/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
-[22:52:37] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[22:52:37] [main/INFO]: Detected deobfuscated environment, loading log configs for colored console logs.
-[22:52:37] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugininecraftFormatting
-[22:52:37] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugininecraftFormatting
-[22:52:37] [main/INFO] [FML]: Searching D:\Projects\Modding Dev\Minestrapp-1.12\run\.\mods for modsinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweakerinecraftFormatting
-[22:52:37] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugininecraftFormatting
-[22:52:37] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugininecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweakerinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweakerinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
-[22:52:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapperinecraftFormatting
-[22:52:39] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thinginecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapperinecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweakerinecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweakerinecraftFormatting
-[22:52:39] [main/INFO] [GradleStart]: Remapping AccessTransformer rules...inecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweakerinecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweakerinecraftFormatting
-[22:52:39] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}inecraftFormatting
-[22:52:40] [Client thread/INFO] [net.minecraft.client.Minecraft]: Setting user: dominecraftFormatting
-[22:52:42] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:inecraftFormatting
-[22:52:42] [Client thread/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4inecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: -- System Details --
+[21:14:44] [main/INFO]: username: dom
+[21:14:44] [main/INFO]: Extra: []
+[21:14:44] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/dport/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --username, dom, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[21:14:44] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[21:14:44] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[21:14:44] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[21:14:44] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[21:14:44] [main/INFO]: Forge Mod Loader version 14.23.5.2847 for Minecraft 1.12.2 loading
+[21:14:44] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_181\jre
+[21:14:44] [main/ERROR]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[21:14:44] [main/ERROR]: Full: C:\Users\dport\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[21:14:44] [main/ERROR]: Trimmed: c:/users/dport/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[21:14:44] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[21:14:44] [main/INFO]: Detected deobfuscated environment, loading log configs for colored console logs.
+[21:14:45] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugininecraftFormatting
+[21:14:45] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugininecraftFormatting
+[21:14:45] [main/INFO] [FML]: Searching D:\Projects\Modding Dev\Minestrapp-1.12\run\.\mods for modsinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweakerinecraftFormatting
+[21:14:45] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugininecraftFormatting
+[21:14:45] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugininecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweakerinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweakerinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweakerinecraftFormatting
+[21:14:45] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapperinecraftFormatting
+[21:14:46] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thinginecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapperinecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweakerinecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweakerinecraftFormatting
+[21:14:46] [main/INFO] [GradleStart]: Remapping AccessTransformer rules...inecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweakerinecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweakerinecraftFormatting
+[21:14:46] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}inecraftFormatting
+[21:14:47] [Client thread/INFO] [net.minecraft.client.Minecraft]: Setting user: dominecraftFormatting
+[21:14:49] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:inecraftFormatting
+[21:14:49] [Client thread/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4inecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: -- System Details --
 Details:
 	Minecraft Version: 1.12.2
 	Operating System: Windows 10 (amd64) version 10.0
 	Java Version: 1.8.0_181, Oracle Corporation
 	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 258712064 bytes (246 MB) / 591396864 bytes (564 MB) up to 3801088000 bytes (3625 MB)
+	Memory: 265503208 bytes (253 MB) / 590872576 bytes (563 MB) up to 3801088000 bytes (3625 MB)
 	JVM Flags: 0 total; 
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	Loaded coremods (and transformers): 
 	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 445.87' Renderer: 'GeForce GTX 970/PCIe/SSE2'inecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: MinecraftForge v14.23.5.2847 InitializedinecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.inecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...inecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: Replaced 1227 ore ingredientsinecraftFormatting
-[22:52:43] [Client thread/INFO] [FML]: Searching D:\Projects\Modding Dev\Minestrapp-1.12\run\.\mods for modsinecraftFormatting
-[22:52:45] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 68400200 nanosinecraftFormatting
-[22:52:45] [Client thread/INFO] [FML]: Forge Mod Loader has identified 8 mods to loadinecraftFormatting
-[22:52:45] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, minestrapp, jei, mantle, tconstruct] at CLIENTinecraftFormatting
-[22:52:45] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, minestrapp, jei, mantle, tconstruct] at SERVERinecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse chiselIntegration; missing dependency: chiselinecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse chiselsandbitsIntegration; missing dependency: chiselsandbitsinecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse craftingtweaksIntegration; missing dependency: craftingtweaksinecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse wailaIntegration; missing dependency: wailainecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse theoneprobeIntegration; missing dependency: theoneprobeinecraftFormatting
-[22:52:46] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse quarkIntegration; missing dependency: quarkinecraftFormatting
-[22:52:46] [Client thread/INFO] [tconstruct]: Preparing to take over the worldinecraftFormatting
-[22:52:47] [Client thread/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Minestrappolation 5, FMLFileResourcePack:Just Enough Items, FMLFileResourcePack:Mantle, FMLFileResourcePack:Tinkers' ConstructinecraftFormatting
-[22:52:47] [Client thread/INFO] [FML]: Processing ObjectHolder annotationsinecraftFormatting
-[22:52:47] [Client thread/INFO] [FML]: Found 1169 ObjectHolder annotationsinecraftFormatting
-[22:52:47] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotationsinecraftFormatting
-[22:52:47] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotationsinecraftFormatting
-[22:52:47] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0inecraftFormatting
-[22:52:47] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.jsoninecraftFormatting
-[22:52:47] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2854inecraftFormatting
-[22:52:48] [Client thread/INFO] [FML]: OBJLoader: Domain minestrapp has been added.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.table`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.craftingstation`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.stenciltable`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.partbuilder`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.patternchest`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.partchest`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.toolstation`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.toolforge`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_controller`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_component`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.tank`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.faucet`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.channel`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.casting_table`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.casting_basin`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_drain`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.seared_furnace`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:48] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.tinker_tank`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:49] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.item_rack`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:49] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.drying_rack`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:49] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.wooden_hopper`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:49] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.slime_channel`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Injecting itemstacksinecraftFormatting
-[22:52:49] [Client thread/INFO] [FML]: Itemstack injection completeinecraftFormatting
-[22:52:52] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...inecraftFormatting
-[22:52:52] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenALinecraftFormatting
-[22:52:52] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)inecraftFormatting
-[22:52:53] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.inecraftFormatting
-[22:52:53] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine startedinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/arrow.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/arrow_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/arrow_shaft.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/axe_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/battlesign.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/binding.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/bolt.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:parts/bolt_core.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/bow_limb.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/bow_string.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/broad_axe_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/broadsword.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/cleaver.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/cross_guard.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/crossbow.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/excavator.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/excavator_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/fletching.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/frypan.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/hammer.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/hammer_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/hand_guard.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/hatchet.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/kama.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/kama_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/knife_blade.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/large_plate.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/large_sword_blade.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/longbow.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/longsword.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/lumberaxe.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/mattock.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:moms_spaghetti.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/pan_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/pick_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/pickaxe.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/rapier.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/scythe.tcon#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/scythe_head.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/shard.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sharpening_kit.tmat#inventoryinecraftFormatting
-[22:53:02] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shortbow.tcon#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shovel.tcon#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/shovel_head.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shuriken.tcon#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sign_head.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sword_blade.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tool_rod.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tough_binding.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tough_tool_rod.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/wide_guard.tmat#inventoryinecraftFormatting
-[22:53:03] [Client thread/INFO] [FML]: Max texture size: 16384inecraftFormatting
-[22:53:05] [Client thread/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 2048x1024 textures-atlasinecraftFormatting
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_misc_stone_slab_3_double#inventory for item "minestrapp:m_misc_stone_slab_3_double", normal location exception: inecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: MinecraftForge v14.23.5.2847 InitializedinecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.inecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...inecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: Replaced 1227 ore ingredientsinecraftFormatting
+[21:14:50] [Client thread/INFO] [FML]: Searching D:\Projects\Modding Dev\Minestrapp-1.12\run\.\mods for modsinecraftFormatting
+[21:14:52] [Client thread/INFO] [FML]: Forge Mod Loader has identified 8 mods to loadinecraftFormatting
+[21:14:52] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 80710900 nanosinecraftFormatting
+[21:14:52] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, minestrapp, jei, mantle, tconstruct] at CLIENTinecraftFormatting
+[21:14:52] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, minestrapp, jei, mantle, tconstruct] at SERVERinecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse chiselIntegration; missing dependency: chiselinecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse chiselsandbitsIntegration; missing dependency: chiselsandbitsinecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse craftingtweaksIntegration; missing dependency: craftingtweaksinecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse wailaIntegration; missing dependency: wailainecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse theoneprobeIntegration; missing dependency: theoneprobeinecraftFormatting
+[21:14:53] [Client thread/INFO] [Pulsar-tconstruct]: Skipping Pulse quarkIntegration; missing dependency: quarkinecraftFormatting
+[21:14:53] [Client thread/INFO] [tconstruct]: Preparing to take over the worldinecraftFormatting
+[21:14:54] [Client thread/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Minestrappolation 5, FMLFileResourcePack:Just Enough Items, FMLFileResourcePack:Mantle, FMLFileResourcePack:Tinkers' ConstructinecraftFormatting
+[21:14:54] [Client thread/INFO] [FML]: Processing ObjectHolder annotationsinecraftFormatting
+[21:14:54] [Client thread/INFO] [FML]: Found 1169 ObjectHolder annotationsinecraftFormatting
+[21:14:54] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotationsinecraftFormatting
+[21:14:54] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotationsinecraftFormatting
+[21:14:54] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0inecraftFormatting
+[21:14:54] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.jsoninecraftFormatting
+[21:14:54] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2854inecraftFormatting
+[21:14:55] [Client thread/INFO] [FML]: OBJLoader: Domain minestrapp has been added.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_meurodite`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_torite`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_glacierite`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_blaze`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_blazium`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_archantine`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.table`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.craftingstation`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.stenciltable`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.partbuilder`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.patternchest`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.partchest`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.toolstation`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.toolforge`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_controller`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_component`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.tank`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.faucet`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.channel`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.casting_table`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.casting_basin`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.smeltery_drain`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.seared_furnace`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.tinker_tank`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.item_rack`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.drying_rack`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.wooden_hopper`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `tconstruct.slime_channel`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:14:55] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:14:55] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Injecting itemstacksinecraftFormatting
+[21:14:56] [Client thread/INFO] [FML]: Itemstack injection completeinecraftFormatting
+[21:14:59] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...inecraftFormatting
+[21:14:59] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenALinecraftFormatting
+[21:14:59] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)inecraftFormatting
+[21:14:59] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.inecraftFormatting
+[21:14:59] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine startedinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_archantine' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_blazium' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_glacierite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_meurodite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:04] [Client thread/FATAL] [FML]: fluid 'molten_torite' not foundinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/arrow.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/arrow_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/arrow_shaft.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/axe_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/battlesign.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/binding.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/bolt.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:parts/bolt_core.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/bow_limb.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/bow_string.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/broad_axe_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/broadsword.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/cleaver.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/cross_guard.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/crossbow.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/excavator.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/excavator_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/fletching.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/frypan.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/hammer.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/hammer_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/hand_guard.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/hatchet.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/kama.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/kama_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/knife_blade.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/large_plate.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/large_sword_blade.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/longbow.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/longsword.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/lumberaxe.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/mattock.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:moms_spaghetti.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/pan_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/pick_head.tmat#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/pickaxe.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/rapier.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/scythe.tcon#inventoryinecraftFormatting
+[21:15:07] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/scythe_head.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/shard.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sharpening_kit.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shortbow.tcon#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shovel.tcon#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/shovel_head.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load multimodel tconstruct:tools/shuriken.tcon#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sign_head.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/sword_blade.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tool_rod.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tough_binding.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/tough_tool_rod.tmat#inventoryinecraftFormatting
+[21:15:08] [Client thread/ERROR] [tconstruct-API]: Could not load material model tconstruct:parts/wide_guard.tmat#inventoryinecraftFormatting
+[21:15:10] [Client thread/INFO] [FML]: Max texture size: 16384inecraftFormatting
+[21:15:12] [Client thread/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 2048x1024 textures-atlasinecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant tconstruct:molten_blaze#level=11 for blockstate "tconstruct:molten_blaze[level=11]"inecraftFormatting
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model tconstruct:molten_blaze#level=11 with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:235) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:153) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:223) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:150) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:121) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:378) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:83) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
+	... 21 more
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading blockstate for the variant tconstruct:molten_blaze#level=11: inecraftFormatting
+java.lang.Exception: Could not load model definition for variant tconstruct:molten_blaze
+	at net.minecraftforge.client.model.ModelLoader.getModelBlockDefinition(ModelLoader.java:269) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:121) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:223) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:150) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:121) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:378) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: java.lang.RuntimeException: Encountered an exception when loading model definition of model tconstruct:blockstates/molten_blaze.json
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadMultipartMBD(ModelBakery.java:228) ~[ModelBakery.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:208) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.getModelBlockDefinition(ModelLoader.java:265) ~[ModelLoader.class:?]
+	... 20 more
+Caused by: java.io.FileNotFoundException: tconstruct:blockstates/molten_blaze.json
+	at net.minecraft.client.resources.FallbackResourceManager.getAllResources(FallbackResourceManager.java:104) ~[FallbackResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.getAllResources(SimpleReloadableResourceManager.java:79) ~[SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadMultipartMBD(ModelBakery.java:221) ~[ModelBakery.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:208) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.getModelBlockDefinition(ModelLoader.java:265) ~[ModelLoader.class:?]
+	... 20 more
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant tconstruct:molten_blaze#level=12 for blockstate "tconstruct:molten_blaze[level=12]"inecraftFormatting
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model tconstruct:molten_blaze#level=12 with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:235) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:153) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:223) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:150) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:121) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:378) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:83) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
+	... 21 more
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant tconstruct:molten_blaze#level=10 for blockstate "tconstruct:molten_blaze[level=10]"inecraftFormatting
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model tconstruct:molten_blaze#level=10 with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:235) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:153) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:223) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:150) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:121) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:378) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:83) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
+	... 21 more
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant tconstruct:molten_blaze#level=15 for blockstate "tconstruct:molten_blaze[level=15]"inecraftFormatting
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model tconstruct:molten_blaze#level=15 with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:235) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:153) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:223) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:150) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:121) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:378) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_181]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:83) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
+	... 21 more
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_misc_stone_slab_3_double#inventory for item "minestrapp:m_misc_stone_slab_3_double", normal location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:item/m_misc_stone_slab_3_double with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -193,7 +430,7 @@ Caused by: java.io.FileNotFoundException: minestrapp:models/item/m_misc_stone_sl
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_misc_stone_slab_3_double#inventory for item "minestrapp:m_misc_stone_slab_3_double", blockstate location exception: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_misc_stone_slab_3_double#inventory for item "minestrapp:m_misc_stone_slab_3_double", blockstate location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:m_misc_stone_slab_3_double#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -221,7 +458,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_frozen_oak#inventory for item "minestrapp:m_leaves", normal location exception: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_frozen_oak#inventory for item "minestrapp:m_leaves", normal location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:item/m_leaves_frozen_oak with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -252,7 +489,7 @@ Caused by: java.io.FileNotFoundException: minestrapp:models/item/m_leaves_frozen
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_frozen_oak#inventory for item "minestrapp:m_leaves", blockstate location exception: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_frozen_oak#inventory for item "minestrapp:m_leaves", blockstate location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:m_leaves_frozen_oak#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -280,7 +517,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:hacky_jei_fix_sawmill_all#normal for blockstate "minestrapp:hacky_jei_fix_sawmill_all"inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:hacky_jei_fix_sawmill_all#normal for blockstate "minestrapp:hacky_jei_fix_sawmill_all"inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:hacky_jei_fix_sawmill_all#normal with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:235) ~[ModelLoader.class:?]
@@ -309,7 +546,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 21 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading blockstate for the variant minestrapp:hacky_jei_fix_sawmill_all#normal: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading blockstate for the variant minestrapp:hacky_jei_fix_sawmill_all#normal: inecraftFormatting
 java.lang.Exception: Could not load model definition for variant minestrapp:hacky_jei_fix_sawmill_all
 	at net.minecraftforge.client.model.ModelLoader.getModelBlockDefinition(ModelLoader.java:269) ~[ModelLoader.class:?]
 	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:121) ~[ModelBakery.class:?]
@@ -344,7 +581,7 @@ Caused by: java.io.FileNotFoundException: minestrapp:blockstates/hacky_jei_fix_s
 	at net.minecraft.client.renderer.block.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:208) ~[ModelBakery.class:?]
 	at net.minecraftforge.client.model.ModelLoader.getModelBlockDefinition(ModelLoader.java:265) ~[ModelLoader.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_redwood#inventory for item "minestrapp:m_leaves", normal location exception: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_redwood#inventory for item "minestrapp:m_leaves", normal location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:item/m_leaves_redwood with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -375,7 +612,7 @@ Caused by: java.io.FileNotFoundException: minestrapp:models/item/m_leaves_redwoo
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_redwood#inventory for item "minestrapp:m_leaves", blockstate location exception: inecraftFormatting
+[21:15:15] [Client thread/ERROR] [FML]: Exception loading model for variant minestrapp:m_leaves_redwood#inventory for item "minestrapp:m_leaves", blockstate location exception: inecraftFormatting
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minestrapp:m_leaves_redwood#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -403,60 +640,58 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:53:06] [Client thread/FATAL] [FML]: Suppressed additional 2 model loading errors for domain minestrappinecraftFormatting
-[22:53:08] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `slime`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:53:08] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:53:08] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:53:08] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `tconstruct` for name `molten_meurodite`, expected `minestrapp`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
-[22:53:08] [Client thread/INFO] [jei]: Created: 256x128 textures-atlasinecraftFormatting
-[22:53:08] [Client thread/INFO] [FML]: Injecting itemstacksinecraftFormatting
-[22:53:08] [Client thread/INFO] [FML]: Itemstack injection completeinecraftFormatting
-[22:53:08] [Client thread/INFO] [tconstruct-TinkerSmeltery]: Started adding oredict melting recipesinecraftFormatting
-[22:53:08] [Client thread/INFO] [tconstruct-TinkerSmeltery]: Oredict melting recipes finished in 169.1474 msinecraftFormatting
-[22:53:08] [Client thread/INFO] [jei]: Starting JEI...inecraftFormatting
-[22:53:08] [Client thread/INFO] [jei]: Registering recipe categories...inecraftFormatting
-[22:53:08] [Client thread/INFO] [jei]: Registering recipe categories took 38.71 msinecraftFormatting
-[22:53:08] [Client thread/INFO] [jei]: Registering mod plugins...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Registering mod plugins took 212.6 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building recipe registry...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building recipe registry took 119.6 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building ingredient list...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building ingredient list took 34.37 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building ingredient filter...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building ingredient filter took 258.4 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building bookmarks...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building bookmarks took 4.023 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building runtime...inecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Building runtime took 124.5 msinecraftFormatting
-[22:53:09] [Client thread/INFO] [jei]: Starting JEI took 990.8 msinecraftFormatting
-[22:53:10] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 8 modsinecraftFormatting
-[22:53:10] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:inecraftFormatting
-[22:53:10] [Client thread/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loadedinecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: The following texture errors were found.inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: ==================================================inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN minestrappinecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain minestrapp is missing 1 textureinecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain minestrapp has 1 location:inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod minestrapp resources at D:\Projects\Modding Dev\Minestrapp-fixed\production\Minestrapp-1.12.maininecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain minestrapp are:inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/decor/wax_black.pnginecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain minestrappinecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: ==================================================inecraftFormatting
-[22:53:10] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=inecraftFormatting
-[22:53:10] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session idinecraftFormatting
-[22:53:15] [Client thread/INFO] [net.minecraft.world.storage.SaveFormatOld]: Deleting level New WorldinecraftFormatting
-[22:53:15] [Client thread/INFO] [net.minecraft.world.storage.SaveFormatOld]: Attempt 1...inecraftFormatting
-[22:53:18] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2inecraftFormatting
-[22:53:18] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypairinecraftFormatting
-[22:53:18] [Server thread/INFO] [FML]: Injecting existing registry data into this server instanceinecraftFormatting
-[22:53:18] [Server thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:53:18] [Server thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:53:19] [Server thread/INFO] [FML]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@7583da10)inecraftFormatting
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_shovelinecraftFormatting
+[21:15:15] [Client thread/FATAL] [FML]: Suppressed additional 11 model loading errors for domain tconstructinecraftFormatting
+[21:15:15] [Client thread/FATAL] [FML]: Suppressed additional 2 model loading errors for domain minestrappinecraftFormatting
+[21:15:16] [Client thread/WARN] [FML]: Potentially Dangerous alternative prefix `minecraft` for name `slime`, expected `tconstruct`. This could be a intended override, but in most cases indicates a broken mod.inecraftFormatting
+[21:15:16] [Client thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:15:16] [Client thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:15:17] [Client thread/INFO] [jei]: Created: 256x128 textures-atlasinecraftFormatting
+[21:15:17] [Client thread/INFO] [FML]: Injecting itemstacksinecraftFormatting
+[21:15:17] [Client thread/INFO] [FML]: Itemstack injection completeinecraftFormatting
+[21:15:17] [Client thread/INFO] [tconstruct-TinkerSmeltery]: Started adding oredict melting recipesinecraftFormatting
+[21:15:17] [Client thread/INFO] [tconstruct-TinkerSmeltery]: Oredict melting recipes finished in 318.806 msinecraftFormatting
+[21:15:17] [Client thread/INFO] [jei]: Starting JEI...inecraftFormatting
+[21:15:17] [Client thread/INFO] [jei]: Registering recipe categories...inecraftFormatting
+[21:15:17] [Client thread/INFO] [jei]: Registering recipe categories took 47.91 msinecraftFormatting
+[21:15:17] [Client thread/INFO] [jei]: Registering mod plugins...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Registering mod plugins took 241.7 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building recipe registry...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building recipe registry took 122.8 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building ingredient list...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building ingredient list took 59.14 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building ingredient filter...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building ingredient filter took 288.4 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building bookmarks...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building bookmarks took 3.994 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building runtime...inecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Building runtime took 88.82 msinecraftFormatting
+[21:15:18] [Client thread/INFO] [jei]: Starting JEI took 1.106 sinecraftFormatting
+[21:15:19] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 8 modsinecraftFormatting
+[21:15:19] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:inecraftFormatting
+[21:15:19] [Client thread/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loadedinecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: The following texture errors were found.inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: ==================================================inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:   DOMAIN minestrappinecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: --------------------------------------------------inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:   domain minestrapp is missing 1 textureinecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     domain minestrapp has 1 location:inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:       mod minestrapp resources at D:\Projects\Modding Dev\Minestrapp-fixed\production\Minestrapp-1.12.maininecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     The missing resources for domain minestrapp are:inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:       textures/blocks/decor/wax_black.pnginecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: -------------------------inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]:     No other errors exist for domain minestrappinecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: ==================================================inecraftFormatting
+[21:15:19] [Client thread/ERROR] [FML.TEXTURE_ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=inecraftFormatting
+[21:15:19] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session idinecraftFormatting
+[21:15:25] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2inecraftFormatting
+[21:15:25] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypairinecraftFormatting
+[21:15:25] [Server thread/INFO] [FML]: Injecting existing registry data into this server instanceinecraftFormatting
+[21:15:25] [Server thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:15:25] [Server thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:15:25] [Server thread/INFO] [FML]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@5ba0b4f0)inecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_shovelinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_shovel'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -480,7 +715,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_shovel'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_pickaxeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_pickaxeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_pickaxe'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -504,7 +739,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_pickaxe'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_hoeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_hoeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_hoe'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -528,7 +763,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_hoe'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_axeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/tools/diamond_axeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_axe'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -552,7 +787,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_axe'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/redstone_blockinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/redstone_blockinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:redstone_block'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -576,7 +811,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:redstone_block'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/observerinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/observerinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:observer'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -600,7 +835,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:observer'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/hopperinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/hopperinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:hopper'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -624,7 +859,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:hopper'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/daylight_detectorinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/daylight_detectorinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:daylight_detector'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -648,7 +883,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:daylight_detector
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/comparatorinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/comparatorinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:comparator'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -672,7 +907,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:comparator'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/leatherinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/leatherinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -696,7 +931,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/fire_chargeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/fire_chargeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:fire_charge'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -720,7 +955,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:fire_charge'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/ender_eyeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/ender_eyeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:ender_eye'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -744,7 +979,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:ender_eye'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/bookinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/misc/bookinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:book'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -768,7 +1003,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:book'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/pumpkin_pieinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/pumpkin_pieinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:pumpkin_pie'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -792,7 +1027,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:pumpkin_pie'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/cookieinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/cookieinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:cookie'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -816,7 +1051,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:cookie'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/cakeinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/cakeinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:cake'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -840,7 +1075,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:cake'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/breadinecraftFormatting
+[21:15:25] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/food/breadinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:bread'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -864,7 +1099,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:bread'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/item_frameinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/item_frameinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:item_frame'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -888,7 +1123,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:item_frame'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/iron_barsinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/iron_barsinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:iron_bars'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -912,7 +1147,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:iron_bars'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/end_crystalinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/end_crystalinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:end_crystal'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -936,7 +1171,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:end_crystal'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_leggingsinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_leggingsinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_leggings'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -960,7 +1195,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_leggings'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_helmetinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_helmetinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_helmet'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -984,7 +1219,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_helmet'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_chestplateinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_chestplateinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_chestplate'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1008,7 +1243,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_chestplat
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_bootsinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/leather_bootsinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_boots'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1032,7 +1267,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:leather_boots'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/diamond_swordinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/combat/diamond_swordinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_sword'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1056,7 +1291,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diamond_sword'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/sandstoneinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/sandstoneinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:sandstone'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1080,7 +1315,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:sandstone'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/red_sandstoneinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/red_sandstoneinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:red_sandstone'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1104,7 +1339,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:red_sandstone'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_graniteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_graniteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_granite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1128,7 +1363,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_granite'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_dioriteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_dioriteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_diorite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1152,7 +1387,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_diorite'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_andesiteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/polished_andesiteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_andesite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1176,7 +1411,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:polished_andesite
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/mossy_stonebrickinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/mossy_stonebrickinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:mossy_stonebrick'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1200,7 +1435,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:mossy_stonebrick'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/mossy_cobblestoneinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/mossy_cobblestoneinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:mossy_cobblestone'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1224,7 +1459,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:mossy_cobblestone
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/magmainecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/magmainecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:magma'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1248,7 +1483,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:magma'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/lit_pumpkininecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/lit_pumpkininecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:lit_pumpkin'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1272,7 +1507,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:lit_pumpkin'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/graniteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/graniteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:granite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1296,7 +1531,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:granite'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/dioriteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/dioriteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diorite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1320,7 +1555,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:diorite'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/chiseled_stonebrickinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/chiseled_stonebrickinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:chiseled_stonebrick'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1344,7 +1579,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:chiseled_stonebri
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/andesiteinecraftFormatting
+[21:15:26] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/building_blocks/andesiteinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:andesite'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1368,7 +1603,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:andesite'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_chiseled_cold_sandstone_bricksinecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_chiseled_cold_sandstone_bricksinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_chiseled_cold_sandstone_bricks'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1396,7 +1631,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_chiseled_c
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_glacieric_iceinecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_glacieric_iceinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_glacieric_ice'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1424,7 +1659,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_glacieric_
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_polished_cold_sandstone_bricksinecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/block_polished_cold_sandstone_bricksinecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_polished_cold_sandstone_bricks'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1452,7 +1687,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:block_polished_c
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_bread_salsainecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_bread_salsainecraftFormatting
 com.google.gson.JsonParseException: java.io.EOFException: End of input at line 44 column 2 path $.criteria
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:494) ~[JsonUtils.class:?]
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:517) ~[JsonUtils.class:?]
@@ -1477,7 +1712,7 @@ Caused by: java.io.EOFException: End of input at line 44 column 2 path $.criteri
 	at com.google.gson.internal.bind.TypeAdapters$35$1.read(TypeAdapters.java:910) ~[TypeAdapters$35$1.class:?]
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:492) ~[JsonUtils.class:?]
 	... 13 more
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_salsainecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_salsainecraftFormatting
 com.google.gson.JsonParseException: java.io.EOFException: End of input at line 44 column 2 path $.criteria
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:494) ~[JsonUtils.class:?]
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:517) ~[JsonUtils.class:?]
@@ -1502,7 +1737,7 @@ Caused by: java.io.EOFException: End of input at line 44 column 2 path $.criteri
 	at com.google.gson.internal.bind.TypeAdapters$35$1.read(TypeAdapters.java:910) ~[TypeAdapters$35$1.class:?]
 	at net.minecraft.util.JsonUtils.gsonDeserialize(SourceFile:492) ~[JsonUtils.class:?]
 	... 13 more
-[22:53:19] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_uncooked_pizzainecraftFormatting
+[21:15:26] [Server thread/ERROR] [FML]: Parsing error loading built-in advancement minestrapp:recipes/item_uncooked_pizzainecraftFormatting
 com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:item_uncooked_pizza'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:171) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:147) ~[AdvancementRewards$Deserializer.class:?]
@@ -1530,42 +1765,37 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minestrapp:item_uncooked_pi
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:156) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_181]
-[22:53:19] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 1262 advancementsinecraftFormatting
-[22:53:19] [Server thread/INFO] [FML]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@7583da10)inecraftFormatting
-[22:53:19] [Server thread/INFO] [FML]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@7583da10)inecraftFormatting
-[22:53:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0inecraftFormatting
-[22:53:20] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 12%inecraftFormatting
-[22:53:21] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 23%inecraftFormatting
-[22:53:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 35%inecraftFormatting
-[22:53:23] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 48%inecraftFormatting
-[22:53:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 62%inecraftFormatting
-[22:53:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 68%inecraftFormatting
-[22:53:27] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 72%inecraftFormatting
-[22:53:28] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 85%inecraftFormatting
-[22:53:29] [Server thread/INFO] [FML]: Unloading dimension -1inecraftFormatting
-[22:53:29] [Server thread/INFO] [FML]: Unloading dimension 1inecraftFormatting
-[22:53:29] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10inecraftFormatting
-[22:53:30] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2inecraftFormatting
-[22:53:30] [Netty Server IO #1/INFO] [FML]: Client protocol version 2inecraftFormatting
-[22:53:30] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 8 mods : minecraft@1.12.2,tconstruct@1.12.2-2.13.0.171,minestrapp@5.7.0,FML@8.0.99.99,forge@14.23.5.2847,mantle@1.12-1.3.3.55,mcp@9.42,jei@4.15.0.291inecraftFormatting
-[22:53:30] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection establishedinecraftFormatting
-[22:53:30] [Server thread/INFO] [FML]: [Server thread] Server side modded connection establishedinecraftFormatting
-[22:53:30] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: dom[local:E:33043a8c] logged in with entity id 2593 at (223.5, 74.0, 245.5)inecraftFormatting
-[22:53:30] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: dom joined the gameinecraftFormatting
-[22:53:32] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...inecraftFormatting
-[22:53:32] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
-[22:55:41] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...inecraftFormatting
-[22:55:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping serverinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving playersinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: dom lost connection: DisconnectedinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: dom left the gameinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged outinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worldsinecraftFormatting
-[22:55:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
-[22:55:42] [Server thread/INFO] [FML]: Unloading dimension 0inecraftFormatting
-[22:55:42] [Server thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
-[22:55:42] [Server thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
-[22:55:44] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!inecraftFormatting
-[22:55:44] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...inecraftFormatting
-[22:55:44] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.cominecraftFormatting
+[21:15:26] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 1262 advancementsinecraftFormatting
+[21:15:26] [Server thread/INFO] [FML]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@5ba0b4f0)inecraftFormatting
+[21:15:26] [Server thread/INFO] [FML]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@5ba0b4f0)inecraftFormatting
+[21:15:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0inecraftFormatting
+[21:15:27] [Server thread/INFO] [FML]: Unloading dimension -1inecraftFormatting
+[21:15:27] [Server thread/INFO] [FML]: Unloading dimension 1inecraftFormatting
+[21:15:27] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10inecraftFormatting
+[21:15:28] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2inecraftFormatting
+[21:15:28] [Netty Server IO #1/INFO] [FML]: Client protocol version 2inecraftFormatting
+[21:15:28] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 8 mods : minecraft@1.12.2,tconstruct@1.12.2-2.13.0.171,minestrapp@5.7.0,FML@8.0.99.99,forge@14.23.5.2847,mantle@1.12-1.3.3.55,mcp@9.42,jei@4.15.0.291inecraftFormatting
+[21:15:28] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection establishedinecraftFormatting
+[21:15:28] [Server thread/INFO] [FML]: [Server thread] Server side modded connection establishedinecraftFormatting
+[21:15:28] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: dom[local:E:01cd38af] logged in with entity id 257 at (623.6999999880791, 65.0, 242.7173973101342)inecraftFormatting
+[21:15:28] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: dom joined the gameinecraftFormatting
+[21:15:30] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...inecraftFormatting
+[21:15:30] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
+[21:15:30] [Client thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 43 advancementsinecraftFormatting
+[21:15:54] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...inecraftFormatting
+[21:15:54] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
+[21:15:54] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...inecraftFormatting
+[21:15:54] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping serverinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving playersinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: dom lost connection: DisconnectedinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: dom left the gameinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged outinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worldsinecraftFormatting
+[21:15:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworldinecraftFormatting
+[21:15:55] [Server thread/INFO] [FML]: Unloading dimension 0inecraftFormatting
+[21:15:56] [Server thread/INFO] [FML]: Applying holder lookupsinecraftFormatting
+[21:15:56] [Server thread/INFO] [FML]: Holder lookups appliedinecraftFormatting
+[21:15:57] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!inecraftFormatting
+[21:15:57] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...inecraftFormatting
+[21:15:57] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.cominecraftFormatting
