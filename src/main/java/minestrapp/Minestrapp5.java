@@ -24,7 +24,7 @@ public class Minestrapp5
     public static final String NAME = "Minestrappolation";
     public static final String VERSION = "5.7.0";
 
-    ArrayList<CompatAbstract> plugins;
+    public ArrayList<CompatAbstract> plugins;
     
     @SidedProxy(clientSide = "minestrapp.proxy.ClientProxy", serverSide = "minestrapp.proxy.CommonProxy")
     public static CommonProxy proxy;

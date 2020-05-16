@@ -7,8 +7,8 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Delocuro, triplg3"],
-  "credits": "Lead Coder: Delocuro, Tile Entities & Misc Features: triplg3, Main Devs for M3 & M4: Thewerty & SoBiohazardous.",
+  "authorList": ["Delocuro, werty1124, triplg3, toasterfork/sobiohazardous"],
+  "credits": "Art, Design, and Code: Delocuro, Code: werty1124, Tile Entities & Misc Features: triplg3, Main Devs for M3 & M4: werty1124 & SoBiohazardous/Toasterfork.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

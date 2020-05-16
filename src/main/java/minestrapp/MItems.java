@@ -777,6 +777,7 @@ public class MItems
 		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
 		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
 		((BlockMDoor) MBlocks.door_charwood).setDoorItem(door_charwood);
+		((BlockMDoor) MBlocks.door_palm).setDoorItem(door_palm);
 		MBlocks.glacieric_ice_branch_0.setDropsItem(new ItemStack(MItems.gems, 0, 6), 0, 0, 0, true, false);
 		MBlocks.glacieric_ice_branch_1.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
 		MBlocks.glacieric_ice_branch_2.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);

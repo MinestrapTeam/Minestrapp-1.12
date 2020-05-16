@@ -6,6 +6,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import minestrapp.compat.CompatAbstract;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.lwjgl.input.Mouse;
 
 import minestrapp.MBlocks;
@@ -94,7 +97,8 @@ public class MEventHandler
 {
 	private static final FurnaceRecipes furnaceRecipes = FurnaceRecipes.instance();
 	private static final FreezingRecipes freezingRecipes = FreezingRecipes.instance();
-	
+
+
 	@SubscribeEvent
 	public static void onPlayerJoin (EntityJoinWorldEvent event)
 	{

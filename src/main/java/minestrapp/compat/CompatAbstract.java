@@ -1,5 +1,8 @@
 package minestrapp.compat;
 
+import net.minecraft.block.Block;
+import net.minecraftforge.event.RegistryEvent;
+
 public abstract class CompatAbstract
 {
     public abstract void preInit();

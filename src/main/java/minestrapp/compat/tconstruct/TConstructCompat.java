@@ -28,13 +28,13 @@ public class TConstructCompat extends CompatAbstract
     private ItemStack meuroditeGem = new ItemStack(MItems.gems, 1, 4);
     public Material meuroditeMaterial = new Material("meurodite", 0x212970);
     public FluidMolten meuroditeFluid;
-    public final AbstractTrait meuroditeTrait = new TraitMeurodite();
+    public final AbstractTrait traitHeatResistant = new TraitHeatResistant();
 
     private ItemStack toriteIngot = new ItemStack(MItems.ingots, 1, 4);
     public Material toriteMaterial = new Material("torite", 0x1d9c09);
     public FluidMolten toriteFluid;
 
-    private ItemStack glacieriteIngot = new ItemStack(MItems.ingots, 1, 8);
+    private ItemStack glacieriteIngot = new ItemStack(MItems.ingots, 1, 6);
     public Material glacieriteMaterial = new Material("glacierite", 0x56a1cd);
     public FluidMolten glacieriteFluid;
 
@@ -46,6 +46,10 @@ public class TConstructCompat extends CompatAbstract
     public Material blaziumMaterial = new Material("blazium", 0xe1890b);
     public FluidMolten blaziumFluid;
 
+    private ItemStack archantineIngot = new ItemStack(MItems.ingots, 1, 5);
+    public Material archantineMaterial = new Material("archantine", 0x642936);
+    public FluidMolten archantineFluid;
+
     public void preInit()
     {
         IForgeRegistry<Block> registry = ForgeRegistries.BLOCKS;
@@ -55,9 +59,9 @@ public class TConstructCompat extends CompatAbstract
         TinkerFluids.registerMoltenBlock(registry, meuroditeFluid);
 
         TinkerRegistry.addMaterialStats(meuroditeMaterial,
-                new HeadMaterialStats(512, 8.5f, 5.0f, HarvestLevels.DIAMOND),
-                new HandleMaterialStats(0.63f, -20),
-                new ExtraMaterialStats(80),
+                new HeadMaterialStats(524, 7.4f, 5.0f, HarvestLevels.DIAMOND),
+                new HandleMaterialStats(0.6f, 20),
+                new ExtraMaterialStats(250),
                 new BowMaterialStats(0.2f, 2f, 5));
         TinkerRegistry.integrate(meuroditeMaterial, meuroditeFluid).preInit();
 
@@ -66,9 +70,9 @@ public class TConstructCompat extends CompatAbstract
         TinkerFluids.registerMoltenBlock(registry, toriteFluid);
 
         TinkerRegistry.addMaterialStats(toriteMaterial,
-                new HeadMaterialStats(512, 8.5f, 5.0f, HarvestLevels.DIAMOND),
-                new HandleMaterialStats(0.63f, -20),
-                new ExtraMaterialStats(80),
+                new HeadMaterialStats(640, 7.8f, 6.0f, HarvestLevels.DIAMOND),
+                new HandleMaterialStats(1f, 120),
+                new ExtraMaterialStats(280),
                 new BowMaterialStats(0.2f, 2f, 5));
         TinkerRegistry.integrate(toriteMaterial, toriteFluid).preInit();
 
@@ -77,13 +81,13 @@ public class TConstructCompat extends CompatAbstract
         TinkerFluids.registerMoltenBlock(registry, glacieriteFluid);
 
         TinkerRegistry.addMaterialStats(glacieriteMaterial,
-                new HeadMaterialStats(512, 8.5f, 5.0f, HarvestLevels.OBSIDIAN),
-                new HandleMaterialStats(0.63f, -20),
-                new ExtraMaterialStats(80),
+                new HeadMaterialStats(680, 8.0f, 6.25f, HarvestLevels.OBSIDIAN),
+                new HandleMaterialStats(1.2f, 250),
+                new ExtraMaterialStats(300),
                 new BowMaterialStats(0.2f, 2f, 5));
         TinkerRegistry.integrate(glacieriteMaterial, glacieriteFluid).preInit();
 
-        blazeFluid = fluidMetal(blazeMaterial);
+        blazeFluid = fluidLiquid(blazeMaterial);
         blazeFluid.setTemperature(1200);
         TinkerFluids.registerMoltenBlock(registry, blazeFluid);
         blazeMaterial.setFluid(blazeFluid);
@@ -93,24 +97,34 @@ public class TConstructCompat extends CompatAbstract
         TinkerFluids.registerMoltenBlock(registry, blaziumFluid);
 
         TinkerRegistry.addMaterialStats(blaziumMaterial,
-                new HeadMaterialStats(512, 8.5f, 5.0f, HarvestLevels.DIAMOND),
-                new HandleMaterialStats(0.63f, -20),
-                new ExtraMaterialStats(80),
+                new HeadMaterialStats(596, 7.9f, 5.5f, HarvestLevels.DIAMOND),
+                new HandleMaterialStats(0.9f, 180),
+                new ExtraMaterialStats(180),
                 new BowMaterialStats(0.2f, 2f, 5));
         TinkerRegistry.integrate(blaziumMaterial, blaziumFluid).preInit();
+
+        archantineFluid = fluidMetal(archantineMaterial);
+        archantineFluid.setTemperature(999);
+        TinkerFluids.registerMoltenBlock(registry, archantineFluid);
+
+        TinkerRegistry.addMaterialStats(archantineMaterial,
+                new HeadMaterialStats(1108, 10f, 8.0f, HarvestLevels.COBALT),
+                new HandleMaterialStats(1.8f, -650),
+                new ExtraMaterialStats(500),
+                new BowMaterialStats(0.2f, 2f, 5));
+        TinkerRegistry.integrate(archantineMaterial, archantineFluid).preInit();
     }
 
     public void init()
     {
         meuroditeMaterial.addItem(meuroditeGem, 1, Material.VALUE_Ingot);
         meuroditeMaterial
-                .addTrait(meuroditeTrait)
+                .addTrait(traitHeatResistant)
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(meuroditeGem);
 
         toriteMaterial.addItem(toriteIngot, 1, Material.VALUE_Ingot);
         toriteMaterial
-                .addTrait(meuroditeTrait)
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(toriteIngot);
 
@@ -129,7 +143,11 @@ public class TConstructCompat extends CompatAbstract
                 .addTrait(TinkerTraits.autosmelt)
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(blaziumIngot);
-        //todo add fiery mod as trait
+
+        archantineMaterial.addItem(archantineIngot, 1, Material.VALUE_Ingot);
+        archantineMaterial
+                .setCraftable(false).setCastable(true)
+                .setRepresentativeItem(archantineIngot);
     }
 
     public void postInit()
@@ -165,6 +183,9 @@ public class TConstructCompat extends CompatAbstract
                 new FluidStack(blazeFluid, Material.VALUE_Shard * 4));
         TinkerRegistry.registerTableCasting(blaziumIngot, TinkerSmeltery.castIngot, blaziumFluid, Material.VALUE_Ingot);
         TinkerRegistry.registerBasinCasting(new ItemStack(MBlocks.block_blazium), ItemStack.EMPTY, blaziumFluid, Material.VALUE_Block);
+
+        TinkerRegistry.registerMelting(archantineIngot, archantineFluid, Material.VALUE_Ingot);
+        TinkerRegistry.registerTableCasting(archantineIngot, TinkerSmeltery.castIngot, archantineFluid, Material.VALUE_Ingot);
     }
 
     public String getModid()
@@ -180,6 +201,15 @@ public class TConstructCompat extends CompatAbstract
     private static FluidMolten fluidMetal(String name, int color)
     {
         FluidMolten fluid = new FluidMolten(name, color);
+        return registerFluid(fluid);
+    }
+
+    private static FluidMolten fluidLiquid(Material material) {
+        return fluidLiquid(material.getIdentifier(), material.materialTextColor);
+    }
+
+    private static FluidMolten fluidLiquid(String name, int color) {
+        FluidMolten fluid = new FluidMolten(name, color, FluidMolten.ICON_LiquidStill, FluidMolten.ICON_LiquidFlowing);
         return registerFluid(fluid);
     }
 

@@ -5,6 +5,7 @@ import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
+import mezz.jei.util.Translator;
 import minestrapp.Minestrapp5;
 import net.minecraft.client.Minecraft;
 
@@ -15,7 +16,7 @@ public abstract class MinestrappRecipeCategory<T extends IRecipeWrapper> impleme
 	
 	public MinestrappRecipeCategory(IDrawable background, String unlocalizedName){
 		this.background = background;
-		this.localizedName = unlocalizedName;
+		this.localizedName = Translator.translateToLocal(unlocalizedName);
 	}
 	
 	@Override

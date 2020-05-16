@@ -1830,6 +1830,22 @@ jei.pressurizing.name=Pressurizing
 jei.right-click.name=In-World Block Interactions
 jei.sawmill.name=Milling
 
+
+##### Tinkers #####
 material.meurodite.name=Meurodite
-fluid.tconstruct.meurodite.name=Meurodite
+fluid.tconstruct.meurodite.name=Molten Meurodite
 modifier.meurodite.name=Meurodite Modifier
+
+material.torite.name=Torite
+fluid.tconstruct.torite.name=Molten Torite
+
+material.glacierite.name=Glacierite
+fluid.tconstruct.glacierite.name=Molten Glacierite
+
+fluid.tconstruct.blaze.name=Molten Blaze
+
+material.blazium.name=Blazium
+fluid.tconstruct.blazium.name=Molten Blazium Alloy
+
+material.archantine.name=Archantine
+fluid.tconstruct.archantine.name=Molten Archantine
