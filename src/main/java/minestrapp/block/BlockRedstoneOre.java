@@ -3,14 +3,13 @@ package minestrapp.block;
 import java.util.Random;
 
 import minestrapp.MBlocks;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.util.BlockStoneBaseMOnly;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -35,11 +34,11 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 		
 		if (isOn == false)
         {
-			this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
         }
 		else
 		{
-			this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, "ore_redstone_lit"));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, "ore_redstone_lit"));
 			this.setTickRandomly(true);
 		}
 		

@@ -385,26 +385,26 @@ public class MItems
 	public static Item backpack;
 	public static Item satchel;
 	
-	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":copper", 1, 200, 5F, 1.5F, 17);
-	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13);
-	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":steel", 2, 500, 7.5F, 2.5F, 19);
-	public static final ToolMaterial MEURODITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":meurodite", 2, 906, 7F, 2.5F, 16);
-	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":torite", 2, 1200, 7F, 3.5F, 30);
-	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":titanium", 4, 3122, 16F, 6F, 5);
-	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":blazium", 2, 960, 7.5F, 3F, 22);
-	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":glacierite", 3, 1400, 8F, 4F, 34);
-	public static final ToolMaterial BEDROCK = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":bedrock", 4, 6244, 6F, 1.5F, 6);
-	public static final ToolMaterial ADAMANTIUM = EnumHelper.addToolMaterial(Minestrapp5.MODID + ":adamantium", 10, -1, 20F, 10F, 50);
+	public static final ToolMaterial COPPER = EnumHelper.addToolMaterial(Minestrapp.MODID + ":copper", 1, 200, 5F, 1.5F, 17);
+	public static final ToolMaterial BRONZE = EnumHelper.addToolMaterial(Minestrapp.MODID + ":bronze", 2, 1000, 5F, 1.5F, 13);
+	public static final ToolMaterial STEEL = EnumHelper.addToolMaterial(Minestrapp.MODID + ":steel", 2, 500, 7.5F, 2.5F, 19);
+	public static final ToolMaterial MEURODITE = EnumHelper.addToolMaterial(Minestrapp.MODID + ":meurodite", 2, 906, 7F, 2.5F, 16);
+	public static final ToolMaterial TORITE = EnumHelper.addToolMaterial(Minestrapp.MODID + ":torite", 2, 1200, 7F, 3.5F, 30);
+	public static final ToolMaterial TITANIUM = EnumHelper.addToolMaterial(Minestrapp.MODID + ":titanium", 4, 3122, 16F, 6F, 5);
+	public static final ToolMaterial BLAZIUM = EnumHelper.addToolMaterial(Minestrapp.MODID + ":blazium", 2, 960, 7.5F, 3F, 22);
+	public static final ToolMaterial GLACIERITE = EnumHelper.addToolMaterial(Minestrapp.MODID + ":glacierite", 3, 1400, 8F, 4F, 34);
+	public static final ToolMaterial BEDROCK = EnumHelper.addToolMaterial(Minestrapp.MODID + ":bedrock", 4, 6244, 6F, 1.5F, 6);
+	public static final ToolMaterial ADAMANTIUM = EnumHelper.addToolMaterial(Minestrapp.MODID + ":adamantium", 10, -1, 20F, 10F, 50);
 	
-	public static final ArmorMaterial ARMOR_GRASS = EnumHelper.addArmorMaterial("grass", Minestrapp5.MODID + ":grass", 3, new int[]{2, 3, 3, 2}, 18, SoundEvents.ITEM_ARMOR_EQIIP_ELYTRA, 0F);
-	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp5.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
-	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp5.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-	public static final ArmorMaterial ARMOR_STEEL = EnumHelper.addArmorMaterial("steel", Minestrapp5.MODID + ":steel", 18, new int[]{3, 6, 7, 3}, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
-	public static final ArmorMaterial ARMOR_MEURODITE = EnumHelper.addArmorMaterial("meurodite", Minestrapp5.MODID + ":meurodite", 24, new int[]{2, 6, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F);
-	public static final ArmorMaterial ARMOR_TORITE = EnumHelper.addArmorMaterial("torite", Minestrapp5.MODID + ":torite", 26, new int[]{2, 6, 7, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.5F);
-	public static final ArmorMaterial ARMOR_TITANIUM = EnumHelper.addArmorMaterial("titanium", Minestrapp5.MODID + ":titanium", 66, new int[]{3, 6, 8, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F);
-	public static final ArmorMaterial ARMOR_BLAZIUM = EnumHelper.addArmorMaterial("blazium", Minestrapp5.MODID + ":blazium", 25, new int[]{2, 5, 6, 3}, 23, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.2F);
-	public static final ArmorMaterial ARMOR_GLACIERITE = EnumHelper.addArmorMaterial("glacierite", Minestrapp5.MODID + ":glacierite", 28, new int[]{2, 6, 7, 2}, 34, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2F);
+	public static final ArmorMaterial ARMOR_GRASS = EnumHelper.addArmorMaterial("grass", Minestrapp.MODID + ":grass", 3, new int[]{2, 3, 3, 2}, 18, SoundEvents.ITEM_ARMOR_EQIIP_ELYTRA, 0F);
+	public static final ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("tin", Minestrapp.MODID + ":tin", 4, new int[]{1, 3, 4, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
+	public static final ArmorMaterial ARMOR_BRONZE = EnumHelper.addArmorMaterial("bronze", Minestrapp.MODID + ":bronze", 28, new int[]{2, 4, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+	public static final ArmorMaterial ARMOR_STEEL = EnumHelper.addArmorMaterial("steel", Minestrapp.MODID + ":steel", 18, new int[]{3, 6, 7, 3}, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+	public static final ArmorMaterial ARMOR_MEURODITE = EnumHelper.addArmorMaterial("meurodite", Minestrapp.MODID + ":meurodite", 24, new int[]{2, 6, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F);
+	public static final ArmorMaterial ARMOR_TORITE = EnumHelper.addArmorMaterial("torite", Minestrapp.MODID + ":torite", 26, new int[]{2, 6, 7, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.5F);
+	public static final ArmorMaterial ARMOR_TITANIUM = EnumHelper.addArmorMaterial("titanium", Minestrapp.MODID + ":titanium", 66, new int[]{3, 6, 8, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 8.0F);
+	public static final ArmorMaterial ARMOR_BLAZIUM = EnumHelper.addArmorMaterial("blazium", Minestrapp.MODID + ":blazium", 25, new int[]{2, 5, 6, 3}, 23, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1.2F);
+	public static final ArmorMaterial ARMOR_GLACIERITE = EnumHelper.addArmorMaterial("glacierite", Minestrapp.MODID + ":glacierite", 28, new int[]{2, 6, 7, 2}, 34, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2F);
 	
 	public static void init()
 	{

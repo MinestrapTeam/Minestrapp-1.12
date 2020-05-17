@@ -5,14 +5,14 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeWrapper;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class AlloyRecipeCategory extends MinestrappRecipeCategory{
 
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/alloy_furnace.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/alloy_furnace.png");
 	
 	public AlloyRecipeCategory(IGuiHelper guiHelper) {
 		super(guiHelper.drawableBuilder(guiTexture, 36, 16, 101, 54).build(), "tile.alloy.name");

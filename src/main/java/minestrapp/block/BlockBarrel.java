@@ -1,6 +1,6 @@
 package minestrapp.block;
 
-import net.minecraft.block.Block;
+import minestrapp.Minestrapp;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -17,7 +17,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
@@ -25,15 +24,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.ILockableContainer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
-import minestrapp.block.tileentity.MBlockTileEntity;
 import minestrapp.block.tileentity.TileEntityBarrel;
 import minestrapp.gui.MGuiHandler;
 
@@ -93,7 +89,7 @@ public class BlockBarrel extends BlockContainer
 
             if (ilockablecontainer != null)
             {
-                playerIn.openGui(Minestrapp5.instance, MGuiHandler.BARREL, worldIn, pos.getX(), pos.getY(), pos.getZ());
+                playerIn.openGui(Minestrapp.instance, MGuiHandler.BARREL, worldIn, pos.getX(), pos.getY(), pos.getZ());
             }
 
             return true;

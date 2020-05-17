@@ -1240,6 +1240,6 @@ public class MBlocks
 	
 	private static void initModel(Block block, int meta, String fileName)
 	{
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Minestrapp5.MODID + ":" + fileName,"inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(Minestrapp.MODID + ":" + fileName,"inventory"));
 	}
 }

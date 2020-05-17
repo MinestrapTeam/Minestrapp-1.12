@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 import minestrapp.MBlocks;
 import minestrapp.MItems;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.BlockBiomeRedstoneWire;
 import minestrapp.block.tileentity.TileEntityActivator;
 import minestrapp.block.tileentity.TileEntityCrusher;
@@ -29,7 +29,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderFallingBlock;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -57,7 +56,7 @@ public class ClientProxy extends CommonProxy
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		super.preInit(event);
-		OBJLoader.INSTANCE.addDomain(Minestrapp5.MODID);
+		OBJLoader.INSTANCE.addDomain(Minestrapp.MODID);
 		MBlocks.registerRenders();
 		MItems.registerRenders();
 		MobRegistry.register();
@@ -131,8 +130,8 @@ public class ClientProxy extends CommonProxy
 	
 	public static void registerEntities()
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "m_boat"), EntityMBoat.class, "m_boat", 500, Minestrapp5.instance, 64, 1, true);
-		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp5.MODID, "m_falling_block"), EntityMFallingBlock.class, "m_falling_block", 501, Minestrapp5.instance, 64, 1, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp.MODID, "m_boat"), EntityMBoat.class, "m_boat", 500, Minestrapp.instance, 64, 1, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Minestrapp.MODID, "m_falling_block"), EntityMFallingBlock.class, "m_falling_block", 501, Minestrapp.instance, 64, 1, true);
 	}
 
 	private static <E extends Entity> void registerEntityRenderer(Class<E> entityClass, Class<? extends Render<E>> renderClass)

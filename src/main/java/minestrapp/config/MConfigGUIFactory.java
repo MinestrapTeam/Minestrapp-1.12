@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -47,7 +47,7 @@ public class MConfigGUIFactory implements IModGuiFactory
 	{
 		public MConfigGUI(GuiScreen parentScreen)
 		{
-			super(parentScreen, getConfigElements(), Minestrapp5.MODID, false, false, I18n.format("gui.config.main.title"));
+			super(parentScreen, getConfigElements(), Minestrapp.MODID, false, false, I18n.format("gui.config.main.title"));
 		}
 
 		private static List<IConfigElement> getConfigElements()

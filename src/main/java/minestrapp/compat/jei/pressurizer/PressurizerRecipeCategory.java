@@ -5,14 +5,14 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeWrapper;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class PressurizerRecipeCategory extends MinestrappRecipeCategory{
 
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/pressurizer.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/pressurizer.png");
 	
 	public PressurizerRecipeCategory(IGuiHelper guiHelper) {
 		super(guiHelper.drawableBuilder(guiTexture, 50, 14, 76, 86).build(), "tile.pressurizer.name");

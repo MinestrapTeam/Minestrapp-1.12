@@ -3,7 +3,7 @@ package minestrapp.block;
 import javax.annotation.Nullable;
 
 import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntityPipe;
 import minestrapp.gui.MGuiHandler;
 import net.minecraft.block.BlockContainer;
@@ -22,7 +22,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -33,8 +32,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.ILockableContainer;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockPipe extends BlockContainer
 {
@@ -192,7 +189,7 @@ public class BlockPipe extends BlockContainer
 
             if (ilockablecontainer != null)
             {
-                playerIn.openGui(Minestrapp5.instance, MGuiHandler.PIPE, worldIn, pos.getX(), pos.getY(), pos.getZ());
+                playerIn.openGui(Minestrapp.instance, MGuiHandler.PIPE, worldIn, pos.getX(), pos.getY(), pos.getZ());
             }
 
             return true;

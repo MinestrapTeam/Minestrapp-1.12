@@ -5,14 +5,14 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeWrapper;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class FreezingRecipeCategory extends MinestrappRecipeCategory{
 
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/freezing.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/freezing.png");
 	
 	public FreezingRecipeCategory(IGuiHelper guiHelper) {
 		super(guiHelper.drawableBuilder(guiTexture, 0, 0, 82, 26).build(), "jei.freezing.name");

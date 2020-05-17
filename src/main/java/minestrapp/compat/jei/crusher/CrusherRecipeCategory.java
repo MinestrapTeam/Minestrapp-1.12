@@ -4,14 +4,14 @@ import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class CrusherRecipeCategory extends MinestrappRecipeCategory<CrusherRecipeWrapper>{
 
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/crusher.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/crusher.png");
 	
 	public CrusherRecipeCategory(IGuiHelper guiHelper) {
 		super(guiHelper.drawableBuilder(guiTexture, 55, 16, 82, 54).build(), "tile.crusher.name");

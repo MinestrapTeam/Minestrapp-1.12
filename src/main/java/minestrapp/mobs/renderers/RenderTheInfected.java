@@ -1,19 +1,17 @@
 package minestrapp.mobs.renderers;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.mobs.entitys.EntityTheInfected;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderTheInfected extends RenderBiped<EntityTheInfected>{
 
-	public static final ResourceLocation INFECTED_TEXTURE = new ResourceLocation(Minestrapp5.MODID, "textures/entity/theinfected.png");
+	public static final ResourceLocation INFECTED_TEXTURE = new ResourceLocation(Minestrapp.MODID, "textures/entity/theinfected.png");
 	public static ModelZombie MODEL_INFECTED = new ModelZombie();	
 	public static final float SHADOW_SIZE = 0.5F;
 	

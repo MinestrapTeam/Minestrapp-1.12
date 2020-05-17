@@ -1,7 +1,7 @@
 package minestrapp.mobs.renderers;
 
+import minestrapp.Minestrapp;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
@@ -11,13 +11,12 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import minestrapp.Minestrapp5;
 import minestrapp.mobs.entitys.EntityLumpGoat;
 import minestrapp.mobs.models.ModelLumpGoat;
 
 public class RenderLumpGoat extends RenderLiving {
 
-	public static final ResourceLocation LumpGoat_texture = new ResourceLocation(Minestrapp5.MODID, "textures/entity/lumpgoat.png");
+	public static final ResourceLocation LumpGoat_texture = new ResourceLocation(Minestrapp.MODID, "textures/entity/lumpgoat.png");
 	public static ModelLumpGoat modelLumpGoat = new ModelLumpGoat();	
 	public static float modelHeight = 0.5F;
 	

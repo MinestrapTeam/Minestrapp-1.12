@@ -3,24 +3,19 @@ package minestrapp.block.liquid;
 import javax.annotation.Nonnull;
 
 import minestrapp.MBlocks;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.BlockShimmerstone;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
@@ -200,7 +195,7 @@ public class LiquidCrystalfloe extends BlockFluidClassic
     
 	    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
 	    {
-	    	Minestrapp5.proxy.handleMaterialAcceleration(entityIn, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
+	    	Minestrapp.proxy.handleMaterialAcceleration(entityIn, MBlocks.liquid_crystalfloe.getDefaultState().getMaterial());
 	    	
 	    	if(entityIn instanceof EntityLiving)
 	    		((EntityLiving)entityIn).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20));

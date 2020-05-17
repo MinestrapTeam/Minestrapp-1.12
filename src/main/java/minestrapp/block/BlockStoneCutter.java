@@ -1,19 +1,15 @@
 package minestrapp.block;
-import javax.annotation.Nullable;
 
-import minestrapp.Minestrapp5;
-import minestrapp.block.tileentity.MBlockTileEntity;
+import minestrapp.Minestrapp;
 
 import minestrapp.block.tileentity.TileEntityStoneCutter;
 import minestrapp.gui.MGuiHandler;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -100,7 +96,7 @@ public class BlockStoneCutter extends BlockContainer
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-  				player.openGui(Minestrapp5.instance, MGuiHandler.BARREL, world, pos.getX(), pos.getY(), pos.getZ());  			
+  				player.openGui(Minestrapp.instance, MGuiHandler.BARREL, world, pos.getX(), pos.getY(), pos.getZ());
   		}
   		return true;
 

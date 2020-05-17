@@ -3,7 +3,7 @@ package minestrapp.block.util;
 import java.util.List;
 import java.util.Random;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.EnumStoneType;
 import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
@@ -52,7 +52,7 @@ public static final PropertyEnum<EnumStoneType> VARIANT = PropertyEnum.<EnumSton
 		if(name != null)
 		{
 			this.setUnlocalizedName(name);
-			this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
 		}
 		this.setSoundType(soundType);
 		this.setHardness(hardness);

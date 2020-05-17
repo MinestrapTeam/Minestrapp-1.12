@@ -1834,18 +1834,21 @@ jei.sawmill.name=Milling
 ##### Tinkers #####
 material.meurodite.name=Meurodite
 fluid.tconstruct.meurodite.name=Molten Meurodite
-modifier.meurodite.name=Meurodite Modifier
+modifier.heat_resistant.name=Heat Resistant
 
 material.torite.name=Torite
 fluid.tconstruct.torite.name=Molten Torite
+modifier.alternative_medicine.name=Alternative Medicine
 
 material.glacierite.name=Glacierite
 fluid.tconstruct.glacierite.name=Molten Glacierite
+modifier.chill_touch.name=Chill Touch
 
 fluid.tconstruct.blaze.name=Molten Blaze
 
 material.blazium.name=Blazium
 fluid.tconstruct.blazium.name=Molten Blazium Alloy
+modifier.incendiary.name=Incendiary
 
 material.archantine.name=Archantine
 fluid.tconstruct.archantine.name=Molten Archantine

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import minestrapp.MBlocks;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.BlockColdSand;
 import minestrapp.block.BlockMDirt;
 import minestrapp.block.BlockMFarmland;
@@ -15,10 +15,7 @@ import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraft.world.storage.loot.LootTable;
 
 public class SieveRecipes
 {
@@ -113,7 +110,7 @@ public class SieveRecipes
     {
 		if(this.sieving.contains(state))
 		{
-			ResourceLocation location = new ResourceLocation(Minestrapp5.MODID, "sieve/" + state.getBlock().getUnlocalizedName().substring(5) + "_" + state.getBlock().getMetaFromState(state));
+			ResourceLocation location = new ResourceLocation(Minestrapp.MODID, "sieve/" + state.getBlock().getUnlocalizedName().substring(5) + "_" + state.getBlock().getMetaFromState(state));
 			return location;
 		}
 		else

@@ -1,21 +1,14 @@
 package minestrapp.mobs.renderers;
 
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-import org.lwjgl.opengl.GL11;
-
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.mobs.entitys.EntitySheetGhost;
 import minestrapp.mobs.models.ModelSheetGhost;
 
@@ -24,7 +17,7 @@ public class RenderSheetGhost extends RenderLiving {
 	@SideOnly(Side.CLIENT)
 	
 	
-	public static final ResourceLocation SheetGhost_texture = new ResourceLocation(Minestrapp5.MODID, "textures/entity/sheetghost.png");
+	public static final ResourceLocation SheetGhost_texture = new ResourceLocation(Minestrapp.MODID, "textures/entity/sheetghost.png");
 
 	    public RenderSheetGhost(RenderManager sheetmod)
 	    {

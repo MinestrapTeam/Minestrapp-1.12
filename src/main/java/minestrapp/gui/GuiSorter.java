@@ -1,7 +1,6 @@
 package minestrapp.gui;
 
-import minestrapp.Minestrapp5;
-import minestrapp.container.ContainerPipe;
+import minestrapp.Minestrapp;
 import minestrapp.container.ContainerSorter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -11,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiSorter extends GuiContainer
 {
-	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Minestrapp5.MODID, "textures/gui/sorter.png");
+	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Minestrapp.MODID, "textures/gui/sorter.png");
 
 	private final IInventory playerInventory;
 	private final IInventory sorterInventory;

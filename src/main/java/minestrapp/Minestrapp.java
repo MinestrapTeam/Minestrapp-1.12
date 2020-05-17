@@ -17,8 +17,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.util.ArrayList;
 
-@Mod(modid = Minestrapp5.MODID, name = Minestrapp5.NAME, version = Minestrapp5.VERSION, guiFactory = "minestrapp.config.MConfigGUIFactory", useMetadata = true)
-public class Minestrapp5
+@Mod(modid = Minestrapp.MODID, name = Minestrapp.NAME, version = Minestrapp.VERSION, guiFactory = "minestrapp.config.MConfigGUIFactory", useMetadata = true)
+public class Minestrapp
 {
     public static final String MODID = "minestrapp";
     public static final String NAME = "Minestrappolation";
@@ -30,7 +30,7 @@ public class Minestrapp5
     public static CommonProxy proxy;
     
     @Instance("minestrapp")
-    public static Minestrapp5 instance;
+    public static Minestrapp instance;
     
     static
     {

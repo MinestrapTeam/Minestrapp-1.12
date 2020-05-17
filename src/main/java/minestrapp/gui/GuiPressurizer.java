@@ -1,17 +1,16 @@
 package minestrapp.gui;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntityPressurizer;
 import minestrapp.container.ContainerPressurizer;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiPressurizer extends GuiContainer
 {
-	public static final ResourceLocation texture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/pressurizer.png");	
+	public static final ResourceLocation texture = new ResourceLocation(Minestrapp.MODID, "textures/gui/pressurizer.png");
 	private final InventoryPlayer playerInv;
 	private final TileEntityPressurizer tileentity;
 	

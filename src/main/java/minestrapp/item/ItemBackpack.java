@@ -1,14 +1,11 @@
 package minestrapp.item;
 
-import java.awt.Desktop.Action;
-
 import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.gui.MGuiHandler;
 import minestrapp.inventories.InventoryBackpack;
 import minestrapp.item.util.ItemBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
@@ -40,7 +37,7 @@ public class ItemBackpack extends ItemBase{
 		
 		if (!world.isRemote && hand != EnumHand.OFF_HAND) {
 			if (!player.isSneaking()) {
-					player.openGui(Minestrapp5.instance, MGuiHandler.BACKPACK, world, (int) player.posX, (int) player.posY, (int) player.posZ);
+					player.openGui(Minestrapp.instance, MGuiHandler.BACKPACK, world, (int) player.posX, (int) player.posY, (int) player.posZ);
 			} else {
 				new InventoryBackpack(player.getHeldItem(hand));
 			}

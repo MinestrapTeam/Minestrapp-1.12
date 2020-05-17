@@ -3,9 +3,7 @@ package minestrapp.block.util;
 import java.util.List;
 import java.util.Random;
 
-import javax.annotation.Nullable;
-
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.EnumStoneTypeMOnly;
 import minestrapp.block.item.IMetaBlockName;
 import net.minecraft.block.Block;
@@ -17,14 +15,10 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -57,7 +51,7 @@ public static final PropertyEnum<EnumStoneTypeMOnly> VARIANT = PropertyEnum.<Enu
 		if(name != null)
 		{
 			this.setUnlocalizedName(name);
-			this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
 		}
 		this.setSoundType(soundType);
 		this.setHardness(hardness);

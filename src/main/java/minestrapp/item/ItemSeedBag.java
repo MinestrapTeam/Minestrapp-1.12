@@ -1,17 +1,12 @@
 package minestrapp.item;
 
-import minestrapp.Minestrapp5;
-import minestrapp.gui.MGuiHandler;
-import minestrapp.inventories.InventoryBackpack;
 import minestrapp.item.util.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;

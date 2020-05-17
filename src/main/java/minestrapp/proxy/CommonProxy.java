@@ -3,7 +3,7 @@ package minestrapp.proxy;
 import minestrapp.MBlocks;
 import minestrapp.MFluids;
 import minestrapp.MItems;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntityActivator;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.tileentity.TileEntityAxel;
@@ -37,7 +37,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -61,24 +60,24 @@ public class CommonProxy
 	{
 		GameRegistry.registerWorldGenerator(new MOreGen(), 0);
 		
-		GameRegistry.registerTileEntity(TileEntityAxel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityAxel"));
-		GameRegistry.registerTileEntity(TileEntityVessel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityVessel"));
-		GameRegistry.registerTileEntity(TileEntityCrate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityCrate"));
-		GameRegistry.registerTileEntity(TileEntityBarrel.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityBarrel"));
-		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityStoneCutter"));
-		GameRegistry.registerTileEntity(TileEntityAlloy.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityAlloy"));
-		GameRegistry.registerTileEntity(TileEntityCrusher.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityCrusher"));
-		GameRegistry.registerTileEntity(TileEntityMagnetPiston.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityMagnetPiston"));
-		GameRegistry.registerTileEntity(TileEntityPipe.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPipe"));
-		GameRegistry.registerTileEntity(TileEntitySorter.class, new ResourceLocation(Minestrapp5.MODID, "TileEntitySorter"));
-		GameRegistry.registerTileEntity(TileEntityTanningRack.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityTanningRack"));
-		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPlate"));
-		GameRegistry.registerTileEntity(TileEntityMSkull.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityMSkull"));
-		GameRegistry.registerTileEntity(TileEntityActivator.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityActivator"));
-		GameRegistry.registerTileEntity(TileEntityPressurizer.class, new ResourceLocation(Minestrapp5.MODID, "TileEntityPressurizer"));
-		GameRegistry.registerTileEntity(TileEntitySawmill.class, new ResourceLocation(Minestrapp5.MODID, "TileEntitySawmill"));
+		GameRegistry.registerTileEntity(TileEntityAxel.class, new ResourceLocation(Minestrapp.MODID, "TileEntityAxel"));
+		GameRegistry.registerTileEntity(TileEntityVessel.class, new ResourceLocation(Minestrapp.MODID, "TileEntityVessel"));
+		GameRegistry.registerTileEntity(TileEntityCrate.class, new ResourceLocation(Minestrapp.MODID, "TileEntityCrate"));
+		GameRegistry.registerTileEntity(TileEntityBarrel.class, new ResourceLocation(Minestrapp.MODID, "TileEntityBarrel"));
+		GameRegistry.registerTileEntity(TileEntityStoneCutter.class, new ResourceLocation(Minestrapp.MODID, "TileEntityStoneCutter"));
+		GameRegistry.registerTileEntity(TileEntityAlloy.class, new ResourceLocation(Minestrapp.MODID, "TileEntityAlloy"));
+		GameRegistry.registerTileEntity(TileEntityCrusher.class, new ResourceLocation(Minestrapp.MODID, "TileEntityCrusher"));
+		GameRegistry.registerTileEntity(TileEntityMagnetPiston.class, new ResourceLocation(Minestrapp.MODID, "TileEntityMagnetPiston"));
+		GameRegistry.registerTileEntity(TileEntityPipe.class, new ResourceLocation(Minestrapp.MODID, "TileEntityPipe"));
+		GameRegistry.registerTileEntity(TileEntitySorter.class, new ResourceLocation(Minestrapp.MODID, "TileEntitySorter"));
+		GameRegistry.registerTileEntity(TileEntityTanningRack.class, new ResourceLocation(Minestrapp.MODID, "TileEntityTanningRack"));
+		GameRegistry.registerTileEntity(TileEntityPlate.class, new ResourceLocation(Minestrapp.MODID, "TileEntityPlate"));
+		GameRegistry.registerTileEntity(TileEntityMSkull.class, new ResourceLocation(Minestrapp.MODID, "TileEntityMSkull"));
+		GameRegistry.registerTileEntity(TileEntityActivator.class, new ResourceLocation(Minestrapp.MODID, "TileEntityActivator"));
+		GameRegistry.registerTileEntity(TileEntityPressurizer.class, new ResourceLocation(Minestrapp.MODID, "TileEntityPressurizer"));
+		GameRegistry.registerTileEntity(TileEntitySawmill.class, new ResourceLocation(Minestrapp.MODID, "TileEntitySawmill"));
 		
-		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp5.instance, new MGuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(Minestrapp.instance, new MGuiHandler());
 		
 		MinecraftForge.EVENT_BUS.register(new MEventHandler());
 		MinecraftForge.EVENT_BUS.register(new MPotions());

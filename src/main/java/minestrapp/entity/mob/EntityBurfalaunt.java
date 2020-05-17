@@ -1,23 +1,20 @@
 package minestrapp.entity.mob;
 
 import minestrapp.MSounds;
-import minestrapp.Minestrapp5;
-import net.minecraft.block.Block;
+import minestrapp.Minestrapp;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EntityBurfalaunt extends EntityCow {
-	public static final ResourceLocation LOOT_TABLE = new ResourceLocation(Minestrapp5.MODID, "mob/burfalaunt/burfalauntloottable");
+	public static final ResourceLocation LOOT_TABLE = new ResourceLocation(Minestrapp.MODID, "mob/burfalaunt/burfalauntloottable");
 
 	public EntityBurfalaunt(World world) {
 		super(world);

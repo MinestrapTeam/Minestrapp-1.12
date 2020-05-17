@@ -5,7 +5,7 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import minestrapp.MBlocks;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.crafting.SawmillRecipes;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class SawmillRecipeCategory extends MinestrappRecipeCategory<SawmillRecipeWrapper>
 {
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/sawmill_jei.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/sawmill_jei.png");
 	
 	public SawmillRecipeCategory(IGuiHelper guiHelper)
 	{

@@ -1,19 +1,16 @@
 package minestrapp.gui;
 
-import minestrapp.Minestrapp5;
-import minestrapp.block.tileentity.TileEntityAlloy;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntityCrusher;
-import minestrapp.container.ContainerAlloy;
 import minestrapp.container.ContainerCrusher;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiCrusher extends GuiContainer{
 	
-	public static final ResourceLocation texture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/crusher.png");	
+	public static final ResourceLocation texture = new ResourceLocation(Minestrapp.MODID, "textures/gui/crusher.png");
 	private final InventoryPlayer playerInv;
 	private final TileEntityCrusher tileentity;
 	

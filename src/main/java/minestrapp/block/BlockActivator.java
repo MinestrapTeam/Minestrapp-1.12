@@ -5,16 +5,12 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import minestrapp.MBlocks;
-import minestrapp.MFluids;
-import minestrapp.MItems;
-import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
+import minestrapp.*;
+import minestrapp.Minestrapp;
 import minestrapp.block.crops.BlockBerryBush;
 import minestrapp.block.crops.BlockVoidberryBush;
 import minestrapp.block.magnetpiston.BlockMagnetPistonBase;
 import minestrapp.block.tileentity.TileEntityActivator;
-import minestrapp.block.tileentity.TileEntityCrusher;
 import minestrapp.block.tileentity.TileEntityPlate;
 import minestrapp.block.tileentity.TileEntityTanningRack;
 import minestrapp.crafting.SieveRecipes;
@@ -376,7 +372,7 @@ public class BlockActivator extends BlockContainer
 
             if (ilockablecontainer != null)
             {
-                playerIn.openGui(Minestrapp5.instance, MGuiHandler.ACTIVATOR, worldIn, pos.getX(), pos.getY(), pos.getZ());
+                playerIn.openGui(Minestrapp.instance, MGuiHandler.ACTIVATOR, worldIn, pos.getX(), pos.getY(), pos.getZ());
             }
 
             return true;

@@ -1,20 +1,16 @@
 package minestrapp.gui;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.container.ContainerActivator;
-import minestrapp.container.ContainerPipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiSawmill extends GuiContainer
 {
-	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Minestrapp5.MODID, "textures/gui/sawmill.png");
+	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Minestrapp.MODID, "textures/gui/sawmill.png");
 
 	private final IInventory playerInventory;
 	private final IInventory sawmillInventory;

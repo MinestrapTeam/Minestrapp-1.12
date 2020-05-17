@@ -1,6 +1,6 @@
 package minestrapp.gui;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.container.ContainerBackpack;
 import minestrapp.inventories.InventoryBackpack;
 import net.minecraft.client.Minecraft;
@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiBackpack extends GuiContainer{
 	
-	private static final ResourceLocation textureBackpack = new ResourceLocation(Minestrapp5.MODID, "textures/gui/backpack.png");
-	private static final ResourceLocation textureSatchel = new ResourceLocation(Minestrapp5.MODID, "textures/gui/satchel.png");
+	private static final ResourceLocation textureBackpack = new ResourceLocation(Minestrapp.MODID, "textures/gui/backpack.png");
+	private static final ResourceLocation textureSatchel = new ResourceLocation(Minestrapp.MODID, "textures/gui/satchel.png");
 	private InventoryBackpack backpack;
 	private int rows;
 

@@ -1,6 +1,6 @@
 package minestrapp.block;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import net.minecraft.util.ResourceLocation;
 
 public class BlockDoubleStoneSlab4 extends BlockStoneSlab4
@@ -8,7 +8,7 @@ public class BlockDoubleStoneSlab4 extends BlockStoneSlab4
 	public BlockDoubleStoneSlab4(String name)
 	{
 		super(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5) + "_double"));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5) + "_double"));
 	}
 
 	@Override

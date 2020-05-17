@@ -3,7 +3,7 @@ package minestrapp.block.crops;
 import java.util.Random;
 
 import minestrapp.MItems;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -20,7 +20,7 @@ public class CornPlant extends BlockCrops
 	public CornPlant(String unlocalizedName)
 	{
 		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, unlocalizedName));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	
 	@Override

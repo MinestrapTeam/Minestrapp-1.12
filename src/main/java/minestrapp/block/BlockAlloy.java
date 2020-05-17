@@ -3,12 +3,10 @@ package minestrapp.block;
 import java.util.Random;
 
 import minestrapp.MBlocks;
-import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntityAlloy;
 import minestrapp.block.util.BlockBase;
 import minestrapp.gui.MGuiHandler;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -19,7 +17,6 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -93,7 +90,7 @@ public class BlockAlloy extends BlockBase implements ITileEntityProvider
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		if (!world.isRemote)
-  			player.openGui(Minestrapp5.instance, MGuiHandler.ALLOY, world, pos.getX(), pos.getY(), pos.getZ());  			
+  			player.openGui(Minestrapp.instance, MGuiHandler.ALLOY, world, pos.getX(), pos.getY(), pos.getZ());
 		
   		return true;
 	}

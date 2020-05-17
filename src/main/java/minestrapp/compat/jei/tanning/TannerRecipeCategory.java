@@ -4,14 +4,14 @@ import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.compat.jei.MinestrappRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class TannerRecipeCategory extends MinestrappRecipeCategory<TannerRecipeWrapper>{
 
-	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/tanning_rack.png");
+	private final static ResourceLocation guiTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/tanning_rack.png");
 	
 	public TannerRecipeCategory(IGuiHelper guiHelper) {
 		super(guiHelper.drawableBuilder(guiTexture, 26, 11, 73, 42).build(), "tile.tanning_rack.name");

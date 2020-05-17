@@ -1,8 +1,6 @@
 package minestrapp.potion;
 
-import java.awt.Color;
-
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.potion.Potion;
@@ -13,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MPotion extends Potion{
 
-	private ResourceLocation iconTexture = new ResourceLocation(Minestrapp5.MODID, "textures/gui/potion_icons.png");
+	private ResourceLocation iconTexture = new ResourceLocation(Minestrapp.MODID, "textures/gui/potion_icons.png");
 	
 	private int iconIndexX = 1;
 	private int iconIndexY = 1;

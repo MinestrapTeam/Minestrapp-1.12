@@ -125,12 +125,14 @@ public class TConstructCompat extends CompatAbstract
 
         toriteMaterial.addItem(toriteIngot, 1, Material.VALUE_Ingot);
         toriteMaterial
+                .addTrait(new TraitAlternativeMedicine())
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(toriteIngot);
 
         glacieriteMaterial.addItem(glacieriteIngot, 1, Material.VALUE_Ingot);
         glacieriteMaterial
                 .addTrait(TinkerTraits.freezing)
+                .addTrait(new TraitChillTouch())
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(glacieriteIngot);
 
@@ -141,11 +143,15 @@ public class TConstructCompat extends CompatAbstract
         blaziumMaterial
                 .addTrait(TinkerTraits.superheat)
                 .addTrait(TinkerTraits.autosmelt)
+                .addTrait(TinkerTraits.flammable)
+                .addTrait(new TraitIncendiary())
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(blaziumIngot);
 
         archantineMaterial.addItem(archantineIngot, 1, Material.VALUE_Ingot);
         archantineMaterial
+                .addTrait(TinkerTraits.heavy)
+                .addTrait(TinkerTraits.stiff)
                 .setCraftable(false).setCastable(true)
                 .setRepresentativeItem(archantineIngot);
     }

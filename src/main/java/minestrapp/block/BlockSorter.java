@@ -4,8 +4,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
-import minestrapp.Minestrapp5;
-import minestrapp.block.tileentity.TileEntityPipe;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntitySorter;
 import minestrapp.gui.MGuiHandler;
 import net.minecraft.block.material.MapColor;
@@ -108,7 +107,7 @@ public class BlockSorter extends BlockPipe
 
             if (ilockablecontainer != null)
             {
-                playerIn.openGui(Minestrapp5.instance, MGuiHandler.SORTER, worldIn, pos.getX(), pos.getY(), pos.getZ());
+                playerIn.openGui(Minestrapp.instance, MGuiHandler.SORTER, worldIn, pos.getX(), pos.getY(), pos.getZ());
             }
 
             return true;

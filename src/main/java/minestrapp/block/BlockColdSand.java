@@ -1,8 +1,7 @@
 package minestrapp.block;
 
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.item.IMetaBlockName;
-import minestrapp.block.util.BlockBase;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -34,7 +33,7 @@ public class BlockColdSand extends BlockFalling implements IMetaBlockName
 		super(material);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockColdSand.EnumType.SAND));
 		this.setUnlocalizedName(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp5.MODID, this.getUnlocalizedName().substring(5)));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
 		this.setSoundType(soundType);
 		this.setHardness(hardness);
 		this.setHarvestLevel(tool, harvestLevel);

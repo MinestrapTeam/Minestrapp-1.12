@@ -4,7 +4,7 @@ import java.util.Random;
 
 import minestrapp.MItems;
 import minestrapp.MTabs;
-import minestrapp.Minestrapp5;
+import minestrapp.Minestrapp;
 import minestrapp.block.tileentity.TileEntitySawmill;
 import minestrapp.block.util.BlockBase;
 import minestrapp.crafting.SawmillRecipes;
@@ -41,7 +41,6 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -67,7 +66,7 @@ public class BlockSawmill extends BlockBase implements ITileEntityProvider
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		if (!world.isRemote)
-  			player.openGui(Minestrapp5.instance, MGuiHandler.SAWMILL, world, pos.getX(), pos.getY(), pos.getZ());  			
+  			player.openGui(Minestrapp.instance, MGuiHandler.SAWMILL, world, pos.getX(), pos.getY(), pos.getZ());
 		
   		return true;
 	}
