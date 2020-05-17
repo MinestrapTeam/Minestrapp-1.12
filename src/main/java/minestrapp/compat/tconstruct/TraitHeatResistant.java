@@ -21,24 +21,6 @@ public class TraitHeatResistant extends AbstractTrait
     }
 
     @Override
-    public int onToolDamage(ItemStack tool, int damage, int newDamage, EntityLivingBase entity) {
-        Biome biome = entity.getEntityWorld().getBiome(new BlockPos(entity.posX, entity.posY, entity.posZ));
-        if((biome == Biomes.DESERT || biome == Biomes.DESERT_HILLS || biome == Biomes.MUTATED_DESERT || biome == Biomes.BEACH) )
-        {
-            //Doesn't work
-            if(!didntDamage){
-                didntDamage = true;
-                //return 0;
-            }
-
-            if(didntDamage){
-                didntDamage = false;
-            }
-        }
-        return newDamage;
-    }
-
-    @Override
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase entity, boolean wasEffective)
     {
         Biome biome = entity.getEntityWorld().getBiome(new BlockPos(entity.posX, entity.posY, entity.posZ));
