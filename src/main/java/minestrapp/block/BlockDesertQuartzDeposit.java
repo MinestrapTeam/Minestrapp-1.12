@@ -105,7 +105,7 @@ public class BlockDesertQuartzDeposit extends BlockBase implements IMetaBlockNam
         }
         else
         {
-        	drops.add(new ItemStack(MItems.salt, rand.nextInt(fortune) + 1));
+        	drops.add(new ItemStack(MItems.salt, rand.nextInt(Math.abs(fortune)) + 1));
         }
         
     }
