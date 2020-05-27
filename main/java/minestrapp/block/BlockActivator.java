@@ -175,7 +175,7 @@ public class BlockActivator extends BlockContainer
 	
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-		if(Minecraft.getMinecraft().world.isBlockIndirectlyGettingPowered(pos) > 0)
+		if(worldIn.getTileEntity(pos) != null && worldIn.getTileEntity(pos) instanceof TileEntityActivator && ((TileEntityActivator)worldIn.getTileEntity(pos)).isRedstonePowered())
 			return state.withProperty(POWERED, true);
 		else
 			return state.withProperty(POWERED, false);
@@ -227,7 +227,7 @@ public class BlockActivator extends BlockContainer
 
     private void setDefaultDirection(World worldIn, BlockPos pos, IBlockState state)
     {
-        //if (!worldIn.isRemote)
+        //if (worldIn.isRemote)
         //{
             EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
             boolean flag = worldIn.getBlockState(pos.north()).isFullBlock();

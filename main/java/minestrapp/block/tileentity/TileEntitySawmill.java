@@ -176,4 +176,9 @@ public class TileEntitySawmill extends TileEntityLockableLoot
         	}
         }
     }
+	
+	public boolean isRedstonePowered()
+	{
+		return this.world.isBlockIndirectlyGettingPowered(pos) > 0;
+	}
 }

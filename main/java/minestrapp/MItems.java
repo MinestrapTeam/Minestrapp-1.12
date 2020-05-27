@@ -759,7 +759,7 @@ public class MItems
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockBase) MBlocks.palm_fronds).setDropsItem(new ItemStack(MBlocks.palm_fronds_dead), 0, 0, 0, true, false);
 		((BlockBase) MBlocks.coconut).setDropsItem(new ItemStack(coconut_slice), 3, 0, 0, true, true);
-		((BlockBase) MBlocks.desert_quartz_deposit).setDropsItem(new ItemStack(gems, 1, 1), 2, 0, 2, true, true);
+		//((BlockBase) MBlocks.desert_quartz_deposit).setDropsItem(new ItemStack(gems, 1, 1), 2, 0, 2, true, true);
 		((BlockBase) MBlocks.rock_crystal_deposit).setDropsItem(new ItemStack(gems, 1, 2), 0, 1, 4, true, true);
 		((BlockBase) MBlocks.sunstone_deposit).setDropsItem(new ItemStack(gems, 1, 0), 1, 1, 4, true, true);
 		((BlockStoneBase) MBlocks.ore_salt).setDropsItem(new ItemStack(salt, 1), 1, 0, 2, true, true, false);
@@ -777,6 +777,7 @@ public class MItems
 		((BlockBerryBush) MBlocks.strawberry_bush).setBushDrop(new ItemStack(strawberry));
 		((BlockBerryBush) MBlocks.mana_bush).setBushDrop(new ItemStack(natural_ingredients, 1, 1));
 		((BlockMDoor) MBlocks.door_charwood).setDoorItem(door_charwood);
+		((BlockMDoor) MBlocks.door_palm).setDoorItem(door_palm);
 		MBlocks.glacieric_ice_branch_0.setDropsItem(new ItemStack(MItems.gems, 0, 6), 0, 0, 0, true, false);
 		MBlocks.glacieric_ice_branch_1.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);
 		MBlocks.glacieric_ice_branch_2.setDropsItem(new ItemStack(MItems.gems, 0, 6), 1, 0, 0, true, false);

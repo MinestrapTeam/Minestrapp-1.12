@@ -28,6 +28,8 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -259,10 +261,23 @@ public class BlockSawmill extends BlockBase implements ITileEntityProvider
 		
 		boolean powered = false;
 		
-		if(Minecraft.getMinecraft().world.isBlockIndirectlyGettingPowered(pos) > 0)
+		if(worldIn.getTileEntity(pos) != null && worldIn.getTileEntity(pos) instanceof TileEntitySawmill && ((TileEntitySawmill)worldIn.getTileEntity(pos)).isRedstonePowered())
 			powered = true;
-		
+
 		return state.withProperty(BLADE, blade).withProperty(POWERED, powered);
+	}
+	
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+		TileEntity tileentity = worldIn.getTileEntity(pos);
+
+        if (tileentity instanceof IInventory)
+        {
+            InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)tileentity);
+            worldIn.updateComparatorOutputLevel(pos, this);
+        }
+
+        super.breakBlock(worldIn, pos, state);
     }
 	
 	public static enum EnumBladeType implements IStringSerializable

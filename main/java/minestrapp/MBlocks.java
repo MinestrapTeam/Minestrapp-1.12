@@ -857,8 +857,8 @@ public class MBlocks
 		register(honeycomb_meurodite = new BlockBase("honeycomb_meurodite", Material.IRON, MapColor.BLACK_STAINED_HARDENED_CLAY, SoundType.METAL, 20F, "pickaxe", 2).setPushReaction(EnumPushReaction.BLOCK).setResistance(15F).setCreativeTab(MTabs.decor));
 		register(rope = new BlockRope());
 		register(dimensium_rope = new BlockDimensiumRope());
-		ForgeRegistries.BLOCKS.register(door_charwood = new BlockMDoor("door_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor()));
-		ForgeRegistries.BLOCKS.register(door_palm = new BlockMDoor("door_palm", Material.WOOD, BlockMPlanks.EnumType.PALM.getMapColor()));
+		ForgeRegistries.BLOCKS.register(door_charwood = new BlockMDoor("door_charwood", Material.WOOD, BlockMPlanks.EnumType.CHARWOOD.getMapColor()).setHardness(3F));
+		ForgeRegistries.BLOCKS.register(door_palm = new BlockMDoor("door_palm", Material.WOOD, BlockMPlanks.EnumType.PALM.getMapColor()).setHardness(3F));
 		register(bauble_ice = new BlockBauble("bauble_ice", Material.ICE, MapColor.ICE, SoundType.GLASS, 0.5F, "pickaxe", 0).setRenderLayer(BlockRenderLayer.TRANSLUCENT).setSlipperiness(0.98F).setPushReaction(EnumPushReaction.DESTROY).setLightOpacity(3).setCreativeTab(MTabs.decor));
 		register(bauble_sunstone = new BlockBauble("bauble_sunstone", Material.ROCK, MapColor.SAND, SoundType.GLASS, 2F, "pickaxe", 2).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.85F).setCreativeTab(MTabs.decor));
 		register(bauble_glowstone = new BlockBauble("bauble_glowstone", Material.GLASS, MapColor.SAND, SoundType.GLASS, 0.3F).setDropsItem(new ItemStack(Items.GLOWSTONE_DUST), 0, 0, 0, true, false).setPushReaction(EnumPushReaction.DESTROY).setLightLevel(0.9F).setCreativeTab(MTabs.decor));

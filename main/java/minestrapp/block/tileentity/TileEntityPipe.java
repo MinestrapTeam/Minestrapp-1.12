@@ -203,7 +203,7 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
         else
         {
             EnumFacing enumfacing = BlockPipe.getFacing(this.getBlockMetadata());
-            if(enumfacing == EnumFacing.DOWN || enumfacing == EnumFacing.UP || enumfacing == EnumFacing.WEST || enumfacing == EnumFacing.EAST)
+            if(enumfacing == EnumFacing.NORTH || enumfacing == EnumFacing.SOUTH)
             	enumfacing = enumfacing.getOpposite();
             
             if (this.isInventoryFull(iinventory, enumfacing))
@@ -274,7 +274,7 @@ public class TileEntityPipe extends TileEntityLockableLoot implements IHopper, I
         if (destination instanceof ISidedInventory && direction != null)
         {
             ISidedInventory isidedinventory = (ISidedInventory)destination;
-            int[] aint = isidedinventory.getSlotsForFace(direction.getOpposite());
+            int[] aint = isidedinventory.getSlotsForFace(direction);
 
             for (int k = 0; k < aint.length && !stack.isEmpty(); ++k)
             {
