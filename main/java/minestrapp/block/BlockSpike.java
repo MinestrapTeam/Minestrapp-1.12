@@ -20,6 +20,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -157,7 +158,7 @@ public class BlockSpike extends BlockBase
     
     public void triggerSpecialEffects (Entity entityIn, float multiplier)
     {
-    	if(this == MBlocks.spike_blazium)
+    	if(this == MBlocks.spike_blazium && !(entityIn instanceof EntityItem) && !(entityIn instanceof EntityXPOrb))
 			entityIn.setFire(Math.round(10 * multiplier));
 		else if(this == MBlocks.spike_glacierite)
 		{
@@ -189,7 +190,7 @@ public class BlockSpike extends BlockBase
     		
     		if(this != MBlocks.spike_dimensium)
     			entityIn.fall(fallDistance + this.baseDamage, 1.5F);
-    		else if(!(entityIn instanceof EntityItem))
+    		else if(!(entityIn instanceof EntityItem) && !(entityIn instanceof EntityXPOrb))
     			tryDeleteEntity(entityIn);
     	}
     	else
@@ -198,7 +199,7 @@ public class BlockSpike extends BlockBase
     
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-    	if(!(entityIn instanceof EntityItem))
+    	if(!(entityIn instanceof EntityItem) && !(entityIn instanceof EntityXPOrb))
     	{
     		triggerSpecialEffects(entityIn, 0.4F);
     		

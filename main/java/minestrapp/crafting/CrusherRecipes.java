@@ -35,6 +35,8 @@ public class CrusherRecipes {
 		this.addCrusherRecipe(new ItemStack(Blocks.DEADBUSH), new ItemStack(Items.STICK, 4), new ItemStack(Items.STICK), 55, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.TALLGRASS, 1, 1), new ItemStack(MItems.natural_ingredients, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(MBlocks.savanna_grass), new ItemStack(MItems.natural_ingredients, 1, 0), new ItemStack(MItems.natural_ingredients, 1, 0), 55, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.palm_fronds), new ItemStack(MItems.natural_ingredients, 1, 0), new ItemStack(MItems.natural_ingredients, 1, 0), 55, 0.05F);
+		this.addCrusherRecipe(new ItemStack(MBlocks.palm_fronds_dead), new ItemStack(MItems.natural_ingredients, 1, 0), null, 0, 0.05F);
 		this.addCrusherRecipe(new ItemStack(Blocks.YELLOW_FLOWER), new ItemStack(Items.DYE, 2, EnumDyeColor.YELLOW.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.YELLOW.getDyeDamage()), 35, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_FLOWER, 1, 0), new ItemStack(Items.DYE, 2, EnumDyeColor.RED.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.RED.getDyeDamage()), 35, 0.1F);
 		this.addCrusherRecipe(new ItemStack(Blocks.RED_FLOWER, 1, 1), new ItemStack(Items.DYE, 2, EnumDyeColor.LIGHT_BLUE.getDyeDamage()), new ItemStack(Items.DYE, 1, EnumDyeColor.LIGHT_BLUE.getDyeDamage()), 35, 0.1F);

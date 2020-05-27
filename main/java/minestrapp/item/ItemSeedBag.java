@@ -62,11 +62,6 @@ public class ItemSeedBag extends ItemBase
 
 	            if (nbttagcompound != null && nbttagcompound.hasKey("SeedItem", 10) && nbttagcompound.hasKey("SeedMeta", 10) && nbttagcompound.hasKey("SeedCount", 10))
 	            {
-	            	//Item item = nbttagcompound.getTag("Item");
-		            if (block == Blocks.MOB_SPAWNER)
-		            {
-		            	
-		            }
 	            }
 	        }
 		}

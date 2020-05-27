@@ -18,6 +18,7 @@ public class BlockMStainedGlass extends BlockMGlowDyed
 		super("m_stained_glass", Material.GLASS, MapColor.AIR, SoundType.GLASS, 0.3F);
 		this.setDropsItem(ItemStack.EMPTY, 0, 0, 0, true, false);
 		this.setRenderLayer(BlockRenderLayer.TRANSLUCENT);
+		this.setIgnoresSimilarity();
 	}
 	
 	public boolean isFullCube(IBlockState state)
@@ -28,10 +29,5 @@ public class BlockMStainedGlass extends BlockMGlowDyed
 	public boolean isOpaqueCube(IBlockState state)
     {
         return false;
-    }
-	
-	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing facing)
-    {
-		return BlockFaceShape.UNDEFINED;
     }
 }

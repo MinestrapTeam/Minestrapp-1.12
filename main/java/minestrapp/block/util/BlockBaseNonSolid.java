@@ -1,16 +1,20 @@
 package minestrapp.block.util;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBaseNonSolid extends BlockBase
-{
+{	
 	public BlockBaseNonSolid(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(name, material, mapColor, soundType, hardness);
