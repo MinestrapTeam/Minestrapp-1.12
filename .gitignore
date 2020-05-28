@@ -45,3 +45,15 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#Erik you idiot
+.gradle/
+build/
+.idea/
+run/
+.classpath
+.project
+.settings/
+bin/
+Minestrapp-1.12_Client.launch
+Minestrapp-1.12_Server.launch
