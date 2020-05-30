@@ -38,12 +38,7 @@ public class BlockDesertQuartzDeposit extends BlockBase implements IMetaBlockNam
 		this.setCreativeTab(MTabs.ore);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockDesertQuartzDeposit.DepositType.DEFAULT));
 	}
-	
-	public int damageDropped(IBlockState state)
-    {
-        return ((BlockDesertQuartzDeposit.DepositType)state.getValue(VARIANT)).getMetadata();
-    }
-	
+		
 	@SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> tab)
     {
@@ -99,13 +94,13 @@ public class BlockDesertQuartzDeposit extends BlockBase implements IMetaBlockNam
 	            Item item = this.getItemDropped(state, rand, fortune);
 	            if (item != Items.AIR)
 	            {
-	                drops.add(new ItemStack(MItems.gems, 1, 1));
+	            	drops.add(new ItemStack(MItems.gems, rand.nextInt(fortune + 1) + 1, 1));
 	            }
 	        }
         }
         else
         {
-        	drops.add(new ItemStack(MItems.salt, rand.nextInt(Math.abs(fortune)) + 1));
+        	drops.add(new ItemStack(MItems.salt, rand.nextInt(fortune + 1) + 1));
         }
         
     }

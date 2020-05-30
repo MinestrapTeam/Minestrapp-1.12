@@ -171,7 +171,7 @@ public class BlockActivator extends BlockContainer
 	
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-		if(Minecraft.getMinecraft().world.isBlockIndirectlyGettingPowered(pos) > 0)
+		if(worldIn.getTileEntity(pos) != null && worldIn.getTileEntity(pos) instanceof TileEntityActivator && ((TileEntityActivator)worldIn.getTileEntity(pos)).isRedstonePowered())
 			return state.withProperty(POWERED, true);
 		else
 			return state.withProperty(POWERED, false);
@@ -223,37 +223,34 @@ public class BlockActivator extends BlockContainer
 
     private void setDefaultDirection(World worldIn, BlockPos pos, IBlockState state)
     {
-        //if (!worldIn.isRemote)
-        //{
-            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
-            boolean flag = worldIn.getBlockState(pos.north()).isFullBlock();
-            boolean flag1 = worldIn.getBlockState(pos.south()).isFullBlock();
+        EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
+        boolean flag = worldIn.getBlockState(pos.north()).isFullBlock();
+        boolean flag1 = worldIn.getBlockState(pos.south()).isFullBlock();
 
-            if (enumfacing == EnumFacing.NORTH && flag && !flag1)
-            {
-                enumfacing = EnumFacing.SOUTH;
-            }
-            else if (enumfacing == EnumFacing.SOUTH && flag1 && !flag)
-            {
-                enumfacing = EnumFacing.NORTH;
-            }
-            else
-            {
-                boolean flag2 = worldIn.getBlockState(pos.west()).isFullBlock();
-                boolean flag3 = worldIn.getBlockState(pos.east()).isFullBlock();
+        if (enumfacing == EnumFacing.NORTH && flag && !flag1)
+        {
+            enumfacing = EnumFacing.SOUTH;
+        }
+        else if (enumfacing == EnumFacing.SOUTH && flag1 && !flag)
+        {
+            enumfacing = EnumFacing.NORTH;
+        }
+        else
+        {
+            boolean flag2 = worldIn.getBlockState(pos.west()).isFullBlock();
+            boolean flag3 = worldIn.getBlockState(pos.east()).isFullBlock();
 
-                if (enumfacing == EnumFacing.WEST && flag2 && !flag3)
-                {
-                    enumfacing = EnumFacing.EAST;
-                }
-                else if (enumfacing == EnumFacing.EAST && flag3 && !flag2)
-                {
-                    enumfacing = EnumFacing.WEST;
-                }
+            if (enumfacing == EnumFacing.WEST && flag2 && !flag3)
+            {
+                enumfacing = EnumFacing.EAST;
             }
+            else if (enumfacing == EnumFacing.EAST && flag3 && !flag2)
+            {
+                enumfacing = EnumFacing.WEST;
+            }
+        }
 
-            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing).withProperty(TRIGGERED, Boolean.valueOf(false)), 2);
-        //}
+        worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing).withProperty(TRIGGERED, Boolean.valueOf(false)), 2);
     }
     
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)

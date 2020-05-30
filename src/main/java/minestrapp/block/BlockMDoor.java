@@ -27,6 +27,7 @@ public class BlockMDoor extends BlockDoor
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.mapColor = color;
+		this.setHardness(3F);
 	}
 	
 	public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)

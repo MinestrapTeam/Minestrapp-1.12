@@ -58,7 +58,7 @@ public class BlockPressurizer extends BlockBaseNonSolid implements ITileEntityPr
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		return Item.getItemFromBlock(MBlocks.alloy);
+		return Item.getItemFromBlock(MBlocks.pressurizer);
 	}
 	
 	@Override

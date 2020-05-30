@@ -759,7 +759,6 @@ public class MItems
 		//Add Item drops for M5 Blocks that drop M5 Items because registry ordering is stupid.
 		((BlockBase) MBlocks.palm_fronds).setDropsItem(new ItemStack(MBlocks.palm_fronds_dead), 0, 0, 0, true, false);
 		((BlockBase) MBlocks.coconut).setDropsItem(new ItemStack(coconut_slice), 3, 0, 0, true, true);
-		((BlockBase) MBlocks.desert_quartz_deposit).setDropsItem(new ItemStack(gems, 1, 1), 2, 0, 2, true, true);
 		((BlockBase) MBlocks.rock_crystal_deposit).setDropsItem(new ItemStack(gems, 1, 2), 0, 1, 4, true, true);
 		((BlockBase) MBlocks.sunstone_deposit).setDropsItem(new ItemStack(gems, 1, 0), 1, 1, 4, true, true);
 		((BlockStoneBase) MBlocks.ore_salt).setDropsItem(new ItemStack(salt, 1), 1, 0, 2, true, true, false);
