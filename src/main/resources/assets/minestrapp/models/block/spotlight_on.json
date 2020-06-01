@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "minestrapp:blocks/utility/spotlight/spotlight_back",
+        "top": "minestrapp:blocks/utility/spotlight/spotlight_front_on",
+        "side": "minestrapp:blocks/utility/spotlight/spotlight_side_on"
+    }
+}

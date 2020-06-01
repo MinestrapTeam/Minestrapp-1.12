@@ -1,0 +1,32 @@
+{
+	"__comment": "Designed by Delocuro with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "minestrapp:blocks/utility/spotlight/spotlight_beam",
+		"texture": "minestrapp:blocks/utility/spotlight/spotlight_beam",
+        "texture2": "minestrapp:blocks/utility/spotlight/spotlight_beam_fade"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 7, 0, 7 ],
+			"to": [ 9, 16, 9 ],
+			"faces": {
+				"north": { "uv": [ 7, 0, 9, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 7, 0, 9, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 7, 0, 9, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 7, 0, 9, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 6, 0, 6 ],
+			"to": [ 10, 16, 10 ],
+			"faces": {
+				"north": { "uv": [ 6, 0, 10, 16 ], "texture": "#texture2" },
+				"south": { "uv": [ 6, 0, 10, 16 ], "texture": "#texture2" },
+				"west": { "uv": [ 6, 0, 10, 16 ], "texture": "#texture2" },
+				"east": { "uv": [ 6, 0, 10, 16 ], "texture": "#texture2" }
+			}
+		}
+	]
+}

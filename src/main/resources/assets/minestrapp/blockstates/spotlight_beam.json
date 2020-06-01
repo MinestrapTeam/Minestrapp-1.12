@@ -1,0 +1,274 @@
+{
+    "multipart": [
+        {   "when": { "powerU": 15 },
+            "apply": { "model": "minestrapp:spotlight_10" }
+        },
+        {   "when": { "powerU": 14 },
+            "apply": { "model": "minestrapp:spotlight_10" }
+        },
+        {   "when": { "powerU": 13 },
+            "apply": { "model": "minestrapp:spotlight_9" }
+        },
+        {   "when": { "powerU": 12 },
+            "apply": { "model": "minestrapp:spotlight_8" }
+        },
+        {   "when": { "powerU": 11 },
+            "apply": { "model": "minestrapp:spotlight_8" }
+        },
+        {   "when": { "powerU": 10 },
+            "apply": { "model": "minestrapp:spotlight_7" }
+        },
+        {   "when": { "powerU": 9 },
+            "apply": { "model": "minestrapp:spotlight_6" }
+        },
+        {   "when": { "powerU": 8 },
+            "apply": { "model": "minestrapp:spotlight_6" }
+        },
+        {   "when": { "powerU": 7 },
+            "apply": { "model": "minestrapp:spotlight_5" }
+        },
+        {   "when": { "powerU": 6 },
+            "apply": { "model": "minestrapp:spotlight_4" }
+        },
+        {   "when": { "powerU": 5 },
+            "apply": { "model": "minestrapp:spotlight_4" }
+        },
+        {   "when": { "powerU": 4 },
+            "apply": { "model": "minestrapp:spotlight_3" }
+        },
+        {   "when": { "powerU": 3 },
+            "apply": { "model": "minestrapp:spotlight_2" }
+        },
+        {   "when": { "powerU": 2 },
+            "apply": { "model": "minestrapp:spotlight_2" }
+        },
+        {   "when": { "powerU": 1 },
+            "apply": { "model": "minestrapp:spotlight_1" }
+        },
+        {   "when": { "powerD": 15 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 180 }
+        },
+        {   "when": { "powerD": 14 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 180 }
+        },
+        {   "when": { "powerD": 13 },
+            "apply": { "model": "minestrapp:spotlight_9", "x": 180 }
+        },
+        {   "when": { "powerD": 12 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 180 }
+        },
+        {   "when": { "powerD": 11 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 180 }
+        },
+        {   "when": { "powerD": 10 },
+            "apply": { "model": "minestrapp:spotlight_7", "x": 180 }
+        },
+        {   "when": { "powerD": 9 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 180 }
+        },
+        {   "when": { "powerD": 8 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 180 }
+        },
+        {   "when": { "powerD": 7 },
+            "apply": { "model": "minestrapp:spotlight_5", "x": 180 }
+        },
+        {   "when": { "powerD": 6 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 180 }
+        },
+        {   "when": { "powerD": 5 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 180 }
+        },
+        {   "when": { "powerD": 4 },
+            "apply": { "model": "minestrapp:spotlight_3", "x": 180 }
+        },
+        {   "when": { "powerD": 3 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 180 }
+        },
+        {   "when": { "powerD": 2 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 180 }
+        },
+        {   "when": { "powerD": 1 },
+            "apply": { "model": "minestrapp:spotlight_1", "x": 180 }
+        },
+        {   "when": { "powerE": 15 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 14 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 13 },
+            "apply": { "model": "minestrapp:spotlight_9", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 12 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 11 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 10 },
+            "apply": { "model": "minestrapp:spotlight_7", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 9 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 8 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 7 },
+            "apply": { "model": "minestrapp:spotlight_5", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 6 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 5 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 4 },
+            "apply": { "model": "minestrapp:spotlight_3", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 3 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 2 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerE": 1 },
+            "apply": { "model": "minestrapp:spotlight_1", "x": 90, "y": 90 }
+        },
+        {   "when": { "powerW": 15 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 14 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 13 },
+            "apply": { "model": "minestrapp:spotlight_9", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 12 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 11 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 10 },
+            "apply": { "model": "minestrapp:spotlight_7", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 9 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 8 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 7 },
+            "apply": { "model": "minestrapp:spotlight_5", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 6 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 5 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 4 },
+            "apply": { "model": "minestrapp:spotlight_3", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 3 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 2 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerW": 1 },
+            "apply": { "model": "minestrapp:spotlight_1", "x": 90, "y": 270 }
+        },
+        {   "when": { "powerS": 15 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 14 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 13 },
+            "apply": { "model": "minestrapp:spotlight_9", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 12 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 11 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 10 },
+            "apply": { "model": "minestrapp:spotlight_7", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 9 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 8 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 7 },
+            "apply": { "model": "minestrapp:spotlight_5", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 6 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 5 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 4 },
+            "apply": { "model": "minestrapp:spotlight_3", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 3 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 2 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerS": 1 },
+            "apply": { "model": "minestrapp:spotlight_1", "x": 90, "y": 180 }
+        },
+        {   "when": { "powerN": 15 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90 }
+        },
+        {   "when": { "powerN": 14 },
+            "apply": { "model": "minestrapp:spotlight_10", "x": 90 }
+        },
+        {   "when": { "powerN": 13 },
+            "apply": { "model": "minestrapp:spotlight_9", "x": 90 }
+        },
+        {   "when": { "powerN": 12 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90 }
+        },
+        {   "when": { "powerN": 11 },
+            "apply": { "model": "minestrapp:spotlight_8", "x": 90 }
+        },
+        {   "when": { "powerN": 10 },
+            "apply": { "model": "minestrapp:spotlight_7", "x": 90 }
+        },
+        {   "when": { "powerN": 9 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90 }
+        },
+        {   "when": { "powerN": 8 },
+            "apply": { "model": "minestrapp:spotlight_6", "x": 90 }
+        },
+        {   "when": { "powerN": 7 },
+            "apply": { "model": "minestrapp:spotlight_5", "x": 90 }
+        },
+        {   "when": { "powerN": 6 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90 }
+        },
+        {   "when": { "powerN": 5 },
+            "apply": { "model": "minestrapp:spotlight_4", "x": 90 }
+        },
+        {   "when": { "powerN": 4 },
+            "apply": { "model": "minestrapp:spotlight_3", "x": 90 }
+        },
+        {   "when": { "powerN": 3 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90 }
+        },
+        {   "when": { "powerN": 2 },
+            "apply": { "model": "minestrapp:spotlight_2", "x": 90 }
+        },
+        {   "when": { "powerN": 1 },
+            "apply": { "model": "minestrapp:spotlight_1", "x": 90 }
+        }
+    ]
+}
