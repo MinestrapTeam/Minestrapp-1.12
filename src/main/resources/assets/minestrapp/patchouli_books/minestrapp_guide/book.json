@@ -1,0 +1,9 @@
+{
+  "name": "item.minestrapp.minestrapp_guide.name",
+  "landing_text": "item.minestrapp.minestrapp_guide.landing",
+  "model": "minecraft:written_book",
+  "version": "1",
+  "subtitle": "How do i get more hearts!?",
+  "creative_tab": "tools",
+  "pause_game": true
+}

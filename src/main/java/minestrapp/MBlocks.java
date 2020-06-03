@@ -990,7 +990,7 @@ public class MBlocks
 		ForgeRegistries.BLOCKS.register(magnet_piston_extension = new BlockMagnetPistonMoving().setRegistryName("magnet_piston_extension"));
 		register(spotlight = new BlockSpotlight("spotlight", true));
 		register(receptacle = new BlockSpotlight("receptacle", false));
-		ForgeRegistries.BLOCKS.register(spotlight_beam = new BlockSpotlightBeam());
+		//ForgeRegistries.BLOCKS.register(spotlight_beam = new BlockSpotlightBeam());
 		register(block_irradium_insulated = new BlockIrradium("block_irradium_insulated", Material.IRON, MapColor.LIGHT_BLUE_STAINED_HARDENED_CLAY, SoundType.METAL, 6.5F, true).setCreativeTab(MTabs.utility));
 		register(block_dimensium_stabilized_inactive = new BlockStabilizedDimensium("block_dimensium_stabilized_inactive", false).setBeaconBase().setLightLevel(0.5F).setCreativeTab(MTabs.utility));
 		ForgeRegistries.BLOCKS.register(block_dimensium_stabilized_active = new BlockStabilizedDimensium("block_dimensium_stabilized_active", true));

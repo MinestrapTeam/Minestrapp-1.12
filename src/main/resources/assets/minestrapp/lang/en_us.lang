@@ -1833,6 +1833,9 @@ jei.pressurizing.name=Pressurizing
 jei.right-click.name=In-World Block Interactions
 jei.sawmill.name=Milling
 
+## Patchouli
+item.minestrapp.minestrapp_guide.name=Minestrappolation Guide
+item.minestrapp.minestrapp_guide.landing=Guide to 'strappolatin
 
 ##### Tinkers #####
 material.meurodite.name=Meurodite
